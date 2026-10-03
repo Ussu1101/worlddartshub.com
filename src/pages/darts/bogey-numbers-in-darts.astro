@@ -1,0 +1,600 @@
+---
+// src/pages/darts/bogey-numbers-in-darts.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Bogey Numbers in Darts Explained: The 7 Impossible 501 Finishes";
+const pageDescription = "What are bogey numbers in darts? Mathematical breakdown of the 7 impossible finishes below 170 (169, 168, 166, 165, 163, 162, 159) and essential setup strategy.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/darts/bogey-numbers-in-darts/`;
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Bogey Numbers in Darts' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Hub Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a bogey number in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A bogey number is a score of 169 or lower that is mathematically impossible to check out in a single three-dart visit under standard double-out rules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many bogey numbers are there in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are exactly seven classic bogey numbers below 170: 169, 168, 166, 165, 163, 162, and 159."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is 169 a bogey number?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To check out 169 on the highest possible double (the 50-point Bullseye), a player would need 119 points from their first two darts. Because the highest two-dart score on a board is 120 (T20 + T20) and the next highest is 117 (T20 + T19), scoring exactly 119 is impossible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is 171 considered a bogey number?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technically, 171 is not called a bogey number in darts tradition. The term 'bogey number' specifically applies to dead scores below the 170 maximum checkout threshold. Scores of 171 and above are simply beyond the mathematical range of a three-dart checkout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should a player do when left on a bogey number?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because they cannot finish the leg this turn, a player must focus entirely on setup play: throwing at big trebles to reduce their score to a comfortable one-dart or two-dart finish (such as 32 for Double 16 or 40 for Double 20) for their subsequent visit."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={[articleSchema, faqSchema]}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">CHECKOUT ARITHMETIC</span>
+        <span class="badge">TACTICAL GUIDE</span>
+      </div>
+      <h1>Bogey Numbers in Darts: The 7 Impossible Checkouts Below 170</h1>
+      <p class="lead-text">
+        Every darts spectator knows that 170 is the maximum possible checkout. But between 159 and 169 sit seven scores that look high enough to finish yet cannot be taken out in three darts under any mathematical combination. These are the famous "bogey numbers."
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="Mathematical Proof of 501 Double-Out Combinations" />
+
+      <!-- Quick Answer Summary Box -->
+      <section class="content-card summary-box">
+        <h2>What Is a Bogey Number in Darts?</h2>
+        <p>
+          A <strong>bogey number</strong> is any score <strong>below 170</strong> that cannot be finished in a single three-dart visit under standard steel-tip 501 rules (where the final dart must land on a double or the 50-point inner bullseye).
+        </p>
+        <p>
+          While every score from 2 to 158 can be checked out in three darts or fewer, the numbers between 159 and 170 contain seven "dead zones." If a player's remaining score hits one of these numbers, they know before stepping to the oche that they cannot win the leg on that turn.
+        </p>
+      </section>
+
+      <!-- The 7 Bogey Numbers Table -->
+      <section class="content-card">
+        <h2>The Seven Classic Bogey Numbers</h2>
+        <p>
+          There are exactly <strong>seven bogey numbers</strong> in steel-tip darts. Every other number from 2 through 170 (except these seven) has at least one valid three-dart finish combination:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Bogey Number</th>
+                <th>Attempt on Bull (50)</th>
+                <th>Attempt on D20 (40)</th>
+                <th>Why It Is Mathematically Impossible</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>169</strong></td>
+                <td>Needs 119 in 2 darts</td>
+                <td>Needs 129 in 2 darts</td>
+                <td>Max 2 darts is 120 (T20+T20); next highest is 117 (T20+T19). 119 cannot be scored.</td>
+              </tr>
+              <tr>
+                <td><strong>168</strong></td>
+                <td>Needs 118 in 2 darts</td>
+                <td>Needs 128 in 2 darts</td>
+                <td>Two trebles can only sum to multiples of 3 (120, 117, 114). 118 cannot be scored.</td>
+              </tr>
+              <tr>
+                <td><strong>166</strong></td>
+                <td>Needs 116 in 2 darts</td>
+                <td>Needs 126 in 2 darts</td>
+                <td>Two trebles sum to 117 or 114. Max 1 treble + 1 bull is 110. 116 cannot be scored.</td>
+              </tr>
+              <tr>
+                <td><strong>165</strong></td>
+                <td>Needs 115 in 2 darts</td>
+                <td>Needs 125 in 2 darts</td>
+                <td>Two trebles sum to 117 or 114. Max 1 treble + 1 bull is 110. 115 cannot be scored.</td>
+              </tr>
+              <tr>
+                <td><strong>163</strong></td>
+                <td>Needs 113 in 2 darts</td>
+                <td>Needs 123 in 2 darts</td>
+                <td>Two trebles sum to 114 or 111. Max 1 treble + 1 bull is 110. 113 cannot be scored.</td>
+              </tr>
+              <tr>
+                <td><strong>162</strong></td>
+                <td>Needs 112 in 2 darts</td>
+                <td>Needs 122 in 2 darts</td>
+                <td>Two trebles sum to 114 or 111. Max 1 treble + 1 bull is 110. 112 cannot be scored.</td>
+              </tr>
+              <tr>
+                <td><strong>159</strong></td>
+                <td>Needs 109 in 2 darts</td>
+                <td>Needs 119 in 2 darts</td>
+                <td>Bull leaves 109 (no 2-dart combo); D20 leaves 119 (unreachable); D19 leaves 121 (exceeds 120).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section: Detailed Mathematical Proofs -->
+      <section class="content-card">
+        <h2>Why Each Bogey Number Cannot Be Checked Out</h2>
+        <p>
+          To understand the mathematics behind these numbers, remember the basic constraints of a three-dart finish:
+        </p>
+        <div class="math-rules-box">
+          <ul>
+            <li><strong>Maximum First Two Darts:</strong> Two Treble 20s = <code>60 + 60 = 120 points</code>.</li>
+            <li><strong>Highest Finishing Dart:</strong> Inner Bullseye = <code>50 points</code> (treated as Double 25).</li>
+            <li><strong>Second Highest Finishing Dart:</strong> Double 20 = <code>40 points</code>.</li>
+            <li><strong>Treble Sum Property:</strong> Any combination of two trebles must be a multiple of 3 (e.g., 120, 117, 114, 111, 108).</li>
+          </ul>
+        </div>
+
+        <h3>Why 169 Is Impossible</h3>
+        <p>
+          If you attempt to finish 169 on the Bullseye (50), your first two darts must total exactly 119 (<code>169 - 50 = 119</code>). But Treble 20 + Treble 20 equals 120, and Treble 20 + Treble 19 equals 117. There is no combination on the board that scores 119 in two darts. If you aim for Double 20 (40), you need 129 points from two darts, which exceeds the absolute two-dart maximum of 120. Therefore, 169 cannot be finished.
+        </p>
+
+        <h3>Why 168 Is Impossible</h3>
+        <p>
+          Finishing on Bull requires 118 from two darts (<code>168 - 50 = 118</code>). Because two trebles are always multiples of 3 (120, 117, 114), they can never equal 118. Could a treble and a single or double score 118? No: the highest treble (60) plus the highest double (50 Bull) only equals 110. Thus, 118 is unreachable. Double 20 would require 128 (<code>168 - 40 = 128</code>), which is equally impossible.
+        </p>
+
+        <h3>Why 166 and 165 Are Impossible</h3>
+        <p>
+          Ending on Bull requires 116 (for 166) or 115 (for 165). Neither 116 nor 115 is divisible by 3, so two trebles cannot produce them. Any non-treble combination peaks at 110 (T20 + Bull), leaving a 5-to-6 point deficit. Finishing on Double 20 requires 126 or 125, which exceeds the two-dart scoring limit of 120.
+        </p>
+
+        <h3>Why 163 and 162 Are Impossible</h3>
+        <p>
+          Ending on Bull requires 113 or 112. Neither is divisible by 3 (the nearest two-treble totals are 114 and 111). A treble plus bull reaches only 110. Ending on Double 20 requires 123 or 122, both exceeding 120.
+        </p>
+
+        <h3>Why 159 Is Impossible</h3>
+        <p>
+          Ending on Bull requires 109 (<code>159 - 50 = 109</code>). 109 is not divisible by 3 (nearest are 111 and 108). To get 109 with one treble and one other dart would require T20 (60) plus 49 points—but there is no 49-point segment on a dartboard. If you try Double 20, you need 119 from two darts (unreachable). If you try Double 19 (38), you need 121 (exceeds 120).
+        </p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: The Finishable Neighbors -->
+      <section class="content-card">
+        <h2>The Contrast: Why Adjacent Numbers CAN Be Finished</h2>
+        <p>
+          It helps to see how numbers right next to bogey numbers are readily taken out by professionals. See the comparison:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Score</th>
+                <th>Status</th>
+                <th>Checkout Route</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>170</strong></td>
+                <td><span class="status-pass">CHECKOUT</span></td>
+                <td>Treble 20 (60) + Treble 20 (60) + Bullseye (50) — <a href="/darts/why-is-170-the-highest-checkout/">The Big Fish</a></td>
+              </tr>
+              <tr>
+                <td><strong>169</strong></td>
+                <td><span class="status-fail">BOGEY</span></td>
+                <td><em>Mathematically Impossible in 3 darts</em></td>
+              </tr>
+              <tr>
+                <td><strong>168</strong></td>
+                <td><span class="status-fail">BOGEY</span></td>
+                <td><em>Mathematically Impossible in 3 darts</em></td>
+              </tr>
+              <tr>
+                <td><strong>167</strong></td>
+                <td><span class="status-pass">CHECKOUT</span></td>
+                <td>Treble 20 (60) + Treble 19 (57) + Bullseye (50)</td>
+              </tr>
+              <tr>
+                <td><strong>166</strong></td>
+                <td><span class="status-fail">BOGEY</span></td>
+                <td><em>Mathematically Impossible in 3 darts</em></td>
+              </tr>
+              <tr>
+                <td><strong>165</strong></td>
+                <td><span class="status-fail">BOGEY</span></td>
+                <td><em>Mathematically Impossible in 3 darts</em></td>
+              </tr>
+              <tr>
+                <td><strong>164</strong></td>
+                <td><span class="status-pass">CHECKOUT</span></td>
+                <td>Treble 20 (60) + Treble 18 (54) + Bullseye (50) <em>or</em> T19 + T19 + Bull</td>
+              </tr>
+              <tr>
+                <td><strong>161</strong></td>
+                <td><span class="status-pass">CHECKOUT</span></td>
+                <td>Treble 20 (60) + Treble 17 (51) + Bullseye (50)</td>
+              </tr>
+              <tr>
+                <td><strong>160</strong></td>
+                <td><span class="status-pass">CHECKOUT</span></td>
+                <td>Treble 20 (60) + Treble 20 (60) + Double 20 (40)</td>
+              </tr>
+              <tr>
+                <td><strong>158</strong></td>
+                <td><span class="status-pass">CHECKOUT</span></td>
+                <td>Treble 20 (60) + Treble 20 (60) + Double 19 (38)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Consult our full <a href="/darts/checkout-chart/">501 Darts Checkout Chart</a> to explore standard two-dart and three-dart routes for every finishable score from 170 down to 41.
+        </p>
+      </section>
+
+      <!-- Section: Practical Tactics -->
+      <section class="content-card">
+        <h2>What Should You Do When Left on a Bogey Number?</h2>
+        <p>
+          When you step to the oche on a bogey number, your mental approach must shift entirely from <strong>finishing</strong> to <strong>setup strategy</strong>:
+        </p>
+
+        <div class="strategy-cards">
+          <div class="strategy-card">
+            <h3>1. Clear Scoring, No Heroics</h3>
+            <p>
+              Do not waste darts trying to invent impossible finishes. Your goal is simply to score heavily and leave a clean, single-dart double for your subsequent visit.
+            </p>
+          </div>
+
+          <div class="strategy-card">
+            <h3>2. The T20 Anchor</h3>
+            <p>
+              Almost all professionals start by firing at Treble 20. For example, if you are on <strong>169</strong> and hit T20 (60), your remaining score drops to <strong>109</strong>. If you hit another T20, you are left with <strong>49</strong>, from which a single 9 leaves Double 20 (40).
+            </p>
+          </div>
+
+          <div class="strategy-card">
+            <h3>3. Avoid Setting Up Another Bogey</h3>
+            <p>
+              Smart players calculate downstream. If you are sitting on 229 and hit a 60, you leave 169—a bogey number. Where possible, elite players adjust their third dart to avoid stranding themselves on 169, 168, or 166 if their opponent is breathing down their neck.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Bogey Numbers vs Scores Above 170 -->
+      <section class="content-card">
+        <h2>Bogey Numbers vs Scores Above 170</h2>
+        <p>
+          A common semantic mistake among casual players is calling scores like 171, 174, or 185 "bogey numbers."
+        </p>
+        <p>
+          In traditional darts nomenclature, <strong>scores above 170 are simply non-checkout scores</strong>. They are outside the mathematical universe of three-dart finishes because the board's highest legal combination is 170. The designation "bogey number" is reserved exclusively for the <strong>seven numbers below 170</strong> that are surrounded by valid checkouts yet cannot be taken out themselves.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqSchema.mainEntity.map((item) => (
+          <div class="faq-item">
+            <h3>{item.name}</h3>
+            <p>{item.acceptedAnswer.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <!-- Navigation & Related Guides -->
+      <section class="content-card">
+        <h2>Related Checkout & Rules Resources</h2>
+        <div class="links-grid">
+          <a href="/darts/why-is-170-the-highest-checkout/" class="link-card">
+            <strong>Why 170 Is the Highest Checkout</strong>
+            <span>Mathematical proof of "The Big Fish" & why 171+ cannot be finished.</span>
+          </a>
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>Complete 501 Checkout Chart</strong>
+            <span>Out combinations, favorite pro finishes & setup strategies.</span>
+          </a>
+          <a href="/darts/what-is-a-9-dart-finish/" class="link-card">
+            <strong>What Is a 9-Dart Finish?</strong>
+            <span>The ultimate perfection: 501 in nine darts explained.</span>
+          </a>
+          <a href="/darts/rules/" class="link-card">
+            <strong>Official Darts Rules</strong>
+            <span>DRA tournament regulations, board measurements & bust rules.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .summary-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-primary, #0c1a2c);
+  }
+  .math-rules-box {
+    background: #f1f5f9;
+    border-left: 4px solid #0284c7;
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.25rem 0;
+  }
+  .math-rules-box ul {
+    margin: 0 0 0 1.25rem;
+    padding: 0;
+    color: #1e293b;
+    line-height: 1.7;
+  }
+  .math-rules-box code {
+    background: #e2e8f0;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #0f172a;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 700;
+  }
+  .data-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  .status-pass {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+  .status-fail {
+    display: inline-block;
+    background: #fee2e2;
+    color: #991b1b;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+  .strategy-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    .strategy-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .strategy-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    border-top: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .strategy-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+  .strategy-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #475569;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+</style>

@@ -1,0 +1,684 @@
+---
+// src/pages/darts/what-is-a-9-dart-finish.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "What Is a 9-Dart Finish? Perfect 501 Leg Explained & Routes";
+const pageDescription = "Complete guide to the 9-dart finish in 501 darts. Learn the mathematical formula, the classic 180-180-141 route, alternative combinations, and legendary TV moments.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/darts/what-is-a-9-dart-finish/`;
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: '9-Dart Finish Explained' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Hub Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a 9-dart finish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 9-dart finish is the perfect leg in standard 501 darts, achieved by reducing the starting score of 501 to exactly zero in just nine darts while finishing on a legal double or inner bullseye."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most common 9-dart combination?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The classic combination is two consecutive maximum scores of 180 (Treble 20 x 6) followed by a 141 checkout thrown as Treble 20 (60), Treble 19 (57), and Double 12 (24)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many different ways can you throw a 9-dart finish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mathematically, there are 3,944 distinct nine-dart combinations that successfully complete a 501 leg under standard double-out rules, factoring in segment order and finishing doubles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who threw the first televised 9-dart finish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "John Lowe threw the first televised 9-darter in history on 13 October 1984 at the MFI World Matchplay against Keith Deller, earning a £102,000 bonus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a 9-dart finish the same as averaging 167?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. While completing 501 points in 9 darts mathematically calculates to a 167.00 average, an average only reflects scoring rate. A 9-dart finish strictly requires closing the game out on a legal double on the final dart."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={[articleSchema, faqSchema]}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">DARTS ESSENTIALS</span>
+        <span class="badge">THE PERFECT LEG</span>
+      </div>
+      <h1>What Is a 9-Dart Finish in Darts? The Perfect Leg Explained</h1>
+      <p class="lead-text">
+        In professional darts, the 9-dart finish is the holy grail. It is the absolute pinnacle of precision: winning a standard 501 leg in the fewest possible throws while finishing under the strict pressure of the double-out rule.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Tournament Statistics & DRA Leg Regulations" />
+
+      <!-- Quick Answer Summary Box -->
+      <section class="content-card summary-box">
+        <h2>At A Glance: What Is a 9-Dart Finish?</h2>
+        <p>
+          A <strong>9-dart finish</strong> (frequently called a "nine-darter") is the shortest possible game in steel-tip 501 darts. Under official <a href="/darts/rules/">Darts Regulation Authority (DRA) rules</a>, both players start at 501 points and must count down to exactly zero, with the final dart landing on a double segment or the 50-point inner bullseye.
+        </p>
+        <p>
+          Because the maximum score possible with a single dart is 60 (Treble 20), eight darts can only score an absolute maximum of 480 points. That leaves 21 points remaining—meaning a 501 leg can never be finished in seven or eight darts. Nine darts is the mathematical threshold for perfection.
+        </p>
+      </section>
+
+      <!-- Section: The Classic 180 + 180 + 141 Route -->
+      <section class="content-card">
+        <h2>The Classic Route: 180, 180, and 141</h2>
+        <p>
+          While thousands of theoretical mathematical routes exist, elite touring professionals almost universally aim for the classic combination of back-to-back 180s followed by a 141 checkout.
+        </p>
+
+        <div class="route-breakdown">
+          <div class="visit-card">
+            <div class="visit-header">
+              <span class="visit-num">Visit 1</span>
+              <span class="visit-score">180 Scored</span>
+              <span class="visit-rem">Leaves 321</span>
+            </div>
+            <p class="visit-darts">🎯 Treble 20 (60) + Treble 20 (60) + Treble 20 (60)</p>
+            <p class="visit-desc">All three tungsten barrels pack tightly into the 8mm treble 20 bed.</p>
+          </div>
+
+          <div class="visit-card">
+            <div class="visit-header">
+              <span class="visit-num">Visit 2</span>
+              <span class="visit-score">180 Scored</span>
+              <span class="visit-rem">Leaves 141</span>
+            </div>
+            <p class="visit-darts">🎯 Treble 20 (60) + Treble 20 (60) + Treble 20 (60)</p>
+            <p class="visit-desc">A second maximum piles into the top bed, putting the player on a finish.</p>
+          </div>
+
+          <div class="visit-card visit-finish">
+            <div class="visit-header">
+              <span class="visit-num">Visit 3</span>
+              <span class="visit-score">141 Checked Out</span>
+              <span class="visit-rem">GAME SHOT (0)</span>
+            </div>
+            <p class="visit-darts">🎯 Treble 20 (60) + Treble 19 (57) + Double 12 (24)</p>
+            <p class="visit-desc">The standard professional sequence to clean up 141 for the 9-dart finish.</p>
+          </div>
+        </div>
+
+        <h3>Why Do Players Finish 141 on Double 12?</h3>
+        <p>
+          The decision to steer toward <strong>Double 12</strong> on visit 3 is deliberate arithmetic strategy:
+        </p>
+        <ul>
+          <li><strong>Dart 7 (Treble 20):</strong> Taking 60 from 141 leaves 81 points.</li>
+          <li><strong>Dart 8 (Treble 19):</strong> Taking 57 from 81 leaves exactly 24 points.</li>
+          <li><strong>Dart 9 (Double 12):</strong> Double 12 equals exactly 24 points. If a player is playing a normal leg and misses inside into single 12, they are left with 12 (Double 6), keeping clean even-numbered targets.</li>
+        </ul>
+        <p>
+          Some professionals use alternative routes for 141, such as <strong>T20 (60) &rarr; T15 (45) &rarr; D18 (36)</strong> or <strong>T17 (51) &rarr; T18 (54) &rarr; D18 (36)</strong>, but the T20-T19-D12 sequence remains the historic standard.
+        </p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: Alternative 9-Dart Routes -->
+      <section class="content-card">
+        <h2>Alternative Valid 9-Dart Routes</h2>
+        <p>
+          There are <strong>3,944 distinct combinations</strong> of nine darts that add up to 501 and end on a valid double. While 180 + 180 + 141 accounts for over 85% of televised nine-darters, several other routes have entered darting folklore:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Route Name</th>
+                <th>Visit 1</th>
+                <th>Visit 2</th>
+                <th>Visit 3 (Checkout)</th>
+                <th>Notable TV Occurrence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>The Classic</strong></td>
+                <td>180 (T20, T20, T20)</td>
+                <td>180 (T20, T20, T20)</td>
+                <td>141 (T20, T19, D12)</td>
+                <td>Paul Lim (1990), Phil Taylor (2002), Adrian Lewis (2011)</td>
+              </tr>
+              <tr>
+                <td><strong>The 144 Route</strong></td>
+                <td>180 (T20, T20, T20)</td>
+                <td>177 (T20, T20, T19)</td>
+                <td>144 (T20, T20, D12)</td>
+                <td>William Borland (2021/22 Ally Pally decider)</td>
+              </tr>
+              <tr>
+                <td><strong>The Lowe Route</strong></td>
+                <td>180 (T20, T20, T20)</td>
+                <td>180 (T20, T20, T20)</td>
+                <td>141 (T17, T18, D18)</td>
+                <td>John Lowe (1984, first televised nine-darter)</td>
+              </tr>
+              <tr>
+                <td><strong>The 147 Route</strong></td>
+                <td>180 (T20, T20, T20)</td>
+                <td>174 (T20, T19, T19)</td>
+                <td>147 (T20, T17, D18)</td>
+                <td>Verified professional exhibition finish</td>
+              </tr>
+              <tr>
+                <td><strong>Double-In Route</strong></td>
+                <td>160 (D20, T20, T20)</td>
+                <td>180 (T20, T20, T20)</td>
+                <td>161 (T20, T17, Bull)</td>
+                <td>Brendan Dolan (2011 World Grand Prix)</td>
+              </tr>
+              <tr>
+                <td><strong>The 167 Trio (Theoretical)</strong></td>
+                <td>167 (T20, T19, Bull)</td>
+                <td>167 (T20, T19, Bull)</td>
+                <td>167 (T20, T19, Bull)</td>
+                <td>Never recorded in televised tournament play</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section: Why Are 9-Darters So Rare? -->
+      <section class="content-card">
+        <h2>Why Are Nine-Darters So Incredibly Difficult?</h2>
+        <p>
+          To understand why a 9-dart finish generates such stadium euphoria at Alexandra Palace, consider the physical margins involved:
+        </p>
+
+        <div class="difficulty-grid">
+          <div class="diff-box">
+            <h3>1. The Target Width</h3>
+            <p>
+              A regulation treble bed measures roughly <strong>8 millimetres wide</strong>. A player must plant six consecutive darts into a strip of bristle smaller than a postage stamp from 7 feet 9.25 inches away, often with previous barrels partially deflecting incoming flights.
+            </p>
+          </div>
+
+          <div class="diff-box">
+            <h3>2. Sudden Target Shifting</h3>
+            <p>
+              After six darts into Treble 20, the player cannot stay on autopilot. They must switch angle and muscle memory down to Treble 19, and then reposition their entire alignment toward the outer double ring.
+            </p>
+          </div>
+
+          <div class="diff-box">
+            <h3>3. Asymmetrical Psychological Pressure</h3>
+            <p>
+              By dart 7, the entire arena goes silent. By dart 8, 3,500 fans stand up roaring. Throwing dart 9 at Double 12 while fighting surging adrenaline and rapid heartbeats is widely regarded as one of the hardest psychological tests in individual sports.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: 9-Dart Finish vs 167 Average -->
+      <section class="content-card">
+        <h2>9-Dart Finish vs a 167.00 Average</h2>
+        <p>
+          A common beginner misconception is conflating a 9-dart finish with a <a href="/darts/average-explained/">3-dart average</a> of 167.00:
+        </p>
+        <div class="comparison-panel">
+          <div class="compare-item">
+            <h3>The Arithmetic Average</h3>
+            <p>
+              Scoring 501 points across 9 darts calculates to <code>(501 / 9) * 3 = 167.00</code>. A player could theoretically throw 180, 180, and 140 across nine darts to score 500 points with an active leg average of 166.67.
+            </p>
+          </div>
+          <div class="compare-item">
+            <h3>The Leg Requirement</h3>
+            <p>
+              An average is merely a mathematical calculation of scoring rate. A <strong>9-dart finish is a binary sporting outcome</strong>: the leg must actually conclude on a legal double. If a player scores 500 points in 9 darts but fails to check out, they do not have a 9-dart finish—they simply have an ongoing leg with an extraordinary scoring start.
+            </p>
+          </div>
+        </div>
+        <p class="footnote-note">
+          Curious how individual visits impact scoring? Use our interactive <a href="/tools/average-calculator/">Darts Average Calculator</a> to test leg combinations and visit weightings.
+        </p>
+      </section>
+
+      <!-- Section: Iconic World Championship Moments -->
+      <section class="content-card">
+        <h2>Iconic Televised Nine-Darters in Darts History</h2>
+        <p>
+          Every televised nine-darter is memorable, but a few have shaped the history of the sport:
+        </p>
+
+        <div class="moments-list">
+          <div class="moment-card">
+            <span class="moment-year">1984</span>
+            <h3>John Lowe's Pioneering Benchmark</h3>
+            <p>
+              At the MFI World Matchplay, John Lowe became the first player in history to throw a televised nine-darter against Keith Deller. His route: 180, 180, T17, T18, D18.
+            </p>
+          </div>
+
+          <div class="moment-card">
+            <span class="moment-year">1990</span>
+            <h3>Paul Lim's Lakeside Breakthrough</h3>
+            <p>
+              Representing Singapore at the 1990 BDO World Championship, Paul Lim landed the first world championship nine-darter against Jack McKenna, banking a legendary £52,000 bonus.
+            </p>
+          </div>
+
+          <div class="moment-card">
+            <span class="moment-year">2009</span>
+            <h3>Raymond van Barneveld at Ally Pally</h3>
+            <p>
+              On 2 January 2009, Raymond van Barneveld hit the first PDC World Championship nine-darter inside Alexandra Palace during his quarter-final clash with Jelle Klaasen.
+            </p>
+          </div>
+
+          <div class="moment-card">
+            <span class="moment-year">2011</span>
+            <h3>Adrian Lewis in the World Final</h3>
+            <p>
+              In the opening set of the 2011 PDC World Championship Final, "Jackpot" Adrian Lewis became the first man to strike perfection in a world final, going on to lift the Sid Waddell Trophy.
+            </p>
+          </div>
+
+          <div class="moment-card">
+            <span class="moment-year">2023</span>
+            <h3>Michael Smith vs MVG: The Greatest Leg Ever</h3>
+            <p>
+              In set two of the 2023 World Final, Michael van Gerwen missed Double 12 for a nine-darter on dart nine. Seconds later, Michael Smith stepped up and pinned Double 12 to complete his own nine-darter—sparking Wayne Mardle's immortal commentary: <em>"I can't spake!"</em>
+            </p>
+          </div>
+        </div>
+
+        <p>
+          Explore full archival records in our dedicated <a href="/history/nine-darters/">World Championship Nine-Darter History</a> and our verified <a href="/players/9-darters/">Alexandra Palace Nine-Darters List</a>.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqSchema.mainEntity.map((item) => (
+          <div class="faq-item">
+            <h3>{item.name}</h3>
+            <p>{item.acceptedAnswer.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <!-- Navigation & Related Guides -->
+      <section class="content-card">
+        <h2>Related Darts Knowledge & Rules</h2>
+        <div class="links-grid">
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>501 Darts Checkout Chart</strong>
+            <span>Standard finishes from 170 down to 41, setup math & doubles.</span>
+          </a>
+          <a href="/darts/rules/" class="link-card">
+            <strong>Official Darts Rules</strong>
+            <span>Board height (5ft 8in), oche distance (7ft 9.25in) & 501 scoring.</span>
+          </a>
+          <a href="/darts/average-explained/" class="link-card">
+            <strong>Darts Averages Explained</strong>
+            <span>How 3-dart and First-9 averages are calculated in the PDC.</span>
+          </a>
+          <a href="/darts/legs-vs-sets/" class="link-card">
+            <strong>Sets vs Legs Format</strong>
+            <span>How the World Championship set-play tournament structure works.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .content-card ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #334155;
+    line-height: 1.7;
+  }
+  .summary-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-primary, #0c1a2c);
+  }
+  .route-breakdown {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    .route-breakdown {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .visit-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .visit-finish {
+    background: #f0fdf4;
+    border-color: #86efac;
+  }
+  .visit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .visit-num {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+  .visit-score {
+    font-weight: 800;
+    color: #0f172a;
+    font-size: 1rem;
+  }
+  .visit-rem {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0284c7;
+  }
+  .visit-darts {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .visit-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .difficulty-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    .difficulty-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .diff-box {
+    background: #f8fafc;
+    border-radius: 6px;
+    padding: 1.25rem;
+    border-top: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .diff-box h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+  .comparison-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 640px) {
+    .comparison-panel {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .compare-item {
+    background: #f8fafc;
+    border-left: 3px solid #0284c7;
+    padding: 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .compare-item h3 {
+    margin-top: 0;
+  }
+  .footnote-note {
+    font-size: 0.95rem;
+    background: #eff6ff;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    color: #1e40af;
+  }
+  .moments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .moment-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .moment-year {
+    display: inline-block;
+    background: #0f172a;
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  .moment-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .moment-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 700;
+  }
+  .data-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #475569;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+</style>

@@ -1,0 +1,637 @@
+---
+// src/pages/darts/why-is-170-the-highest-checkout.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Why Is 170 the Highest Checkout in Darts? \"The Big Fish\" Math";
+const pageDescription = "Why is 170 the highest checkout in 501 darts? Discover the mathematical proof behind 'The Big Fish' (T20-T20-Bull), why 171 is impossible, and tactical setup play.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/darts/why-is-170-the-highest-checkout/`;
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Why 170 Is the Highest Checkout' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Hub Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is 170 the highest checkout in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "170 is the mathematical ceiling of a three-dart finish under double-out rules. The highest two scoring darts possible are two Treble 20s (120 points), and the highest legal finishing double is the 50-point inner Bullseye. 120 plus 50 equals 170."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you check out 171 in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. To finish 171 on the 50-point Bullseye, your first two darts would need to score 121 points. Because the maximum two darts can score on a standard board is 120 (T20 + T20), checking out 171 in a single visit is mathematically impossible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the 170 checkout called 'The Big Fish'?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In British pub and darts culture, 170 is nicknamed 'The Big Fish' because it represents the ultimate prize catch in the sport—legendary to land, unforgettable for the crowd, and devastating when it 'gets away' on the outer bull wire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the highest two-dart checkout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The highest two-dart finish is 110, achieved with Treble 20 (60) followed by the inner Bullseye (50)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should a player do when sitting on 171?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A player on 171 cannot finish in that visit, so their objective is pure setup. Typically, throwing for Treble 20 leaves 111, from where another Treble 20 leaves 51, and a single 19 leaves 32 (Double 16) for their next visit."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={[articleSchema, faqSchema]}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">MATHEMATICAL PROOF</span>
+        <span class="badge">THE BIG FISH</span>
+      </div>
+      <h1>Why Is 170 the Highest Checkout in Darts? The Mathematics of "The Big Fish"</h1>
+      <p class="lead-text">
+        In 501 steel-tip darts, there is no roar quite like the one that greets a 170 checkout. Nicknamed "The Big Fish," it is the absolute maximum finish permitted by the geometry and arithmetic of a regulation board.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="DRA Regulation Scoring Limits & 501 Board Geometry" />
+
+      <!-- Short Answer Summary -->
+      <section class="content-card summary-box">
+        <h2>At A Glance: Why 170 Is the Maximum Checkout</h2>
+        <p>
+          The maximum checkout in steel-tip 501 darts is exactly <strong>170</strong> because of two fundamental rules established by the <a href="/darts/rules/">Darts Regulation Authority (DRA)</a>:
+        </p>
+        <ol class="summary-list">
+          <li><strong>The Double-Out Rule:</strong> The final dart of any winning leg must land in either an outer double ring or the 50-point inner bullseye.</li>
+          <li><strong>Maximum Value Limits:</strong> The highest single-dart score is <strong>60</strong> (Treble 20), and the highest legal double on the board is <strong>50</strong> (the inner Bullseye).</li>
+        </ol>
+        <p>
+          Combine the two highest scoring darts with the highest double: <code>60 + 60 + 50 = 170</code>. No higher three-dart combination can legally conclude a leg.
+        </p>
+      </section>
+
+      <!-- Section: The 170 Breakdown -->
+      <section class="content-card">
+        <h2>How the 170 Checkout Works</h2>
+        <p>
+          There is only one combination on a standard London-pattern dartboard that produces 170 points while finishing on a legal double:
+        </p>
+
+        <div class="fish-diagram">
+          <div class="dart-box">
+            <span class="dart-step">Dart 1</span>
+            <span class="dart-target">Treble 20</span>
+            <span class="dart-pts">60 Points</span>
+            <span class="dart-leaves">Leaves 110</span>
+          </div>
+
+          <div class="dart-divider">+</div>
+
+          <div class="dart-box">
+            <span class="dart-step">Dart 2</span>
+            <span class="dart-target">Treble 20</span>
+            <span class="dart-pts">60 Points</span>
+            <span class="dart-leaves">Leaves 50</span>
+          </div>
+
+          <div class="dart-divider">+</div>
+
+          <div class="dart-box dart-bull">
+            <span class="dart-step">Dart 3 (Finish)</span>
+            <span class="dart-target">Inner Bullseye</span>
+            <span class="dart-pts">50 Points (Double)</span>
+            <span class="dart-leaves">GAME SHOT (0)</span>
+          </div>
+        </div>
+
+        <h3>Why the Bullseye Counts as a Double</h3>
+        <p>
+          Under official darts regulations, the central circular target consists of two concentric rings:
+        </p>
+        <ul>
+          <li><strong>Outer Bull (25 points):</strong> A single ring. Hitting the outer bull counts as 25 points, but cannot win a leg because it is not a double.</li>
+          <li><strong>Inner Bull (50 points):</strong> The red centre circle. Technically classified as <strong>Double 25</strong>, it carries a value of 50 points and satisfies the double-out rule.</li>
+        </ul>
+        <p>
+          Because the inner bullseye carries a value of 50, it is 10 points higher than Double 20 (40 points), making it the single most valuable finishing target on the board.
+        </p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: Why 171 Is Impossible -->
+      <section class="content-card">
+        <h2>Why Is 171 Impossible to Check Out?</h2>
+        <p>
+          To understand why 171 cannot be taken out in three darts, consider what happens when you work backwards from the winning dart:
+        </p>
+
+        <div class="proof-card">
+          <h3>Scenario A: Finishing on the Bullseye (50 points)</h3>
+          <p>
+            If you plan to finish on the 50-point Bullseye, your first two darts must score:
+            <br />
+            <code>171 - 50 = 121 points</code>
+          </p>
+          <p>
+            The highest scoring dart on the board is Treble 20 (60 points). Therefore, the absolute maximum score two darts can produce is:
+            <br />
+            <code>60 + 60 = 120 points</code>
+          </p>
+          <p>
+            Because <strong>121 is greater than 120</strong>, no two darts in the universe can leave a Bullseye from 171.
+          </p>
+        </div>
+
+        <div class="proof-card">
+          <h3>Scenario B: Finishing on Double 20 (40 points)</h3>
+          <p>
+            If you attempt to finish on the next highest double (Double 20), your first two darts must score:
+            <br />
+            <code>171 - 40 = 131 points</code>
+          </p>
+          <p>
+            Again, two darts can only score at most 120 points. 131 exceeds this limit by 11 points. Any smaller double (such as D18, D16, or D12) requires an even higher two-dart score, making 171 completely unreachable in three darts.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section: Why 172+ Are Impossible -->
+      <section class="content-card">
+        <h2>Why 172, 173, and Higher Cannot Be Finished</h2>
+        <p>
+          The same mathematical ceiling applies to every score from 171 to 180:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Score</th>
+                <th>Points Needed Before Bull (50)</th>
+                <th>Points Needed Before D20 (40)</th>
+                <th>Why It Cannot Be Finished</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>171</strong></td>
+                <td>121 points</td>
+                <td>131 points</td>
+                <td>Exceeds two-dart maximum (120) by 1 point</td>
+              </tr>
+              <tr>
+                <td><strong>172</strong></td>
+                <td>122 points</td>
+                <td>132 points</td>
+                <td>Exceeds two-dart maximum (120) by 2 points</td>
+              </tr>
+              <tr>
+                <td><strong>173</strong></td>
+                <td>123 points</td>
+                <td>133 points</td>
+                <td>Exceeds two-dart maximum (120) by 3 points</td>
+              </tr>
+              <tr>
+                <td><strong>174</strong></td>
+                <td>124 points</td>
+                <td>134 points</td>
+                <td>Exceeds two-dart maximum (120) by 4 points</td>
+              </tr>
+              <tr>
+                <td><strong>177</strong></td>
+                <td>127 points</td>
+                <td>137 points</td>
+                <td>Exceeds two-dart maximum (120) by 7 points</td>
+              </tr>
+              <tr>
+                <td><strong>180</strong></td>
+                <td>130 points</td>
+                <td>140 points</td>
+                <td>180 can score in 3 darts (T20 x 3), but cannot end on a double!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Note the crucial paradox of <strong>180</strong>: while 180 is the highest three-dart score possible on a dartboard, it can <em>never</em> be a checkout because all three darts are embedded in Treble 20—a treble, not a double!
+        </p>
+      </section>
+
+      <!-- Section: Why "The Big Fish"? -->
+      <section class="content-card">
+        <h2>Why Is 170 Called "The Big Fish"?</h2>
+        <p>
+          In British sporting lore, 170 has been christened <strong>"The Big Fish"</strong>. The nickname dates back to English pub leagues and was later popularised across Sky Sports broadcasts by legendary commentators like Sid Waddell and Dave Lanning.
+        </p>
+        <div class="lore-box">
+          <p>
+            The moniker draws on angling heritage: 170 is the legendary trophy fish lurking in the deep. It takes immense skill to hook (hitting the two Treble 20s), but "reeling it in" requires landing the final dart squarely into the tiny 12.7mm red bullseye.
+          </p>
+          <p>
+            When a player hits T20, T20, and then misses the inner bull by catching the green 25 ring, commentators universally lament: <em>"The Big Fish has slipped off the hook!"</em>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section: Strategy on 171+ -->
+      <section class="content-card">
+        <h2>What Do Professionals Do on 171 and Above?</h2>
+        <p>
+          When an elite PDC player steps to the oche with a score of 171 or higher, their mindset shifts entirely to <strong>setup play</strong>:
+        </p>
+
+        <div class="strategy-list">
+          <div class="strat-item">
+            <h3>1. The Setup Mentality</h3>
+            <p>
+              Knowing they cannot finish the leg, the player’s priority is reducing their total to leave an optimal one-dart double for their next turn.
+            </p>
+          </div>
+
+          <div class="strat-item">
+            <h3>2. Steering Toward 32 or 40</h3>
+            <p>
+              The gold-standard targets are <strong>32</strong> (Double 16) and <strong>40</strong> (Double 20). If a player is on 171, hitting two single 20s and a Treble 20 produces 100 points, leaving 71—which gives them three fresh darts next turn to take out 71 (e.g., T13 &rarr; D16).
+            </p>
+          </div>
+
+          <div class="strat-item">
+            <h3>3. Avoiding the Bogey Traps</h3>
+            <p>
+              Savvy players avoid inadvertently landing on one of the seven <a href="/darts/bogey-numbers-in-darts/">bogey numbers in darts</a> (such as 169, 168, or 166). Setting up a bogey number wastes a visit, whereas leaving a finishable score keeps maximum pressure on the opponent.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqSchema.mainEntity.map((item) => (
+          <div class="faq-item">
+            <h3>{item.name}</h3>
+            <p>{item.acceptedAnswer.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <!-- Navigation & Related Guides -->
+      <section class="content-card">
+        <h2>Related Checkout & Rules Resources</h2>
+        <div class="links-grid">
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>501 Darts Checkout Chart</strong>
+            <span>Standard finishes from 170 down to 41, setup math & doubles.</span>
+          </a>
+          <a href="/darts/bogey-numbers-in-darts/" class="link-card">
+            <strong>Bogey Numbers in Darts</strong>
+            <span>The 7 impossible checkouts below 170 explained mathematically.</span>
+          </a>
+          <a href="/darts/what-is-a-9-dart-finish/" class="link-card">
+            <strong>What Is a 9-Dart Finish?</strong>
+            <span>How the perfect 501 leg is thrown and iconic TV moments.</span>
+          </a>
+          <a href="/darts/rules/" class="link-card">
+            <strong>Official Darts Rules</strong>
+            <span>Oche measurements, 501 scoring & tournament regulations.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .summary-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-primary, #0c1a2c);
+  }
+  .summary-list {
+    margin: 1rem 0 1.25rem 1.5rem;
+    color: #1e293b;
+    line-height: 1.7;
+  }
+  .summary-box code {
+    background: #e2e8f0;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .fish-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    align-items: stretch;
+  }
+  @media (min-width: 768px) {
+    .fish-diagram {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  .dart-box {
+    flex: 1;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .dart-bull {
+    background: #f0fdf4;
+    border-color: #86efac;
+  }
+  .dart-step {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+  .dart-target {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #0f172a;
+  }
+  .dart-pts {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0284c7;
+  }
+  .dart-leaves {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .dart-divider {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #94a3b8;
+    text-align: center;
+  }
+  .proof-card {
+    background: #f8fafc;
+    border-left: 4px solid #0284c7;
+    border-radius: 0 6px 6px 0;
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .proof-card h3 {
+    margin-top: 0;
+  }
+  .proof-card code {
+    display: inline-block;
+    background: #e2e8f0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0.35rem 0;
+  }
+  .lore-box {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 6px 6px 0;
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .lore-box p {
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+  }
+  .lore-box p:last-child {
+    margin-bottom: 0;
+  }
+  .strategy-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    .strategy-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .strat-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    border-top: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .strat-item h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+  .strat-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 700;
+  }
+  .data-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #475569;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+</style>
