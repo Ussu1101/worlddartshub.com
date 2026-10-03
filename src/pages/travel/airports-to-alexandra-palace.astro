@@ -1,0 +1,799 @@
+---
+// src/pages/travel/airports-to-alexandra-palace.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "London Airports to Alexandra Palace: Heathrow, Gatwick & Stansted";
+const pageDescription = "Public transport routes from Heathrow, Gatwick, Stansted, and Luton to Alexandra Palace for the World Darts Championship. Trains, Tubes, fares, and luggage tips.";
+
+const breadcrumbItems = [
+  { name: 'Travel Guide', url: '/travel/' },
+  { name: 'Airports to Alexandra Palace' }
+];
+
+const airportFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "London Airports to Alexandra Palace PDC World Darts FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which London airport is best for attending the darts at Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Heathrow Airport (LHR) and Gatwick Airport (LGW) offer the most direct public transit routes to North London. Heathrow connects directly on a single Piccadilly Line tube train to Wood Green Station (approx. 70 mins), while Gatwick offers direct Thameslink trains straight to Finsbury Park Station (approx. 50 mins) without any Central London Tube changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you bring suitcases or flight luggage into Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Alexandra Palace enforces a strict bag policy allowing only one small bag up to 30cm x 20cm x 10cm (roughly A4 size) into the Great Hall arena. Suitcases, rolling bags, and large travel backpacks are strictly prohibited at the turnstiles. You must store luggage at London railway station left-luggage facilities (such as King's Cross or Liverpool Street) or at your hotel before traveling to the venue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you get from Gatwick Airport to Alexandra Palace without taking the Tube?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Take a direct Thameslink train from Gatwick Airport railway station straight to Finsbury Park Station (approx. 50-55 minutes). From Finsbury Park, you can either take the direct TfL W3 bus straight to Alexandra Palace Palm Court or transfer to a Great Northern train to Alexandra Palace National Rail Station, completely avoiding Central London Underground tunnels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Piccadilly Line run direct from Heathrow to Wood Green?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The London Underground Piccadilly Line operates directly between all Heathrow terminals (Terminals 2 & 3, Terminal 4, and Terminal 5) and Wood Green Station in London Fare Zone 3. The journey takes approximately 65 to 75 minutes on a single train with zero transfers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are airport express trains (Heathrow Express or Gatwick Express) worth taking for Ally Pally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally no. Express trains terminate at Paddington (Heathrow Express) or Victoria (Gatwick Express) in West/Southwest London. Reaching Alexandra Palace from those terminals requires crossing Central London with heavy luggage on the Tube. Standard direct lines (Piccadilly Line from Heathrow or Thameslink from Gatwick/Luton) are significantly cheaper and deliver you directly into North London faster."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={airportFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="airport-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">INTERNATIONAL TRAVEL GUIDE</span>
+        <span class="badge">LONDON AIRPORT TRANSFERS</span>
+      </div>
+      <h1 class="airport-title">How to Get From London Airports to Alexandra Palace Darts</h1>
+      <p class="airport-subtitle">
+        Step-by-step public transport navigation from Heathrow, Gatwick, Stansted, and Luton directly to Alexandra Palace. Train lines, journey times, contactless payment, and essential luggage storage advice.
+      </p>
+      <div class="hero-meta">
+        <span class="meta-item">✈️ Airports: LHR, LGW, STN, LTN</span>
+        <span class="meta-item">🚆 Direct Lines: Thameslink & Piccadilly</span>
+        <span class="meta-item">🎒 Luggage: Turnstile 30x20x10cm Cap</span>
+        <span class="meta-item">💳 Payment: Contactless Card Accepted</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container content-container">
+    <div class="airport-layout">
+      <!-- Main Content Column -->
+      <article class="airport-main">
+
+        <!-- LUGGAGE CRITICAL WARNING -->
+        <section class="airport-warning-card">
+          <div class="warning-badge">
+            <span class="badge-icon">🚨</span>
+            <span>CRITICAL ARRIVAL NOTICE: SUITCASE RESTRICTION</span>
+          </div>
+          <h2>Do Not Travel Directly to Ally Pally with Flight Luggage</h2>
+          <p>
+            If you are flying into London on match day, <strong>do not head directly to Alexandra Palace with suitcases, roller bags, or large travel rucksacks</strong>.
+          </p>
+          <p>
+            Alexandra Palace enforces a strict venue security restriction: only <strong>one small bag per person (maximum dimensions 30cm x 20cm x 10cm)</strong> is permitted inside the Great Hall turnstiles. Suitcases, rolling bags, and large travel backpacks cannot enter the arena. While general venue concerts provide an external £10 bag drop at East Court, event-specific availability for the World Darts Championship should be confirmed before travel, making railway station left luggage the most reliable strategy.
+          </p>
+          <p class="warning-action-text">
+            <strong>Plan your journey:</strong> Drop your luggage at your hotel first, or utilize verified manned left-luggage facilities at major London terminals (such as King's Cross St. Pancras or Liverpool Street) before traveling up the hill.
+          </p>
+        </section>
+
+        <AdSlot position="top" client="ca-pub-placeholder" slotId="airports-top-slot" />
+
+        <!-- MASTER COMPARISON MATRIX -->
+        <section class="airport-section">
+          <h2>London Airport Transfer Quick Reference</h2>
+          <p>
+            London is served by four major international airports. Each connects to North London via different rail networks:
+          </p>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Airport</th>
+                  <th>Primary Route</th>
+                  <th>Key Interchange</th>
+                  <th>Total Journey Time</th>
+                  <th>Changes</th>
+                  <th>Luggage Ease</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Heathrow (LHR)</strong></td>
+                  <td>Piccadilly Line (Direct)</td>
+                  <td>Wood Green Station</td>
+                  <td>Approx. 70–75 mins</td>
+                  <td>0 (Direct Tube)</td>
+                  <td>⭐⭐⭐ (Single train; busy at rush hour)</td>
+                </tr>
+                <tr>
+                  <td><strong>Gatwick (LGW)</strong></td>
+                  <td>Thameslink Train</td>
+                  <td>Finsbury Park Station</td>
+                  <td>Approx. 50–55 mins</td>
+                  <td>0 to North London</td>
+                  <td>⭐⭐⭐⭐⭐ (Overground rail with luggage racks)</td>
+                </tr>
+                <tr>
+                  <td><strong>Stansted (STN)</strong></td>
+                  <td>Stansted Express</td>
+                  <td>Tottenham Hale Station</td>
+                  <td>Approx. 55–65 mins</td>
+                  <td>1 (Train + Tube/Bus)</td>
+                  <td>⭐⭐⭐⭐ (Dedicated express train racks)</td>
+                </tr>
+                <tr>
+                  <td><strong>Luton (LTN)</strong></td>
+                  <td>Luton DART + Thameslink</td>
+                  <td>Finsbury Park Station</td>
+                  <td>Approx. 50–60 mins</td>
+                  <td>1 (DART transfer)</td>
+                  <td>⭐⭐⭐⭐ (Modern mainline commuter train)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- HEATHROW DETAILS -->
+        <section class="airport-section">
+          <h2>1. London Heathrow Airport (LHR) to Alexandra Palace</h2>
+          <p>
+            Located west of London, Heathrow offers the simplest, single-train transfer directly to the Ally Pally vicinity:
+          </p>
+
+          <div class="card route-card">
+            <h3>The Best Route: Direct Piccadilly Line (Zero Changes)</h3>
+            <ol class="route-steps">
+              <li>
+                <strong>Board at Heathrow:</strong> Follow Underground signs from Terminals 2 & 3, Terminal 4, or Terminal 5. Board any eastbound <strong>Piccadilly Line</strong> train heading towards Cockfosters.
+              </li>
+              <li>
+                <strong>Ride to Wood Green:</strong> Stay on the train through Central London (approx. 70 minutes) and alight directly at <strong>Wood Green Underground Station</strong> (Zone 3).
+              </li>
+              <li>
+                <strong>Final Mile Connection:</strong>
+                <ul>
+                  <li>Take the <strong>TfL W3 bus</strong> from bus stop A outside Wood Green Station directly to the Alexandra Palace Palm Court entrance (approx. 8 mins).</li>
+                  <li>Alternatively, walk uphill along Station Road and through Alexandra Park (approx. 20–25 mins).</li>
+                </ul>
+              </li>
+            </ol>
+            <div class="route-meta-strip">
+              <span><strong>Fare:</strong> TfL Zone 6 to 3 Contactless</span>
+              <span><strong>Night Tube:</strong> Runs 24h on Friday & Saturday nights</span>
+            </div>
+          </div>
+
+          <div class="callout callout-info">
+            <h4>Is the Heathrow Express Worth Taking?</h4>
+            <p>
+              The Heathrow Express takes just 15 minutes from the airport, but it terminates at <strong>London Paddington</strong> in West London. From Paddington, you must navigate busy Tube interchanges (Bakerloo or Circle Line to King's Cross, then Piccadilly Line to Wood Green). The direct Piccadilly Line takes slightly longer on paper but eliminates stressful Central London luggage transfers and costs substantially less.
+            </p>
+          </div>
+        </section>
+
+        <!-- GATWICK DETAILS -->
+        <section class="airport-section">
+          <h2>2. London Gatwick Airport (LGW) to Alexandra Palace</h2>
+          <p>
+            Gatwick lies south of London in West Sussex, but offers arguably the fastest and most comfortable rail link directly to North London via the Thameslink rail corridor:
+          </p>
+
+          <div class="card route-card">
+            <h3>The Best Route: Direct Thameslink to Finsbury Park</h3>
+            <ol class="route-steps">
+              <li>
+                <strong>Board at Gatwick:</strong> Head to the South Terminal railway station (connected to North Terminal by free 2-minute monorail).
+              </li>
+              <li>
+                <strong>Take Thameslink Northbound:</strong> Board a northbound Thameslink train scheduled toward Cambridge, Bedford, or Peterborough that lists <strong>Finsbury Park</strong> as a calling point. Trains depart approximately every 15 minutes.
+              </li>
+              <li>
+                <strong>Alight at Finsbury Park:</strong> The journey takes approximately 50–55 minutes, passing directly beneath Central London via London Bridge, Blackfriars, Farringdon, and St Pancras International without requiring an Underground interchange.
+              </li>
+              <li>
+                <strong>Final Mile Connection:</strong>
+                <ul>
+                  <li>Board the <strong>TfL W3 bus</strong> at Finsbury Park bus station, which takes you directly to Palm Court.</li>
+                  <li>Or take a <strong>Great Northern train</strong> from Finsbury Park 2 stops north to <strong>Alexandra Palace National Rail Station</strong> (approx. 8–10 mins).</li>
+                  <li>Or board the northbound <strong>Piccadilly Line</strong> for 2 stops to Wood Green Station (approx. 4 mins).</li>
+                </ul>
+              </li>
+            </ol>
+            <div class="route-meta-strip">
+              <span><strong>Fare:</strong> Contactless / National Rail accepted</span>
+              <span><strong>Luggage:</strong> Dedicated overhead and floor luggage bays</span>
+            </div>
+          </div>
+
+          <div class="callout callout-info">
+            <h4>Why Thameslink Is Recommended Over Gatwick Express</h4>
+            <p>
+              While the Gatwick Express operates non-stop to London Victoria, Victoria is situated in South-West London. Reaching Alexandra Palace from Victoria requires an additional Tube journey across town on the Victoria Line with flight luggage. By contrast, direct Thameslink services run straight through to Finsbury Park in North London, avoiding Central London tube transfers and offering standard National Rail fares.
+            </p>
+          </div>
+        </section>
+
+        <AdSlot position="mid" client="ca-pub-placeholder" slotId="airports-mid-slot" />
+
+        <!-- STANSTED DETAILS -->
+        <section class="airport-section">
+          <h2>3. London Stansted Airport (STN) to Alexandra Palace</h2>
+          <p>
+            Stansted is located northeast of London in Essex, making it geographically close to North London. It connects efficiently via rail:
+          </p>
+
+          <div class="card route-card">
+            <h3>The Best Route: Stansted Express to Tottenham Hale</h3>
+            <ol class="route-steps">
+              <li>
+                <strong>Board Stansted Express:</strong> Walk to the rail terminal directly below the airport passenger terminal.
+              </li>
+              <li>
+                <strong>Alight at Tottenham Hale Station:</strong> Trains depart every 15 minutes. The journey to Tottenham Hale takes approximately <strong>35–38 minutes</strong>. Do not stay on the train to Liverpool Street.
+              </li>
+              <li>
+                <strong>Transfer to Alexandra Palace:</strong>
+                <ul>
+                  <li><strong>Fastest (Taxi / Rideshare):</strong> A taxi or rideshare from Tottenham Hale to Alexandra Palace (approx. 4.5 miles) typically takes 20 to 30 minutes depending on local North London traffic conditions.</li>
+                  <li><strong>Public Transit:</strong> Take the <strong>Victoria Line</strong> southbound 2 stops to <strong>Finsbury Park</strong> (approx. 5 mins), then board the direct W3 bus or Great Northern train.</li>
+                </ul>
+              </li>
+            </ol>
+            <div class="route-meta-strip">
+              <span><strong>Fare:</strong> Stansted Express e-ticket or Contactless</span>
+              <span><strong>Coach Alternative:</strong> National Express to Stratford (approx. 50 mins, subject to traffic)</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- LUTON DETAILS -->
+        <section class="airport-section">
+          <h2>4. London Luton Airport (LTN) to Alexandra Palace</h2>
+          <p>
+            Luton Airport lies north-west of London in Bedfordshire, with strong direct rail links into North London via the Thameslink mainline:
+          </p>
+
+          <div class="card route-card">
+            <h3>The Best Route: Luton DART + Thameslink to Finsbury Park</h3>
+            <ol class="route-steps">
+              <li>
+                <strong>Luton DART Shuttle:</strong> Take the automated cable shuttle directly from the terminal building to <strong>Luton Airport Parkway Station</strong> (approx. 4 minutes).
+              </li>
+              <li>
+                <strong>Thameslink Southbound:</strong> Board any southbound Thameslink train calling at <strong>Finsbury Park</strong> or Central London (approx. 35–42 minutes).
+              </li>
+              <li>
+                <strong>Final Mile Connection:</strong> At Finsbury Park, transfer directly to the W3 bus to Palm Court or Great Northern rail to Alexandra Palace Station.
+              </li>
+            </ol>
+            <div class="route-meta-strip">
+              <span><strong>Fare:</strong> Combined Luton DART + Thameslink Contactless</span>
+              <span><strong>Total Transit Time:</strong> Approx. 50–60 minutes door-to-door</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- LUGGAGE STRATEGY -->
+        <section class="airport-section">
+          <h2>Luggage Strategy: Where to Store Suitcases in London</h2>
+          <p>
+            Because flight bags over 30cm x 20cm x 10cm cannot enter Alexandra Palace, international spectators should utilize secure left-luggage facilities before heading up to the darts:
+          </p>
+
+          <div class="storage-options-grid">
+            <div class="card storage-card">
+              <h3>King's Cross St. Pancras</h3>
+              <p>
+                <strong>Ideal for:</strong> Heathrow & Gatwick arrivals staying in Central London hotels.
+              </p>
+              <p>
+                Manned Excess Baggage Company facility located inside the station concourse. From King's Cross, Wood Green is a direct 14-minute ride on the Piccadilly Line.
+              </p>
+            </div>
+
+            <div class="card storage-card">
+              <h3>Liverpool Street Station</h3>
+              <p>
+                <strong>Ideal for:</strong> Stansted Express arrivals.
+              </p>
+              <p>
+                Secure manned left-luggage on the main rail concourse. From Liverpool Street, take the Circle / Metropolitan Line to Moorgate for direct Great Northern trains to Alexandra Palace Station.
+              </p>
+            </div>
+
+            <div class="card storage-card">
+              <h3>Finsbury Park / App Networks</h3>
+              <p>
+                <strong>Ideal for:</strong> Gatwick & Luton Thameslink passengers.
+              </p>
+              <p>
+                Various verified retail storage points (via apps like Stasher or Bounce) operate around Finsbury Park Station, allowing bag drops directly before boarding the W3 bus.
+              </p>
+            </div>
+          </div>
+
+          <p style="margin-top: 1rem;">
+            For full security regulations, prohibited items, and venue bag checks, consult our <a href="/venue/security-bag-policy/">Security & Bag Policy Guide</a>.
+          </p>
+        </section>
+
+        <!-- PAYMENT & TICKETING -->
+        <section class="airport-section">
+          <h2>Paying for Transit: Contactless vs Oyster Cards</h2>
+          <p>
+            Navigating London's transport network from airports no longer requires queuing for paper tickets:
+          </p>
+          <ul>
+            <li><strong>Contactless Cards & Devices:</strong> Standard contactless debit cards, credit cards, Apple Pay, and Google Pay are accepted across all TfL Underground trains, buses, the Thameslink network, and the Luton DART. Simply tap in at the start of your journey and tap out at your destination station with the same payment device.</li>
+            <li><strong>Oyster Cards:</strong> Valid across the same network, but purchasing and topping up a physical Oyster card is unnecessary if you have a working contactless bank card or smartphone.</li>
+            <li><strong>Stansted Express:</strong> While Contactless is accepted on the Stansted Express, booking advance online tickets directly via the operator's website frequently yields lower fares for pairs and groups.</li>
+          </ul>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="airport-section faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+            {airportFaqSchema.mainEntity.map((item) => (
+              <div class="faq-item">
+                <h3>{item.name}</h3>
+                <p>{item.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </article>
+
+      <!-- Sidebar Column -->
+      <aside class="airport-sidebar">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Travel & Venue Hubs</h3>
+          <ul class="widget-links">
+            <li><a href="/travel/tube-train-routes/">🚇 Detailed Tube & Train Routes</a></li>
+            <li><a href="/travel/parking-guide/">🅿️ Alexandra Palace Parking Guide</a></li>
+            <li><a href="/travel/night-travel-london/">🌙 Late-Night Transport & Egress</a></li>
+            <li><a href="/venue/security-bag-policy/">🎒 Security & Bag Restrictions</a></li>
+            <li><a href="/hotels/">🏨 Hotels Near Alexandra Palace</a></li>
+            <li><a href="/hotels/budget-options/">🛌 Budget London Hotels</a></li>
+            <li><a href="/venue/food-drink-bars/">🍻 Food, Drinks & Bar Guide</a></li>
+          </ul>
+        </div>
+
+        <AdSlot position="sidebar" client="ca-pub-placeholder" slotId="airports-sidebar-ad" />
+
+        <div class="sidebar-widget venue-warning-widget">
+          <h3 class="widget-title">🎒 Turnstile Bag Limit</h3>
+          <p class="limit-highlight">Max 30cm x 20cm x 10cm</p>
+          <p class="limit-desc">
+            Suitcases and travel rucksacks will be rejected at Palm Court security turnstiles. Drop luggage at railway stations before arrival.
+          </p>
+          <a href="/venue/security-bag-policy/" class="widget-btn">Read Full Bag Policy →</a>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Official Airport Rail Portals</h3>
+          <ul class="widget-links">
+            <li><a href="https://tfl.gov.uk" target="_blank" rel="noopener noreferrer">TfL Journey Planner ↗</a></li>
+            <li><a href="https://www.thameslinkrailway.com" target="_blank" rel="noopener noreferrer">Thameslink Railway ↗</a></li>
+            <li><a href="https://www.stanstedexpress.com" target="_blank" rel="noopener noreferrer">Stansted Express ↗</a></li>
+            <li><a href="https://www.nationalrail.co.uk" target="_blank" rel="noopener noreferrer">National Rail Enquiries ↗</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .airport-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #0284c7;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .airport-title {
+    font-size: 2.35rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .airport-subtitle {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 840px;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.88rem;
+    color: #94a3b8;
+    padding-top: 0.5rem;
+    border-top: 1px solid #334155;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .content-container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .airport-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2.5rem;
+  }
+
+  .airport-main {
+    min-width: 0;
+  }
+
+  /* Warning Box */
+  .airport-warning-card {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 4px solid #dc2626;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .warning-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #991b1b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .airport-warning-card h2 {
+    font-size: 1.35rem;
+    color: #991b1b;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .airport-warning-card p {
+    color: #7f1d1d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .warning-action-text {
+    background: #ffffff;
+    border: 1px solid #fee2e2;
+    border-radius: 6px;
+    padding: 0.85rem;
+    margin-bottom: 0 !important;
+    color: #991b1b !important;
+  }
+
+  /* Section Styles */
+  .airport-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .airport-section h2 {
+    font-size: 1.65rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .route-card {
+    padding: 1.5rem;
+    margin: 1.25rem 0;
+  }
+
+  .route-card h3 {
+    font-size: 1.25rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .route-steps {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .route-steps li {
+    margin-bottom: 0.85rem;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .route-steps li ul {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .route-meta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 0.75rem 1rem;
+    margin: 1.25rem -1.5rem -1.5rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 0.85rem;
+    color: #475569;
+  }
+
+  /* Callouts */
+  .callout {
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .callout-info {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+  }
+
+  .callout-info h4 {
+    color: #166534;
+    margin: 0 0 0.5rem;
+  }
+
+  .callout-info p {
+    color: #14532d;
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .callout-warning {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 4px solid #f59e0b;
+  }
+
+  .callout-warning h4 {
+    color: #92400e;
+    margin: 0 0 0.5rem;
+  }
+
+  .callout-warning p {
+    color: #78350f;
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  /* Storage Grid */
+  .storage-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .storage-card {
+    padding: 1.25rem;
+  }
+
+  .storage-card h3 {
+    font-size: 1.15rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .storage-card p {
+    font-size: 0.88rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Table styling */
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .data-table th {
+    background: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: top;
+  }
+
+  .data-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* FAQ Accordion */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.55;
+  }
+
+  /* Sidebar */
+  .airport-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin: 0 0 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+  }
+
+  .widget-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-links a {
+    color: #059669;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .widget-links a:hover {
+    text-decoration: underline;
+  }
+
+  .venue-warning-widget {
+    background: #fef2f2;
+    border: 1px solid #fee2e2;
+  }
+
+  .venue-warning-widget .widget-title {
+    color: #991b1b;
+  }
+
+  .limit-highlight {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #dc2626;
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .limit-desc {
+    font-size: 0.85rem;
+    color: #7f1d1d;
+    line-height: 1.45;
+    margin-bottom: 0.85rem;
+  }
+
+  .widget-btn {
+    display: inline-block;
+    background: #dc2626;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+  }
+
+  .widget-btn:hover {
+    background: #b91c1c;
+  }
+
+  @media (max-width: 900px) {
+    .airport-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

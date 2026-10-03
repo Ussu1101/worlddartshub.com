@@ -1,0 +1,819 @@
+---
+// src/pages/travel/parking-guide.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Alexandra Palace Darts Parking: Car Parks, ANPR & CPZ Guide";
+const pageDescription = "Official parking guide for Alexandra Palace PDC World Darts. East Court ANPR barrier-free parking, Parkbuddy app, Blue Badge validation, and Haringey CPZ rules.";
+
+const breadcrumbItems = [
+  { name: 'Travel Guide', url: '/travel/' },
+  { name: 'Parking Guide' }
+];
+
+const parkingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Alexandra Palace PDC World Darts Parking FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you park at Alexandra Palace for the World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Alexandra Palace operates on-site car parking, primarily in the East Court Car Park and Grove Car Park. However, on-site spaces operate on a first-come, first-served basis and fill extremely quickly during major events. Driving is strictly discouraged unless you have accessibility requirements or arrive well before session doors open."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the ANPR parking payment system work at Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alexandra Palace operates a cashless, barrier-free system managed by Automatic Number Plate Recognition (ANPR) cameras in partnership with Euro Car Parks. Drivers do not take a ticket upon arrival. You can pay via the ECP Parkbuddy mobile app, at the on-site cashless payment terminals before leaving, or online within 24 hours of departing the car park."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Blue Badge parking free at Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Blue Badge holders park free of charge in dedicated accessible bays in the East Court car park. However, drivers must validate their exemption by scanning the barcode on the back of their physical Blue Badge at one of the on-site payment machines before exiting, or register in advance via venue customer services. Failure to validate will trigger an automated Parking Charge Notice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you park on residential streets near Alexandra Palace on event days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Surrounding residential roads fall under the Haringey Council Alexandra Palace Event Day Controlled Parking Zone (CPZ). On event days, on-street parking is restricted to local resident permit holders only. Civil Enforcement Officers actively patrol the area, and unauthorized vehicles face immediate penalty charge notices (PCNs) or towing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best park-and-tube alternative for Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For drivers arriving via the M25, A1(M), or M1, parking at outer Piccadilly Line station car parks such as Cockfosters or Arnos Grove is the most reliable option. Both stations lie outside the Haringey Event Day CPZ, offer dedicated station parking facilities, and provide a direct 10 to 15-minute tube connection straight to Wood Green Station."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={parkingFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="parking-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">VENUE PARKING & ACCESS</span>
+        <span class="badge">ANPR CASHLESS SYSTEM</span>
+      </div>
+      <h1 class="parking-title">Alexandra Palace Parking for the World Darts Championship</h1>
+      <p class="parking-subtitle">
+        Everything motorists need to know about driving to Ally Pally: on-site East Court parking, barrier-free ANPR payment rules, Blue Badge validation, and avoiding Haringey Council event-day fines.
+      </p>
+      <div class="hero-meta">
+        <span class="meta-item">🅿️ On-Site: East Court & Grove</span>
+        <span class="meta-item">📱 Payment: ECP Parkbuddy App / 24h Portal</span>
+        <span class="meta-item">♿ Blue Badge: Free (Kiosk Scan Required)</span>
+        <span class="meta-item">⚠️ Local Streets: Strict Haringey Event CPZ</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container content-container">
+    <div class="parking-layout">
+      <!-- Main Content Column -->
+      <article class="parking-main">
+
+        <!-- DIRECT ADVISORY CALLOUT -->
+        <section class="parking-advisory">
+          <div class="advisory-badge">
+            <span class="badge-icon">⚠️</span>
+            <span>CRITICAL MOTORIST ADVISORY</span>
+          </div>
+          <h2>Driving to the Darts: Key Rules Before Setting Off</h2>
+          <p>
+            While Alexandra Palace maintains official car parking facilities on-site, <strong>public transport remains the venue's and PDC's officially recommended mode of arrival</strong>. With over 5,000 spectators attending each session in the Great Hall, on-site parking fills rapidly, surrounding residential streets operate strict resident-only permits, and vehicle egress along Alexandra Palace Way post-session frequently experiences heavy congestion.
+          </p>
+          <div class="advisory-summary-grid">
+            <div class="summary-point">
+              <strong>On-Site ANPR:</strong> Barrier-free cameras record entry and exit. Pay on-site or online within 24 hours.
+            </div>
+            <div class="summary-point">
+              <strong>No Street Parking:</strong> Surrounding roads are strictly permit-only under the Haringey Event Day CPZ.
+            </div>
+            <div class="summary-point">
+              <strong>Blue Badge Validation:</strong> Free accessible parking requires scanning your physical badge barcode at a kiosk.
+            </div>
+          </div>
+        </section>
+
+        <AdSlot position="top" client="ca-pub-placeholder" slotId="parking-top-slot" />
+
+        <!-- SECTION 1: OFFICIAL ON-SITE PARKING -->
+        <section class="parking-section">
+          <h2>Official Alexandra Palace On-Site Parking</h2>
+          <p>
+            Alexandra Palace provides dedicated car parks within the park grounds, operated in partnership with Euro Car Parks (ECP):
+          </p>
+
+          <div class="car-park-cards">
+            <div class="card park-card">
+              <div class="card-header-flex">
+                <h3>East Court Car Park</h3>
+                <span class="badge badge-accent">PRIMARY LOT</span>
+              </div>
+              <p>
+                Located directly adjacent to the East Court and the iconic Palm Court entrance. This is the closest and most convenient parking area for the Great Hall arena.
+              </p>
+              <ul class="park-specs">
+                <li><strong>Access:</strong> Via Alexandra Palace Way (Muswell Hill or Wood Green entrances)</li>
+                <li><strong>Proximity:</strong> 2–3 minute level walk to main Palm Court security turnstiles</li>
+                <li><strong>Features:</strong> Dedicated accessible bays, EV charging points, cashless payment kiosks</li>
+              </ul>
+            </div>
+
+            <div class="card park-card">
+              <div class="card-header-flex">
+                <h3>The Grove Car Park</h3>
+                <span class="badge">OVERFLOW / SECONDARY</span>
+              </div>
+              <p>
+                Situated on the western lower slopes of the park near Muswell Hill. Often utilized as secondary parking when East Court reaches capacity during major exhibitions.
+              </p>
+              <ul class="park-specs">
+                <li><strong>Access:</strong> Off Alexandra Palace Way / The Grove</li>
+                <li><strong>Proximity:</strong> 8–10 minute uphill walk through the park to the Great Hall entrance</li>
+                <li><strong>Features:</strong> Barrier-free ANPR cameras, well-lit pathways</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout callout-info">
+            <h4>First-Come, First-Served Operation</h4>
+            <p>
+              For standard event sessions, on-site parking spaces are allocated on a strictly first-come, first-served basis. Pre-booking is generally not available for standard general parking unless specifically announced for high-capacity dates. Arriving at least 60 to 90 minutes before session doors open is essential if you intend to park on-site.
+            </p>
+          </div>
+        </section>
+
+        <!-- SECTION 2: HOW THE ANPR SYSTEM & PAYMENT WORKS -->
+        <section class="parking-section">
+          <h2>How the Cashless ANPR System Works</h2>
+          <p>
+            Alexandra Palace operates an automated barrier-free parking regime. Automatic Number Plate Recognition (ANPR) cameras capture vehicle registrations at entry and exit points along Alexandra Palace Way.
+          </p>
+
+          <ol class="step-guide">
+            <li>
+              <strong>Arrival & Entry:</strong> Drive straight into the car park without stopping at a physical barrier. ANPR cameras automatically log your vehicle's entry timestamp.
+            </li>
+            <li>
+              <strong>During Your Visit:</strong> Park in any designated marked bay. Do not park on grass verges, delivery roadways, or emergency vehicle access routes.
+            </li>
+            <li>
+              <strong>Payment Timing (The 24-Hour Rule):</strong> You do not have to queue at machines upon arrival. You can pay:
+              <ul>
+                <li>At on-site cashless touch-screen payment kiosks before returning to your car.</li>
+                <li>Via the official <strong>ECP Parkbuddy mobile app</strong> (Location Code available on venue signage).</li>
+                <li>Online via the Euro Car Parks portal within <strong>24 hours of departing</strong> the car park.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Departure:</strong> Simply drive out. As long as payment covering your total dwell time is registered within the 24-hour window, no Parking Charge Notice will be generated.
+            </li>
+          </ol>
+
+          <div class="callout callout-warning">
+            <h4>Important Tariff Notice</h4>
+            <p>
+              Standard hourly rates apply for everyday park visitors (typically ranging from £1.50 per hour up to £9.00 for full-day stays), but major event tariffs and operational terms can vary. <strong>Always confirm current event-day pricing on official venue signage and the Alexandra Palace visitor website prior to departure.</strong>
+            </p>
+          </div>
+        </section>
+
+        <!-- SECTION 3: ACCESSIBLE & BLUE BADGE PARKING -->
+        <section class="parking-section">
+          <h2>Accessible Parking & Blue Badge Validation</h2>
+          <p>
+            Alexandra Palace is committed to providing accessible visitor experiences. Blue Badge holders are entitled to free parking on-site, provided they follow the mandatory validation protocol.
+          </p>
+
+          <div class="card accessible-highlight-card">
+            <h3>Mandatory Blue Badge Machine Scan</h3>
+            <p>
+              Because the barrier-free system relies on automated cameras, the ANPR cameras cannot detect whether a vehicle displays a physical Blue Badge on its dashboard. 
+            </p>
+            <p>
+              <strong>To claim free parking:</strong> You must take your physical Blue Badge to one of the on-site payment kiosks before leaving and <em>scan the barcode located on the back of the badge</em>. Alternatively, you can validate your registration at the Alexandra Palace Visitor Services desk in the East Court.
+            </p>
+            <p class="micro-warning">
+              <em>Failure to validate your Blue Badge at the machine will result in an automated PCN sent to the vehicle's registered keeper.</em>
+            </p>
+          </div>
+
+          <p style="margin-top: 1rem;">
+            Dedicated Blue Badge spaces are located at the front of East Court Car Park, offering dropped-kerb level access directly toward the Palm Court security entrance. For full details on arena accessibility, companion seats, and venue facilities, consult our <a href="/venue/great-hall-seating-plan/">Great Hall Seating & Accessibility Guide</a>.
+          </p>
+        </section>
+
+        <AdSlot position="mid" client="ca-pub-placeholder" slotId="parking-mid-slot" />
+
+        <!-- SECTION 4: HARINGEY COUNCIL CPZ RESTRICTIONS -->
+        <section class="parking-section">
+          <h2>Haringey Event-Day Controlled Parking Zone (CPZ)</h2>
+          <p>
+            One of the most frequent mistakes made by first-time darts spectators is attempting to find free on-street parking along the residential streets surrounding Alexandra Park.
+          </p>
+
+          <div class="cpz-warning-box">
+            <div class="cpz-icon">🚫</div>
+            <div>
+              <h3>Strict Resident Permit Enforcement</h3>
+              <p>
+                The London Borough of Haringey operates the <strong>Alexandra Palace Event Day CPZ</strong> across the surrounding neighborhoods of Wood Green, Hornsey, and Muswell Hill. 
+              </p>
+              <p>
+                On published event days, parking on public roads within the zone is strictly restricted to residents holding valid borough permits between designated operational hours (often extending until 20:30 or 22:00 on major event dates).
+              </p>
+            </div>
+          </div>
+
+          <p>
+            Civil Enforcement Officers patrol the perimeter intensively during World Darts Championship sessions. Parking on yellow lines, dropped kerbs, or permit-holder bays without a registered digital visitor permit will result in an immediate <strong>Penalty Charge Notice (PCN)</strong> of up to £130 (discounted to £65 if paid within 14 days), and obstructing vehicles risk removal by council tow trucks.
+          </p>
+        </section>
+
+        <!-- SECTION 5: ALTERNATIVE PARK-AND-TUBE OPTIONS -->
+        <section class="parking-section">
+          <h2>Smarter Driving Alternatives: Park-and-Tube</h2>
+          <p>
+            If you are driving to London from outside the M25 or via major trunk roads (M1, A1(M), M11), driving directly up Alexandra Palace hill is rarely the quickest or least stressful approach. Instead, consider parking at an outer Underground station car park:
+          </p>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Station Car Park</th>
+                  <th>Transit Line</th>
+                  <th>Zone</th>
+                  <th>Tube Time to Wood Green</th>
+                  <th>Why It Works</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Cockfosters Station</strong></td>
+                  <td>Piccadilly Line</td>
+                  <td>Zone 5</td>
+                  <td>Approx. 15 mins</td>
+                  <td>Large TfL car park off M25 J24 / A111. Directly on the Piccadilly Line; bypasses North London congestion completely.</td>
+                </tr>
+                <tr>
+                  <td><strong>Arnos Grove Station</strong></td>
+                  <td>Piccadilly Line</td>
+                  <td>Zone 4</td>
+                  <td>Approx. 6 mins</td>
+                  <td>Convenient off the A406 North Circular. Fast 3-stop direct ride to Wood Green Station.</td>
+                </tr>
+                <tr>
+                  <td><strong>Stanmore Station</strong></td>
+                  <td>Jubilee Line</td>
+                  <td>Zone 5</td>
+                  <td>Approx. 45 mins (via Green Park)</td>
+                  <td>Ideal for motorists arriving via M1 (J4). Large car park; requires interchange in central London.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="margin-top: 1rem;">
+            From Wood Green Station, you can either take the direct <a href="/travel/tube-train-routes/">TfL W3 bus</a> straight to the Palm Court entrance in 8 minutes or enjoy a brisk 20-minute uphill walk through the park.
+          </p>
+        </section>
+
+        <!-- SECTION 6: DRIVING VS PUBLIC TRANSPORT COMPARISON -->
+        <section class="parking-section">
+          <h2>Driving vs Public Transport: Decision Framework</h2>
+          <p>
+            Use this practical attendee decision matrix to determine whether driving or public transport best fits your party:
+          </p>
+
+          <div class="table-responsive">
+            <table class="data-table decision-table">
+              <thead>
+                <tr>
+                  <th>Your Situation</th>
+                  <th>Recommended Mode</th>
+                  <th>Primary Rationale</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Blue Badge Holder / Mobility Needs</strong></td>
+                  <td>🚗 Drive to East Court</td>
+                  <td>Dedicated accessible bays adjacent to Palm Court entrance with step-free building access.</td>
+                </tr>
+                <tr>
+                  <td><strong>Attending an Afternoon Session (12:30 GMT)</strong></td>
+                  <td>🚗 Driving or 🚇 Transit</td>
+                  <td>Daylight driving, less intense post-session egress gridlock, manageable departure times.</td>
+                </tr>
+                <tr>
+                  <td><strong>Attending an Evening Session (19:00 GMT)</strong></td>
+                  <td>🚇 Public Transport</td>
+                  <td>Matches conclude late (23:00+). Driving involves alcohol restrictions and substantial post-session vehicle congestion exiting the park.</td>
+                </tr>
+                <tr>
+                  <td><strong>Staying in Central London Hotel</strong></td>
+                  <td>🚇 Piccadilly Line</td>
+                  <td>Fast 14-min tube ride from King's Cross to Wood Green. 24h Night Tube runs on Friday/Saturday nights.</td>
+                </tr>
+                <tr>
+                  <td><strong>Traveling from Abroad / UK Airports</strong></td>
+                  <td>🚆 Rail / Airport Transit</td>
+                  <td>Flight luggage cannot enter the arena; use direct <a href="/travel/airports-to-alexandra-palace/">airport transit routes</a> and station lockers.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 7: POST-EVENT ROAD EGRESS -->
+        <section class="parking-section">
+          <h2>Post-Event Traffic Egress: Leaving Alexandra Palace Way</h2>
+          <p>
+            Spectators who choose to drive must anticipate the departure reality after an evening session. Alexandra Palace Way is a single-carriageway park road with mini-roundabouts at each boundary:
+          </p>
+          <ul>
+            <li><strong>Pedestrian Crowds:</strong> Thousands of fans walk downhill on the roadways toward Wood Green and Alexandra Palace Station, requiring vehicles to move at walking pace.</li>
+            <li><strong>Traffic Light Delays:</strong> Egress junctions onto Priory Road (Muswell Hill side) and Station Road (Wood Green side) experience heavy queues, with attendee delays often exceeding 30 minutes during peak session egress.</li>
+            <li><strong>Rideshare Congestion:</strong> Ubers, Bolts, and private hire vehicles attempting to pick up fans along Alexandra Palace Way exacerbate bottleneck points. Consult our <a href="/travel/night-travel-london/">Night Travel & Egress Guide</a> for smart walking escape routes.</li>
+          </ul>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="parking-section faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+            {parkingFaqSchema.mainEntity.map((item) => (
+              <div class="faq-item">
+                <h3>{item.name}</h3>
+                <p>{item.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </article>
+
+      <!-- Sidebar Column -->
+      <aside class="parking-sidebar">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Travel & Venue Hubs</h3>
+          <ul class="widget-links">
+            <li><a href="/travel/tube-train-routes/">🚇 Detailed Tube & Train Routes</a></li>
+            <li><a href="/travel/night-travel-london/">🌙 Late-Night Transport & Egress</a></li>
+            <li><a href="/travel/airports-to-alexandra-palace/">✈️ Airport-to-Venue Transit</a></li>
+            <li><a href="/venue/security-bag-policy/">🎒 Bag Size & Security Rules</a></li>
+            <li><a href="/venue/great-hall-seating-plan/">🪑 Great Hall Seating & Views</a></li>
+            <li><a href="/hotels/">🏨 Hotels Near Alexandra Palace</a></li>
+            <li><a href="/fan-culture/first-timer-guide/">🎯 First-Timer Survival Guide</a></li>
+          </ul>
+        </div>
+
+        <AdSlot position="sidebar" client="ca-pub-placeholder" slotId="parking-sidebar-ad" />
+
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Sat Nav / GPS Destination</h3>
+          <p class="satnav-address">
+            <strong>Alexandra Palace Way</strong><br/>
+            London, N22 7AY
+          </p>
+          <p class="satnav-note">
+            Main vehicle access gates are located off Muswell Hill (A109 / Priory Road) and Wood Green (Station Road / High Road).
+          </p>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Official External Portals</h3>
+          <ul class="widget-links">
+            <li><a href="https://www.alexandrapalace.com/visitor-information/get-here/" target="_blank" rel="noopener noreferrer">Alexandra Palace Visitor Info ↗</a></li>
+            <li><a href="https://www.haringey.gov.uk/parking-roads-and-travel/parking" target="_blank" rel="noopener noreferrer">Haringey Council Parking ↗</a></li>
+            <li><a href="https://tfl.gov.uk" target="_blank" rel="noopener noreferrer">TfL Live Travel Status ↗</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .parking-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .parking-title {
+    font-size: 2.35rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .parking-subtitle {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 840px;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.88rem;
+    color: #94a3b8;
+    padding-top: 0.5rem;
+    border-top: 1px solid #334155;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .content-container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .parking-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2.5rem;
+  }
+
+  .parking-main {
+    min-width: 0;
+  }
+
+  /* Advisory Box */
+  .parking-advisory {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 4px solid #f59e0b;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .advisory-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #92400e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .parking-advisory h2 {
+    font-size: 1.35rem;
+    color: #78350f;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .parking-advisory p {
+    color: #451a03;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .advisory-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .summary-point {
+    background: #ffffff;
+    border: 1px solid #fef3c7;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 0.85rem;
+    color: #78350f;
+    line-height: 1.45;
+  }
+
+  /* Section Styles */
+  .parking-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .parking-section h2 {
+    font-size: 1.65rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .car-park-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .park-card {
+    padding: 1.25rem;
+  }
+
+  .card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+
+  .park-card h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .park-specs {
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+    font-size: 0.88rem;
+    color: #475569;
+  }
+
+  .step-guide {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .step-guide li {
+    margin-bottom: 0.85rem;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .step-guide li ul {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Callouts */
+  .callout {
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .callout-info {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+  }
+
+  .callout-info h4 {
+    color: #166534;
+    margin: 0 0 0.5rem;
+  }
+
+  .callout-info p {
+    color: #14532d;
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .callout-warning {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 4px solid #dc2626;
+  }
+
+  .callout-warning h4 {
+    color: #991b1b;
+    margin: 0 0 0.5rem;
+  }
+
+  .callout-warning p {
+    color: #7f1d1d;
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  /* Accessible Highlight */
+  .accessible-highlight-card {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .accessible-highlight-card h3 {
+    color: #0369a1;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .micro-warning {
+    font-size: 0.85rem;
+    color: #b91c1c;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  /* CPZ Warning Box */
+  .cpz-warning-box {
+    display: flex;
+    gap: 1rem;
+    background: #fef2f2;
+    border: 1px solid #fee2e2;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .cpz-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .cpz-warning-box h3 {
+    color: #991b1b;
+    margin: 0 0 0.4rem;
+    font-size: 1.15rem;
+  }
+
+  .cpz-warning-box p {
+    color: #7f1d1d;
+    margin: 0 0 0.5rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .cpz-warning-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Table styling */
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .data-table th {
+    background: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: top;
+  }
+
+  .data-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .decision-table td strong {
+    color: #0f172a;
+  }
+
+  /* FAQ Accordion */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.55;
+  }
+
+  /* Sidebar */
+  .parking-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin: 0 0 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+  }
+
+  .widget-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-links a {
+    color: #059669;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .widget-links a:hover {
+    text-decoration: underline;
+  }
+
+  .satnav-address {
+    font-size: 0.95rem;
+    color: #0f172a;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+  .satnav-note {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .parking-layout {
+      grid-template-columns: 1fr;
+    }
+    .car-park-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
