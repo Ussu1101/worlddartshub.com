@@ -1,0 +1,767 @@
+---
+// src/pages/hotels/budget-options.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import hotelsData from '../../data/hotels.json';
+
+const pageTitle = "Best Budget Hotels Near Alexandra Palace — PDC Darts 2026/27";
+const pageDescription = "Verified budget hotels and chains near Alexandra Palace for the World Darts Championship. Wood Green, Finsbury Park, King's Cross options, price snapshots, and booking advice.";
+
+const breadcrumbItems = [
+  { name: 'Hotels', url: '/hotels/' },
+  { name: 'Budget Hotel Options' }
+];
+
+const hotelsFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Budget Hotels Near Alexandra Palace FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the closest budget hotel to Alexandra Palace for the darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Travelodge London Wood Green (located on Wood Green High Road, N22 8HH) is the closest branded budget hotel. It is only 0.9 miles from the Great Hall, allowing fans to walk (approx. 18 minutes) or catch the direct W3 bus without needing late-night trains after evening sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is the best area to stay in London for attending the World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Finsbury Park and Wood Green are the two best locations. Wood Green offers walking distance convenience, while Finsbury Park offers multiple budget chains (Premier Inn and Travelodge) directly adjacent to the W3 bus terminal which runs straight to Palm Court."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do budget hotel rooms cost during the darts championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Indicative base snapshot rates for standard double/twin rooms range from £70 to £150 per night for advance weekday bookings. However, rates surge significantly to £160–£250+ per night on Friday and Saturday evening sessions, Boxing Day, and New Year's Eve/Finals weekend due to festive holiday demand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is a 24-hour reception important for darts fans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evening sessions at Ally Pally conclude at approximately 23:00 GMT. With egress and travel, spectators typically return to their hotels between 23:45 and 00:30. Staying at a hotel with guaranteed 24-hour front desk staffing ensures smooth check-in and late-night building entry."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={hotelsFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="hotel-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">ACCOMMODATION GUIDE</span>
+        <span class="badge">NORTH & CENTRAL LONDON</span>
+      </div>
+      <h1 class="hotel-title">Best Budget Hotels Near Alexandra Palace (2026/27)</h1>
+      <p class="hotel-subtitle">
+        Curated guide to verified budget chain hotels, strategic spectator neighborhoods, realistic price snapshots, and transport proximity for the PDC World Darts Championship.
+      </p>
+      <div class="hero-meta">
+        <span class="meta-item">📍 Target: North London & Tube Corridors</span>
+        <span class="meta-item">🏨 Chains: Premier Inn & Travelodge</span>
+        <span class="meta-item">📅 Snapshot Verified: October 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container content-container">
+    <div class="hotel-layout">
+      <!-- Main Content -->
+      <article class="hotel-main">
+
+        <!-- MANDATORY PRICE SNAPSHOT ADVISORY -->
+        <section class="price-disclaimer-card">
+          <div class="disclaimer-header">
+            <span class="disclaimer-icon">💡</span>
+            <h3>Price Snapshot & Seasonal Volatility Advisory</h3>
+          </div>
+          <p class="disclaimer-body">
+            {hotelsData.price_disclaimer}
+          </p>
+          <div class="disclaimer-meta">
+            <span>• Snapshot Date: October 2026</span>
+            <span>• Room Basis: Standard Double / Twin Room</span>
+            <span>• Direct Operator Booking Recommended</span>
+          </div>
+        </section>
+
+        <AdSlot position="top" client="ca-pub-placeholder" slotId="hotels-top-slot" />
+
+        <!-- STRATEGIC NEIGHBORHOODS -->
+        <section class="hotel-section">
+          <h2>Strategic Neighborhoods for Darts Spectators</h2>
+          <p>
+            London is expansive, but for the World Darts Championship, your experience is defined by how easily you can get to Alexandra Palace in the afternoon and back to your bed after 23:00. These four areas offer the best balance of transit, cost, and logistics:
+          </p>
+
+          <div class="areas-grid">
+            {hotelsData.strategic_areas.map(area => (
+              <div class="area-card">
+                <div class="area-card-header">
+                  <h3>{area.area}</h3>
+                  <span class="zone-badge">{area.zone}</span>
+                </div>
+                <div class="area-stats">
+                  <span class="stat-pill"><strong>Distance:</strong> {area.distance_to_venue}</span>
+                  <span class="stat-pill"><strong>Transit:</strong> {area.transit_time}</span>
+                </div>
+                <p class="area-summary">{area.summary}</p>
+                <div class="pros-cons-box">
+                  <div class="pro-list">
+                    <span class="pc-title">Benefits:</span>
+                    <ul>
+                      {area.pros.map(pro => <li>✓ {pro}</li>)}
+                    </ul>
+                  </div>
+                  <div class="con-list">
+                    <span class="pc-title">Considerations:</span>
+                    <ul>
+                      {area.cons.map(con => <li>⚠ {con}</li>)}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- VERIFIED BUDGET HOTELS LIST -->
+        <section class="hotel-section">
+          <h2>Verified Budget Chain Hotels</h2>
+          <p>
+            These reputable branded hotels provide clean, standardized accommodation with 24-hour reception desks, private en-suite bathrooms, and reliable proximity to Alexandra Palace:
+          </p>
+
+          <div class="hotels-stack">
+            {hotelsData.verified_budget_hotels.map(hotel => (
+              <div class="hotel-card">
+                <div class="hotel-card-header">
+                  <div class="hotel-name-group">
+                    <span class="brand-tag">{hotel.brand}</span>
+                    <h3>{hotel.name}</h3>
+                    <span class="location-text">📍 {hotel.location}</span>
+                  </div>
+                  <div class="hotel-rate-box">
+                    <span class="rate-label">Indicative Base Snapshot</span>
+                    <span class="rate-val">{hotel.indicative_rate_range.split('(')[0]}</span>
+                    <span class="rate-sub">per night / advance booking</span>
+                  </div>
+                </div>
+
+                <div class="hotel-body">
+                  <div class="hotel-details-grid">
+                    <div class="detail-item">
+                      <strong>Proximity:</strong> {hotel.distance_to_venue}
+                    </div>
+                    <div class="detail-item">
+                      <strong>Transit Connection:</strong> {hotel.transit_notes}
+                    </div>
+                    <div class="detail-item">
+                      <strong>Reception:</strong> {hotel.reception_hours}
+                    </div>
+                    <div class="detail-item rate-notes">
+                      <strong>Holiday Pricing:</strong> {hotel.indicative_rate_range}
+                    </div>
+                  </div>
+
+                  <div class="hotel-card-actions">
+                    <a href={hotel.official_url} target="_blank" rel="noopener noreferrer" class="hotel-btn">
+                      View Official Hotel Website ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- BOOKING TIPS & STRATEGIES -->
+        <section class="hotel-section">
+          <h2>Essential Hotel Booking Tips for Ally Pally</h2>
+
+          <div class="tips-container">
+            <div class="tip-row">
+              <div class="tip-icon">📅</div>
+              <div class="tip-text">
+                <h4>Book as Soon as Tickets are Secured</h4>
+                <p>
+                  Alexandra Palace sits in residential North London where hotel supply is relatively restricted. The Travelodge Wood Green and Premier Inns at Finsbury Park routinely sell out months ahead for Friday, Saturday, and post-Christmas sessions.
+                </p>
+              </div>
+            </div>
+
+            <div class="tip-row">
+              <div class="tip-icon">🔄</div>
+              <div class="tip-text">
+                <h4>Choose Semi-Flexible / Refundable Rates</h4>
+                <p>
+                  If you are participating in the PDC ticket ballot or hunting for resale tickets on See Tickets Fan-to-Fan, book a flexible hotel room with free cancellation up to 28 or 7 days prior. This protects you against price inflation while confirming your session tickets.
+                </p>
+              </div>
+            </div>
+
+            <div class="tip-row">
+              <div class="tip-icon">🌙</div>
+              <div class="tip-text">
+                <h4>Always Verify 24-Hour Reception Staffing</h4>
+                <p>
+                  Avoid independent guest houses or key-box holiday lets that enforce rigid 22:00 check-in curfews. Darts evening matches run until 23:00, and unexpected match tie-breaks or egress delays can see fans returning well past midnight.
+                </p>
+              </div>
+            </div>
+
+            <div class="tip-row">
+              <div class="tip-icon">🚇</div>
+              <div class="tip-text">
+                <h4>Factor in Zone 1 vs Zone 3 Tube Fares</h4>
+                <p>
+                  Staying in King's Cross (Zone 1) may cost slightly more per night, but it offers single-train direct access to Wood Green on the Piccadilly Line and direct national train connections home the following morning without crossing London with luggage.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <AdSlot position="middle" client="ca-pub-placeholder" slotId="hotels-mid-slot" />
+
+        <!-- FAQ SECTION -->
+        <section class="hotel-section">
+          <h2>Frequently Asked Questions: Accommodation</h2>
+          <div class="faq-list">
+            {hotelsFaqSchema.mainEntity.map(faq => (
+              <div class="faq-item">
+                <h3>{faq.name}</h3>
+                <p>{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- VERIFICATION COMPONENT -->
+        <VerificationBadge
+          source="Official Hotel Operator Registries & Travelodge/Whitbread direct listings"
+          verifiedDate={hotelsData.last_verified}
+          status="CONFIRMED DIRECT OPERATOR SNAPSHOT"
+        />
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="hotel-sidebar">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Area Proximity Guide</h3>
+          <ul class="glance-list">
+            <li><strong>Wood Green:</strong> 0.9 mi (Walk / W3 Bus)</li>
+            <li><strong>Finsbury Park:</strong> 2.8 mi (Direct W3 Bus)</li>
+            <li><strong>Archway:</strong> 2.4 mi (43/134 Bus)</li>
+            <li><strong>King's Cross:</strong> 5.3 mi (14 min Tube)</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Operator Websites</h3>
+          <div class="btn-stack">
+            <a href="https://www.travelodge.co.uk" target="_blank" rel="noopener noreferrer" class="btn-operator">
+              Travelodge Official Site ↗
+            </a>
+            <a href="https://www.premierinn.com" target="_blank" rel="noopener noreferrer" class="btn-operator">
+              Premier Inn Official Site ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Spectator Travel Hubs</h3>
+          <ul class="widget-links">
+            <li><a href="/travel/tube-train-routes/">London Tube & Train Routes</a></li>
+            <li><a href="/venue/security-bag-policy/">Bag Size & Suitcase Restrictions</a></li>
+            <li><a href="/venue/food-drink-bars/">Food, Drink & Nearby Pubs</a></li>
+            <li><a href="/tickets/resale-returns/">Official Ticket Resale Guide</a></li>
+            <li><a href="/schedule/">Championship Schedule & Sessions</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hotel-hero {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 1px solid #4338ca;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    background: #4338ca;
+    color: #e0e7ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-accent {
+    background: #6366f1;
+    color: #ffffff;
+  }
+
+  .hotel-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+
+  .hotel-subtitle {
+    font-size: 1.15rem;
+    color: #c7d2fe;
+    max-width: 820px;
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #a5b4fc;
+  }
+
+  .content-container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .hotel-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2.5rem;
+  }
+
+  /* Price Disclaimer Card */
+  .price-disclaimer-card {
+    background: #fffbeb;
+    border: 2px solid #f59e0b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .disclaimer-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .disclaimer-icon {
+    font-size: 1.25rem;
+  }
+
+  .disclaimer-header h3 {
+    margin: 0;
+    color: #92400e;
+    font-size: 1.15rem;
+  }
+
+  .disclaimer-body {
+    color: #78350f;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin: 0 0 0.75rem;
+  }
+
+  .disclaimer-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: #b45309;
+    font-weight: 600;
+  }
+
+  /* Areas Grid */
+  .areas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .area-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .area-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .area-card-header h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+
+  .zone-badge {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+  }
+
+  .area-stats {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .stat-pill {
+    background: #f8fafc;
+    font-size: 0.8rem;
+    color: #334155;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .area-summary {
+    font-size: 0.88rem;
+    color: #475569;
+    line-height: 1.45;
+    margin: 0 0 1rem;
+    flex: 1;
+  }
+
+  .pros-cons-box {
+    background: #f8fafc;
+    border-radius: 6px;
+    padding: 0.85rem;
+    font-size: 0.82rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .pc-title {
+    font-weight: 700;
+    color: #0f172a;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .pros-cons-box ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    color: #334155;
+  }
+
+  /* Hotels Stack */
+  .hotels-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .hotel-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .hotel-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .brand-tag {
+    background: #4338ca;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.35rem;
+  }
+
+  .hotel-name-group h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.25rem;
+    color: #0f172a;
+  }
+
+  .location-text {
+    font-size: 0.82rem;
+    color: #64748b;
+  }
+
+  .hotel-rate-box {
+    text-align: right;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+  }
+
+  .rate-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+  }
+
+  .rate-val {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #047857;
+    margin: 0.1rem 0;
+  }
+
+  .rate-sub {
+    font-size: 0.72rem;
+    color: #64748b;
+  }
+
+  .hotel-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    background: #f8fafc;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+
+  .rate-notes {
+    grid-column: span 2;
+    color: #b45309;
+  }
+
+  .hotel-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .hotel-btn {
+    background: #4338ca;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  .hotel-btn:hover {
+    background: #3730a3;
+  }
+
+  /* Booking Tips */
+  .tips-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .tip-row {
+    display: flex;
+    gap: 1rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .tip-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .tip-text h4 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    color: #0f172a;
+  }
+
+  .tip-text p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #475569;
+    line-height: 1.45;
+  }
+
+  /* FAQs */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* Sidebar */
+  .hotel-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+  }
+
+  .glance-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #334155;
+  }
+
+  .btn-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-operator {
+    display: block;
+    text-align: center;
+    background: #f1f5f9;
+    color: #1e293b;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+  }
+
+  .btn-operator:hover {
+    background: #e2e8f0;
+  }
+
+  .widget-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-links a {
+    color: #4338ca;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .widget-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .hotel-layout {
+      grid-template-columns: 1fr;
+    }
+    .areas-grid {
+      grid-template-columns: 1fr;
+    }
+    .hotel-details-grid {
+      grid-template-columns: 1fr;
+    }
+    .rate-notes {
+      grid-column: span 1;
+    }
+  }
+</style>

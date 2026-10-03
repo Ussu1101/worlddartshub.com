@@ -1,0 +1,795 @@
+[
+  {
+    "player_id": "luke-littler",
+    "name": "Luke Littler",
+    "slug": "luke-littler",
+    "nickname": "The Nuke",
+    "nationality": "England",
+    "country_code": "GB-ENG",
+    "date_of_birth": "2007-01-21",
+    "birthplace": "Runcorn, Cheshire, England",
+    "pdc_order_of_merit_rank": "World No. 2 Contender",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Greenlight by Pitbull ft. Flo Rida & LunchMoney Lewis",
+    "walk_on_artist": "Pitbull ft. Flo Rida & LunchMoney Lewis",
+    "walk_on_atmosphere": "High-energy festival pop anthem that energizes the Ally Pally crowd with synchronized clapping.",
+    "career_overview": "Luke Littler produced the most explosive breakthrough in modern darts history by reaching the 2024 World Darts Championship final at just 16 years old. Combining unprecedented natural scoring power with mature stage presence, Littler went on to win the 2024 Premier League on debut and the 2024 Grand Slam of Darts.",
+    "major_pdc_titles": [
+      "Premier League Darts Champion (2024)",
+      "Grand Slam of Darts Champion (2024)",
+      "World Series of Darts Finals Champion (2024)",
+      "Belgian Darts Open Champion (2024)",
+      "Austrian Darts Open Champion (2024)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2024",
+      "best_finish": "Runner-Up (2024)",
+      "total_appearances": 3,
+      "matches_played": 11,
+      "matches_won": 9,
+      "history_highlights": [
+        "2024: Runner-up (defeated Christian Kist, Andrew Gilding, Matt Campbell, Raymond van Barneveld, Brendan Dolan, and Rob Cross; lost 4-7 to Luke Humphries in final)",
+        "2025: Semi-Finalist / Deep Contender"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£1,150,000+ (Rapid accumulation across 2024–2026 seasons)",
+      "order_of_merit_contribution": "Ranked among top two on two-year rolling Order of Merit",
+      "financial_note": "Official PDC prize money only. Commercial sponsorship, brand endorsements, and invitational exhibition fees are separate."
+    },
+    "nine_darters_televised": 4,
+    "notable_nine_darters": [
+      "2024 Bahrain Darts Masters Quarter-Final (vs. Nathan Aspinall - first televised 9-darter)",
+      "2024 Premier League Play-Off Final (vs. Luke Humphries at The O2, London)",
+      "2024 Austrian Darts Open"
+    ],
+    "equipment": {
+      "manufacturer": "Target Darts",
+      "brand_model": "Target Luke Littler 'The Nuke' Generation 1",
+      "barrel_weight_grams": "23g",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Straight barrel with dual pixel and radial grip zones, black and purple PVD titanium nitride coating",
+      "shafts": "Target Pro Grip short / Target K-Flex",
+      "flights": "Target K-Flex No.2 Integrated System (Purple/Yellow)",
+      "points": "Target Swiss Point (26mm Smooth Silver / Grooved)",
+      "verified_source": "Target Darts Official Equipment Catalogue & Player Roster"
+    },
+    "playing_style": "Exceptionally rapid, intuitive throwing rhythm with relentless treble-20 power scoring and confident, fearless combination checkouts on double-10 and double-20.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "luke-humphries",
+    "name": "Luke Humphries",
+    "slug": "luke-humphries",
+    "nickname": "Cool Hand Luke",
+    "nationality": "England",
+    "country_code": "GB-ENG",
+    "date_of_birth": "1995-02-11",
+    "birthplace": "Newbury, Berkshire, England",
+    "pdc_order_of_merit_rank": "World No. 1",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "I Predict a Riot by Kaiser Chiefs",
+    "walk_on_artist": "Kaiser Chiefs",
+    "walk_on_atmosphere": "Iconic British indie-rock track triggering thunderous chorus singalongs across major UK arenas.",
+    "career_overview": "Luke Humphries rose from PDC Development Tour dominator to the undisputed world number one. A remarkable transformation between 2022 and 2024 saw him capture the 2024 World Championship, World Matchplay, World Grand Prix, and Grand Slam of Darts.",
+    "major_pdc_titles": [
+      "PDC World Darts Championship (2024)",
+      "World Matchplay Champion (2024)",
+      "World Grand Prix Champion (2023)",
+      "Grand Slam of Darts Champion (2023)",
+      "Players Championship Finals Champion (2023)",
+      "World Cup of Darts Champion (2024 with Michael Smith)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2019",
+      "best_finish": "World Champion (2024)",
+      "total_appearances": 8,
+      "matches_played": 28,
+      "matches_won": 22,
+      "history_highlights": [
+        "2019: Quarter-Finalist (defeated reigning champion Rob Cross)",
+        "2020: Quarter-Finalist",
+        "2022: Quarter-Finalist",
+        "2024: World Champion (defeated Luke Littler 7-4 in historic final, averaging 103.67)"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£1,800,000+ on two-year rolling Order of Merit",
+      "order_of_merit_contribution": "Highest two-year prize money haul in PDC history at peak",
+      "financial_note": "Anchored by £500,000 World Championship winner's cheque and £200,000 World Matchplay purse."
+    },
+    "nine_darters_televised": 2,
+    "notable_nine_darters": [
+      "2023 Players Championship Series",
+      "2024 Baltic Sea Darts Open"
+    ],
+    "equipment": {
+      "manufacturer": "Red Dragon Darts",
+      "brand_model": "Red Dragon Luke Humphries TX1 Original",
+      "barrel_weight_grams": "22g",
+      "barrel_tungsten_pct": "90% Tungsten TX1",
+      "barrel_profile": "Torpedo-tapered front with micro-grip rings and mid-barrel balance for flat flight trajectory",
+      "shafts": "Red Dragon Nitrotech Short/Intermediate",
+      "flights": "Hardcore Extra Thick Standard No.2",
+      "points": "Trident 32mm High-Tensile Steel Points",
+      "verified_source": "Red Dragon Darts Official Player Specification Registry"
+    },
+    "playing_style": "Measured, silky release with a low arc and impeccable rhythm. Exceptional stamina in multi-set championship formats with 100+ average consistency.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "michael-van-gerwen",
+    "name": "Michael van Gerwen",
+    "slug": "michael-van-gerwen",
+    "nickname": "Mighty Mike / MVG",
+    "nationality": "Netherlands",
+    "country_code": "NL",
+    "date_of_birth": "1989-04-25",
+    "birthplace": "Boxtel, North Brabant, Netherlands",
+    "pdc_order_of_merit_rank": "World No. 3",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Seven Nation Army by The White Stripes",
+    "walk_on_artist": "The White Stripes",
+    "walk_on_atmosphere": "The most universally recognized walk-on riff in global darts, chanted rhythmically as 'Oh, Michael van Gerwen!'",
+    "career_overview": "Widely regarded as one of the two greatest darts players in history alongside Phil Taylor. Van Gerwen dominated the sport throughout the 2010s, capturing three PDC World Championships, a record seven Premier League titles, and over 150 PDC tournaments.",
+    "major_pdc_titles": [
+      "3x PDC World Darts Champion (2014, 2017, 2019)",
+      "7x Premier League Darts Champion (2013, 2016, 2017, 2018, 2019, 2022, 2023)",
+      "3x World Matchplay Champion (2015, 2016, 2022)",
+      "6x World Grand Prix Champion (2012, 2014, 2016, 2018, 2019, 2020)",
+      "7x Players Championship Finals Champion",
+      "3x UK Open Champion (2015, 2016, 2020)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2008",
+      "best_finish": "3x World Champion (2014, 2017, 2019)",
+      "total_appearances": 19,
+      "matches_played": 72,
+      "matches_won": 58,
+      "history_highlights": [
+        "2013: Finalist (lost to Phil Taylor)",
+        "2014: World Champion (defeated Peter Wright 7-4)",
+        "2017: World Champion (defeated Gary Anderson 7-3 with record tournament average of 107.79)",
+        "2019: World Champion (defeated Michael Smith 7-3)",
+        "2020 & 2023: Finalist"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£10,500,000+ career PDC prize money",
+      "order_of_merit_contribution": "Highest cumulative prize money winner in Professional Darts Corporation history",
+      "financial_note": "First player to cross £10M in official PDC tournament winnings."
+    },
+    "nine_darters_televised": 8,
+    "notable_nine_darters": [
+      "2012 World Matchplay (vs. Steve Beaton)",
+      "2013 World Darts Championship Semi-Final (vs. James Wade - famously followed by 8 more perfect darts)",
+      "2020 UK Open (vs. Daryl Gurney)"
+    ],
+    "equipment": {
+      "manufacturer": "Winmau Darts",
+      "brand_model": "Winmau MvG Exact Original Match Barrels",
+      "barrel_weight_grams": "21.5g",
+      "barrel_tungsten_pct": "85% Tungsten",
+      "barrel_profile": "Classic parallel barrel with vintage machine-grooved ring grip and weathered match-used finish",
+      "shafts": "Winmau Prism Force Medium (Nylon)",
+      "flights": "Winmau Mega MvG Signature Standard No.2",
+      "points": "Winmau FreeFlo Black Points (32mm)",
+      "verified_source": "Winmau Darts Official Player Specification Registry"
+    },
+    "playing_style": "Ferocious attacking power scoring, rapid cadence, aggressive forward posture, and unrivaled capability to hit big checkouts under intense match pressure.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "gerwyn-price",
+    "name": "Gerwyn Price",
+    "slug": "gerwyn-price",
+    "nickname": "The Iceman",
+    "nationality": "Wales",
+    "country_code": "GB-WLS",
+    "date_of_birth": "1985-03-07",
+    "birthplace": "Cardiff, Wales",
+    "pdc_order_of_merit_rank": "Top 8 Contender",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Ice Ice Baby by Vanilla Ice",
+    "walk_on_artist": "Vanilla Ice",
+    "walk_on_atmosphere": "Classic 1990s hip-hop anthem accompanied by Price's trademark high-energy stage flex and bicep celebrations.",
+    "career_overview": "A former professional rugby union hooker and rugby league player who switched full-time to darts in 2014. Price quickly established himself as a fierce competitor, winning the 2021 World Championship to become the first Welsh PDC World Champion in history.",
+    "major_pdc_titles": [
+      "PDC World Darts Championship (2021)",
+      "3x Grand Slam of Darts Champion (2018, 2019, 2021)",
+      "World Grand Prix Champion (2020)",
+      "2x World Cup of Darts Champion (2020, 2023 with Jonny Clayton)",
+      "World Series of Darts Finals Champion (2020, 2022)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2015",
+      "best_finish": "World Champion (2021)",
+      "total_appearances": 12,
+      "matches_played": 34,
+      "matches_won": 23,
+      "history_highlights": [
+        "2020: Semi-Finalist (lost 3-6 to Peter Wright)",
+        "2021: World Champion (defeated Gary Anderson 7-3 behind closed doors at Ally Pally)",
+        "2022: Quarter-Finalist (hit a televised 9-darter vs. Michael Smith)"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£3,200,000+ career PDC prize money",
+      "order_of_merit_contribution": "Former World No. 1 following his 2021 World Championship triumph",
+      "financial_note": "Consistently inside top tier of PDC prize money earners."
+    },
+    "nine_darters_televised": 4,
+    "notable_nine_darters": [
+      "2022 World Darts Championship Quarter-Final (vs. Michael Smith - first Ally Pally 9-darter by Price)",
+      "2022 Premier League Belfast (two 9-darters in a single night!)"
+    ],
+    "equipment": {
+      "manufacturer": "Red Dragon Darts",
+      "brand_model": "Red Dragon Gerwyn Price Iceman Original / Avalanche",
+      "barrel_weight_grams": "24g",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Dual razor-grip ring pattern with blue PVD coating in barrel recesses",
+      "shafts": "Red Dragon Nitrotech Short",
+      "flights": "Hardcore Iceman Extra Thick Standard",
+      "points": "High-tensile black grooved steel points",
+      "verified_source": "Red Dragon Darts Official Player Specification"
+    },
+    "playing_style": "Athletic, intense, explosive throw with high chest release and roaring vocal celebrations that intimidate opponents.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "michael-smith",
+    "name": "Michael Smith",
+    "slug": "michael-smith",
+    "nickname": "Bully Boy",
+    "nationality": "England",
+    "country_code": "GB-ENG",
+    "date_of_birth": "1990-09-18",
+    "birthplace": "St Helens, Merseyside, England",
+    "pdc_order_of_merit_rank": "Top 8 Contender",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Shut Up and Dance by WALK THE MOON",
+    "walk_on_artist": "WALK THE MOON",
+    "walk_on_atmosphere": "Uplifting, feel-good pop rock track generating enthusiastic crowd dancing across the arena.",
+    "career_overview": "Michael Smith overcame eight major final defeats to become 2023 PDC World Champion and World No. 1. In the 2023 final against Michael van Gerwen, Smith produced the most legendary leg in darts history by hitting a 9-darter immediately after van Gerwen missed double-12 for his own.",
+    "major_pdc_titles": [
+      "PDC World Darts Championship (2023)",
+      "Grand Slam of Darts Champion (2022)",
+      "World Cup of Darts Champion (2024 with Luke Humphries)",
+      "PDC World Youth Champion (2013)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2012",
+      "best_finish": "World Champion (2023)",
+      "total_appearances": 15,
+      "matches_played": 42,
+      "matches_won": 29,
+      "history_highlights": [
+        "2019: Finalist (lost 3-7 to Michael van Gerwen)",
+        "2022: Finalist (lost 5-7 to Peter Wright)",
+        "2023: World Champion (defeated MVG 7-4 with iconic 9-dart leg in set 2)"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£3,500,000+ career PDC prize money",
+      "order_of_merit_contribution": "Former World No. 1 following 2023 title",
+      "financial_note": "Official PDC tournament prize records."
+    },
+    "nine_darters_televised": 3,
+    "notable_nine_darters": [
+      "2023 World Darts Championship Final (vs. Michael van Gerwen - voted the greatest leg in darts history)",
+      "2020 Premier League Dublin"
+    ],
+    "equipment": {
+      "manufacturer": "Shot Darts",
+      "brand_model": "Shot Darts Michael Smith 'Defiant' / 'Achiever'",
+      "barrel_weight_grams": "24g",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Centre-weighted parallel barrel with ringed push points and refined rear taper",
+      "shafts": "Shot Carbon Koi Medium",
+      "flights": "Shot Michael Smith Signature 100-micron Standard",
+      "points": "Shot Tribal Steel Points (35mm)",
+      "verified_source": "Shot Darts Official Pro Roster Specifications"
+    },
+    "playing_style": "Fluid, natural, fast-flowing rhythm. Tremendous 180-scoring capacity when locked into his stride.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "peter-wright",
+    "name": "Peter Wright",
+    "slug": "peter-wright",
+    "nickname": "Snakebite",
+    "nationality": "Scotland",
+    "country_code": "GB-SCT",
+    "date_of_birth": "1970-03-10",
+    "birthplace": "Livingston, West Lothian, Scotland",
+    "pdc_order_of_merit_rank": "Top 12 Contender",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Don't Stop the Party by Pitbull",
+    "walk_on_artist": "Pitbull",
+    "walk_on_atmosphere": "The most elaborate walk-on routine in darts: Wright sidesteps across the stage, dancing and hyping the crowd from wing to wing.",
+    "career_overview": "A two-time World Champion and true showman, Peter Wright is famous for his vibrant mohawk hair, painted side-head designs, and unmatched technical experimentation with darts setups. Won his first World Championship in 2020 and repeated the feat in 2022.",
+    "major_pdc_titles": [
+      "2x PDC World Darts Champion (2020, 2022)",
+      "World Matchplay Champion (2021)",
+      "UK Open Champion (2017)",
+      "2x European Championship (2020, 2023)",
+      "2x World Cup of Darts Champion (2019, 2021 with Gary Anderson / John Henderson)",
+      "Players Championship Finals Champion (2021)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2010",
+      "best_finish": "2x World Champion (2020, 2022)",
+      "total_appearances": 17,
+      "matches_played": 53,
+      "matches_won": 38,
+      "history_highlights": [
+        "2014: Finalist (lost 4-7 to MVG)",
+        "2020: World Champion (defeated MVG 7-3)",
+        "2022: World Champion (defeated Michael Smith 7-5)"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£4,800,000+ career PDC prize money",
+      "order_of_merit_contribution": "Former World No. 1 and continuous top-ten earner",
+      "financial_note": "Multi-time major winner with long tenure."
+    },
+    "nine_darters_televised": 2,
+    "notable_nine_darters": [
+      "2020 Premier League Milton Keynes (vs. Daryl Gurney)",
+      "2019 Players Championship series"
+    ],
+    "equipment": {
+      "manufacturer": "Red Dragon Darts",
+      "brand_model": "Red Dragon Peter Wright Euro 11 / Supa-Venom (Frequently changes)",
+      "barrel_weight_grams": "20g – 22g (Customarily 20g Euro 11 Elements)",
+      "barrel_tungsten_pct": "85%–90% Tungsten",
+      "barrel_profile": "Pencil-thin long parallel barrel with multi-ring grip and rainbow PVD coating",
+      "shafts": "Crossfire Carbon / Nitrotech Short",
+      "flights": "Hardcore Snakebite Signature Standard",
+      "points": "Specialist Trident smooth steel points",
+      "verified_source": "Red Dragon Darts Official Catalogue & Player Records"
+    },
+    "playing_style": "High-draw, upright throw with clinical cover-shooting on treble-19 and double-20. Renowned for in-match technical adaptations.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "gary-anderson",
+    "name": "Gary Anderson",
+    "slug": "gary-anderson",
+    "nickname": "The Flying Scotsman",
+    "nationality": "Scotland",
+    "country_code": "GB-SCT",
+    "date_of_birth": "1970-12-22",
+    "birthplace": "Eyemouth, Berwickshire, Scotland",
+    "pdc_order_of_merit_rank": "Top 16 Contender",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Jump Around by House of Pain",
+    "walk_on_artist": "House of Pain",
+    "walk_on_atmosphere": "High-energy 1990s hip-hop anthem causing the entire Great Hall bleachers and tables to bounce in unison.",
+    "career_overview": "A Scottish darts legend and two-time World Champion (2015, 2016). Renowned for possessing arguably the smoothest, most effortless throwing action in darts history, Anderson has won over 50 PDC titles and remains a fierce scoring threat well into his 50s.",
+    "major_pdc_titles": [
+      "2x PDC World Darts Champion (2015, 2016)",
+      "World Matchplay Champion (2018)",
+      "2x Premier League Darts Champion (2011, 2015)",
+      "UK Open Champion (2018)",
+      "Players Championship Finals Champion (2014)",
+      "World Cup of Darts Champion (2019 with Peter Wright)",
+      "Champions League of Darts Champion (2018)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2010 (PDC)",
+      "best_finish": "2x World Champion (2015, 2016)",
+      "total_appearances": 17,
+      "matches_played": 68,
+      "matches_won": 53,
+      "history_highlights": [
+        "2011: Finalist (lost 5-7 to Adrian Lewis)",
+        "2015: World Champion (defeated Phil Taylor 7-6 in epic final)",
+        "2016: World Champion (defeated Adrian Lewis 7-5, hitting 9-darter in semi-final)",
+        "2017: Finalist (lost 3-7 to MVG)",
+        "2021: Finalist (lost 3-7 to Gerwyn Price)"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£4,500,000+ career PDC prize money",
+      "order_of_merit_contribution": "Ranked inside top 16 with heavy European Tour and ProTour earnings",
+      "financial_note": "Two World titles and major tournament wins over a 15-year PDC career."
+    },
+    "nine_darters_televised": 3,
+    "notable_nine_darters": [
+      "2016 World Darts Championship Semi-Final (vs. Jelle Klaasen at Ally Pally)",
+      "2018 World Matchplay Quarter-Final (vs. Joe Cullen at Winter Gardens, Blackpool)"
+    ],
+    "equipment": {
+      "manufacturer": "Unicorn Darts",
+      "brand_model": "Unicorn Gary Anderson Phase 3 / Phase 5 World Champion",
+      "barrel_weight_grams": "23g",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Iconic straight barrel with two distinctive blue ring grip sections and smooth rear taper",
+      "shafts": "Unicorn Gripper 4 Short/Medium",
+      "flights": "Unicorn Gary Anderson Signature Ultrafly Standard",
+      "points": "Unicorn Silver Steel Points (26mm)",
+      "verified_source": "Unicorn Darts Official Player Specification"
+    },
+    "playing_style": "Textbook rhythmic release with perfect balance, zero wasted motion, and relentless heavy 180-scoring into treble-20.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "stephen-bunting",
+    "name": "Stephen Bunting",
+    "slug": "stephen-bunting",
+    "nickname": "The Bullet",
+    "nationality": "England",
+    "country_code": "GB-ENG",
+    "date_of_birth": "1985-04-09",
+    "birthplace": "Fazakerley, Liverpool, England",
+    "pdc_order_of_merit_rank": "Top 10 Contender",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Titanium by David Guetta ft. Sia",
+    "walk_on_artist": "David Guetta ft. Sia",
+    "walk_on_atmosphere": "The famous 'Let's Go Bunting Mental' anthem, sparking deafening arena chanting and bouncing fans.",
+    "career_overview": "A former BDO World Champion (2014) who joined the PDC and captured his maiden PDC major title at the 2024 Masters. Bunting's career experienced a massive surge in 2024 with viral crowd affection and consistent 100+ three-dart averages.",
+    "major_pdc_titles": [
+      "The Masters Champion (2024)",
+      "BDO World Darts Champion (2014)",
+      "World Grand Prix Semi-Finalist",
+      "Multiple PDC ProTour Titles"
+    ],
+    "world_championship_record": {
+      "debut_year": "2015",
+      "best_finish": "Semi-Finalist (2021)",
+      "total_appearances": 12,
+      "matches_played": 28,
+      "matches_won": 17,
+      "history_highlights": [
+        "2015: Quarter-Finalist on PDC debut (lost 4-5 to Raymond van Barneveld)",
+        "2021: Semi-Finalist (lost 4-6 to Gerwyn Price in a classic encounter)",
+        "2024: Fourth Round (lost to Michael van Gerwen)"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£1,600,000+ career PDC prize money",
+      "order_of_merit_contribution": "Ranked inside top 10 on rolling Order of Merit",
+      "financial_note": "Bolstered by 2024 Masters £65,000 title win and ProTour consistency."
+    },
+    "nine_darters_televised": 0,
+    "notable_nine_darters": [
+      "Multiple non-televised ProTour nine-dart finishes"
+    ],
+    "equipment": {
+      "manufacturer": "Target Darts",
+      "brand_model": "Target Stephen Bunting Generation 5 (18g Match Weight)",
+      "barrel_weight_grams": "18g match weight (famously 12g historically)",
+      "barrel_tungsten_pct": "95% High Density Tungsten",
+      "barrel_profile": "Front-weighted bullet taper with precision radial grooves and natural tungsten finish",
+      "shafts": "Target Pro Grip short / K-Flex Integrated",
+      "flights": "Target K-Flex No.6 / Pro Grip flights",
+      "points": "Target Swiss Nano Points (26mm / 30mm)",
+      "verified_source": "Target Darts Official Player Equipment Specifications"
+    },
+    "playing_style": "Fast, feather-light dart release requiring exquisite touch and finger sensitivity, producing laser-tight grouping when on form.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "nathan-aspinall",
+    "name": "Nathan Aspinall",
+    "slug": "nathan-aspinall",
+    "nickname": "The Asp",
+    "nationality": "England",
+    "country_code": "GB-ENG",
+    "date_of_birth": "1991-07-15",
+    "birthplace": "Stockport, Greater Manchester, England",
+    "pdc_order_of_merit_rank": "Top 12 Contender",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Mr. Brightside by The Killers",
+    "walk_on_artist": "The Killers",
+    "walk_on_atmosphere": "Universally acclaimed as one of the best walk-on singalongs in world sport, with entire arenas screaming every lyric.",
+    "career_overview": "A fierce warrior on the oche, Aspinall broke through as a 500-1 outsider to reach the 2019 World Championship semi-finals. He cemented his elite standing by capturing the 2019 UK Open and the prestigious 2023 World Matchplay in Blackpool.",
+    "major_pdc_titles": [
+      "World Matchplay Champion (2023)",
+      "UK Open Champion (2019)",
+      "US Darts Masters Champion (2019)",
+      "Premier League Darts Runner-Up (2020)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2019",
+      "best_finish": "Semi-Finalist (2019, 2020)",
+      "total_appearances": 8,
+      "matches_played": 22,
+      "matches_won": 15,
+      "history_highlights": [
+        "2019: Semi-Finalist on debut (lost 3-6 to Michael Smith)",
+        "2020: Semi-Finalist (lost 3-6 to Michael van Gerwen)",
+        "2023: Third Round"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£2,100,000+ career PDC prize money",
+      "order_of_merit_contribution": "Ranked consistently in top 10/12",
+      "financial_note": "Anchored by £200,000 World Matchplay champion's cheque."
+    },
+    "nine_darters_televised": 0,
+    "notable_nine_darters": [
+      "Multiple ProTour 9-darters (e.g. 2020 Players Championship)"
+    ],
+    "equipment": {
+      "manufacturer": "Target Darts",
+      "brand_model": "Target Nathan Aspinall Generation 1 / Generation 2",
+      "barrel_weight_grams": "26g (Heavy barrel for powerful finger grip)",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Front-loaded torpedo profile with red and black knurled rings and aggressive rear push points",
+      "shafts": "Target Pro Grip Short / Intermediate",
+      "flights": "Target Aspinall Signature 100-micron Standard",
+      "points": "Target Swiss Diamond Pro Points (30mm)",
+      "verified_source": "Target Darts Official Player Equipment Specifications"
+    },
+    "playing_style": "Determined, heavy-set throw with a high release and relentless tenacity in deciding legs.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "rob-cross",
+    "name": "Rob Cross",
+    "slug": "rob-cross",
+    "nickname": "Voltage",
+    "nationality": "England",
+    "country_code": "GB-ENG",
+    "date_of_birth": "1990-09-21",
+    "birthplace": "Pembury, Kent, England",
+    "pdc_order_of_merit_rank": "Top 6 Contender",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Hot Hot Hot by Arrow",
+    "walk_on_artist": "Arrow",
+    "walk_on_atmosphere": "Upbeat soca party tune setting a joyful, celebratory mood for Voltage's walk to the stage.",
+    "career_overview": "Cross completed the ultimate fairy-tale rookie season in 2018, transitioning from full-time electrician to PDC World Champion in his debut year. Defeated Phil Taylor 7-2 in Taylor's final professional match, and has since added the World Matchplay and two European Championships.",
+    "major_pdc_titles": [
+      "PDC World Darts Champion (2018)",
+      "World Matchplay Champion (2019)",
+      "2x European Championship (2019, 2021)",
+      "New Zealand Darts Masters Champion",
+      "World Cup of Darts Runner-Up"
+    ],
+    "world_championship_record": {
+      "debut_year": "2018",
+      "best_finish": "World Champion (2018)",
+      "total_appearances": 9,
+      "matches_played": 32,
+      "matches_won": 24,
+      "history_highlights": [
+        "2018: World Champion on debut (beat MVG 6-5 in epic sudden-death semi-final, then beat Phil Taylor 7-2 in final)",
+        "2024: Semi-Finalist (lost 2-6 to Luke Littler in high-scoring clash)"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£3,100,000+ career PDC prize money",
+      "order_of_merit_contribution": "Firmly entrenched in top 6 of two-year Order of Merit",
+      "financial_note": "Over £400,000 earned on World Championship stage alone."
+    },
+    "nine_darters_televised": 1,
+    "notable_nine_darters": [
+      "2023 Grand Slam of Darts (vs. Luke Humphries)"
+    ],
+    "equipment": {
+      "manufacturer": "Target Darts",
+      "brand_model": "Target Rob Cross Generation 1 / Generation 2",
+      "barrel_weight_grams": "21g",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Straight parallel barrel with classic ringed radial grooves and clean tactile release",
+      "shafts": "Target Pro Grip Short",
+      "flights": "Target Rob Cross Signature Standard No.6",
+      "points": "Target Swiss Point Silver (26mm)",
+      "verified_source": "Target Darts Official Player Equipment Specifications"
+    },
+    "playing_style": "Deliberate, rhythmic pendulum release with exceptional mental fortitude in nerve-wracking fifth-set deciders.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "raymond-van-barneveld",
+    "name": "Raymond van Barneveld",
+    "slug": "raymond-van-barneveld",
+    "nickname": "Barney",
+    "nationality": "Netherlands",
+    "country_code": "NL",
+    "date_of_birth": "1967-04-20",
+    "birthplace": "The Hague, Netherlands",
+    "pdc_order_of_merit_rank": "Top 32 Veteran",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Eye of the Tiger by Survivor",
+    "walk_on_artist": "Survivor",
+    "walk_on_atmosphere": "Iconic boxing anthem accompanied by thousands of Dutch and international fans wearing orange 'Barney Army' shirts.",
+    "career_overview": "A transcendent sporting icon who single-handedly brought darts to Dutch television. A five-time World Champion across two organizations (4x BDO, 1x PDC), Barney's 2007 PDC World Championship sudden-death victory over Phil Taylor is regarded as the greatest match ever played.",
+    "major_pdc_titles": [
+      "PDC World Darts Champion (2007)",
+      "4x BDO World Champion (1998, 1999, 2003, 2005)",
+      "Premier League Darts Champion (2014)",
+      "Grand Slam of Darts Champion (2012)",
+      "2x UK Open Champion (2006, 2007)",
+      "4x World Cup of Darts Champion with Netherlands"
+    ],
+    "world_championship_record": {
+      "debut_year": "2007 (PDC)",
+      "best_finish": "PDC World Champion (2007)",
+      "total_appearances": 18,
+      "matches_played": 64,
+      "matches_won": 47,
+      "history_highlights": [
+        "2007: World Champion (defeated Phil Taylor 7-6 in historic sudden-death leg)",
+        "2009: Finalist (lost to Phil Taylor; hit first PDC Ally Pally 9-darter vs Jelle Klaasen)",
+        "2010: Hit second Ally Pally 9-darter (vs Brendan Dolan - first player to hit two World Championship 9-darters)"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£3,800,000+ career PDC prize money",
+      "order_of_merit_contribution": "Resurgent top 32 professional following successful Q-School comeback in 2021",
+      "financial_note": "Multi-decade career spanning both BDO and PDC eras."
+    },
+    "nine_darters_televised": 5,
+    "notable_nine_darters": [
+      "2009 World Darts Championship Quarter-Final (vs. Jelle Klaasen - historic first at Alexandra Palace)",
+      "2010 World Darts Championship Second Round (vs. Brendan Dolan - second Ally Pally 9-darter)",
+      "2006 Premier League (vs. Peter Manley)"
+    ],
+    "equipment": {
+      "manufacturer": "Target Darts",
+      "brand_model": "Target RVB Chrono / Generation 4",
+      "barrel_weight_grams": "25g",
+      "barrel_tungsten_pct": "95% High Density Tungsten",
+      "barrel_profile": "Torpedo shape with intricate trapezoidal milled grooves and matte titanium finish",
+      "shafts": "Target Heli Ti Shafts / Pro Grip",
+      "flights": "Target RVB Ultra-Ghost Signature Standard",
+      "points": "Target Swiss Firepoint Black (30mm)",
+      "verified_source": "Target Darts Official Player Equipment Specifications"
+    },
+    "playing_style": "Classic rhythmic Dutch release, deliberate pacing, and clinical double-16 finishing mastery.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "fallon-sherrock",
+    "name": "Fallon Sherrock",
+    "slug": "fallon-sherrock",
+    "nickname": "Queen of the Palace",
+    "nationality": "England",
+    "country_code": "GB-ENG",
+    "date_of_birth": "1994-07-02",
+    "birthplace": "Milton Keynes, Buckinghamshire, England",
+    "pdc_order_of_merit_rank": "PDC Tour Card / Women's Series Top 2",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Last Friday Night (T.G.I.F.) by Katy Perry",
+    "walk_on_artist": "Katy Perry",
+    "walk_on_atmosphere": "Upbeat pop sensation with the entire Great Hall singing along and waving pink cowboy hats.",
+    "career_overview": "A trailblazing pioneer who made global sports history in December 2019 by becoming the first woman ever to win a match at the PDC World Darts Championship. Awarded an MBE in 2023 for her transformative services to women's darts.",
+    "major_pdc_titles": [
+      "Women's World Matchplay Champion (2022)",
+      "Grand Slam of Darts Quarter-Finalist (2021)",
+      "Nordic Darts Masters Runner-Up (2021)",
+      "Multiple PDC Women's Series Titles"
+    ],
+    "world_championship_record": {
+      "debut_year": "2020 (Dec 2019)",
+      "best_finish": "Third Round (2020)",
+      "total_appearances": 5,
+      "matches_played": 8,
+      "matches_won": 2,
+      "history_highlights": [
+        "2020: First woman to win at World Championship (beat Ted Evetts 3-2 in R1, then beat world #11 Mensur Suljovic 3-1 in R2)",
+        "2022, 2023, 2024: Qualified via Women's Series and World Matchplay"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£250,000+ across PDC main tour, World Series, and Women's Series",
+      "order_of_merit_contribution": "Tour Card holder / top women's qualifier",
+      "financial_note": "Significant commercial sponsorship and exhibition profile following historic 2019 breakthrough."
+    },
+    "nine_darters_televised": 1,
+    "notable_nine_darters": [
+      "2023 PDC Challenge Tour 9-darter (first woman to hit a nine-darter in PDC competition history)"
+    ],
+    "equipment": {
+      "manufacturer": "Dynasty Darts",
+      "brand_model": "Dynasty A-FLOW Fallon Sherrock Signature",
+      "barrel_weight_grams": "24g",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Straight barrel with multi-ringed micro grip sections and distinctive pink ring accents",
+      "shafts": "L-Style L-Shaft Carbon Straight",
+      "flights": "L-Style Fallon Signature Champagne Flights",
+      "points": "Dynasty Steel Conversion Points (32mm)",
+      "verified_source": "Dynasty Darts Official Specifications"
+    },
+    "playing_style": "Smooth, upright stance with high accuracy on treble-19 and supreme composure under intense global media spotlight.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  },
+  {
+    "player_id": "beau-greaves",
+    "name": "Beau Greaves",
+    "slug": "beau-greaves",
+    "nickname": "Beau 'n' Arrow",
+    "nationality": "England",
+    "country_code": "GB-ENG",
+    "date_of_birth": "2004-01-09",
+    "birthplace": "Doncaster, South Yorkshire, England",
+    "pdc_order_of_merit_rank": "PDC Women's Series No. 1 / WDF World Champion",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Yes Sir, I Can Boogie by Baccara",
+    "walk_on_artist": "Baccara",
+    "walk_on_atmosphere": "Cult disco anthem that has become an infectious darts crowd favorite with clapping and dancing.",
+    "career_overview": "A generational phenomenon possessing one of the most naturally flawless throwing techniques ever seen. Two-time WDF World Champion and record-breaking dominator on the PDC Women's Series, frequently averaging over 100 in matches against top competition.",
+    "major_pdc_titles": [
+      "2x Women's World Matchplay Champion (2023, 2024)",
+      "2x WDF World Darts Champion (2022, 2023)",
+      "Over 25 PDC Women's Series Titles (Record holder)",
+      "Grand Slam of Darts Qualifier"
+    ],
+    "world_championship_record": {
+      "debut_year": "2023",
+      "best_finish": "First Round (2023)",
+      "total_appearances": 2,
+      "matches_played": 2,
+      "matches_won": 0,
+      "history_highlights": [
+        "2023: PDC World Championship debut (lost 0-3 to William O'Connor despite posting high 90s average)",
+        "2024: Opted to defend WDF World Championship at Lakeside under governing body dual-entry regulations"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£220,000+ across PDC Women's Series, Matchplay, and WDF tournaments",
+      "order_of_merit_contribution": "Dominant #1 on PDC Women's Series prize ranking",
+      "financial_note": "Winner of consecutive £10,000 Women's Matchplay titles in Blackpool."
+    },
+    "nine_darters_televised": 0,
+    "notable_nine_darters": [
+      "Multiple practice and regional 9-dart achievements"
+    ],
+    "equipment": {
+      "manufacturer": "One80 Darts",
+      "brand_model": "One80 Beau Greaves Signature Series",
+      "barrel_weight_grams": "21g",
+      "barrel_tungsten_pct": "90% VHD Tungsten",
+      "barrel_profile": "Streamlined parallel barrel with precision ring cut and sleek silver metallic polish",
+      "shafts": "One80 Vice Shafts Inbetween",
+      "flights": "One80 Beau 'n' Arrow Signature 100-micron Standard",
+      "points": "One80 Steel Tip Specialist Points (32mm)",
+      "verified_source": "One80 Darts Official Technical Specification Sheet"
+    },
+    "playing_style": "Effortless, poetry-in-motion throwing action with seamless release and extraordinary grouping capability.",
+    "tier": "A",
+    "last_verified": "2026-10-03",
+    "status": "verified"
+  }
+]

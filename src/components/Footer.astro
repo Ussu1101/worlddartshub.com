@@ -1,0 +1,301 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-grid">
+      <!-- Col 1: About & Identity -->
+      <div class="footer-col">
+        <div class="footer-brand">
+          <span class="footer-logo">🎯</span>
+          <span class="footer-brand-title">WORLD DARTS GUIDE</span>
+        </div>
+        <p class="footer-desc">
+          The comprehensive independent fan guide to the PDC World Darts Championship 2026/27 at Alexandra Palace, London. Accurate spectator advice, legal broadcast listings, match schedules, travel navigation, and tournament history.
+        </p>
+        <div class="footer-status-pill">
+          <span class="status-dot"></span> Verified for 2026/27 Season
+        </div>
+        <ul class="footer-meta-links">
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/editorial-policy/">Editorial Policy</a></li>
+          <li><a href="/contact/">Contact Team</a></li>
+          <li><a href="/privacy-policy/">Privacy & Cookies</a></li>
+          <li><a href="/terms/">Terms of Use</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Watch & Live -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Live & TV Broadcasts</h3>
+        <ul class="footer-links">
+          <li><a href="/live/">Match Center & Daily Hub</a></li>
+          <li><a href="/watch/">Global Broadcaster Directory</a></li>
+          <li><a href="/watch/free-streams/">Legal Free Streams Guide</a></li>
+          <li><a href="/watch/uk/">Sky Sports & NOW TV (UK)</a></li>
+          <li><a href="/watch/germany/">DAZN & Sport1 (Germany)</a></li>
+          <li><a href="/watch/belgium/">VTM 2 & VTM GO (Belgium)</a></li>
+          <li><a href="/watch/austria-switzerland/">Austria & Switzerland (DACH)</a></li>
+          <li><a href="/watch/usa/">ESPN+, Peacock & PDCTV (USA)</a></li>
+          <li><a href="/watch/netherlands/">Viaplay (Netherlands)</a></li>
+          <li><a href="/watch/australia/">Fox Sports & Kayo (Australia)</a></li>
+          <li><a href="/watch/canada/">PDCTV (Canada)</a></li>
+          <li><a href="/watch/broadcaster-history/">TV Rights History (1993–Present)</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Attending Alexandra Palace -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Attending Alexandra Palace</h3>
+        <ul class="footer-links">
+          <li><a href="/venue/">Alexandra Palace Venue Guide</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">Great Hall Seating Plan & Views</a></li>
+          <li><a href="/venue/security-bag-policy/">Security & Bag Policy (30x20x10cm)</a></li>
+          <li><a href="/venue/food-drink-bars/">Food, Drink & Cashless Bars</a></li>
+          <li><a href="/travel/">London Transport Overview</a></li>
+          <li><a href="/travel/tube-train-routes/">Tube, Train & W3 Bus Routes</a></li>
+          <li><a href="/hotels/">Hotels Directory</a></li>
+          <li><a href="/hotels/budget-options/">Budget Hotels Near Ally Pally</a></li>
+          <li><a href="/tickets/">Tickets Overview</a></li>
+          <li><a href="/tickets/resale-returns/">Official Resale & Returns Guide</a></li>
+          <li><a href="/fancy-dress/">Fancy Dress Rules & Costumes</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Tournament & Players -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Tournament & Players</h3>
+        <ul class="footer-links">
+          <li><a href="/tournament/world-darts-championship/">Tournament Overview & Format</a></li>
+          <li><a href="/tournament/prize-money/">£5M Prize Money Breakdown</a></li>
+          <li><a href="/draw/">Tournament Draw & Bracket</a></li>
+          <li><a href="/results/">Match Results Center</a></li>
+          <li><a href="/schedule/">2026/27 Schedule & Sessions</a></li>
+          <li><a href="/schedule/finals-weekend/">Finals Weekend Times</a></li>
+          <li><a href="/tournament/order-of-merit/">PDC Order of Merit</a></li>
+          <li><a href="/players/">Player Profiles (13 Stars)</a></li>
+          <li><a href="/players/darts-equipment-specs/">Darts Equipment & Specs</a></li>
+          <li><a href="/players/walk-on-songs/">Walk-On Songs & Anthems</a></li>
+          <li><a href="/players/earnings/">Career Prize Money & Earnings</a></li>
+          <li><a href="/players/180-records/">180 Maximum Records</a></li>
+          <li><a href="/players/player-comparisons/">Head-to-Head Rivalries</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: History & Darts Knowledge -->
+      <div class="footer-col">
+        <h3 class="footer-heading">History & Darts Knowledge</h3>
+        <ul class="footer-links">
+          <li><a href="/history/">History Hub & Archives</a></li>
+          <li><a href="/history/roll-of-honour/">World Darts Roll of Honour</a></li>
+          <li><a href="/history/world-championship-finals/">All-Time Finals Index (1994–2026)</a></li>
+          <li><a href="/history/nine-darters/">Nine-Darters History</a></li>
+          <li><a href="/players/9-darters/">All 16 Ally Pally 9-Darters</a></li>
+          <li><a href="/history/alexandra-palace-world-championship/">Alexandra Palace Darts History</a></li>
+          <li><a href="/darts/rules/">Official 501 Rules & Board Specs</a></li>
+          <li><a href="/darts/legs-vs-sets/">Sets vs Legs Match Format</a></li>
+          <li><a href="/darts/average-explained/">3-Dart Average Explained</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mandatory Independence Disclaimer -->
+    <div class="footer-disclaimer-wrapper">
+      <div class="disclaimer-badge">LEGAL NOTICE & INDEPENDENCE DISCLAIMER</div>
+      <p class="disclaimer-text">
+        <strong>World Darts Guide</strong> is an independent fan, spectator, and editorial information resource. This website is <strong>not affiliated with, endorsed by, sponsored by, or associated in any way</strong> with the Professional Darts Corporation (PDC), Matchroom Sport, Alexandra Palace and Park Trust, or any official sports broadcast rights-holder. All trademarks, logos, event titles ("PDC World Darts Championship", "Ally Pally"), and broadcaster designations are the property of their respective owners and are utilized here strictly under editorial and nominative fair use principles for identification and informational purposes. We do not host, syndicate, or provide unauthorized video streams.
+      </p>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} World Darts Guide (worlddartsguide.com). All rights reserved.</p>
+      <p class="footer-micro">
+        Event Dates: 11 December 2026 – 3 January 2027 • Venue: Alexandra Palace Great Hall, London N22 7AY.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: #0b1120;
+    color: #94a3b8;
+    border-top: 1px solid #1e293b;
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo {
+    font-size: 1.5rem;
+  }
+
+  .footer-brand-title {
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .footer-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #1e293b;
+    color: #34d399;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #10b981;
+  }
+
+  .footer-meta-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .footer-meta-links a {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.15s ease;
+  }
+
+  .footer-meta-links a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  .footer-heading {
+    color: #ffffff;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.15s ease;
+  }
+
+  .footer-links a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  .footer-disclaimer-wrapper {
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .disclaimer-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #f59e0b;
+    margin-bottom: 0.5rem;
+  }
+
+  .disclaimer-text {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin-bottom: 0;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #1e293b;
+    font-size: 0.8rem;
+    color: #64748b;
+    gap: 0.35rem;
+  }
+
+  .footer-micro {
+    margin-bottom: 0;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 1200px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

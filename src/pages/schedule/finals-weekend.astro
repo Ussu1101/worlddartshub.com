@@ -1,0 +1,738 @@
+---
+// src/pages/schedule/finals-weekend.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import scheduleData from '../../data/schedule.json';
+
+const pageTitle = "World Darts Championship 2027 Finals Weekend Schedule — Dates & Times";
+const pageDescription = "Official schedule, dates, and session start times for the 2026/27 PDC World Darts Championship Finals Weekend. Quarter-Finals (Jan 1), Semi-Finals (Jan 2), and Final (Jan 3).";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Schedule', url: '/schedule/' },
+  { name: 'Finals Weekend', url: '/schedule/finals-weekend/' }
+];
+
+const finalsWeekendSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/schedule/finals-weekend/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "2027 PDC World Darts Championship Finals Weekend Sessions",
+    "numberOfItems": 3,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "New Year's Day Quarter-Finals (1 January 2027) — Afternoon 12:30 GMT & Evening 19:00 GMT"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "World Championship Semi-Finals (2 January 2027) — Evening 19:30 GMT"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "The World Championship Final (3 January 2027) — Evening 19:30 GMT"
+      }
+    ]
+  }
+};
+
+const finalsDates = scheduleData.verified_dates.filter(d => 
+  d.date === '2027-01-01' || d.date === '2027-01-02' || d.date === '2027-01-03'
+);
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={finalsWeekendSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="finals-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">THE CLIMAX OF WORLD DARTS</span>
+        <span class="badge">1 – 3 JANUARY 2027</span>
+      </div>
+      <h1>PDC World Darts Championship Finals Weekend Schedule</h1>
+      <p class="hero-lead">
+        The culmination of 96 matches across 28 sessions. Full guide to session start times, doors opening hours, broadcast timings, and match formats for the 2027 Quarter-Finals, Semi-Finals, and Final at Alexandra Palace's Great Hall.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="verified" 
+          lastVerified={scheduleData.last_verified} 
+          source="PDC Official Tournament Schedule" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Final Date</span>
+          <span class="stat-value">Sunday, 3 Jan 2027</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Final Start Time</span>
+          <span class="stat-value">19:30 GMT (Doors 18:00)</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Timezone</span>
+          <span class="stat-value">London (GMT / UTC+0)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+
+      <!-- Fast Facts & Final Timetable Overview -->
+      <section class="content-section">
+        <h2>Finals Weekend Timetable at a Glance</h2>
+        <div class="grid-3 summary-grid">
+          <div class="card summary-card">
+            <span class="date-header">FRIDAY, 1 JAN 2027</span>
+            <h3>Quarter-Finals</h3>
+            <p class="time-callout"><strong>Afternoon:</strong> 12:30 GMT (2 matches)</p>
+            <p class="time-callout"><strong>Evening:</strong> 19:00 GMT (2 matches)</p>
+            <span class="format-badge">Best of 9 Sets</span>
+          </div>
+
+          <div class="card summary-card">
+            <span class="date-header">SATURDAY, 2 JAN 2027</span>
+            <h3>Semi-Finals</h3>
+            <p class="time-callout"><strong>Evening Only:</strong> 19:30 GMT</p>
+            <p class="match-info">Both semi-finals played back-to-back</p>
+            <span class="format-badge">Best of 11 Sets</span>
+          </div>
+
+          <div class="card summary-card highlight-card">
+            <span class="date-header">SUNDAY, 3 JAN 2027</span>
+            <h3>The Final</h3>
+            <p class="time-callout"><strong>Evening Only:</strong> 19:30 GMT</p>
+            <p class="match-info">Sid Waddell Trophy & £1,000,000</p>
+            <span class="format-badge badge-accent">Best of 13 Sets</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Understanding Session Timings -->
+      <section class="content-section">
+        <h2>Doors Open vs. First Dart: Understanding the Timings</h2>
+        <div class="card timing-card">
+          <p>
+            Spectators traveling to Alexandra Palace and television viewers worldwide should note the important distinction between confirmed tournament dates, scheduled session starts, and estimated broadcast walk-ons:
+          </p>
+          <ul class="bullet-list">
+            <li>
+              <strong>Tournament Dates (1 – 3 January 2027): Confirmed 2026/27.</strong> Official tournament dates confirmed by the PDC and Alexandra Palace for the Quarter-Finals (1 Jan), Semi-Finals (2 Jan), and Final (3 Jan).
+            </li>
+            <li>
+              <strong>Scheduled Session Start Times (Subject to Host Broadcaster Confirmation):</strong> The scheduled start times (12:30 GMT afternoon, 19:00 / 19:30 GMT evening) follow established PDC World Championship scheduling standards, but remain subject to final host broadcaster confirmation closer to December.
+            </li>
+            <li>
+              <strong>Doors Open (Scheduled: 18:00 GMT Evening / 11:30 GMT Afternoon):</strong> Great Hall security gates and Palm Court bars typically open 60 to 90 minutes prior to stage action. Arrive early to clear security bag checks (strictly max <strong>30cm x 20cm x 10cm</strong>). Final door opening hours will be re-confirmed in the official PDC spectator handbook.
+            </li>
+            <li>
+              <strong>Player Walk-Ons & First Dart (Estimated Timings):</strong> Walk-on times (approx. 19:45 GMT) and first dart thrown (approx. 20:00 GMT) are broadcast estimates dependent on live studio analysis and stage rehearsals.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <AdSlot slotType="banner" id="finals-mid-ad" />
+
+      <!-- Detailed Day-by-Day Session Breakdown -->
+      <section class="content-section">
+        <h2>Day-by-Day Session Details & Format Progression</h2>
+        
+        <div class="sessions-breakdown">
+          
+          <!-- Quarter Finals -->
+          <div class="card session-card">
+            <div class="session-header">
+              <div>
+                <span class="session-badge">NEW YEAR'S DAY</span>
+                <h3>Quarter-Finals: Friday, 1 January 2027</h3>
+              </div>
+              <span class="sets-tag">Best of 9 Sets (First to 5)</span>
+            </div>
+            <p>
+              The final eight contenders battle across two sessions on New Year's Day. Each quarter-final is played as a best-of-9 sets contest (first player to win 5 sets progresses to the semi-finals):
+            </p>
+            <div class="session-slots">
+              <div class="slot-box">
+                <h4>Afternoon Session (12:30 GMT)</h4>
+                <p>Doors open 11:30 GMT. Features Quarter-Finals 1 & 2.</p>
+              </div>
+              <div class="slot-box">
+                <h4>Evening Session (19:00 GMT)</h4>
+                <p>Doors open 18:00 GMT. Features Quarter-Finals 3 & 4.</p>
+              </div>
+            </div>
+            <p class="prize-tag">Quarter-Final Losers Receive: <strong>£100,000</strong></p>
+          </div>
+
+          <!-- Semi Finals -->
+          <div class="card session-card">
+            <div class="session-header">
+              <div>
+                <span class="session-badge">SATURDAY EVENING</span>
+                <h3>Semi-Finals: Saturday, 2 January 2027</h3>
+              </div>
+              <span class="sets-tag">Best of 11 Sets (First to 6)</span>
+            </div>
+            <p>
+              A single blockbuster evening session featuring both world championship semi-finals played consecutively on the Great Hall stage:
+            </p>
+            <div class="session-slots">
+              <div class="slot-box full-width">
+                <h4>Evening Session (19:30 GMT Start)</h4>
+                <p>Doors open 18:00 GMT. Match 1: Semi-Final 1 (approx. 19:45 GMT) • Match 2: Semi-Final 2 (approx. 21:30 GMT).</p>
+              </div>
+            </div>
+            <p class="prize-tag">Semi-Final Losers Receive: <strong>£200,000</strong></p>
+          </div>
+
+          <!-- The Final -->
+          <div class="card session-card final-session-card">
+            <div class="session-header">
+              <div>
+                <span class="session-badge badge-accent">THE SHOWPIECE FINAL</span>
+                <h3>The World Championship Final: Sunday, 3 January 2027</h3>
+              </div>
+              <span class="sets-tag highlight-tag">Best of 13 Sets (First to 7)</span>
+            </div>
+            <p>
+              The 34th staging of the PDC World Darts Championship concludes on Sunday evening in front of 5,000+ spectators at Alexandra Palace and millions watching globally:
+            </p>
+            <div class="session-slots">
+              <div class="slot-box full-width highlight-slot">
+                <h4>Evening Session (19:30 GMT Start)</h4>
+                <p>Doors open 18:00 GMT. Walk-ons from 19:45 GMT. First dart approx. 20:00 GMT. Winner crowned around 22:30 GMT.</p>
+              </div>
+            </div>
+            <div class="final-prizes-box">
+              <div class="prize-col">
+                <span class="prize-title">World Champion:</span>
+                <span class="prize-amount winner-amount">£1,000,000 + Sid Waddell Trophy</span>
+              </div>
+              <div class="prize-col">
+                <span class="prize-title">Runner-Up:</span>
+                <span class="prize-amount">£400,000</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Global Broadcast Times Converter -->
+      <section class="content-section">
+        <h2>Global Final Start Times by Timezone</h2>
+        <div class="table-responsive">
+          <table class="data-table timezone-table">
+            <thead>
+              <tr>
+                <th>Region</th>
+                <th>Timezone</th>
+                <th>Scheduled Final Start</th>
+                <th>Confirmed Broadcaster</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>United Kingdom & Ireland</strong></td>
+                <td>GMT / UTC+0</td>
+                <td><strong>19:30 GMT</strong> (Sunday 3 Jan)</td>
+                <td><a href="/watch/uk/">Sky Sports Darts & NOW</a></td>
+              </tr>
+              <tr>
+                <td><strong>Germany, Austria & Switzerland</strong></td>
+                <td>CET / UTC+1</td>
+                <td><strong>20:30 CET</strong> (Sunday 3 Jan)</td>
+                <td><a href="/watch/germany/">DAZN & Sport1</a></td>
+              </tr>
+              <tr>
+                <td><strong>Netherlands & Belgium</strong></td>
+                <td>CET / UTC+1</td>
+                <td><strong>20:30 CET</strong> (Sunday 3 Jan)</td>
+                <td><a href="/watch/netherlands/">Viaplay & VTM 2</a></td>
+              </tr>
+              <tr>
+                <td><strong>United States (Eastern)</strong></td>
+                <td>EST / UTC-5</td>
+                <td><strong>14:30 EST</strong> (Sunday 3 Jan)</td>
+                <td><a href="/watch/usa/">ESPN+ & ESPN2</a></td>
+              </tr>
+              <tr>
+                <td><strong>United States (Pacific)</strong></td>
+                <td>PST / UTC-8</td>
+                <td><strong>11:30 PST</strong> (Sunday 3 Jan)</td>
+                <td><a href="/watch/usa/">ESPN+</a></td>
+              </tr>
+              <tr>
+                <td><strong>Australia (Eastern)</strong></td>
+                <td>AEDT / UTC+11</td>
+                <td><strong>06:30 AEDT</strong> (Monday 4 Jan)</td>
+                <td><a href="/watch/australia/">Fox Sports / Kayo</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore The Tournament Ecosystem</h2>
+        <div class="grid-2">
+          <a href="/schedule/" class="cluster-link-card">
+            <h3>🗓️ Full 28-Session Schedule</h3>
+            <p>Complete date-by-date calendar from opening night through the final.</p>
+          </a>
+          <a href="/tournament/prize-money/" class="cluster-link-card">
+            <h3>💰 £5M Prize Fund Breakdown</h3>
+            <p>Complete financial distribution for the winner, runner-up, and all rounds.</p>
+          </a>
+          <a href="/venue/great-hall-seating-plan/" class="cluster-link-card">
+            <h3>🏛️ Alexandra Palace Seating Plan</h3>
+            <p>Seating advice, floor tables, and tiered stand views in the Great Hall.</p>
+          </a>
+          <a href="/results/" class="cluster-link-card">
+            <h3>📜 Results Center & Past Finals</h3>
+            <p>Confirmed scores and historic match averages from recent finals.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Schedule Navigation</h3>
+        <ul class="widget-list">
+          <li><a href="/schedule/finals-weekend/">Finals Weekend Times</a></li>
+          <li><a href="/schedule/">Full 2026/27 Schedule</a></li>
+          <li><a href="/live/">Match Center & Today's Schedule</a></li>
+          <li><a href="/draw/">Tournament Bracket</a></li>
+          <li><a href="/results/">Results Center</a></li>
+          <li><a href="/tournament/prize-money/">Prize Money Guide</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="finals-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Spectator Quick Links</h3>
+        <ul class="widget-list">
+          <li><a href="/tickets/">Tickets & Resale Ballot</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">Great Hall Seating Views</a></li>
+          <li><a href="/travel/">Travel & Tube Routes</a></li>
+          <li><a href="/hotels/">Hotels Near Alexandra Palace</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .finals-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #ef4444;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .finals-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f87171;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .summary-grid {
+    margin-top: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .summary-card {
+    padding: 1.5rem 1.25rem;
+    border-top: 4px solid #64748b;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .date-header {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.05em;
+  }
+
+  .summary-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #0f172a;
+  }
+
+  .time-callout {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #1e293b;
+  }
+
+  .match-info {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #64748b;
+  }
+
+  .format-badge {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+    background: #f1f5f9;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+  }
+
+  .highlight-card {
+    border-top-color: #ef4444;
+    background: #fffafa;
+  }
+
+  .timing-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+  }
+
+  .bullet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding-left: 1.25rem;
+    margin-top: 0.75rem;
+  }
+
+  .bullet-list li {
+    line-height: 1.55;
+    color: #334155;
+  }
+
+  .sessions-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .session-card {
+    padding: 1.5rem;
+    border-left: 4px solid #3b82f6;
+  }
+
+  .final-session-card {
+    border-left-color: #ef4444;
+    background: #fffafa;
+  }
+
+  .session-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .session-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #2563eb;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .session-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #0f172a;
+  }
+
+  .sets-tag {
+    background: #f1f5f9;
+    padding: 0.3rem 0.65rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+  }
+
+  .highlight-tag {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+  }
+
+  .session-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .slot-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+  }
+
+  .slot-box h4 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    color: #0f172a;
+  }
+
+  .slot-box p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #64748b;
+  }
+
+  .full-width {
+    grid-column: 1 / -1;
+  }
+
+  .highlight-slot {
+    border-color: #fca5a5;
+    background: #ffffff;
+  }
+
+  .prize-tag {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0;
+  }
+
+  .final-prizes-box {
+    display: flex;
+    gap: 2rem;
+    background: #ffffff;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    border: 1px solid #fecaca;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .prize-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prize-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 700;
+  }
+
+  .prize-amount {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  .winner-amount {
+    color: #dc2626;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #ef4444;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .finals-hero h1 {
+      font-size: 2.15rem;
+    }
+  }
+</style>

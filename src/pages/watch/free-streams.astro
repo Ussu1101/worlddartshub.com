@@ -1,0 +1,965 @@
+---
+// src/pages/watch/free-streams.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Can You Watch PDC World Darts Championship Free? Legal Free-to-Air & Stream Guide";
+const pageDescription = "Complete guide to legal free-to-air TV channels, legitimate free streams in Belgium & Germany/Austria, paywalled territories, and official highlight alternatives for the 2026/27 World Darts Championship.";
+
+const breadcrumbItems = [
+  { name: 'Watch & Stream', url: '/watch/' },
+  { name: 'Free Streams Guide' }
+];
+
+const freeStreamsSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "PDC World Darts Championship Free Streaming & Free-to-Air Guide",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I legally watch the PDC World Darts Championship for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but strictly depending on your country of residence. In Belgium, VTM 2 broadcasts live on free-to-air television and streams free on VTM GO under a multi-year deal covering premier PDC tournaments for the coming years. In Germany, SPORT1 broadcasts selected sessions free-to-air for the 2026/27 World Championship (its final tournament broadcast before ProSiebenSat.1 takes over from 2027/28). In Austria and Switzerland, DAZN holds live streaming rights through at least 2031, but no separate free-to-air World Championship broadcaster has been confirmed in our current source set. In the UK, USA, Australia, and the Netherlands, there are no legal free live broadcasts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free stream of the World Darts Championship in the UK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. In the United Kingdom, exclusive live rights belong to Sky Sports under an agreement running through 2030. Free-to-air networks such as BBC, ITV, and Channel 4 hold no live broadcast rights. UK fans must subscribe to Sky Sports or purchase a contract-free NOW Sports Day or Month Membership."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does VTM 2 broadcast darts for free in Belgium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under a multi-year partnership renewed in 2026 with the PDC through DPG Media, commercial channel VTM 2 broadcasts premier tournament sessions on basic free television across Flanders. Belgian residents can also stream live coverage free of charge via the VTM GO app and website by creating a free user account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does SPORT1 broadcast the World Championship for free in Austria or Switzerland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No separate free-to-air World Championship broadcaster has been confirmed in our current source set for Austria or Switzerland. While SPORT1 holds free-to-air rights in Germany for the 2026/27 event, DAZN is the verified master rights holder across Austria and Switzerland through at least 2031."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I watch free World Darts Championship highlights legally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The official PDC YouTube channel uploads comprehensive session highlights, 9-dart finishes, key checkout clips, and player interviews free of charge within hours of each session concluding. Sky Sports Darts and DAZN also publish free digital highlight packages in their respective broadcast territories."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={freeStreamsSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">LEGAL STREAMING UTILITY</span>
+        <span class="badge">FREE-TO-AIR VS PAYWALL</span>
+      </div>
+      <h1>Can You Watch the PDC World Darts Championship for Free?</h1>
+      <p class="hero-lead">
+        A transparent breakdown of legal free-to-air channels, verified free streaming platforms by country, strict paywall territories, and official free highlight options for the 2026/27 tournament.
+      </p>
+    </div>
+  </header>
+
+  <div class="container main-layout">
+    <article class="content-body">
+      <VerificationBadge verifiedDate="October 2026" topic="Broadcaster Licensing Terms & Free-to-Air Availability" />
+
+      <!-- Critical Reality Box -->
+      <section class="reality-box">
+        <div class="reality-header">
+          <span class="reality-icon">⚖️</span>
+          <div>
+            <h2>The Streaming Reality: Country Dictates Access</h2>
+            <p class="reality-subtitle">There is no universal free worldwide stream. Broadcast rights are sold territory by territory.</p>
+          </div>
+        </div>
+        <p>
+          Every year, millions of darts fans search online for free ways to watch the PDC World Darts Championship at Alexandra Palace. The reality is simple: <strong>whether you can watch for free depends entirely on the country you are in</strong>.
+        </p>
+        <p>
+          In specific European territories—notably <strong>Belgium</strong> (via VTM 2 and VTM GO for premier PDC tournaments) and <strong>Germany</strong> (via SPORT1 for the 2026/27 championship only)—agreements allow domestic viewers to access free-to-air television or verified web streams. However, in <strong>Austria and Switzerland</strong>, while DAZN holds master streaming rights through at least 2031, no separate free-to-air World Championship broadcaster has been confirmed in our current source set. In other major markets including the <strong>United Kingdom, Ireland, the United States, the Netherlands, and Australia</strong>, live rights are strictly locked behind paid television subscriptions or paid OTT streaming passes.
+        </p>
+      </section>
+
+      <!-- Quick Reference Table -->
+      <section class="content-section">
+        <h2>Country-by-Country Legal Access Matrix (2026/27)</h2>
+        <p>
+          This matrix summarizes the verified legal status of free viewing options across major darts territories for the 2026/27 World Championship:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Event</th>
+                <th>Broadcaster</th>
+                <th>Free / Pay</th>
+                <th>Status</th>
+                <th>Rights Period</th>
+                <th>Source</th>
+                <th>Guide</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-free">
+                <td><strong>Belgium 🇧🇪</strong></td>
+                <td>World Darts Championship 2026/27 (and broader premier PDC events)</td>
+                <td>VTM 2 & VTM GO (DPG Media)</td>
+                <td><span class="status-tag tag-free">100% Free-to-Air</span></td>
+                <td>Confirmed 2026/27</td>
+                <td>Multi-year agreement renewed in 2026 for the coming years</td>
+                <td>PDC & DPG Media (VTM) Broadcast Agreement Announcement (2026)</td>
+                <td><a href="/watch/belgium/">Belgium Guide &rarr;</a></td>
+              </tr>
+              <tr class="row-hybrid">
+                <td><strong>Germany 🇩🇪</strong></td>
+                <td>World Darts Championship 2026/27</td>
+                <td>SPORT1 (Free-to-Air) / DAZN (Paid Streaming)</td>
+                <td><span class="status-tag tag-hybrid">Free-to-Air Available (SPORT1)</span></td>
+                <td>Confirmed 2026/27</td>
+                <td>SPORT1 final World Championship is Dec 2026; ProSiebenSat.1 from 2027/28; DAZN through at least 2031</td>
+                <td>DAZN DACH Broadcast Rights Announcement (Feb 2026) & SPORT1 Rights Confirmation</td>
+                <td><a href="/watch/germany/">Germany Guide &rarr;</a></td>
+              </tr>
+              <tr class="row-paid">
+                <td><strong>Austria 🇦🇹</strong></td>
+                <td>World Darts Championship 2026/27</td>
+                <td>DAZN Austria (Primary Live Streaming)</td>
+                <td><span class="status-tag tag-paid">Paid Subscription</span></td>
+                <td>Confirmed 2026/27 on DAZN</td>
+                <td>DAZN holds PDC rights through at least 2031 (No separate free-to-air World Championship broadcaster confirmed in our current source set)</td>
+                <td>DAZN DACH Broadcast Rights Announcement (Feb 2026)</td>
+                <td><a href="/watch/austria-switzerland/">Austria Guide &rarr;</a></td>
+              </tr>
+              <tr class="row-paid">
+                <td><strong>Switzerland 🇨🇭</strong></td>
+                <td>World Darts Championship 2026/27</td>
+                <td>DAZN Switzerland (Primary Live Streaming)</td>
+                <td><span class="status-tag tag-paid">Paid Subscription</span></td>
+                <td>Confirmed 2026/27 on DAZN</td>
+                <td>DAZN holds PDC rights through at least 2031 (No separate free-to-air World Championship broadcaster confirmed in our current source set)</td>
+                <td>DAZN DACH Broadcast Rights Announcement (Feb 2026)</td>
+                <td><a href="/watch/austria-switzerland/">Switzerland Guide &rarr;</a></td>
+              </tr>
+              <tr class="row-paid">
+                <td><strong>United Kingdom 🇬🇧</strong></td>
+                <td>World Darts Championship 2026/27</td>
+                <td>Sky Sports & NOW TV</td>
+                <td><span class="status-tag tag-paid">Strictly Paywalled</span></td>
+                <td>Confirmed 2026/27</td>
+                <td>Exclusive live UK rights confirmed through 2030 (£125m deal)</td>
+                <td>Sky Group & PDC Rights Partnership Extension (Feb 2025)</td>
+                <td><a href="/watch/uk/">UK Guide &rarr;</a></td>
+              </tr>
+              <tr class="row-paid">
+                <td><strong>Ireland 🇮🇪</strong></td>
+                <td>World Darts Championship 2026/27</td>
+                <td>Sky Sports Ireland & NOW Ireland</td>
+                <td><span class="status-tag tag-paid">Strictly Paywalled</span></td>
+                <td>Confirmed 2026/27</td>
+                <td>Confirmed through 2030</td>
+                <td>Sky Group Distribution Rights Schedule</td>
+                <td><a href="/watch/ireland/">Ireland Guide &rarr;</a></td>
+              </tr>
+              <tr class="row-paid">
+                <td><strong>United States 🇺🇸</strong></td>
+                <td>World Darts Championship 2026/27</td>
+                <td>ESPN / ESPN+, Peacock & PDCTV</td>
+                <td><span class="status-tag tag-paid">Strictly Paywalled</span></td>
+                <td>Confirmed 2026/27</td>
+                <td>PDC US domestic broadcast agreement (June 2026)</td>
+                <td>PDC US Domestic Partnership Announcements (June 2026)</td>
+                <td><a href="/watch/usa/">USA Guide &rarr;</a></td>
+              </tr>
+              <tr class="row-paid">
+                <td><strong>Netherlands 🇳🇱</strong></td>
+                <td>World Darts Championship 2026/27</td>
+                <td>Viaplay (DPG / Videoland transition)</td>
+                <td><span class="status-tag tag-paid">Strictly Paywalled</span></td>
+                <td>Confirmed 2026/27</td>
+                <td>Exclusive Dutch rights through 2029 (Under acquisition by DPG Media / Videoland)</td>
+                <td>Viaplay Group & DPG Media Transaction Declaration (July 2026)</td>
+                <td><a href="/watch/netherlands/">Netherlands Guide &rarr;</a></td>
+              </tr>
+              <tr class="row-paid">
+                <td><strong>Australia 🇦🇺</strong></td>
+                <td>World Darts Championship 2026/27</td>
+                <td>Fox Sports & Kayo Sports</td>
+                <td><span class="status-tag tag-paid">Strictly Paywalled</span></td>
+                <td>Confirmed 2026/27</td>
+                <td>Foxtel Group multi-year PDC broadcast partnership</td>
+                <td>Foxtel Group Sports Programming Schedule</td>
+                <td><a href="/watch/australia/">Australia Guide &rarr;</a></td>
+              </tr>
+              <tr class="row-paid">
+                <td><strong>Canada 🇨🇦</strong></td>
+                <td>World Darts Championship 2026/27</td>
+                <td>PDCTV</td>
+                <td><span class="status-tag tag-paid">Strictly Paywalled</span></td>
+                <td>Confirmed 2026/27</td>
+                <td>Official PDC International Direct-to-Consumer Service</td>
+                <td>PDC International Broadcast Directory</td>
+                <td><a href="/watch/canada/">Canada Guide &rarr;</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot position="mid-content" format="in-article" />
+
+      <!-- Territories with Confirmed Legal Free Coverage -->
+      <section class="content-section">
+        <h2>Territories with Confirmed Legal Free Coverage</h2>
+
+        <div class="country-card-block">
+          <div class="country-badge-row">
+            <span class="badge badge-accent">BELGIUM (FLANDERS & WALLONIA)</span>
+            <span class="badge">100% FREE LEGAL BROADCAST</span>
+          </div>
+          <h3>How to Watch for Free via VTM 2 and VTM GO</h3>
+          <p>
+            Belgian darts enthusiasts enjoy one of the most spectator-friendly broadcast setups in world sport. Under a multi-year broadcast rights agreement renewed in 2026 between the Professional Darts Corporation and commercial media group <strong>DPG Media</strong>, premier PDC tournaments—including the World Darts Championship—are carried live on free-to-air commercial television for the coming years:
+          </p>
+          <ul>
+            <li><strong>2026/27 World Championship Coverage:</strong> Carried live and free-to-air on <strong>VTM 2</strong>, which is part of the basic free channel lineup provided by every domestic television distributor in Belgium (Telenet Ch 7/8, Proximus Pickx Ch 6/11, Orange TV Ch 7, TV Vlaanderen Ch 7).</li>
+            <li><strong>Free Digital Live Streaming:</strong> Viewers can stream through the <strong>VTM GO</strong> application or by visiting <a href="https://vtm.be/vtmgo" target="_blank" rel="noopener noreferrer">vtm.be/vtmgo</a>. Creating a personal account requires only an email address and Belgian postal code; there is no monthly subscription fee or credit card requirement.</li>
+            <li><strong>Broader PDC Rights vs. Euro Tour:</strong> The 2026 DPG Media renewal secures premier televised tournaments for the coming years. Broader PDC events are carried across VTM platforms, while future European Tour event distributions follow separate contractual schedules.</li>
+            <li><strong>Commentary:</strong> Broadcasts feature native Flemish commentary with Belgian darts experts. English commentary is separately available via a paid PDCTV pass.</li>
+          </ul>
+          <p>
+            For complete technical details, channel numbers across all regional operators, and app instructions, see our <a href="/watch/belgium/">dedicated Belgium Broadcast Guide</a>.
+          </p>
+        </div>
+
+        <div class="country-card-block">
+          <div class="country-badge-row">
+            <span class="badge badge-accent">GERMANY</span>
+            <span class="badge">FREE-TO-AIR LINEAR TV (SPORT1 2026/27 ONLY)</span>
+          </div>
+          <h3>Germany: SPORT1 Free-to-Air for 2026/27 (Final World Championship)</h3>
+          <p>
+            In Germany, primary tournament live streaming rights are held by <strong>DAZN</strong> through at least 2031 under its master agreement announced in February 2026. Free-to-air linear access for the 2026/27 World Championship is provided through a specific sub-licensing arrangement:
+          </p>
+          <ul>
+            <li><strong>SPORT1 Confirmed for 2026/27:</strong> Free-to-air commercial channel <strong>SPORT1</strong> broadcasts selected live matches to viewers in Germany unencrypted on linear television and via its web stream (<a href="https://tv.sport1.de/live/sport1" target="_blank" rel="noopener noreferrer">tv.sport1.de</a>).</li>
+            <li><strong>SPORT1 Final Broadcast Confirmation:</strong> SPORT1 has separately confirmed that December 2026 marks its <strong>final PDC World Darts Championship broadcast</strong>. From the 2027/28 rights cycle onward, the World Championship is no longer part of SPORT1's portfolio.</li>
+            <li><strong>ProSiebenSat.1 Transition from 2027/28:</strong> Starting with the 2027/28 rights cycle, free-to-air World Championship sub-licensed coverage transitions to commercial broadcast group <strong>ProSiebenSat.1</strong>, while SPORT1 retains rights to selected other PDC events.</li>
+          </ul>
+          <p>
+            For German channel tuning frequencies and DAZN streaming details, consult our <a href="/watch/germany/">Germany Broadcast Guide</a>.
+          </p>
+        </div>
+
+        <div class="country-card-block">
+          <div class="country-badge-row">
+            <span class="badge badge-accent">AUSTRIA & SWITZERLAND</span>
+            <span class="badge">NO SEPARATE FTA CONFIRMED</span>
+          </div>
+          <h3>Austria & Switzerland: DAZN Streaming & Free-to-Air Status</h3>
+          <p>
+            Viewers in Austria and Switzerland frequently ask whether German free-to-air broadcasts extend to their territories:
+          </p>
+          <ul>
+            <li><strong>DAZN Master Rights:</strong> In its February 2026 announcement, DAZN confirmed that it retains master PDC broadcasting and streaming rights across Germany, Austria, and Switzerland through at least <strong>2031</strong>, streaming every session live with German commentary.</li>
+            <li><strong>Free-to-Air World Championship Status:</strong> <strong>No separate free-to-air World Championship broadcaster has been confirmed in our current source set for Austria or Switzerland.</strong> Free-to-air rights from previous cycles or from Germany cannot be assumed or generalized to Austria or Switzerland.</li>
+            <li><strong>Exclusions:</strong> Neither Austrian public broadcaster ORF nor ServusTV holds World Championship rights. In Switzerland, neither public broadcaster SRF nor pay-TV operator blue Sport holds rights.</li>
+          </ul>
+          <p>
+            For independent country analyses and platform options, see our <a href="/watch/austria-switzerland/">Austria & Switzerland Broadcast Guide</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Paywalled Territories -->
+      <section class="content-section">
+        <h2>Paywalled Territories: Why There Is No Legal Free Stream</h2>
+        <p>
+          If you reside in the United Kingdom, Ireland, the United States, the Netherlands, or Australia, you may encounter third-party websites claiming to offer "free live streams" of Alexandra Palace sessions. <strong>These claims are universally false or unauthorized.</strong>
+        </p>
+
+        <div class="grid-2">
+          <div class="card card-paywall">
+            <h3>🇬🇧 United Kingdom & Ireland</h3>
+            <p><strong>Exclusive Broadcaster:</strong> Sky Sports (UK) & Sky Sports Ireland</p>
+            <p>
+              Sky Sports invested £125m+ in a multi-year rights extension running through 2030. Neither the BBC, ITV, Channel 4, nor Freeview holds rights to broadcast live championship darts. UK fans seeking flexible access can purchase contract-free day or monthly passes via <strong>NOW TV</strong>, but there is no legal zero-cost broadcast.
+            </p>
+            <a href="/watch/uk/" class="btn btn-secondary btn-sm">Read UK Options &rarr;</a>
+          </div>
+
+          <div class="card card-paywall">
+            <h3>🇺🇸 United States</h3>
+            <p><strong>Exclusive Broadcasters:</strong> ESPN / ESPN+ & Peacock</p>
+            <p>
+              In June 2026, the PDC finalized a landmark domestic agreement bringing premier events to ESPN and Peacock. There is no free over-the-air network broadcast (such as CBS, NBC, or ABC regular television). An active subscription to ESPN+ or Peacock, or an international event pass via <strong>PDCTV</strong>, is required.
+            </p>
+            <a href="/watch/usa/" class="btn btn-secondary btn-sm">Read US Options &rarr;</a>
+          </div>
+
+          <div class="card card-paywall">
+            <h3>🇳🇱 Netherlands</h3>
+            <p><strong>Exclusive Broadcaster:</strong> Viaplay (DPG / Videoland transition)</p>
+            <p>
+              The era of free commercial darts broadcasts on SBS6 and RTL7 concluded in 2021. Dutch broadcast rights are held exclusively by Viaplay (currently undergoing acquisition by DPG Media / Videoland). Both services operate on paid subscription tiers; no legal free live feed exists in the Netherlands.
+            </p>
+            <a href="/watch/netherlands/" class="btn btn-secondary btn-sm">Read Netherlands Options &rarr;</a>
+          </div>
+
+          <div class="card card-paywall">
+            <h3>🇦🇺 Australia</h3>
+            <p><strong>Exclusive Broadcaster:</strong> Fox Sports & Kayo Sports</p>
+            <p>
+              Foxtel Group holds multi-year Australian rights. Coverage is not broadcast on free-to-air channels (Seven, Nine, Ten, ABC, or SBS). Fans can watch every session live or on-demand using Foxtel iQ or the contract-free sports streaming service <strong>Kayo Sports</strong>.
+            </p>
+            <a href="/watch/australia/" class="btn btn-secondary btn-sm">Read Australia Options &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Dangers of Pirated Streaming & IPTV -->
+      <section class="content-section">
+        <h2>The Truth About Unofficial Free Streams & Illicit IPTV</h2>
+        <p>
+          Searches for free darts streaming frequently point users to illicit aggregator portals, unauthorized Discord/Reddit stream links, and pirated IPTV services. Before clicking or installing unfamiliar software, consider the substantial operational and security risks:
+        </p>
+
+        <div class="risk-grid">
+          <div class="risk-card">
+            <span class="risk-icon">🦠</span>
+            <h4>Malware & Drive-by Exploits</h4>
+            <p>
+              Pirate streaming portals monetize through predatory ad networks. Users are routinely subjected to aggressive pop-unders, deceptive "Flash update" prompts, and obfuscated JavaScript scripts designed to compromise browser security or install adware.
+            </p>
+          </div>
+
+          <div class="risk-card">
+            <span class="risk-icon">📉</span>
+            <h4>Latency & Sudden Stream Takedowns</h4>
+            <p>
+              PDC rights holders employ dedicated anti-piracy agencies that issue rapid copyright takedowns during high-profile matches. Unofficial streams are notorious for cutting out during deciding legs, suffering buffering, or lagging minutes behind real play.
+            </p>
+          </div>
+
+          <div class="risk-card">
+            <span class="risk-icon">💳</span>
+            <h4>Credit Card Phishing Scams</h4>
+            <p>
+              Many illicit portals mandate that visitors "register for free" to unlock HD streams, prompting for credit card details under the guise of age verification. These are classic subscription-trap scams that lead to recurring unauthorized billing.
+            </p>
+          </div>
+
+          <div class="risk-card">
+            <span class="risk-icon">⚖️</span>
+            <h4>Terms of Service & Geo-Blocking Compliance</h4>
+            <p>
+              Broadcasters employ geo-fencing technologies to honor international licensing boundaries. Attempting to bypass these protections violates provider terms of service and can result in account bans on legitimate platforms.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot position="in-article" format="display" />
+
+      <!-- Legitimate 100% Free Alternatives -->
+      <section class="content-section">
+        <h2>Legitimate 100% Free Alternatives: Official Highlights & Catch-Up</h2>
+        <p>
+          If you do not have access to a legal live broadcaster and choose not to purchase a paid subscription or event pass, you can still follow every match completely free through official channels:
+        </p>
+
+        <div class="alternatives-list">
+          <div class="alt-item">
+            <div class="alt-header">
+              <span class="alt-platform">Official PDC YouTube Channel</span>
+              <span class="alt-cost">100% Free Worldwide</span>
+            </div>
+            <p>
+              The PDC's official digital production team uploads extended session highlights, memorable 9-darters, high-scoring checkout compilations, walk-on entrances, and post-match stage interviews to YouTube (<a href="https://www.youtube.com/@OfficialPDC" target="_blank" rel="noopener noreferrer">@OfficialPDC</a>) within hours of each session finishing.
+            </p>
+          </div>
+
+          <div class="alt-item">
+            <div class="alt-header">
+              <span class="alt-platform">Sky Sports Darts Digital & Social Platforms</span>
+              <span class="alt-cost">Free in UK & Ireland</span>
+            </div>
+            <p>
+              Sky Sports publishes comprehensive free video recaps, daily round-up shows, analysis podcasts, and decisive leg clips across the Sky Sports App, Sky Sports website, and YouTube channel without requiring a paid TV subscription.
+            </p>
+          </div>
+
+          <div class="alt-item">
+            <div class="alt-header">
+              <span class="alt-platform">DAZN Darts YouTube & Highlights Hub</span>
+              <span class="alt-cost">Free in DACH Region</span>
+            </div>
+            <p>
+              For German-speaking fans, DAZN produces extensive free highlight videos with original German commentary, uploaded shortly after major afternoon and evening matches conclude.
+            </p>
+          </div>
+
+          <div class="alt-item">
+            <div class="alt-header">
+              <span class="alt-platform">World Darts Guide Daily Results & Schedule Center</span>
+              <span class="alt-cost">100% Free Editorial Utility</span>
+            </div>
+            <p>
+              Track session starting times, tournament progression, and final scores right here on World Darts Guide via our <a href="/results/">Match Results Center</a> and <a href="/schedule/">Daily Schedule Hub</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions About Free Darts Streams</h2>
+
+        <div class="faq-accordion">
+          <details class="faq-item" open>
+            <summary>Can I watch the PDC World Darts Championship for free on BBC or ITV?</summary>
+            <div class="faq-content">
+              <p>
+                No. In the UK, public-service broadcasters BBC, ITV, Channel 4, and Channel 5 do not hold live rights to the PDC World Darts Championship. Live tournament rights have been exclusively held by Sky Sports since the inaugural 1993/94 championship and remain contracted to Sky through at least 2030.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is there a free trial available on Sky Sports or NOW TV?</summary>
+            <div class="faq-content">
+              <p>
+                Sky Sports linear TV packages generally require multi-month minimum contracts. NOW TV occasionally runs promotional offers on Sports Day or Month Memberships, but permanent free trials for live sports channels are rare. Always verify pricing directly on the official NOW website (<a href="https://www.nowtv.com" target="_blank" rel="noopener noreferrer">nowtv.com</a>) prior to the tournament.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I watch VTM GO outside Belgium?</summary>
+            <div class="faq-content">
+              <p>
+                VTM GO is licensed specifically for residents in Belgium. Under EU cross-border portability regulations, Belgian subscribers can stream while temporarily traveling within other European Union member states once their Belgian identity or residency is validated. Access from outside the designated licensed territory is restricted by geo-blocking.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does PDCTV offer any free live streams?</summary>
+            <div class="faq-content">
+              <p>
+                PDCTV (the PDC's official streaming portal) requires a paid Event Pass, Monthly Pass, or Annual Subscription to stream live matches from Alexandra Palace. However, PDCTV provides free registered access to audio-only commentary for selected events and a library of non-live archive videos.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </article>
+
+    <aside class="sidebar">
+      <div class="widget card">
+        <h3 class="widget-title">Country Watch Guides</h3>
+        <p class="sidebar-micro">Official TV channels, apps & confirmed rights holders:</p>
+        <ul class="widget-list">
+          <li><a href="/watch/uk/">🇬🇧 United Kingdom (Sky Sports)</a></li>
+          <li><a href="/watch/germany/">🇩🇪 Germany (DAZN & Sport1)</a></li>
+          <li><a href="/watch/belgium/">🇧🇪 Belgium (VTM 2 & VTM GO)</a></li>
+          <li><a href="/watch/austria-switzerland/">🇦🇹/🇨🇭 Austria & Switzerland</a></li>
+          <li><a href="/watch/usa/">🇺🇸 United States (ESPN & Peacock)</a></li>
+          <li><a href="/watch/netherlands/">🇳🇱 Netherlands (Viaplay)</a></li>
+          <li><a href="/watch/australia/">🇦🇺 Australia (Fox & Kayo)</a></li>
+          <li><a href="/watch/canada/">🇨🇦 Canada (PDCTV)</a></li>
+          <li><a href="/watch/international/">🌍 International / Rest of World</a></li>
+        </ul>
+      </div>
+
+      <div class="widget card">
+        <h3 class="widget-title">Broadcasting History</h3>
+        <p class="sidebar-micro">How darts television evolved from Circus Tavern to global streaming:</p>
+        <p style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 0.8rem;">
+          Explore the fascinating journey from the 1993 split with Sid Waddell to multi-million pound broadcast deals.
+        </p>
+        <a href="/watch/broadcaster-history/" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">
+          Read Rights History &rarr;
+        </a>
+      </div>
+
+      <AdSlot position="sidebar" format="box" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    background-color: #334155;
+    color: #f8fafc;
+  }
+
+  .badge-accent {
+    background-color: #0284c7;
+    color: #ffffff;
+  }
+
+  .page-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 0;
+  }
+
+  .main-layout {
+    display: grid;
+    grid-template-columns: 2.6fr 1fr;
+    gap: 2.5rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .reality-box {
+    background-color: #f8fafc;
+    border: 2px solid #0284c7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .reality-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .reality-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .reality-box h2 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin: 0 0 0.25rem;
+  }
+
+  .reality-subtitle {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .reality-box p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #334155;
+    margin-bottom: 0.75rem;
+  }
+
+  .reality-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .content-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    font-weight: 800;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .content-section p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    text-align: left;
+  }
+
+  .data-table th {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 0.75rem 0.85rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .data-table td {
+    padding: 0.75rem 0.85rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+  }
+
+  .data-table tr:hover {
+    background-color: #f1f5f9;
+  }
+
+  .row-free {
+    background-color: #f0fdf4;
+  }
+
+  .row-hybrid {
+    background-color: #fefce8;
+  }
+
+  .row-paid {
+    background-color: #ffffff;
+  }
+
+  .status-tag {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .tag-free {
+    background-color: #16a34a;
+    color: #ffffff;
+  }
+
+  .tag-hybrid {
+    background-color: #ca8a04;
+    color: #ffffff;
+  }
+
+  .tag-paid {
+    background-color: #475569;
+    color: #ffffff;
+  }
+
+  .country-card-block {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .country-badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .country-card-block h3 {
+    font-size: 1.25rem;
+    color: #0f172a;
+    margin: 0 0 0.85rem;
+  }
+
+  .country-card-block ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .country-card-block li {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #334155;
+    margin-bottom: 0.5rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .card-paywall {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-paywall h3 {
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-paywall p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #475569;
+    margin-bottom: 0.75rem;
+  }
+
+  .risk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .risk-card {
+    background-color: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .risk-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .risk-card h4 {
+    font-size: 1rem;
+    color: #9f1239;
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+  }
+
+  .risk-card p {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: #881337;
+    margin: 0;
+  }
+
+  .alternatives-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .alt-item {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .alt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .alt-platform {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 0.95rem;
+  }
+
+  .alt-cost {
+    background-color: #0284c7;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .alt-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+
+  .faq-item summary {
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .faq-content {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .faq-content p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .sidebar-micro {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 500;
+  }
+
+  .widget-list a:hover {
+    color: #0284c7;
+    text-decoration: underline;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .btn-sm {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  .btn-secondary {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+  }
+
+  .btn-secondary:hover {
+    background-color: #e2e8f0;
+    text-decoration: none;
+  }
+
+  @media (max-width: 960px) {
+    .main-layout {
+      grid-template-columns: 1fr;
+    }
+    .grid-2, .risk-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

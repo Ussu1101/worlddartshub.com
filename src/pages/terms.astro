@@ -1,0 +1,48 @@
+---
+// src/pages/terms.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const pageTitle = "Terms of Use — World Darts Guide";
+const pageDescription = "Terms and conditions for utilizing the World Darts Guide website and spectator information services.";
+
+const breadcrumbItems = [
+  { name: 'Terms of Use' }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="container container-narrow page-content">
+    <h1>Terms of Use</h1>
+    <p class="lead">Last updated: October 2026</p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      By accessing World Darts Guide (worlddartsguide.com), you agree to be bound by these Terms of Use and all applicable laws and regulations.
+    </p>
+
+    <h2>2. Informational & Editorial Purposes Only</h2>
+    <p>
+      All content provided on this website is for informational and educational purposes only. While we make every effort to maintain accurate dates, broadcast details, and ticket guidelines, schedules and prices may change without prior notice. Always verify official session start times and policies directly with the PDC or Alexandra Palace prior to making non-refundable travel purchases.
+    </p>
+
+    <h2>3. Disclaimer of Affiliation</h2>
+    <p>
+      World Darts Guide is an independent fan resource. We are <strong>not affiliated with, endorsed by, or sponsored by</strong> the Professional Darts Corporation (PDC), Matchroom Sport, or Alexandra Palace. All event names, trademarks, and broadcaster brand designations belong to their respective owners.
+    </p>
+
+    <h2>4. Limitation of Liability</h2>
+    <p>
+      In no event shall World Darts Guide or its contributors be liable for any damages arising out of the use or inability to use the materials on this website, including but not limited to ticket disputes, travel cancellations, or third-party service interruptions.
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-content {
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+</style>

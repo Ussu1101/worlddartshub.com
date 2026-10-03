@@ -1,0 +1,465 @@
+---
+// src/pages/players/9-darters.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import recordsData from '../../data/player-records.json';
+
+const pageTitle = "PDC World Championship Nine-Darters — All 16 Ally Pally Perfect Legs";
+const pageDescription = "Complete history of all 16 televised nine-darters hit at the PDC World Darts Championship. Checkout routes, opponents, dates, and iconic video moments from Ally Pally.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Players', url: '/players/' },
+  { name: 'Records', url: '/players/records/' },
+  { name: 'Nine-Darters', url: '/players/9-darters/' }
+];
+
+const nineDarters = recordsData.televised_nine_darters_world_championship;
+
+const nineDarterSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/players/9-darters/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "PDC World Darts Championship Televised Nine-Darters",
+    "numberOfItems": nineDarters.length,
+    "itemListElement": nineDarters.map((darter) => ({
+      "@type": "ListItem",
+      "position": darter.number,
+      "name": `9-Darter #${darter.number}: ${darter.player} (${darter.year} vs ${darter.opponent})`
+    }))
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={nineDarterSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">THE PERFECT LEG</span>
+        <span class="badge">16 HISTORIC ALLY PALLY MOMENTS</span>
+      </div>
+      <h1>PDC World Championship Nine-Darters</h1>
+      <p class="lead-text">
+        The ultimate feat in professional darts. 501 points scored and checked out in exactly nine flawless darts on the Alexandra Palace stage. A complete archive of all 16 televised perfection legs in World Darts Championship history.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={recordsData.last_verified} topic="PDC Televised 9-Darters Archive" />
+
+      <!-- High Level Summary Cards -->
+      <section class="content-card intro-summary">
+        <h2>The Holy Grail of Darts: 9 Darts, 501 Points</h2>
+        <p>
+          A nine-dart finish is the darting equivalent of a 147 maximum break in snooker or a hole-in-one in golf. At the PDC World Darts Championship, 11 different players have achieved perfection on stage, producing a total of 16 magical moments since the tournament moved to Alexandra Palace in 2008.
+        </p>
+        <div class="nine-summary-grid">
+          <div class="sum-card">
+            <span class="sum-number">16</span>
+            <span class="sum-label">Total Ally Pally 9-Darters</span>
+          </div>
+          <div class="sum-card">
+            <span class="sum-number">2</span>
+            <span class="sum-label">Multiple Achievers (Barney & Lewis)</span>
+          </div>
+          <div class="sum-card">
+            <span class="sum-number">2</span>
+            <span class="sum-label">In World Finals (Lewis '11 & Smith '23)</span>
+          </div>
+          <div class="sum-card">
+            <span class="sum-number">1</span>
+            <span class="sum-label">Deciding-Leg Walk-Off (Borland '22)</span>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot id="ninedart-top-ad" label="Sports Heritage & Dartboards" />
+
+      <!-- Master Nine-Darters Table -->
+      <section class="content-card table-section">
+        <h2>Chronological List of All 16 World Championship Nine-Darters</h2>
+        <p class="table-note">
+          Every nine-dart finish achieved in the Great Hall at Alexandra Palace, including exact checkout combinations and match situations.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Year</th>
+                <th>Round</th>
+                <th>Opponent</th>
+                <th>Checkout Route</th>
+                <th>Historical Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              {nineDarters.map((darter) => (
+                <tr>
+                  <td><span class="number-badge">#{darter.number}</span></td>
+                  <td><strong>{darter.player}</strong></td>
+                  <td><span class="year-pill">{darter.year}</span></td>
+                  <td>{darter.round}</td>
+                  <td><span class="opponent-text">{darter.opponent}</span></td>
+                  <td><code class="route-code">{darter.checkout_route}</code></td>
+                  <td><span class="venue-note">{darter.venue}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Iconic 9-Dart Moments Breakdown -->
+      <section class="content-card iconic-moments">
+        <h2>The Three Greatest Nine-Darters in Ally Pally History</h2>
+
+        <div class="moment-box">
+          <h3>1. Michael Smith (2023 Final vs. Michael van Gerwen)</h3>
+          <p>
+            Universally celebrated as the greatest leg in darts history. Van Gerwen threw six perfect darts before hitting T20, T19, and missing double 12 by millimeters. Smith, who was throwing second, had also landed six perfect darts. He stepped up, coolly sank treble 20, treble 19, and double 12 to blow the roof off Alexandra Palace.
+          </p>
+        </div>
+
+        <div class="moment-box">
+          <h3>2. William Borland (2022 Round 1 vs. Bradley Brooks)</h3>
+          <p>
+            The only sudden-death, match-winning nine-darter in World Championship history. Locked at 2-2 in sets and 2-2 in legs, Scottish debutant Borland produced 180, 177, and checked out 144 (T20, T20, D12) in the deciding leg before celebrating in disbelief.
+          </p>
+        </div>
+
+        <div class="moment-box">
+          <h3>3. Raymond van Barneveld (2009 Quarter-Final vs. Jelle Klaasen)</h3>
+          <p>
+            The historic first nine-darter in Alexandra Palace history. Barney opened with two 180s before pinning T20, T19, D12 against his fellow Dutchman, earning a £20,000 bonus cheque and etching his name into Ally Pally immortality.
+          </p>
+        </div>
+      </section>
+
+      <!-- Standard 9-Dart Checkout Routes -->
+      <section class="content-card routes-section">
+        <h2>The Mathematics of a Nine-Dart Finish</h2>
+        <p>
+          While there are 3,944 mathematically possible combinations to achieve a 501 checkout in nine darts, only a handful are used in televised play:
+        </p>
+
+        <div class="routes-grid">
+          <div class="route-card">
+            <h4>Traditional Route (141 Finish)</h4>
+            <div class="route-breakdown">
+              <div>Dart 1–3: <strong>180</strong> (T20, T20, T20)</div>
+              <div>Dart 4–6: <strong>180</strong> (T20, T20, T20)</div>
+              <div>Dart 7–9: <strong>141</strong> (T20, T19, D12)</div>
+            </div>
+            <p>Used in 10 of the 14 World Championship nine-darters. Double 12 provides a natural rhythm down from treble 19.</p>
+          </div>
+
+          <div class="route-card">
+            <h4>Alternative Route (144 Finish)</h4>
+            <div class="route-breakdown">
+              <div>Dart 1–3: <strong>180</strong> (T20, T20, T20)</div>
+              <div>Dart 4–6: <strong>177</strong> (T20, T20, T19)</div>
+              <div>Dart 7–9: <strong>144</strong> (T20, T20, D12)</div>
+            </div>
+            <p>Employed by Michael van Gerwen (2013) and William Borland (2022) to stay firmly in the treble 20 bed.</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot id="ninedart-mid-ad" label="Darts Sets & Precision Stems" />
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Nine-Darters FAQ</h2>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">What is the prize bonus for hitting a 9-darter at the World Championship?</summary>
+            <div class="faq-answer">
+              <p>In recent editions, tournament title sponsors have offered special bonuses (such as £50,000 to £60,000, often split between the player and a nominated charity or fan competition). If multiple players hit a nine-darter, the fund is typically shared.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Who hit the first nine-darter in World Darts Championship history?</summary>
+            <div class="faq-answer">
+              <p>Paul Lim hit the first World Championship nine-darter at the Lakeside Country Club in the 1990 BDO World Championship. At the PDC World Championship, Raymond van Barneveld hit the first in 2009 at Alexandra Palace.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Has anyone ever hit a 170 checkout to complete a nine-darter?</summary>
+            <div class="faq-answer">
+              <p>Yes. Although never seen at the World Championship, players can theoretically open 167 (T20, T19, Bull), 167, and 167, or open 180, 151, and finish on the "Big Fish" 170 (T20, T20, Bull).</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-column">
+      <div class="sidebar-card">
+        <h3>Related Statistics</h3>
+        <ul class="sidebar-links">
+          <li><a href="/players/180-records/">⚡ 180 Maximum Records</a></li>
+          <li><a href="/players/world-championship-records/">🏛️ World Championship Records</a></li>
+          <li><a href="/players/records/">🏆 All-Time Records Directory</a></li>
+          <li><a href="/players/stats/">📈 Performance Statistics</a></li>
+          <li><a href="/players/player-comparisons/">⚔️ Head-to-Head Rivalries</a></li>
+          <li><a href="/players/">← Back to All Players</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card highlight-sidebar">
+        <h3>Tournament Key Pages</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tournament/prize-money/">£5,000,000 Prize Fund</a></li>
+          <li><a href="/draw/">Tournament Bracket</a></li>
+          <li><a href="/schedule/">Full Schedule of Play</a></li>
+          <li><a href="/venue/">Venue Guide</a></li>
+        </ul>
+      </div>
+
+      <AdSlot id="ninedart-sidebar-ad" label="Precision Dart Flights & SP Tools" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-bottom: 1px solid #374151;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .lead-text {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 900px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .nine-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .sum-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 1.25rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .sum-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #10b981;
+    margin-bottom: 0.25rem;
+  }
+  .sum-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #475569;
+    white-space: nowrap;
+  }
+  .data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #334155;
+    vertical-align: middle;
+  }
+  .number-badge {
+    background: #10b981;
+    color: #0f172a;
+    font-weight: 800;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+  .year-pill {
+    background: #0f172a;
+    border: 1px solid #475569;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #cbd5e1;
+  }
+  .opponent-text {
+    color: #cbd5e1;
+  }
+  .route-code {
+    background: #0f172a;
+    color: #f59e0b;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .venue-note {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.35;
+    display: block;
+  }
+  .moment-box {
+    background: #0f172a;
+    border-left: 4px solid #10b981;
+    padding: 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1.25rem;
+  }
+  .moment-box h3 {
+    margin-top: 0;
+    color: #f8fafc;
+    font-size: 1.1rem;
+  }
+  .moment-box p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+  .route-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 1.25rem;
+    border-radius: 6px;
+  }
+  .route-card h4 {
+    margin: 0 0 0.75rem;
+    color: #38bdf8;
+    font-size: 1.05rem;
+  }
+  .route-breakdown {
+    background: #1e293b;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+  .route-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.4;
+  }
+  .faq-accordion details {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+  .faq-answer {
+    margin-top: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .sidebar-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sidebar-links a:hover {
+    color: #38bdf8;
+  }
+  .highlight-sidebar {
+    border-color: #f59e0b;
+  }
+</style>

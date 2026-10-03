@@ -1,0 +1,78 @@
+{
+  "venue_id": "alexandra-palace",
+  "name": "Alexandra Palace",
+  "colloquial_name": "Ally Pally",
+  "address": {
+    "street": "Alexandra Palace Way",
+    "neighborhood": "Muswell Hill / Wood Green",
+    "borough": "London Borough of Haringey",
+    "postcode": "N22 7AY",
+    "country": "United Kingdom"
+  },
+  "hall": {
+    "name": "The Great Hall",
+    "event_capacity": "5,000+ per session (expanded for 2026/27)",
+    "previous_hall": "West Hall (used historically until capacity expansion)"
+  },
+  "seating_types": [
+    {
+      "type": "Table Seating",
+      "location": "Floor area in front of the stage / oche",
+      "description": "Long banquet tables seating 6-10 people. Highly social, active fan atmosphere, closest proximity to player walk-on walkaways."
+    },
+    {
+      "type": "Tiered Bleacher Seating",
+      "location": "Rear and raised flanks of the Great Hall",
+      "description": "Raked tiered stadium-style seating providing clear, elevated sightlines over the floor tables toward the giant screens and stage oche."
+    },
+    {
+      "type": "Accessible Seating Platform",
+      "location": "Elevated dedicated viewing platform",
+      "description": "Dedicated wheelchair user and companion positions with step-free entry via Palm Court."
+    }
+  ],
+  "security_and_entry": {
+    "primary_entrance": "Palm Court Entrance",
+    "bag_size_limit": "Max 30cm x 20cm x 10cm (small handbags only; large backpacks and luggage prohibited)",
+    "luggage_policy": "Strictly no large suitcases, roller bags, or bulky backpacks allowed inside the venue. No external cloakroom luggage storage on site.",
+    "re_entry": "No re-entry permitted once admitted to the venue.",
+    "age_restriction": "Under 16s must be accompanied by an adult aged 21 or over.",
+    "prohibited_items": [
+      "Hard plastic, metal or wooden prop weapons",
+      "Full-face covering masks or helmets (security ID verification)",
+      "Football club shirts, scarves, or political partisan banners",
+      "Inflatable toys exceeding 1 meter or obstructing spectator sightlines",
+      "Glass, cans, outside alcohol, and unsealed food/drinks",
+      "Professional cameras with detachable lenses or audio recording rigs",
+      "Flares, smoke canisters, fireworks, whistles, or air horns"
+    ]
+  },
+  "transport_links": [
+    {
+      "mode": "London Underground",
+      "station": "Wood Green Station",
+      "line": "Piccadilly Line",
+      "distance": "1.2 miles (approx. 20-25 min uphill walk or 8 min via W3 bus)"
+    },
+    {
+      "mode": "National Rail",
+      "station": "Alexandra Palace Station",
+      "operator": "Great Northern",
+      "direct_from": "Moorgate & Highbury & Islington / Finsbury Park",
+      "distance": "0.6 miles (approx. 10-15 min uphill walk through palace grounds)"
+    },
+    {
+      "mode": "London Bus",
+      "route": "W3 Bus",
+      "connecting": "Finsbury Park station to Alexandra Palace Palm Court stop directly at the main entrance"
+    }
+  ],
+  "food_and_drink": {
+    "bars": "Multiple dedicated high-volume bars located in the Palm Court and inside the Great Hall",
+    "signature_features": "4-pint beer pitchers, reusable souvenir stack cups, quick-pour draught taps",
+    "on_site_dining": "The Phoenix Bar & Kitchen, Palm Court street-food market traders",
+    "payment_policy": "Strictly card and contactless payments only. Cash is not accepted at venue bars or food counters."
+  },
+  "last_verified": "2026-10-03",
+  "status": "verified"
+}

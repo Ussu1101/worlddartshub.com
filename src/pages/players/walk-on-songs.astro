@@ -1,0 +1,429 @@
+---
+// src/pages/players/walk-on-songs.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import walkOnData from '../../data/walk-on-songs.json';
+
+const pageTitle = "PDC Darts Walk-On Songs & Anthems 2026/27 — Full Playlist & Origins";
+const pageDescription = "Complete guide to PDC World Darts Championship walk-on music. Explore every player entrance song, crowd chant, artist background, and Ally Pally anthem traditions.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Players', url: '/players/' },
+  { name: 'Walk-On Songs', url: '/players/walk-on-songs/' }
+];
+
+const walkOnSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/players/walk-on-songs/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "PDC Darts Walk-On Songs Playlist",
+    "numberOfItems": walkOnData.songs.length,
+    "itemListElement": walkOnData.songs.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": `${item.player_name} Walk-On Music: "${item.song_title}" by ${item.artist}`
+    }))
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={walkOnSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">STAGE ENTRANCES</span>
+        <span class="badge">OFFICIAL PDC SOUNDTRACK</span>
+      </div>
+      <h1>PDC Darts Walk-On Songs & Anthems</h1>
+      <p class="lead-text">
+        Every entrance song, crowd chant, and musical backstory from the Alexandra Palace stage. Discover how 3,000 fans transform pop, rock, and eurodance hits into the most electric walk-on theater in world sport.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={walkOnData.last_verified} topic="PDC Broadcaster Cue Sheets & Stage Anthems" />
+
+      <!-- Intro Card -->
+      <section class="content-card intro-summary">
+        <h2>The Walk-On: Darts' Greatest Theatrical Ritual</h2>
+        <p>
+          At the PDC World Darts Championship, a player's walk-on is far more than a simple entrance. Escorted down the Alexandra Palace ramp by security guards, flanked by pyrotechnics and laser shows, each competitor enters to a signature anthem chosen to ignite the crowd and intimidate their opponent. From the hypnotic bass riff of <em>Seven Nation Army</em> to the festive singalong of <em>Sweet Caroline</em>, walk-ons define the cultural atmosphere of Ally Pally.
+        </p>
+        <div class="tradition-grid">
+          <div class="tradition-card">
+            <span class="tradition-icon">🎯</span>
+            <h4>Chase the Sun</h4>
+            <p>Planet Funk's eurodance classic is the official ad-break anthem of the PDC, prompting 3,000 fans to erupt into synchronized bouncing and finger-pointing.</p>
+          </div>
+          <div class="tradition-card">
+            <span class="tradition-icon">🎺</span>
+            <h4>Seven Nation Army</h4>
+            <p>The White Stripes track that transformed Michael van Gerwen's arrival into global sporting folklore with the iconic "Oh, Michael van Gerwen!" chant.</p>
+          </div>
+          <div class="tradition-card">
+            <span class="tradition-icon">🎸</span>
+            <h4>I Predict a Riot</h4>
+            <p>Luke Humphries' Leeds United anthem brings raw British indie rock to the main stage, setting the tone for the world champion's walk.</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot id="walkon-top-ad" label="Event Merchandise & Soundtracks" />
+
+      <!-- Master Walk-On Songs Table -->
+      <section class="content-card table-section">
+        <h2>Master Playlist: Top Contenders & Walk-On Anthems</h2>
+        <p class="table-note">
+          Official entrance tracks verified across PDC Premier League, World Matchplay, and World Championship broadcasts.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Nickname</th>
+                <th>Song Title</th>
+                <th>Artist</th>
+                <th>Genre & Year</th>
+                <th>Crowd Reaction & Chants</th>
+              </tr>
+            </thead>
+            <tbody>
+              {walkOnData.songs.map((song) => (
+                <tr>
+                  <td>
+                    <strong>
+                      <a href={`/players/${song.player_id}/`} class="player-link">
+                        {song.player_name}
+                      </a>
+                    </strong>
+                  </td>
+                  <td><span class="nickname-tag">{song.nickname}</span></td>
+                  <td><span class="song-title">"{song.song_title}"</span></td>
+                  <td><span class="artist-name">{song.artist}</span></td>
+                  <td>
+                    <span class="genre-text">{song.genre}</span>
+                    <span class="sub-year">{song.release_year}</span>
+                  </td>
+                  <td>
+                    <p class="reaction-desc">{song.crowd_reaction}</p>
+                    <span class="history-note"><em>Background:</em> {song.walk_on_history}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Iconic Walk-On Stories -->
+      <section class="content-card story-section">
+        <h2>Behind the Music: Unforgettable Walk-On Stories</h2>
+
+        <div class="story-item">
+          <h3>Peter Wright — Pitbull's "Don't Stop the Party"</h3>
+          <p>
+            No player embraces the walk-on spectacle quite like Peter "Snakebite" Wright. Clad in custom painted mohawks and kaleidoscopic trousers, Wright sidesteps across the entire width of the Alexandra Palace stage, dancing along the runway while 3,000 fans mimic his synchronized steps. His entrance routinely takes over three minutes and is a signature highlight of every session.
+          </p>
+        </div>
+
+        <div class="story-item">
+          <h3>Stephen Bunting & The "Let's Go Bunting Mental" Craze</h3>
+          <p>
+            When Stephen Bunting entered to <em>Titanium</em> by David Guetta & Sia, darts fans adapted the lyrics into the viral football-style chant "Let's Go Bunting Mental!" During his 2024 Masters victory and subsequent Ally Pally campaigns, the entire arena exploded into unison the moment the beat dropped, turning Bunting into one of the circuit's biggest cult heroes.
+          </p>
+        </div>
+
+        <div class="story-item">
+          <h3>Nathan Aspinall — The Killers' "Mr. Brightside"</h3>
+          <p>
+            Nathan Aspinall's walk-on features arguably the loudest vocal participation of any sporting entrance in the UK. When The Killers' guitar intro kicks in, the entire Great Hall belts out every single word with festival-level intensity. Even after the music fades and referee calls "Game On," fans frequently continue chanting the chorus through the first leg.
+          </p>
+        </div>
+      </section>
+
+      <AdSlot id="walkon-mid-ad" label="Festival & Sports Gear" />
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>PDC Walk-On Music FAQ</h2>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">What song is played during darts commercial breaks?</summary>
+            <div class="faq-answer">
+              <p>The iconic tune played during breaks and after every set is <strong>"Chase the Sun" by Planet Funk</strong> (released in 2000). The PDC adopted the song in the mid-2000s, and it has since become the universal sonic trademark of professional darts.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can players change their walk-on song during a tournament?</summary>
+            <div class="faq-answer">
+              <p>While players generally stick to an established trademark song for branding and crowd engagement, they are permitted to request changes between tournaments. In rare instances, players switch songs for charity events, festive specials, or following a major personal reset.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Why did the PDC stop using walk-on girls?</summary>
+            <div class="faq-answer">
+              <p>In January 2018, following extensive consultation with commercial broadcasters (principally Sky Sports and ITV), the PDC decided to end the practice of escorting players to the stage with walk-on models to align with modern sports broadcast standards and focus purely on sporting action.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-column">
+      <div class="sidebar-card">
+        <h3>Player Authority Hubs</h3>
+        <ul class="sidebar-links">
+          <li><a href="/players/">← Back to All Players</a></li>
+          <li><a href="/players/darts-equipment-specs/">🎯 Darts Equipment Specs</a></li>
+          <li><a href="/players/rankings/">📊 Official Order of Merit</a></li>
+          <li><a href="/players/earnings/">💰 Player Career Earnings</a></li>
+          <li><a href="/players/stats/">📈 Performance Statistics</a></li>
+          <li><a href="/players/records/">🏆 All-Time Records</a></li>
+          <li><a href="/players/9-darters/">🎯 Televised Nine-Darters</a></li>
+          <li><a href="/players/180-records/">⚡ 180 Maximum Records</a></li>
+          <li><a href="/players/player-comparisons/">⚔️ Head-to-Head Rivalries</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card highlight-sidebar">
+        <h3>Venue & Atmosphere</h3>
+        <ul class="sidebar-links">
+          <li><a href="/venue/">Alexandra Palace Great Hall</a></li>
+          <li><a href="/history/alexandra-palace-world-championship/">Ally Pally Darts History</a></li>
+          <li><a href="/history/roll-of-honour/">World Champions Roll of Honour</a></li>
+          <li><a href="/fancy-dress/">Fancy Dress & Costume Rules</a></li>
+          <li><a href="/venue/food-drink-bars/">Food & Beer Prices Inside</a></li>
+          <li><a href="/watch/">TV & Live Stream Directory</a></li>
+        </ul>
+      </div>
+
+      <AdSlot id="walkon-sidebar-ad" label="Arena Party Accessories" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-bottom: 1px solid #374151;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .lead-text {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 900px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .tradition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .tradition-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 1.25rem;
+    border-radius: 6px;
+  }
+  .tradition-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .tradition-card h4 {
+    margin: 0 0 0.5rem;
+    color: #f8fafc;
+    font-size: 1.05rem;
+  }
+  .tradition-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.4;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #475569;
+    white-space: nowrap;
+  }
+  .data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #334155;
+    vertical-align: top;
+  }
+  .player-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .player-link:hover {
+    text-decoration: underline;
+  }
+  .nickname-tag {
+    font-size: 0.8rem;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .song-title {
+    font-weight: 700;
+    color: #f8fafc;
+    display: block;
+  }
+  .artist-name {
+    color: #cbd5e1;
+  }
+  .genre-text {
+    display: block;
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
+  .sub-year {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+  .reaction-desc {
+    margin: 0 0 0.35rem;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+  .history-note {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    display: block;
+    line-height: 1.3;
+  }
+  .story-item {
+    background: #0f172a;
+    border-left: 4px solid #38bdf8;
+    padding: 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1.25rem;
+  }
+  .story-item h3 {
+    margin-top: 0;
+    color: #f8fafc;
+    font-size: 1.1rem;
+  }
+  .story-item p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .faq-accordion details {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+  .faq-answer {
+    margin-top: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .sidebar-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sidebar-links a:hover {
+    color: #38bdf8;
+  }
+  .highlight-sidebar {
+    border-color: #f59e0b;
+  }
+</style>

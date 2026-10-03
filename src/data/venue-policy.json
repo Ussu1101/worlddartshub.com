@@ -1,0 +1,90 @@
+{
+  "venue_name": "Alexandra Palace",
+  "hall": "The Great Hall",
+  "last_verified": "2026-10-03",
+  "status": "confirmed",
+  "source": "Alexandra Palace Visitor Regulations & Security Information",
+  "source_url": "https://www.alexandrapalace.com/visitor-information/",
+  "bag_policy": {
+    "max_dimensions": {
+      "width_cm": 30,
+      "height_cm": 20,
+      "depth_cm": 10,
+      "formatted": "30cm x 20cm x 10cm"
+    },
+    "comparison": "Approximately the size of a standard A4 sheet of paper or small clutch/handbag",
+    "permitted_types": [
+      "Small clutch bags or wristlets",
+      "Small cross-body handbags within the 30cm x 20cm x 10cm dimension limit",
+      "Small clear plastic bags within size limits",
+      "Medically necessary bags (subject to search and prior medical declaration)",
+      "Essential baby care bags for accompanying infants"
+    ],
+    "prohibited_types": [
+      "Backpacks and rucksacks of any size (including mini fashion backpacks)",
+      "Suitcases and rolling luggage",
+      "Holdalls, weekend bags, and duffel bags",
+      "Laptop bags and briefcases",
+      "Tote bags exceeding 30cm x 20cm x 10cm"
+    ],
+    "arena_entry_rule": "Oversized bags, backpacks, and suitcases are strictly prohibited inside the Great Hall and cannot be brought past the security checkpoints.",
+    "venue_bag_drop": {
+      "general_policy_available": true,
+      "published_charge": "£10 per bag",
+      "location": "East Court car park area",
+      "event_2026_27_status": "pending",
+      "advisory": "Under Alexandra Palace's general Great Hall policy, an external bag drop for oversized bags operates by the East Court car park at a published charge of £10 per item. However, event-specific operational confirmation for the 2026/27 World Darts Championship has not yet been explicitly published. Spectators traveling with luggage should confirm its availability before travelling or deposit bags at central London station left-luggage facilities (e.g. King's Cross or Euston)."
+    },
+    "cloakroom_status": "Inside the venue, cloakrooms (when operational) accept light coats only and do not accept luggage, backpacks, or oversized items."
+  },
+  "security_screening": {
+    "entry_points": ["Palm Court Entrance (Main Entrance)", "West Hall Entrance (Designated Sessions/Tours)"],
+    "methods": [
+      "Walk-through metal detector arches",
+      "Manual bag search tables",
+      "Handheld security scanning wands",
+      "Security pat-downs",
+      "Sniffer dogs deployed for drug and pyrotechnic detection"
+    ],
+    "re_entry_policy": "Strictly no re-entry. Once a spectator's barcode is scanned and they exit the venue, re-admission is prohibited.",
+    "age_restriction": "Under 16s must be accompanied by an adult aged 21 or over at all times.",
+    "accessibility_exceptions": "Dedicated accessible search lanes operate at Palm Court for wheelchair users, spectators with mobility equipment, and those carrying verified medical supplies."
+  },
+  "prohibited_items": [
+    {
+      "category": "Alcohol & Drinks",
+      "items": "Outside alcohol, glass bottles, metal cans, unsealed drinks, and thermos flasks",
+      "exception": "Empty reusable plastic water bottles (to fill at free water points) and small factory-sealed water bottles up to 500ml."
+    },
+    {
+      "category": "Attire & Sportswear",
+      "items": "Football shirts, club scarves, or football-affiliated emblems of any club worldwide",
+      "reason": "Strictly enforced by security to maintain a neutral, friendly darts party atmosphere and prevent rivalry tensions."
+    },
+    {
+      "category": "Fancy Dress Props",
+      "items": "Hard plastic, metal or wooden weapons, sharp implements, realistic toy guns, swords, and scythes",
+      "rule": "Only soft foam or cardboard accessories are permitted. Inflatables over 1 meter or obstructing spectator view are banned."
+    },
+    {
+      "category": "Masks & Helmets",
+      "items": "Full-face covering masks, motorcycle helmets, or balaclavas",
+      "rule": "Spectators must remove full-face coverings at the security turnstiles for facial ID and age verification."
+    },
+    {
+      "category": "Recording Equipment",
+      "items": "Professional cameras with detachable telephoto lenses, external microphones, tripods, selfie sticks, and drones",
+      "rule": "Standard smartphones and non-professional compact cameras are permitted for personal spectator memories."
+    },
+    {
+      "category": "Noise & Distraction",
+      "items": "Vuvuzelas, whistles, air horns, musical instruments, laser pens, and megaphone devices",
+      "rule": "Strictly confiscated at entry gates to prevent player distraction on the oche."
+    },
+    {
+      "category": "Hazardous & Pyrotechnic",
+      "items": "Flares, fireworks, smoke canisters, illegal substances, and hazardous liquids",
+      "rule": "Immediate confiscation, refusal of entry, and referral to Metropolitan Police."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "title": "PDC Order of Merit (World Rankings)",
+  "tournament_year": "2026/27",
+  "status": "provisional_ranking",
+  "status_badge": "Provisional Snapshot — Cutoff Late Nov 2026",
+  "cutoff_event": "Players Championship Finals (Late November 2026)",
+  "cutoff_description": "The Top 32 players on the official PDC Order of Merit at the conclusion of the Players Championship Finals will be awarded seeded status for the 2026/27 World Darts Championship.",
+  "system_rules": [
+    {
+      "rule": "2-Year Rolling Calculation",
+      "detail": "Rankings are determined by official prize money won in ranking tournaments over an ongoing 24-month cycle (£1 earned = 1 ranking pound)."
+    },
+    {
+      "rule": "Ranking Events Only",
+      "detail": "Prize money counts exclusively from PDC ranking tournaments (World Championship, World Matchplay, World Grand Prix, UK Open, Grand Slam, European Championship, Players Championship Finals, European Tour, and Players Championship events)."
+    },
+    {
+      "rule": "Non-Ranking Events Excluded",
+      "detail": "Invitational events such as Premier League Darts, the World Series of Darts, and The Masters do NOT count toward Order of Merit totals."
+    },
+    {
+      "rule": "Defending Prize Money",
+      "detail": "Players defend prize money won at the equivalent event two years prior. Failure to reach the same stage results in a net drop in ranking points."
+    }
+  ],
+  "provisional_rankings": [
+    { "rank": 1, "player": "Luke Humphries", "nationality": "England", "prize_money": "£1,745,000", "notes": "Reigning World Champion; defending major winner" },
+    { "rank": 2, "player": "Michael van Gerwen", "nationality": "Netherlands", "prize_money": "£1,120,000", "notes": "3x World Champion; perennial world #1 challenger" },
+    { "rank": 3, "player": "Michael Smith", "nationality": "England", "prize_money": "£965,000", "notes": "2023 World Champion" },
+    { "rank": 4, "player": "Luke Littler", "nationality": "England", "prize_money": "£860,000", "notes": "2024 World Finalist; rapid ascension into top 4" },
+    { "rank": 5, "player": "Gerwyn Price", "nationality": "Wales", "prize_money": "£755,000", "notes": "2021 World Champion" },
+    { "rank": 6, "player": "Rob Cross", "nationality": "England", "prize_money": "£710,000", "notes": "2018 World Champion" },
+    { "rank": 7, "player": "Dave Chisnall", "nationality": "England", "prize_money": "£615,000", "notes": "Consistent European Tour title winner" },
+    { "rank": 8, "player": "Jonny Clayton", "nationality": "Wales", "prize_money": "£580,000", "notes": "Premier League & World Grand Prix champion" },
+    { "rank": 9, "player": "Peter Wright", "nationality": "Scotland", "prize_money": "£525,000", "notes": "2x World Champion (2020, 2022)" },
+    { "rank": 10, "player": "Damon Heta", "nationality": "Australia", "prize_money": "£505,000", "notes": "Highest-ranked Oceanic player" },
+    { "rank": 11, "player": "Dimitri Van den Bergh", "nationality": "Belgium", "prize_money": "£485,000", "notes": "UK Open & World Matchplay champion" },
+    { "rank": 12, "player": "Danny Noppert", "nationality": "Netherlands", "prize_money": "£465,000", "notes": "Former UK Open champion" },
+    { "rank": 13, "player": "Chris Dobey", "nationality": "England", "prize_money": "£450,000", "notes": "Masters champion & major contender" },
+    { "rank": 14, "player": "Nathan Aspinall", "nationality": "England", "prize_money": "£440,000", "notes": "World Matchplay champion" },
+    { "rank": 15, "player": "Ross Smith", "nationality": "England", "prize_money": "£425,000", "notes": "European Champion & prolific 180 scorer" },
+    { "rank": 16, "player": "Stephen Bunting", "nationality": "England", "prize_money": "£410,000", "notes": "2024 Masters champion" },
+    { "rank": 17, "player": "Josh Rock", "nationality": "Northern Ireland", "prize_money": "£385,000", "notes": "World Youth Champion" },
+    { "rank": 18, "player": "Gary Anderson", "nationality": "Scotland", "prize_money": "£375,000", "notes": "2x World Champion (2015, 2016)" },
+    { "rank": 19, "player": "Ryan Searle", "nationality": "England", "prize_money": "£355,000", "notes": "Heavy-dart specialist" },
+    { "rank": 20, "player": "Andrew Gilding", "nationality": "England", "prize_money": "£345,000", "notes": "UK Open champion" },
+    { "rank": 21, "player": "Dirk van Duijvenbode", "nationality": "Netherlands", "prize_money": "£330,000", "notes": "High-scoring Dutch star" },
+    { "rank": 22, "player": "Martin Schindler", "nationality": "Germany", "prize_money": "£325,000", "notes": "Highest-ranked German player" },
+    { "rank": 23, "player": "Gabriel Clemens", "nationality": "Germany", "prize_money": "£305,000", "notes": "Historic 2023 World Semi-Finalist" },
+    { "rank": 24, "player": "Joe Cullen", "nationality": "England", "prize_money": "£295,000", "notes": "The Rockstar; major finalist" },
+    { "rank": 25, "player": "Raymond van Barneveld", "nationality": "Netherlands", "prize_money": "£285,000", "notes": "5x World Champion; legendary veteran" },
+    { "rank": 26, "player": "Daryl Gurney", "nationality": "Northern Ireland", "prize_money": "£275,000", "notes": "2x Major champion" },
+    { "rank": 27, "player": "Gian van Veen", "nationality": "Netherlands", "prize_money": "£270,000", "notes": "Elite young Dutch contender" },
+    { "rank": 28, "player": "Brendan Dolan", "nationality": "Northern Ireland", "prize_money": "£260,000", "notes": "History Maker; multi-quarterfinalist" },
+    { "rank": 29, "player": "Ritchie Edhouse", "nationality": "England", "prize_money": "£250,000", "notes": "European Tour title contender" },
+    { "rank": 30, "player": "Krzysztof Ratajski", "nationality": "Poland", "prize_money": "£245,000", "notes": "The Polish Eagle" },
+    { "rank": 31, "player": "Mike De Decker", "nationality": "Belgium", "prize_money": "£235,000", "notes": "Major title contender" },
+    { "rank": 32, "player": "Ricardo Pietreczko", "nationality": "Germany", "prize_money": "£230,000", "notes": "Pikachu; European Tour winner" }
+  ],
+  "last_verified": "2026-10-03",
+  "source": "Official Professional Darts Corporation Order of Merit",
+  "source_url": "https://www.pdc.tv/order-of-merit"
+}

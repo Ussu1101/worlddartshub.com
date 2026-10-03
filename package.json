@@ -1,0 +1,19 @@
+{
+  "name": "world-darts-guide",
+  "version": "1.0.0",
+  "description": "Independent PDC World Darts Championship Spectator, TV & Information Platform",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "typescript": "^5.7.3"
+  }
+}

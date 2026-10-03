@@ -1,0 +1,881 @@
+---
+// src/pages/venue/security-bag-policy.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import venuePolicyData from '../../data/venue-policy.json';
+
+const pageTitle = "Alexandra Palace Bag Policy & Security Rules — PDC World Darts 2026/27";
+const pageDescription = "Official bag size limit (30cm x 20cm x 10cm), prohibited items, search procedures, cloakroom rules, and luggage advice for the PDC World Darts Championship at Alexandra Palace.";
+
+const breadcrumbItems = [
+  { name: 'Venue Guide', url: '/venue/' },
+  { name: 'Security & Bag Policy' }
+];
+
+const bagPolicySchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Alexandra Palace Security and Bag Policy Guide",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the maximum bag size allowed at Alexandra Palace for the darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The maximum permitted bag size is strictly 30cm x 20cm x 10cm (approximately an A4 sheet of paper). Small handbags, clutches, and compact cross-body bags within these dimensions are permitted following search. Backpacks, holdalls, rucksacks, and suitcases are prohibited."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there luggage or suitcase storage on site at Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Suitcases and oversized bags exceeding 30cm x 20cm x 10cm cannot enter the Great Hall arena. Under Alexandra Palace's general venue policy, an external bag drop operates near the East Court car park at a published charge of £10 per item. However, event-specific operational availability for the 2026/27 World Darts Championship has not yet been explicitly confirmed. Spectators should confirm bag-drop availability with the venue before travelling, or use central London station left-luggage facilities (such as King's Cross St. Pancras or Euston). Internal cloakrooms accept coats only."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I bring food or drink into Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No outside alcohol, cans, glass bottles, or takeaway food are permitted through security checkpoints. Spectators may bring an empty reusable plastic water bottle to use at the free Palm Court refilling stations, or an unopened factory-sealed water bottle up to 500ml."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are football shirts allowed inside the Great Hall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Football club shirts, scarves, and club badges of any professional team worldwide are strictly banned. Venue security will deny entry to anyone wearing football club colors to maintain a friendly, neutral party environment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you leave and re-enter Alexandra Palace during a session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Alexandra Palace enforces a strict no re-entry policy. Once your ticket barcode is scanned and you pass through the turnstiles, exiting the building terminates your session admission."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={bagPolicySchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="policy-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">SECURITY & ENTRY COMPLIANCE</span>
+        <span class="badge">ALEXANDRA PALACE GREAT HALL</span>
+      </div>
+      <h1 class="policy-title">Alexandra Palace Bag Policy & Security Guide</h1>
+      <p class="policy-subtitle">
+        Essential entry regulations, bag dimensions, prohibited items, search protocols, and luggage alternatives for spectators attending the PDC World Darts Championship 2026/27.
+      </p>
+      <div class="hero-meta">
+        <span class="meta-item">📍 Venue: Alexandra Palace (Great Hall)</span>
+        <span class="meta-item">🛡️ Enforcement: Metropolitan Police & AP Security</span>
+        <span class="meta-item">📅 Policy Verified: October 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container content-container">
+    <div class="policy-layout">
+      <!-- Main Content Column -->
+      <article class="policy-main">
+
+        <!-- CRITICAL QUICK-ANSWER BOX -->
+        <section class="quick-answer-card">
+          <div class="quick-answer-badge">
+            <span class="pulse-icon">⚠️</span>
+            <span>CRITICAL SPECTATOR NOTICE: BAG RESTRICTIONS</span>
+          </div>
+          <h2>What Bag Can You Bring to the Darts?</h2>
+          <div class="dimension-hero-grid">
+            <div class="dimension-box">
+              <span class="dim-label">MAXIMUM DIMENSIONS</span>
+              <span class="dim-value">{venuePolicyData.bag_policy.max_dimensions.formatted}</span>
+              <span class="dim-sub">({venuePolicyData.bag_policy.max_dimensions.width_cm}cm width × {venuePolicyData.bag_policy.max_dimensions.height_cm}cm height × {venuePolicyData.bag_policy.max_dimensions.depth_cm}cm depth)</span>
+            </div>
+            <div class="dimension-desc">
+              <p><strong>Visual Rule of Thumb:</strong> {venuePolicyData.bag_policy.comparison}.</p>
+              <p>Only one small bag per spectator is permitted. All bags are subject to physical inspection and wand screening at Palm Court turnstiles.</p>
+              <div class="warning-callout">
+                <strong>OVERSIZED BAG ENTRY RESTRICTION & VENUE BAG DROP:</strong>
+                Suitcases, holdalls, and backpacks exceeding 30cm × 20cm × 10cm are strictly prohibited inside the Great Hall.
+                Under Alexandra Palace's general venue policy, an external bag drop operates near the East Court car park (published rate: £10 per item). However, because event-specific operational availability for the 2026/27 World Darts Championship has not yet been explicitly confirmed by tournament organizers, spectators should verify its availability before travelling or use central London station luggage storage.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <AdSlot position="top" client="ca-pub-placeholder" slotId="policy-top-slot" />
+
+        <!-- BAG TYPE BREAKDOWN -->
+        <section class="policy-section">
+          <h2>Permitted vs Prohibited Bags</h2>
+          <p>
+            To ensure swift security screening for over 3,000 spectators arriving per session, Alexandra Palace and the PDC enforce strict bag guidelines. Security teams measure questionable bags against official sizing templates at the entrance gates.
+          </p>
+
+          <div class="comparison-grid">
+            <div class="comp-col permitted-col">
+              <div class="comp-header">
+                <span class="icon">✅</span>
+                <h3>Permitted Bags</h3>
+              </div>
+              <ul class="comp-list">
+                {venuePolicyData.bag_policy.permitted_types.map(item => (
+                  <li>
+                    <strong>{item}</strong>
+                  </li>
+                ))}
+              </ul>
+              <p class="comp-note">All permitted bags must still pass physical search and electronic scan.</p>
+            </div>
+
+            <div class="comp-col prohibited-col">
+              <div class="comp-header">
+                <span class="icon">❌</span>
+                <h3>Strictly Prohibited Bags</h3>
+              </div>
+              <ul class="comp-list">
+                {venuePolicyData.bag_policy.prohibited_types.map(item => (
+                  <li>
+                    <strong>{item}</strong>
+                  </li>
+                ))}
+              </ul>
+              <p class="comp-note">Prohibited bags cannot enter the Great Hall arena.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- TRAVELERS WITH LUGGAGE SECTION -->
+        <section class="policy-section highlight-panel">
+          <h2>Spectators Traveling with Luggage: Official Options</h2>
+          <p>
+            A common trap for fans arriving directly from UK regions or international flights via Heathrow, Stansted, or Gatwick is heading straight to Ally Pally with travel luggage.
+          </p>
+          <div class="advice-card">
+            <h3>1. Alexandra Palace External Bag Drop (General Venue Facility)</h3>
+            <p>
+              Under Alexandra Palace's general Great Hall visitor regulations, an external bag-drop facility operates near the <strong>East Court car park</strong> with a published charge of <strong>£10 per bag</strong>.
+            </p>
+            <div class="policy-callout info" style="margin: 0.75rem 0;">
+              <strong>2026/27 Event-Specific Advisory:</strong> Tournament-specific confirmation for whether the East Court bag drop will operate during all 28 sessions of the World Darts Championship is currently pending publication. Spectators planning to rely on this on-site facility should verify operational hours directly with Alexandra Palace Visitor Services prior to travelling.
+            </div>
+
+            <h3>2. Guaranteed Central London Station Left-Luggage</h3>
+            <p>
+              To eliminate any uncertainty on match day, spectators are strongly advised to deposit suitcases at central London railway station left-luggage hubs before boarding the Piccadilly Line or Great Northern train:
+            </p>
+            <div class="station-storage-grid">
+              <div class="station-storage-item">
+                <h4>King's Cross & St. Pancras</h4>
+                <p>Manned left luggage facilities operated by Excess Baggage Co inside the concourse and Bounce network locations nearby. Direct 14-minute estimated Piccadilly Line tube to Wood Green.</p>
+              </div>
+              <div class="station-storage-item">
+                <h4>Euston Station</h4>
+                <p>Manned luggage lockers open 07:00–23:00. Located 10 minutes walk or 1 tube stop from King's Cross for direct Ally Pally connections.</p>
+              </div>
+              <div class="station-storage-item">
+                <h4>Liverpool Street Station</h4>
+                <p>Convenient for travelers arriving from Stansted Airport. Manned storage on main concourse, direct rail connections via Moorgate.</p>
+              </div>
+            </div>
+            <p class="disclaimer-text">
+              <em>Note: The internal Great Hall cloakroom accepts light coats only and will reject suitcases, rolling bags, and large backpacks at the turnstiles.</em>
+            </p>
+          </div>
+        </section>
+
+        <!-- SECURITY SCREENING PROCEDURES -->
+        <section class="policy-section">
+          <h2>Security Screening & Entry Procedures</h2>
+          <p>
+            Entry gates for the PDC World Darts Championship open approximately 60 to 90 minutes prior to session start times (11:00 for afternoon sessions, 17:30–18:00 for evening sessions). Security operations at Alexandra Palace are thorough and multi-layered.
+          </p>
+
+          <div class="procedures-grid">
+            <div class="proc-card">
+              <span class="proc-num">1</span>
+              <h4>Perimeter & Ticket Check</h4>
+              <p>Visual ticket verification at the outer Palm Court gates to ensure all approaching visitors hold valid session passes.</p>
+            </div>
+            <div class="proc-card">
+              <span class="proc-num">2</span>
+              <h4>Detector Arches & Wands</h4>
+              <p>Spectators step through walk-through metal detector arches. Handheld security scanning wands are used for secondary localized checks.</p>
+            </div>
+            <div class="proc-card">
+              <span class="proc-num">3</span>
+              <h4>Physical Bag Search</h4>
+              <p>Permitted small bags (under 30cm × 20cm × 10cm) are unzipped and manually searched on dedicated inspection tables.</p>
+            </div>
+            <div class="proc-card">
+              <span class="proc-num">4</span>
+              <h4>Sniffer Dog Teams</h4>
+              <p>Passive drug detection dogs and pyrotechnic detection teams patrol the queue lines and entrance turnstiles continuously.</p>
+            </div>
+          </div>
+
+          <div class="policy-callout info">
+            <h4>Medical Supplies & Accessibility Lanes</h4>
+            <p>
+              Spectators carrying essential medication, insulin pens, epi-pens, or specialized medical equipment are fully accommodated. A dedicated accessible lane operates at Palm Court. You do not need to restrict life-saving medication to the 30cm × 20cm × 10cm rule, but all medical equipment must be declared to security supervisors upon arrival and supported where possible by prescription or doctor documentation.
+            </p>
+          </div>
+        </section>
+
+        <!-- STRICT PROHIBITED ITEMS LIST -->
+        <section class="policy-section">
+          <h2>Complete Prohibited Items List</h2>
+          <p>
+            To prevent crowd disorder, player distraction on the oche, and spectator injury, the PDC and Alexandra Palace enforce strict contraband rules. Confiscated items will not be stored or returned.
+          </p>
+
+          <div class="prohibited-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Prohibited Articles</th>
+                  <th>Specific Regulation & Rationale</th>
+                </tr>
+              </thead>
+              <tbody>
+                {venuePolicyData.prohibited_items.map((item, idx) => (
+                  <tr class={idx % 2 === 0 ? "even" : "odd"}>
+                    <td class="cat-cell"><strong>{item.category}</strong></td>
+                    <td class="item-cell">{item.items}</td>
+                    <td class="rule-cell">{item.rule || item.reason || item.exception}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SPECIAL EVENT RULES -->
+        <section class="policy-section">
+          <h2>Important Ally Pally Event Rules</h2>
+
+          <div class="rule-cards-grid">
+            <div class="rule-card alert-warning">
+              <h3>🚫 No Football Shirts or Colors</h3>
+              <p>
+                Alexandra Palace enforces a zero-tolerance policy against football shirts, scarves, badges, and national/club rivalry colors of any kind. Spectators will be turned away at security or required to change into neutral clothing before being admitted. Fancy dress sports kits (e.g., retro 1980s athletics or darts player replicas) are permitted, but domestic or international football apparel is barred.
+              </p>
+            </div>
+
+            <div class="rule-card alert-danger">
+              <h3>🚪 Strictly No Re-Entry</h3>
+              <p>
+                Once your digital ticket barcode is scanned at the turnstiles and you enter the venue, your ticket is marked as redeemed. If you exit the building at any point during the session, <strong>re-admission is strictly denied</strong>. There is no pass-out system for smoking or meeting friends outside. Dedicated outdoor smoking courtyards are provided inside the ticketed secure perimeter.
+              </p>
+            </div>
+
+            <div class="rule-card alert-info">
+              <h3>🎭 Fancy Dress Props & Inflatables</h3>
+              <p>
+                Fancy dress is a hallmark of the World Championship, but props must comply with safety standards. Realistic plastic weapons, swords, fake guns, scythes, and heavy wooden sticks are confiscated at the door. Only soft foam or cardboard accessories are allowed. Inflatables taller than 1 meter or items obstructing the view of seated spectators will be deflated.
+              </p>
+            </div>
+
+            <div class="rule-card alert-neutral">
+              <h3>🔞 Age & Supervision Policy</h3>
+              <p>
+                Under 16s attending the tournament must be accompanied by a responsible adult aged 21 or over at all times. Proof of age (passport or photocard driving license) may be requested at turnstiles and is strictly required under the venue's Challenge 25 alcohol policy.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <AdSlot position="middle" client="ca-pub-placeholder" slotId="policy-mid-slot" />
+
+        <!-- FAQ SECTION -->
+        <section class="policy-section">
+          <h2>Frequently Asked Questions: Security & Bags</h2>
+          <div class="faq-list">
+            {bagPolicySchema.mainEntity.map(faq => (
+              <div class="faq-item">
+                <h3>{faq.name}</h3>
+                <p>{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- VERIFICATION COMPONENT -->
+        <VerificationBadge
+          source={venuePolicyData.source}
+          verifiedDate={venuePolicyData.last_verified}
+          status="CONFIRMED POLICY / EVENT BAG DROP PENDING"
+        />
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="policy-sidebar">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">At A Glance</h3>
+          <ul class="glance-list">
+            <li><strong>Max Bag Size:</strong> 30cm × 20cm × 10cm</li>
+            <li><strong>Luggage / Suitcases:</strong> Banned from arena (venue £10 bag drop unconfirmed for darts)</li>
+            <li><strong>Search Method:</strong> Arches, wands & bag search</li>
+            <li><strong>Re-Entry:</strong> Strictly prohibited</li>
+            <li><strong>Football Shirts:</strong> Banned entirely</li>
+            <li><strong>Alcohol Brought In:</strong> Strictly prohibited</li>
+            <li><strong>Water Refill:</strong> Free inside Palm Court</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Related Ally Pally Guides</h3>
+          <ul class="widget-links">
+            <li><a href="/venue/great-hall-seating-plan/">Great Hall Seating Plan & Views</a></li>
+            <li><a href="/venue/food-drink-bars/">Food, Drink & Cashless Bars</a></li>
+            <li><a href="/travel/tube-train-routes/">London Underground & Rail Routes</a></li>
+            <li><a href="/hotels/budget-options/">Budget Hotels Near Alexandra Palace</a></li>
+            <li><a href="/tickets/resale-returns/">Official Ticket Resale & Returns</a></li>
+            <li><a href="/fancy-dress/">Fancy Dress Costume Rules</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget help-widget">
+          <h3 class="widget-title">Official Venue Contacts</h3>
+          <p class="widget-desc">
+            For specific accessibility inquiries, wheelchair bookings, or medical exemptions:
+          </p>
+          <p class="contact-info">
+            <strong>Alexandra Palace Visitor Services</strong><br />
+            Official Site: <a href="https://www.alexandrapalace.com" target="_blank" rel="noopener noreferrer">alexandrapalace.com</a><br />
+            Haringey, London N22 7AY
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .policy-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 1px solid #334155;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    background: #334155;
+    color: #cbd5e1;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-accent {
+    background: #dc2626;
+    color: #ffffff;
+  }
+
+  .policy-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+
+  .policy-subtitle {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+
+  .content-container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .policy-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2.5rem;
+  }
+
+  /* Quick Answer Box */
+  .quick-answer-card {
+    background: #fffbeb;
+    border: 2px solid #f59e0b;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.1);
+  }
+
+  .quick-answer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f59e0b;
+    color: #78350f;
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .quick-answer-card h2 {
+    color: #92400e;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.45rem;
+  }
+
+  .dimension-hero-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .dimension-box {
+    background: #ffffff;
+    border: 2px dashed #d97706;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .dim-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #b45309;
+    letter-spacing: 0.05em;
+  }
+
+  .dim-value {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #b45309;
+    margin: 0.25rem 0;
+  }
+
+  .dim-sub {
+    font-size: 0.75rem;
+    color: #78350f;
+  }
+
+  .warning-callout {
+    background: #fee2e2;
+    border-left: 4px solid #ef4444;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #991b1b;
+    margin-top: 0.75rem;
+  }
+
+  /* Comparison Grid */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .comp-col {
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+  }
+
+  .permitted-col {
+    background: #f0fdf4;
+    border-color: #86efac;
+  }
+
+  .prohibited-col {
+    background: #fef2f2;
+    border-color: #fca5a5;
+  }
+
+  .comp-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .comp-header h3 {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+
+  .permitted-col h3 { color: #166534; }
+  .prohibited-col h3 { color: #991b1b; }
+
+  .comp-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #334155;
+  }
+
+  .comp-note {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-style: italic;
+    color: #64748b;
+  }
+
+  /* Procedures Grid */
+  .procedures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .proc-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    position: relative;
+  }
+
+  .proc-num {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: #0284c7;
+    color: #ffffff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .proc-card h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    color: #0f172a;
+  }
+
+  .proc-card p {
+    font-size: 0.85rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* Policy Callouts */
+  .policy-callout {
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+
+  .policy-callout.info {
+    background: #f0f9ff;
+    border-left: 4px solid #0284c7;
+    color: #0369a1;
+  }
+
+  .policy-callout h4 {
+    margin: 0 0 0.5rem;
+  }
+
+  .policy-callout p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #334155;
+    line-height: 1.5;
+  }
+
+  /* Data Table */
+  .prohibited-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    text-align: left;
+  }
+
+  .data-table th {
+    background: #f8fafc;
+    padding: 0.85rem 1rem;
+    font-weight: 700;
+    color: #334155;
+    border-bottom: 2px solid #e2e8f0;
+  }
+
+  .data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .data-table tr.even {
+    background: #ffffff;
+  }
+
+  .data-table tr.odd {
+    background: #fdfdfd;
+  }
+
+  .cat-cell {
+    color: #0f172a;
+    width: 22%;
+  }
+
+  .item-cell {
+    color: #b91c1c;
+    font-weight: 600;
+    width: 40%;
+  }
+
+  .rule-cell {
+    color: #475569;
+  }
+
+  /* Rule Cards */
+  .rule-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .rule-card {
+    border-radius: 8px;
+    padding: 1.25rem;
+    border: 1px solid;
+  }
+
+  .rule-card h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1.05rem;
+  }
+
+  .rule-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .alert-warning {
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #92400e;
+  }
+
+  .alert-danger {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #991b1b;
+  }
+
+  .alert-info {
+    background: #f0f9ff;
+    border-color: #bae6fd;
+    color: #0369a1;
+  }
+
+  .alert-neutral {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #334155;
+  }
+
+  /* Left luggage stations */
+  .station-storage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .station-storage-item {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 1rem;
+  }
+
+  .station-storage-item h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+    color: #0f172a;
+  }
+
+  .station-storage-item p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: #475569;
+    line-height: 1.4;
+  }
+
+  /* FAQs */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* Sidebar */
+  .policy-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+  }
+
+  .glance-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #334155;
+  }
+
+  .widget-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-links a {
+    color: #0284c7;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .widget-links a:hover {
+    text-decoration: underline;
+  }
+
+  .widget-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-info {
+    font-size: 0.82rem;
+    color: #334155;
+    line-height: 1.4;
+  }
+
+  .contact-info a {
+    color: #0284c7;
+  }
+
+  @media (max-width: 900px) {
+    .policy-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .dimension-hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .rule-cards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

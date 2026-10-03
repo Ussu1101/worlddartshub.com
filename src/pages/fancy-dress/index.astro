@@ -1,0 +1,425 @@
+---
+// src/pages/fancy-dress/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Alexandra Palace Darts Fancy Dress Rules & Costumes — 2026/27 Guide";
+const pageDescription = "Official costume rules and fancy dress policies for the PDC World Darts Championship at Alexandra Palace. Permitted costumes, banned football shirts, masks, and fan chants.";
+
+const breadcrumbItems = [
+  { name: 'Fancy Dress & Culture' }
+];
+
+const fancyDressFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you wear football shirts to Alexandra Palace darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Football club jerseys, scarves, or club-affiliated badges (Premier League, European, or international clubs) are strictly banned by Alexandra Palace and PDC security. This policy is strictly enforced to prevent tribal hostility and maintain the friendly party atmosphere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are full face masks allowed at Ally Pally darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Full face masks, morph suits covering the face, or hard helmets are not permitted past security checkpoints because venue security must verify every spectator's age and identity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you bring inflatable costumes to the darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Costumes must not exceed standard seating dimensions or obstruct the sightlines of spectators sitting behind you. Bulky inflatable costumes (such as giant inflatable dinosaurs) are frequently restricted or deflated by stewards inside the Great Hall."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={fancyDressFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="culture-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">FAN CULTURE & COSTUMES</span>
+        <span class="badge">ALLY PALLY TRADITIONS</span>
+      </div>
+      <h1>Alexandra Palace Fancy Dress & Costume Rules</h1>
+      <p class="culture-lead">
+        Dressing up is the heartbeat of the World Darts Championship experience. However, security protocols are strictly enforced. Here are the permitted costume guidelines, banned items, and venue regulations.
+      </p>
+    </div>
+  </header>
+
+  <div class="container culture-layout">
+    <article class="culture-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="Alexandra Palace Security Fancy Dress Code & Prohibited Attire" />
+
+      <!-- Costume Overview -->
+      <section class="culture-section">
+        <h2>The Global Fancy Dress Tradition</h2>
+        <p>
+          From human traffic cones, Super Mario casts, and 1980s retro aerobics instructors to Santa Claus conventions and Roman gladiators, fancy dress at Alexandra Palace is globally famous. Over 70% of table spectators attend in costume, creating an iconic sea of color beamed to millions on international television.
+        </p>
+
+        <div class="grid-2 costume-dos-donts">
+          <div class="card do-card">
+            <span class="do-tag">✅ ENCOURAGED & PERMITTED</span>
+            <h3>Fun, Creative Group Themes</h3>
+            <ul>
+              <li>Superheroes (Batman, Spiderman, Avengers)</li>
+              <li>Iconic movie characters & retro pop icons</li>
+              <li>Traffic cones, crayons & food item outfits</li>
+              <li>Festive Christmas jumpers, elves & Santas</li>
+              <li>Wigs, face paint, sequined jackets & hats</li>
+            </ul>
+          </div>
+
+          <div class="card dont-card">
+            <span class="dont-tag">❌ STRICTLY PROHIBITED</span>
+            <h3>Security Violations</h3>
+            <ul>
+              <li><strong>Football Shirts / Club Merchandise</strong></li>
+              <li><strong>Full-Face Covering Masks / Helmets</strong></li>
+              <li><strong>Prop Weapons (Plastic swords, guns, axes)</strong></li>
+              <li>Political slogans or defamatory caricature</li>
+              <li>Massive inflatables blocking aisle sightlines</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="fancy-top-ad" />
+
+      <!-- Deep Dive: Banned Rules -->
+      <section class="culture-section">
+        <h2>Strictly Enforced Venue Costume Policies</h2>
+
+        <div class="rule-box">
+          <h3>1. Zero Tolerance on Football Club Attire</h3>
+          <p>
+            The PDC explicitly forbids football shirts, scarves, and club insignia from any football team across the globe (e.g., Arsenal, Tottenham, Liverpool, Celtic, Rangers, Bayern Munich, etc.). This rule is in place to preserve the unique neutral, friendly party spirit where rival fans drink together peacefully. If you wear a football shirt, you will be refused entry at Palm Court.
+          </p>
+        </div>
+
+        <div class="rule-box">
+          <h3>2. Face Visibility & Identity Check</h3>
+          <p>
+            Security personnel must be able to visually inspect your face at all times. Morphsuits must have the face portion unzipped/removed, and masks must be removed during security search and when purchasing alcohol at the bar.
+          </p>
+        </div>
+
+        <div class="rule-box">
+          <h3>3. Zero Weapons or Mock Weapons</h3>
+          <p>
+            Even obvious toy props—such as plastic shields, inflatable swords, wooden mallet props, or foam spears—are confiscated at the entrance gates and will not be returned. Plan your costume to look complete without requiring handheld prop weapons.
+          </p>
+        </div>
+      </section>
+
+      <!-- The Essential Ally Pally Chants -->
+      <section class="culture-section">
+        <h2>Iconic Alexandra Palace Fan Chants</h2>
+        <p>
+          Learn the anthems that reverberate through the Great Hall during every match session:
+        </p>
+
+        <div class="chant-grid">
+          <div class="card chant-card">
+            <h4>"Stand Up If You Love The Darts"</h4>
+            <p class="chant-lyrics">
+              <em>"Stand up, if you love the darts!<br/>Stand up, if you love the darts!"</em>
+            </p>
+            <span class="chant-desc">The universal anthem chanted whenever a set reaches a dramatic decider.</span>
+          </div>
+
+          <div class="card chant-card">
+            <h4>"Chase The Sun" (Planet Funk)</h4>
+            <p class="chant-lyrics">
+              <em>"Da-da-da-da, da-da-da-da-da... HEY! HEY! HEY!"</em>
+            </p>
+            <span class="chant-desc">Played by the arena DJ at commercial breaks; 5,000 arms pumping in unison.</span>
+          </div>
+
+          <div class="card chant-card">
+            <h4>"There's Only One Phil Taylor"</h4>
+            <p class="chant-lyrics">
+              <em>"Walking along, singing a song, walking in a Taylor wonderland!"</em>
+            </p>
+            <span class="chant-desc">Sung in homage to the 16-time world champion and sport's greatest pioneer.</span>
+          </div>
+
+          <div class="card chant-card">
+            <h4>"Kolo / Yaya Touré"</h4>
+            <p class="chant-lyrics">
+              <em>"Yaya, Yaya-Yaya... Kolo, Kolo-Kolo!"</em>
+            </p>
+            <span class="chant-desc">A bouncing sing-along alternating between seated and standing spectators.</span>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="in-feed" id="fancy-mid-ad" />
+
+      <!-- Frequently Asked Questions -->
+      <section class="culture-section">
+        <h2>Frequently Asked Questions About Fancy Dress</h2>
+        <div class="faq-accordion">
+          {fancyDressFaqSchema.mainEntity.map((item) => (
+            <div class="card faq-box">
+              <h4>{item.name}</h4>
+              <p>{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="culture-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Spectator Guides</h3>
+        <ul class="widget-list">
+          <li><a href="/venue/">🏛️ Alexandra Palace Venue Rules</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">🪑 Seating Plan & Tables</a></li>
+          <li><a href="/travel/">🚇 Tube, Rail & Bus Transit</a></li>
+          <li><a href="/tickets/">🎟️ Official Tickets & Ballot</a></li>
+          <li><a href="/schedule/">🗓️ Tournament Schedule</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="fancy-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Costume Security Check</h3>
+        <p class="sidebar-micro">
+          Security stewards reserve the right to deny admission to any costume deemed offensive, discriminatory, or hazardous to other spectators.
+        </p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .culture-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .culture-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .culture-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .culture-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .culture-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .costume-dos-donts {
+    margin: 1.5rem 0;
+  }
+
+  .do-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+
+  .do-tag {
+    color: #166534;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .dont-card {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+
+  .dont-tag {
+    color: #991b1b;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .rule-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .rule-box h3 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+    margin-bottom: 0.4rem;
+  }
+
+  .rule-box p {
+    margin-bottom: 0;
+    color: #475569;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .chant-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .chant-card {
+    padding: 1.25rem;
+  }
+
+  .chant-card h4 {
+    margin-top: 0;
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 0.4rem;
+  }
+
+  .chant-lyrics {
+    color: #0284c7;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .chant-desc {
+    font-size: 0.78rem;
+    color: #64748b;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    padding: 1.25rem;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+  }
+
+  .culture-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .sidebar-micro {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .culture-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .costume-dos-donts, .chant-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

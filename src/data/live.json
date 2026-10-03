@@ -1,0 +1,47 @@
+{
+  "tournament_state": "pre_tournament",
+  "tournament_edition": "2026/27",
+  "active_phase_name": "Pre-Tournament Build-up & Qualification",
+  "days_until_start": 69,
+  "start_date": "2026-12-11T19:00:00Z",
+  "venue": "Alexandra Palace, London (Great Hall)",
+  "status_badge_text": "Schedule Confirmed • Opens Dec 11",
+  "last_updated": "2026-10-03T07:15:00Z",
+  "update_frequency": "Twice daily during tournament play (12:00 & 18:30 GMT)",
+  "active_session": null,
+  "todays_matches": [],
+  "current_confirmed_fixtures": [
+    {
+      "match_id": "opening-night-m1",
+      "date": "2026-12-11",
+      "session": "Evening Session",
+      "scheduled_gmt": "19:15",
+      "round": "First Round (Best of 5 Sets)",
+      "player_1": "International Qualifier TBD",
+      "player_2": "ProTour Qualifier TBD",
+      "status": "Scheduled"
+    },
+    {
+      "match_id": "opening-night-m4",
+      "date": "2026-12-11",
+      "session": "Evening Session",
+      "scheduled_gmt": "21:30",
+      "round": "Second Round (Best of 5 Sets)",
+      "player_1": "Defending Champion / Top Seed",
+      "player_2": "Winner Match 1",
+      "status": "Scheduled"
+    }
+  ],
+  "featured_announcements": [
+    {
+      "headline": "Capacity Expanded: World Championship Moves to Great Hall",
+      "summary": "The 2026/27 tournament marks the historic move to Alexandra Palace's Great Hall, allowing 5,000+ spectators per session.",
+      "date": "2026-10-03"
+    },
+    {
+      "headline": "See Tickets Official Fan-to-Fan Resale Active",
+      "summary": "Fans seeking tickets must use the official See Tickets resale platform to avoid fraudulent duplicate barcodes.",
+      "date": "2026-10-01"
+    }
+  ]
+}

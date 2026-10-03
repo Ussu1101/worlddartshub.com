@@ -1,0 +1,399 @@
+---
+// src/pages/players/world-championship-records.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import recordsData from '../../data/player-records.json';
+
+const pageTitle = "PDC World Darts Championship Records — Ally Pally Stats & Milestones";
+const pageDescription = "Official PDC World Darts Championship tournament records. Discover all-time Alexandra Palace match averages, most sets won, highest 180 counts, and title streaks.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Players', url: '/players/' },
+  { name: 'Records', url: '/players/records/' },
+  { name: 'World Championship Records', url: '/players/world-championship-records/' }
+];
+
+const wcSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/players/world-championship-records/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "PDC World Darts Championship Historical Tournament Records",
+    "numberOfItems": 5,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Highest Match Average: 114.05 by Michael van Gerwen (2017 Semi-Final)" },
+      { "@type": "ListItem", "position": 2, "name": "Most Individual 180s in Single Tournament: 83 by Michael Smith (2022)" },
+      { "@type": "ListItem", "position": 3, "name": "Most 180s in Single Match: 24 by Peter Wright (2022 Semi-Final)" },
+      { "@type": "ListItem", "position": 4, "name": "Tournament Record Total 180s: 901 (2023 World Championship)" },
+      { "@type": "ListItem", "position": 5, "name": "Most PDC World Titles: 14 by Phil Taylor" }
+    ]
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={wcSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">TOURNAMENT ARCHIVES</span>
+        <span class="badge">ALEXANDRA PALACE HISTORICAL RECORDS</span>
+      </div>
+      <h1>PDC World Darts Championship Records</h1>
+      <p class="lead-text">
+        Every milestone in World Darts Championship history: record match averages in the Great Hall, maximum 180 totals, set play benchmarks, and Alexandra Palace legends.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={recordsData.last_verified} topic="PDC World Darts Championship Archives" />
+
+      <!-- High Match Averages Table -->
+      <section class="content-card table-section">
+        <h2>Top 5 Match Averages in World Championship History</h2>
+        <p class="table-note">
+          Calculated on standard 3-dart scoring across all completed sets and legs on the televised stage.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>3-Dart Average</th>
+                <th>Year & Round</th>
+                <th>Opponent & Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              {recordsData.world_championship_records.highest_match_averages.map((avg) => (
+                <tr>
+                  <td><span class="rank-badge">#{avg.rank}</span></td>
+                  <td><strong>{avg.player}</strong></td>
+                  <td><strong class="avg-highlight">{avg.average}</strong></td>
+                  <td>{avg.year} {avg.round}</td>
+                  <td><span class="context-note">{avg.opponent}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot id="wcrecords-top-ad" label="Championship Program & Media" />
+
+      <!-- 180 Benchmarks Section -->
+      <section class="content-card milestones-section">
+        <h2>Maximum 180 Scoring Benchmarks at Ally Pally</h2>
+        
+        <div class="milestones-grid">
+          <div class="mile-card">
+            <span class="mile-label">TOURNAMENT RECORD</span>
+            <div class="mile-val">901 Maximums</div>
+            <div class="mile-meta">2023 PDC World Championship</div>
+            <p>The highest total number of 180s hit across all 95 matches in World Championship history, breaking the previous mark of 880.</p>
+          </div>
+
+          <div class="mile-card">
+            <span class="mile-label">INDIVIDUAL TOURNAMENT</span>
+            <div class="mile-val">83 Maximums</div>
+            <div class="mile-meta">Michael Smith (2022)</div>
+            <p>Michael "Bully Boy" Smith blasted 83 maximum 180s during his march to the 2022 final, surpassing Gary Anderson's previous record of 71.</p>
+          </div>
+
+          <div class="mile-card">
+            <span class="mile-label">SINGLE MATCH RECORD</span>
+            <div class="mile-val">24 Maximums</div>
+            <div class="mile-meta">Peter Wright (2022 Semi-Final)</div>
+            <p>Peter Wright hit 24 maximums in his gripping 6-4 semi-final triumph over Gary Anderson, setting the all-time single-match record.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Greatest Match Ever Played -->
+      <section class="content-card epic-match-card">
+        <h2>The Greatest Match in Darts History: 2023 Final</h2>
+        <div class="epic-content">
+          <p>
+            On 3 January 2023, <strong>Michael Smith and Michael van Gerwen</strong> contested what is universally regarded as the greatest single leg and final in darts history. In the third leg of the second set:
+          </p>
+          <div class="nine-dart-box">
+            <h4>The Nine-Dart Leg Heard Around the World:</h4>
+            <ul>
+              <li>Van Gerwen opens with 180, followed by Smith's 180.</li>
+              <li>Van Gerwen follows with 177 (6 perfect darts), Smith replies with 180 (6 perfect darts).</li>
+              <li>Van Gerwen hits T20, T19, and narrowly misses double 12 for a nine-darter.</li>
+              <li>Smith steps up and hits T20, T19, and double 12 to complete the greatest nine-dart finish in sporting history!</li>
+            </ul>
+            <p class="commentary-quote">
+              <em>"I can't spake! I can't spake! Wayne Mardle's gone, I've gone, the whole of Alexandra Palace has gone!"</em> — Wayne Mardle, Sky Sports Darts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot id="wcrecords-mid-ad" label="Sports Memorabilia & Prints" />
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>World Championship Records FAQ</h2>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">What is the highest losing average in World Championship history?</summary>
+            <div class="faq-answer">
+              <p>Raymond van Barneveld holds the highest losing average in World Championship history with <strong>109.34</strong> in the 2017 semi-final, where he was defeated 6-2 by Michael van Gerwen (who averaged an all-time record 114.05).</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">When did the World Championship move to Alexandra Palace?</summary>
+            <div class="faq-answer">
+              <p>The tournament moved from the Circus Tavern in Purfleet, Essex to the Great Hall at Alexandra Palace in North London for the 2008 World Championship, where John Part was crowned the first Ally Pally champion.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Has anyone ever retained the PDC World Championship?</summary>
+            <div class="faq-answer">
+              <p>Yes. Phil Taylor successfully defended the title multiple times (most notably 1995–2002), Adrian Lewis retained the title in 2012, and Gary Anderson retained it in 2016.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-column">
+      <div class="sidebar-card">
+        <h3>Related Statistics</h3>
+        <ul class="sidebar-links">
+          <li><a href="/players/9-darters/">🎯 16 Ally Pally Nine-Darters</a></li>
+          <li><a href="/players/180-records/">⚡ 180 Maximum Records</a></li>
+          <li><a href="/players/records/">🏆 All-Time Records Directory</a></li>
+          <li><a href="/players/stats/">📈 Performance Statistics</a></li>
+          <li><a href="/players/player-comparisons/">⚔️ Head-to-Head Rivalries</a></li>
+          <li><a href="/players/">← Back to All Players</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card highlight-sidebar">
+        <h3>Tournament Key Pages</h3>
+        <ul class="sidebar-links">
+          <li><a href="/schedule/finals-weekend/">Finals Weekend Schedule</a></li>
+          <li><a href="/tournament/prize-money/">£5,000,000 Prize Fund</a></li>
+          <li><a href="/draw/">Tournament Bracket</a></li>
+          <li><a href="/venue/">Venue Guide</a></li>
+        </ul>
+      </div>
+
+      <AdSlot id="wcrecords-sidebar-ad" label="Official Ally Pally Souvenirs" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-bottom: 1px solid #374151;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .lead-text {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 900px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #475569;
+    white-space: nowrap;
+  }
+  .data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #334155;
+    vertical-align: middle;
+  }
+  .rank-badge {
+    background: #334155;
+    color: #f8fafc;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .avg-highlight {
+    color: #f59e0b;
+    font-size: 1.1rem;
+  }
+  .context-note {
+    color: #94a3b8;
+    font-size: 0.85rem;
+  }
+  .milestones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .mile-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 1.25rem;
+    border-radius: 6px;
+  }
+  .mile-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #38bdf8;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .mile-val {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #f8fafc;
+  }
+  .mile-meta {
+    font-size: 0.8rem;
+    color: #f59e0b;
+    margin-bottom: 0.5rem;
+  }
+  .mile-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.4;
+  }
+  .epic-match-card {
+    background: #0f172a;
+    border: 1px solid #38bdf8;
+  }
+  .nine-dart-box {
+    background: #1e293b;
+    border-left: 4px solid #10b981;
+    padding: 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-top: 1rem;
+  }
+  .nine-dart-box h4 {
+    margin-top: 0;
+    color: #10b981;
+    font-size: 1.1rem;
+  }
+  .nine-dart-box ul {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .commentary-quote {
+    margin: 0;
+    color: #f59e0b;
+    font-size: 0.95rem;
+  }
+  .faq-accordion details {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+  .faq-answer {
+    margin-top: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .sidebar-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sidebar-links a:hover {
+    color: #38bdf8;
+  }
+  .highlight-sidebar {
+    border-color: #f59e0b;
+  }
+</style>

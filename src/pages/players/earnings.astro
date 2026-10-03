@@ -1,0 +1,441 @@
+---
+// src/pages/players/earnings.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import earningsData from '../../data/player-earnings.json';
+
+const pageTitle = "PDC Darts Career Earnings & Prize Money — All-Time Rich List";
+const pageDescription = "Official career prize money earnings for top PDC darts players. Michael van Gerwen, Peter Wright, Gary Anderson, and Luke Littler earnings analyzed with tax and net worth disclaimers.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Players', url: '/players/' },
+  { name: 'Career Earnings', url: '/players/earnings/' }
+];
+
+const earningsSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/players/earnings/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "PDC Darts All-Time Career Prize Money Leaders",
+    "numberOfItems": earningsData.top_career_prize_earners.length,
+    "itemListElement": earningsData.top_career_prize_earners.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": `${item.player}: ${item.career_prize_money} official career prize money`
+    }))
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={earningsSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">FINANCIAL DIRECTORY</span>
+        <span class="badge">OFFICIAL PDC AUDITED PRIZE FUNDS</span>
+      </div>
+      <h1>PDC Darts Career Earnings & Prize Money</h1>
+      <p class="lead-text">
+        An authoritative financial breakdown of professional darts: all-time official tournament prize money, major winner cheques, and the economics of life as an elite touring professional.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={earningsData.last_verified} topic="PDC Order of Merit & Certified Prize Funds" />
+
+      <!-- Crucial Net Worth vs Prize Money Disclaimer Callout -->
+      <section class="content-card disclaimer-box">
+        <div class="disclaimer-header">
+          <span class="disclaimer-icon">⚠️</span>
+          <h3>Factual Notice: Official Prize Money vs. Speculative Net Worth</h3>
+        </div>
+        <p>
+          {earningsData.financial_disclaimer}
+        </p>
+        <div class="economics-grid">
+          <div class="econ-pill">
+            <span class="econ-title">UK Income Tax</span>
+            <span class="econ-desc">Up to 45% top marginal band on UK winnings</span>
+          </div>
+          <div class="econ-pill">
+            <span class="econ-title">Management Fees</span>
+            <span class="econ-desc">10% – 20% commission to sports agencies</span>
+          </div>
+          <div class="econ-pill">
+            <span class="econ-title">Tour Travel Overhead</span>
+            <span class="econ-desc">Self-funded European flights, hotels & logistics</span>
+          </div>
+          <div class="econ-pill">
+            <span class="econ-title">Commercial Revenue</span>
+            <span class="econ-desc">Dart manufacturer royalties & exhibition fees</span>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot id="earnings-top-ad" label="Financial Services & Wealth Management" />
+
+      <!-- All-Time Career Prize Money Leaders -->
+      <section class="content-card table-section">
+        <h2>PDC All-Time Career Prize Money Leaderboard</h2>
+        <p class="table-note">
+          Official, certified prize money accrued across PDC ranking majors, European Tour, ProTour, and invitationals (Cutoff: October 2026; Source: PDC Official Order of Merit & Darts Database).
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Career Prize Money</th>
+                <th>Peak Ranking</th>
+                <th>Key Commercial & Title Milestones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {earningsData.top_career_prize_earners.map((earner) => (
+                <tr>
+                  <td>
+                    <span class="rank-badge">#{earner.rank}</span>
+                  </td>
+                  <td>
+                    <strong>
+                      <a href={`/players/${earner.slug}/`} class="player-link">
+                        {earner.player}
+                      </a>
+                    </strong>
+                  </td>
+                  <td><strong class="money-text">{earner.career_prize_money}</strong></td>
+                  <td><span class="peak-tag">{earner.peak_ranking}</span></td>
+                  <td><span class="milestone-text">{earner.major_milestones}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Revenue Streams of a Modern Darts Pro -->
+      <section class="content-card revenue-breakdown">
+        <h2>How Professional Darts Players Earn Their Living</h2>
+        
+        <div class="revenue-channel">
+          <h3>1. Official Ranking Prize Funds</h3>
+          <p>
+            The PDC circuit awards over £15,000,000 annually across its competitive calendar. The World Darts Championship represents the pinnacle of this structure, offering a record £5,000,000 total purse and £1,000,000 to the champion. Because prize money directly establishes a player's world ranking, tournament performance dictates their invitation to other lucrative events.
+          </p>
+        </div>
+
+        <div class="revenue-channel">
+          <h3>2. Invitational Appearance & Prize Guarantees</h3>
+          <p>
+            Premier League Darts features an eight-player round-robin format offering £1,000,000 in total prize money (£275,000 to the winner, and a minimum £60,000 to eighth place). Furthermore, the PDC World Series of Darts stages international events across New York, Bahrain, the Netherlands, Australia, and New Zealand, providing guaranteed appearance payments and international exposure.
+          </p>
+        </div>
+
+        <div class="revenue-channel">
+          <h3>3. Equipment Endorsement Royalties</h3>
+          <p>
+            Leading equipment manufacturers (Target, Winmau, Red Dragon, Unicorn) pay top players substantial retainer contracts plus royalties on every signature set of darts, flights, cases, and surrounds sold globally. For transcendent stars like Luke Littler and Michael van Gerwen, retail merchandise royalties can match or exceed tournament winnings.
+          </p>
+        </div>
+
+        <div class="revenue-channel">
+          <h3>4. Exhibition Circuit & Corporate Bookings</h3>
+          <p>
+            Outside official PDC weekends, professional players headline private exhibition nights in pubs, clubs, and arenas across the UK and Germany. Established stars command between £2,500 and £7,500 per exhibition evening, offering a consistent year-round income stream immune to tournament variance.
+          </p>
+        </div>
+      </section>
+
+      <AdSlot id="earnings-mid-ad" label="Sports Memorabilia & Darts Supplies" />
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Darts Earnings & Economics FAQ</h2>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">Who is the highest earning darts player in history?</summary>
+            <div class="faq-answer">
+              <p>Michael van Gerwen is the highest-earning player in PDC history, having accumulated over <strong>£10,500,000</strong> in official tournament prize money since making his PDC debut in 2007.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Do darts players have to pay tax on tournament winnings?</summary>
+            <div class="faq-answer">
+              <p>Yes. In the United Kingdom, professional darts prize money is taxable as self-employment income, subject to standard HMRC income tax rates (up to 45% for high earners) and National Insurance contributions. International players competing in the UK are also subject to withholding tax rules.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How much does the World Darts Championship winner get?</summary>
+            <div class="faq-answer">
+              <p>For the 2026/27 PDC World Darts Championship, the winner receives a historic <strong>£1,000,000</strong> first prize from the expanded £5,000,000 total prize purse.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-column">
+      <div class="sidebar-card">
+        <h3>Player Authority Hubs</h3>
+        <ul class="sidebar-links">
+          <li><a href="/players/">← Back to All Players</a></li>
+          <li><a href="/players/rankings/">📊 Official Order of Merit</a></li>
+          <li><a href="/players/darts-equipment-specs/">🎯 Darts Equipment Specs</a></li>
+          <li><a href="/players/walk-on-songs/">🎵 Walk-On Songs & Anthems</a></li>
+          <li><a href="/players/stats/">📈 Performance Statistics</a></li>
+          <li><a href="/players/records/">🏆 All-Time Records</a></li>
+          <li><a href="/players/9-darters/">🎯 Televised Nine-Darters</a></li>
+          <li><a href="/players/180-records/">⚡ 180 Maximum Records</a></li>
+          <li><a href="/players/player-comparisons/">⚔️ Head-to-Head Rivalries</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card highlight-sidebar">
+        <h3>Prize Money Guides</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tournament/prize-money/">Round-by-Round Payout Matrix</a></li>
+          <li><a href="/schedule/finals-weekend/">Finals Weekend Schedule</a></li>
+          <li><a href="/results/">Live & Historical Results</a></li>
+        </ul>
+      </div>
+
+      <AdSlot id="earnings-sidebar-ad" label="Professional Sports Representation" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-bottom: 1px solid #374151;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .lead-text {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 900px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .disclaimer-box {
+    background: #0f172a;
+    border: 2px solid #eab308;
+  }
+  .disclaimer-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .disclaimer-header h3 {
+    margin: 0;
+    color: #facc15;
+    font-size: 1.2rem;
+  }
+  .disclaimer-icon {
+    font-size: 1.5rem;
+  }
+  .disclaimer-box p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .economics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .econ-pill {
+    background: #1e293b;
+    border: 1px solid #475569;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+  .econ-title {
+    display: block;
+    font-weight: 700;
+    color: #f8fafc;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .econ-desc {
+    display: block;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.35;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #475569;
+    white-space: nowrap;
+  }
+  .data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #334155;
+    vertical-align: middle;
+  }
+  .rank-badge {
+    background: #334155;
+    color: #f8fafc;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .player-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .player-link:hover {
+    text-decoration: underline;
+  }
+  .money-text {
+    color: #10b981;
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+  .peak-tag {
+    display: inline-block;
+    background: #0f172a;
+    border: 1px solid #475569;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    white-space: nowrap;
+  }
+  .milestone-text {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.4;
+  }
+  .revenue-channel {
+    background: #0f172a;
+    border-left: 4px solid #10b981;
+    padding: 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1.25rem;
+  }
+  .revenue-channel h3 {
+    margin-top: 0;
+    color: #f8fafc;
+    font-size: 1.1rem;
+  }
+  .revenue-channel p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .faq-accordion details {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+  .faq-answer {
+    margin-top: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .sidebar-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sidebar-links a:hover {
+    color: #38bdf8;
+  }
+  .highlight-sidebar {
+    border-color: #f59e0b;
+  }
+</style>

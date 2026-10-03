@@ -1,0 +1,86 @@
+{
+  "event": "PDC World Darts Championship 2026/27",
+  "venue": "Alexandra Palace, London N22 7AY",
+  "travel_zone": "London Fare Zone 3",
+  "last_verified": "2026-10-03",
+  "status": "confirmed",
+  "tfl_status_advisory": "Check TfL service status (tfl.gov.uk) and National Rail Enquiries before travelling. London Underground routes, including the Piccadilly Line, undergo periodic maintenance and upgrade works.",
+  "travel_time_disclaimer": "All route distances and journey durations are approximate estimates based on standard published TfL and National Rail timetables under normal operating conditions. Actual times may vary due to station pedestrian control, transfers, and weather. No travel duration is guaranteed.",
+  "primary_stations": [
+    {
+      "name": "Wood Green Underground Station",
+      "mode": "London Underground",
+      "line": "Piccadilly Line",
+      "zone": "Zone 3",
+      "distance_miles": 1.2,
+      "walking_time": "20 – 25 minutes uphill via Station Road and Alexandra Palace Park",
+      "bus_connection": "TfL W3 Bus departs directly opposite the station, running up the hill to Palm Court entrance in 8–10 minutes",
+      "night_service": "Night Tube operates 24 hours continuously on Friday and Saturday nights on the Piccadilly Line. Weekday southbound last trains depart approximately 00:15–00:30."
+    },
+    {
+      "name": "Alexandra Palace Rail Station",
+      "mode": "National Rail",
+      "operator": "Great Northern",
+      "zone": "Zone 3",
+      "distance_miles": 0.6,
+      "walking_time": "10 – 15 minutes uphill through the south park entrance path",
+      "direct_connections": "Direct rail services to Moorgate, Old Street, Highbury & Islington, and Finsbury Park (approx. 12–15 mins journey from Finsbury Park)",
+      "night_service": "Final southbound trains toward Finsbury Park and Moorgate typically depart between 23:45 and 00:15. Check National Rail schedules for late-session departures."
+    },
+    {
+      "name": "Finsbury Park Station",
+      "mode": "Underground & National Rail Hub",
+      "lines": ["Victoria Line", "Piccadilly Line", "Thameslink", "Great Northern"],
+      "zone": "Zone 2",
+      "distance_miles": 3.0,
+      "direct_connection": "Take the direct TfL W3 bus from Finsbury Park Bus Station (Stop G) straight up to the Alexandra Palace Palm Court bus stop."
+    }
+  ],
+  "bus_routes": [
+    {
+      "route": "W3 Bus",
+      "frequency": "Every 6–10 minutes during daytime and evening event periods",
+      "route_path": "Finsbury Park Station ↔ Wood Green ↔ Alexandra Palace Palm Court ↔ Northumberland Park",
+      "key_benefit": "Drops passengers directly at the Palm Court main venue entrance at the top of the hill, completely avoiding the steep park gradient."
+    },
+    {
+      "route": "184 Bus",
+      "frequency": "Every 10–12 minutes",
+      "route_path": "Barnet ↔ Wood Green ↔ Alexandra Park Road ↔ Turnpike Lane",
+      "key_benefit": "Stops at the foot of Alexandra Palace Way, followed by a 10-minute walk up the driveway."
+    }
+  ],
+  "route_guides": [
+    {
+      "origin": "King's Cross St. Pancras",
+      "recommended_route": "Piccadilly Line northbound direct to Wood Green (approx. 14 minutes), then W3 bus or walk; alternatively Great Northern train from Finsbury Park.",
+      "estimated_travel_time": "25 – 35 minutes"
+    },
+    {
+      "origin": "Central London / West End (Covent Garden / Leicester Square)",
+      "recommended_route": "Piccadilly Line northbound direct to Wood Green (approx. 22 minutes), then W3 bus or walk.",
+      "estimated_travel_time": "35 – 45 minutes"
+    },
+    {
+      "origin": "London Liverpool Street / City of London",
+      "recommended_route": "Northern or Circle line to Moorgate, then Great Northern rail direct to Alexandra Palace Station.",
+      "estimated_travel_time": "30 – 40 minutes"
+    },
+    {
+      "origin": "London Heathrow Airport",
+      "recommended_route": "Piccadilly Line eastbound direct from all Heathrow terminals straight to Wood Green (no line changes required).",
+      "estimated_travel_time": "65 – 75 minutes"
+    }
+  ],
+  "taxis_and_drop_off": {
+    "location": "Designated drop-off and collection bay along Alexandra Palace Way",
+    "advisory": "Road closures and heavy congestion operate around the venue during session egress (22:45–23:45). App-based rideshare services (Uber, Bolt) experience severe surge pricing and lengthy arrival delays. Walking down the hill to Wood Green High Road or Muswell Hill before requesting a ride is strongly advised.",
+    "black_cabs": "Black cabs occasionally rank near the Palm Court entrance but demand far outstrips availability at session close."
+  },
+  "egress_considerations": {
+    "afternoon_session_end": "Approx. 16:30 GMT — Daylight departure, standard frequent transport schedules.",
+    "evening_session_end": "Approx. 23:00 GMT — 5,000 spectators exiting concurrently. The W3 bus stops at Palm Court experience long queues; walking downhill through the park to Wood Green station is often 10–15 minutes faster than queuing for buses."
+  },
+  "source": "Transport for London (TfL), National Rail Enquiries, & Alexandra Palace Transport Guide",
+  "source_url": "https://tfl.gov.uk"
+}

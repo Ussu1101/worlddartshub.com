@@ -1,0 +1,670 @@
+---
+// src/pages/watch/broadcaster-history.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "History of PDC World Darts Championship TV Rights: 1993 to Present";
+const pageDescription = "The complete broadcast history of the PDC World Darts Championship: from the 1993 Circus Tavern split and Sid Waddell to Alexandra Palace, Sky Sports' £125m deal, and global streaming expansions.";
+
+const breadcrumbItems = [
+  { name: 'Watch & Stream', url: '/watch/' },
+  { name: 'Broadcaster Rights History' }
+];
+
+const historyFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "PDC World Darts Championship Television Rights History",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who broadcast the first PDC World Darts Championship in 1994?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sky Sports broadcast the inaugural 1993/94 World Darts Council (WDC) World Championship from the Circus Tavern in Purfleet. The network revolutionized sports production with walk-on music, stage pyrotechnics, and the iconic commentary of Sid Waddell and Dave Lanning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long has Sky Sports held the UK broadcast rights for PDC darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sky Sports has held exclusive UK television rights continuously since the championship's inception in 1993/94. In February 2025, Sky and the PDC announced a landmark multi-year contract extension worth over £125 million, securing exclusive live UK rights through at least 2030."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When did the World Darts Championship move from Circus Tavern to Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tournament moved from Purfleet's Circus Tavern to Alexandra Palace in London for the 2007/08 World Championship. The move increased arena capacity from approximately 800 to over 3,000 spectators per session and coincided with the rollout of High Definition (HD) broadcasting and the dedicated Sky Sports Darts channel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which channels historically broadcast darts in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Darts exploded in the Netherlands behind Raymond van Barneveld and Michael van Gerwen. Early tournaments aired on SBS6 before commercial broadcaster RTL7 carried coverage from 2011 to 2021. In 2022, Nordic Entertainment Group's Viaplay acquired exclusive Dutch rights, with operations agreeing a transition to DPG Media and Videoland in 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How did darts become a television hit in Germany and how do the rights transition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "German coverage began in 2004 on Deutsches SportFernsehen (DSF, later rebranded SPORT1), led by commentator Elmar Paulke. In 2016, DAZN entered the market to provide comprehensive live streaming. In February 2026, DAZN announced an extension retaining master rights across Germany, Austria, and Switzerland through at least 2031. SPORT1 confirmed that December 2026 is its final World Championship broadcast. From the 2027/28 cycle onward, ProSiebenSat.1 carries the free-to-air World Championship sub-license, while SPORT1 retains selected other PDC events."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={historyFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">HISTORICAL RETROSPECTIVE</span>
+        <span class="badge">1993 – PRESENT</span>
+      </div>
+      <h1>The Evolution of Darts Television: 1993 to Present</h1>
+      <p class="hero-lead">
+        From a smoky tavern in Essex with Sid Waddell's legendary metaphors to £125m global broadcast pacts and international streaming platforms across 100+ countries.
+      </p>
+    </div>
+  </header>
+
+  <div class="container main-layout">
+    <article class="content-body">
+      <VerificationBadge verifiedDate="October 2026" topic="Broadcasting Archive Records & Rights Contracts (1993–2031)" />
+
+      <!-- Introductory Narrative -->
+      <section class="content-section">
+        <h2>The Broadcast Revolution That Reinvented a Sport</h2>
+        <p>
+          In the late 1980s and early 1990s, television darts appeared to be in terminal decline. Terrestrial broadcasters had severely cut back their coverage, relegating tournament broadcasts to graveyard slots or dropping them altogether. Today, the <strong>PDC World Darts Championship</strong> is a global festive ratings juggernaut, attracting tens of millions of television viewers across Europe, North America, and Australasia.
+        </p>
+        <p>
+          This transformation is not an accident of history. It was engineered through a deliberate, high-stakes television partnership between visionary sports promoters and pay-television pioneers that permanently reshaped sports presentation.
+        </p>
+      </section>
+
+      <!-- Chronological Timeline -->
+      <section class="content-section">
+        <h2>Chronological Timeline of PDC Broadcast Rights</h2>
+
+        <div class="timeline-container">
+          <!-- Item 1: 1993/94 Split -->
+          <div class="timeline-item">
+            <div class="timeline-marker">1993/94</div>
+            <div class="timeline-content">
+              <h3>The Great Split & The Circus Tavern Gamble</h3>
+              <p>
+                Frustrated by declining television exposure and strict governance under the British Darts Organisation (BDO), 16 world champions and top-ranked professionals broke away in 1992 to establish the World Darts Council (WDC, later renamed the PDC).
+              </p>
+              <p>
+                Promoters Tommy Cox, Dick Allix, and Barry Hearn negotiated an audacious broadcast agreement with <strong>Sky Sports</strong>, a young satellite network eager for compelling live winter programming. In December 1993, the inaugural WDC World Championship staged its first match at the Circus Tavern in Purfleet, Essex.
+              </p>
+              <div class="quote-callout">
+                <em>"There's only one word for that: magic!"</em> — <strong>Sid Waddell</strong>, whose theatrical cadence, Shakespearean references, and unbridled enthusiasm turned routine maximums into dramatic television folklore.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Production Inventions -->
+          <div class="timeline-item">
+            <div class="timeline-marker">1995–2006</div>
+            <div class="timeline-content">
+              <h3>Production Innovations That Changed Sports Television</h3>
+              <p>
+                Working alongside Sky Sports production directors, the PDC discarded the quiet, somber presentation of traditional pub games in favor of modern stadium entertainment:
+              </p>
+              <ul>
+                <li><strong>Walk-On Music:</strong> Transforming players from anonymous competitors into larger-than-life characters with identifiable theme songs (Phil Taylor's <em>The Power</em>, Peter Manley's <em>Is This The Way To Amarillo</em>).</li>
+                <li><strong>Arena Atmosphere:</strong> Introduction of walk-on dancers, dry ice pyrotechnics, and vibrant stage lighting.</li>
+                <li><strong>Camera Choreography:</strong> Fast-cutting split-screen cameras tracking the player's face, the dart flight, and the dartboard treble bed within milliseconds.</li>
+                <li><strong>Score Graphics:</strong> Live digital overlay graphics that calculated checkouts and remaining scores before the player even stepped up to the oche.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 3: Ally Pally Relocation -->
+          <div class="timeline-item">
+            <div class="timeline-marker">2007/08</div>
+            <div class="timeline-content">
+              <h3>The Relocation to Alexandra Palace & HD Television</h3>
+              <p>
+                By 2007, the 800-seat Circus Tavern could no longer satisfy spectator demand or television production requirements. For the 2007/08 World Championship, the PDC made the historic decision to move the tournament to the <strong>Great Hall at Alexandra Palace</strong> in North London.
+              </p>
+              <p>
+                The move coincided with Sky Sports broadcasting the championship in full High Definition (1080i HD) for the first time. The vast Victorian hall provided room for 3,000+ costumed fans per session, creating a vibrant, singing carnival atmosphere that became as much a part of the television spectacle as the arrows themselves.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4: Sky Sports Darts Dedicated Channel -->
+          <div class="timeline-item">
+            <div class="timeline-marker">2014</div>
+            <div class="timeline-content">
+              <h3>Launch of the Dedicated "Sky Sports Darts" Channel</h3>
+              <p>
+                Demonstrating the event's unmatched festive ratings draw, Sky Sports temporarily rebranded its primary channel Sky Sports 3 into <strong>Sky Sports Darts</strong> for the duration of the 2014/15 World Championship.
+              </p>
+              <p>
+                The dedicated channel broadcast non-stop 24-hour darts programming throughout December and January, featuring live tournament sessions, classic archive finals, documentary profiles, and tactical analysis with masterclass coaching demonstrations. The pop-up channel became an annual Christmas television institution.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 5: Global Streaming Era -->
+          <div class="timeline-item">
+            <div class="timeline-marker">2016–2024</div>
+            <div class="timeline-content">
+              <h3>The Streaming Transformation: DAZN, Viaplay & PDCTV</h3>
+              <p>
+                While Sky Sports anchored the UK domestic base, the PDC accelerated international distribution. In the German-speaking DACH territory, streaming newcomer <strong>DAZN</strong> acquired co-exclusive rights in 2016 alongside German free broadcaster SPORT1.
+              </p>
+              <p>
+                In the Netherlands, Nordic Entertainment Group's <strong>Viaplay</strong> outbid terrestrial broadcaster RTL7 in 2021 to secure exclusive Dutch streaming rights. Simultaneously, Matchroom Live developed <strong>PDCTV</strong> into a global direct-to-consumer streaming destination, providing official English commentary to fans in territories lacking domestic television contracts.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 6: The Record Extensions -->
+          <div class="timeline-item">
+            <div class="timeline-marker">2025–2031</div>
+            <div class="timeline-content">
+              <h3>The Record £125M+ Mega-Deal & 2030+ Roadmap</h3>
+              <p>
+                In February 2025, Sky Sports and the PDC signed the most lucrative broadcast contract extension in darts history: an exclusive multi-year agreement valued at over <strong>£125 million</strong>, securing UK live rights through at least 2030.
+              </p>
+              <p>
+                Across Continental Europe, <strong>DAZN</strong> officially renewed its master streaming agreement across Germany, Austria, and Switzerland through at least <strong>2031</strong> (announced February 2026). In Germany, <strong>SPORT1</strong> confirmed that December 2026 marks its <strong>final World Championship broadcast</strong>, after which free-to-air sub-license rights transition to <strong>ProSiebenSat.1</strong> for the 2027/28 cycle onward, with SPORT1 retaining selected other PDC events.
+              </p>
+              <p>
+                In North America, the PDC concluded a major domestic pact in June 2026 bringing tournament stages to <strong>ESPN, ESPN+, and Peacock</strong>, solidifying professional darts as a global commercial powerhouse.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot position="mid-content" format="in-article" />
+
+      <!-- International Television Landscapes -->
+      <section class="content-section">
+        <h2>Country-by-Country Television Legacies</h2>
+
+        <div class="country-legacy-grid">
+          <!-- UK Legacy -->
+          <div class="legacy-card">
+            <div class="legacy-header">
+              <span class="legacy-flag">🇬🇧</span>
+              <h3>United Kingdom & Ireland: The Sky Sports Fortress</h3>
+            </div>
+            <p>
+              Sky Sports has broadcast every single PDC World Championship since 1993/94. Following the passing of Sid Waddell in 2012, commentary evolved under voices such as Wayne Mardle, Rod Studd, Stuart Pyke, Mark Webster, and former world champions John Part and Laura Turner. The £125m deal guarantees continuous exclusive coverage through 2030 across Sky Sports Darts, Sky Go, and contract-free streaming via NOW TV.
+            </p>
+            <a href="/watch/uk/" class="legacy-link">UK TV Guide &rarr;</a>
+          </div>
+
+          <!-- Netherlands Legacy -->
+          <div class="legacy-card">
+            <div class="legacy-header">
+              <span class="legacy-flag">🇳🇱</span>
+              <h3>Netherlands: From RTL7 "Meer voor Mannen" to Viaplay & Videoland</h3>
+            </div>
+            <p>
+              Dutch television interest erupted after Raymond van Barneveld's dramatic 2007 PDC sudden-death final triumph over Phil Taylor. From 2011 to 2021, commercial channel RTL7 made darts a winter staple with studio host Marcel Maijer and commentary stalwarts Jacques Nieuwlaat and Frank Vischschraper. In 2022, Viaplay transitioned coverage to paid streaming, with DPG Media / Videoland agreeing an acquisition of Dutch operations in 2026.
+            </p>
+            <a href="/watch/netherlands/" class="legacy-link">Netherlands TV Guide &rarr;</a>
+          </div>
+
+          <!-- Germany Legacy -->
+          <div class="legacy-card">
+            <div class="legacy-header">
+              <span class="legacy-flag">🇩🇪</span>
+              <h3>Germany (DACH): SPORT1 Era, DAZN Master Deal & ProSieben Transition</h3>
+            </div>
+            <p>
+              <strong>Historical Rights:</strong> Deutsches SportFernsehen (DSF) began broadcasting in 2004, rebranding as SPORT1. Commentator Elmar Paulke popularized the sport nationwide. DAZN entered in 2016 to deliver full live streaming.<br />
+              <strong>Current 2026/27:</strong> DAZN holds master rights; SPORT1 broadcasts its final World Championship in December 2026 under a sub-license.<br />
+              <strong>2027/28+ Rights:</strong> DAZN remains master streaming rights holder through at least 2031; free-to-air World Championship sub-license transitions to ProSiebenSat.1; SPORT1 retains selected other PDC events.<br />
+              <em>Note: In Austria and Switzerland, DAZN is verified through at least 2031, but no separate free-to-air World Championship broadcaster has been confirmed in our current source set.</em>
+            </p>
+            <a href="/watch/germany/" class="legacy-link">Germany TV Guide &rarr;</a>
+          </div>
+
+          <!-- Belgium Legacy -->
+          <div class="legacy-card">
+            <div class="legacy-header">
+              <span class="legacy-flag">🇧🇪</span>
+              <h3>Belgium: VTM 2 Free-to-Air Golden Generation</h3>
+            </div>
+            <p>
+              Belgium remains one of the few European territories retaining 100% free-to-air coverage. Powered by Dimitri Van den Bergh's major triumphs and Mike De Decker's 2024 World Grand Prix victory, commercial network VTM 2 and VTM GO (DPG Media) carry full live sessions with dedicated Flemish commentary under a multi-year partnership renewed in 2026 covering premier PDC tournaments for the coming years.
+            </p>
+            <a href="/watch/belgium/" class="legacy-link">Belgium TV Guide &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Sid Waddell Commentary Legacy -->
+      <section class="content-section">
+        <h2>The Voice of Darts: Remembering Sid Waddell</h2>
+        <p>
+          No historical review of darts television is complete without acknowledging <strong>Sid Waddell (1940–2012)</strong>. Born in Alnwick, Northumberland, and educated at St John's College, Cambridge, Waddell brought an unmatched blend of erudition, poetry, and breathless geordie passion to television commentary.
+        </p>
+        <p>
+          Waddell did not merely call matches; he dramatized them. When the PDC commissioned a brand-new solid silver World Championship trophy in 2012, it was unanimously christened the <strong>Sid Waddell Trophy</strong> in his honor.
+        </p>
+
+        <div class="quote-box">
+          <h4>Iconic Sid Waddell Commentary Quotes:</h4>
+          <ul>
+            <li><em>"When Alexander the Great was 33, he cried salt tears because there were no more worlds to conquer... Eric Bristow is only 27."</em></li>
+            <li><em>"He's as cool as a penguin's flipper."</em></li>
+            <li><em>"There's no one quite like Phil Taylor. He's got the eye of a tiger, the nerve of an assassin, and the wrist of a maestro."</em></li>
+            <li><em>"William Tell could not have taken an onion off his head with an arrow at that range!"</em></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Broadcast Rights History</h2>
+
+        <div class="faq-accordion">
+          <details class="faq-item" open>
+            <summary>Why did the PDC break away from the BDO?</summary>
+            <div class="faq-content">
+              <p>
+                In 1992, the top 16 players felt that the BDO was failing to commercialize the sport, secure television sponsors, or reverse declining broadcast hours on terrestrial networks. By forming the WDC (later PDC), they gained direct commercial control and partnered with Sky Sports to modernize the tournament format.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Has the World Darts Championship ever been on free terrestrial TV in the UK?</summary>
+            <div class="faq-content">
+              <p>
+                The PDC World Darts Championship has never been broadcast live on free terrestrial television in the UK; it has been exclusive to Sky Sports since its 1993/94 debut. (The separate BDO World Championship was traditionally broadcast by the BBC between 1978 and 2016, and later by Channel 4 and Quest, before the BDO collapsed in 2020).
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How much was the 2025 Sky Sports contract worth?</summary>
+            <div class="faq-content">
+              <p>
+                The multi-year broadcast renewal finalized in February 2025 was valued at over £125 million, making it the most lucrative media rights transaction in the history of darts and funding record prize money increases across the professional circuit.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </article>
+
+    <aside class="sidebar">
+      <div class="widget card">
+        <h3 class="widget-title">Live TV Directories</h3>
+        <p class="sidebar-micro">Verified channels for the 2026/27 championship:</p>
+        <ul class="widget-list">
+          <li><a href="/watch/">Global Broadcaster Directory</a></li>
+          <li><a href="/watch/uk/">🇬🇧 United Kingdom (Sky Sports)</a></li>
+          <li><a href="/watch/germany/">🇩🇪 Germany (DAZN & Sport1)</a></li>
+          <li><a href="/watch/belgium/">🇧🇪 Belgium (VTM 2 & VTM GO)</a></li>
+          <li><a href="/watch/austria-switzerland/">🇦🇹/🇨🇭 Austria & Switzerland</a></li>
+          <li><a href="/watch/netherlands/">🇳🇱 Netherlands (Viaplay)</a></li>
+          <li><a href="/watch/usa/">🇺🇸 United States (ESPN & Peacock)</a></li>
+          <li><a href="/watch/free-streams/">🆓 Legal Free Streams Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="widget card">
+        <h3 class="widget-title">Tournament Archive</h3>
+        <ul class="widget-list">
+          <li><a href="/tournament/world-darts-championship/">Tournament Overview & History</a></li>
+          <li><a href="/tournament/prize-money/">£5M Prize Money Evolution</a></li>
+          <li><a href="/results/">Championship Results Archive</a></li>
+          <li><a href="/players/">All-Time Player Profiles</a></li>
+        </ul>
+      </div>
+
+      <AdSlot position="sidebar" format="box" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    background-color: #334155;
+    color: #f8fafc;
+  }
+
+  .badge-accent {
+    background-color: #d97706;
+    color: #ffffff;
+  }
+
+  .page-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 0;
+  }
+
+  .main-layout {
+    display: grid;
+    grid-template-columns: 2.6fr 1fr;
+    gap: 2.5rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    font-weight: 800;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .content-section p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    position: relative;
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid #cbd5e1;
+  }
+
+  .timeline-item {
+    position: relative;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -2.25rem;
+    top: 0;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .timeline-content {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-left: 0.5rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.15rem;
+    color: #0f172a;
+    margin: 0 0 0.5rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-content ul {
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content li {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #475569;
+    margin-bottom: 0.35rem;
+  }
+
+  .quote-callout {
+    background-color: #fefce8;
+    border-left: 3px solid #ca8a04;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    margin-top: 0.75rem;
+    font-size: 0.92rem;
+    color: #854d0e;
+  }
+
+  .country-legacy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .legacy-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .legacy-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .legacy-flag {
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .legacy-card h3 {
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .legacy-card p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #475569;
+    margin-bottom: 0.85rem;
+  }
+
+  .legacy-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0284c7;
+    text-decoration: none;
+  }
+
+  .legacy-link:hover {
+    text-decoration: underline;
+  }
+
+  .quote-box {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .quote-box h4 {
+    margin: 0 0 0.5rem;
+    color: #0f172a;
+    font-size: 1rem;
+  }
+
+  .quote-box ul {
+    padding-left: 1.25rem;
+    margin: 0;
+  }
+
+  .quote-box li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #334155;
+    margin-bottom: 0.4rem;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+
+  .faq-item summary {
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .faq-content {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .faq-content p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .sidebar-micro {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 500;
+  }
+
+  .widget-list a:hover {
+    color: #d97706;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 960px) {
+    .main-layout {
+      grid-template-columns: 1fr;
+    }
+    .country-legacy-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

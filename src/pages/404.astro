@@ -1,0 +1,78 @@
+---
+// src/pages/404.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Page Not Found (404) — World Darts Guide";
+const pageDescription = "The requested page could not be found. Navigate to the Match Center, Watch Guide, or Alexandra Palace tournament schedule.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} noindex={true}>
+  <div class="container container-narrow error-content">
+    <div class="error-badge">404 ERROR</div>
+    <h1>Missed The Double!</h1>
+    <p class="lead">
+      We couldn't find the page you were looking for. It may have been moved, updated, or the bullseye was slightly off target.
+    </p>
+
+    <div class="card error-nav-card">
+      <h3>Head Back To The Action:</h3>
+      <ul class="nav-error-list">
+        <li><a href="/">🎯 Return to Home Page & TV Guide</a></li>
+        <li><a href="/live/">🎯 Match Center & Today's Schedule</a></li>
+        <li><a href="/watch/">📺 Legal Live Stream Directory</a></li>
+        <li><a href="/schedule/">🗓️ Full 2026/27 Tournament Schedule</a></li>
+        <li><a href="/venue/">🏛️ Alexandra Palace Spectator Handbook</a></li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .error-content {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+
+  .error-badge {
+    background: #fee2e2;
+    color: #b91c1c;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .error-content h1 {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .error-nav-card {
+    margin-top: 2.5rem;
+    text-align: left;
+    padding: 2rem;
+  }
+
+  .nav-error-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .nav-error-list a {
+    color: #0284c7;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .nav-error-list a:hover {
+    text-decoration: underline;
+  }
+</style>

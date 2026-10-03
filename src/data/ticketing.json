@@ -1,0 +1,67 @@
+{
+  "event": "PDC World Darts Championship 2026/27",
+  "venue": "Alexandra Palace, London",
+  "last_verified": "2026-10-03",
+  "status": "confirmed",
+  "official_primary_partner": {
+    "name": "See Tickets",
+    "official_url": "https://www.seetickets.com",
+    "role": "Exclusive official primary ticketing partner for the PDC World Darts Championship",
+    "source": "PDC Official Ticketing Announcements",
+    "status": "confirmed"
+  },
+  "official_resale_platform": {
+    "name": "See Tickets Fan-to-Fan Resale Marketplace",
+    "official_url": "https://www.seetickets.com/content/fan-to-fan",
+    "price_cap": "Face value only (plus standard nominal booking fee)",
+    "security_mechanism": "Under See Tickets Fan-to-Fan terms, when a ticket is resold, the seller's original digital barcode is canceled and invalidated, and a brand-new unique digital ticket and barcode are generated directly into the buyer's official See Tickets account.",
+    "legitimacy": "Official secondary service authorized and endorsed by the PDC for genuine customer-to-customer ticket transfers.",
+    "source": "See Tickets Fan-to-Fan Customer Service Terms",
+    "status": "confirmed"
+  },
+  "priority_windows": [
+    {
+      "phase": "Phase 1: PDCTV Annual Subscriber Presale",
+      "eligibility": "Active paid PDCTV Annual Subscribers registered prior to the qualifying cutoff date",
+      "timing_typical": "Late July",
+      "notes": "Grants exclusive early access window to select allocations before general release."
+    },
+    {
+      "phase": "Phase 2: Registered General Sale",
+      "eligibility": "General public users registered on the PDC ticketing portal",
+      "timing_typical": "Early August",
+      "notes": "Remaining primary allocations for all 28 sessions open."
+    },
+    {
+      "phase": "Phase 3: Official Fan-to-Fan Resale & Production Holds",
+      "eligibility": "Open to all registered See Tickets users",
+      "timing_typical": "From late summer through December tournament days",
+      "notes": "Ticket holders unable to attend list tickets at face value. Production returns occur as stage and camera setups finalize."
+    }
+  ],
+  "face_value_tiers": [
+    {
+      "tier": "Tiered Bleacher Seating",
+      "price_range": "£40 – £65 (Early rounds) / £70 – £90 (Semi-Finals & Final)",
+      "booking_fee": "Standard See Tickets per-ticket booking fee applies",
+      "description": "Raked stadium seating providing elevated sightlines toward the stage and giant screens."
+    },
+    {
+      "tier": "Floor Table Seating",
+      "price_range": "£50 – £85 (Early rounds) / £85 – £120 (Semi-Finals & Final)",
+      "booking_fee": "Standard See Tickets per-ticket booking fee applies",
+      "description": "Shared banquet tables directly on the Great Hall arena floor."
+    }
+  ],
+  "rules_and_restrictions": {
+    "refund_policy": "All primary ticket purchases are non-refundable through See Tickets unless a session is officially canceled by the PDC.",
+    "ticket_delivery": "Digital e-tickets delivered securely via the official See Tickets app/portal prior to the event date.",
+    "unauthorized_resale_risk": {
+      "platforms_unauthorized": ["Viagogo", "StubHub", "Gigsberg", "Vivid Seats", "Facebook Marketplace", "Twitter/X touts", "eBay"],
+      "consequence": "Under PDC Ticketing Terms and Conditions, tickets resold or offered for resale through unauthorized secondary channels are liable to cancellation without refund. PDC and venue security reserve the right to refuse entry to any person holding a ticket identified from unauthorized commercial touting or resale websites.",
+      "scam_alert": "The PDC and See Tickets warn fans never to purchase tickets through social media private messages, bank transfers, or unauthorized secondary listing sites, where buyers risk purchasing counterfeit, duplicate, or cancelled tickets."
+    }
+  },
+  "source": "PDC Official Ticketing Terms & Conditions (Resale & Touting Clause) & See Tickets Customer Terms",
+  "source_url": "https://www.pdc.tv/tickets"
+}

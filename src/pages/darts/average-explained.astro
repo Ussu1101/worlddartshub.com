@@ -1,0 +1,608 @@
+---
+// src/pages/darts/average-explained.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import dartsRules from '../../data/darts-rules.json';
+
+const pageTitle = "How Darts Averages Work — 3-Dart Average Formula & First-9 Explained";
+const pageDescription = "Learn how three-dart averages are calculated in professional darts. Mathematical formula, First-9 averages, historical benchmarks, and why higher averages don't always win.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Average Explained', url: '/darts/average-explained/' }
+];
+
+const averageSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/darts/average-explained/`,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Guide Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Guide",
+    "url": siteUrl
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={averageSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">DARTS METRICS</span>
+        <span class="badge">STATISTICAL GUIDE</span>
+      </div>
+      <h1>How 3-Dart Averages Work in Professional Darts</h1>
+      <p class="lead-text">
+        The three-dart average is the gold standard benchmark of darts performance. But how is it actually calculated, what is the difference between an overall average and a "First-9" average, and why can a player with a higher average still lose the match?
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={dartsRules.last_verified} topic="PDC Official Scoring & Statistical Metric Standards" />
+
+      <!-- The Formula Card -->
+      <section class="content-card formula-card">
+        <h2>The 3-Dart Average Mathematical Formula</h2>
+        <p>
+          Every television broadcast displays a running three-dart average. The mathematical formula calculates the expected points scored per standard visit of three darts:
+        </p>
+
+        <div class="formula-box">
+          <div class="formula-math">
+            <span class="formula-label">3-Dart Average</span> = 
+            <span class="fraction">
+              <span class="numerator">Total Points Scored</span>
+              <span class="denominator">Total Darts Thrown</span>
+            </span>
+            &times; 3
+          </div>
+        </div>
+
+        <div class="formula-example">
+          <strong>Step-by-Step Practical Calculation:</strong>
+          <ul>
+            <li>Suppose a player scores a total of <strong>3,540 points</strong> across a match.</li>
+            <li>They threw a combined total of <strong>105 darts</strong> to complete those legs.</li>
+            <li>Single dart average: <code>3,540 / 105 = 33.714 points per dart</code>.</li>
+            <li>Three-dart average: <code>33.714 &times; 3 = <strong>101.14</strong></code>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section: Why Finishing Lowers the Average -->
+      <section class="content-card">
+        <h2>The "Double Effect": Why Missed Checkouts Crush Averages</h2>
+        <p>
+          The most critical concept for new viewers to understand is that <strong>doubles drag down a player's average disproportionately</strong>.
+        </p>
+        <p>
+          Consider this scenario:
+        </p>
+        <div class="scenario-comparison">
+          <div class="scenario-box">
+            <h4>Player A: Clinical Checkout</h4>
+            <p>Scores 180, 180, 101 to leave 40. Then hits Double 20 on their 10th dart.</p>
+            <p><strong>Result:</strong> 501 points scored in 10 darts = <strong class="text-success">150.30 Average</strong> for that leg.</p>
+          </div>
+          <div class="scenario-box">
+            <h4>Player B: Double Trouble</h4>
+            <p>Scores 180, 180, 101 to leave 40 in 9 darts (matching Player A). But Player B then misses 6 darts at double before pinning D10 on dart 16.</p>
+            <p><strong>Result:</strong> 501 points in 16 darts = <strong class="text-danger">93.94 Average</strong> for that leg.</p>
+          </div>
+        </div>
+        <p>
+          Despite possessing identical scoring power, Player B's leg average plunged by <strong>over 56 points</strong> purely due to missing double attempts where each missed dart scores zero points.
+        </p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: First-9 Averages vs Overall Averages -->
+      <section class="content-card">
+        <h2>First-9 Average vs Overall Match Average</h2>
+        <p>
+          Because doubles can mask a player's true scoring rhythm, PDC statisticians track the <strong>First-9 Average</strong> alongside the overall average.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Measurement Window</th>
+                <th>What It Measures</th>
+                <th>Typical Elite Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>First-9 Average</strong></td>
+                <td>First 9 darts thrown in every leg</td>
+                <td>Pure scoring power & treble 20 hitting rate (before finishing pressure)</td>
+                <td>105.00 – 118.00</td>
+              </tr>
+              <tr>
+                <td><strong>Overall 3-Dart Average</strong></td>
+                <td>Every dart thrown across the entire match</td>
+                <td>Complete performance blending scoring power with double conversion</td>
+                <td>98.00 – 106.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-footnote">
+          A player with a 112.00 First-9 average but a 98.00 overall average is dominating the scoring phase but struggling on their outer doubles.
+        </p>
+      </section>
+
+      <!-- Section: Why Higher Average Doesn't Always Win -->
+      <section class="content-card">
+        <h2>The Paradox: Why Higher Averages Don't Guarantee a Win</h2>
+        <p>
+          In darts, you do not win matches by scoring more points—<strong>you win matches by winning legs and sets</strong>. This produces frequent situations where a losing player registers a higher average than the victor:
+        </p>
+
+        <div class="paradox-grid">
+          <div class="paradox-item">
+            <h4>1. The Timing of 180s</h4>
+            <p>
+              A 180 hit when your opponent is already sitting on 32 points is largely wasted, yet it inflates your 3-dart average. A clutch 60 or 100 hit under immense pressure to leave a double may win the leg while lowering your mathematical average.
+            </p>
+          </div>
+
+          <div class="paradox-item">
+            <h4>2. Set Play Mechanics</h4>
+            <p>
+              In the <a href="/darts/legs-vs-sets/">Sets and Legs format</a>, blowouts skew numbers. If Player A wins a set 3–0 with a 115 average, but Player B grinds out the next two sets 3–2 with a 95 average, Player B leads 2–1 in sets despite having a lower cumulative average.
+            </p>
+          </div>
+
+          <div class="paradox-item">
+            <h4>3. Holding Throw vs Breaking</h4>
+            <p>
+              A player throwing second must score higher just to stay level. If Player A holds throw in 15 darts every leg, they win the set effortlessly even if Player B was averaging higher across the visits.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Historical Benchmark Averages -->
+      <section class="content-card">
+        <h2>Historical Benchmark Averages at the World Championship</h2>
+        <div class="benchmarks-list">
+          <div class="benchmark-tier">
+            <span class="tier-badge tier-god">110.00+</span>
+            <div class="tier-content">
+              <strong>All-Time Masterpiece Tier</strong>
+              <p>Achieved only a handful of times in championship history. Highest in a final: Phil Taylor (110.94 in 2009). Highest in any match: Michael van Gerwen (114.05 in 2017 semi-final vs Raymond van Barneveld).</p>
+            </div>
+          </div>
+
+          <div class="benchmark-tier">
+            <span class="tier-badge tier-elite">100.00 – 109.99</span>
+            <div class="tier-content">
+              <strong>World-Class Championship Standard</strong>
+              <p>The standard required to win modern semi-finals and finals. Luke Littler, Luke Humphries, and MVG consistently average in this bracket during title runs.</p>
+            </div>
+          </div>
+
+          <div class="benchmark-tier">
+            <span class="tier-badge tier-pro">93.00 – 99.99</span>
+            <div class="tier-content">
+              <strong>Elite Professional Tour Standard</strong>
+              <p>The baseline level required to survive early rounds at Alexandra Palace. A player averaging 96 with 45% checkout conversion can defeat anyone on the circuit.</p>
+            </div>
+          </div>
+
+          <div class="benchmark-tier">
+            <span class="tier-badge tier-sub">Under 90.00</span>
+            <div class="tier-content">
+              <strong>Vulnerable at Ally Pally</strong>
+              <p>Averages under 90 rarely survive past the second round in modern PDC competition unless opponent double trouble intervenes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Knowledge Cluster Links -->
+      <section class="content-card">
+        <h2>Related Rules & Tournament Guides</h2>
+        <div class="links-grid">
+          <a href="/darts/rules/" class="link-card">
+            <strong>Official 501 Rules & Board Specs</strong>
+            <span>Board height (5ft 8in), oche distance (7ft 9.25in), and scoring rules.</span>
+          </a>
+          <a href="/darts/legs-vs-sets/" class="link-card">
+            <strong>Legs vs Sets Format</strong>
+            <span>Learn how set play influences match strategy and tiebreaks.</span>
+          </a>
+          <a href="/history/world-championship-finals/" class="link-card">
+            <strong>All-Time Finals Averages</strong>
+            <span>Every winning and runner-up average from 1994 to present.</span>
+          </a>
+          <a href="/players/records/" class="link-card">
+            <strong>PDC Tournament Records</strong>
+            <span>Record match averages, 180s hit, and tournament milestones.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Average Quick Facts</h3>
+        <ul class="fact-list">
+          <li><strong>Formula:</strong> (Total Pts / Total Darts) &times; 3</li>
+          <li><strong>Highest Ally Pally Match:</strong> MVG (114.05 in 2017)</li>
+          <li><strong>Highest Final Avg:</strong> Phil Taylor (110.94 in 2009)</li>
+          <li><strong>Highest Losing Avg:</strong> Raymond van Barneveld (109.34 in 2017)</li>
+          <li><strong>Elite Benchmark:</strong> 100+ points</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Historical Finals</h3>
+        <p class="final-highlight">
+          Browse all 33 historical finals and compare winning averages from Dennis Priestley (1994) to Luke Littler (2026).
+        </p>
+        <a href="/history/world-championship-finals/" class="btn btn-secondary full-width">View Finals Archive</a>
+      </div>
+
+      <AdSlot position="sidebar" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-brand-primary, #0c1a2c) 0%, #162a45 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0.5rem 0 1rem;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .content-layout {
+      grid-template-columns: 2.8fr 1.2fr;
+    }
+  }
+  .content-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .formula-box {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.75rem;
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  .formula-math {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .fraction {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+  .numerator {
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 0.2rem;
+    font-weight: 700;
+    color: #0c1a2c;
+  }
+  .denominator {
+    padding-top: 0.2rem;
+    font-weight: 700;
+    color: #0c1a2c;
+  }
+  .formula-example {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    font-size: 0.95rem;
+    color: #166534;
+  }
+  .formula-example ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+    line-height: 1.7;
+  }
+  .scenario-comparison {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    .scenario-comparison {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .scenario-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  .scenario-box h4 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .scenario-box p {
+    margin: 0.5rem 0;
+    color: #334155;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .text-success {
+    color: #16a34a;
+  }
+  .text-danger {
+    color: #dc2626;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 0.85rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+  .table-footnote {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.75rem;
+  }
+  .paradox-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .paradox-item {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    border-radius: 0 6px 6px 0;
+    padding: 1.25rem 1.5rem;
+  }
+  .paradox-item h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .paradox-item p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .benchmarks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .benchmark-tier {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .tier-badge {
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    min-width: 100px;
+    text-align: center;
+  }
+  .tier-god {
+    background: #7e22ce;
+    color: #fff;
+  }
+  .tier-elite {
+    background: #0284c7;
+    color: #fff;
+  }
+  .tier-pro {
+    background: #16a34a;
+    color: #fff;
+  }
+  .tier-sub {
+    background: #64748b;
+    color: #fff;
+  }
+  .tier-content strong {
+    display: block;
+    color: #0f172a;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  .tier-content p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  .fact-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #334155;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .final-highlight {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+  }
+  .btn-secondary:hover {
+    background: #e2e8f0;
+  }
+  .full-width {
+    width: 100%;
+    box-sizing: border-box;
+  }
+</style>

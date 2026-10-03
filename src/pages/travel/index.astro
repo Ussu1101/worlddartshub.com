@@ -1,0 +1,367 @@
+---
+// src/pages/travel/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "How to Get to Alexandra Palace Darts — Tube, Rail & Bus Guide (2026/27)";
+const pageDescription = "Complete transport directions to Alexandra Palace (Ally Pally) for the PDC World Darts Championship. Wood Green tube, Alexandra Palace rail station, W3 bus, and night travel.";
+
+const breadcrumbItems = [
+  { name: 'Travel & Transport' }
+];
+
+const travelFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the closest tube station to Alexandra Palace darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The nearest London Underground station is Wood Green on the Piccadilly Line. From Wood Green, it is a 20-minute uphill walk through the park or an 8-minute journey on the W3 bus directly to the Palm Court entrance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What train station is closest to Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alexandra Palace National Rail Station (Great Northern services from Moorgate, Old Street, and Finsbury Park) is situated at the foot of Alexandra Park, approximately a 12-minute uphill walk to the Palm Court entrance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you get home from Alexandra Palace after the evening darts session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evening sessions finish around 23:00 GMT. Spectators can catch the W3 bus down to Wood Green tube station (Piccadilly Line runs until after midnight, with 24-hour Night Tube on Fridays and Saturdays) or take Great Northern trains from Alexandra Palace station into central London."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={travelFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="travel-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">LONDON TRANSPORT GUIDE</span>
+        <span class="badge">ALLY PALLY TRANSIT</span>
+      </div>
+      <h1>How to Get to Alexandra Palace Darts</h1>
+      <p class="travel-lead">
+        Your step-by-step navigation guide for traveling to and from the PDC World Darts Championship via London Underground, National Rail, TfL buses, and night transport.
+      </p>
+    </div>
+  </header>
+
+  <div class="container travel-layout">
+    <article class="travel-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="TfL Piccadilly Line & National Rail Station Routes" />
+
+      <!-- Transport Options Overview -->
+      <section class="travel-section">
+        <h2>Quick Transit Summary</h2>
+        <div class="grid-3 transit-summary-cards">
+          <div class="card transit-box">
+            <span class="transit-icon">🚇</span>
+            <h3>London Underground</h3>
+            <p><strong>Wood Green Station</strong> (Piccadilly Line). 20-min walk or take W3 bus.</p>
+          </div>
+          <div class="card transit-box">
+            <span class="transit-icon">🚆</span>
+            <h3>National Rail</h3>
+            <p><strong>Alexandra Palace Station</strong> (Great Northern). 12-min walk up the hill.</p>
+          </div>
+          <div class="card transit-box">
+            <span class="transit-icon">🚌</span>
+            <h3>TfL Bus Shuttle</h3>
+            <p><strong>Route W3</strong> runs from Finsbury Park & Wood Green direct to the doors.</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="travel-top-ad" />
+
+      <!-- Detailed Breakdown: Option 1 - Underground -->
+      <section class="travel-section">
+        <h2>1. London Underground (Tube): Wood Green Station</h2>
+        <p>
+          The Piccadilly Line connects directly through central London (King's Cross St. Pancras, Holborn, Leicester Square, Piccadilly Circus) directly to <strong>Wood Green Station</strong> in Zone 3:
+        </p>
+        <ul>
+          <li><strong>Journey Time from King's Cross:</strong> Approximately 14 minutes on the train.</li>
+          <li><strong>Uphill Walking Route:</strong> From Wood Green Station, walk west along Station Road and through Alexandra Park. Be prepared for a moderate uphill climb (approx. 20–25 minutes).</li>
+          <li><strong>W3 Bus Connection:</strong> Catch the W3 bus right outside Wood Green Station directly to the "Alexandra Palace / Palm Court" bus stop in under 8 minutes.</li>
+        </ul>
+        <p style="margin-top: 0.75rem;">
+          <a href="/travel/tube-train-routes/" style="color: #059669; font-weight: 700; text-decoration: underline;">Read Full Turn-by-Turn Tube, Train & Bus Route Guide →</a>
+        </p>
+      </section>
+
+      <!-- Option 2: National Rail -->
+      <section class="travel-section">
+        <h2>2. National Rail: Alexandra Palace Station</h2>
+        <p>
+          Great Northern rail services provide direct connections to <strong>Alexandra Palace Station</strong> at the eastern base of the park:
+        </p>
+        <ul>
+          <li><strong>Direct Rail Routes:</strong> Regular services operate from Moorgate, Old Street, Highbury & Islington, and Finsbury Park.</li>
+          <li><strong>Walking Distance:</strong> Exit the station and walk through the park pathway towards the Great Hall (approx. 10–12 minutes uphill).</li>
+        </ul>
+      </section>
+
+      <!-- Late Night Departure Advice -->
+      <section class="travel-section">
+        <h2>Late Night Departure Strategy (After Evening Sessions)</h2>
+        <p>
+          Evening sessions conclude between <strong>22:45 GMT and 23:15 GMT</strong>. With over 5,000 fans exiting the Great Hall simultaneously, planning your departure is essential:
+        </p>
+
+        <div class="callout travel-callout">
+          <h3>💡 Top Spectator Tip: Avoid W3 Queue Bottlenecks</h3>
+          <p>
+            The queue for the W3 bus directly outside the Palm Court exit can stretch to over 40 minutes at session end. Instead, simply join the crowd walking downhill along Station Road toward Wood Green tube station (15-20 min walk downhill), which is much faster and completely stress-free.
+          </p>
+          <p style="margin-top: 0.5rem; margin-bottom: 0;">
+            <a href="/travel/tube-train-routes/" style="color: #047857; font-weight: 700; text-decoration: underline;">See Full Late-Night Egress, Night Tube & Rideshare Advice →</a>
+          </p>
+        </div>
+
+        <h3>Night Tubes & Late Buses</h3>
+        <ul>
+          <li><strong>Night Tube:</strong> The Piccadilly Line operates 24-hour Night Tube services on Friday and Saturday nights.</li>
+          <li><strong>Midweek Tube:</strong> Sunday through Thursday, the last southbound Piccadilly Line trains leave Wood Green around 00:15 GMT.</li>
+          <li><strong>Night Buses:</strong> Route N29 and Route N91 run 24 hours back into central London from Wood Green.</li>
+        </ul>
+      </section>
+
+      <AdSlot slotType="in-feed" id="travel-mid-ad" />
+
+      <!-- Parking & Driving -->
+      <section class="travel-section">
+        <h2>Car Parking & Driving Advisory</h2>
+        <p>
+          <strong>Do not drive to Alexandra Palace unless you have pre-booked accessible parking.</strong>
+        </p>
+        <ul>
+          <li>Public parking spaces on Alexandra Palace Way are strictly limited and sold out well in advance.</li>
+          <li>Local residential streets surrounding the park operate strict CPZ (Controlled Parking Zone) event-day enforcement with heavy fines.</li>
+          <li>We strongly recommend using TfL public transport.</li>
+        </ul>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="travel-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-accordion">
+          {travelFaqSchema.mainEntity.map((item) => (
+            <div class="card faq-box">
+              <h4>{item.name}</h4>
+              <p>{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="travel-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Travel & Venue Hubs</h3>
+        <ul class="widget-list">
+          <li><a href="/travel/tube-train-routes/">🚆 Detailed Tube & Train Routes</a></li>
+          <li><a href="/hotels/budget-options/">🛌 Budget Hotels Near Ally Pally</a></li>
+          <li><a href="/hotels/">🏨 Hotels Directory Overview</a></li>
+          <li><a href="/venue/">🏛️ Alexandra Palace Handbook</a></li>
+          <li><a href="/venue/security-bag-policy/">🎒 Security & Bag Restrictions</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">🪑 Seating Plan & Views</a></li>
+          <li><a href="/tickets/">🎟️ Official Tickets & Ballot Guide</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="travel-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Postcode for GPS / Taxis</h3>
+        <p><strong>Alexandra Palace Way</strong><br/>London N22 7AY</p>
+        <p class="sidebar-micro">Designated taxi pick-up / drop-off bays are located at the West Pavilion entrance.</p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .travel-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #0284c7;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .travel-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .travel-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .travel-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .travel-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .transit-summary-cards {
+    margin: 1.5rem 0;
+  }
+
+  .transit-box {
+    padding: 1.25rem;
+  }
+
+  .transit-icon {
+    font-size: 1.85rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .transit-box h3 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .transit-box p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    color: #475569;
+  }
+
+  .travel-callout {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+
+  .travel-callout h3 {
+    margin-top: 0;
+    color: #065f46;
+    font-size: 1.15rem;
+  }
+
+  .travel-callout p {
+    color: #047857;
+    margin-bottom: 0;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    padding: 1.25rem;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+  }
+
+  .travel-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .sidebar-micro {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .travel-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,452 @@
+---
+// src/pages/players/darts-equipment-specs.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import equipmentData from '../../data/player-equipment.json';
+import playersData from '../../data/players.json';
+
+const pageTitle = "PDC Darts Equipment Specs & Barrel Weights — Professional Player Setups";
+const pageDescription = "Explore the exact darts equipment used by top PDC pros: tungsten barrel weights (12g to 26g), brands (Target, Winmau, Red Dragon), flight systems, and Swiss Point tech.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Players', url: '/players/' },
+  { name: 'Equipment Specs', url: '/players/darts-equipment-specs/' }
+];
+
+const equipmentSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/players/darts-equipment-specs/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Professional Darts Player Equipment Setups",
+    "numberOfItems": equipmentData.player_setups.length,
+    "itemListElement": equipmentData.player_setups.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": `${item.name} Equipment Setup: ${item.weight} ${item.brand}`
+    }))
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={equipmentSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">TECHNICAL SPECIFICATIONS</span>
+        <span class="badge">OFFICIAL MANUFACTURER DATA</span>
+      </div>
+      <h1>PDC Darts Equipment & Barrel Specifications</h1>
+      <p class="lead-text">
+        An engineering breakdown of the match setups thrown by elite PDC professionals at the World Darts Championship. From Stephen Bunting's lightweight barrels to Nathan Aspinall's 26g setup and Ryan Searle's 32g heavyweight configuration.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={equipmentData.last_verified} topic="Manufacturer Disclosures & Stage Setups" />
+
+      <section class="content-card intro-summary">
+        <h2>The Science of Professional Darts Equipment</h2>
+        <p>
+          Unlike amateur brass darts, modern professional darts are precision-engineered from high-density <strong>tungsten alloy (typically 85% to 95% tungsten)</strong>. Because tungsten is nearly three times denser than brass, barrel manufacturers can produce ultra-slim profiles that allow multiple darts to cluster tightly inside the tiny 8mm-wide treble 20 bed.
+        </p>
+        <div class="stats-highlight-grid">
+          <div class="stat-box">
+            <span class="stat-number">18g</span>
+            <span class="stat-label">Stephen Bunting (Switched from 12g)</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">32g</span>
+            <span class="stat-label">Heaviest Tour Dart (Ryan Searle)</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">21g – 24g</span>
+            <span class="stat-label">PDC Circuit Average Weight</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">90%</span>
+            <span class="stat-label">Standard Tungsten Purity</span>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot id="equipment-top-ad" label="Sponsored Equipment Partners" />
+
+      <!-- Master Equipment Table -->
+      <section class="content-card table-section">
+        <h2>Master Equipment Matrix: Top PDC Contenders</h2>
+        <p class="table-note">
+          All specifications sourced from certified manufacturer product lines (Target Darts, Winmau, Red Dragon, Unicorn, Shot, Dynasty) and televised stage configurations.
+        </p>
+        
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Brand / Partner</th>
+                <th>Barrel Weight</th>
+                <th>Tungsten</th>
+                <th>Barrel Profile</th>
+                <th>Shafts & Flight System</th>
+                <th>Point Technology</th>
+              </tr>
+            </thead>
+            <tbody>
+              {equipmentData.player_setups.map((setup) => (
+                <tr>
+                  <td>
+                    <strong>
+                      <a href={`/players/${setup.player_id}/`} class="player-link">
+                        {setup.name}
+                      </a>
+                    </strong>
+                  </td>
+                  <td>
+                    <span class="brand-pill">{setup.brand}</span>
+                    <span class="sub-text">{setup.model}</span>
+                  </td>
+                  <td><strong class="weight-highlight">{setup.weight}</strong></td>
+                  <td>{setup.tungsten_percentage}</td>
+                  <td>
+                    <span class="shape-text">{setup.barrel_shape}</span>
+                    <span class="grip-detail">{setup.grip_style}</span>
+                  </td>
+                  <td>
+                    <div class="system-desc">
+                      <div><strong>Shaft:</strong> {setup.shaft}</div>
+                      <div><strong>Flight:</strong> {setup.flights}</div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="tech-tag">{setup.points}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Detailed Breakdown per Component -->
+      <section class="content-card tech-breakdown">
+        <h2>Key Hardware Technologies on the PDC Stage</h2>
+        
+        <div class="tech-feature-block">
+          <h3>1. Target Swiss Point Technology</h3>
+          <p>
+            Employed by <strong>Luke Littler, Stephen Bunting, Nathan Aspinall, and Rob Cross</strong>, Target's patented Swiss Point mechanism allows players to change broken or blunt points in under 10 seconds using a pocket tool. The system features a patented groove engineered to snap at a precise shear point if dropped on concrete, ensuring the thread remains intact for immediate extraction.
+          </p>
+        </div>
+
+        <div class="tech-feature-block">
+          <h3>2. Integrated Flight-Shaft Systems (Target K-Flex & Condor)</h3>
+          <p>
+            Molded one-piece plastic flight and shaft assemblies have surged in popularity across the PDC. Luke Littler throws Target K-Flex No.2, which eliminates Robin Hood deflections (where a dart pierces the shaft of another) and guarantees a permanent 90-degree flight angle for true aerodynamic stability throughout high-stress matches.
+          </p>
+        </div>
+
+        <div class="tech-feature-block">
+          <h3>3. Lightweight Dynamics: Stephen Bunting's 18g Setup (Historically 12g)</h3>
+          <p>
+            Stephen Bunting gained legendary status for throwing ultra-light 12g Target barrels for over a decade. In 2023, he transitioned to 18g Target Gen 5 barrels, which provided enhanced flight stability and catalyzed his 2024 Masters championship triumph. Even at 18g, his match darts remain among the lightest thrown in top-level professional darts.
+          </p>
+        </div>
+
+        <div class="tech-feature-block">
+          <h3>4. Heavyweight Artillery: Nathan Aspinall's 26g Barrels</h3>
+          <p>
+            Among top-16 contenders, Nathan Aspinall throws one of the heavier match setups at 26g (while tour-wide, Ryan Searle holds the overall heavyweight record at 32g). The higher momentum of Aspinall's 26g torpedo barrel delivers deep, authoritative board penetration and stability through his delivery.
+          </p>
+        </div>
+      </section>
+
+      <AdSlot id="equipment-mid-ad" label="Darts Retail & Gear" />
+
+      <!-- Frequently Asked Questions -->
+      <section class="content-card faq-section">
+        <h2>Darts Equipment FAQ</h2>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">What is the legal dart weight limit in the PDC?</summary>
+            <div class="faq-answer">
+              <p>Under official DRA (Darts Regulation Authority) rules, darts used in PDC competitions must not exceed an overall length of 30.5 cm (12 inches) nor weigh more than 50 grams per dart. In practice, most tour professionals throw between 21g and 24g, though players like Ryan Searle throw up to 32g.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What dart weight does Luke Littler throw?</summary>
+            <div class="faq-answer">
+              <p>Luke Littler throws <strong>23g Target Darts</strong> (Luke Littler Gen 1, 90% tungsten) fitted with 26mm Swiss Points and Target K-Flex No.2 integrated shafts and flights.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Why do darts players prefer tungsten over brass or nickel?</summary>
+            <div class="faq-answer">
+              <p>Tungsten has an exceptionally high physical density (19.3 g/cm³), comparable to gold. This allows manufacturers to make a 24g barrel significantly thinner than a 24g brass barrel, leaving more room in the treble 20 bed for second and third darts.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Does Peter Wright really change his darts during tournaments?</summary>
+            <div class="faq-answer">
+              <p>Yes. Peter Wright is famous for tinkering with his setups mid-match, alternating between Red Dragon Euro 11 (20g) straight barrels, Supa-Venom (22g) scallop barrels, and various combinations of flight shapes and stem lengths depending on venue airflow and temperature.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-column">
+      <div class="sidebar-card">
+        <h3>Player Authority Hubs</h3>
+        <ul class="sidebar-links">
+          <li><a href="/players/">← Back to All Players</a></li>
+          <li><a href="/players/walk-on-songs/">🎵 Walk-On Songs & Anthems</a></li>
+          <li><a href="/players/rankings/">📊 Official Order of Merit</a></li>
+          <li><a href="/players/earnings/">💰 Player Career Earnings</a></li>
+          <li><a href="/players/stats/">📈 Performance Statistics</a></li>
+          <li><a href="/players/records/">🏆 All-Time Records</a></li>
+          <li><a href="/players/9-darters/">🎯 Televised Nine-Darters</a></li>
+          <li><a href="/players/180-records/">⚡ 180 Maximum Records</a></li>
+          <li><a href="/players/player-comparisons/">⚔️ Head-to-Head Rivalries</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card highlight-sidebar">
+        <h3>Tournament Quick Links</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tournament/prize-money/">£5,000,000 Prize Fund</a></li>
+          <li><a href="/draw/">Tournament Draw & Bracket</a></li>
+          <li><a href="/schedule/">Full Schedule of Play</a></li>
+          <li><a href="/venue/">Alexandra Palace Guide</a></li>
+        </ul>
+      </div>
+
+      <AdSlot id="equipment-sidebar-ad" label="Dartboard & Accessory Offers" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-bottom: 1px solid #374151;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .lead-text {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 900px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .stats-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .stat-box {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 1.25rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .stat-number {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #f59e0b;
+    margin-bottom: 0.25rem;
+  }
+  .stat-label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #475569;
+    white-space: nowrap;
+  }
+  .data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #334155;
+    vertical-align: top;
+  }
+  .player-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .player-link:hover {
+    text-decoration: underline;
+  }
+  .brand-pill {
+    display: inline-block;
+    background: #0f172a;
+    border: 1px solid #475569;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #cbd5e1;
+  }
+  .sub-text {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+  }
+  .weight-highlight {
+    color: #38bdf8;
+    font-size: 1.05rem;
+  }
+  .shape-text {
+    display: block;
+    font-weight: 600;
+    color: #f1f5f9;
+  }
+  .grip-detail {
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+  .system-desc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #cbd5e1;
+  }
+  .tech-tag {
+    font-size: 0.8rem;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .tech-feature-block {
+    background: #0f172a;
+    border-left: 4px solid #f59e0b;
+    padding: 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1.25rem;
+  }
+  .tech-feature-block h3 {
+    margin-top: 0;
+    color: #f8fafc;
+    font-size: 1.1rem;
+  }
+  .tech-feature-block p {
+    margin-bottom: 0;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .faq-accordion details {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+  .faq-answer {
+    margin-top: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .sidebar-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sidebar-links a:hover {
+    color: #38bdf8;
+  }
+  .highlight-sidebar {
+    border-color: #f59e0b;
+  }
+</style>

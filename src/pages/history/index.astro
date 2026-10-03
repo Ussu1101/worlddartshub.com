@@ -1,0 +1,451 @@
+---
+// src/pages/history/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import finalsData from '../../data/world-championship-finals.json';
+
+const pageTitle = "PDC World Darts Championship History — Champions, Finals & Archives";
+const pageDescription = "Explore the complete history of the PDC World Darts Championship: Roll of Honour, all-time finals, Alexandra Palace milestones, nine-dart finishes, and tournament records.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'History & Archives', url: '/history/' }
+];
+
+const historySchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/history/`,
+  "breadcrumb": "https://worlddartsguide.com/history/"
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={historySchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">HISTORICAL ARCHIVES</span>
+        <span class="badge">1994 – PRESENT</span>
+      </div>
+      <h1>PDC World Darts Championship History</h1>
+      <p class="lead-text">
+        The definitive historical record of professional darts' crown jewel. From the intimate smoke-filled nights of the Circus Tavern to the global cultural phenomenon of the Great Hall at Alexandra Palace.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={finalsData.last_verified} topic="PDC Official Historical Archives & Roll of Honour" />
+
+      <!-- Section Navigation Hub Grid -->
+      <section class="content-card nav-hubs-section">
+        <h2>Explore Championship History Portals</h2>
+        <div class="hubs-grid">
+          <a href="/history/roll-of-honour/" class="hub-box">
+            <span class="hub-icon">🏆</span>
+            <div class="hub-info">
+              <strong>Roll of Honour</strong>
+              <span>Every World Champion from 1994 to present, plus BDO records</span>
+            </div>
+          </a>
+
+          <a href="/history/world-championship-finals/" class="hub-box">
+            <span class="hub-icon">⚔️</span>
+            <div class="hub-info">
+              <strong>All-Time Finals Index</strong>
+              <span>Complete scores, finalist averages, and match recaps</span>
+            </div>
+          </a>
+
+          <a href="/history/alexandra-palace-world-championship/" class="hub-box">
+            <span class="hub-icon">🏛️</span>
+            <div class="hub-info">
+              <strong>Alexandra Palace History</strong>
+              <span>The 2007/08 relocation, Great Hall evolution, and festive culture</span>
+            </div>
+          </a>
+
+          <a href="/history/nine-darters/" class="hub-box">
+            <span class="hub-icon">⚡</span>
+            <div class="hub-info">
+              <strong>Nine-Darter History</strong>
+              <span>Perfection on stage, from Paul Lim (1990) to 16 Ally Pally moments</span>
+            </div>
+          </a>
+
+          <a href="/players/world-championship-records/" class="hub-box">
+            <span class="hub-icon">📊</span>
+            <div class="hub-info">
+              <strong>Tournament Records</strong>
+              <span>Highest match averages, most 180s, and longevity benchmarks</span>
+            </div>
+          </a>
+
+          <a href="/tournament/prize-money/" class="hub-box">
+            <span class="hub-icon">💰</span>
+            <div class="hub-info">
+              <strong>Prize Money Evolution</strong>
+              <span>From £16,000 in 1994 to £1,000,000 champion's prize in 2026/27</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <AdSlot id="history-top-ad" label="Sports Memorabilia & Darts Heritage" />
+
+      <!-- Historical Eras Breakdown -->
+      <section class="content-card eras-section">
+        <h2>The Two Iconic Eras of the PDC World Championship</h2>
+        <p>
+          Founded in 1994 following the historic split from the British Darts Organisation (BDO), the World Darts Championship has evolved across two defining eras:
+        </p>
+
+        <div class="eras-grid">
+          <div class="era-card">
+            <span class="era-badge">1994 – 2007 (14 EDITIONS)</span>
+            <h3>The Circus Tavern Era (Purfleet, Essex)</h3>
+            <p>
+              Staged at a legendary nightclub venue holding around 800 to 1,000 spectators. The Circus Tavern era was synonymous with intense, atmospheric intimacy, low ceilings, and the undisputed supremacy of <strong>Phil "The Power" Taylor</strong>, who remarkably reached all 14 finals and lifted the trophy 11 times. The era concluded on New Year's Day 2007 with the epic sudden-death final between Raymond van Barneveld and Phil Taylor.
+            </p>
+            <div class="era-stat">
+              <strong>Era Champions:</strong> Dennis Priestley (1994), Phil Taylor (1995–2002, 2004–2006), John Part (2003), Raymond van Barneveld (2007).
+            </div>
+          </div>
+
+          <div class="era-card">
+            <span class="era-badge">2007/08 – PRESENT (19+ EDITIONS)</span>
+            <h3>The Alexandra Palace Era (North London)</h3>
+            <p>
+              In December 2007, the championship relocated to the Victorian landmark of Alexandra Palace in North London for the 2007/08 tournament. The Great Hall expanded seated spectator capacity (from an initial ~3,200 to over 5,000 per session for 2026/27, within a 10,250-capacity concert hall) and catalyzed the sport's global commercial explosion. Characterized by extravagant fancy dress, international broadcast reach into 100+ territories, and the emergence of modern superstars like Michael van Gerwen, Gary Anderson, Peter Wright, Luke Humphries, and Luke Littler.
+            </p>
+            <div class="era-stat">
+              <strong>Ally Pally Milestones:</strong> 16 televised nine-darters, 914 tournament 180s in 2024, and £5,000,000 total purse for 2026/27.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- All-Time Title Leaders Summary -->
+      <section class="content-card leaders-section">
+        <h2>Most Successful Players in PDC World Championship History</h2>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>PDC World Titles</th>
+                <th>Championship Years</th>
+                <th>Final Appearances</th>
+              </tr>
+            </thead>
+            <tbody>
+              {finalsData.multiple_champions_pdc.map((champ) => (
+                <tr>
+                  <td><strong>{champ.player}</strong></td>
+                  <td><span class="title-pill">{champ.titles}</span></td>
+                  <td><span class="years-list">{champ.years}</span></td>
+                  <td><span class="finals-text">{champ.titles === 14 ? '19 Finals' : champ.titles === 3 ? '6 Finals' : '3+ Finals'}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="table-footnote">
+          <p>
+            Single-title champions include <strong>Dennis Priestley (1994), Raymond van Barneveld (2007), Rob Cross (2018), Gerwyn Price (2021), Michael Smith (2023), and Luke Humphries (2024)</strong>. See our complete <a href="/history/roll-of-honour/">Roll of Honour</a> for full details.
+          </p>
+        </div>
+      </section>
+
+      <AdSlot id="history-mid-ad" label="Darts Historic Collections & Books" />
+
+      <!-- Frequently Asked Questions -->
+      <section class="content-card faq-section">
+        <h2>World Darts Championship History FAQ</h2>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">Why did professional darts split into two world championships in 1993?</summary>
+            <div class="faq-answer">
+              <p>In January 1993, sixteen top professional players (including Phil Taylor, Dennis Priestley, Eric Bristow, and John Lowe) broke away from the British Darts Organisation to form the World Darts Council (WDC, later renamed the PDC). They sought increased television exposure, modernized sponsorship, and professional tournament staging after terrestrial UK television cut back darts coverage in the late 1980s.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Who won the very first PDC World Championship?</summary>
+            <div class="faq-answer">
+              <p>Dennis Priestley won the inaugural 1994 World Darts Championship at the Circus Tavern in Purfleet, defeating Phil Taylor 6–1 in sets to collect the £16,000 first prize.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">When did the World Championship move to Alexandra Palace?</summary>
+            <div class="faq-answer">
+              <p>The tournament moved from the Circus Tavern to Alexandra Palace for the 2008 World Championship (staged December 2007 to January 2008), where Canadian star John Part won the inaugural Ally Pally title.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-column">
+      <div class="sidebar-card">
+        <h3>History Portals</h3>
+        <ul class="sidebar-links">
+          <li><a href="/history/roll-of-honour/">🏆 Roll of Honour</a></li>
+          <li><a href="/history/world-championship-finals/">⚔️ All-Time Finals Index</a></li>
+          <li><a href="/history/alexandra-palace-world-championship/">🏛️ Alexandra Palace History</a></li>
+          <li><a href="/history/nine-darters/">⚡ Nine-Darter History</a></li>
+          <li><a href="/players/world-championship-records/">📊 Tournament Records</a></li>
+          <li><a href="/watch/broadcaster-history/">📺 TV Rights History</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card highlight-sidebar">
+        <h3>Darts Knowledge & Rules</h3>
+        <ul class="sidebar-links">
+          <li><a href="/darts/rules/">🎯 Official 501 Rules & Oche</a></li>
+          <li><a href="/darts/legs-vs-sets/">⏱️ Sets vs Legs Format</a></li>
+          <li><a href="/darts/average-explained/">📈 3-Dart Average Explained</a></li>
+          <li><a href="/players/darts-equipment-specs/">⚙️ Equipment & Dart Weights</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>2026/27 Tournament</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tournament/prize-money/">£5,000,000 Prize Fund</a></li>
+          <li><a href="/schedule/">Full Match Schedule</a></li>
+          <li><a href="/draw/">Tournament Bracket</a></li>
+          <li><a href="/venue/">Venue Guide</a></li>
+        </ul>
+      </div>
+
+      <AdSlot id="history-sidebar-ad" label="Historic Darts Prints & Collectibles" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-bottom: 1px solid #374151;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .lead-text {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 900px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .hubs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .hub-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .hub-box:hover {
+    border-color: #38bdf8;
+    transform: translateY(-2px);
+  }
+  .hub-icon {
+    font-size: 1.75rem;
+  }
+  .hub-info strong {
+    display: block;
+    color: #f8fafc;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  .hub-info span {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    display: block;
+  }
+  .eras-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+  }
+  .era-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-left: 4px solid #f59e0b;
+    padding: 1.5rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .era-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #f59e0b;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .era-card h3 {
+    margin: 0 0 0.75rem;
+    color: #f8fafc;
+    font-size: 1.25rem;
+  }
+  .era-card p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .era-stat {
+    background: #1e293b;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #475569;
+    white-space: nowrap;
+  }
+  .data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #334155;
+    vertical-align: middle;
+  }
+  .title-pill {
+    background: #f59e0b;
+    color: #0f172a;
+    font-weight: 800;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+  .years-list {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+  }
+  .finals-text {
+    color: #94a3b8;
+    font-size: 0.85rem;
+  }
+  .table-footnote {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .table-footnote a {
+    color: #38bdf8;
+  }
+  .faq-accordion details {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+  .faq-answer {
+    margin-top: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .sidebar-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sidebar-links a:hover {
+    color: #38bdf8;
+  }
+  .highlight-sidebar {
+    border-color: #f59e0b;
+  }
+</style>

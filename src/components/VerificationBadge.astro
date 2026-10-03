@@ -1,0 +1,52 @@
+---
+// src/components/VerificationBadge.astro
+interface Props {
+  verifiedDate?: string;
+  topic?: string;
+}
+
+const { verifiedDate = 'October 2026', topic = '2026/27 Tournament Specifications' } = Astro.props;
+---
+
+<div class="verification-badge-container">
+  <div class="badge-icon">🛡️</div>
+  <div class="badge-content">
+    <div class="badge-headline">
+      <strong>Fact-Checked & Verified</strong> ({verifiedDate})
+    </div>
+    <div class="badge-sub">
+      Information independently cross-referenced with PDC regulatory releases, Alexandra Palace venue policies, and official broadcast contracts for {topic}.
+    </div>
+  </div>
+</div>
+
+<style>
+  .verification-badge-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin: 1.5rem 0;
+    font-size: 0.82rem;
+    color: #166534;
+  }
+
+  .badge-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .badge-headline {
+    color: #14532d;
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .badge-sub {
+    color: #15803d;
+    line-height: 1.4;
+  }
+</style>

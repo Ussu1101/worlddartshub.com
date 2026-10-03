@@ -1,0 +1,548 @@
+---
+// src/pages/history/nine-darters.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import recordsData from '../../data/player-records.json';
+
+const pageTitle = "History of Nine-Darters at the World Championship — Perfection on Stage";
+const pageDescription = "Explore the complete history of nine-dart finishes at the World Darts Championship. From Paul Lim's 1990 pioneer moment to the Circus Tavern drought and 16 Ally Pally masterpieces.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'History', url: '/history/' },
+  { name: 'Nine-Darters', url: '/history/nine-darters/' }
+];
+
+const nineDartersHistorySchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/history/nine-darters/`,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Guide Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Guide",
+    "url": siteUrl
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={nineDartersHistorySchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">HISTORICAL FEATURE</span>
+        <span class="badge">THE 9-DART LEG</span>
+      </div>
+      <h1>The History of Nine-Darters at the World Darts Championship</h1>
+      <p class="lead-text">
+        Hitting a nine-darter on the World Championship stage is the sporting equivalent of hitting a hole-in-one at Augusta or bowling a 300 game in the Masters. Across four decades of televised world championships, only a select fraternity has achieved nine-dart immortality.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="2026-10-03" topic="World Championship Nine-Dart Archival History" />
+
+      <!-- Direct Link Callout to Player Records Database -->
+      <section class="content-card database-callout">
+        <div class="callout-inner">
+          <div class="callout-icon">🎯</div>
+          <div class="callout-content">
+            <h3>Looking for the Full Nine-Darter Log & Shot-by-Shot Table?</h3>
+            <p>
+              View the comprehensive list of all 16 Ally Pally nine-darters, including exact checkout combinations, opponent scores, and match rounds in our dedicated player records index.
+            </p>
+            <a href="/players/9-darters/" class="btn btn-primary">View All 16 Ally Pally Nine-Darters &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chapter 1: Paul Lim and the Lakeside Pioneer -->
+      <section class="content-card">
+        <h2>1990: Paul Lim and the First World Championship Nine-Darter</h2>
+        <p>
+          Before the PDC was formed, the global standard for perfection was established on <strong>9 January 1990</strong> at the Lakeside Country Club in Frimley Green. Representing the United States, Singapore-born Paul Lim stepped to the oche in the second round of the BDO World Championship against Jack McKenna.
+        </p>
+        <p>
+          Lim landed back-to-back 180s before coolly pinning <strong>Treble 20, Treble 19, and Double 12</strong> on his final visit. The crowd erupted, referee Martin Fitzmaurice called the immortal game-shot, and Lim earned a historic <strong>£52,000 bonus prize</strong>—a windfall larger than the £24,000 champion's prize collected by Phil Taylor that year.
+        </p>
+        <div class="quote-box">
+          <p>
+            <em>"I just told myself: 'Don't snatch it.' When that double 12 went in, it changed my life forever."</em>
+            <span class="quote-author">— Paul Lim, reflecting on his 1990 achievement</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- Chapter 2: The Circus Tavern Drought (1994–2007) -->
+      <section class="content-card">
+        <h2>The 14-Year Drought: The Circus Tavern Curse (1994–2007)</h2>
+        <p>
+          When the top 16 players broke away to form the World Darts Council (later PDC) in 1993, expectations were immense that the game's greatest talents would regularly replicate Lim's feat on the new stage at the Circus Tavern in Purfleet, Essex.
+        </p>
+        <p>
+          Instead, a mystifying drought unfolded. Between Dennis Priestley's maiden title in 1994 and Raymond van Barneveld's epic sudden-death victory over Phil Taylor on New Year's Day 2007, <strong>not a single nine-darter was thrown in 14 tournaments at the Circus Tavern</strong>.
+        </p>
+        <p>
+          Despite Phil Taylor dominating the era with scoring averages frequently topping 105 and 107, and despite hundreds of attempts reaching six perfect darts, the final double remained elusive in Purfleet. The Circus Tavern closed its darts chapter in 2007 with its nine-dart register completely blank.
+        </p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Chapter 3: The Alexandra Palace Renaissance -->
+      <section class="content-card">
+        <h2>The Alexandra Palace Renaissance: Breaking the Seal (2009–Present)</h2>
+        <p>
+          When the championship moved to Alexandra Palace in December 2007, it took just two editions for the curse to break. On <strong>2 January 2009</strong>, Raymond van Barneveld struck the first PDC World Championship nine-darter in his quarter-final clash with Jelle Klaasen.
+        </p>
+        <p>
+          Barney's breakthrough uncorked a golden era of perfection. To date, <strong>16 nine-darters have been achieved on the Alexandra Palace stage</strong>, making it the most prolific nine-dart venue in world championship history.
+        </p>
+
+        <div class="milestones-timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">2009</span>
+            <div class="timeline-content">
+              <strong>Raymond van Barneveld vs Jelle Klaasen (QF)</strong>
+              <p>The first PDC World Championship nine-darter in history, ending the 15-year tournament wait.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2010</span>
+            <div class="timeline-content">
+              <strong>Raymond van Barneveld vs Denis Ovens (R2)</strong>
+              <p>Barney becomes the first player in history to hit two World Championship nine-darters.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2011</span>
+            <div class="timeline-content">
+              <strong>Adrian Lewis vs Gary Anderson (Final)</strong>
+              <p>The first nine-darter ever hit in a World Championship final, struck in the opening set of his title victory.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2013</span>
+            <div class="timeline-content">
+              <strong>Dean Winstanley & Michael van Gerwen</strong>
+              <p>The first tournament featuring two separate nine-darters in the same event.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2022</span>
+            <div class="timeline-content">
+              <strong>William Borland & Darius Labanauskas</strong>
+              <p>Borland hits an electric sudden-death nine-darter to win a match in a deciding leg, sparking Ally Pally delirium.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2023</span>
+            <div class="timeline-content">
+              <strong>Michael Smith vs Michael van Gerwen (Final)</strong>
+              <p>"The Greatest Leg in Darts History"—MVG misses D12 for a nine-darter, Smith hits D12 on the very next visit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chapter 4: Anatomy of a 9-Darter & Checkout Combinations -->
+      <section class="content-card">
+        <h2>Anatomy of Perfection: Mathematical Combinations</h2>
+        <p>
+          From a starting score of 501, there are <strong>3,944 theoretically possible nine-dart combinations</strong>. However, under elite tournament conditions, professional players stick almost exclusively to two proven tactical pathways:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Route</th>
+                <th>Turn 1</th>
+                <th>Turn 2</th>
+                <th>Turn 3 (Checkout)</th>
+                <th>Frequency at Ally Pally</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>The Traditional 141 Route</strong></td>
+                <td>T20, T20, T20 (180)</td>
+                <td>T20, T20, T20 (180)</td>
+                <td>T20, T19, D12 (141)</td>
+                <td>Over 85% of all tournament 9-darters</td>
+              </tr>
+              <tr>
+                <td><strong>The 144 Route</strong></td>
+                <td>T20, T20, T20 (180)</td>
+                <td>T20, T20, T20 (180)</td>
+                <td>T20, T20, D12 (144)</td>
+                <td>Rarely attempted (requires 8 consecutive T20s)</td>
+              </tr>
+              <tr>
+                <td><strong>The 147 Bullseye Route</strong></td>
+                <td>T20, T20, T20 (180)</td>
+                <td>T20, T20, T20 (180)</td>
+                <td>T20, T17, Bull (147)</td>
+                <td>Used when players prefer the 50mm bullseye target</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-footnote">
+          Read more about dartboard dimensions and segment values in our official <a href="/darts/rules/">501 Darts Rules & Board Dimensions Guide</a>.
+        </p>
+      </section>
+
+      <!-- Chapter 5: Commercial Evolution & Bonuses -->
+      <section class="content-card">
+        <h2>Prize Bonuses: From Golden Cars to Charity Pledges</h2>
+        <p>
+          The financial incentives for achieving stage perfection have evolved dramatically:
+        </p>
+        <ul class="styled-list">
+          <li><strong>1990 (Paul Lim):</strong> £52,000 cash bonus sponsored by M&B Brewery, dwarfing the tournament champion's purse.</li>
+          <li><strong>PDC Early Years:</strong> Traditional £25,000 to £50,000 cash bonuses were common for televised nine-dart finishes.</li>
+          <li><strong>Rolling PDC Bonus:</strong> For several seasons, the PDC instituted a £5,000 rolling bonus per event that accumulated until struck.</li>
+          <li><strong>Charity Pledges & Fan Incentives:</strong> In recent years, title sponsors such as Selco, Cazoo, and Paddy Power have introduced creative promotions, donating £50,000 to prostate cancer charities, providing £100,000 fan giveaways, or offering player incentives.</li>
+          <li><strong>2026/27 Status:</strong> Check official updates in our <a href="/tournament/prize-money/">Prize Money & Bonus Breakdown</a> to see if a dedicated nine-dart sponsor bonus is active for the upcoming championship.</li>
+        </ul>
+      </section>
+
+      <!-- Related Navigation -->
+      <section class="content-card">
+        <h2>Explore More Darts History & Records</h2>
+        <div class="links-grid">
+          <a href="/players/9-darters/" class="link-card">
+            <strong>All 16 Ally Pally Nine-Darters</strong>
+            <span>Detailed table with dates, opponents, and complete throw logs.</span>
+          </a>
+          <a href="/history/world-championship-finals/" class="link-card">
+            <strong>All-Time Finals Index</strong>
+            <span>Scores, match averages, and championship recaps from 1994 to present.</span>
+          </a>
+          <a href="/history/alexandra-palace-world-championship/" class="link-card">
+            <strong>Alexandra Palace Darts History</strong>
+            <span>The move north from Essex and the birth of modern darts culture.</span>
+          </a>
+          <a href="/players/180-records/" class="link-card">
+            <strong>180 Maximum Records</strong>
+            <span>Tournament records, match maximums, and tournament totals.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Nine-Dart Fast Facts</h3>
+        <ul class="fact-list">
+          <li><strong>First Televised:</strong> John Lowe (1984 World Matchplay)</li>
+          <li><strong>First World Champ:</strong> Paul Lim (1990 BDO Lakeside)</li>
+          <li><strong>First PDC World:</strong> Raymond van Barneveld (2009)</li>
+          <li><strong>First in Final:</strong> Adrian Lewis (2011)</li>
+          <li><strong>Most Ally Pally 9-Darters:</strong> Raymond van Barneveld & Adrian Lewis (2 each)</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Ally Pally Perfection</h3>
+        <p class="final-highlight">
+          <strong>Total at Ally Pally:</strong> 16<br />
+          <strong>Total at Circus Tavern:</strong> 0<br />
+          <strong>Lowest Possible Darts:</strong> 9<br />
+          <strong>Standard Route:</strong> 180 &rarr; 180 &rarr; 141 (T20, T19, D12)
+        </p>
+        <a href="/players/9-darters/" class="btn btn-secondary full-width">View Player 9-Darter Log</a>
+      </div>
+
+      <AdSlot position="sidebar" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-brand-primary, #0c1a2c) 0%, #162a45 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0.5rem 0 1rem;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .content-layout {
+      grid-template-columns: 2.8fr 1.2fr;
+    }
+  }
+  .content-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .database-callout {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+  .callout-inner {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .callout-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+  .callout-content h3 {
+    margin: 0 0 0.5rem;
+    color: #166534;
+    font-size: 1.2rem;
+  }
+  .callout-content p {
+    margin: 0 0 1rem;
+    color: #15803d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .quote-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #1e293b;
+    font-style: italic;
+  }
+  .quote-author {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-style: normal;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .milestones-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .timeline-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .timeline-year {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .timeline-content strong {
+    display: block;
+    color: #0f172a;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  .timeline-content p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 0.85rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+  .table-footnote {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.75rem;
+  }
+  .styled-list {
+    margin: 1rem 0;
+    padding-left: 1.25rem;
+    color: #334155;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  .fact-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #334155;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .final-highlight {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-primary {
+    background: var(--color-brand-primary, #0c1a2c);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: #162a45;
+  }
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+  }
+  .btn-secondary:hover {
+    background: #e2e8f0;
+  }
+  .full-width {
+    width: 100%;
+    box-sizing: border-box;
+  }
+</style>

@@ -1,0 +1,575 @@
+---
+// src/pages/results/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import resultsData from '../../data/results.json';
+
+const pageTitle = "PDC World Darts Championship Results Center — Official Scores & Archive";
+const pageDescription = "Official PDC World Darts Championship results hub. View tournament status for 2026/27, daily order of play pathways, and verified historical World Championship finals.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'Results', url: '/results/' }
+];
+
+const resultsSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/results/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Recent PDC World Darts Championship Finals",
+    "numberOfItems": resultsData.historical_recent_finals.length,
+    "itemListElement": resultsData.historical_recent_finals.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": `${item.year} Final: ${item.winner} ${item.score} ${item.runner_up}`
+    }))
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={resultsSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="results-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">OFFICIAL RESULTS HUB</span>
+        <span class="badge">ALEXANDRA PALACE</span>
+      </div>
+      <h1>PDC World Darts Championship Results Center</h1>
+      <p class="hero-lead">
+        Your verified destination for confirmed match results, scorecards, and historical World Championship finals. Track 2026/27 tournament status and explore Alexandra Palace title history.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status={resultsData.status} 
+          lastVerified={resultsData.last_verified} 
+          source={resultsData.source} 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">2026/27 Edition</span>
+          <span class="stat-value">Opens 11 Dec 2026</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Recorded Matches</span>
+          <span class="stat-value">0 / 127 Completed</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+
+      <!-- 2026/27 Tournament Status Banner -->
+      <section class="content-section">
+        <h2>2026/27 Tournament Status & Next Action</h2>
+        <div class="callout pre-tournament-callout">
+          <div class="callout-icon">🎯</div>
+          <div>
+            <h3>Pre-Tournament Phase: No 2026/27 Results Recorded Yet</h3>
+            <p>
+              The 2026/27 PDC World Darts Championship is scheduled to begin on <strong>Friday, 11 December 2026</strong> at Alexandra Palace's Great Hall. 
+            </p>
+            <p>
+              Confirmed match results, set-by-set scores, player three-dart averages, and 180 tallies will be recorded and published here following the conclusion of each session throughout the 28-session tournament.
+            </p>
+            <div class="callout-actions">
+              <a href="/live/" class="btn btn-primary">Visit Match Center & Today's Schedule &rarr;</a>
+              <a href="/schedule/" class="btn btn-secondary">Explore Complete 28-Session Calendar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Confirmed Historic All-Time Records -->
+      <section class="content-section">
+        <h2>PDC World Championship Historic Records</h2>
+        <div class="grid-2 records-grid">
+          <div class="card record-card">
+            <span class="record-badge">MOST WORLD TITLES</span>
+            <h4>Phil Taylor (16 World Crowns)</h4>
+            <p>Taylor claimed 14 PDC world championships and 2 BDO titles between 1990 and 2013, appearing in 21 World Championship finals.</p>
+          </div>
+          <div class="card record-card">
+            <span class="record-badge">HIGHEST MATCH AVERAGE</span>
+            <h4>Michael van Gerwen (114.05)</h4>
+            <p>Achieved in the historic 2017 semi-final against Raymond van Barneveld (who averaged 109.34 and lost 2-6).</p>
+          </div>
+          <div class="card record-card">
+            <span class="record-badge">MOST 180s IN A TOURNAMENT</span>
+            <h4>Michael Smith (83 Maximums in 2022)</h4>
+            <p>Smith fired 83 maximum 180s across 6 matches during his run to the 2022 World Championship final.</p>
+          </div>
+          <div class="card record-card">
+            <span class="record-badge">STAGE NINE-DARTERS</span>
+            <h4>14 Perfect Legs Thrown (1994 – 2024)</h4>
+            <p>From Raymond van Barneveld in 2009 to Michael Smith's world-famous leg in the 2023 final, exactly 14 nine-darters have been achieved.</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="banner" id="results-mid-ad" />
+
+      <!-- Historical Recent Finals Archive -->
+      <section class="content-section">
+        <h2>Recent PDC World Championship Finals (2018 – 2024)</h2>
+        <p>
+          Review the confirmed champions, runners-up, set scores, and historic match averages from the last seven editions of the tournament at Alexandra Palace:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table finals-table">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Champion</th>
+                <th>Runner-Up</th>
+                <th>Score</th>
+                <th>Winner Avg</th>
+                <th>Runner-Up Avg</th>
+              </tr>
+            </thead>
+            <tbody>
+              {resultsData.historical_recent_finals.map((finalMatch) => (
+                <tr>
+                  <td><strong>{finalMatch.year}</strong></td>
+                  <td class="winner-name">🏆 {finalMatch.winner}</td>
+                  <td>{finalMatch.runner_up}</td>
+                  <td><span class="score-badge">{finalMatch.score}</span></td>
+                  <td><strong>{finalMatch.winner_average}</strong></td>
+                  <td>{finalMatch.runner_up_average}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="finals-cards-container">
+          <h3>Notable Finals Highlights</h3>
+          <div class="cards-list">
+            {resultsData.historical_recent_finals.slice(0, 3).map((match) => (
+              <div class="card highlight-card">
+                <div class="highlight-header">
+                  <h4>{match.year}: {match.winner} def. {match.runner_up} ({match.score})</h4>
+                  <span class="date-tag">{match.date}</span>
+                </div>
+                <p>{match.notable_moment}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore The Tournament Ecosystem</h2>
+        <div class="grid-2">
+          <a href="/schedule/finals-weekend/" class="cluster-link-card">
+            <h3>🏆 Finals Weekend Schedule</h3>
+            <p>Session times and dates for the 2027 Quarter-Finals, Semi-Finals, and Final.</p>
+          </a>
+          <a href="/draw/" class="cluster-link-card">
+            <h3>🗺️ 128-Player Tournament Draw</h3>
+            <p>Track the bracket progression and projected seeds heading into Alexandra Palace.</p>
+          </a>
+          <a href="/tournament/prize-money/" class="cluster-link-card">
+            <h3>💰 £5M Prize Fund Breakdown</h3>
+            <p>Full financial allocation for winners, finalists, and round-by-round exits.</p>
+          </a>
+          <a href="/watch/" class="cluster-link-card">
+            <h3>📺 TV & Live Stream Directory</h3>
+            <p>Where to watch legal live broadcasts across the UK, Germany, USA, and worldwide.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tournament Navigation</h3>
+        <ul class="widget-list">
+          <li><a href="/results/">Results Center & Archive</a></li>
+          <li><a href="/live/">Daily Match Center Hub</a></li>
+          <li><a href="/schedule/">Full 2026/27 Schedule</a></li>
+          <li><a href="/draw/">Tournament Draw & Bracket</a></li>
+          <li><a href="/tournament/prize-money/">Prize Money Breakdown</a></li>
+          <li><a href="/tournament/order-of-merit/">PDC Order of Merit</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="results-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Spectator Quick Links</h3>
+        <ul class="widget-list">
+          <li><a href="/tickets/">Official Tickets & Ballot</a></li>
+          <li><a href="/venue/">Alexandra Palace Handbook</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">Great Hall Seating Views</a></li>
+          <li><a href="/history/roll-of-honour/">Complete Roll of Honour</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .results-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .results-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fbbf24;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .pre-tournament-callout {
+    display: flex;
+    gap: 1.25rem;
+    background: #fffbeb;
+    border-left: 5px solid #f59e0b;
+    padding: 1.5rem;
+    border-radius: 8px;
+    align-items: flex-start;
+  }
+
+  .callout-icon {
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+
+  .pre-tournament-callout h3 {
+    font-size: 1.2rem;
+    color: #92400e;
+    margin-bottom: 0.5rem;
+  }
+
+  .pre-tournament-callout p {
+    color: #78350f;
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+  }
+
+  .callout-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: #0f172a;
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background: #1e293b;
+  }
+
+  .btn-secondary {
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+  }
+
+  .btn-secondary:hover {
+    background: #f8fafc;
+  }
+
+  .records-grid {
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .record-card {
+    padding: 1.25rem;
+    border-top: 4px solid #f59e0b;
+  }
+
+  .record-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #b45309;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 0.35rem;
+  }
+
+  .record-card h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+
+  .record-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.45;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .winner-name {
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .score-badge {
+    background: #f1f5f9;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 800;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+  }
+
+  .finals-cards-container {
+    margin-top: 1.75rem;
+  }
+
+  .finals-cards-container h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+  }
+
+  .cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .highlight-card {
+    padding: 1.25rem;
+    border-left: 4px solid #3b82f6;
+  }
+
+  .highlight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .highlight-header h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #0f172a;
+  }
+
+  .date-tag {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  .highlight-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.45;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #f59e0b;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .results-hero h1 {
+      font-size: 2.15rem;
+    }
+  }
+</style>

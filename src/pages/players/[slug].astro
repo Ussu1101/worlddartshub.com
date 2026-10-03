@@ -1,0 +1,819 @@
+---
+// src/pages/players/[slug].astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import players from '../../data/players.json';
+
+export async function getStaticPaths() {
+  return players.map((p) => ({
+    params: { slug: p.slug },
+    props: { player: p }
+  }));
+}
+
+const { player } = Astro.props;
+
+const pageTitle = `${player.name} ("${player.nickname}") — Darts Setup, Walk-On Song, Career Prize Money & Stats`;
+const pageDescription = `Complete 2026/27 player dossier for ${player.name}. Official ${player.equipment.barrel_weight_grams} ${player.equipment.manufacturer} darts specs, walk-on anthem "${player.walk_on_song}", career prize earnings, and World Darts Championship records.`;
+
+const breadcrumbItems = [
+  { name: 'Players', url: '/players/' },
+  { name: player.name }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": player.name,
+  "alternateName": player.nickname,
+  "nationality": player.nationality,
+  "birthDate": player.date_of_birth,
+  "jobTitle": "Professional Darts Player",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Professional Darts Corporation"
+  }
+};
+
+const playerFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": `${player.name} Career & Equipment FAQ`,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": `What darts does ${player.name} use?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `${player.name} throws ${player.equipment.barrel_weight_grams} ${player.equipment.barrel_tungsten_pct} darts manufactured by ${player.equipment.manufacturer} (${player.equipment.brand_model}), fitted with ${player.equipment.shafts} and ${player.equipment.flights}.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `What is ${player.name}'s walk-on song?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `${player.name}'s official walk-on anthem is "${player.walk_on_song}".`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `What is ${player.name}'s career prize money?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `${player.name} has accumulated ${player.career_prize_money.official_pdc_earnings} in official PDC prize money winnings.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `What is ${player.name}'s best result at the World Darts Championship?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `${player.name}'s best finish at Alexandra Palace is ${player.world_championship_record.best_finish}.`
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={[personSchema, playerFaqSchema]}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="hero-badge-group">
+        <span class="badge badge-accent">{player.pdc_order_of_merit_rank}</span>
+        <span class="badge">{player.nationality.toUpperCase()}</span>
+        <span class="badge badge-sub">{player.playing_hand}</span>
+      </div>
+      <h1 class="player-title">{player.name}</h1>
+      <p class="player-alias">"{player.nickname}"</p>
+      <p class="player-lead">
+        {player.career_overview}
+      </p>
+      <div class="player-quick-meta">
+        <span>🎂 Born: {player.date_of_birth} ({player.birthplace || player.nationality})</span>
+        <span>🎯 Throw: {player.playing_hand}</span>
+        <span>⚖️ Darts: {player.equipment.barrel_weight_grams} ({player.equipment.manufacturer})</span>
+        <span>📅 Verified: {player.last_verified}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container player-layout">
+    <article class="player-content-col">
+      <VerificationBadge 
+        source={`PDC Official Player Records & ${player.equipment.manufacturer}`}
+        verifiedDate={player.last_verified}
+        status="CONFIRMED PLAYER DOSSIER"
+      />
+
+      <!-- Quick Stats Card -->
+      <section class="dossier-section">
+        <h2>At A Glance: Player Summary</h2>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <span class="s-label">PDC Rank</span>
+            <span class="s-val">{player.pdc_order_of_merit_rank}</span>
+          </div>
+          <div class="summary-card">
+            <span class="s-label">Darts Weight</span>
+            <span class="s-val highlight-val">{player.equipment.barrel_weight_grams}</span>
+          </div>
+          <div class="summary-card">
+            <span class="s-label">Televised 9-Darters</span>
+            <span class="s-val">{player.nine_darters_televised}</span>
+          </div>
+          <div class="summary-card">
+            <span class="s-label">World Champ Best</span>
+            <span class="s-val">{player.world_championship_record.best_finish}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Equipment & Hardware Specifications -->
+      <section class="dossier-section">
+        <div class="section-header-row">
+          <h2>🎯 Darts Equipment & Setup Specifications</h2>
+          <a href="/players/darts-equipment-specs/" class="header-link">Compare All Player Darts ↗</a>
+        </div>
+        <p>
+          {player.name} throws custom-engineered darts designed in partnership with {player.equipment.manufacturer}. Here are the exact tournament specifications:
+        </p>
+        <div class="table-responsive">
+          <table class="specs-table">
+            <tbody>
+              <tr>
+                <th>Manufacturer / Brand</th>
+                <td><strong>{player.equipment.manufacturer}</strong></td>
+              </tr>
+              <tr>
+                <th>Model Series</th>
+                <td>{player.equipment.brand_model}</td>
+              </tr>
+              <tr>
+                <th>Barrel Weight</th>
+                <td><strong class="highlight-val">{player.equipment.barrel_weight_grams}</strong></td>
+              </tr>
+              <tr>
+                <th>Tungsten Composition</th>
+                <td>{player.equipment.barrel_tungsten_pct}</td>
+              </tr>
+              <tr>
+                <th>Barrel Profile & Grip</th>
+                <td>{player.equipment.barrel_profile}</td>
+              </tr>
+              <tr>
+                <th>Shafts / Stems</th>
+                <td>{player.equipment.shafts}</td>
+              </tr>
+              <tr>
+                <th>Flights</th>
+                <td>{player.equipment.flights}</td>
+              </tr>
+              <tr>
+                <th>Points</th>
+                <td>{player.equipment.points}</td>
+              </tr>
+              <tr>
+                <th>Source Grounding</th>
+                <td><small>{player.equipment.verified_source}</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot position="top" client="ca-pub-placeholder" slotId={`player-${player.slug}-top-slot`} />
+
+      <!-- Walk-on Music & Atmosphere -->
+      <section class="dossier-section">
+        <div class="section-header-row">
+          <h2>🎵 Walk-On Music & Alexandra Palace Atmosphere</h2>
+          <a href="/players/walk-on-songs/" class="header-link">View All Walk-On Songs ↗</a>
+        </div>
+        <div class="card walkon-card">
+          <div class="walkon-badge">OFFICIAL ENTRANCE ANTHEM</div>
+          <h3 class="walkon-title">{player.walk_on_song}</h3>
+          <p class="walkon-desc">
+            {player.walk_on_atmosphere}
+          </p>
+          <p class="walkon-tip">
+            When {player.name} walks down the ramp at Ally Pally, this track triggers full arena participation, setting the psychological tempo for the match.
+          </p>
+        </div>
+      </section>
+
+      <!-- Career Prize Money & Financial Note -->
+      <section class="dossier-section">
+        <div class="section-header-row">
+          <h2>💰 Career Prize Money & Financial Transparency</h2>
+          <a href="/players/earnings/" class="header-link">View All Player Earnings ↗</a>
+        </div>
+        <div class="earnings-box">
+          <div class="earnings-hero">
+            <span class="e-label">OFFICIAL PDC TOURNAMENT WINNINGS</span>
+            <span class="e-val">{player.career_prize_money.official_pdc_earnings}</span>
+            <span class="e-sub">{player.career_prize_money.order_of_merit_contribution}</span>
+          </div>
+          <div class="financial-disclaimer">
+            <strong>Prize Money vs. Estimated Net Worth:</strong>
+            <p>{player.career_prize_money.financial_note}</p>
+            <p class="micro-note">
+              <em>Note on Media Net Worth Figures: Online estimates of sports stars' net worth often speculate on private investments and personal assets. In accordance with our fact-first editorial policy, we publish official audited PDC tournament prize money figures and advise readers that net worth is subject to taxation, agent commissions, and travel expenses.</em>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- World Championship Record & Career Accomplishments -->
+      <section class="dossier-section">
+        <div class="section-header-row">
+          <h2>🏆 PDC World Darts Championship History</h2>
+          <a href="/players/world-championship-records/" class="header-link">Tournament Record Book ↗</a>
+        </div>
+        <div class="record-grid">
+          <div class="record-box">
+            <span class="record-num">{player.world_championship_record.debut_year}</span>
+            <span class="record-label">Ally Pally Debut</span>
+          </div>
+          <div class="record-box">
+            <span class="record-num">{player.world_championship_record.total_appearances}</span>
+            <span class="record-label">Appearances</span>
+          </div>
+          <div class="record-box">
+            <span class="record-num">{player.world_championship_record.matches_won || '-'}</span>
+            <span class="record-label">Matches Won</span>
+          </div>
+          <div class="record-box">
+            <span class="record-num">{player.nine_darters_televised}</span>
+            <span class="record-label">Televised 9-Darters</span>
+          </div>
+        </div>
+
+        {player.world_championship_record.history_highlights && (
+          <div class="history-highlights-box">
+            <h4>Tournament Highlights:</h4>
+            <ul>
+              {player.world_championship_record.history_highlights.map(hl => (
+                <li>• {hl}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <h3>Major Career Titles</h3>
+        <ul class="titles-list">
+          {player.major_pdc_titles.map((title: string) => (
+            <li>🏅 {title}</li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Nine Darters Breakdown -->
+      {player.notable_nine_darters && player.notable_nine_darters.length > 0 && (
+        <section class="dossier-section">
+          <div class="section-header-row">
+            <h2>🎯 Nine-Dart Finishes</h2>
+            <a href="/players/9-darters/" class="header-link">View All 9-Darters ↗</a>
+          </div>
+          <p>{player.name} has recorded <strong>{player.nine_darters_televised}</strong> televised nine-dart finishes in professional competition:</p>
+          <ul class="nine-darters-list">
+            {player.notable_nine_darters.map(nd => (
+              <li>🎯 {nd}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <!-- Playing Style & Technique -->
+      <section class="dossier-section">
+        <h2>⚡ Playing Style & Technical Analysis</h2>
+        <p class="style-p">
+          {player.playing_style}
+        </p>
+      </section>
+
+      <AdSlot position="middle" client="ca-pub-placeholder" slotId={`player-${player.slug}-mid-slot`} />
+
+      <!-- Player FAQs -->
+      <section class="dossier-section">
+        <h2>Frequently Asked Questions About {player.name}</h2>
+        <div class="faq-list">
+          {playerFaqSchema.mainEntity.map((item) => (
+            <div class="card faq-card">
+              <h4>{item.name}</h4>
+              <p>{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="player-sidebar-col">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Player Knowledge Hubs</h3>
+        <ul class="widget-list">
+          <li><a href="/players/rankings/">📊 Official PDC Rankings</a></li>
+          <li><a href="/players/darts-equipment-specs/">🎯 Darts Equipment Specs</a></li>
+          <li><a href="/players/walk-on-songs/">🎵 Walk-On Songs Directory</a></li>
+          <li><a href="/players/earnings/">💰 Career Prize Money</a></li>
+          <li><a href="/players/records/">📜 Records & Milestones</a></li>
+          <li><a href="/players/world-championship-records/">🏆 World Champ Records</a></li>
+          <li><a href="/players/9-darters/">⚡ Televised Nine-Darters</a></li>
+          <li><a href="/players/180-records/">🔥 180 Scoring Records</a></li>
+          <li><a href="/players/player-comparisons/">⚔️ Player Head-to-Heads</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tier A Contenders</h3>
+        <ul class="widget-list">
+          {players.filter((p) => p.slug !== player.slug).map((p) => (
+            <li>
+              <a href={`/players/${p.slug}/`}>
+                🎯 {p.name} <small>({p.nickname})</small>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <AdSlot position="sidebar" client="ca-pub-placeholder" slotId={`player-${player.slug}-side-slot`} />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tournament Portals</h3>
+        <ul class="widget-list">
+          <li><a href="/tournament/world-darts-championship/">🏆 £5M Tournament Hub</a></li>
+          <li><a href="/tournament/prize-money/">💷 Prize Money Breakdown</a></li>
+          <li><a href="/tournament/order-of-merit/">📈 Order of Merit Guide</a></li>
+          <li><a href="/live/">🎯 Live Match Center</a></li>
+          <li><a href="/watch/">📺 Global TV Broadcasts</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .hero-badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    background: #334155;
+    color: #cbd5e1;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-accent {
+    background: #f59e0b;
+    color: #0f172a;
+  }
+
+  .badge-sub {
+    background: #475569;
+    color: #f1f5f9;
+  }
+
+  .player-title {
+    font-size: 2.75rem;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+    font-weight: 900;
+  }
+
+  .player-alias {
+    font-size: 1.35rem;
+    color: #f59e0b;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .player-lead {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .player-quick-meta {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+
+  .player-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .dossier-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .section-header-row h2 {
+    margin: 0;
+  }
+
+  .header-link {
+    color: #0284c7;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .header-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Summary Grid */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .summary-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .s-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.25rem;
+  }
+
+  .s-val {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  /* Specs Table */
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+
+  .specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+  }
+
+  .specs-table th {
+    background: #f8fafc;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    color: #334155;
+    width: 35%;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .specs-table td {
+    padding: 0.75rem 1rem;
+    color: #1e293b;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .highlight-val {
+    color: #b45309;
+    font-weight: 800;
+  }
+
+  /* Walk-on card */
+  .walkon-card {
+    background: #eff6ff;
+    border: 2px solid #93c5fd;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .walkon-badge {
+    display: inline-block;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+
+  .walkon-title {
+    margin: 0 0 0.5rem;
+    color: #1e3a8a;
+    font-size: 1.35rem;
+  }
+
+  .walkon-desc {
+    margin: 0 0 0.75rem;
+    color: #1e40af;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .walkon-tip {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #475569;
+    font-style: italic;
+  }
+
+  /* Earnings Box */
+  .earnings-box {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .earnings-hero {
+    border-bottom: 1px solid #bbf7d0;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .e-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #15803d;
+    letter-spacing: 0.05em;
+  }
+
+  .e-val {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #166534;
+    margin: 0.2rem 0;
+  }
+
+  .e-sub {
+    display: block;
+    font-size: 0.85rem;
+    color: #14532d;
+    font-weight: 600;
+  }
+
+  .financial-disclaimer {
+    font-size: 0.85rem;
+    color: #14532d;
+    line-height: 1.5;
+  }
+
+  .financial-disclaimer p {
+    margin: 0.35rem 0 0;
+  }
+
+  .micro-note {
+    color: #475569 !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Record Grid */
+  .record-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+
+  .record-box {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .record-num {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: #0f172a;
+  }
+
+  .record-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 0.25rem;
+  }
+
+  .history-highlights-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .history-highlights-box h4 {
+    margin: 0 0 0.5rem;
+    color: #0f172a;
+    font-size: 0.95rem;
+  }
+
+  .history-highlights-box ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: #334155;
+  }
+
+  .titles-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .titles-list li {
+    background: #fdfdfd;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .nine-darters-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .nine-darters-list li {
+    background: #fffbeb;
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #854d0e;
+  }
+
+  .style-p {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.6;
+    background: #f8fafc;
+    border-left: 4px solid #f59e0b;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  /* FAQs */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-card h4 {
+    margin: 0 0 0.4rem;
+    color: #0f172a;
+    font-size: 1rem;
+  }
+
+  .faq-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* Sidebar */
+  .player-sidebar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 0.95rem;
+    margin: 0 0 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .player-layout {
+      grid-template-columns: 1fr;
+    }
+    .record-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .titles-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,94 @@
+{
+  "title": "Official Darts Rules, Dimensions, Formats & Scoring Specifications",
+  "last_verified": "2026-10-03",
+  "status": "confirmed",
+  "authoritative_sources": {
+    "general_dra_rules": "Darts Regulation Authority (DRA) Official Rulebook (Sections 5.1–5.18)",
+    "tournament_format": "PDC Tournament Rules & World Darts Championship Regulations"
+  },
+  "rules_classification": {
+    "general_dra_rules": {
+      "authority": "Darts Regulation Authority (DRA)",
+      "scope": "Universal standards applied across all sanctioned professional darts competitions globally (PDC, WDF, and affiliated leagues).",
+      "includes": [
+        "Board dimensions (bullseye height 5ft 8in / 1.73m)",
+        "Oche throwline distance (7ft 9.25in / 2.37m)",
+        "Diagonal measurement (9ft 7.5in / 2.93m)",
+        "501 countdown starting score",
+        "Straight-in, double-out finishing rule",
+        "The bust rule",
+        "Segment multiplier values"
+      ]
+    },
+    "world_championship_specific_format": {
+      "authority": "Professional Darts Corporation (PDC)",
+      "scope": "Tournament-specific match structures and rules exclusive to the PDC World Darts Championship at Alexandra Palace.",
+      "includes": [
+        "Sets and Legs match structure (first to 3 legs per set)",
+        "Round-by-round set distances (Best of 5 up to Best of 13)",
+        "Deciding-set two clear legs tiebreak rule (up to 5-5)",
+        "Sudden-death 11th leg in deciding sets with pre-leg bull-off"
+      ]
+    }
+  },
+  "board_specifications": {
+    "rule_scope": "Universal DRA Regulation",
+    "bullseye_height": {
+      "imperial": "5 feet 8 inches",
+      "metric": "1.73 meters",
+      "measured_from": "Floor level to the center of the inner bullseye"
+    },
+    "oche_distance": {
+      "imperial": "7 feet 9.25 inches",
+      "metric": "2.37 meters",
+      "measured_from": "Front face of the dartboard to the back edge of the raised oche (throwline)"
+    },
+    "diagonal_distance": {
+      "imperial": "9 feet 7.5 inches",
+      "metric": "2.93 meters",
+      "measured_from": "Center of the bullseye to the back of the oche throwline"
+    },
+    "board_type": "Standard 18-inch English sisal bristle board with ultra-thin blade wiring (spider)"
+  },
+  "scoring_values": {
+    "rule_scope": "Universal DRA Regulation",
+    "treble_multiplier": "3x nominal segment value (Treble 20 = 60 points)",
+    "double_multiplier": "2x nominal segment value (Double 20 = 40 points)",
+    "single_multiplier": "1x nominal segment value",
+    "outer_bull": "25 points (Green ring)",
+    "inner_bull": "50 points (Red center, counts as double 25 for checkouts)",
+    "maximum_single_turn": "180 points (Treble 20 x 3)"
+  },
+  "501_core_rules": {
+    "rule_scope": "Universal DRA Regulation",
+    "starting_score": 501,
+    "turn_format": "Each player throws three darts per turn in alternating turns",
+    "finishing_requirement": "Exact zero required on a double ring or the 50-point inner bullseye (Double-Out)",
+    "bust_rule": "If a player scores more points than required, scores exact 501 without hitting a double, or leaves a score of 1, the turn is 'Bust' and their score resets to what it was at the beginning of that turn",
+    "lowest_darts_possible": 9
+  },
+  "world_championship_format": {
+    "rule_scope": "PDC World Championship Specific Format",
+    "match_structure": "Sets and Legs format (unique to the World Championship and World Grand Prix in the modern PDC)",
+    "leg_requirement": "First player to win 3 legs wins the set (Best of 5 legs per set)",
+    "tiebreak_rule": {
+      "rule": "Two Clear Legs in Final Set",
+      "description": "In the deciding set of any match, a player must win by two clear legs (e.g. 3-1, 4-2, 5-3) up to a maximum of 5-5. If the score reaches 5-5 in the deciding set, a sudden-death 11th leg is played, with the player who won the pre-match bull throw deciding who throws first."
+    },
+    "round_lengths": [
+      { "round": "Round One", "sets": "Best of 5 sets", "first_to": "First to 3 sets" },
+      { "round": "Round Two", "sets": "Best of 5 sets", "first_to": "First to 3 sets" },
+      { "round": "Round Three", "sets": "Best of 7 sets", "first_to": "First to 4 sets" },
+      { "round": "Round Four", "sets": "Best of 7 sets", "first_to": "First to 4 sets" },
+      { "round": "Quarter-Finals", "sets": "Best of 9 sets", "first_to": "First to 5 sets" },
+      { "round": "Semi-Finals", "sets": "Best of 11 sets", "first_to": "First to 6 sets" },
+      { "round": "Final", "sets": "Best of 13 sets", "first_to": "First to 7 sets" }
+    ]
+  },
+  "averages_calculation": {
+    "rule_scope": "Statistical Metric Standard",
+    "formula": "(Total Points Scored / Total Darts Thrown) * 3",
+    "first_9_average": "Calculates scoring rate strictly on the first 9 darts of each leg (before finishing attempts pull the scoring average down)",
+    "tactical_implication": "A higher 3-dart average does not guarantee victory because darts is won on legs and sets. If Player A wins their sets 3-0 while Player B edges long 3-2 sets, Player B may hit more 180s and register a higher overall average despite losing the match."
+  }
+}

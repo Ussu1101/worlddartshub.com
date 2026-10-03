@@ -1,0 +1,370 @@
+---
+// src/pages/live/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import MatchCard from '../../components/MatchCard.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+import liveData from '../../data/live.json';
+import scheduleData from '../../data/schedule.json';
+
+const pageTitle = "PDC World Darts Match Center, Today's Fixtures & Board Order — 2026/27";
+const pageDescription = "Daily order of play, confirmed session start times, board order, and latest results for the 2026/27 PDC World Darts Championship at Alexandra Palace. Updated daily.";
+
+const breadcrumbItems = [
+  { name: 'Match Center' }
+];
+
+const liveSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "breadcrumb": "https://worlddartsguide.com/live/"
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={liveSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="live-hero">
+    <div class="container">
+      <div class="live-badge-row">
+        <span class="badge">MATCH TRACKER</span>
+        <span class="badge">SESSION SCHEDULE</span>
+      </div>
+      <h1>PDC World Darts Match Center & Daily Session Hub</h1>
+      <p class="live-lead">
+        Daily order of play, confirmed fixtures, session start times, and tournament results direct from the Great Hall at Alexandra Palace. (Last updated: October 2026).
+      </p>
+
+      <div class="quick-stream-callout">
+        <span>Looking for legal television or streaming options?</span>
+        <a href="/watch/" class="btn btn-primary btn-sm">Find Your Broadcaster &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container live-page-layout">
+    <div class="live-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="Session Timings, Round Structures & Board Order" />
+
+      <!-- Active / Today's Matches -->
+      <section class="live-section">
+        <div class="section-title-row">
+          <h2>🎯 Today's Featured Fixtures</h2>
+          <span class="live-clock-pill">Updated for 2026/27 Schedule • Times GMT</span>
+        </div>
+
+        <div class="matches-list-grid">
+          {(liveData.todays_matches?.length ? liveData.todays_matches : liveData.current_confirmed_fixtures).map((match: any) => (
+            <MatchCard match={match} />
+          ))}
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="live-top-leaderboard" />
+
+      <!-- Session Timing & Daily Schedule Protocol -->
+      <section class="live-section">
+        <h2>Session Timings & Order of Play Protocol</h2>
+        <p>
+          Each day during the tournament (with the exception of specific single-session stages and holidays), play is split into two distinct ticketing sessions:
+        </p>
+
+        <div class="grid-2 session-cards">
+          <div class="card session-card">
+            <div class="session-card-header">
+              <span class="session-badge">AFTERNOON SESSION</span>
+              <span class="session-time">12:30 GMT</span>
+            </div>
+            <p><strong>Standard Format:</strong> 4 Matches (Usually 3x First Round, 1x Second Round in early stages).</p>
+            <p><strong>Doors Open:</strong> 11:00 GMT via Palm Court entrance.</p>
+            <p><strong>Approximate Conclusion:</strong> 16:30 – 17:00 GMT.</p>
+          </div>
+
+          <div class="card session-card">
+            <div class="session-card-header">
+              <span class="session-badge badge-dark">EVENING SESSION</span>
+              <span class="session-time">19:00 GMT</span>
+            </div>
+            <p><strong>Standard Format:</strong> 4 Matches (Prime-time seed matches and high-profile clashes).</p>
+            <p><strong>Doors Open:</strong> 17:30 GMT via Palm Court entrance.</p>
+            <p><strong>Approximate Conclusion:</strong> 23:00 GMT.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Notice on Match Timings:</strong> In professional darts, subsequent matches on the same session board start immediately following the conclusion of the prior match (typically after a 10–15 minute warm-up break). No match begins earlier than the published session start time, but individual match times cannot be fixed due to varying set lengths.
+        </div>
+      </section>
+
+      <!-- Key Dates & Break Days -->
+      <section class="live-section">
+        <h2>Upcoming Tournament Stages & Schedule</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Dates</th>
+                <th>Round / Stage</th>
+                <th>Format</th>
+                <th>Sessions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {scheduleData.phases.map((phase: any) => (
+                <tr>
+                  <td><strong>{phase.date_range}</strong></td>
+                  <td>{phase.phase_name}</td>
+                  <td>{phase.format}</td>
+                  <td>{phase.sessions_count > 0 ? `${phase.sessions_count} Sessions` : 'Hiatus'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot slotType="in-feed" id="live-mid-infeed" />
+    </div>
+
+    <!-- Live Sidebar -->
+    <aside class="live-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Watch Live Stream</h3>
+        <p class="sidebar-micro">Access verified legal streams for the current session:</p>
+        <ul class="widget-list">
+          <li><a href="/watch/uk/">🇬🇧 Sky Sports & NOW (UK)</a></li>
+          <li><a href="/watch/germany/">🇩🇪 DAZN & ProSieben (Germany)</a></li>
+          <li><a href="/watch/usa/">🇺🇸 ESPN+, Peacock & PDCTV (USA)</a></li>
+          <li><a href="/watch/netherlands/">🇳🇱 Viaplay (Netherlands)</a></li>
+          <li><a href="/watch/australia/">🇦🇺 Fox Sports & Kayo (Aus)</a></li>
+          <li><a href="/watch/canada/">🇨🇦 PDCTV (Canada)</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="live-sidebar-rectangle" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tournament Centers</h3>
+        <ul class="widget-list">
+          <li><a href="/results/">📜 Match Results Center</a></li>
+          <li><a href="/draw/">🗺️ Tournament Bracket & Draw</a></li>
+          <li><a href="/schedule/finals-weekend/">🏆 Finals Weekend Times</a></li>
+          <li><a href="/tournament/prize-money/">💰 £5M Prize Money Guide</a></li>
+          <li><a href="/tournament/order-of-merit/">📊 PDC Order of Merit</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">How Darts Scoring Works</h3>
+        <ul class="score-explainer">
+          <li><strong>501 Double-Out:</strong> Players start on 501 points and count down to zero, finishing on a double or bullseye.</li>
+          <li><strong>Leg:</strong> First player to checkout wins 1 leg.</li>
+          <li><strong>Set:</strong> First player to win 3 legs wins the set (Best of 5 legs).</li>
+          <li><strong>Match:</strong> Varies by round (Best of 5 sets in R1/R2, up to Best of 13 sets in the Final).</li>
+          <li><strong>180:</strong> Maximum score possible with 3 darts (Treble 20 x 3).</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .live-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1a162b 50%, #0f172a 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #ef4444;
+  }
+
+  .live-badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .live-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .live-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 780px;
+    margin-bottom: 1.5rem;
+  }
+
+  .quick-stream-callout {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+
+  .btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.82rem;
+  }
+
+  .live-page-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .live-section {
+    margin-bottom: 3rem;
+  }
+
+  .section-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .section-title-row h2 {
+    margin: 0;
+  }
+
+  .live-clock-pill {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+  }
+
+  .matches-list-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .session-cards {
+    margin-top: 1.25rem;
+  }
+
+  .session-card {
+    padding: 1.5rem;
+  }
+
+  .session-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .session-badge {
+    background: #fef3c7;
+    color: #92400e;
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .badge-dark {
+    background: #0f172a;
+    color: #f8fafc;
+  }
+
+  .session-time {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  .live-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .sidebar-micro {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  .score-explainer {
+    padding-left: 1.2rem;
+    font-size: 0.82rem;
+    color: #475569;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .live-page-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .matches-list-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

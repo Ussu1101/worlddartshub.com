@@ -1,0 +1,99 @@
+---
+// src/components/Breadcrumbs.astro
+interface BreadcrumbItem {
+  name: string;
+  url?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://worlddartsguide.com';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": `${siteUrl}/`
+    },
+    ...items.map((item, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 2,
+      "name": item.name,
+      ...(item.url ? { "item": `${siteUrl}${item.url}` } : {})
+    }))
+  ]
+};
+---
+
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      {items.map((item, idx) => {
+        const isLast = idx === items.length - 1;
+        return (
+          <li>
+            {isLast || !item.url ? (
+              <span aria-current="page">{item.name}</span>
+            ) : (
+              <a href={item.url}>{item.name}</a>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<style>
+  .breadcrumb-nav {
+    background-color: #f1f5f9;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0.65rem 0;
+    font-size: 0.85rem;
+  }
+  .breadcrumb-nav ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+  }
+  .breadcrumb-nav li {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    color: #64748b;
+  }
+  .breadcrumb-nav li:not(:last-child)::after {
+    content: "›";
+    margin-left: 0.5rem;
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .breadcrumb-nav a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  .breadcrumb-nav a:hover {
+    text-decoration: underline;
+  }
+  .breadcrumb-nav [aria-current="page"] {
+    color: #0f172a;
+    font-weight: 600;
+  }
+</style>

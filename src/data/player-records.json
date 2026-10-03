@@ -1,0 +1,186 @@
+{
+  "title": "PDC World Darts Championship All-Time Records, 9-Darters & 180 Benchmarks",
+  "last_verified": "2026-10-03",
+  "status": "confirmed",
+  "source": "PDC Official Historical Archives, Darts Database & Official Tournament Records",
+  "world_championship_records": {
+    "most_titles_pdc": [
+      { "player": "Phil Taylor", "titles": 14, "years": "1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2004, 2005, 2006, 2009, 2010, 2013" },
+      { "player": "Michael van Gerwen", "titles": 3, "years": "2014, 2017, 2019" },
+      { "player": "Gary Anderson", "titles": 2, "years": "2015, 2016" },
+      { "player": "Peter Wright", "titles": 2, "years": "2020, 2022" },
+      { "player": "Adrian Lewis", "titles": 2, "years": "2011, 2012" },
+      { "player": "John Part", "titles": 2, "years": "2003, 2008" },
+      { "player": "Luke Littler", "titles": 2, "years": "2025, 2026" }
+    ],
+    "highest_match_averages": [
+      { "rank": 1, "player": "Michael van Gerwen", "average": 114.05, "year": 2017, "round": "Semi-Final", "opponent": "Raymond van Barneveld (109.34)" },
+      { "rank": 2, "player": "Phil Taylor", "average": 111.21, "year": 2002, "round": "Second Round", "opponent": "Shayne Burgess" },
+      { "rank": 3, "player": "Phil Taylor", "average": 110.94, "year": 2009, "round": "Final", "opponent": "Raymond van Barneveld" },
+      { "rank": 4, "player": "Raymond van Barneveld", "average": 109.34, "year": 2017, "round": "Semi-Final", "opponent": "Michael van Gerwen (Highest losing average in history)" },
+      { "rank": 5, "player": "Michael van Gerwen", "average": 108.08, "year": 2023, "round": "Semi-Final", "opponent": "Dimitri Van den Bergh" }
+    ],
+    "tournament_180_milestones": {
+      "tournament_records": [
+        { "year": 2024, "total_180s": 914, "notes": "Record set across 95 matches; Luke Humphries led individual standings with 73" },
+        { "year": 2023, "total_180s": 901, "notes": "Historic first tournament to surpass 900 maximum 180s" },
+        { "year": 2019, "total_180s": 880, "notes": "Previous milestone record" }
+      ],
+      "most_180s_individual_tournament": { "player": "Michael Smith", "count": 83, "year": 2022 },
+      "most_180s_single_match": [
+        { "player": "Peter Wright", "count": 24, "year": 2022, "round": "Semi-Final", "opponent": "Gary Anderson (6-4 victory)" },
+        { "player": "Gary Anderson", "count": 22, "year": 2017, "round": "Final", "opponent": "Michael van Gerwen" },
+        { "player": "Michael Smith", "count": 22, "year": 2023, "round": "Final", "opponent": "Michael van Gerwen" }
+      ]
+    },
+    "youngest_finalist": { "player": "Luke Littler", "age": "16 years, 347 days", "year": 2024 },
+    "youngest_winner": { "player": "Michael van Gerwen", "age": "24 years, 252 days", "year": 2014 },
+    "oldest_winner": { "player": "Phil Taylor", "age": "52 years, 141 days", "year": 2013 }
+  },
+  "televised_nine_darters_world_championship": [
+    {
+      "number": 1,
+      "player": "Raymond van Barneveld",
+      "year": 2009,
+      "round": "Quarter-Final",
+      "opponent": "Jelle Klaasen",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace (First in Ally Pally history)"
+    },
+    {
+      "number": 2,
+      "player": "Raymond van Barneveld",
+      "year": 2010,
+      "round": "Second Round",
+      "opponent": "Brendan Dolan",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace (First player to hit two World Championship 9-darters)"
+    },
+    {
+      "number": 3,
+      "player": "Adrian Lewis",
+      "year": 2011,
+      "round": "Final",
+      "opponent": "Gary Anderson",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace (First 9-darter in a World Championship final)"
+    },
+    {
+      "number": 4,
+      "player": "Dean Winstanley",
+      "year": 2013,
+      "round": "Second Round",
+      "opponent": "Vincent van der Voort",
+      "checkout_route": "180, 180, T20-T17-D18",
+      "venue": "Alexandra Palace"
+    },
+    {
+      "number": 5,
+      "player": "Michael van Gerwen",
+      "year": 2013,
+      "round": "Semi-Final",
+      "opponent": "James Wade",
+      "checkout_route": "180, 177, T20-T20-D12",
+      "venue": "Alexandra Palace (Followed by 8 more perfect darts in next leg)"
+    },
+    {
+      "number": 6,
+      "player": "Terry Jenkins",
+      "year": 2014,
+      "round": "First Round",
+      "opponent": "Per Laursen",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace (Hit on same day as Kyle Anderson)"
+    },
+    {
+      "number": 7,
+      "player": "Kyle Anderson",
+      "year": 2014,
+      "round": "First Round",
+      "opponent": "Ian White",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace (Hit on same day as Terry Jenkins)"
+    },
+    {
+      "number": 8,
+      "player": "Adrian Lewis",
+      "year": 2015,
+      "round": "Third Round",
+      "opponent": "Raymond van Barneveld",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace (Lewis's second Ally Pally 9-darter)"
+    },
+    {
+      "number": 9,
+      "player": "Gary Anderson",
+      "year": 2016,
+      "round": "Semi-Final",
+      "opponent": "Jelle Klaasen",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace"
+    },
+    {
+      "number": 10,
+      "player": "James Wade",
+      "year": 2021,
+      "round": "Third Round",
+      "opponent": "Stephen Bunting",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace (Played behind closed doors / COVID protocols)"
+    },
+    {
+      "number": 11,
+      "player": "William Borland",
+      "year": 2022,
+      "round": "First Round",
+      "opponent": "Bradley Brooks",
+      "checkout_route": "180, 177, T19-T20-D12",
+      "venue": "Alexandra Palace (First deciding-leg match-winning 9-darter in history)"
+    },
+    {
+      "number": 12,
+      "player": "Darius Labanauskas",
+      "year": 2022,
+      "round": "First Round",
+      "opponent": "Mike De Decker",
+      "checkout_route": "174, 180, T20-T17-D18",
+      "venue": "Alexandra Palace"
+    },
+    {
+      "number": 13,
+      "player": "Gerwyn Price",
+      "year": 2022,
+      "round": "Quarter-Final",
+      "opponent": "Michael Smith",
+      "checkout_route": "180, 180, T19-T20-D12",
+      "venue": "Alexandra Palace"
+    },
+    {
+      "number": 14,
+      "player": "Michael Smith",
+      "year": 2023,
+      "round": "Final",
+      "opponent": "Michael van Gerwen",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace (Leg 3, Set 2 - after MVG missed D12 in same leg)"
+    },
+    {
+      "number": 15,
+      "player": "Christian Kist",
+      "year": 2025,
+      "round": "First Round",
+      "opponent": "Madars Razma",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace (Triggered £180k Paddy Power charity & fan bonus)"
+    },
+    {
+      "number": 16,
+      "player": "Damon Heta",
+      "year": 2025,
+      "round": "Third Round",
+      "opponent": "Luke Woodhouse",
+      "checkout_route": "180, 180, T20-T19-D12",
+      "venue": "Alexandra Palace (27 December 2024 post-Christmas session)"
+    }
+  ]
+}

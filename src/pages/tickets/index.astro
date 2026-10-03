@@ -1,0 +1,398 @@
+---
+// src/pages/tickets/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "PDC World Darts Tickets 2026/27 — Official Ballot, Prices & Resale Guide";
+const pageDescription = "How to buy official tickets for the 2026/27 PDC World Darts Championship at Alexandra Palace. SeeTickets priority ballot dates, prices, and authorized fan resale.";
+
+const breadcrumbItems = [
+  { name: 'Tickets & Ballot' }
+];
+
+const ticketFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you get tickets for the PDC World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Official tickets are sold exclusively via SeeTickets through a staggered priority window. PDCTV Annual Subscribers receive first priority window access (usually late July), followed by registered general public sale. Remaining returned tickets are listed on the official SeeTickets Fan-to-Fan Resale platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do World Darts Championship tickets cost at face value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Face value prices generally range from £40 to £65 for Tiered Bleacher seats, and £50 to £85 for Floor Table seats, with semi-final and final sessions priced between £75 and £120 plus standard booking fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are tickets bought on Viagogo or StubHub valid for Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The PDC and Alexandra Palace strictly void tickets resold on unauthorized secondary platforms like Viagogo, StubHub, or social media. Security scanners at the Palm Court entrance will cancel duplicated or unauthorized barcodes without refund."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={ticketFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="tickets-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">TICKETING & BALLOT</span>
+        <span class="badge">OFFICIAL SEETICKETS PLATFORM</span>
+      </div>
+      <h1>PDC World Darts Tickets 2026/27 Guide</h1>
+      <p class="tickets-lead">
+        Securing tickets for Ally Pally is one of the most competitive challenges in British sports entertainment. Here is the verified guide to priority ballots, face value prices, and authorized resale.
+      </p>
+    </div>
+  </header>
+
+  <div class="container tickets-layout">
+    <article class="tickets-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Official Ticketing Terms & SeeTickets Anti-Tout Policy" />
+
+      <!-- Ticketing Timeline -->
+      <section class="tickets-section">
+        <h2>Official Ticket Sale Windows & Ballot Process</h2>
+        <p>
+          Tickets for the 2026/27 championship are released in three distinct phases managed by official ticketing agent <strong>SeeTickets</strong>:
+        </p>
+
+        <div class="timeline-container">
+          <div class="timeline-step">
+            <span class="step-num">1</span>
+            <div class="step-content">
+              <h3>PDCTV Annual Subscribers Priority Window</h3>
+              <p class="step-timing">📅 Typically Late July (Annual subscribers registered by the qualifying cutoff date)</p>
+              <p>Fans with active annual subscriptions to PDCTV receive an exclusive 48-hour presale code to purchase table and tiered tickets before the general public.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">2</span>
+            <div class="step-content">
+              <h3>Registered General Sale Window</h3>
+              <p class="step-timing">📅 Typically Early August (General Public)</p>
+              <p>Any remaining allocation across the 28 sessions opens to registered public users. Table seats for weekend and holiday sessions typically sell out within minutes.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">3</span>
+            <div class="step-content">
+              <h3>Official SeeTickets Fan-to-Fan Resale</h3>
+              <p class="step-timing">📅 Autumn through Tournament Dates (Dec – Jan)</p>
+              <p>The <em>only</em> authorized platform to purchase genuine unwanted tickets. Capped strictly at face value, with digital barcodes re-issued directly to the new buyer.</p>
+              <p style="margin-top: 0.5rem; margin-bottom: 0;">
+                <a href="/tickets/resale-returns/" style="color: #f59e0b; font-weight: 700; text-decoration: underline;">Read Full See Tickets Resale, Returns & Anti-Scam Guide →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="tickets-top-ad" />
+
+      <!-- Face Value Pricing Breakdown -->
+      <section class="tickets-section">
+        <h2>Official Face Value Price Guide</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Tournament Stage</th>
+                <th>Tiered Bleachers</th>
+                <th>Floor Tables</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rounds 1 & 2 (Afternoon Sessions)</td>
+                <td>£40 – £45</td>
+                <td>£50 – £55</td>
+              </tr>
+              <tr>
+                <td>Rounds 1 & 2 (Evening Sessions)</td>
+                <td>£50 – £55</td>
+                <td>£60 – £65</td>
+              </tr>
+              <tr>
+                <td>Round 3 & Last 16 (Post-Christmas)</td>
+                <td>£55 – £60</td>
+                <td>£65 – £75</td>
+              </tr>
+              <tr>
+                <td>Quarter-Finals & Semi-Finals</td>
+                <td>£65 – £75</td>
+                <td>£80 – £95</td>
+              </tr>
+              <tr>
+                <td>World Championship Final (3 Jan)</td>
+                <td>£75 – £90</td>
+                <td>£100 – £120</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-micro">*Prices indicative of standard PDC face value tiers plus nominal booking fee. Family section discounts available on selected afternoon sessions.</p>
+      </section>
+
+      <!-- Crucial Anti-Tout Warning -->
+      <section class="tickets-section">
+        <div class="callout warning-box">
+          <h3>🚨 CRITICAL WARNING: Secondary Ticket Sites (Viagogo, StubHub, Social Media)</h3>
+          <p>
+            The PDC explicitly cancels barcodes listed on unauthorized secondary resale websites (including Viagogo, StubHub, and social platforms like X or Facebook). Alexandra Palace utilizes high-speed optical barcode scanners tied directly to the SeeTickets database.
+          </p>
+          <p>
+            <strong>Hundreds of fans are turned away in tears at the Palm Court gates every year</strong> after paying hundreds of pounds for duplicate, voided, or fabricated tickets. <strong>Only purchase via the official SeeTickets Fan-to-Fan portal.</strong>
+          </p>
+        </div>
+      </section>
+
+      <AdSlot slotType="in-feed" id="tickets-mid-ad" />
+
+      <!-- Frequently Asked Questions -->
+      <section class="tickets-section">
+        <h2>Frequently Asked Questions About Darts Tickets</h2>
+        <div class="faq-accordion">
+          {ticketFaqSchema.mainEntity.map((item) => (
+            <div class="card faq-box">
+              <h4>{item.name}</h4>
+              <p>{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="tickets-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Ticketing & Venue Hubs</h3>
+        <ul class="widget-list">
+          <li><a href="/tickets/resale-returns/">🔄 Official See Tickets Resale Guide</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">🪑 Tables vs Tiered Seats Guide</a></li>
+          <li><a href="/venue/">🏛️ Alexandra Palace Handbook</a></li>
+          <li><a href="/travel/">🚇 Getting to Alexandra Palace</a></li>
+          <li><a href="/schedule/">🗓️ Full 2026/27 Session Schedule</a></li>
+          <li><a href="/fancy-dress/">🦸‍♂️ Costume & Fancy Dress Rules</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="tickets-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Official Ticketing Partner</h3>
+        <p><strong>SeeTickets UK</strong> is the sole authorized primary and resale agent for the PDC World Darts Championship.</p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .tickets-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .tickets-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .tickets-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .tickets-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .tickets-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .timeline-step {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .step-num {
+    background: #0f172a;
+    color: #f59e0b;
+    font-weight: 900;
+    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .step-timing {
+    color: #0284c7;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-content p:last-child {
+    font-size: 0.88rem;
+    color: #475569;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .table-micro {
+    font-size: 0.78rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+
+  .warning-box {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 1.25rem;
+    border-radius: 6px;
+  }
+
+  .warning-box h3 {
+    color: #991b1b;
+    margin-top: 0;
+    font-size: 1.15rem;
+  }
+
+  .warning-box p {
+    color: #7f1d1d;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    padding: 1.25rem;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+  }
+
+  .tickets-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .tickets-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

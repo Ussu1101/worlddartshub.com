@@ -1,0 +1,63 @@
+---
+// src/pages/about.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const pageTitle = "About World Darts Guide — Independent Alexandra Palace Resource";
+const pageDescription = "Learn about World Darts Guide: our editorial mission, fact-checking methodology, and independent fan-first coverage of the PDC World Darts Championship.";
+
+const breadcrumbItems = [
+  { name: 'About Us' }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="container container-narrow page-content">
+    <h1>About World Darts Guide</h1>
+    <p class="lead">
+      World Darts Guide (worlddartsguide.com) is the premier independent digital handbook dedicated to the PDC World Darts Championship held annually at Alexandra Palace in London.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+      Attending or watching the World Darts Championship is one of the most exciting experiences in global sports entertainment. However, navigating the ecosystem—from securing scarce ballot tickets and understanding costume policies to discovering authorized legal broadcasts in over 100 countries—can be complex and confusing.
+    </p>
+    <p>
+      Our mission is simple: provide sports fans with <strong>100% verified, practical, accurate, and completely independent advice</strong>.
+    </p>
+
+    <h2>What We Cover</h2>
+    <ul>
+      <li><strong>Legal Broadcasts & Streaming:</strong> Authoritative guides to official rights holders worldwide (Sky Sports, DAZN, Viaplay, Kayo, PDCTV) with a strict zero-tolerance stance against illegal pirated streams.</li>
+      <li><strong>Alexandra Palace Spectator Guides:</strong> Venue security rules, bag limits, Great Hall seating plans, and cashless bar logistics.</li>
+      <li><strong>London Travel & Hotels:</strong> Transit navigation via the Piccadilly Line, Great Northern rail, and strategic hotels in North London.</li>
+      <li><strong>Player Dossiers:</strong> Tour rankings, walk-on entrance anthems, barrel tungsten specifications, and career statistics.</li>
+    </ul>
+
+    <h2>Independence & Transparency Notice</h2>
+    <div class="callout">
+      <p>
+        <strong>World Darts Guide</strong> is an independent editorial fan resource and is <strong>not affiliated with, endorsed by, sponsored by, or associated in any way</strong> with the Professional Darts Corporation (PDC), Matchroom Sport, Alexandra Palace and Park Trust, or any official sports broadcast rights-holder. All trademarks, event designations, and player likenesses are referenced strictly for identification, commentary, and news reporting under nominative fair use.
+      </p>
+    </div>
+
+    <h2>Editorial Standards & Fact Checking</h2>
+    <p>
+      Every article, session time, price point, and broadcast provider listed on our platform is independently verified against official PDC regulatory bulletins, venue statements, and broadcast agreements. Read our full <a href="/editorial-policy/">Editorial & Fact-Checking Policy</a>.
+    </p>
+
+    <h2>Contact Our Team</h2>
+    <p>
+      Have a correction, feedback, or a partnership inquiry? Reach out via our <a href="/contact/">Contact Page</a>.
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-content {
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+</style>

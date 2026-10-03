@@ -1,0 +1,385 @@
+---
+// src/pages/venue/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import venueData from '../../data/venues.json';
+
+const pageTitle = "Alexandra Palace Darts Guide — Great Hall, Bag Policy & Venue Rules (2026/27)";
+const pageDescription = "Essential spectator guide for attending the PDC World Darts Championship at Alexandra Palace (Ally Pally), London. Security rules, bag limits, cashless bars, and entry times.";
+
+const breadcrumbItems = [
+  { name: 'Venue Guide' }
+];
+
+const venueFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the bag policy at Alexandra Palace for the World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alexandra Palace strictly enforces a maximum bag size of 30cm x 20cm x 10cm inside the Great Hall. Large backpacks, suitcases, and wheeled luggage cannot enter. While the venue operates a £10 external bag drop by East Court under general policy, darts-specific availability remains pending confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you pay with cash at Alexandra Palace bars during the darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Alexandra Palace operates a 100% cashless payment system. All bars, food concessions, and merchandise stands accept card and contactless mobile payments only (Apple Pay, Google Pay, Visa, Mastercard)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are football shirts allowed inside the darts at Ally Pally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Football club shirts, scarves, or team-affiliated attire of any kind are strictly prohibited by venue security to prevent rivalry incidents. Spectators wearing football shirts will be refused entry."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={venueFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="venue-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">VENUE SPECTATOR HANDBOOK</span>
+        <span class="badge">ALEXANDRA PALACE</span>
+      </div>
+      <h1>Alexandra Palace Darts Spectator Guide</h1>
+      <p class="venue-lead">
+        Welcome to "Ally Pally" — the undisputed spiritual home of modern professional darts. Here is everything you need to know about navigating the historic Great Hall, security protocols, entry gates, and cashless bars.
+      </p>
+    </div>
+  </header>
+
+  <div class="container venue-layout">
+    <article class="venue-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="Alexandra Palace Security, Entry Rules & Bag Policies" />
+
+      <!-- Venue Overview -->
+      <section class="venue-section">
+        <h2>The Great Hall: The 5,000+ Crucible</h2>
+        <p>
+          Situated atop Alexandra Park with panoramic views across the London skyline, Alexandra Palace (affectionately known as <em>Ally Pally</em>) has staged the PDC World Darts Championship every December and January since 2007.
+        </p>
+        <p>
+          For the 2026/27 championship, the historic <strong>Great Hall</strong> welcomes an expanded capacity of over 5,000 passionate spectators per session, generating the loudest, most electric live atmosphere in world sport.
+        </p>
+
+        <div class="grid-2 key-facts-grid">
+          <div class="card fact-card">
+            <span class="fact-label">Official Address</span>
+            <strong>{venueData.address.street}, {venueData.address.borough}, London {venueData.address.postcode}</strong>
+          </div>
+          <div class="card fact-card">
+            <span class="fact-label">Primary Entrance Gate</span>
+            <strong>Palm Court Entrance (Doors open 90 mins before play)</strong>
+          </div>
+          <div class="card fact-card">
+            <span class="fact-label">Payment Policy</span>
+            <strong class="highlight-green">100% Cashless (Cards & Mobile Pay Only)</strong>
+          </div>
+          <div class="card fact-card">
+            <span class="fact-label">Re-Entry Rule</span>
+            <strong class="highlight-red">Strictly No Re-Entry Once Admitted</strong>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="venue-top-ad" />
+
+      <!-- Security & Bag Size Limits -->
+      <section class="venue-section">
+        <h2>Strict Bag Policy & Security Screening</h2>
+        <p>
+          Security screening at Alexandra Palace is comprehensive. All spectators pass through metal detection arches and manual bag search lanes at the Palm Court entrance.
+        </p>
+
+        <div class="callout bag-callout">
+          <h3>🎒 Maximum Bag Dimensions: 30cm x 20cm x 10cm</h3>
+          <p>
+            Bags must not exceed small handbag dimensions (30cm x 20cm x 10cm) inside the arena. <strong>Suitcases, backpacks, large weekend bags, and bulky rucksacks are strictly barred from entering the Great Hall.</strong> While Alexandra Palace operates a £10 external bag drop by East Court under general venue policy, event-specific availability for the darts remains unconfirmed. Spectators traveling with luggage should verify before travelling or use central London left-luggage facilities beforehand.
+          </p>
+          <p style="margin-top: 0.75rem; margin-bottom: 0;">
+            <a href="/venue/security-bag-policy/" style="color: #92400e; font-weight: 700; text-decoration: underline;">Read Full Bag Policy, Prohibited Items & Luggage Storage Options →</a>
+          </p>
+        </div>
+
+        <h3>Strictly Prohibited Items</h3>
+        <p>The following items are confiscated upon entry or may lead to refusal of admission:</p>
+        <ul class="prohibited-grid">
+          {venueData.security_and_entry.prohibited_items.map((item: string) => (
+            <li class="prohibited-item">🚫 {item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Food, Drink & Bar Operations -->
+      <section class="venue-section">
+        <h2>Bars, Food Village & Cashless Service</h2>
+        <p>
+          The Alexandra Palace Great Hall features extensive dedicated beer bars running along the flanks and rear of the hall, as well as a large street food village located in the Palm Court and connecting halls:
+        </p>
+        <ul>
+          <li><strong>Pitcher System:</strong> Beer and cider are sold in reusable draught pitchers (including 4-pint group pitchers) with reusable souvenir stack cups.</li>
+          <li><strong>Food Options:</strong> Gourmet burgers, artisanal sourdough pizzas, hog roasts, fried chicken, and vegan/vegetarian street food options.</li>
+          <li><strong>No Outside Drinks:</strong> You cannot bring external alcohol or unsealed food into the venue (unsealed bottles will be confiscated at bag check).</li>
+          <li><strong>Free Water:</strong> Complimentary water refill points are accessible inside the Palm Court corridor.</li>
+        </ul>
+        <p style="margin-top: 0.75rem;">
+          <a href="/venue/food-drink-bars/" style="color: #0284c7; font-weight: 700; text-decoration: underline;">Explore Complete Food, Drink, Pitcher & Nearby Pubs Directory →</a>
+        </p>
+      </section>
+
+      <AdSlot slotType="in-feed" id="venue-mid-ad" />
+
+      <!-- Frequently Asked Questions -->
+      <section class="venue-section">
+        <h2>Frequently Asked Questions About Alexandra Palace</h2>
+        <div class="faq-accordion">
+          {venueFaqSchema.mainEntity.map((item) => (
+            <div class="card faq-box">
+              <h4>{item.name}</h4>
+              <p>{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="venue-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Spectator Guides</h3>
+        <ul class="widget-list">
+          <li><a href="/venue/great-hall-seating-plan/">🪑 Great Hall Seating Plan & Views</a></li>
+          <li><a href="/venue/security-bag-policy/">🎒 Security & Bag Size Limits (30x20x10cm)</a></li>
+          <li><a href="/venue/food-drink-bars/">🍺 Food, Drink, Pitchers & Bars</a></li>
+          <li><a href="/travel/">🚇 London Transport Overview</a></li>
+          <li><a href="/travel/tube-train-routes/">🚆 Tube, Rail & Bus Routes</a></li>
+          <li><a href="/hotels/">🏨 Hotels Directory</a></li>
+          <li><a href="/hotels/budget-options/">🛌 Budget Hotels Near Venue</a></li>
+          <li><a href="/fancy-dress/">🦸‍♂️ Costume & Fancy Dress Rules</a></li>
+          <li><a href="/tickets/">🎟️ Official Tickets Overview</a></li>
+          <li><a href="/tickets/resale-returns/">🔄 Official Ticket Resale Guide</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="venue-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Session Entry Schedule</h3>
+        <ul class="schedule-bullet-list">
+          <li><strong>Afternoon:</strong> Doors 11:00 GMT | Play 12:30 GMT</li>
+          <li><strong>Evening:</strong> Doors 17:30 GMT | Play 19:00 GMT</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .venue-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .venue-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .venue-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .venue-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .venue-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .key-facts-grid {
+    margin: 1.5rem 0;
+  }
+
+  .fact-card {
+    padding: 1.25rem;
+  }
+
+  .fact-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+  }
+
+  .highlight-green {
+    color: #059669;
+  }
+
+  .highlight-red {
+    color: #dc2626;
+  }
+
+  .bag-callout {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+
+  .bag-callout h3 {
+    margin-top: 0;
+    color: #92400e;
+    font-size: 1.15rem;
+  }
+
+  .bag-callout p {
+    color: #78350f;
+    margin-bottom: 0;
+  }
+
+  .prohibited-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .prohibited-item {
+    background: #fef2f2;
+    border: 1px solid #fee2e2;
+    padding: 0.65rem 0.85rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #991b1b;
+    margin: 0;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    padding: 1.25rem;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+  }
+
+  .venue-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  .schedule-bullet-list {
+    padding-left: 1.2rem;
+    font-size: 0.82rem;
+    color: #475569;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .venue-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .prohibited-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

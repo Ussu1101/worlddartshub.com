@@ -1,0 +1,418 @@
+---
+// src/pages/players/180-records.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import recordsData from '../../data/player-records.json';
+
+const pageTitle = "Most 180s in Darts — All-Time Match & Tournament Records";
+const pageDescription = "Explore the all-time 180 maximum records at the PDC World Darts Championship. Most 180s in a single match (Peter Wright 24), tournament records (Michael Smith 83), and the 914 tournament record.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Players', url: '/players/' },
+  { name: 'Records', url: '/players/records/' },
+  { name: '180 Maximum Records', url: '/players/180-records/' }
+];
+
+const mileData = recordsData.world_championship_records.tournament_180_milestones;
+
+const oneEightySchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/players/180-records/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "PDC World Darts Championship 180 Records",
+    "numberOfItems": 4,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Most 180s Single Match: 24 by Peter Wright (2022 Semi-Final)" },
+      { "@type": "ListItem", "position": 2, "name": "Most 180s Single Match (Joint 2nd): 22 by Gary Anderson (2017) & Michael Smith (2023)" },
+      { "@type": "ListItem", "position": 3, "name": "Most 180s in Single Tournament: 83 by Michael Smith (2022)" },
+      { "@type": "ListItem", "position": 4, "name": "Most 180s Across Single World Championship: 914 (2024; historic 901 milestone in 2023)" }
+    ]
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={oneEightySchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">SCORING POWER</span>
+        <span class="badge">MAXIMUM 180 BENCHMARKS</span>
+      </div>
+      <h1>PDC World Darts Championship 180 Records</h1>
+      <p class="lead-text">
+        The definitive guide to maximum scoring in professional darts: record 180 tallies in a single match, the greatest single-tournament power-scoring displays, and the iconic "One Hundred and Eighty!" referee calls.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={recordsData.last_verified} topic="PDC Maximum Scoring & Match Statistics" />
+
+      <!-- High Level Benchmarks Grid -->
+      <section class="content-card intro-summary">
+        <h2>Pinnacle 180 Scoring Feats at Alexandra Palace</h2>
+        <div class="stats-overview-grid">
+          <div class="stat-card">
+            <span class="stat-sup">SINGLE MATCH RECORD</span>
+            <div class="stat-big">24</div>
+            <div class="stat-name">Peter Wright</div>
+            <p class="stat-sub">2022 World Semi-Final vs. Gary Anderson</p>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-sup">TOURNAMENT INDIVIDUAL</span>
+            <div class="stat-big">83</div>
+            <div class="stat-name">Michael Smith</div>
+            <p class="stat-sub">Across 6 matches during the 2022 World Championship</p>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-sup">TOURNAMENT TOTAL RECORD</span>
+            <div class="stat-big">914</div>
+            <div class="stat-name">All Competitors (2024)</div>
+            <p class="stat-sub">Across 95 matches; historic 901 milestone achieved in 2023</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot id="oneeighty-top-ad" label="Darts Scoring Boards & Electronic Mats" />
+
+      <!-- Single Match 180 Leaderboard Table -->
+      <section class="content-card table-section">
+        <h2>Most 180s Hit in a Single World Championship Match</h2>
+        <p class="table-note">
+          Matches contested on the Alexandra Palace stage in set-play format.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>180s Hit</th>
+                <th>Year</th>
+                <th>Round</th>
+                <th>Opponent & Match Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              {mileData.most_180s_single_match.map((rec, index) => (
+                <tr>
+                  <td><span class="rank-badge">#{index + 1}</span></td>
+                  <td><strong>{rec.player}</strong></td>
+                  <td><strong class="count-highlight">{rec.count}</strong></td>
+                  <td>{rec.year}</td>
+                  <td><span class="round-pill">{rec.round}</span></td>
+                  <td><span class="opp-text">{rec.opponent}</span></td>
+                </tr>
+              ))}
+              <tr>
+                <td><span class="rank-badge">#4</span></td>
+                <td><strong>Dave Chisnall</strong></td>
+                <td><strong class="count-highlight">21</strong></td>
+                <td>2017</td>
+                <td><span class="round-pill">Quarter-Final</span></td>
+                <td><span class="opp-text">Gary Anderson (Lost 3-5 in legendary high-scoring tie)</span></td>
+              </tr>
+              <tr>
+                <td><span class="rank-badge">#5</span></td>
+                <td><strong>Raymond van Barneveld</strong></td>
+                <td><strong class="count-highlight">21</strong></td>
+                <td>2007</td>
+                <td><span class="round-pill">Final</span></td>
+                <td><span class="opp-text">Phil Taylor (Won 7-6 at Circus Tavern)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- The Culture of 180s at Ally Pally -->
+      <section class="content-card culture-section">
+        <h2>"ONE HUNDRED AND EIGHTY!" — The Referee Tradition</h2>
+        <p>
+          No sound in global sport is more recognizable than the referee bellowing "One Hundred and Eighty!" into the arena microphone. For decades, the distinctive, gravelly roar of <strong>Russ Bray ("The Voice")</strong> electrified millions of television viewers before his retirement from premier ranking refereeing in 2024.
+        </p>
+        <p>
+          Today, world-class officials including <strong>George Noble, Kirk Bevins ("The Kirkulator"), and Huw Ware</strong> maintain the high-drama tradition, keeping the 3,000-strong Alexandra Palace crowd in full voice as plastic 180 placards are hoisted high by costumed fans.
+        </p>
+
+        <div class="callout-charity">
+          <h4>The PDC Charity 180 Drive</h4>
+          <p>
+            In recent World Championships, tournament sponsors have donated £1,000 for every 180 hit during the event to charities such as Prostate Cancer UK, generating nearly £1,000,000 in vital medical research funding.
+          </p>
+        </div>
+      </section>
+
+      <AdSlot id="oneeighty-mid-ad" label="Arena Party Signs & Darts Merch" />
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>180 Maximum Records FAQ</h2>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">What is the highest possible 3-dart score in darts?</summary>
+            <div class="faq-answer">
+              <p>The highest single turn in darts is <strong>180</strong>, achieved by landing all three darts cleanly inside the treble 20 bed (each treble 20 scoring 60 points).</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Who holds the record for most 180s in a World Championship final?</summary>
+            <div class="faq-answer">
+              <p>Gary Anderson (2017) and Michael Smith (2023) share the record with <strong>22 maximum 180s</strong> in a World Championship final, both facing Michael van Gerwen.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is the combined 180 record for a single match?</summary>
+            <div class="faq-answer">
+              <p>Gary Anderson and Michael van Gerwen smashed the combined match record in the 2017 final with <strong>42 total 180s</strong> (Anderson 22, Van Gerwen 20) over 10 sets of blistering darts.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-column">
+      <div class="sidebar-card">
+        <h3>Related Statistics</h3>
+        <ul class="sidebar-links">
+          <li><a href="/players/9-darters/">🎯 16 Ally Pally Nine-Darters</a></li>
+          <li><a href="/players/world-championship-records/">🏛️ World Championship Records</a></li>
+          <li><a href="/players/records/">🏆 All-Time Records Directory</a></li>
+          <li><a href="/players/stats/">📈 Performance Statistics</a></li>
+          <li><a href="/players/player-comparisons/">⚔️ Head-to-Head Rivalries</a></li>
+          <li><a href="/players/">← Back to All Players</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card highlight-sidebar">
+        <h3>Live Tournament Coverage</h3>
+        <ul class="sidebar-links">
+          <li><a href="/results/">Live Results & Set Scores</a></li>
+          <li><a href="/schedule/">Full Schedule of Play</a></li>
+          <li><a href="/schedule/finals-weekend/">Finals Weekend Schedule</a></li>
+          <li><a href="/tournament/prize-money/">Prize Money Distribution</a></li>
+        </ul>
+      </div>
+
+      <AdSlot id="oneeighty-sidebar-ad" label="Custom Dart Flights & Shafts" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-bottom: 1px solid #374151;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .lead-text {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 900px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .stats-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .stat-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 1.25rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .stat-sup {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #38bdf8;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .stat-big {
+    font-size: 2.75rem;
+    font-weight: 900;
+    color: #f59e0b;
+    line-height: 1;
+    margin: 0.25rem 0;
+  }
+  .stat-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+  .stat-sub {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+    line-height: 1.35;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #475569;
+    white-space: nowrap;
+  }
+  .data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #334155;
+    vertical-align: middle;
+  }
+  .rank-badge {
+    background: #334155;
+    color: #f8fafc;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .count-highlight {
+    color: #f59e0b;
+    font-size: 1.25rem;
+  }
+  .round-pill {
+    background: #0f172a;
+    border: 1px solid #475569;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+  }
+  .opp-text {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+  }
+  .culture-section p {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .callout-charity {
+    background: #0f172a;
+    border-left: 4px solid #10b981;
+    padding: 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-top: 1.25rem;
+  }
+  .callout-charity h4 {
+    margin: 0 0 0.5rem;
+    color: #10b981;
+    font-size: 1.05rem;
+  }
+  .callout-charity p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+  }
+  .faq-accordion details {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+  .faq-answer {
+    margin-top: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .sidebar-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sidebar-links a:hover {
+    color: #38bdf8;
+  }
+  .highlight-sidebar {
+    border-color: #f59e0b;
+  }
+</style>

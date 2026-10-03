@@ -1,0 +1,550 @@
+---
+// src/pages/darts/legs-vs-sets.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import dartsRules from '../../data/darts-rules.json';
+
+const pageTitle = "Legs vs Sets in Darts Explained — World Championship Match Format & Tiebreaks";
+const pageDescription = "Understand the Sets and Legs match format at the PDC World Darts Championship. Deciding set tiebreak rules, sudden-death 11th leg, round distances, and tactical set play.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Legs vs Sets', url: '/darts/legs-vs-sets/' }
+];
+
+const setsSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/darts/legs-vs-sets/`,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Guide Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Guide",
+    "url": siteUrl
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={setsSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">DARTS FORMAT GUIDE</span>
+        <span class="badge">SET PLAY EXPLAINED</span>
+      </div>
+      <h1>Sets vs Legs in Darts: How the World Championship Format Works</h1>
+      <p class="lead-text">
+        Most professional tournaments are decided by a straight race in legs. The PDC World Darts Championship is different: it uses the historic <strong>Sets and Legs system</strong>, adding layers of psychological tension, momentum swings, and the famous sudden-death tiebreak.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={dartsRules.last_verified} topic="PDC World Darts Championship Tournament Regulations" />
+
+      <!-- Core Distinction Overview -->
+      <section class="content-card">
+        <h2>What Is the Difference Between a Leg and a Set?</h2>
+        <div class="format-comparison-grid">
+          <div class="format-box">
+            <span class="format-icon">🎯</span>
+            <h3>A Single Leg</h3>
+            <p>
+              A single standalone game of <strong>501</strong>. Players alternate visits until one hits a double to reach exactly zero. Winning a leg gives a player 1 point toward winning the active set.
+            </p>
+          </div>
+          <div class="format-box">
+            <span class="format-icon">🏆</span>
+            <h3>A Set</h3>
+            <p>
+              A mini-match within the contest. A set is played over the <strong>best of 5 legs</strong>. The first player to win <strong>3 legs</strong> wins the set. The set score resets to 0–0 for the next set.
+            </p>
+          </div>
+        </div>
+
+        <div class="format-rule-note">
+          <strong>Rules Scope Distinction:</strong> While individual 501 leg rules (board height, oche distance, straight-in, double-out, bust rule) are universal regulations governed by the <a href="/darts/rules/">Darts Regulation Authority (DRA)</a>, match structures vary. Most professional events (including the Premier League, World Matchplay, and Grand Slam) use "straight legs" (e.g. first to 10 legs). The <strong>Sets and Legs system</strong> is a tournament-specific format maintained specifically for the World Darts Championship at Alexandra Palace.
+        </div>
+      </section>
+
+      <!-- Section: Round by Round Set Distances -->
+      <section class="content-card">
+        <h2>World Championship Round Distances</h2>
+        <p>
+          As the tournament progresses from the opening round in mid-December to the final on 3 January, match lengths increase substantially, demanding greater physical stamina and mental focus:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Round</th>
+                <th>Match Format</th>
+                <th>Sets Needed to Win</th>
+                <th>Maximum Sets Possible</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dartsRules.world_championship_format.round_lengths.map((r) => (
+                <tr class={r.round === 'Final' ? 'final-row' : ''}>
+                  <td><strong>{r.round}</strong></td>
+                  <td><code>{r.sets}</code></td>
+                  <td><span class="badge badge-primary">{r.first_to}</span></td>
+                  <td>{parseInt(r.sets.replace(/\D/g, ''))}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="table-footnote">
+          Every match requires a player to win the majority of scheduled sets. For example, in a "Best of 13 sets" final, the first player to reach 7 sets is crowned World Champion.
+        </p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: Deciding Set Tiebreak Rule -->
+      <section class="content-card">
+        <h2>The Deciding Set Tiebreak & Sudden Death Rule</h2>
+        <p>
+          In normal sets throughout the match, a set is won as soon as a player leads 3–0, 3–1, or 3–2. However, when a match reaches its <strong>final deciding set</strong> (e.g., 2–2 in Round 1 or 6–6 in the Final), the DRA rules enforce a strict tiebreak to prevent a lucky throw from deciding the contest:
+        </p>
+
+        <div class="tiebreak-explainer">
+          <div class="tiebreak-step">
+            <span class="tb-badge">Phase 1</span>
+            <h4>Two Clear Legs Rule</h4>
+            <p>
+              In the final set, a player must win by <strong>two clear legs</strong> (e.g., 3–1, 4–2, 5–3, 6–4). Play continues beyond 3–2 until one player breaks throw and holds to establish a two-leg cushion.
+            </p>
+          </div>
+
+          <div class="tiebreak-step">
+            <span class="tb-badge">Phase 2</span>
+            <h4>The 5–5 Cutoff Limit</h4>
+            <p>
+              To prevent matches from continuing indefinitely, the two-clear-legs rule caps out at <strong>5–5 in legs</strong> (a total of 10 legs played in the deciding set).
+            </p>
+          </div>
+
+          <div class="tiebreak-step highlight-step">
+            <span class="tb-badge tb-danger">Phase 3</span>
+            <h4>The Sudden-Death 11th Leg</h4>
+            <p>
+              If the deciding set reaches 5–5, an <strong>11th sudden-death leg</strong> is played. The winner of this single leg wins the entire match!
+            </p>
+            <p>
+              <strong>Crucial Rule:</strong> Before this 11th leg begins, players throw at the bullseye backstage (or on stage) to determine who throws first in the deciding leg. The advantage of throwing first in a sudden-death leg is enormous.
+            </p>
+          </div>
+        </div>
+
+        <div class="example-box">
+          <strong>Historical Example:</strong> The most famous application of this rule occurred in the 2007 final between Phil Taylor and Raymond van Barneveld at the Circus Tavern. Tied at 6–6 in sets and 5–5 in the 13th set, Barney won the bull-off, threw first in the 11th leg, and checked out tops to win the title.
+        </div>
+      </section>
+
+      <!-- Section: Tactical Psychology of Set Play -->
+      <section class="content-card">
+        <h2>Why Set Play Changes Match Strategy</h2>
+        <p>
+          In straight-leg tournaments like the World Matchplay or Premier League, every leg won counts equally toward a single running tally. In set play, the psychology is radically different:
+        </p>
+
+        <div class="tactics-list">
+          <div class="tactic-item">
+            <h4>1. The "Reset" Dynamic</h4>
+            <p>
+              If a player suffers a demoralizing 0–3 loss in a set, the slate is wiped clean for the next set. Winning 3–2 in legs awards the exact same set point as winning 3–0. A player can be comprehensively outplayed for 10 minutes and immediately recover.
+            </p>
+          </div>
+
+          <div class="tactic-item">
+            <h4>2. Breaks of Throw Are Magnified</h4>
+            <p>
+              Because each set is short (first to 3 legs), an early break of throw in Leg 1 or Leg 2 almost guarantees the set. In straight-legs play, an early break can easily be recovered over 18 legs. In set play, a momentary lapse of concentration surrenders an entire set.
+            </p>
+          </div>
+
+          <div class="tactic-item">
+            <h4>3. How a Player Can Win Fewer Legs but Win the Match</h4>
+            <p>
+              It is statistically possible for a player to win fewer total legs than their opponent across a match and still win the contest! For example, Player A wins sets 3–2, 3–2, and 3–2 (9 legs won, 6 legs lost). If Player B won two sets 3–0 and 3–0, Player B actually won 12 legs while Player A only won 9—yet Player A wins the match 3–2 in sets!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cross-Links Hub -->
+      <section class="content-card">
+        <h2>Related Rules & Tournament Guides</h2>
+        <div class="links-grid">
+          <a href="/darts/rules/" class="link-card">
+            <strong>Official 501 Rules & Dimensions</strong>
+            <span>Board height, oche throwline distance, scoring segments, and bust rule.</span>
+          </a>
+          <a href="/darts/average-explained/" class="link-card">
+            <strong>3-Dart Average Calculation</strong>
+            <span>How averages are scored and why scoring power interacts with double conversion.</span>
+          </a>
+          <a href="/history/world-championship-finals/" class="link-card">
+            <strong>PDC Finals Archive</strong>
+            <span>See full set scores and legendary 7–6 sudden-death deciders.</span>
+          </a>
+          <a href="/schedule/finals-weekend/" class="link-card">
+            <strong>Finals Weekend Schedule</strong>
+            <span>Check out session structures for the semi-finals and the 13-set final.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Set Play Summary</h3>
+        <ul class="fact-list">
+          <li><strong>Legs to Win a Set:</strong> 3 (Best of 5)</li>
+          <li><strong>Rounds 1 & 2:</strong> First to 3 sets</li>
+          <li><strong>Rounds 3 & 4:</strong> First to 4 sets</li>
+          <li><strong>Quarter-Finals:</strong> First to 5 sets</li>
+          <li><strong>Semi-Finals:</strong> First to 6 sets</li>
+          <li><strong>Final:</strong> First to 7 sets (Best of 13)</li>
+          <li><strong>Deciding Set Rule:</strong> Two clear legs up to 5-5</li>
+          <li><strong>Sudden Death:</strong> 11th leg at 5-5</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Master Darts Math</h3>
+        <p class="final-highlight">
+          Wondering why players with higher 3-dart averages sometimes lose in set play? Read our statistical breakdown.
+        </p>
+        <a href="/darts/average-explained/" class="btn btn-secondary full-width">Average Explained</a>
+      </div>
+
+      <AdSlot position="sidebar" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-brand-primary, #0c1a2c) 0%, #162a45 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0.5rem 0 1rem;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .badge-primary {
+    background: #0c1a2c;
+    color: #fff;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .content-layout {
+      grid-template-columns: 2.8fr 1.2fr;
+    }
+  }
+  .content-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .format-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    .format-comparison-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .format-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .format-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .format-box h3 {
+    margin: 0 0 0.5rem;
+    color: #0f172a;
+    font-size: 1.2rem;
+  }
+  .format-box p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 0.85rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+  .final-row {
+    background: #fefce8;
+  }
+  .table-footnote {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.75rem;
+  }
+  .tiebreak-explainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .tiebreak-step {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+  }
+  .highlight-step {
+    border-color: #ef4444;
+    background: #fef2f2;
+  }
+  .tb-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    background: #0f172a;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .tb-danger {
+    background: #dc2626;
+  }
+  .tiebreak-step h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .tiebreak-step p {
+    margin: 0 0 0.5rem;
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .example-box {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    color: #166534;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .tactics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .tactic-item {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    border-radius: 0 6px 6px 0;
+    padding: 1.25rem 1.5rem;
+  }
+  .tactic-item h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .tactic-item p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  .fact-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #334155;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .final-highlight {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+  }
+  .btn-secondary:hover {
+    background: #e2e8f0;
+  }
+  .full-width {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .format-rule-note {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.25rem;
+    color: #166534;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .format-rule-note strong {
+    color: #14532d;
+  }
+</style>

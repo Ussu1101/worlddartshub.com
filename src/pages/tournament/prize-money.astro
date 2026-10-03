@@ -1,0 +1,578 @@
+---
+// src/pages/tournament/prize-money.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import prizeMoneyData from '../../data/prize-money.json';
+
+const pageTitle = "PDC World Darts Championship Prize Money 2026/27 — £5M Purse Breakdown";
+const pageDescription = "Complete official prize money breakdown for the 2026/27 PDC World Darts Championship. See the £1,000,000 winner's fund, round-by-round payouts, and Order of Merit rules.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'Prize Money', url: '/tournament/prize-money/' }
+];
+
+const prizeMoneySchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/tournament/prize-money/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "2026/27 PDC World Darts Championship Prize Fund Distribution",
+    "numberOfItems": prizeMoneyData.official_breakdown.length,
+    "itemListElement": prizeMoneyData.official_breakdown.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": `${item.round}: ${item.per_player_formatted}`
+    }))
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={prizeMoneySchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="prize-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">HISTORIC £5,000,000 TOTAL FUND</span>
+        <span class="badge">OFFICIAL PDC PURSE</span>
+      </div>
+      <h1>PDC World Darts Championship Prize Money 2026/27</h1>
+      <p class="hero-lead">
+        The 2026/27 World Darts Championship delivers the largest prize fund in darts history, with a total purse of <strong>£5,000,000</strong> and a record <strong>£1,000,000</strong> awarded to the champion at Alexandra Palace's Great Hall.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status={prizeMoneyData.status} 
+          lastVerified={prizeMoneyData.last_verified} 
+          source={prizeMoneyData.source} 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Total Purse</span>
+          <span class="stat-value">{prizeMoneyData.total_fund_formatted}</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Winner's Share</span>
+          <span class="stat-value">{prizeMoneyData.winner_share_formatted}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Key Fast Facts Callout -->
+      <section class="content-section">
+        <h2>At A Glance: 2026/27 Purse Highlights</h2>
+        <div class="grid-3 facts-grid">
+          <div class="card fact-card">
+            <span class="fact-number">£1,000,000</span>
+            <h4>Champion's Cheque</h4>
+            <p>The winner earns £1M plus the historic Sid Waddell Trophy, doubling the previous £500,000 top prize.</p>
+          </div>
+          <div class="card fact-card">
+            <span class="fact-number">£15,000</span>
+            <h4>First Round Exit</h4>
+            <p>Even players eliminated in the opening round of 128 receive £15,000 towards their Order of Merit total.</p>
+          </div>
+          <div class="card fact-card">
+            <span class="fact-number">100% Match</span>
+            <h4>Order of Merit Impact</h4>
+            <p>Every single pound won is credited directly to the player's 2-year rolling world ranking total.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Official Round-by-Round Breakdown Table -->
+      <section class="content-section">
+        <h2>Official Round-by-Round Prize Money Distribution</h2>
+        <p>
+          Following the field expansion to 128 players, the PDC updated the prize pool across every stage of the competition:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table prize-table">
+            <thead>
+              <tr>
+                <th>Round Reached</th>
+                <th>Field Size</th>
+                <th>Match Format</th>
+                <th>Prize Per Player</th>
+                <th>Round Total Pool</th>
+              </tr>
+            </thead>
+            <tbody>
+              {prizeMoneyData.official_breakdown.map((row) => (
+                <tr class={row.per_player >= 400000 ? "highlight-row" : ""}>
+                  <td><strong>{row.round}</strong></td>
+                  <td>{row.players_count}</td>
+                  <td>{row.sets_format}</td>
+                  <td class="prize-cell"><strong>{row.per_player_formatted}</strong></td>
+                  <td>£{row.total_round_pool.toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="4">Total Tournament Prize Fund</th>
+                <th class="total-cell">{prizeMoneyData.total_fund_formatted}</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot slotType="banner" id="prize-money-mid-ad" />
+
+      <!-- Factual Verification Status Matrix -->
+      <section class="content-section">
+        <h2>2026/27 Factual Verification Status</h2>
+        <p>
+          Every prize-money figure is classified according to official PDC confirmation status:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table verification-table">
+            <thead>
+              <tr>
+                <th>Prize Claim / Metric</th>
+                <th>Status</th>
+                <th>Authoritative Source</th>
+                <th>Last Verified</th>
+              </tr>
+            </thead>
+            <tbody>
+              {prizeMoneyData.verification_status_matrix.map((row) => (
+                <tr>
+                  <td><strong>{row.claim}</strong></td>
+                  <td>
+                    <span class:list={['badge', row.status.includes('CONFIRMED') ? 'badge-accent' : '']}>
+                      {row.status}
+                    </span>
+                  </td>
+                  <td>{row.source}</td>
+                  <td>{row.last_verified}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Special Bonuses -->
+      <section class="content-section">
+        <h2>Special Achievement Bonuses: Nine-Darter Prize</h2>
+        <div class="card bonus-card">
+          <div class="bonus-header">
+            <h3>🎯 9-Dart Finish Bonus: £60,000</h3>
+            <span class="badge">EXPECTED / PENDING SPONSOR TERMS</span>
+          </div>
+          <p>
+            <strong>Status: Expected / Not Yet Formally Confirmed for 2026/27.</strong> While the core £5,000,000 tournament purse is officially confirmed by the PDC, individual nine-dart finish bonuses are historically funded by title sponsors (such as Paddy Power) and will be confirmed closer to the tournament. If multiple players achieve a nine-darter during the championship, the bonus pool is typically divided equally or matched per occurrence under sponsor contract terms.
+          </p>
+          <p class="micro-note">
+            <em>See the full list of perfect legs thrown in tournament history on our <a href="/history/nine-darters/">World Championship Nine-Darters Archive</a>.</em>
+          </p>
+        </div>
+      </section>
+
+      <!-- How World Championship Prize Money Affects Rankings -->
+      <section class="content-section">
+        <h2>Does World Championship Prize Money Count for the Order of Merit?</h2>
+        <p>
+          <strong>Yes.</strong> The PDC World Darts Championship is the most influential ranking event in professional darts. The relationship between tournament earnings and world rankings operates under strict regulations:
+        </p>
+        
+        <div class="card ranking-card">
+          <ul class="bullet-list">
+            <li>
+              <strong>1:1 Ratio:</strong> Every £1 won at Alexandra Palace counts as £1 on the official <a href="/tournament/order-of-merit/">PDC Order of Merit</a>.
+            </li>
+            <li>
+              <strong>Two-Year Rolling Window:</strong> The Order of Merit operates on a rolling 24-month calculation. Prize money won at the 2026/27 event replaces the prize money won at the 2024/25 championship.
+            </li>
+            <li>
+              <strong>Defending Money:</strong> Players who reached the later rounds two years prior face significant ranking defense pressure. A player defending £200,000 who exits in Round 2 will experience a net drop of £175,000 in their ranking total.
+            </li>
+            <li>
+              <strong>Non-Ranking Contrast:</strong> Unlike the World Championship, invitational events like Premier League Darts do not award Order of Merit money regardless of purse size.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Historical Comparison Table -->
+      <section class="content-section">
+        <h2>Historical Prize Money Growth (1994 – 2027)</h2>
+        <p>
+          Since Dennis Priestley won the inaugural PDC World Darts Championship at the Circus Tavern in 1994, the total prize fund has grown by over <strong>7,700%</strong>:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table history-table">
+            <thead>
+              <tr>
+                <th>Tournament Era</th>
+                <th>Host Venue</th>
+                <th>Total Fund</th>
+                <th>Winner's Share</th>
+                <th>Notable Champion</th>
+              </tr>
+            </thead>
+            <tbody>
+              {prizeMoneyData.historical_comparison.map((item) => (
+                <tr class={item.era.includes("2026/27") ? "current-era-row" : ""}>
+                  <td><strong>{item.era}</strong></td>
+                  <td>{item.venue}</td>
+                  <td>{item.total_purse}</td>
+                  <td><strong>{item.winner_prize}</strong></td>
+                  <td>{item.champion}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore The Tournament Ecosystem</h2>
+        <div class="grid-2">
+          <a href="/tournament/order-of-merit/" class="cluster-link-card">
+            <h3>📊 PDC Order of Merit Guide</h3>
+            <p>Understand how 2-year rolling prize money dictates seedings and qualification.</p>
+          </a>
+          <a href="/schedule/finals-weekend/" class="cluster-link-card">
+            <h3>🏆 Finals Weekend Schedule</h3>
+            <p>Full breakdown of session times and dates for the Quarter-Finals, Semi-Finals, and Final.</p>
+          </a>
+          <a href="/draw/" class="cluster-link-card">
+            <h3>🗺️ 128-Player Tournament Draw</h3>
+            <p>Track provisional seedings and qualification routes into the official bracket.</p>
+          </a>
+          <a href="/history/roll-of-honour/" class="cluster-link-card">
+            <h3>📜 World Champions Roll of Honour</h3>
+            <p>Complete historical list of every World Darts Champion and final score since 1994.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tournament Navigation</h3>
+        <ul class="widget-list">
+          <li><a href="/tournament/world-darts-championship/">Tournament Overview</a></li>
+          <li><a href="/tournament/order-of-merit/">PDC Order of Merit</a></li>
+          <li><a href="/draw/">Tournament Bracket & Draw</a></li>
+          <li><a href="/schedule/">Full 2026/27 Schedule</a></li>
+          <li><a href="/schedule/finals-weekend/">Finals Weekend Times</a></li>
+          <li><a href="/live/">Match Center & Scores</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="prize-money-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Spectator Quick Links</h3>
+        <ul class="widget-list">
+          <li><a href="/tickets/">Official Tickets & Ballot</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">Great Hall Seating Plan</a></li>
+          <li><a href="/watch/">Where to Watch Live TV</a></li>
+          <li><a href="/players/">128 Competitors Dossier</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .prize-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #22c55e;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .prize-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #4ade80;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .facts-grid {
+    margin-top: 1rem;
+  }
+
+  .fact-card {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-top: 4px solid #22c55e;
+  }
+
+  .fact-number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #15803d;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .fact-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+  }
+
+  .fact-card p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.45;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .highlight-row {
+    background: #f0fdf4;
+  }
+
+  .current-era-row {
+    background: #eff6ff;
+    font-weight: 600;
+  }
+
+  .prize-cell {
+    color: #15803d;
+    font-weight: 700;
+  }
+
+  .total-cell {
+    background: #15803d;
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
+
+  .bonus-card {
+    background: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 1.5rem;
+  }
+
+  .bonus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .micro-note {
+    font-size: 0.85rem;
+    color: #78350f;
+    margin-top: 0.75rem;
+  }
+
+  .ranking-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+  }
+
+  .bullet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding-left: 1.25rem;
+  }
+
+  .bullet-list li {
+    line-height: 1.55;
+    color: #334155;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #22c55e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .prize-hero h1 {
+      font-size: 2.15rem;
+    }
+  }
+</style>

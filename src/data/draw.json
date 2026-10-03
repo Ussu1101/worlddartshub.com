@@ -1,0 +1,109 @@
+{
+  "tournament_year": "2026/27",
+  "status": "pending_official_draw",
+  "status_badge": "Official Draw Pending",
+  "status_summary": "The official 128-player tournament bracket will be drawn in late November 2026 following the conclusion of the Players Championship Finals.",
+  "tournament_dates": "11 December 2026 – 3 January 2027",
+  "venue": "Alexandra Palace, London — The Great Hall",
+  "draw_announcement": {
+    "expected_date": "Late November 2026 (post-Players Championship Finals)",
+    "broadcast_channels": "Sky Sports News, PDC Official YouTube Channel, and PDCTV",
+    "draw_format": "Seeded bracket draw pairing 32 seeded players with ProTour and international qualifiers"
+  },
+  "bracket_structure": {
+    "total_field_size": 128,
+    "total_rounds": 7,
+    "seeded_players_count": 32,
+    "unseeded_players_count": 96,
+    "rounds_progression": [
+      {
+        "round_number": 1,
+        "round_name": "First Round",
+        "participants": 128,
+        "matches": 64,
+        "format": "Best of 5 Sets",
+        "losers_prize": "£15,000"
+      },
+      {
+        "round_number": 2,
+        "round_name": "Second Round",
+        "participants": 64,
+        "matches": 32,
+        "format": "Best of 5 Sets",
+        "losers_prize": "£25,000"
+      },
+      {
+        "round_number": 3,
+        "round_name": "Third Round",
+        "participants": 32,
+        "matches": 16,
+        "format": "Best of 7 Sets",
+        "losers_prize": "£35,000"
+      },
+      {
+        "round_number": 4,
+        "round_name": "Fourth Round (Last 16)",
+        "participants": 16,
+        "matches": 8,
+        "format": "Best of 7 Sets",
+        "losers_prize": "£60,000"
+      },
+      {
+        "round_number": 5,
+        "round_name": "Quarter-Finals",
+        "participants": 8,
+        "matches": 4,
+        "format": "Best of 9 Sets",
+        "losers_prize": "£100,000"
+      },
+      {
+        "round_number": 6,
+        "round_name": "Semi-Finals",
+        "participants": 4,
+        "matches": 2,
+        "format": "Best of 11 Sets",
+        "losers_prize": "£200,000"
+      },
+      {
+        "round_number": 7,
+        "round_name": "The Final",
+        "participants": 2,
+        "matches": 1,
+        "format": "Best of 13 Sets",
+        "runners_up_prize": "£400,000",
+        "winner_prize": "£1,000,000"
+      }
+    ]
+  },
+  "qualification_pathways": [
+    {
+      "category": "PDC Order of Merit (Top 32 Seeds)",
+      "allocation": 32,
+      "criteria": "Top 32 ranked players on the main 2-year rolling PDC Order of Merit at the November cutoff date. These players earn automatic tournament seeding."
+    },
+    {
+      "category": "ProTour Order of Merit Qualifiers",
+      "allocation": 32,
+      "criteria": "Top 32 highest non-qualified players from the 1-year PDC ProTour Order of Merit (calculated from non-televised Players Championship events and European Tour events)."
+    },
+    {
+      "category": "International & Global Affiliate Qualifiers",
+      "allocation": 64,
+      "criteria": "Global qualifiers from international affiliate tours including PDC Asian Tour, PDC Nordic & Baltic, DPA Australian Tour, CDC North American Championship, Championship Darts Latin America, African Qualifier, PDC Women's Series, PDC World Youth Championship, and the final Tour Card Holder PDPA Qualifier."
+    }
+  ],
+  "provisional_seed_contenders": [
+    { "projected_seed": 1, "player": "Luke Humphries", "nationality": "England", "basis": "Reigning World Champion & Order of Merit frontrunner" },
+    { "projected_seed": 2, "player": "Michael van Gerwen", "nationality": "Netherlands", "basis": "3x World Champion & perennial major winner" },
+    { "projected_seed": 3, "player": "Michael Smith", "nationality": "England", "basis": "2023 World Champion & multi-major finalist" },
+    { "projected_seed": 4, "player": "Luke Littler", "nationality": "England", "basis": "2024 World Finalist & Premier League Champion" },
+    { "projected_seed": 5, "player": "Gerwyn Price", "nationality": "Wales", "basis": "2021 World Champion & top-tier seed" },
+    { "projected_seed": 6, "player": "Rob Cross", "nationality": "England", "basis": "2018 World Champion & consistent major contender" },
+    { "projected_seed": 7, "player": "Dave Chisnall", "nationality": "England", "basis": "Multi-European Tour winner & prolific 180 scorer" },
+    { "projected_seed": 8, "player": "Jonny Clayton", "nationality": "Wales", "basis": "Former Premier League Champion & World Grand Prix winner" }
+  ],
+  "bracket_matches": [],
+  "last_verified": "2026-10-03",
+  "source": "Professional Darts Corporation (PDC) Rules & Regulations",
+  "source_url": "https://www.pdc.tv"
+}

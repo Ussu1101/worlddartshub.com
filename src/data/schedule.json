@@ -1,0 +1,149 @@
+{
+  "tournament_year": "2026/27",
+  "timezone": "Europe/London (GMT)",
+  "session_schedule_summary": {
+    "afternoon_doors": "11:30 GMT",
+    "afternoon_start": "12:30 GMT",
+    "evening_doors": "18:00 GMT",
+    "evening_start": "19:00 GMT"
+  },
+  "phases": [
+    {
+      "phase_name": "First & Second Rounds",
+      "date_range": "11 December – 23 December 2026",
+      "format": "Best of 5 Sets",
+      "sessions_count": 15,
+      "description": "15 sessions across 13 days of opening night and double/single sessions leading to Christmas."
+    },
+    {
+      "phase_name": "Christmas Holiday Break",
+      "date_range": "24 December – 26 December 2026",
+      "format": "No Matches",
+      "sessions_count": 0,
+      "description": "Three-day tournament hiatus for Christmas Eve, Christmas Day, and Boxing Day."
+    },
+    {
+      "phase_name": "Third & Fourth Rounds",
+      "date_range": "27 December – 30 December 2026",
+      "format": "Best of 7 Sets",
+      "sessions_count": 8,
+      "description": "The final 32 players compete in high-stakes double sessions."
+    },
+    {
+      "phase_name": "New Year's Eve Special Session",
+      "date_range": "31 December 2026",
+      "format": "Best of 7 Sets (Quarter-Final Prelude)",
+      "sessions_count": 1,
+      "description": "Traditional afternoon session; no evening darts on New Year's Eve."
+    },
+    {
+      "phase_name": "Quarter-Finals",
+      "date_range": "1 January 2027",
+      "format": "Best of 9 Sets",
+      "sessions_count": 2,
+      "description": "Afternoon (2 matches) and Evening (2 matches) on New Year's Day."
+    },
+    {
+      "phase_name": "Semi-Finals",
+      "date_range": "2 January 2027",
+      "format": "Best of 11 Sets",
+      "sessions_count": 1,
+      "description": "Evening session featuring both world semi-final matchups."
+    },
+    {
+      "phase_name": "World Championship Final",
+      "date_range": "3 January 2027",
+      "format": "Best of 13 Sets",
+      "sessions_count": 1,
+      "description": "The climax of the tournament: 7:30 PM GMT start, crowning the World Champion."
+    }
+  ],
+  "verified_dates": [
+    {
+      "date": "2026-12-11",
+      "day_of_week": "Friday",
+      "sessions": [
+        {
+          "session_type": "Evening Session",
+          "start_time_gmt": "19:00",
+          "round": "Round 1 (3 Matches) & Round 2 (1 Match)",
+          "featured": "Opening Night: Defending Champion usually headlines Match 4"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-12",
+      "day_of_week": "Saturday",
+      "sessions": [
+        {
+          "session_type": "Afternoon Session",
+          "start_time_gmt": "12:30",
+          "round": "Round 1 & Round 2",
+          "featured": "4 Matches"
+        },
+        {
+          "session_type": "Evening Session",
+          "start_time_gmt": "19:00",
+          "round": "Round 1 & Round 2",
+          "featured": "4 Matches"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-31",
+      "day_of_week": "Thursday",
+      "sessions": [
+        {
+          "session_type": "Afternoon Session Only",
+          "start_time_gmt": "12:30",
+          "round": "Round 4",
+          "featured": "Final 16 matches before New Year's celebrations"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-01",
+      "day_of_week": "Friday",
+      "sessions": [
+        {
+          "session_type": "Afternoon Session",
+          "start_time_gmt": "12:30",
+          "round": "Quarter-Finals (Matches 1 & 2)",
+          "featured": "Best of 9 Sets"
+        },
+        {
+          "session_type": "Evening Session",
+          "start_time_gmt": "19:00",
+          "round": "Quarter-Finals (Matches 3 & 4)",
+          "featured": "Best of 9 Sets"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-02",
+      "day_of_week": "Saturday",
+      "sessions": [
+        {
+          "session_type": "Evening Session",
+          "start_time_gmt": "19:30",
+          "round": "Semi-Finals",
+          "featured": "Best of 11 Sets (2 Matches)"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-03",
+      "day_of_week": "Sunday",
+      "sessions": [
+        {
+          "session_type": "Evening Session",
+          "start_time_gmt": "19:30",
+          "round": "The Final",
+          "featured": "Best of 13 Sets - Sid Waddell Trophy & £1,000,000 top prize"
+        }
+      ]
+    }
+  ],
+  "last_verified": "2026-10-03",
+  "status": "verified"
+}

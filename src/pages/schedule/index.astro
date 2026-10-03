@@ -1,0 +1,402 @@
+---
+// src/pages/schedule/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import scheduleData from '../../data/schedule.json';
+
+const pageTitle = "PDC World Darts Schedule 2026/27 — Dates, Sessions & Final (Alexandra Palace)";
+const pageDescription = "Full tournament schedule for the 2026/27 PDC World Darts Championship. 28 sessions from 11 Dec 2026 to 3 Jan 2027, Christmas break, and session start times.";
+
+const breadcrumbItems = [
+  { name: 'Schedule & Sessions' }
+];
+
+const scheduleFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What time do sessions start at the World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard afternoon sessions commence at 12:30 GMT (doors open 11:30 GMT). Evening sessions begin at 19:00 GMT (doors open 18:00 GMT)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there darts on Christmas Eve, Christmas Day, or Boxing Day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The PDC World Darts Championship observes a scheduled 3-day Christmas hiatus from 24 to 26 December 2026. Play resumes with Round 3 on Sunday 27 December 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is the PDC World Darts Championship 2026/27 Final?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The World Championship Final takes place on Sunday 3 January 2027 during the evening session (play begins at 19:30 GMT), played as the Best of 13 Sets."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={scheduleFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="schedule-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">TOURNAMENT TIMETABLE</span>
+        <span class="badge">28 SESSIONS</span>
+      </div>
+      <h1>PDC World Darts Championship 2026/27 Schedule</h1>
+      <p class="schedule-lead">
+        Full chronological fixtures, session opening times, round progressions, and holiday breaks for the 2026/27 championship at Alexandra Palace, London.
+      </p>
+    </div>
+  </header>
+
+  <div class="container schedule-layout">
+    <article class="schedule-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="2026/27 Session Dates & Tournament Phases" />
+
+      <!-- Session Timing Card -->
+      <section class="schedule-section">
+        <h2>Standard Daily Session Start Times</h2>
+        <div class="grid-2 timing-cards">
+          <div class="card timing-box">
+            <span class="session-label">AFTERNOON SESSION</span>
+            <div class="time-main">12:30 GMT</div>
+            <p><strong>Doors Open:</strong> {scheduleData.session_schedule_summary.afternoon_doors}</p>
+            <p><strong>Matches:</strong> Typically 4 matches (3x Round 1, 1x Round 2 in opening week).</p>
+          </div>
+
+          <div class="card timing-box dark-timing">
+            <span class="session-label label-gold">EVENING SESSION</span>
+            <div class="time-main text-white">19:00 GMT</div>
+            <p><strong>Doors Open:</strong> {scheduleData.session_schedule_summary.evening_doors}</p>
+            <p><strong>Matches:</strong> Typically 4 prime-time matches featuring seeded stars.</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="schedule-top-ad" />
+
+      <!-- Phase by Phase Schedule Table -->
+      <section class="schedule-section">
+        <h2>Tournament Phases & Round Progression</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Phase / Round</th>
+                <th>Dates</th>
+                <th>Match Format</th>
+                <th>Sessions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {scheduleData.phases.map((phase) => (
+                <tr>
+                  <td><strong>{phase.phase_name}</strong></td>
+                  <td>{phase.date_range}</td>
+                  <td>{phase.format}</td>
+                  <td>{phase.sessions_count > 0 ? `${phase.sessions_count} Sessions` : 'Hiatus (No Play)'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Key Dates Deep Dive -->
+      <section class="schedule-section">
+        <h2>Key Tournament Milestones</h2>
+        <div class="milestones-grid">
+          <div class="card milestone-card">
+            <span class="m-date">11 Dec 2026</span>
+            <h4>Opening Night</h4>
+            <p>The 2026/27 championship gets underway with reigning champion Luke Humphries and the opening round matches.</p>
+          </div>
+
+          <div class="card milestone-card break-card">
+            <span class="m-date">24–26 Dec</span>
+            <h4>Christmas Hiatus</h4>
+            <p>No matches played. Players and crew take a 3-day Christmas break before the Last 32 resume.</p>
+          </div>
+
+          <div class="card milestone-card">
+            <span class="m-date">31 Dec 2026</span>
+            <h4>New Year's Eve</h4>
+            <p>A single afternoon session of fourth-round action. The venue closes early ahead of London NYE celebrations.</p>
+          </div>
+
+          <div class="card milestone-card final-card">
+            <span class="m-date">3 Jan 2027</span>
+            <h4>The World Final</h4>
+            <p>Best of 13 sets. Winner claims £1,000,000 and the Sid Waddell Trophy in front of a worldwide audience.</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="in-feed" id="schedule-mid-ad" />
+
+      <!-- FAQs -->
+      <section class="schedule-section">
+        <h2>Frequently Asked Questions About the Schedule</h2>
+        <div class="faq-accordion">
+          {scheduleFaqSchema.mainEntity.map((item) => (
+            <div class="card faq-box">
+              <h4>{item.name}</h4>
+              <p>{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="schedule-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Watch & Live Hubs</h3>
+        <ul class="widget-list">
+          <li><a href="/live/">🎯 Match Center & Daily Order of Play</a></li>
+          <li><a href="/schedule/finals-weekend/">🏆 Finals Weekend Times</a></li>
+          <li><a href="/draw/">🗺️ Tournament Bracket & Draw</a></li>
+          <li><a href="/results/">📜 Match Results Center</a></li>
+          <li><a href="/watch/">📺 Legal TV & Live Streams</a></li>
+          <li><a href="/players/">🎯 128 Competitors & Seeds</a></li>
+          <li><a href="/tickets/">🎟️ Official Tickets & Ballot</a></li>
+          <li><a href="/venue/">🏛️ Alexandra Palace Handbook</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="schedule-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .schedule-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .schedule-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .schedule-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .schedule-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .schedule-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .timing-cards {
+    margin: 1.25rem 0;
+  }
+
+  .timing-box {
+    padding: 1.5rem;
+  }
+
+  .dark-timing {
+    background: #0f172a;
+    color: #f8fafc;
+  }
+
+  .session-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #0284c7;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .label-gold {
+    color: #f59e0b;
+  }
+
+  .time-main {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+
+  .text-white {
+    color: #ffffff;
+  }
+
+  .timing-box p {
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .dark-timing p {
+    color: #cbd5e1;
+  }
+
+  .milestones-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .milestone-card {
+    padding: 1.25rem;
+  }
+
+  .m-date {
+    display: inline-block;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+
+  .milestone-card h4 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    margin-bottom: 0.35rem;
+    color: #0f172a;
+  }
+
+  .milestone-card p {
+    font-size: 0.85rem;
+    color: #475569;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  .break-card {
+    background: #fffbeb;
+    border-color: #fef3c7;
+  }
+
+  .final-card {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+  }
+  .final-card .m-date {
+    background: #059669;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    padding: 1.25rem;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+  }
+
+  .schedule-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .schedule-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .timing-cards, .milestones-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

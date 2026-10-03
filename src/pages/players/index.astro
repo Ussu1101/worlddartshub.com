@@ -1,0 +1,483 @@
+---
+// src/pages/players/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import players from '../../data/players.json';
+
+const pageTitle = "PDC World Darts Championship 2026/27 Players — Seeds, Walk-Ons & Darts";
+const pageDescription = "Complete guide to the top contenders at the 2026/27 PDC World Darts Championship. Player profiles, walk-on music songs, tungsten dart weights, and Ally Pally records.";
+
+const breadcrumbItems = [
+  { name: 'Players & Contenders' }
+];
+
+const playersSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "breadcrumb": "https://worlddartsguide.com/players/"
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={playersSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="players-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">PLAYER DOSSIERS</span>
+        <span class="badge">128 TOUR COMPETITORS</span>
+      </div>
+      <h1>PDC World Darts Championship 2026/27 Contenders</h1>
+      <p class="players-lead">
+        Explore in-depth dossiers on the world's elite darts professionals competing at Alexandra Palace: walk-on entrance anthems, barrel tungsten specifications, career averages, prize earnings, and tournament histories.
+      </p>
+    </div>
+  </header>
+
+  <div class="container players-layout">
+    <div class="players-main-content">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Player Rosters & Official Equipment Partnerships" />
+
+      <!-- Player Knowledge & Statistics Hubs -->
+      <section class="hubs-section">
+        <h2>Player Authority & Statistical Hubs</h2>
+        <div class="hubs-grid">
+          <a href="/players/darts-equipment-specs/" class="hub-pill">
+            <span class="hub-icon">🎯</span>
+            <div class="hub-text">
+              <strong>Equipment Specs</strong>
+              <span>Tungsten weights & setups</span>
+            </div>
+          </a>
+          <a href="/players/walk-on-songs/" class="hub-pill">
+            <span class="hub-icon">🎵</span>
+            <div class="hub-text">
+              <strong>Walk-On Songs</strong>
+              <span>Stage anthems & crowd chants</span>
+            </div>
+          </a>
+          <a href="/players/rankings/" class="hub-pill">
+            <span class="hub-icon">📊</span>
+            <div class="hub-text">
+              <strong>Order of Merit</strong>
+              <span>Top 32 seeds & cut-off rules</span>
+            </div>
+          </a>
+          <a href="/players/earnings/" class="hub-pill">
+            <span class="hub-icon">💰</span>
+            <div class="hub-text">
+              <strong>Career Earnings</strong>
+              <span>All-time prize money leaderboard</span>
+            </div>
+          </a>
+          <a href="/players/stats/" class="hub-pill">
+            <span class="hub-icon">📈</span>
+            <div class="hub-text">
+              <strong>Player Stats</strong>
+              <span>3-dart averages & analytics</span>
+            </div>
+          </a>
+          <a href="/players/records/" class="hub-pill">
+            <span class="hub-icon">🏆</span>
+            <div class="hub-text">
+              <strong>All-Time Records</strong>
+              <span>World titles & scoring records</span>
+            </div>
+          </a>
+          <a href="/players/world-championship-records/" class="hub-pill">
+            <span class="hub-icon">🏛️</span>
+            <div class="hub-text">
+              <strong>Ally Pally Records</strong>
+              <span>Tournament averages & sets</span>
+            </div>
+          </a>
+          <a href="/players/9-darters/" class="hub-pill">
+            <span class="hub-icon">🎯</span>
+            <div class="hub-text">
+              <strong>Televised 9-Darters</strong>
+              <span>All 16 Ally Pally perfect legs</span>
+            </div>
+          </a>
+          <a href="/players/180-records/" class="hub-pill">
+            <span class="hub-icon">⚡</span>
+            <div class="hub-text">
+              <strong>180 Records</strong>
+              <span>Most maximums & match peaks</span>
+            </div>
+          </a>
+          <a href="/players/player-comparisons/" class="hub-pill">
+            <span class="hub-icon">⚔️</span>
+            <div class="hub-text">
+              <strong>Head-to-Head</strong>
+              <span>Humphries vs Littler & rivalries</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="players-top-leaderboard" />
+
+      <!-- Player Cards Grid -->
+      <section class="players-grid-section">
+        <h2>Elite Contenders & Seeded Stars (13 Profiles)</h2>
+        <div class="grid-2">
+          {players.map((player) => (
+            <div class="card player-profile-card">
+              <div class="card-head-row">
+                <span class="rank-tag">{player.pdc_order_of_merit_rank}</span>
+                <span class="nation-tag">{player.nationality}</span>
+              </div>
+
+              <div class="player-identity">
+                <h3 class="player-name">
+                  <a href={`/players/${player.slug}/`}>{player.name}</a>
+                </h3>
+                <p class="player-nick">"{player.nickname}"</p>
+              </div>
+
+              <div class="specs-table">
+                <div class="spec-row">
+                  <span class="spec-title">🎵 Walk-on Song:</span>
+                  <span class="spec-detail">{player.walk_on_song}</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-title">🎯 Darts Equipment:</span>
+                  <span class="spec-detail">{player.equipment.manufacturer} ({player.equipment.barrel_weight_grams})</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-title">🏆 Best Ally Pally:</span>
+                  <span class="spec-detail highlight">{player.world_championship_record.best_finish}</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-title">💰 Career Prize Money:</span>
+                  <span class="spec-detail prize-num">{player.career_prize_money_estimate}</span>
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a href={`/players/${player.slug}/`} class="btn btn-secondary btn-block">
+                  View Full Player Dossier &rarr;
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="players-mid-leaderboard" />
+
+      <!-- Walk-on Music & Fan Culture Explainer -->
+      <section class="culture-section">
+        <h2>The Alexandra Palace Walk-on Phenomenon</h2>
+        <p>
+          At the PDC World Darts Championship, a player's walk-on is much more than an entrance—it sets the atmospheric tone for the entire match. Over 3,000 fans in fancy dress sing along in unison to iconic arena anthems, from Pitbull's <em>"Don't Stop the Party"</em> to The White Stripes' <em>"Seven Nation Army"</em>.
+        </p>
+        <p>
+          Walk-ons also trigger substantial search demand from viewers watching at home on television asking: <em>"What song did Luke Littler walk on to?"</em> or <em>"Why does Michael van Gerwen use Seven Nation Army?"</em>. Explore our complete <a href="/players/walk-on-songs/">PDC Walk-On Songs Directory</a> for origins, artists, and crowd chants.
+        </p>
+      </section>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="players-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Player Authority Hubs</h3>
+        <ul class="widget-list">
+          <li><a href="/players/darts-equipment-specs/">🎯 Darts Equipment Specs</a></li>
+          <li><a href="/players/walk-on-songs/">🎵 Walk-On Songs & Anthems</a></li>
+          <li><a href="/players/rankings/">📊 Official Order of Merit</a></li>
+          <li><a href="/players/earnings/">💰 Player Career Earnings</a></li>
+          <li><a href="/players/stats/">📈 Performance Statistics</a></li>
+          <li><a href="/players/records/">🏆 All-Time Records</a></li>
+          <li><a href="/players/world-championship-records/">🏛️ World Championship Records</a></li>
+          <li><a href="/players/9-darters/">🎯 Televised Nine-Darters</a></li>
+          <li><a href="/players/180-records/">⚡ 180 Maximum Records</a></li>
+          <li><a href="/players/player-comparisons/">⚔️ Head-to-Head Rivalries</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tournament Navigation</h3>
+        <ul class="widget-list">
+          <li><a href="/schedule/">Full 2026/27 Match Schedule</a></li>
+          <li><a href="/schedule/finals-weekend/">Finals Weekend Schedule</a></li>
+          <li><a href="/draw/">Tournament Draw & Bracket</a></li>
+          <li><a href="/results/">Live Results Center</a></li>
+          <li><a href="/watch/">Live Stream & TV Channels</a></li>
+          <li><a href="/tournament/prize-money/">Prize Money & Rules</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="players-sidebar-rectangle" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Darts Equipment Standards</h3>
+        <p class="sidebar-micro">Under official DRA (Darts Regulation Authority) rules:</p>
+        <ul class="snapshot-bullets">
+          <li><strong>Max Length:</strong> 30.5 cm (12 inches)</li>
+          <li><strong>Max Weight:</strong> 50 grams (circuit average 21g–24g)</li>
+          <li><strong>Points:</strong> Steel-tip darts only on traditional sisal bristle boards.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .players-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #334155;
+    color: #f8fafc;
+    border-radius: 4px;
+  }
+  .badge-accent {
+    background: #f59e0b;
+    color: #0f172a;
+  }
+  .players-lead {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+  .players-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    margin: 2rem auto;
+  }
+  @media (max-width: 900px) {
+    .players-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .hubs-section {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .hubs-section h2 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    color: #f8fafc;
+  }
+  .hubs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+  }
+  .hub-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .hub-pill:hover {
+    border-color: #38bdf8;
+    transform: translateY(-2px);
+  }
+  .hub-icon {
+    font-size: 1.5rem;
+  }
+  .hub-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .hub-text strong {
+    color: #f8fafc;
+    font-size: 0.9rem;
+  }
+  .hub-text span {
+    color: #94a3b8;
+    font-size: 0.75rem;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+  .player-profile-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-head-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  .rank-tag {
+    background: #0f172a;
+    border: 1px solid #475569;
+    color: #38bdf8;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+  .nation-tag {
+    color: #94a3b8;
+    font-size: 0.8rem;
+  }
+  .player-name {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  .player-name a {
+    color: #f8fafc;
+    text-decoration: none;
+  }
+  .player-name a:hover {
+    color: #38bdf8;
+  }
+  .player-nick {
+    color: #f59e0b;
+    font-size: 0.85rem;
+    margin: 0.15rem 0 1rem;
+  }
+  .specs-table {
+    border-top: 1px solid #334155;
+    padding-top: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+  }
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+    gap: 0.5rem;
+  }
+  .spec-title {
+    color: #94a3b8;
+    white-space: nowrap;
+  }
+  .spec-detail {
+    color: #cbd5e1;
+    text-align: right;
+  }
+  .spec-detail.highlight {
+    color: #f59e0b;
+    font-weight: 600;
+  }
+  .spec-detail.prize-num {
+    color: #10b981;
+    font-weight: 600;
+  }
+  .btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem;
+    border-radius: 4px;
+    background: #334155;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn-block:hover {
+    background: #475569;
+  }
+  .culture-section {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  .culture-section h2 {
+    color: #f8fafc;
+    margin-top: 0;
+  }
+  .culture-section p {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .culture-section a {
+    color: #38bdf8;
+  }
+  .sidebar-widget {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .widget-title {
+    margin-top: 0;
+    color: #f8fafc;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .widget-list li {
+    margin-bottom: 0.5rem;
+  }
+  .widget-list a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+  .widget-list a:hover {
+    color: #38bdf8;
+  }
+  .sidebar-micro {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+  }
+  .snapshot-bullets {
+    padding-left: 1.25rem;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    margin: 0;
+  }
+  .snapshot-bullets li {
+    margin-bottom: 0.4rem;
+  }
+</style>

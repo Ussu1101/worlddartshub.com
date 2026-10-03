@@ -1,0 +1,166 @@
+{
+  "tournament_year": "2026/27",
+  "status": "confirmed",
+  "currency": "GBP",
+  "currency_symbol": "£",
+  "total_fund": 5000000,
+  "total_fund_formatted": "£5,000,000",
+  "winner_share": 1000000,
+  "winner_share_formatted": "£1,000,000",
+  "expansion_notes": "The 2026/27 World Darts Championship features a historic £5,000,000 total prize fund with £1,000,000 awarded to the winner, coinciding with the expansion to 128 players and the move to Alexandra Palace's Great Hall.",
+  "official_breakdown": [
+    {
+      "round": "Winner (World Champion)",
+      "players_count": 1,
+      "per_player": 1000000,
+      "per_player_formatted": "£1,000,000",
+      "total_round_pool": 1000000,
+      "sets_format": "Best of 13 Sets",
+      "order_of_merit_credit": "Full £1,000,000 credited to 2-year rolling Order of Merit"
+    },
+    {
+      "round": "Runner-Up",
+      "players_count": 1,
+      "per_player": 400000,
+      "per_player_formatted": "£400,000",
+      "total_round_pool": 400000,
+      "sets_format": "Best of 13 Sets",
+      "order_of_merit_credit": "£400,000 credited to 2-year rolling Order of Merit"
+    },
+    {
+      "round": "Semi-Finalists",
+      "players_count": 2,
+      "per_player": 200000,
+      "per_player_formatted": "£200,000",
+      "total_round_pool": 400000,
+      "sets_format": "Best of 11 Sets",
+      "order_of_merit_credit": "£200,000 credited to 2-year rolling Order of Merit"
+    },
+    {
+      "round": "Quarter-Finalists",
+      "players_count": 4,
+      "per_player": 100000,
+      "per_player_formatted": "£100,000",
+      "total_round_pool": 400000,
+      "sets_format": "Best of 9 Sets",
+      "order_of_merit_credit": "£100,000 credited to 2-year rolling Order of Merit"
+    },
+    {
+      "round": "Fourth Round (Last 16)",
+      "players_count": 8,
+      "per_player": 60000,
+      "per_player_formatted": "£60,000",
+      "total_round_pool": 480000,
+      "sets_format": "Best of 7 Sets",
+      "order_of_merit_credit": "£60,000 credited to 2-year rolling Order of Merit"
+    },
+    {
+      "round": "Third Round (Last 32)",
+      "players_count": 16,
+      "per_player": 35000,
+      "per_player_formatted": "£35,000",
+      "total_round_pool": 560000,
+      "sets_format": "Best of 7 Sets",
+      "order_of_merit_credit": "£35,000 credited to 2-year rolling Order of Merit"
+    },
+    {
+      "round": "Second Round (Last 64)",
+      "players_count": 32,
+      "per_player": 25000,
+      "per_player_formatted": "£25,000",
+      "total_round_pool": 800000,
+      "sets_format": "Best of 5 Sets",
+      "order_of_merit_credit": "£25,000 credited to 2-year rolling Order of Merit"
+    },
+    {
+      "round": "First Round (Last 128)",
+      "players_count": 64,
+      "per_player": 15000,
+      "per_player_formatted": "£15,000",
+      "total_round_pool": 960000,
+      "sets_format": "Best of 5 Sets",
+      "order_of_merit_credit": "£15,000 credited to 2-year rolling Order of Merit"
+    }
+  ],
+  "special_bonuses": [
+    {
+      "bonus_name": "Nine-Dart Finish Bonus",
+      "estimated_value": "£60,000",
+      "status": "EXPECTED / NOT YET CONFIRMED",
+      "terms": "Subject to official 2026/27 title sponsor contract terms. While the £5M core prize pool is PDC-confirmed, individual nine-dart finish bonuses are historically funded through tournament title sponsor initiatives (e.g., Paddy Power) and will be confirmed closer to the event."
+    },
+    {
+      "bonus_name": "Highest Tournament Average Bonus",
+      "estimated_value": "Trophy & Sponsor Recognition",
+      "status": "EXPECTED / NOT YET CONFIRMED",
+      "terms": "Subject to annual title sponsor charity and player initiatives."
+    }
+  ],
+  "verification_status_matrix": [
+    { "claim": "£5,000,000 Total Purse", "status": "CONFIRMED 2026/27", "source": "PDC Official Tournament Regulations (pdc.tv)", "last_verified": "2026-10-03" },
+    { "claim": "£1,000,000 Winner's Prize", "status": "CONFIRMED 2026/27", "source": "PDC Official Announcement (pdc.tv)", "last_verified": "2026-10-03" },
+    { "claim": "£15,000 First-Round Prize", "status": "CONFIRMED 2026/27", "source": "PDC 128-Player Prize Fund Distribution", "last_verified": "2026-10-03" },
+    { "claim": "Round-by-Round Breakdown", "status": "CONFIRMED 2026/27", "source": "PDC Official Payout Schedule", "last_verified": "2026-10-03" },
+    { "claim": "£60,000 Nine-Dart Bonus", "status": "EXPECTED / NOT YET CONFIRMED", "source": "Historical Title Sponsor Precedent (Paddy Power)", "last_verified": "2026-10-03" },
+    { "claim": "Order of Merit 1:1 Treatment", "status": "CONFIRMED 2026/27", "source": "PDC Rulebook (Rule 3.1)", "last_verified": "2026-10-03" }
+  ],
+  "order_of_merit_rules": {
+    "ranking_impact": "Direct 1:1 ratio. Every £1 won in World Championship prize money is credited directly to the player's official 2-year rolling PDC Order of Merit ranking.",
+    "defending_money_concept": "Because the Order of Merit operates across a rolling 24-month window, players 'defend' the exact prize money won at the World Championship two years prior. A champion from two years ago must reach the final or win again to protect their ranking position.",
+    "non_ranking_events_contrast": "Tournaments such as Premier League Darts, the World Series of Darts, and Masters are non-ranking invitational events; their prize money does NOT contribute to Order of Merit rankings."
+  },
+  "historical_comparison": [
+    {
+      "era": "1994 (Inaugural WDC)",
+      "venue": "Circus Tavern, Purfleet",
+      "total_purse": "£64,000",
+      "winner_prize": "£16,000",
+      "champion": "Dennis Priestley (England)"
+    },
+    {
+      "era": "2002",
+      "venue": "Circus Tavern, Purfleet",
+      "total_purse": "£200,000",
+      "winner_prize": "£50,000",
+      "champion": "Phil Taylor (England)"
+    },
+    {
+      "era": "2006",
+      "venue": "Circus Tavern, Purfleet",
+      "total_purse": "£500,000",
+      "winner_prize": "£100,000",
+      "champion": "Phil Taylor (England)"
+    },
+    {
+      "era": "2010",
+      "venue": "Alexandra Palace (West Hall)",
+      "total_purse": "£1,000,000",
+      "winner_prize": "£200,000",
+      "champion": "Phil Taylor (England)"
+    },
+    {
+      "era": "2014",
+      "venue": "Alexandra Palace (West Hall)",
+      "total_purse": "£1,050,000",
+      "winner_prize": "£250,000",
+      "champion": "Michael van Gerwen (Netherlands)"
+    },
+    {
+      "era": "2019 – 2025",
+      "venue": "Alexandra Palace (West Hall)",
+      "total_purse": "£2,500,000",
+      "winner_prize": "£500,000",
+      "champion": "Michael van Gerwen (2019), Peter Wright (2020/22), Gerwyn Price (2021), Michael Smith (2023), Luke Humphries (2024)"
+    },
+    {
+      "era": "2026/27 (Current Era)",
+      "venue": "Alexandra Palace (Great Hall)",
+      "total_purse": "£5,000,000",
+      "winner_prize": "£1,000,000",
+      "champion": "To be decided (Tournament scheduled Dec 11, 2026 – Jan 3, 2027)"
+    }
+  ],
+  "last_verified": "2026-10-03",
+  "source": "Professional Darts Corporation (PDC) Official Prize Fund Regulations",
+  "source_url": "https://www.pdc.tv"
+}

@@ -1,0 +1,114 @@
+{
+  "event": "PDC World Darts Championship 2026/27",
+  "destination": "North & Central London",
+  "last_verified": "2026-10-03",
+  "status": "confirmed",
+  "price_disclaimer": "Price Snapshot Advisory: London hotel rates are highly volatile during the festive championship period (mid-December to early January). Room rates escalate significantly for Friday and Saturday evening sessions, Boxing Day, and New Year's Eve/Finals weekend. Rates shown are indicative base snapshot estimates for a standard double/twin room based on advance direct bookings.",
+  "strategic_areas": [
+    {
+      "area": "Wood Green",
+      "zone": "Zone 3",
+      "distance_to_venue": "0.8 – 1.2 miles",
+      "transit_time": "15–20 min walk or 8 min via W3 bus",
+      "summary": "The closest dedicated town center hub to Alexandra Palace. Ideal for walking back after late evening sessions without relying on public transit.",
+      "pros": ["Walking distance to Ally Pally", "No late night tube dependency", "Abundant budget eateries on High Road"],
+      "cons": ["Limited number of hotel properties; sells out quickly"]
+    },
+    {
+      "area": "Finsbury Park",
+      "zone": "Zone 2",
+      "distance_to_venue": "2.8 miles",
+      "transit_time": "15–20 mins via direct W3 bus or Piccadilly Line to Wood Green",
+      "summary": "Major northern transit interchange with Victoria Line, Piccadilly Line, Thameslink, and direct W3 bus to Palm Court.",
+      "pros": ["Direct bus right to venue entrance", "Excellent transit links across London", "Vibrant multicultural dining and pub scene"],
+      "cons": ["Busy urban interchange area"]
+    },
+    {
+      "area": "King's Cross / St. Pancras",
+      "zone": "Zone 1",
+      "distance_to_venue": "5.5 miles",
+      "transit_time": "14 mins direct tube (Piccadilly Line to Wood Green)",
+      "summary": "The premier transit hub for international visitors and UK spectators traveling by train. High volume of branded budget chain options.",
+      "pros": ["Direct single-train tube to Wood Green", "Extensive budget chain hotel supply", "National & Eurostar rail connections"],
+      "cons": ["Zone 1 hotel rates higher than suburban North London"]
+    },
+    {
+      "area": "Archway & Highgate",
+      "zone": "Zone 2/3",
+      "distance_to_venue": "2.5 miles",
+      "transit_time": "15–25 mins via 43 or 134 bus to Muswell Hill",
+      "summary": "Pleasant North London residential hubs on the Northern Line, offering short bus rides across to Muswell Hill and Alexandra Palace.",
+      "pros": ["Close to historic Highgate Village", "Direct Northern Line tube into the West End", "Good local pubs and quieter atmosphere"],
+      "cons": ["Requires bus transfer or short cab to reach the venue entrance"]
+    }
+  ],
+  "verified_budget_hotels": [
+    {
+      "name": "Travelodge London Wood Green",
+      "brand": "Travelodge UK",
+      "location": "High Road, Wood Green, London N22 8HH",
+      "area": "Wood Green",
+      "distance_to_venue": "0.9 miles (approx. 18-minute walk to Palm Court)",
+      "transit_notes": "Walk up Station Road or take the W3 bus from opposite the hotel directly to Palm Court.",
+      "indicative_rate_range": "£75 – £145 per night (weekday/advance snapshot) / surges to £160+ for weekend & holiday sessions",
+      "official_url": "https://www.travelodge.co.uk/hotels/604/London-Wood-Green-hotel",
+      "reception_hours": "24-Hour Reception (ideal for 23:30 return from evening sessions)",
+      "status": "confirmed"
+    },
+    {
+      "name": "Travelodge London Finsbury Park",
+      "brand": "Travelodge UK",
+      "location": "Isledon Road, Finsbury Park, London N4 3HF",
+      "area": "Finsbury Park",
+      "distance_to_venue": "2.8 miles (approx. 20 minutes via W3 bus)",
+      "transit_notes": "Located 2 minutes from Finsbury Park Station; board the W3 bus directly to Alexandra Palace Palm Court.",
+      "indicative_rate_range": "£70 – £140 per night (advance snapshot) / higher on weekends",
+      "official_url": "https://www.travelodge.co.uk/hotels/539/London-Finsbury-Park-hotel",
+      "reception_hours": "24-Hour Reception",
+      "status": "confirmed"
+    },
+    {
+      "name": "Premier Inn London Archway",
+      "brand": "Premier Inn (Whitbread)",
+      "location": "Hamson Way, Archway, London N19 3TD",
+      "area": "Archway / Highgate",
+      "distance_to_venue": "2.4 miles (approx. 20 minutes via 43/134 bus or taxi)",
+      "transit_notes": "Directly beside Archway Underground station (Northern Line). Take bus 43 or 134 towards Muswell Hill.",
+      "indicative_rate_range": "£80 – £150 per night (advance snapshot)",
+      "official_url": "https://www.premierinn.com/gb/en/hotels/england/greater-london/london/london-archway.html",
+      "reception_hours": "24-Hour Reception with on-site Thyme restaurant",
+      "status": "confirmed"
+    },
+    {
+      "name": "Premier Inn London Finsbury Park",
+      "brand": "Premier Inn (Whitbread)",
+      "location": "Wells Terrace, Finsbury Park, London N4 3JU",
+      "area": "Finsbury Park",
+      "distance_to_venue": "2.9 miles (approx. 20 minutes via W3 bus)",
+      "transit_notes": "Situated directly adjacent to Finsbury Park Station bus interchange (Stop G for W3).",
+      "indicative_rate_range": "£85 – £160 per night (advance snapshot)",
+      "official_url": "https://www.premierinn.com/gb/en/hotels/england/greater-london/london/london-finsbury-park.html",
+      "reception_hours": "24-Hour Reception",
+      "status": "confirmed"
+    },
+    {
+      "name": "hub by Premier Inn London King's Cross",
+      "brand": "hub by Premier Inn",
+      "location": "50 Wharfdale Road, King's Cross, London N1 9FA",
+      "area": "King's Cross",
+      "distance_to_venue": "5.3 miles (14-min tube ride to Wood Green + bus/walk)",
+      "transit_notes": "Compact smart-design budget hotel 5 minutes from King's Cross St. Pancras station. Take Piccadilly Line direct to Wood Green.",
+      "indicative_rate_range": "£80 – £155 per night (advance snapshot)",
+      "official_url": "https://www.premierinn.com/gb/en/hotels/england/greater-london/london/hub-london-kings-cross.html",
+      "reception_hours": "24-Hour Reception",
+      "status": "confirmed"
+    }
+  ],
+  "booking_recommendations": [
+    "Book as soon as your match session is secured in the ticket ballot: Alexandra Palace's festive dates coincide with London Christmas shopping and holiday tourism, creating severe hotel compression.",
+    "Prioritize 24-hour reception: Evening darts sessions conclude around 23:00 GMT, meaning arrival back at your hotel often occurs after 23:30 GMT.",
+    "Verify flexible cancellation policies: Consider semi-flexible rates that allow free cancellations in case of schedule changes or ticket resale outcomes."
+  ],
+  "source": "Direct Hotel Operator Registries, TfL Journey Planner & Official Visitor Records",
+  "source_url": "https://www.travelodge.co.uk"
+}

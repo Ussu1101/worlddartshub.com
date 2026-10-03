@@ -1,0 +1,65 @@
+---
+// src/pages/editorial-policy.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const pageTitle = "Editorial Policy & Fact-Checking Standards — World Darts Guide";
+const pageDescription = "Our editorial standards, verification procedures, anti-piracy stance, and commercial transparency policies at World Darts Guide.";
+
+const breadcrumbItems = [
+  { name: 'Editorial Policy' }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="container container-narrow page-content">
+    <h1>Editorial & Verification Policy</h1>
+    <p class="lead">
+      At World Darts Guide, accuracy, integrity, and user trust guide every piece of content we produce.
+    </p>
+
+    <h2>1. Fact-Checking & Primary Sources</h2>
+    <p>
+      Sports fans rely on our guides to plan costly trips and subscribe to sports broadcasts. To prevent misinformation, all information published on this website must be verified against primary sources:
+    </p>
+    <ul>
+      <li>Official announcements from the <strong>Professional Darts Corporation (PDC)</strong>.</li>
+      <li>Venue operation policies published by the <strong>Alexandra Palace and Park Trust</strong>.</li>
+      <li>Public contract releases and channel lineups from licensed broadcast partners (Sky, DAZN, Viaplay, Sport1, Foxtel).</li>
+      <li>Transport updates from <strong>Transport for London (TfL)</strong> and National Rail.</li>
+    </ul>
+
+    <h2>2. Strict Anti-Piracy Policy</h2>
+    <p>
+      World Darts Guide maintains an absolute zero-tolerance policy regarding unauthorized, pirated, or illicit sports streams:
+    </p>
+    <ul>
+      <li>We do <strong>not</strong> host, embed, link to, or provide instructions for accessing illegal streaming websites, IPTV platforms, or unauthorized video feeds.</li>
+      <li>All streaming links on our platform direct exclusively to verified, licensed broadcast rights holders in their respective territories.</li>
+      <li>We actively educate users on the security risks (malware, phishing, aggressive adware) associated with illegal stream networks.</li>
+    </ul>
+
+    <h2>3. Commercial Disclosure & Advertising</h2>
+    <p>
+      World Darts Guide is monetized primarily through display advertising networks and select contextual partnerships:
+    </p>
+    <ul>
+      <li>Display advertisements are clearly separated from editorial copy using explicit labels ("Advertisement" or "Sponsored").</li>
+      <li>Editorial recommendations are never dictated or influenced by advertisers. We provide objective assessments of ticket platforms, hotel locations, and viewing options.</li>
+    </ul>
+
+    <h2>4. Corrections & Errata Policy</h2>
+    <p>
+      When an error occurs—such as a last-minute schedule postponement, player withdrawal, or ticket price revision—we update the affected page promptly and note the verification timestamp. Readers who identify potential errors are encouraged to notify our editorial team via our <a href="/contact/">contact form</a>.
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-content {
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+</style>

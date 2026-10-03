@@ -1,0 +1,100 @@
+{
+  "event": "PDC World Darts Championship 2026/27",
+  "venue": "Alexandra Palace, London",
+  "last_verified": "2026-10-03",
+  "status": "confirmed",
+  "payment_policy": {
+    "status": "confirmed",
+    "description": "Strictly 100% Cashless. Alexandra Palace operates entirely without cash. All arena bars, street-food stalls, and official merchandise counters accept card and contactless mobile payments only (Apple Pay, Google Pay, Visa, Mastercard). Cash is not accepted anywhere inside the venue."
+  },
+  "venue_licensing_and_water": {
+    "challenge_25": {
+      "status": "confirmed",
+      "rule": "Challenge 25 age verification is strictly enforced at every bar. Valid photographic government ID (passport or photocard driving license) is required for anyone appearing under 25."
+    },
+    "intoxication_policy": {
+      "status": "confirmed",
+      "rule": "In compliance with UK licensing laws, venue security and bar supervisors will refuse alcohol service and eject excessively intoxicated, aggressive, or disruptive individuals."
+    },
+    "free_water": {
+      "status": "confirmed",
+      "rule": "Complimentary drinking water refill points are available inside the venue concourse. Spectators may bring empty reusable plastic water bottles (or factory-sealed water bottles up to 500ml) through security checkpoints."
+    },
+    "outside_alcohol": {
+      "status": "confirmed",
+      "rule": "Outside alcohol, unsealed bottles, glass containers, and metal cans are strictly prohibited and will be confiscated at bag check."
+    }
+  },
+  "permanent_facilities": {
+    "the_phoenix_bar_and_pizzeria": {
+      "title": "The Phoenix Bar & Pizzeria",
+      "status": "confirmed",
+      "description": "Alexandra Palace's permanent on-site pub and pizzeria featuring panoramic terrace views overlooking the London skyline. Operates year-round with indoor seating and a large heated outdoor terrace.",
+      "access_rules": "Open to ticket holders and park visitors prior to Great Hall session entry. Highly frequented on match days; arriving early is recommended.",
+      "atmosphere": "Traditional gastro-pub offerings, stone-baked pizzas, draught craft ales, and terrace seating."
+    }
+  },
+  "tournament_arena_catering": {
+    "draught_and_pitchers": {
+      "status": "historical",
+      "title": "Arena Draught Bars & Pitcher Service",
+      "description": "In recent World Championships, massive high-throughput draught bars have operated across the Great Hall, famously serving 4-pint draught beer pitchers to speed up service for group table seating. Reusable souvenir stack cups with interlocking handles have been utilized to cut plastic waste.",
+      "confirmation_note": "Established tournament operational format. Specific 2026/27 tournament drinks menus, cup deposit amounts, and pricing will be confirmed upon tournament commencement."
+    },
+    "fan_village_street_food": {
+      "status": "historical",
+      "title": "Palm Court Street Food Village",
+      "description": "The Palm Court concourse hosts an indoor street-food village for spectators before and during sessions. Typical food offerings across recent championships have included smash burgers, stone-baked sourdough pizza, hog roast baps, fried chicken tenders, and vegan/vegetarian wraps.",
+      "example_traders_recent_editions": [
+        "Smash burgers and loaded seasoned fries",
+        "Stone-baked sourdough pizza slices",
+        "Slow-roasted hog roast rolls with crackling",
+        "Fried chicken tenders and wings",
+        "Vegetarian halloumi wraps and vegan falafel boxes",
+        "Churros, sweet waffles, and barista coffee"
+      ],
+      "dietary_notes": "Vegan, vegetarian, and gluten-free choices are consistently provided across event catering lineups.",
+      "confirmation_note": "Menu items and street food traders rotate annually. The specific vendor lineup and pricing for the 2026/27 tournament will be published closer to December 2026."
+    }
+  },
+  "nearby_establishments": [
+    {
+      "name": "The Starting Gate",
+      "type": "Traditional Public House",
+      "location": "Station Road, Wood Green, London N22 7SS",
+      "proximity": "Directly opposite Alexandra Palace National Rail Station (approx. 0.6 miles / 10–15 min walk to venue)",
+      "vibe": "Well-known pre-darts meeting spot for rail passengers. Lively darts atmosphere with beer garden and traditional pub fare.",
+      "session_fit": "Convenient for pre-afternoon and pre-evening drinks before walking up Station Road."
+    },
+    {
+      "name": "The Victoria Stakes",
+      "type": "Independent Gastropub",
+      "location": "1 Muswell Hill, London N10 3TH",
+      "proximity": "At the foot of Muswell Hill near park gates (approx. 0.5 miles / 10 min walk to venue)",
+      "vibe": "Victorian gastropub serving seasonal British dishes, craft beers, and wines.",
+      "session_fit": "Suitable for a sit-down meal or drink prior to ascending into the grounds."
+    },
+    {
+      "name": "The Mossy Well",
+      "type": "Wetherspoon Pub & Hotel",
+      "location": "258 Muswell Hill Broadway, London N10 3SH",
+      "proximity": "Muswell Hill Broadway (approx. 0.9 miles / 15–20 min walk or short bus ride to venue)",
+      "vibe": "Spacious pub offering budget-conscious breakfasts, pub classics, and real ales via table ordering app.",
+      "session_fit": "Popular for value-focused pre-event dining."
+    },
+    {
+      "name": "The Alexandra Park Tavern",
+      "type": "Community Local Pub",
+      "location": "111 Green Lanes, London N13 4SP",
+      "proximity": "Near north-eastern corner of Alexandra Park (approx. 1.1 miles from venue)",
+      "vibe": "Neighborhood tavern serving draught ales and sports broadcasts.",
+      "session_fit": "Alternative option outside the direct Wood Green station corridor."
+    }
+  ],
+  "session_timing_advisories": {
+    "afternoon_session": "Afternoon sessions typically finish around 16:30 GMT. Restaurants and eateries in Muswell Hill Broadway and Wood Green High Road operate normal dinner services.",
+    "evening_session": "Evening sessions typically conclude around 23:00 GMT. Most suburban neighborhood pubs in North London close or stop serving at 23:00. Spectators wishing to continue celebrations typically travel toward Finsbury Park or central London where extended late-night licenses operate."
+  },
+  "source": "Alexandra Palace Visitor Regulations & Trading Standards (Permanent Facilities); Recent World Championship Spectator Archives (Event Catering)",
+  "source_url": "https://www.alexandrapalace.com/visitor-information/"
+}

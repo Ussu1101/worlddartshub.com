@@ -1,0 +1,406 @@
+---
+// src/pages/hotels/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Best Hotels Near Alexandra Palace for the Darts — 2026/27 Guide";
+const pageDescription = "Where to stay for the PDC World Darts Championship at Alexandra Palace. Top hotels in Wood Green, Muswell Hill, Finsbury Park, and King's Cross with late check-in.";
+
+const breadcrumbItems = [
+  { name: 'Hotels & Accommodation' }
+];
+
+const hotelFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where is the best area to stay for Alexandra Palace darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For walking distance, Wood Green and Muswell Hill are closest. For convenient transport and vibrant nightlife, staying near Finsbury Park (10 mins via W3 bus or Piccadilly Line) or King's Cross St. Pancras (14 mins direct on the Piccadilly Line) is recommended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far in advance should you book hotels for the World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the tournament runs through the peak festive holiday season (mid-December to early January), nearby hotels in North London sell out months in advance. Booking as soon as your ticket session is confirmed is strongly advised."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={hotelFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="hotels-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">ACCOMMODATION GUIDE</span>
+        <span class="badge">NORTH LONDON HOTELS</span>
+      </div>
+      <h1>Best Hotels Near Alexandra Palace Darts</h1>
+      <p class="hotels-lead">
+        Find the best places to stay for the 2026/27 World Darts Championship. Strategic hotels in Wood Green, Muswell Hill, Finsbury Park, and King's Cross with easy late-night transport.
+      </p>
+    </div>
+  </header>
+
+  <div class="container hotels-layout">
+    <article class="hotels-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="North London Transit Routes & Hotel Accessibility" />
+
+      <!-- Strategic Area Comparison -->
+      <section class="hotels-section">
+        <h2>Strategic Staying Hubs for Ally Pally</h2>
+        <p>
+          Alexandra Palace is located on a hilltop in north London. Because late evening sessions finish around 23:00 GMT, staying near direct transport arteries ensures you can return to your room quickly and safely:
+        </p>
+
+        <div class="grid-3 area-cards">
+          <div class="card area-card">
+            <h3>1. Wood Green</h3>
+            <span class="area-badge">Closest Hub (Zone 3)</span>
+            <p><strong>Transit:</strong> 15-20 min walk or 8 min on W3 bus.</p>
+            <p><strong>Vibe:</strong> Budget-friendly hotels, bustling high street, late night dining.</p>
+          </div>
+
+          <div class="card area-card">
+            <h3>2. Finsbury Park</h3>
+            <span class="area-badge">Fast Transit (Zone 2)</span>
+            <p><strong>Transit:</strong> 10 mins direct via W3 bus or Piccadilly line.</p>
+            <p><strong>Vibe:</strong> Great pub scene, Victoria & Piccadilly line interchange.</p>
+          </div>
+
+          <div class="card area-card">
+            <h3>3. King's Cross</h3>
+            <span class="area-badge">Central & Transport (Zone 1)</span>
+            <p><strong>Transit:</strong> 14 mins direct on the Piccadilly Line.</p>
+            <p><strong>Vibe:</strong> Premium hotels, Eurostar, direct trains to all UK regions.</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="hotels-top-ad" />
+
+      <!-- Top Hotel Recommendations -->
+      <section class="hotels-section">
+        <h2>Top Recommended Hotels by Area</h2>
+
+        <!-- Area 1: Wood Green & Local -->
+        <div class="hotel-cluster">
+          <h3>Local: Wood Green & Muswell Hill</h3>
+          <div class="hotel-card">
+            <h4>Travelodge London Wood Green</h4>
+            <p class="hotel-dist">📍 1.1 miles from Alexandra Palace (approx. 20 min walk or short bus)</p>
+            <p class="hotel-desc">
+              Extremely popular with darts fans due to its walking proximity. Features standard king beds, 24-hour reception (ideal for late night session returns), and budget-friendly pricing when booked early.
+            </p>
+          </div>
+
+          <div class="hotel-card">
+            <h4>Rose Garden Hotel Muswell Hill</h4>
+            <p class="hotel-dist">📍 0.9 miles from Alexandra Palace</p>
+            <p class="hotel-desc">
+              Situated in quaint Muswell Hill village. Quiet boutique accommodation within walking distance of the palace's western gates.
+            </p>
+          </div>
+        </div>
+
+        <!-- Area 2: Finsbury Park -->
+        <div class="hotel-cluster">
+          <h3>Finsbury Park (Hub Interchange)</h3>
+          <div class="hotel-card">
+            <h4>Premier Inn London Archway / Finsbury Park</h4>
+            <p class="hotel-dist">📍 Direct bus/tube access to Wood Green</p>
+            <p class="hotel-desc">
+              Reliable chain comfort with Hypnos beds, on-site breakfast, and seamless connections on the Piccadilly and Victoria lines.
+            </p>
+          </div>
+        </div>
+
+        <!-- Area 3: King's Cross -->
+        <div class="hotel-cluster">
+          <h3>King's Cross St. Pancras (Central Hub)</h3>
+          <div class="hotel-card">
+            <h4>Premier Inn London King's Cross & Hub by Premier Inn</h4>
+            <p class="hotel-dist">📍 14 minutes direct on Piccadilly Line from Wood Green</p>
+            <p class="hotel-desc">
+              The premier strategic base for fans traveling into London from out of town or abroad. Step off the train at King's Cross, drop your bags, and take the Piccadilly Line straight to Wood Green.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 1.25rem;">
+          <h4 style="margin-top: 0; margin-bottom: 0.35rem; color: #166534;">Looking for Verified Low-Cost Chain Accommodation?</h4>
+          <p style="margin-bottom: 0.5rem; color: #14532d; font-size: 0.9rem;">
+            Explore our curated price snapshot breakdown covering Travelodge Wood Green, Premier Inn Finsbury Park & Archway, 24-hour reception requirements, and holiday rate surges.
+          </p>
+          <a href="/hotels/budget-options/" style="color: #047857; font-weight: 700; text-decoration: underline; font-size: 0.95rem;">
+            Read Complete Budget Hotels Guide & Price Snapshots →
+          </a>
+        </div>
+      </section>
+
+      <AdSlot slotType="in-feed" id="hotels-mid-ad" />
+
+      <!-- Booking Tips -->
+      <section class="hotels-section">
+        <h2>Spectator Booking Tips for the Festive Season</h2>
+        <div class="callout tips-box">
+          <h3>💡 What You Need to Know:</h3>
+          <ul>
+            <li><strong>Festive Premium:</strong> Room rates increase significantly between 26 December and 1 January. Lock in flexible cancellation rates early.</li>
+            <li><strong>24-Hour Reception:</strong> Ensure your hotel offers 24-hour front desk check-in if you attend an evening session concluding near midnight.</li>
+            <li><strong>Stay Near the Piccadilly Line:</strong> Staying anywhere along the Piccadilly Line between King's Cross and Cockfosters provides a seamless single-train journey.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="hotels-section">
+        <h2>Frequently Asked Questions About Staying Near Ally Pally</h2>
+        <div class="faq-accordion">
+          {hotelFaqSchema.mainEntity.map((item) => (
+            <div class="card faq-box">
+              <h4>{item.name}</h4>
+              <p>{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="hotels-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Visitor Guides</h3>
+        <ul class="widget-list">
+          <li><a href="/hotels/budget-options/">🛌 Dedicated Budget Hotels Guide</a></li>
+          <li><a href="/travel/">🚇 London Transport Overview</a></li>
+          <li><a href="/travel/tube-train-routes/">🚆 Tube & Rail Routes</a></li>
+          <li><a href="/venue/">🏛️ Alexandra Palace Handbook</a></li>
+          <li><a href="/venue/security-bag-policy/">🎒 Security & Bag Restrictions</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">🪑 Seating Plan Guide</a></li>
+          <li><a href="/tickets/">🎟️ Official Tickets & Ballot</a></li>
+          <li><a href="/fancy-dress/">🦸‍♂️ Fancy Dress Rules</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="hotels-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hotels-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #10b981;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .hotels-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .hotels-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .hotels-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .hotels-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .area-cards {
+    margin: 1.5rem 0;
+  }
+
+  .area-card {
+    padding: 1.25rem;
+  }
+
+  .area-card h3 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .area-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #059669;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+  }
+
+  .area-card p {
+    font-size: 0.84rem;
+    margin-bottom: 0.5rem;
+    color: #475569;
+  }
+
+  .hotel-cluster {
+    margin-bottom: 2rem;
+  }
+
+  .hotel-cluster h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .hotel-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .hotel-card h4 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+  }
+
+  .hotel-dist {
+    font-size: 0.82rem;
+    color: #0284c7;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .hotel-desc {
+    font-size: 0.88rem;
+    color: #475569;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .tips-box {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 1.25rem;
+    border-radius: 6px;
+  }
+
+  .tips-box h3 {
+    margin-top: 0;
+    color: #92400e;
+    font-size: 1.1rem;
+  }
+
+  .tips-box ul {
+    margin-bottom: 0;
+    padding-left: 1.2rem;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    padding: 1.25rem;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+  }
+
+  .hotels-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .hotels-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

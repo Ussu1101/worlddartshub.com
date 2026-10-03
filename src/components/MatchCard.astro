@@ -1,0 +1,201 @@
+---
+// src/components/MatchCard.astro
+interface Match {
+  match_id?: string;
+  id?: string;
+  round: string;
+  scheduled_gmt?: string;
+  scheduledTimeGMT?: string;
+  player_1?: string;
+  player_2?: string;
+  player1?: string;
+  player2?: string;
+  p1Seed?: number;
+  p2Seed?: number;
+  status?: string;
+  score?: {
+    sets: [number, number];
+    currentLeg?: [number, number];
+  };
+  winner?: string;
+  stageSummary?: string;
+}
+
+interface Props {
+  match: Match;
+}
+
+const { match } = Astro.props;
+
+const player1 = match.player1 || match.player_1 || 'TBD';
+const player2 = match.player2 || match.player_2 || 'TBD';
+const timeStr = match.scheduledTimeGMT || match.scheduled_gmt || 'TBD';
+const rawStatus = (match.status || 'upcoming').toLowerCase();
+const isLive = rawStatus === 'live';
+const isFinished = rawStatus === 'finished';
+---
+
+<div class:list={['match-card', { 'match-live': isLive }]}>
+  <div class="match-meta">
+    <span class="match-round">{match.round}</span>
+    <div class="match-timing">
+      {isLive ? (
+        <span class="badge badge-live">IN PROGRESS</span>
+      ) : isFinished ? (
+        <span class="badge">FINAL RESULT</span>
+      ) : (
+        <span class="match-time-tag">🕒 {timeStr} GMT</span>
+      )}
+    </div>
+  </div>
+
+  <div class="match-players">
+    <!-- Player 1 -->
+    <div class:list={['player-row', { 'is-winner': match.winner === player1 }]}>
+      <div class="player-identity">
+        {match.p1Seed && <span class="seed-badge">({match.p1Seed})</span>}
+        <span class="player-name">{player1}</span>
+      </div>
+      <div class="player-score">
+        {match.score ? (
+          <span class="sets-number">{match.score.sets[0]}</span>
+        ) : (
+          <span class="dash">-</span>
+        )}
+      </div>
+    </div>
+
+    <!-- Player 2 -->
+    <div class:list={['player-row', { 'is-winner': match.winner === player2 }]}>
+      <div class="player-identity">
+        {match.p2Seed && <span class="seed-badge">({match.p2Seed})</span>}
+        <span class="player-name">{player2}</span>
+      </div>
+      <div class="player-score">
+        {match.score ? (
+          <span class="sets-number">{match.score.sets[1]}</span>
+        ) : (
+          <span class="dash">-</span>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <div class="match-footer">
+    <span class="stage-info">{match.stageSummary || 'Alexandra Palace Main Stage'}</span>
+    <a href="/live/" class="match-cta">Match Center &rarr;</a>
+  </div>
+</div>
+
+<style>
+  .match-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .match-live {
+    border-color: #f87171;
+    background: #fffafa;
+  }
+
+  .match-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .match-round {
+    color: #64748b;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .match-time-tag {
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .match-players {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+  }
+
+  .player-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    background: #f8fafc;
+  }
+
+  .player-row.is-winner {
+    background: #ecfdf5;
+    border-left: 3px solid #10b981;
+  }
+
+  .player-identity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .seed-badge {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  .player-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .sets-number {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: #0f172a;
+  }
+
+  .player-row.is-winner .player-name,
+  .player-row.is-winner .sets-number {
+    color: #065f46;
+  }
+
+  .dash {
+    color: #94a3b8;
+  }
+
+  .match-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.6rem;
+  }
+
+  .stage-info {
+    color: #64748b;
+  }
+
+  .match-cta {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .match-cta:hover {
+    text-decoration: underline;
+  }
+</style>

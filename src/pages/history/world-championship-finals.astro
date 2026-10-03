@@ -1,0 +1,650 @@
+---
+// src/pages/history/world-championship-finals.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import finalsData from '../../data/world-championship-finals.json';
+
+const pageTitle = "All-Time PDC World Championship Finals — Scores, Averages & Match History";
+const pageDescription = "Explore the complete archive of every PDC World Darts Championship final (1994–2026). Full match scores, finalist 3-dart averages, iconic moments, and venue records.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'History', url: '/history/' },
+  { name: 'World Championship Finals', url: '/history/world-championship-finals/' }
+];
+
+const finalsSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/history/world-championship-finals/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "PDC World Darts Championship Finals",
+    "numberOfItems": finalsData.pdc_finals.length,
+    "itemListElement": finalsData.pdc_finals.map((finalMatch, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": `${finalMatch.year} Final: ${finalMatch.winner} ${finalMatch.score} ${finalMatch.runner_up} (${finalMatch.venue})`
+    }))
+  }
+};
+
+// Filter out 2026/27 for statistics
+const completedFinals = finalsData.pdc_finals.filter(f => f.winner_avg !== null);
+const highestFinalAvg = [...completedFinals].sort((a, b) => parseFloat(b.winner_avg) - parseFloat(a.winner_avg))[0];
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={finalsSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">FINALS ARCHIVE</span>
+        <span class="badge">1994 – PRESENT</span>
+      </div>
+      <h1>PDC World Championship Finals (1994–Present)</h1>
+      <p class="lead-text">
+        The ultimate stage in world darts. Explore every final played in PDC history—from the inaugural 1994 showdown in Purfleet to the modern high-stakes blockbusters at Alexandra Palace, complete with official match scores, three-dart averages, and historic context.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={finalsData.last_verified} topic="PDC World Darts Championship Official Finals Archives" />
+
+      <!-- Quick Stats Callout -->
+      <section class="content-card stats-overview">
+        <h2>PDC Finals Record Book</h2>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-number">33</span>
+            <span class="stat-label">Finals Staged (1994–2026)</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">110.94</span>
+            <span class="stat-label">Record Final Avg (Taylor 2009)</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Sudden-Death Final Legs</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Clean-Sweep Whitewashes</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Complete Finals Table -->
+      <section class="content-card">
+        <h2>Complete PDC World Championship Finals Archive</h2>
+        <p>
+          Every final is contested over the best-of-13 sets format (first to 7 sets), with early tournaments played over best-of-11 sets (first to 6 sets, 1994–1999). Three-dart averages represent official electronic match averages.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Season (Final)</th>
+                <th>Champion</th>
+                <th>Score</th>
+                <th>Runner-Up</th>
+                <th>Winner Avg</th>
+                <th>R-Up Avg</th>
+                <th>Venue</th>
+              </tr>
+            </thead>
+            <tbody>
+              {finalsData.pdc_finals.map((match) => (
+                <tr class={match.season === '2026/27' ? 'upcoming-row' : ''}>
+                  <td>
+                    <strong>{match.season}</strong>
+                    <span class="sub-final-year">({match.final_year} Final)</span>
+                  </td>
+                  <td>
+                    {match.winner.includes('TBD') ? (
+                      <span class="tbd-text">{match.winner}</span>
+                    ) : (
+                      <span class="winner-name">🏆 {match.winner}</span>
+                    )}
+                  </td>
+                  <td class="score-cell"><code>{match.score}</code></td>
+                  <td>{match.runner_up}</td>
+                  <td>{match.winner_avg ? match.winner_avg : '—'}</td>
+                  <td>{match.runner_up_avg ? match.runner_up_avg : '—'}</td>
+                  <td><span class="venue-pill">{match.venue.split(',')[0]}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="table-footnote">
+          * Note: 1994–1999 finals were contested as best-of-11 sets (first to 6 sets). From the 2000 tournament onwards, finals are contested as best-of-13 sets (first to 7 sets). Learn more about the <a href="/darts/legs-vs-sets/">Sets and Legs match format</a>.
+        </p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Iconic Finals Breakdown -->
+      <section class="content-card">
+        <h2>Most Iconic Finals in Championship History</h2>
+        <div class="narrative-blocks">
+          <article class="narrative-block">
+            <div class="narrative-header">
+              <span class="year-badge">2007</span>
+              <h3>Raymond van Barneveld 7 – 6 Phil Taylor (Circus Tavern)</h3>
+            </div>
+            <p>
+              Universally regarded by purists as the greatest match ever broadcast. Having crossed over from the BDO, five-time world champion Raymond van Barneveld confronted 13-time champion Phil Taylor in the final tournament at Essex's Circus Tavern. Taylor surged to a 3-0 set lead, Barney mounted an astonishing fightback, and the contest stretched to 5-5 in legs in the 13th deciding set. Under the sudden-death rule, Barney won the bull-off, held throw, and hit double 20 to clinch the title in immortal fashion.
+            </p>
+          </article>
+
+          <article class="narrative-block">
+            <div class="narrative-header">
+              <span class="year-badge">2023</span>
+              <h3>Michael Smith 7 – 4 Michael van Gerwen (Alexandra Palace)</h3>
+            </div>
+            <p>
+              A contest forever etched into sporting folklore by "The Greatest Leg of Darts in History." In the second set, Van Gerwen wired double 12 for a nine-dart finish; seconds later, Michael Smith stepped up and nailed treble 20, treble 19, and double 12 to complete his own nine-darter, triggering commentary bedlam from Wayne Mardle ("I can't spake!"). Smith went on to average 99.24, hitting 22 maximums to lift the Sid Waddell Trophy and claim World No. 1.
+            </p>
+          </article>
+
+          <article class="narrative-block">
+            <div class="narrative-header">
+              <span class="year-badge">2024</span>
+              <h3>Luke Humphries 7 – 4 Luke Littler (Alexandra Palace)</h3>
+            </div>
+            <p>
+              The most-watched darts event in British broadcasting history. World No. 1 Luke Humphries squared off against 16-year-old debut sensation Luke Littler. Littler stormed to a 4-2 lead in sets, looking primed to become the youngest world champion in history. Humphries staged a masterclass in composure, winning five consecutive sets with a 103.67 average and 23 maximums to claim his maiden world title.
+            </p>
+          </article>
+
+          <article class="narrative-block">
+            <div class="narrative-header">
+              <span class="year-badge">2018</span>
+              <h3>Rob Cross 7 – 2 Phil Taylor (Alexandra Palace)</h3>
+            </div>
+            <p>
+              A passing-of-the-torch spectacle. Phil "The Power" Taylor competed in his 21st and final World Championship decider, bidding for a 17th world title. Debutant Rob Cross—an electrician playing his first year on the professional PDC tour—delivered one of the finest finals performances in history, averaging 107.67 to win 7-2 and crown a fairytale rookie season.
+            </p>
+          </article>
+
+          <article class="narrative-block">
+            <div class="narrative-header">
+              <span class="year-badge">2017</span>
+              <h3>Michael van Gerwen 7 – 3 Gary Anderson (Alexandra Palace)</h3>
+            </div>
+            <p>
+              The pinnacle of sustained scoring firepower. Across 10 breathless sets, Van Gerwen (107.79 avg) and reigning champion Anderson (104.93 avg) combined for 42 maximum 180s—an all-time record for a World Championship final. Anderson hit 22 maximums and MVG hit 20 in a match that set new standards for elite stage precision.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Statistical Milestones & Records -->
+      <section class="content-card">
+        <h2>Top 5 Highest Winning Final Averages</h2>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Year</th>
+                <th>Opponent</th>
+                <th>Final Average</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><strong>Phil Taylor</strong></td>
+                <td>2009</td>
+                <td>Raymond van Barneveld</td>
+                <td><strong class="highlight-avg">110.94</strong></td>
+                <td>Won 7–1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><strong>Michael van Gerwen</strong></td>
+                <td>2017</td>
+                <td>Gary Anderson</td>
+                <td><strong class="highlight-avg">107.79</strong></td>
+                <td>Won 7–3</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><strong>Rob Cross</strong></td>
+                <td>2018</td>
+                <td>Phil Taylor</td>
+                <td><strong class="highlight-avg">107.67</strong></td>
+                <td>Won 7–2</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><strong>Phil Taylor</strong></td>
+                <td>2001</td>
+                <td>John Part</td>
+                <td><strong class="highlight-avg">107.46</strong></td>
+                <td>Won 7–0</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><strong>Phil Taylor</strong></td>
+                <td>2006</td>
+                <td>Peter Manley</td>
+                <td><strong class="highlight-avg">106.74</strong></td>
+                <td>Won 7–0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-footnote">
+          Learn how averages are measured and why scoring pace interacts with double conversion in our <a href="/darts/average-explained/">3-Dart Average Guide</a>.
+        </p>
+      </section>
+
+      <!-- Venue Evolution -->
+      <section class="content-card">
+        <h2>Venue Breakdown: Circus Tavern vs Alexandra Palace</h2>
+        <div class="venue-comparison-grid">
+          <div class="venue-box">
+            <h3>Circus Tavern, Purfleet (1994–2007)</h3>
+            <ul>
+              <li><strong>Finals Staged:</strong> 14</li>
+              <li><strong>Champions Crowned:</strong> Phil Taylor (11), John Part (1), Dennis Priestley (1), Raymond van Barneveld (1)</li>
+              <li><strong>Atmosphere:</strong> Low-ceilinged, intimate 800-seat cabaret hall, legendary walk-ons down narrow aisles.</li>
+              <li><strong>Final Match:</strong> Barney 7–6 Taylor (1 Jan 2007)</li>
+            </ul>
+          </div>
+          <div class="venue-box">
+            <h3>Alexandra Palace, London (2007/08–Present)</h3>
+            <ul>
+              <li><strong>Finals Staged:</strong> 19 (through January 2026)</li>
+              <li><strong>Champions Crowned:</strong> Phil Taylor (3), MVG (3), Gary Anderson (2), Peter Wright (2), Adrian Lewis (2), Luke Littler (2), John Part (1), Rob Cross (1), Gerwyn Price (1), Michael Smith (1), Luke Humphries (1)</li>
+              <li><strong>Atmosphere:</strong> Event-specific seated arena (expanded to 5,000+ fans per session for 2026/27, within a 10,250-capacity concert hall), global festival atmosphere, and passionate international fan contingents.</li>
+              <li><strong>Inaugural Ally Pally Final:</strong> John Part 7–2 Kirk Shepherd (1 January 2008, concluding 2007/08 championship)</li>
+            </ul>
+          </div>
+        </div>
+        <p>
+          Read the full architectural and cultural story in our <a href="/history/alexandra-palace-world-championship/">Alexandra Palace Darts History Guide</a>.
+        </p>
+      </section>
+
+      <!-- Cross-Links Hub -->
+      <section class="content-card">
+        <h2>Related Historical & Tournament Guides</h2>
+        <div class="links-grid">
+          <a href="/history/roll-of-honour/" class="link-card">
+            <strong>World Darts Roll of Honour</strong>
+            <span>Complete PDC & BDO champions list, title counts, and era breakdown.</span>
+          </a>
+          <a href="/history/nine-darters/" class="link-card">
+            <strong>Nine-Darters at the World Championship</strong>
+            <span>All 16 Ally Pally perfect legs, video retrospectives, and sponsor bonuses.</span>
+          </a>
+          <a href="/schedule/finals-weekend/" class="link-card">
+            <strong>Finals Weekend Schedule</strong>
+            <span>Session times, semi-final and final running orders for the upcoming championship.</span>
+          </a>
+          <a href="/tournament/prize-money/" class="link-card">
+            <strong>Prize Money & Trophy Archive</strong>
+            <span>Winner purse evolution from £16,000 (1994) to £1,000,000 (2026/27).</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>2026/27 World Final</h3>
+        <p class="final-highlight">
+          <strong>Date:</strong> Sunday, 3 January 2027<br />
+          <strong>Venue:</strong> Alexandra Palace, Great Hall<br />
+          <strong>Distance:</strong> Best of 13 sets (First to 7)<br />
+          <strong>Winner Prize:</strong> £1,000,000<br />
+          <strong>Trophy:</strong> Sid Waddell Trophy
+        </p>
+        <a href="/schedule/finals-weekend/" class="btn btn-secondary full-width">Finals Schedule & Times</a>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Historical Fast Facts</h3>
+        <ul class="fact-list">
+          <li><strong>Most Final Appearances:</strong> Phil Taylor (21)</li>
+          <li><strong>Most Finals Won:</strong> Phil Taylor (14)</li>
+          <li><strong>Youngest Finalist:</strong> Luke Littler (16 yrs, 347 days in 2024)</li>
+          <li><strong>Youngest Champion:</strong> Luke Littler (17 yrs, 347 days in 2025)</li>
+          <li><strong>Oldest Champion:</strong> Phil Taylor (52 yrs, 141 days in 2013)</li>
+        </ul>
+      </div>
+
+      <AdSlot position="sidebar" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-brand-primary, #0c1a2c) 0%, #162a45 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0.5rem 0 1rem;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .content-layout {
+      grid-template-columns: 2.8fr 1.2fr;
+    }
+  }
+  .content-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  .stat-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+  .stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-brand-primary, #0c1a2c);
+  }
+  .stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 0.25rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 0.85rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .score-cell code {
+    background: #f1f5f9;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .winner-name {
+    font-weight: 700;
+    color: #0c1a2c;
+  }
+  .sub-final-year {
+    display: block;
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 500;
+  }
+  .tbd-text {
+    font-style: italic;
+    color: #94a3b8;
+  }
+  .upcoming-row {
+    background: #fefce8;
+  }
+  .venue-pill {
+    display: inline-block;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    background: #f1f5f9;
+    font-size: 0.8rem;
+    color: #475569;
+  }
+  .highlight-avg {
+    color: #b45309;
+    font-weight: 700;
+  }
+  .table-footnote {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+  }
+  .narrative-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .narrative-block {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    border-radius: 0 6px 6px 0;
+    padding: 1.25rem 1.5rem;
+  }
+  .narrative-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .year-badge {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+  .narrative-header h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .narrative-block p {
+    margin: 0;
+    color: #334155;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .venue-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    .venue-comparison-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .venue-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .venue-box h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .venue-box ul {
+    margin: 0.75rem 0 0;
+    padding-left: 1.2rem;
+    color: #334155;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  .final-highlight {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+  .fact-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #334155;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+  }
+  .btn-secondary:hover {
+    background: #e2e8f0;
+  }
+  .full-width {
+    width: 100%;
+    box-sizing: border-box;
+  }
+</style>

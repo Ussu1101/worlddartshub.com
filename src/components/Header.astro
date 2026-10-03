@@ -1,0 +1,220 @@
+---
+// src/components/Header.astro
+const navLinks = [
+  { href: '/live/', label: 'Match Center' },
+  { href: '/watch/', label: 'Watch & Stream' },
+  { href: '/schedule/', label: 'Schedule' },
+  { href: '/players/', label: 'Players' },
+  { href: '/venue/', label: 'Ally Pally Guide' },
+  { href: '/travel/', label: 'Travel & Hotels' },
+  { href: '/tickets/', label: 'Tickets' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="top-announcement-bar">
+    <div class="container announcement-inner">
+      <span class="announcement-tag">2026/27 TOURNAMENT</span>
+      <span class="announcement-text">
+        🎯 11 Dec 2026 – 3 Jan 2027 • Alexandra Palace Great Hall, London • £5,000,000 Prize Fund
+      </span>
+      <a href="/tournament/world-darts-championship/" class="announcement-link">Tournament Facts &rarr;</a>
+    </div>
+  </div>
+
+  <div class="main-header">
+    <div class="container header-container">
+      <a href="/" class="brand-logo" aria-label="World Darts Guide Home">
+        <span class="logo-icon">🎯</span>
+        <div class="logo-text-group">
+          <span class="brand-title">WORLD DARTS GUIDE</span>
+          <span class="brand-subtitle">Ally Pally 2026/27 Spectator & Streaming Hub</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          {navLinks.map((link) => {
+            const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+            return (
+              <li class="nav-item">
+                <a 
+                  href={link.href} 
+                  class:list={['nav-link', { active: isActive }]}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {link.label}
+                  {link.badge && <span class="nav-badge">{link.badge}</span>}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background-color: #0f172a;
+    border-bottom: 2px solid #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .top-announcement-bar {
+    background: #020617;
+    border-bottom: 1px solid #1e293b;
+    padding: 0.35rem 0;
+    font-size: 0.78rem;
+    color: #94a3b8;
+  }
+
+  .announcement-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .announcement-tag {
+    background-color: #f59e0b;
+    color: #0f172a;
+    font-weight: 800;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+
+  .announcement-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .announcement-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .announcement-link:hover {
+    text-decoration: underline;
+  }
+
+  .main-header {
+    padding: 0.85rem 0;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .logo-icon {
+    font-size: 1.85rem;
+    line-height: 1;
+  }
+
+  .logo-text-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-title {
+    font-weight: 900;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    line-height: 1.1;
+  }
+
+  .brand-subtitle {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-menu {
+    display: flex;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.85rem;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .nav-link:hover {
+    background-color: #1e293b;
+    color: #ffffff;
+  }
+
+  .nav-link.active {
+    background-color: #1e293b;
+    color: #f59e0b;
+    border: 1px solid #334155;
+  }
+
+  .nav-badge {
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 0.1rem 0.35rem;
+    border-radius: 9999px;
+  }
+
+  @media (max-width: 900px) {
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .nav-list {
+      gap: 0.2rem;
+    }
+    .nav-link {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.82rem;
+    }
+    .announcement-text {
+      display: none;
+    }
+  }
+</style>

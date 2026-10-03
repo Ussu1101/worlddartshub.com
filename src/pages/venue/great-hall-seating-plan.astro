@@ -1,0 +1,392 @@
+---
+// src/pages/venue/great-hall-seating-plan.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import venueData from '../../data/venues.json';
+
+const pageTitle = "Alexandra Palace Darts Seating Plan — Tables vs Tiered Seats Guide (2026/27)";
+const pageDescription = "Comprehensive Great Hall seating plan guide for the PDC World Darts Championship. Compare floor tables vs tiered grandstands, screen sightlines, and best views.";
+
+const breadcrumbItems = [
+  { name: 'Venue Guide', url: '/venue/' },
+  { name: 'Great Hall Seating Plan' }
+];
+
+const seatingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are table seats or tiered seats better at Alexandra Palace darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Table seats offer the most electric, party-focused atmosphere and proximity to player walk-ons, but require sitting at long banquet benches with active crowds. Tiered seats provide elevated, unobstructed sightlines directly over the crowd toward the giant LED screens and stage, making them ideal for watching the dartboard action clearly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you see the actual dartboard from the back of the Great Hall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The physical dartboard is small (regulation 45cm diameter), so even from front tables, spectators rely heavily on the multiple ultra-HD giant projection and LED screens suspended directly beside the stage and from the ceiling."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={seatingFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="seating-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">SEATING & SIGHTLINES</span>
+        <span class="badge">GREAT HALL</span>
+      </div>
+      <h1>Alexandra Palace Darts Seating Plan & Guide</h1>
+      <p class="seating-lead">
+        Table seats or tiered grandstand? Understand the layout of the Great Hall, screen sightlines, acoustic zones, and how to choose the right tickets for your group.
+      </p>
+    </div>
+  </header>
+
+  <div class="container seating-layout">
+    <article class="seating-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="Alexandra Palace Great Hall Expanded 5,000+ Configuration" />
+
+      <!-- Floor Layout Overview -->
+      <section class="seating-section">
+        <h2>Great Hall Layout & Configuration</h2>
+        <p>
+          The Great Hall at Alexandra Palace is an expansive Victorian exhibition space spanning over 4,000 square meters. During the PDC World Darts Championship, the hall is configured into two distinct seating sectors flanking the central broadcast stage and raised oche:
+        </p>
+
+        <div class="seating-visual-diagram">
+          <div class="diagram-stage">🎯 RAISED STAGE & MAIN OCHE 🎯</div>
+          <div class="diagram-walkway">🚶‍♂️ PLAYER WALK-ON CATWALK 🚶‍♂️</div>
+          <div class="diagram-tables">
+            <strong>FLOOR TABLE SEATING (Zone A & Zone B)</strong>
+            <span>Long banquet tables (6–10 seats per table) • Electric Party Atmosphere</span>
+          </div>
+          <div class="diagram-tiered">
+            <strong>RAKED TIERED GRANDSTAND SEATING (Blocks East, West & North)</strong>
+            <span>Elevated stadium bleachers • Clear unobstructed screen sightlines</span>
+          </div>
+          <div class="diagram-rear">
+            <span>🍻 Flank Bars • Street Food Concessions • Restrooms 🍻</span>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="seating-top-ad" />
+
+      <!-- Comparison: Tables vs Tiered -->
+      <section class="seating-section">
+        <h2>Comparison: Floor Tables vs Tiered Grandstands</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Floor Table Seating</th>
+                <th>Tiered Bleacher Seating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Vibe & Atmosphere</strong></td>
+                <td>High-energy, singing, fancy dress groups, standing up frequently.</td>
+                <td>Relaxed, spectator-focused, enthusiastic yet orderly.</td>
+              </tr>
+              <tr>
+                <td><strong>Sightlines</strong></td>
+                <td>Flat floor level; viewing relies mostly on stage screens.</td>
+                <td>Raked stadium tiers with clear overhead sightlines.</td>
+              </tr>
+              <tr>
+                <td><strong>Proximity to Players</strong></td>
+                <td>Very close to the walk-on walkway and stage barrier.</td>
+                <td>Further back, but elevated above the main floor.</td>
+              </tr>
+              <tr>
+                <td><strong>Drink & Pitcher Access</strong></td>
+                <td>Easy table space for beer pitchers and snacks.</td>
+                <td>Individual stadium flip seats; cup holders only.</td>
+              </tr>
+              <tr>
+                <td><strong>Ticket Demand</strong></td>
+                <td>Sells out in minutes during PDC Priority Ballot.</td>
+                <td>High demand, but slightly easier to secure.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Giant Screen Sightlines -->
+      <section class="seating-section">
+        <h2>How Sightlines & Giant Video Screens Work</h2>
+        <p>
+          First-time visitors often ask: <em>"Can you actually see the darts land in the double bed from your seat?"</em>
+        </p>
+        <p>
+          Because a standard sisal dartboard measures only 451 millimeters across, virtually every spectator in the 5,000+ seat Great Hall watches the precise throw coordinates via the <strong>massive high-definition LED screens</strong> mounted on either side of the stage and suspended along the central ceiling trusses.
+        </p>
+        <p>
+          The stage action provides the live theatrical energy—the walk-ons, player body language, and referee Russ Bray's thunderous <em>"ONE HUNDRED AND EIGHTY!"</em> calls—while the screens deliver pristine broadcast-quality zoom views of the treble beds and checkouts.
+        </p>
+      </section>
+
+      <!-- Accessible Seating -->
+      <section class="seating-section">
+        <h2>Accessible Seating & Wheelchair Users</h2>
+        <p>
+          Alexandra Palace provides dedicated, step-free accessible viewing platforms inside the Great Hall. Key details:
+        </p>
+        <ul>
+          <li><strong>Step-Free Entry:</strong> Accessible route via the Palm Court Entrance.</li>
+          <li><strong>Companion Seats:</strong> Free companion tickets provided for registered accessibility ticket holders via the PDC Box Office.</li>
+          <li><strong>Facilities:</strong> Dedicated accessible restrooms situated in close proximity to the viewing platform.</li>
+        </ul>
+      </section>
+
+      <AdSlot slotType="in-feed" id="seating-mid-ad" />
+
+      <!-- Frequently Asked Questions -->
+      <section class="seating-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-accordion">
+          {seatingFaqSchema.mainEntity.map((item) => (
+            <div class="card faq-box">
+              <h4>{item.name}</h4>
+              <p>{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="seating-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Spectator Guides</h3>
+        <ul class="widget-list">
+          <li><a href="/venue/">🏛️ Alexandra Palace Overview</a></li>
+          <li><a href="/tickets/">🎟️ How to Get Darts Tickets</a></li>
+          <li><a href="/travel/">🚇 Tube, Rail & Bus Directions</a></li>
+          <li><a href="/fancy-dress/">🦸‍♂️ Fancy Dress Rules</a></li>
+          <li><a href="/hotels/">🏨 Hotels Near Alexandra Palace</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="seating-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Ticket Pricing Guide</h3>
+        <ul class="price-list">
+          <li><strong>Tiered Bleachers:</strong> ~£40 – £65 per session</li>
+          <li><strong>Floor Tables:</strong> ~£50 – £85 per session</li>
+          <li><strong>Final Sessions:</strong> ~£75 – £120</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .seating-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .seating-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .seating-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .seating-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .seating-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .seating-visual-diagram {
+    background: #0f172a;
+    border: 2px solid #334155;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .diagram-stage {
+    background: #dc2626;
+    color: #ffffff;
+    font-weight: 800;
+    padding: 0.75rem;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .diagram-walkway {
+    background: #f59e0b;
+    color: #0f172a;
+    font-weight: 700;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+
+  .diagram-tables {
+    background: #1e293b;
+    border: 1px dashed #64748b;
+    padding: 1rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .diagram-tables span {
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
+
+  .diagram-tiered {
+    background: #0284c7;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .diagram-tiered span {
+    font-size: 0.8rem;
+    color: #e0f2fe;
+  }
+
+  .diagram-rear {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    padding-top: 0.5rem;
+    border-top: 1px solid #334155;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    padding: 1.25rem;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+  }
+
+  .seating-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  .price-list {
+    padding-left: 1.2rem;
+    font-size: 0.84rem;
+    color: #475569;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .seating-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

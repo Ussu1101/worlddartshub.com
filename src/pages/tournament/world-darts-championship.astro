@@ -1,0 +1,463 @@
+---
+// src/pages/tournament/world-darts-championship.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+import tournamentData from '../../data/tournament.json';
+import resultsData from '../../data/results.json';
+
+const pageTitle = "PDC World Darts Championship 2026/27 — Dates, Format, Prize Money & Facts";
+const pageDescription = "Authoritative guide to the 2026/27 PDC World Darts Championship: 11 Dec 2026 to 3 Jan 2027 at Alexandra Palace, London. Full £5M prize fund breakdown, set play format, and records.";
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://worlddartsguide.com';
+
+// Authoritative Event Schema
+const eventSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "2026/27 PDC World Darts Championship",
+  "description": "The 34th staging of the Professional Darts Corporation World Darts Championship, held at Alexandra Palace in London.",
+  "startDate": "2026-12-11T19:00:00+00:00",
+  "endDate": "2027-01-03T23:00:00+00:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Alexandra Palace — Great Hall",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Alexandra Palace Way",
+      "addressLocality": "London",
+      "postalCode": "N22 7AY",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.5942,
+      "longitude": -0.1308
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Professional Darts Corporation (PDC)",
+    "url": "https://www.pdc.tv"
+  }
+};
+
+const breadcrumbItems = [
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'PDC World Darts Championship 2026/27' }
+];
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={eventSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="entity-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">PRIMARY ENTITY DOSSIER</span>
+        <span class="badge">SID WADDELL TROPHY</span>
+      </div>
+      <h1>PDC World Darts Championship 2026/27</h1>
+      <p class="entity-lead">
+        The pinnacle of professional darts. 128 global competitors battle across 28 high-octane sessions inside the Great Hall at Alexandra Palace, London, competing for an unprecedented £5,000,000 prize fund.
+      </p>
+    </div>
+  </header>
+
+  <div class="container entity-layout">
+    <article class="main-entity-content">
+      <VerificationBadge verifiedDate="October 2026" topic="Tournament Dates, Purse Breakdown & Format Rules" />
+
+      <!-- Key Entity Metadata Table -->
+      <section class="content-section">
+        <h2>Tournament Factsheet & Metadata</h2>
+        <div class="table-responsive">
+          <table>
+            <tbody>
+              <tr>
+                <th>Official Name</th>
+                <td>{tournamentData.officialName}</td>
+              </tr>
+              <tr>
+                <th>Tournament Dates</th>
+                <td><strong>11 December 2026 – 3 January 2027</strong> (24 competition days)</td>
+              </tr>
+              <tr>
+                <th>Host Venue</th>
+                <td>Alexandra Palace (Great Hall), Muswell Hill / Wood Green, London N22 7AY</td>
+              </tr>
+              <tr>
+                <th>Capacity</th>
+                <td>5,000+ spectators per session (expanded Great Hall configuration)</td>
+              </tr>
+              <tr>
+                <th>Total Prize Fund</th>
+                <td><strong>£5,000,000</strong> (PDC Order of Merit eligible)</td>
+              </tr>
+              <tr>
+                <th>Winner's Share</th>
+                <td><strong>£1,000,000</strong> & Sid Waddell Trophy</td>
+              </tr>
+              <tr>
+                <th>Field Size</th>
+                <td>128 International Tour Card Holders & Global Qualifiers</td>
+              </tr>
+              <tr>
+                <th>Governing Body</th>
+                <td>Professional Darts Corporation (PDC)</td>
+              </tr>
+              <tr>
+                <th>Defending Champion</th>
+                <td>Luke Humphries (won 2024; finalists 2025/2026)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="entity-mid-leaderboard" />
+
+      <!-- Prize Money Breakdown -->
+      <section class="content-section">
+        <h2>Official Prize Money Distribution (£5,000,000 Total Purse)</h2>
+        <p>
+          The 2026/27 World Championship features an unprecedented £5,000,000 total purse, awarding £1,000,000 directly to the champion. Every pound won contributes directly to the two-year rolling PDC Order of Merit ranking system:
+        </p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Finish / Stage Reached</th>
+                <th>Prize Money Per Player</th>
+                <th>Cumulative Stage Purse</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { stage: "Winner (Champion)", amount: `£${tournamentData.winner_prize_gbp.toLocaleString()}` },
+                { stage: "Runner-Up (Finalist)", amount: `£${tournamentData.runner_up_prize_gbp.toLocaleString()}` },
+                { stage: "Semi-Finalists (x2)", amount: `£${tournamentData.semi_finalist_prize_gbp.toLocaleString()}` },
+                { stage: "Quarter-Finalists (x4)", amount: `£${tournamentData.quarter_finalist_prize_gbp.toLocaleString()}` },
+                { stage: "Fourth Round / Last 16 (x8)", amount: `£${tournamentData.fourth_round_prize_gbp.toLocaleString()}` },
+                { stage: "Third Round / Last 32 (x16)", amount: `£${tournamentData.third_round_prize_gbp.toLocaleString()}` },
+                { stage: "Second Round / Last 64 (x32)", amount: `£${tournamentData.second_round_prize_gbp.toLocaleString()}` },
+                { stage: "First Round / Last 128 (x64)", amount: `£${tournamentData.first_round_prize_gbp.toLocaleString()}` }
+              ].map((item) => (
+                <tr>
+                  <td><strong>{item.stage}</strong></td>
+                  <td class="prize-cell">{item.amount}</td>
+                  <td>Included in rolling PDC Order of Merit</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Match Format & Sets Rules -->
+      <section class="content-section">
+        <h2>Match Play Format: Sets & Legs Progression</h2>
+        <p>
+          Unlike floor tournaments which utilize a "best of legs" format, the PDC World Darts Championship is contested under the classic <strong>Set Play format</strong>. Each set is played as best-of-5 legs (first to 3 legs wins the set). All legs are 501 double-out.
+        </p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Tournament Round</th>
+                <th>Match Format</th>
+                <th>Sets Required to Win</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>First Round</td>
+                <td>Best of 5 Sets</td>
+                <td>First to 3 Sets</td>
+              </tr>
+              <tr>
+                <td>Second Round</td>
+                <td>Best of 5 Sets</td>
+                <td>First to 3 Sets</td>
+              </tr>
+              <tr>
+                <td>Third Round</td>
+                <td>Best of 7 Sets</td>
+                <td>First to 4 Sets</td>
+              </tr>
+              <tr>
+                <td>Fourth Round (Last 16)</td>
+                <td>Best of 7 Sets</td>
+                <td>First to 4 Sets</td>
+              </tr>
+              <tr>
+                <td>Quarter-Finals</td>
+                <td>Best of 9 Sets</td>
+                <td>First to 5 Sets</td>
+              </tr>
+              <tr>
+                <td>Semi-Finals</td>
+                <td>Best of 11 Sets</td>
+                <td>First to 6 Sets</td>
+              </tr>
+              <tr>
+                <td>World Championship Final</td>
+                <td>Best of 13 Sets</td>
+                <td>First to 7 Sets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <strong>The Two-Clear-Legs Rule:</strong> In the deciding set of any match (e.g., Set 5 in Round 1, or Set 13 in the Final), a player must win by two clear legs. If the score reaches 5–5 in legs in the final set, a sudden-death 11th leg is played. Before the sudden-death leg, both players throw for the bullseye to determine who throws first.
+        </div>
+      </section>
+
+      <!-- Historical Champions & Records -->
+      <section class="content-section">
+        <h2>All-Time Ally Pally Champions & Records</h2>
+        <p>
+          Since relocating from the Circus Tavern in Purfleet to Alexandra Palace in December 2007 (2008 tournament), the Great Hall has witnessed iconic darts history:
+        </p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Champion</th>
+                <th>Runner-up</th>
+                <th>Final Score</th>
+                <th>Winner's 3-Dart Avg</th>
+              </tr>
+            </thead>
+            <tbody>
+              {resultsData.historical_recent_finals.map((final: any) => (
+                <tr>
+                  <td><strong>{final.year}</strong></td>
+                  <td>{final.winner}</td>
+                  <td>{final.runner_up}</td>
+                  <td>{final.score}</td>
+                  <td>{final.winner_average}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Internal Authority Hub Navigation -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore The 2026/27 Tournament Ecosystem</h2>
+        <div class="grid-2">
+          <a href="/live/" class="cluster-link-card">
+            <h3>🎯 Match Center & Today's Order of Play</h3>
+            <p>Access daily session start times, order of play schedules, and verified match results updated daily.</p>
+          </a>
+          <a href="/watch/" class="cluster-link-card">
+            <h3>📺 Legal Live Stream Directory</h3>
+            <p>Find official television and online streaming channels for 100+ countries worldwide.</p>
+          </a>
+          <a href="/venue/great-hall-seating-plan/" class="cluster-link-card">
+            <h3>🗺️ Great Hall Seating & Views</h3>
+            <p>Detailed table seating vs tiered stands breakdown and Alexandra Palace spectator advice.</p>
+          </a>
+          <a href="/players/" class="cluster-link-card">
+            <h3>🎯 128 Competitors & Player Dossiers</h3>
+            <p>Career statistics, walk-on songs, tungsten dart weights, and seed rankings.</p>
+          </a>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="entity-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tournament Navigation</h3>
+        <ul class="widget-list">
+          <li><a href="/tournament/prize-money/">£5M Prize Money Breakdown</a></li>
+          <li><a href="/tournament/order-of-merit/">PDC Order of Merit Rankings</a></li>
+          <li><a href="/draw/">Tournament Bracket & Draw</a></li>
+          <li><a href="/results/">Match Results Center</a></li>
+          <li><a href="/schedule/">Full 28-Session Schedule</a></li>
+          <li><a href="/schedule/finals-weekend/">Finals Weekend Times</a></li>
+          <li><a href="/watch/uk/">UK TV Broadcast (Sky Sports)</a></li>
+          <li><a href="/watch/germany/">Germany TV Broadcast (DAZN/Sport1)</a></li>
+          <li><a href="/tickets/">Official Tickets & Resale Guide</a></li>
+          <li><a href="/travel/">Travel, Tube & Train Guide</a></li>
+          <li><a href="/fancy-dress/">Costume & Fancy Dress Rules</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="entity-sidebar-rectangle" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Key Tournament Milestones</h3>
+        <ul class="milestone-list">
+          <li><strong>11 Dec 2026:</strong> Opening Night (Session 1)</li>
+          <li><strong>24–26 Dec:</strong> Christmas Break (No Darts)</li>
+          <li><strong>27 Dec:</strong> Round 3 Resumes</li>
+          <li><strong>31 Dec:</strong> New Year's Eve Afternoon Session</li>
+          <li><strong>1 Jan 2027:</strong> Quarter-Finals Day</li>
+          <li><strong>2 Jan 2027:</strong> Semi-Finals Night</li>
+          <li><strong>3 Jan 2027:</strong> World Championship Final</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .entity-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #334155;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .entity-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .entity-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .entity-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .main-entity-content {
+    min-width: 0;
+  }
+
+  .content-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .prize-cell {
+    font-weight: 800;
+    color: #059669;
+  }
+
+  .internal-hub-cluster {
+    margin-top: 3rem;
+    border-top: 2px solid #e2e8f0;
+    padding-top: 2rem;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .cluster-link-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  .entity-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  .milestone-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    font-size: 0.85rem;
+    color: #475569;
+  }
+
+  @media (max-width: 1024px) {
+    .entity-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

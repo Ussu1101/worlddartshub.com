@@ -1,0 +1,468 @@
+---
+// src/pages/watch/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+import broadcasters from '../../data/broadcasters.json';
+
+const pageTitle = "How to Watch PDC World Darts Championship 2026/27 Live — TV Channels & Streams";
+const pageDescription = "Official television channels and verified live streams for the 2026/27 PDC World Darts Championship worldwide. Complete country-by-country broadcaster directory.";
+
+const breadcrumbItems = [
+  { name: 'Watch & Stream' }
+];
+
+const watchSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "breadcrumb": "https://worlddartsguide.com/watch/"
+};
+
+const countrySlugMap: Record<string, string> = {
+  "uk-sky-sports": "uk",
+  "ireland-sky-sports": "ireland",
+  "germany-dazn-prosieben": "germany",
+  "usa-espn-peacock-pdctv": "usa",
+  "canada-pdctv": "canada",
+  "australia-kayo-fox": "australia",
+  "netherlands-viaplay": "netherlands",
+  "rest-of-world-pdctv": "international",
+  "belgium-vtm": "belgium",
+  "austria-dazn": "austria-switzerland",
+  "switzerland-dazn": "austria-switzerland"
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={watchSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="watch-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">OFFICIAL BROADCAST DIRECTORY</span>
+        <span class="badge">100+ COUNTRIES</span>
+      </div>
+      <h1>How to Watch the PDC World Darts Championship 2026/27 Live</h1>
+      <p class="watch-lead">
+        Find verified legal TV channels, streaming platforms, and free-to-air coverage for every session of the 2026/27 World Darts Championship at Alexandra Palace.
+      </p>
+
+      <div class="quick-country-jump">
+        <span class="jump-label">Select Your Country Guide:</span>
+        <div class="jump-links">
+          <a href="/watch/uk/">🇬🇧 United Kingdom</a>
+          <a href="/watch/germany/">🇩🇪 Germany</a>
+          <a href="/watch/belgium/">🇧🇪 Belgium</a>
+          <a href="/watch/austria-switzerland/">🇦🇹/🇨🇭 Austria & Switzerland</a>
+          <a href="/watch/free-streams/">🆓 Free Streams Guide</a>
+          <a href="/watch/usa/">🇺🇸 United States</a>
+          <a href="/watch/netherlands/">🇳🇱 Netherlands</a>
+          <a href="/watch/australia/">🇦🇺 Australia</a>
+          <a href="/watch/canada/">🇨🇦 Canada</a>
+          <a href="/watch/ireland/">🇮🇪 Ireland</a>
+          <a href="/watch/international/">🌍 Rest of World</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container watch-layout">
+    <div class="watch-main-content">
+      <VerificationBadge verifiedDate="October 2026" topic="Broadcast Rights Agreements & Subscription Plans" />
+
+      <div class="callout warning-callout">
+        <strong>⚠️ Safe Viewing Guarantee:</strong> We strictly list authorized, legal rights holders. Never access pirated streams, illicit Kodi add-ons, or unlicensed IPTV links. Legal platforms deliver crisp HD/4K feeds, dedicated commentary, multi-board options, and zero device security threats.
+      </div>
+
+      <!-- Territory by Territory Coverage -->
+      {broadcasters.map((item) => {
+        const slug = countrySlugMap[item.broadcaster_id] || 'international';
+        return (
+          <section class="territory-section" id={`territory-${slug}`}>
+            <div class="territory-header">
+              <div>
+                <h2>{item.country}</h2>
+                <p class="territory-meta">Official Rights: {item.broadcaster_name} ({item.parent_network})</p>
+              </div>
+              <a href={`/watch/${slug}/`} class="btn btn-secondary btn-sm">
+                Dedicated {item.country} Guide &rarr;
+              </a>
+            </div>
+
+            <div class="card broadcaster-card-direct">
+              <div class="card-header-row">
+                <div>
+                  <span class="provider-type">{item.region}</span>
+                  <h3 class="provider-name">{item.broadcaster_name}</h3>
+                </div>
+                {item.free_or_paid === 'free_tier_available' ? (
+                  <span class="badge badge-success">Free Tier Available</span>
+                ) : (
+                  <span class="badge">Paid Subscription</span>
+                )}
+              </div>
+
+              <div class="info-grid">
+                <div class="info-item">
+                  <span class="info-label">Access Model:</span>
+                  <span class="info-value">{item.access_model}</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Pricing Guide:</span>
+                  <span class="info-value"><strong>{item.price_info}</strong></span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Linear TV Channels:</span>
+                  <span class="info-value">{item.linear_channels}</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Platforms & Apps:</span>
+                  <span class="info-value">{item.platform_types.join(', ')}</span>
+                </div>
+              </div>
+
+              <p class="editorial-notes">
+                {item.editorial_notes}
+              </p>
+
+              <div class="card-action-bar">
+                <a 
+                  href={item.official_watch_url} 
+                  target="_blank" 
+                  rel="noopener noreferrer nofollow" 
+                  class="btn btn-primary"
+                >
+                  Visit Official {item.broadcaster_name} Service &rarr;
+                </a>
+                <span class="rights-tag">Verified contract: {item.rights_period}</span>
+              </div>
+            </div>
+          </section>
+        );
+      })}
+
+      <AdSlot slotType="leaderboard" id="watch-mid-leaderboard" />
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="watch-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Country Watch Pages</h3>
+        <ul class="widget-list">
+          <li><a href="/watch/uk/">🇬🇧 United Kingdom (Sky Sports)</a></li>
+          <li><a href="/watch/germany/">🇩🇪 Germany (DAZN & Sport1)</a></li>
+          <li><a href="/watch/belgium/">🇧🇪 Belgium (VTM 2 & VTM GO)</a></li>
+          <li><a href="/watch/austria-switzerland/">🇦🇹/🇨🇭 Austria & Switzerland</a></li>
+          <li><a href="/watch/free-streams/">🆓 Legal Free Streams Guide</a></li>
+          <li><a href="/watch/usa/">🇺🇸 United States (ESPN & Peacock)</a></li>
+          <li><a href="/watch/netherlands/">🇳🇱 Netherlands (Viaplay)</a></li>
+          <li><a href="/watch/australia/">🇦🇺 Australia (Fox Sports/Kayo)</a></li>
+          <li><a href="/watch/canada/">🇨🇦 Canada (PDCTV)</a></li>
+          <li><a href="/watch/ireland/">🇮🇪 Ireland (Sky Sports / NOW)</a></li>
+          <li><a href="/watch/international/">🌍 Rest of World (PDCTV)</a></li>
+          <li><a href="/watch/broadcaster-history/">📜 Broadcaster Rights History</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="watch-sidebar-rectangle" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Session Starting Times</h3>
+        <p class="sidebar-micro">Standard match start times across major timezones:</p>
+        <table class="micro-table">
+          <thead>
+            <tr>
+              <th>Timezone</th>
+              <th>Afternoon</th>
+              <th>Evening</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>London (GMT)</td>
+              <td>12:30</td>
+              <td>19:00</td>
+            </tr>
+            <tr>
+              <td>Berlin (CET)</td>
+              <td>13:30</td>
+              <td>20:00</td>
+            </tr>
+            <tr>
+              <td>New York (EST)</td>
+              <td>07:30</td>
+              <td>14:00</td>
+            </tr>
+            <tr>
+              <td>Sydney (AEDT)</td>
+              <td>23:30</td>
+              <td>06:00 (+1)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .watch-hero {
+    background: linear-gradient(135deg, #090d16 0%, #064e3b 50%, #0f172a 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #10b981;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .watch-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .watch-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+  }
+
+  .quick-country-jump {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 0.85rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .jump-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #f59e0b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .jump-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .jump-links a {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .jump-links a:hover {
+    background: #10b981;
+  }
+
+  .watch-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .territory-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .territory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .territory-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  .territory-meta {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0.2rem 0 0;
+  }
+
+  .broadcaster-card-direct {
+    padding: 1.5rem;
+  }
+
+  .card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+
+  .provider-type {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    font-weight: 700;
+  }
+
+  .provider-name {
+    font-size: 1.3rem;
+    margin: 0.2rem 0 0;
+    color: #0f172a;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .info-label {
+    color: #64748b;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .info-value {
+    color: #0f172a;
+  }
+
+  .editorial-notes {
+    font-size: 0.88rem;
+    color: #475569;
+    background: #f8fafc;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border-left: 3px solid #3b82f6;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .card-action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .rights-tag {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+
+  .watch-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .sidebar-micro {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  .micro-table {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .micro-table th, .micro-table td {
+    padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .btn-sm {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 1024px) {
+    .watch-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

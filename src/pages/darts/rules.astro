@@ -1,0 +1,711 @@
+---
+// src/pages/darts/rules.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import dartsRules from '../../data/darts-rules.json';
+
+const pageTitle = "Official Darts Rules — 501 Scoring, Board Dimensions & Oche Distance";
+const pageDescription = "Comprehensive official guide to 501 darts rules. Precise dartboard dimensions (5ft 8in), oche throwline distance (7ft 9.25in), double-out checkout rules, and the bust rule.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Rules & Dimensions', url: '/darts/rules/' }
+];
+
+const rulesSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/darts/rules/`,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Guide Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Guide",
+    "url": siteUrl
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={rulesSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">OFFICIAL RULES</span>
+        <span class="badge">DRA SPECIFICATIONS</span>
+      </div>
+      <h1>Official 501 Darts Rules & Board Dimensions</h1>
+      <p class="lead-text">
+        The definitive rulebook and measurement guide for professional darts. Governed by the Darts Regulation Authority (DRA) and played across every PDC televised major, including the World Darts Championship.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate={dartsRules.last_verified} topic="DRA Official Rulebook (Universal Standards) & PDC Tournament Regulations" />
+
+      <!-- Scope Distinction Explainer -->
+      <section class="content-card scope-distinction-card">
+        <h2>Important: Universal DRA Rules vs Tournament Formats</h2>
+        <div class="scope-grid">
+          <div class="scope-box scope-universal">
+            <span class="scope-tag tag-dra">UNIVERSAL DRA RULES</span>
+            <h3>Universal Darts Regulations</h3>
+            <p>
+              Governed worldwide by the <strong>Darts Regulation Authority (DRA)</strong>. These specifications apply to <em>all</em> sanctioned darts competitions—including the World Championship, Premier League, World Matchplay, WDF tournaments, and league play:
+            </p>
+            <ul>
+              <li>Exact board height: <strong>5ft 8in (1.73m)</strong> to bullseye center</li>
+              <li>Exact oche throwline distance: <strong>7ft 9.25in (2.37m)</strong> from board face</li>
+              <li>501 starting score countdown & straight-in throw</li>
+              <li>Double-Out finishing requirement (Double ring or 50-pt inner bull)</li>
+              <li>The official Bust Rule and segment score multipliers</li>
+            </ul>
+          </div>
+
+          <div class="scope-box scope-tournament">
+            <span class="scope-tag tag-pdc">TOURNAMENT FORMAT RULES</span>
+            <h3>World Championship Structure</h3>
+            <p>
+              Specific competition regulations set by the <strong>Professional Darts Corporation (PDC)</strong> exclusively for the World Championship at Alexandra Palace:
+            </p>
+            <ul>
+              <li><strong>Sets and Legs format</strong> (first to 3 legs per set, not straight legs)</li>
+              <li>Round set distances (Best of 5 sets in R1/R2 up to Best of 13 in Final)</li>
+              <li>Deciding set two-clear-legs tiebreak rule (up to 5-5)</li>
+              <li>Sudden-death 11th leg in deciding sets with pre-leg bull-off</li>
+            </ul>
+            <p class="scope-link-note">
+              For complete set-play details, see our dedicated <a href="/darts/legs-vs-sets/">Sets vs Legs Format Guide</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Essential Dimensions Quick Reference Cards -->
+      <section class="content-card">
+        <h2>Official Dartboard & Oche Dimensions (Universal DRA Standard)</h2>
+        <p>
+          Every regulation dartboard setup in professional darts must satisfy strict millimeter tolerances under DRA Section 5. Measurements are taken to the absolute back edge of the raised oche (throwline):
+        </p>
+
+        <div class="specs-grid">
+          <div class="spec-card">
+            <span class="spec-icon">📏</span>
+            <div class="spec-title">Bullseye Height</div>
+            <div class="spec-val-primary">{dartsRules.board_specifications.bullseye_height.imperial}</div>
+            <div class="spec-val-secondary">{dartsRules.board_specifications.bullseye_height.metric}</div>
+            <p class="spec-desc">{dartsRules.board_specifications.bullseye_height.measured_from}</p>
+          </div>
+
+          <div class="spec-card">
+            <span class="spec-icon">📐</span>
+            <div class="spec-title">Oche Throwline Distance</div>
+            <div class="spec-val-primary">{dartsRules.board_specifications.oche_distance.imperial}</div>
+            <div class="spec-val-secondary">{dartsRules.board_specifications.oche_distance.metric}</div>
+            <p class="spec-desc">{dartsRules.board_specifications.oche_distance.measured_from}</p>
+          </div>
+
+          <div class="spec-card">
+            <span class="spec-icon">📐</span>
+            <div class="spec-title">Diagonal Measurement</div>
+            <div class="spec-val-primary">{dartsRules.board_specifications.diagonal_distance.imperial}</div>
+            <div class="spec-val-secondary">{dartsRules.board_specifications.diagonal_distance.metric}</div>
+            <p class="spec-desc">{dartsRules.board_specifications.diagonal_distance.measured_from}</p>
+          </div>
+        </div>
+
+        <div class="technical-note">
+          <strong>Important Setup Verification:</strong> The diagonal measurement (9ft 7.5in / 2.93m) is the quickest way to confirm both height and distance simultaneously using a standard tape measure stretched from the center of the bullseye directly to the back of the raised oche.
+        </div>
+      </section>
+
+      <!-- Section: Dartboard Layout & Scoring Segments -->
+      <section class="content-card">
+        <h2>Dartboard Segments & Multipliers</h2>
+        <p>
+          The standard English sisal bristle board is divided into 20 numbered pie-shaped segments arranged in an intentional distribution designed to penalize inaccuracy (e.g., placing low numbers 1 and 5 directly adjacent to the high-value 20).
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Segment Area</th>
+                <th>Points Multiplier</th>
+                <th>Maximum Value</th>
+                <th>Checkout Eligibility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Outer Ring (Doubles)</strong></td>
+                <td>2x Face Value</td>
+                <td>Double 20 = 40 pts</td>
+                <td><span class="badge badge-success">Valid for Double-Out</span></td>
+              </tr>
+              <tr>
+                <td><strong>Inner Ring (Trebles)</strong></td>
+                <td>3x Face Value</td>
+                <td>Treble 20 = 60 pts</td>
+                <td><span class="badge badge-warning">Scoring Only (Cannot Finish)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Single Segments</strong></td>
+                <td>1x Face Value</td>
+                <td>Single 20 = 20 pts</td>
+                <td><span class="badge badge-warning">Scoring Only (Cannot Finish)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Outer Bull (Single Bull)</strong></td>
+                <td>25 Points (Green)</td>
+                <td>25 pts</td>
+                <td><span class="badge badge-warning">Scoring Only (Cannot Finish)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Inner Bull (Bullseye)</strong></td>
+                <td>50 Points (Red)</td>
+                <td>50 pts</td>
+                <td><span class="badge badge-success">Counts as Double 25</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: How 501 Is Played -->
+      <section class="content-card">
+        <h2>How a Game of 501 Works: Core Rules</h2>
+        <p>
+          Every leg in the PDC World Darts Championship is played under the <strong>501 Straight-In, Double-Out</strong> format.
+        </p>
+
+        <div class="rules-step-list">
+          <div class="rule-step">
+            <span class="step-num">1</span>
+            <div class="step-body">
+              <h3>The Throw & Starting Score</h3>
+              <p>
+                Each player starts with 501 points. Players take turns throwing three darts per visit. Unlike vintage pub rules ("double-in"), professional play is "straight-in," meaning any scoring dart on the board counts immediately from dart one. Both feet must remain behind the raised oche edge during the release.
+              </p>
+            </div>
+          </div>
+
+          <div class="rule-step">
+            <span class="step-num">2</span>
+            <div class="step-body">
+              <h3>Subtracting Points & Strategy</h3>
+              <p>
+                The sum of the three darts thrown in a visit is deducted from the player's remaining total. The maximum possible score in a single visit is <strong>180 points</strong> (three darts in Treble 20). Players aim for the treble 20 bed until their score falls below 170, at which point mathematical checkout setups begin.
+              </p>
+            </div>
+          </div>
+
+          <div class="rule-step">
+            <span class="step-num">3</span>
+            <div class="step-body">
+              <h3>The Double-Out Requirement</h3>
+              <p>
+                To win the leg, a player must reduce their score to exactly zero on a <strong>double segment or the 50-point red inner bullseye</strong> (which counts as a double 25). For example, if a player has 32 points left, they must hit Double 16. If they have 50 left, hitting the inner bullseye wins the leg.
+              </p>
+            </div>
+          </div>
+
+          <div class="rule-step">
+            <span class="step-num">4</span>
+            <div class="step-body">
+              <h3>The Bust Rule</h3>
+              <p>
+                A visit is declared <strong>"Bust"</strong> if a player:
+              </p>
+              <ul>
+                <li>Scores more points than are required to reach zero.</li>
+                <li>Reduces their score to exactly zero without hitting a double or inner bull.</li>
+                <li>Leaves a remaining score of exactly 1 (since no double equals 1, making completion impossible).</li>
+              </ul>
+              <p>
+                When a player busts, their turn ends immediately, any darts remaining in hand are not thrown, and their score resets to whatever it was at the start of that turn.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Checkout Mathematics & High Finishes -->
+      <section class="content-card">
+        <h2>Checkout Fundamentals & The "Big Fish"</h2>
+        <p>
+          Finishing 501 efficiently requires instant mental arithmetic. The highest three-dart checkout possible in darts is <strong>170</strong>, affectionately nicknamed "The Big Fish":
+        </p>
+        <div class="checkout-display">
+          <div class="dart-box">Treble 20 <span>(60 pts)</span></div>
+          <span class="plus-sign">+</span>
+          <div class="dart-box">Treble 20 <span>(60 pts)</span></div>
+          <span class="plus-sign">+</span>
+          <div class="dart-box highlight-bull">Bullseye <span>(50 pts)</span></div>
+          <span class="plus-sign">=</span>
+          <div class="total-box">170 Game Shot</div>
+        </div>
+        <p>
+          Any finish of 100 or higher is officially recorded as a "ton-plus checkout." Checkouts cannot be completed in three darts from 169, 168, 166, 165, 163, 162, or 159 (known as "bogey numbers").
+        </p>
+      </section>
+
+      <!-- Knowledge Cluster Links -->
+      <section class="content-card">
+        <h2>Explore More Darts Knowledge & Formats</h2>
+        <div class="links-grid">
+          <a href="/darts/legs-vs-sets/" class="link-card">
+            <strong>Sets vs Legs Explained</strong>
+            <span>Understand the World Championship set-play format, tiebreaks, and round distances.</span>
+          </a>
+          <a href="/darts/average-explained/" class="link-card">
+            <strong>How 3-Dart Averages Work</strong>
+            <span>Formula, first-9 stats, and why higher averages don't always win matches.</span>
+          </a>
+          <a href="/players/9-darters/" class="link-card">
+            <strong>All 16 Ally Pally Nine-Darters</strong>
+            <span>The ultimate achievement: 501 cleared in the minimum possible 9 darts.</span>
+          </a>
+          <a href="/history/world-championship-finals/" class="link-card">
+            <strong>World Championship Finals Archive</strong>
+            <span>See how the world's best players execute 501 on the biggest stage.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Rules Quick Reference</h3>
+        <ul class="fact-list">
+          <li><strong>Starting Score:</strong> 501</li>
+          <li><strong>Darts per Turn:</strong> 3</li>
+          <li><strong>Finishing Rule:</strong> Double-Out or Bull</li>
+          <li><strong>Bullseye Height:</strong> 5ft 8in (1.73m)</li>
+          <li><strong>Oche Distance:</strong> 7ft 9.25in (2.37m)</li>
+          <li><strong>Max Turn Score:</strong> 180 points</li>
+          <li><strong>Highest Checkout:</strong> 170 (T20, T20, Bull)</li>
+          <li><strong>Minimum Darts to Win:</strong> 9</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>World Championship Format</h3>
+        <p class="final-highlight">
+          Unlike ordinary tour events that use straight legs, the PDC World Darts Championship uses the prestigious <strong>Sets and Legs format</strong>.
+        </p>
+        <a href="/darts/legs-vs-sets/" class="btn btn-secondary full-width">Learn Set-Play Rules</a>
+      </div>
+
+      <AdSlot position="sidebar" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-brand-primary, #0c1a2c) 0%, #162a45 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0.5rem 0 1rem;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .badge-success {
+    background: #dcfce7;
+    color: #166534;
+  }
+  .badge-warning {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .content-layout {
+      grid-template-columns: 2.8fr 1.2fr;
+    }
+  }
+  .content-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    .specs-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .spec-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  .spec-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .spec-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .spec-val-primary {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-brand-primary, #0c1a2c);
+    margin: 0.5rem 0 0.2rem;
+  }
+  .spec-val-secondary {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-brand-accent, #c99700);
+    margin-bottom: 0.5rem;
+  }
+  .spec-desc {
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .technical-note {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #166534;
+    line-height: 1.5;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 0.85rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+  .rules-step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .rule-step {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .step-num {
+    background: var(--color-brand-primary, #0c1a2c);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-body h3 {
+    margin: 0 0 0.5rem;
+    color: #0f172a;
+    font-size: 1.15rem;
+  }
+  .step-body p {
+    margin: 0 0 0.5rem;
+    color: #334155;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .step-body ul {
+    margin: 0.5rem 0 0.75rem;
+    padding-left: 1.25rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+  .checkout-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .dart-box {
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 1.05rem;
+    text-align: center;
+  }
+  .dart-box span {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 500;
+  }
+  .highlight-bull {
+    border-color: #dc2626;
+    color: #dc2626;
+  }
+  .plus-sign {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #94a3b8;
+  }
+  .total-box {
+    background: #0f172a;
+    color: #fff;
+    border-radius: 6px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 800;
+    font-size: 1.1rem;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  .fact-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #334155;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .final-highlight {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+  }
+  .btn-secondary:hover {
+    background: #e2e8f0;
+  }
+  .full-width {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .scope-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  @media (min-width: 768px) {
+    .scope-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .scope-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .scope-box.scope-universal {
+    border-top: 4px solid #0284c7;
+  }
+  .scope-box.scope-tournament {
+    border-top: 4px solid var(--color-brand-accent, #c99700);
+  }
+  .scope-tag {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+  .tag-dra {
+    background: #e0f2fe;
+    color: #0369a1;
+  }
+  .tag-pdc {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  .scope-box h3 {
+    margin: 0 0 0.5rem;
+    color: #0f172a;
+    font-size: 1.15rem;
+  }
+  .scope-box p {
+    margin: 0 0 0.75rem;
+    color: #334155;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .scope-box ul {
+    margin: 0 0 0.75rem;
+    padding-left: 1.25rem;
+    color: #334155;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .scope-link-note {
+    font-size: 0.85rem !important;
+    color: #64748b !important;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 0.5rem;
+    margin-top: 0.75rem !important;
+  }
+</style>

@@ -1,0 +1,779 @@
+---
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AdSlot from '../components/AdSlot.astro';
+import MatchCard from '../components/MatchCard.astro';
+import BroadcasterCard from '../components/BroadcasterCard.astro';
+import PlayerCard from '../components/PlayerCard.astro';
+import VerificationBadge from '../components/VerificationBadge.astro';
+
+import tournamentData from '../data/tournament.json';
+import broadcastersData from '../data/broadcasters.json';
+import liveData from '../data/live.json';
+import playersData from '../data/players.json';
+import scheduleData from '../data/schedule.json';
+
+const pageTitle = "PDC World Darts Championship 2026/27 — Live Stream, TV Guide & Fan Hub";
+const pageDescription = "Complete independent spectator and viewing guide to the 2026/27 PDC World Darts Championship at Alexandra Palace. Find legal live streams, TV schedules, Ally Pally seating, tickets, and match center results.";
+
+const homepageFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When does the PDC World Darts Championship 2026/27 start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The PDC World Darts Championship 2026/27 runs from Friday 11 December 2026 through to Sunday 3 January 2027 at Alexandra Palace, London, featuring an expanded £5,000,000 total prize fund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I legally live stream the 2026/27 World Darts Championship in the UK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the United Kingdom, every session is broadcast live exclusively on Sky Sports Darts and Sky Sports Main Event, with live streaming available via NOW TV (Sports Day or Monthly Membership) and the Sky Go mobile app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I watch the World Darts Championship live in Germany or the USA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Germany, DAZN streams all tournament matches live, with free-to-air sub-licensed coverage transitioning to ProSiebenSat.1 from 2027. In the USA, fans can stream coverage via ESPN/ESPN+, Peacock, or subscribe to PDCTV for official international passes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is the PDC World Darts Championship held?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tournament is held in the historic Great Hall at Alexandra Palace ('Ally Pally') in Muswell Hill / Wood Green, London N22 7AY, accommodating an expanded capacity of over 5,000 fans per session."
+      }
+    }
+  ]
+};
+
+const topBroadcasters = broadcastersData.slice(0, 4).map((b) => ({
+  ...b,
+  country: b.country
+}));
+
+const featuredPlayers = playersData.slice(0, 4);
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={homepageFaqSchema}
+>
+  <!-- Hero Section / Broadcast Command Center -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-badge-row">
+        <span class="badge badge-accent">2026/27 OFFICIAL SPECTATOR RESOURCE</span>
+        <span class="badge">MATCH CENTER & TV GUIDE</span>
+      </div>
+      <h1>PDC World Darts Championship 2026/27</h1>
+      <p class="lead">
+        Your complete independent fan command center for Alexandra Palace: verified legal live stream directories, daily session schedules, confirmed match fixtures, Great Hall seating plans, and spectator guides.
+      </p>
+
+      <!-- Quick Broadcast Selector Bar -->
+      <div class="broadcast-quick-bar">
+        <span class="quick-bar-label">⚡ Watch Live In Your Country:</span>
+        <div class="country-pills">
+          <a href="/watch/uk/" class="country-pill">🇬🇧 United Kingdom</a>
+          <a href="/watch/germany/" class="country-pill">🇩🇪 Germany</a>
+          <a href="/watch/usa/" class="country-pill">🇺🇸 United States</a>
+          <a href="/watch/netherlands/" class="country-pill">🇳🇱 Netherlands</a>
+          <a href="/watch/australia/" class="country-pill">🇦🇺 Australia</a>
+          <a href="/watch/canada/" class="country-pill">🇨🇦 Canada</a>
+          <a href="/watch/" class="country-pill pill-all">🌍 All 100+ Countries</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Ad Slot (CLS-safe Leaderboard) -->
+  <div class="container">
+    <AdSlot slotType="leaderboard" id="home-top-leaderboard" />
+  </div>
+
+  <!-- Key Event Highlights Ribbon -->
+  <section class="highlights-ribbon">
+    <div class="container ribbon-inner">
+      <div class="ribbon-card">
+        <span class="ribbon-icon">📅</span>
+        <div>
+          <strong>11 Dec 2026 – 3 Jan 2027</strong>
+          <span>28 High-Stakes Sessions</span>
+        </div>
+      </div>
+      <div class="ribbon-card">
+        <span class="ribbon-icon">🏛️</span>
+        <div>
+          <strong>Alexandra Palace, London</strong>
+          <span>Great Hall (5,000+ Capacity)</span>
+        </div>
+      </div>
+      <div class="ribbon-card">
+        <span class="ribbon-icon">💰</span>
+        <div>
+          <strong>£5,000,000 Total Purse</strong>
+          <span>£1,000,000 to the Champion</span>
+        </div>
+      </div>
+      <div class="ribbon-card">
+        <span class="ribbon-icon">🏆</span>
+        <div>
+          <strong>Sid Waddell Trophy</strong>
+          <span>Defending: Luke Humphries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <div class="container main-grid-layout">
+    <!-- Left / Primary Column -->
+    <div class="primary-col">
+      <!-- Live Status / Today's Darts Engine -->
+      <section class="content-block">
+        <div class="section-header">
+          <div>
+            <h2>🎯 Match Center & Today's Schedule</h2>
+            <p class="section-sub">Daily order of play, confirmed fixtures, and session schedules (Updated daily)</p>
+          </div>
+          <a href="/live/" class="btn btn-primary">Open Match Center &rarr;</a>
+        </div>
+
+        <div class="live-status-box">
+          <div class="status-indicator-bar">
+            <span class="status-indicator-tag">CURRENT STATUS:</span>
+            <strong>{(liveData.tournament_state || 'Schedule Confirmed').replace('_', ' ').toUpperCase()}</strong>
+            <span class="session-clock">🕒 Afternoon: 12:30 GMT | Evening: 19:00 GMT</span>
+          </div>
+
+          <div class="matches-grid">
+            {(liveData.todays_matches?.length ? liveData.todays_matches : liveData.current_confirmed_fixtures).map((match: any) => (
+              <MatchCard match={match} />
+            ))}
+          </div>
+
+          <div class="status-footer-note">
+            ℹ️ All session start times are Greenwich Mean Time (GMT). Matches proceed continuously; subsequent game times depend on preceding set lengths.
+          </div>
+        </div>
+      </section>
+
+      <!-- Verification Trust Signal -->
+      <VerificationBadge verifiedDate="October 2026" topic="2026/27 Live Streams, TV Channels & Venue Layouts" />
+
+      <!-- Legal Streaming Directory Section -->
+      <section class="content-block">
+        <div class="section-header">
+          <div>
+            <h2>📺 Legal Live Stream & TV Broadcast Channels</h2>
+            <p class="section-sub">Verified official broadcast rights holders for the 2026/27 championship</p>
+          </div>
+          <a href="/watch/" class="view-all-link">Full Global Broadcast Guide &rarr;</a>
+        </div>
+
+        <div class="grid-2">
+          {topBroadcasters.map((provider: any) => (
+            <BroadcasterCard broadcaster={provider} countryName={provider.country} />
+          ))}
+        </div>
+
+        <div class="callout warning-stream-callout">
+          <strong>⚠️ Anti-Piracy Notice:</strong> World Darts Guide exclusively lists verified, legal rights-holding broadcasters. We never host, link to, or promote illicit stream websites or unauthorized re-broadcasts. Unauthorized streams expose visitors to malware, aggressive adware, and sudden mid-match blackouts.
+        </div>
+      </section>
+
+      <!-- In-Feed Ad Unit -->
+      <AdSlot slotType="in-feed" id="home-mid-infeed" />
+
+      <!-- Essential Fan Utility Hubs -->
+      <section class="content-block">
+        <h2>🎪 Alexandra Palace Spectator Utility Guides</h2>
+        <p>Planning your visit to Ally Pally? Everything you need for an unforgettable match-day experience:</p>
+
+        <div class="grid-3 utility-cards">
+          <a href="/venue/great-hall-seating-plan/" class="utility-card">
+            <span class="utility-icon">🗺️</span>
+            <h3>Great Hall Seating Plan</h3>
+            <p>Compare floor tables vs tiered grandstands, beer hall views, and screen sightlines.</p>
+            <span class="card-link-text">View Seating Guide &rarr;</span>
+          </a>
+
+          <a href="/travel/" class="utility-card">
+            <span class="utility-icon">🚇</span>
+            <h3>Tube, Rail & Bus Travel</h3>
+            <p>Wood Green Piccadilly line, Alexandra Palace National Rail, and the W3 shuttle hill bus.</p>
+            <span class="card-link-text">Read Transit Guide &rarr;</span>
+          </a>
+
+          <a href="/fancy-dress/" class="utility-card">
+            <span class="utility-icon">🎭</span>
+            <h3>Fancy Dress Costume Rules</h3>
+            <p>Permitted outfits, strictly banned items (football kits, masks), and security protocols.</p>
+            <span class="card-link-text">Check Costume Rules &rarr;</span>
+          </a>
+
+          <a href="/tickets/" class="utility-card">
+            <span class="utility-icon">🎟️</span>
+            <h3>Official Tickets & Resale</h3>
+            <p>SeeTickets PDC ballot timeline, official resale platform, and unauthorized tout warnings.</p>
+            <span class="card-link-text">Check Ticket Guide &rarr;</span>
+          </a>
+
+          <a href="/hotels/" class="utility-card">
+            <span class="utility-icon">🏨</span>
+            <h3>Hotels Near Alexandra Palace</h3>
+            <p>Wood Green, Muswell Hill, and King's Cross connections for night session departures.</p>
+            <span class="card-link-text">Browse Hotels &rarr;</span>
+          </a>
+
+          <a href="/schedule/" class="utility-card">
+            <span class="utility-icon">🗓️</span>
+            <h3>Full Tournament Schedule</h3>
+            <p>Round 1 through to the Sunday 3 January 2027 Final, including Christmas break dates.</p>
+            <span class="card-link-text">View Schedule &rarr;</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Top Seed Contenders Section -->
+      <section class="content-block">
+        <div class="section-header">
+          <div>
+            <h2>🎯 Top Contenders & Player Profiles</h2>
+            <p class="section-sub">Key seeds, walk-on anthems, tungsten dart weights, and tournament records</p>
+          </div>
+          <a href="/players/" class="view-all-link">Browse All Players &rarr;</a>
+        </div>
+
+        <div class="grid-2">
+          {featuredPlayers.map((player: any) => (
+            <PlayerCard player={player} />
+          ))}
+        </div>
+      </section>
+
+      <!-- History & Darts Knowledge Section -->
+      <section class="content-block">
+        <div class="section-header">
+          <div>
+            <h2>📜 Championship History & Darts Knowledge</h2>
+            <p class="section-sub">From Circus Tavern roots and 16 Ally Pally nine-darters to official 501 rules and set-play mechanics</p>
+          </div>
+          <a href="/history/" class="view-all-link">Visit History Hub &rarr;</a>
+        </div>
+
+        <div class="grid-3 utility-cards">
+          <a href="/history/roll-of-honour/" class="utility-card">
+            <span class="utility-icon">🏆</span>
+            <h3>Roll of Honour</h3>
+            <p>Every World Champion from 1994 to present, multiple title records, and historical BDO winners.</p>
+            <span class="card-link-text">View Roll of Honour &rarr;</span>
+          </a>
+
+          <a href="/history/world-championship-finals/" class="utility-card">
+            <span class="utility-icon">⚔️</span>
+            <h3>All-Time Finals Archive</h3>
+            <p>Complete scores, 3-dart averages, and match recaps for all 33 PDC finals.</p>
+            <span class="card-link-text">Browse All Finals &rarr;</span>
+          </a>
+
+          <a href="/history/alexandra-palace-world-championship/" class="utility-card">
+            <span class="utility-icon">🏛️</span>
+            <h3>Ally Pally History</h3>
+            <p>The 2007/08 relocation from Circus Tavern, Great Hall evolution, and festive fancy dress culture.</p>
+            <span class="card-link-text">Read Venue History &rarr;</span>
+          </a>
+
+          <a href="/history/nine-darters/" class="utility-card">
+            <span class="utility-icon">⚡</span>
+            <h3>Nine-Darters History</h3>
+            <p>From Paul Lim's 1990 pioneer moment to 16 Ally Pally masterpieces and sponsor bonuses.</p>
+            <span class="card-link-text">Explore 9-Darters &rarr;</span>
+          </a>
+
+          <a href="/darts/rules/" class="utility-card">
+            <span class="utility-icon">📏</span>
+            <h3>Official 501 Rules</h3>
+            <p>Board height (5ft 8in), oche distance (7ft 9.25in), scoring values, and the bust rule.</p>
+            <span class="card-link-text">Learn Rules & Specs &rarr;</span>
+          </a>
+
+          <a href="/darts/legs-vs-sets/" class="utility-card">
+            <span class="utility-icon">🎯</span>
+            <h3>Legs vs Sets Format</h3>
+            <p>How set play works, round distances, and the dramatic sudden-death 11th leg tiebreak.</p>
+            <span class="card-link-text">Understand Set Play &rarr;</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions (SEO Structured Data Accordion) -->
+      <section class="content-block">
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq-list">
+          {homepageFaqSchema.mainEntity.map((item: any) => (
+            <div class="faq-item">
+              <h3 class="faq-question">{item.name}</h3>
+              <p class="faq-answer">{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <!-- Right Sidebar Column -->
+    <aside class="sidebar-col">
+      <!-- Fast Quick Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Quick Fan Navigator</h3>
+        <ul class="widget-list">
+          <li><a href="/tournament/world-darts-championship/">🏆 Tournament Entity Dossier</a></li>
+          <li><a href="/live/">🎯 Match Center & Sessions</a></li>
+          <li><a href="/watch/uk/">🇬🇧 Sky Sports UK & NOW TV</a></li>
+          <li><a href="/watch/germany/">🇩🇪 DAZN & ProSieben Germany</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">🪑 Ally Pally Seating Plan</a></li>
+          <li><a href="/fancy-dress/">🦸‍♂️ Fancy Dress Rules</a></li>
+          <li><a href="/travel/">🚆 London Rail & Tube Routes</a></li>
+          <li><a href="/history/roll-of-honour/">📜 Roll of Honour & Finals</a></li>
+          <li><a href="/darts/rules/">📏 Official Darts Rules & 501</a></li>
+        </ul>
+      </div>
+
+      <!-- Sidebar Ad Slot (Sticky Rectangle) -->
+      <AdSlot slotType="rectangle" id="home-sidebar-rectangle" />
+
+      <!-- Venue Quick Snapshot Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Ally Pally Quick Rules</h3>
+        <ul class="snapshot-bullets">
+          <li><strong>Bag Policy:</strong> Strictly max 30cm x 20cm x 10cm (small bag only). Backpacks and large luggage prohibited.</li>
+          <li><strong>Payment:</strong> 100% Cashless. All bars & food stands accept card/contactless only.</li>
+          <li><strong>Entry Gate:</strong> Palm Court Entrance (opens 90 mins prior to session start).</li>
+          <li><strong>Prohibited:</strong> Football shirts/scarves, full face masks, inflatable objects, outside alcohol.</li>
+        </ul>
+        <a href="/venue/" class="btn btn-secondary btn-block">Full Venue Handbook &rarr;</a>
+      </div>
+
+      <!-- Prize Fund Breakdown Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">£5,000,000 Prize Money</h3>
+        <table class="micro-table">
+          <tbody>
+            <tr>
+              <td>Winner</td>
+              <td><strong>£1,000,000</strong></td>
+            </tr>
+            <tr>
+              <td>Runner-up</td>
+              <td><strong>£400,000</strong></td>
+            </tr>
+            <tr>
+              <td>Semi-Finalists</td>
+              <td><strong>£200,000</strong></td>
+            </tr>
+            <tr>
+              <td>Quarter-Finalists</td>
+              <td><strong>£100,000</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="/tournament/prize-money/" class="micro-link">Full Prize Money Breakdown &rarr;</a>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, #090d16 0%, #111827 50%, #0f172a 100%);
+    color: #ffffff;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 3px solid #f59e0b;
+  }
+
+  .hero-badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-section h1 {
+    font-size: 2.75rem;
+    color: #ffffff;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .broadcast-quick-bar {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .quick-bar-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #f59e0b;
+  }
+
+  .country-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .country-pill {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #f8fafc;
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .country-pill:hover {
+    background: #f59e0b;
+    color: #0f172a;
+    border-color: #f59e0b;
+  }
+
+  .pill-all {
+    background: transparent;
+    border: 1px dashed #64748b;
+    color: #94a3b8;
+  }
+
+  .highlights-ribbon {
+    background: #0f172a;
+    border-bottom: 1px solid #1e293b;
+    padding: 1.25rem 0;
+  }
+
+  .ribbon-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .ribbon-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #f8fafc;
+  }
+
+  .ribbon-icon {
+    font-size: 1.75rem;
+  }
+
+  .ribbon-card strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #ffffff;
+  }
+
+  .ribbon-card span {
+    font-size: 0.78rem;
+    color: #94a3b8;
+  }
+
+  .main-grid-layout {
+    display: grid;
+    grid-template-columns: 2.6fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-block {
+    margin-bottom: 3rem;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.25rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .section-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  .section-sub {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0.25rem 0 0;
+  }
+
+  .view-all-link {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+  }
+  .view-all-link:hover {
+    text-decoration: underline;
+  }
+
+  .live-status-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .status-indicator-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .status-indicator-tag {
+    color: #64748b;
+    font-weight: 700;
+  }
+
+  .session-clock {
+    margin-left: auto;
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .matches-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .status-footer-note {
+    font-size: 0.75rem;
+    color: #64748b;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.75rem;
+  }
+
+  .warning-stream-callout {
+    margin-top: 1.5rem;
+  }
+
+  .utility-cards {
+    margin-top: 1.25rem;
+  }
+
+  .utility-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .utility-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -2px rgba(0,0,0,0.08);
+  }
+
+  .utility-icon {
+    font-size: 1.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .utility-card h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    color: #0f172a;
+  }
+
+  .utility-card p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .card-link-text {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-top: auto;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-question {
+    font-size: 1.05rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  /* Sidebar Styles */
+  .sidebar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  .snapshot-bullets {
+    padding-left: 1.2rem;
+    font-size: 0.82rem;
+    margin-bottom: 1rem;
+    color: #475569;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .micro-table {
+    width: 100%;
+    font-size: 0.82rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .micro-table td {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .micro-table td:last-child {
+    text-align: right;
+    color: #059669;
+  }
+
+  .micro-link {
+    font-size: 0.78rem;
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-block {
+    width: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    .main-grid-layout {
+      grid-template-columns: 1fr;
+    }
+    .ribbon-inner {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-section h1 {
+      font-size: 1.85rem;
+    }
+    .ribbon-inner {
+      grid-template-columns: 1fr;
+    }
+    .matches-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

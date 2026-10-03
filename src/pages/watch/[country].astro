@@ -1,0 +1,431 @@
+---
+// src/pages/watch/[country].astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import broadcasters from '../../data/broadcasters.json';
+
+export async function getStaticPaths() {
+  const countrySlugMap: Record<string, string> = {
+    "uk-sky-sports": "uk",
+    "ireland-sky-sports": "ireland",
+    "germany-dazn-prosieben": "germany",
+    "usa-espn-peacock-pdctv": "usa",
+    "canada-pdctv": "canada",
+    "australia-kayo-fox": "australia",
+    "netherlands-viaplay": "netherlands",
+    "rest-of-world-pdctv": "international"
+  };
+
+  return broadcasters
+    .filter((b) => Boolean(countrySlugMap[b.broadcaster_id]))
+    .map((b) => ({
+      params: { country: countrySlugMap[b.broadcaster_id] },
+      props: { broadcaster: b }
+    }));
+}
+
+const { country } = Astro.params;
+const { broadcaster } = Astro.props;
+
+const pageTitle = `How to Watch PDC World Darts Championship 2026/27 Live in ${broadcaster.country}`;
+const pageDescription = `Official TV channels, legal live streams, and schedules for the 2026/27 PDC World Darts Championship in ${broadcaster.country}. Watch via ${broadcaster.broadcaster_name}.`;
+
+const breadcrumbItems = [
+  { name: 'Watch & Stream', url: '/watch/' },
+  { name: broadcaster.country }
+];
+
+const countryFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": `What channel is showing the PDC World Darts in ${broadcaster.country}?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `In ${broadcaster.country}, official live broadcast rights belong to ${broadcaster.broadcaster_name} (${broadcaster.parent_network}). Matches are available via ${broadcaster.linear_channels}.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `Can I stream the World Darts Championship live online in ${broadcaster.country}?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Yes, authorized live streaming is accessible via ${broadcaster.platform_types.join(', ')} with an active ${broadcaster.access_model.toLowerCase()}.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `Is there a free live stream of the World Darts Championship in ${broadcaster.country}?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": broadcaster.free_or_paid === 'free_tier_available'
+          ? `Yes, free-to-air broadcast coverage is available on selected sessions via ${broadcaster.broadcaster_name}.`
+          : `No authorized free live stream exists in ${broadcaster.country}. Access requires a subscription or day pass with ${broadcaster.broadcaster_name}. Avoid illegal pirated streams due to severe security and reliability risks.`
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={countryFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="country-hero">
+    <div class="container">
+      <div class="hero-badge-group">
+        <span class="badge badge-accent">TERRITORY VIEWING GUIDE</span>
+        <span class="badge">{broadcaster.country.toUpperCase()}</span>
+      </div>
+      <h1>How to Watch PDC World Darts in {broadcaster.country}</h1>
+      <p class="country-lead">
+        Official broadcast partner: <strong>{broadcaster.broadcaster_name}</strong>. Access every session live from Alexandra Palace between 11 December 2026 and 3 January 2027.
+      </p>
+    </div>
+  </header>
+
+  <div class="container country-layout">
+    <div class="country-main-content">
+      <VerificationBadge 
+        verifiedDate="October 2026" 
+        topic={`${broadcaster.country} Broadcast Rights (${broadcaster.broadcaster_name})`} 
+      />
+
+      <!-- Quick Summary Card -->
+      <section class="summary-box">
+        <h2>At A Glance: {broadcaster.country} Viewing Details</h2>
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="detail-label">Official Rights Holder</span>
+            <span class="detail-value"><strong>{broadcaster.broadcaster_name}</strong></span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Parent Network</span>
+            <span class="detail-value">{broadcaster.parent_network}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">TV Channels / Feed</span>
+            <span class="detail-value">{broadcaster.linear_channels}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Access Model</span>
+            <span class="detail-value">{broadcaster.access_model}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Pricing / Pass Cost</span>
+            <span class="detail-value prize-highlight">{broadcaster.price_info}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Free Option Status</span>
+            <span class="detail-value">
+              {broadcaster.free_or_paid === 'free_tier_available' ? '✅ Free Tier Available' : '❌ Paid Subscription Only'}
+            </span>
+          </div>
+        </div>
+
+        <div class="cta-action-area">
+          <a 
+            href={broadcaster.official_watch_url} 
+            target="_blank" 
+            rel="noopener noreferrer nofollow" 
+            class="btn btn-primary"
+          >
+            Go to Official {broadcaster.broadcaster_name} Live Feed &rarr;
+          </a>
+          <span class="micro-note">Redirects to official verified rights holder portal.</span>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id={`country-${country}-top-ad`} />
+
+      <!-- In-Depth Viewing Guide -->
+      <section class="editorial-guide-section">
+        <h2>Detailed Viewing Guide for {broadcaster.country} Fans</h2>
+        <p>
+          {broadcaster.editorial_notes}
+        </p>
+
+        <h3>Supported Streaming Devices & Platforms</h3>
+        <p>You can stream {broadcaster.broadcaster_name} across the following validated platforms:</p>
+        <ul class="device-pill-list">
+          {broadcaster.platform_types.map((type: string) => (
+            <li>📱 {type}</li>
+          ))}
+          <li>Smart TVs (Samsung, LG, Sony Android TV)</li>
+          <li>Apple TV, Amazon Fire TV Stick & Roku</li>
+          <li>Desktop Browsers (Chrome, Safari, Edge, Firefox)</li>
+          <li>iOS & Android Smartphones & Tablets</li>
+        </ul>
+
+        <h3>Typical Session Air Times in Your Region</h3>
+        <p>
+          Ally Pally sessions begin at <strong>12:30 GMT</strong> (Afternoon) and <strong>19:00 GMT</strong> (Evening). Depending on your local timezone, expect broadcasts to air in your morning, evening, or overnight hours.
+        </p>
+      </section>
+
+      <!-- Warning Against Illegal Streams -->
+      <div class="callout warning-box">
+        <h3>⚠️ Notice: Avoid Unauthorized Streams</h3>
+        <p>
+          Searching for free live streams of the PDC World Darts Championship often directs viewers to dubious websites featuring aggressive ad popups, crypto-mining scripts, and intrusive redirects. Furthermore, illegal streams frequently crash during deciding sets. We strongly encourage accessing coverage exclusively via <strong>{broadcaster.broadcaster_name}</strong> or official <strong>PDCTV</strong>.
+        </p>
+      </div>
+
+      <AdSlot slotType="in-feed" id={`country-${country}-mid-ad`} />
+
+      <!-- Frequently Asked Questions -->
+      <section class="country-faq-section">
+        <h2>Frequently Asked Questions ({broadcaster.country})</h2>
+        <div class="faq-accordion">
+          {countryFaqSchema.mainEntity.map((item) => (
+            <div class="faq-box">
+              <h4>{item.name}</h4>
+              <p>{item.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="country-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Other Country Guides</h3>
+        <ul class="widget-list">
+          <li><a href="/watch/uk/">🇬🇧 United Kingdom</a></li>
+          <li><a href="/watch/germany/">🇩🇪 Germany</a></li>
+          <li><a href="/watch/usa/">🇺🇸 United States</a></li>
+          <li><a href="/watch/netherlands/">🇳🇱 Netherlands</a></li>
+          <li><a href="/watch/australia/">🇦🇺 Australia</a></li>
+          <li><a href="/watch/canada/">🇨🇦 Canada</a></li>
+          <li><a href="/watch/ireland/">🇮🇪 Ireland</a></li>
+          <li><a href="/watch/international/">🌍 International / PDCTV</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id={`country-${country}-sidebar-ad`} />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tournament Quick Links</h3>
+        <ul class="widget-list">
+          <li><a href="/live/">🎯 Match Center & Daily Order of Play</a></li>
+          <li><a href="/schedule/">🗓️ Complete Match Schedule</a></li>
+          <li><a href="/players/">🎯 Player Profiles & Walk-ons</a></li>
+          <li><a href="/venue/">🏛️ Alexandra Palace Spectator Guide</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .country-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #3b82f6;
+  }
+
+  .hero-badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .country-hero h1 {
+    font-size: 2.35rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .country-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .country-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .summary-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .summary-box h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.9rem;
+  }
+
+  .detail-label {
+    color: #64748b;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .detail-value {
+    color: #0f172a;
+  }
+
+  .prize-highlight {
+    color: #059669;
+    font-weight: 700;
+  }
+
+  .cta-action-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.25rem;
+  }
+
+  .micro-note {
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+
+  .editorial-guide-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .device-pill-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .device-pill-list li {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    color: #334155;
+    margin: 0;
+  }
+
+  .country-faq-section {
+    margin-top: 3rem;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+  }
+
+  .country-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .country-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .details-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

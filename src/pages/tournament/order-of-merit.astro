@@ -1,0 +1,562 @@
+---
+// src/pages/tournament/order-of-merit.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import oomData from '../../data/order-of-merit.json';
+
+const pageTitle = "PDC Order of Merit Explained — World Rankings & Seedings Guide";
+const pageDescription = "Comprehensive guide to the PDC Order of Merit. Learn how the 2-year rolling prize money system works, seedings cutoff rules, and current provisional top 32 rankings.";
+const siteUrl = "https://worlddartsguide.com";
+
+const breadcrumbItems = [
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'Order of Merit', url: '/tournament/order-of-merit/' }
+];
+
+const oomSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": `${siteUrl}/tournament/order-of-merit/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "PDC Order of Merit Provisional Top Seeds Snapshot",
+    "numberOfItems": oomData.provisional_rankings.length,
+    "itemListElement": oomData.provisional_rankings.map((item) => ({
+      "@type": "ListItem",
+      "position": item.rank,
+      "name": `Rank #${item.rank}: ${item.player} (${item.prize_money})`
+    }))
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={oomSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="oom-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">2-YEAR ROLLING WORLD RANKINGS</span>
+        <span class="badge">PROVISIONAL SNAPSHOT</span>
+      </div>
+      <h1>PDC Order of Merit & World Championship Seedings</h1>
+      <p class="hero-lead">
+        The official currency of professional darts. Understand how the 24-month prize money system operates, why World Championship earnings make or break careers, and inspect the provisional top 32 seeds.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status={oomData.status} 
+          lastVerified={oomData.last_verified} 
+          source={oomData.source} 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Ranking Window</span>
+          <span class="stat-value">Rolling 24 Months</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Cutoff Event</span>
+          <span class="stat-value">Late Nov 2026</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Seeds Allotted</span>
+          <span class="stat-value">Top 32 Players</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+
+      <!-- How the Order of Merit Works -->
+      <section class="content-section">
+        <h2>What Is the PDC Order of Merit?</h2>
+        <p>
+          Unlike ranking systems in tennis or golf that award points based on tournament finishes, the <strong>PDC Order of Merit is calculated entirely on official prize money won in pounds sterling (£)</strong> over a continuous rolling two-year period.
+        </p>
+
+        <div class="grid-2 rules-grid">
+          {oomData.system_rules.map((rule) => (
+            <div class="card rule-card">
+              <h4>🎯 {rule.rule}</h4>
+              <p>{rule.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Key Concepts: Rankings vs Seedings vs Qualification -->
+      <section class="content-section">
+        <h2>Ranking vs. Seeding vs. Qualification: Key Differences</h2>
+        <p>
+          New spectators frequently confuse rankings with tournament draw seedings. Here is how the PDC hierarchy separates the three concepts:
+        </p>
+
+        <div class="card comparison-card">
+          <ul class="bullet-list">
+            <li>
+              <strong>World Ranking:</strong> A player's position (#1 to #128+) on the main two-year Order of Merit based on accumulated prize money across all ranking events.
+            </li>
+            <li>
+              <strong>Tournament Qualification:</strong> Earning entry into the 128-player World Championship field. Achieved either through the main Order of Merit (top 32), the one-year ProTour Order of Merit (next 32), or international qualifying pathways (remaining 64).
+            </li>
+            <li>
+              <strong>Tournament Seeding:</strong> Only the <strong>Top 32 players</strong> on the main Order of Merit at the late November cutoff receive seeded status in the official tournament bracket.
+            </li>
+            <li>
+              <strong>Tournament Draw:</strong> The physical bracket matchups drawn live on television pairing seeded stars against unseeded international and ProTour qualifiers. Track the process on our <a href="/draw/">128-Player Tournament Draw Tracker</a>.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <AdSlot slotType="banner" id="oom-mid-ad" />
+
+      <!-- Provisional Top 32 Rankings Table -->
+      <section class="content-section">
+        <h2>Provisional Top 32 Order of Merit Snapshot</h2>
+        
+        <div class="callout notice-callout">
+          <h4>⚠️ Provisional Ranking Snapshot (Not Confirmed 2026/27 Seeds)</h4>
+          <p>
+            The table below is an active <strong>Provisional Snapshot as of October 2026</strong>. It is <strong>NOT</strong> the confirmed final field or seed list for the 2026/27 World Darts Championship.
+          </p>
+          <div class="notice-meta-grid">
+            <div><strong>Snapshot Date:</strong> October 2026</div>
+            <div><strong>Last Verified:</strong> {oomData.last_verified}</div>
+            <div><strong>Official Source:</strong> <a href={oomData.source_url} target="_blank" rel="noopener noreferrer">{oomData.source}</a></div>
+            <div><strong>Qualifying Cutoff:</strong> Players Championship Finals (Late November 2026)</div>
+          </div>
+          <p class="notice-sub">
+            Rankings remain live and will fluctuate with every remaining Players Championship and European Tour tournament. Final tournament seedings (Positions 1 through 32) are confirmed only after the qualifying cutoff.
+          </p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table oom-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Nationality</th>
+                <th>2-Year Prize Money</th>
+                <th>Notes / Seed Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {oomData.provisional_rankings.map((p) => (
+                <tr class={p.rank <= 4 ? "top-tier-row" : p.rank <= 16 ? "mid-tier-row" : ""}>
+                  <td class="rank-col"><strong>#{p.rank}</strong></td>
+                  <td><strong>{p.player}</strong></td>
+                  <td>{p.nationality}</td>
+                  <td class="money-col"><strong>{p.prize_money}</strong></td>
+                  <td class="notes-col">{p.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Why World Championship Prize Money Dominates the Rankings -->
+      <section class="content-section">
+        <h2>Why Alexandra Palace Dictates the World Rankings</h2>
+        <p>
+          Because the World Darts Championship carries a <strong>£5,000,000 purse</strong> with <strong>£1,000,000</strong> awarded to the winner (compared to £600,000 total purse for the World Matchplay), a deep run at Alexandra Palace can propel a player 30 places up the rankings or drop a defending champion out of the top 10.
+        </p>
+
+        <div class="card impact-card">
+          <h4>The Defending Prize Money Trap</h4>
+          <p>
+            Every pound won at Alexandra Palace drops off a player's Order of Merit total exactly 24 months later. If a player reached the final two years ago (defending £400,000) and suffers a shock second-round defeat (earning just £25,000), they surrender a net £375,000 in ranking money.
+          </p>
+          <p class="micro-note">
+            <em>See the exact round-by-round payout amounts on our <a href="/tournament/prize-money/">£5M Prize Money Guide</a>.</em>
+          </p>
+        </div>
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore The Tournament Ecosystem</h2>
+        <div class="grid-2">
+          <a href="/tournament/prize-money/" class="cluster-link-card">
+            <h3>💰 £5M Prize Fund Breakdown</h3>
+            <p>Full breakdown of winner, runner-up, and round-by-round tournament earnings.</p>
+          </a>
+          <a href="/draw/" class="cluster-link-card">
+            <h3>🗺️ 128-Player Tournament Draw</h3>
+            <p>How the top 32 seeds are placed into the seven-round bracket.</p>
+          </a>
+          <a href="/players/" class="cluster-link-card">
+            <h3>🎯 128 Competitors Dossier</h3>
+            <p>Profiles, equipment specs, and walk-on songs for the world's leading darts stars.</p>
+          </a>
+          <a href="/schedule/finals-weekend/" class="cluster-link-card">
+            <h3>🏆 Finals Weekend Schedule</h3>
+            <p>Session start times for the Quarter-Finals, Semi-Finals, and Final.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Ranking Navigation</h3>
+        <ul class="widget-list">
+          <li><a href="/tournament/order-of-merit/">PDC Order of Merit</a></li>
+          <li><a href="/tournament/prize-money/">Prize Money & Payouts</a></li>
+          <li><a href="/draw/">Tournament Bracket & Draw</a></li>
+          <li><a href="/tournament/world-darts-championship/">Tournament Overview</a></li>
+          <li><a href="/schedule/">Full 2026/27 Schedule</a></li>
+          <li><a href="/results/">Results Center</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="oom-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Player Dossiers</h3>
+        <ul class="widget-list">
+          <li><a href="/players/luke-humphries/">Luke Humphries (World #1)</a></li>
+          <li><a href="/players/michael-van-gerwen/">Michael van Gerwen (3x Champion)</a></li>
+          <li><a href="/players/luke-littler/">Luke Littler (2024 Finalist)</a></li>
+          <li><a href="/players/michael-smith/">Michael Smith (2023 Champion)</a></li>
+          <li><a href="/players/gerwyn-price/">Gerwyn Price (2021 Champion)</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .oom-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #8b5cf6;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .oom-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #c4b5fd;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .rules-grid {
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .rule-card {
+    padding: 1.25rem;
+    border-top: 4px solid #8b5cf6;
+  }
+
+  .rule-card h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+
+  .rule-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  .comparison-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .bullet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding-left: 1.25rem;
+    margin: 0;
+  }
+
+  .bullet-list li {
+    line-height: 1.55;
+    color: #334155;
+  }
+
+  .notice-callout {
+    background: #f5f3ff;
+    border-left: 5px solid #8b5cf6;
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+  }
+
+  .notice-callout h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: #4c1d95;
+  }
+
+  .notice-callout p {
+    margin: 0 0 0.75rem;
+    font-size: 0.92rem;
+    color: #5b21b6;
+    line-height: 1.5;
+  }
+
+  .notice-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.7);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #4c1d95;
+    margin-bottom: 0.75rem;
+    border: 1px solid #ddd6fe;
+  }
+
+  .notice-sub {
+    font-size: 0.85rem !important;
+    color: #6d28d9 !important;
+    margin: 0 !important;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .top-tier-row {
+    background: #faf5ff;
+  }
+
+  .mid-tier-row {
+    background: #f8fafc;
+  }
+
+  .rank-col {
+    color: #6d28d9;
+    font-size: 1rem;
+  }
+
+  .money-col {
+    color: #15803d;
+    font-weight: 700;
+  }
+
+  .notes-col {
+    font-size: 0.88rem;
+    color: #64748b;
+  }
+
+  .impact-card {
+    background: #fdf2f8;
+    border: 1px solid #fce7f3;
+    border-left: 4px solid #ec4899;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .impact-card h4 {
+    margin: 0 0 0.5rem;
+    color: #9d174d;
+    font-size: 1.15rem;
+  }
+
+  .impact-card p {
+    margin: 0 0 0.5rem;
+    color: #831843;
+    line-height: 1.5;
+  }
+
+  .micro-note {
+    font-size: 0.85rem;
+    color: #9d174d;
+    margin: 0;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .oom-hero h1 {
+      font-size: 2.15rem;
+    }
+  }
+</style>

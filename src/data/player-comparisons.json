@@ -1,0 +1,136 @@
+{
+  "title": "Head-to-Head Player Rivalries & Historical Match Comparisons",
+  "last_verified": "2026-10-03",
+  "status": "confirmed",
+  "source": "PDC Head-to-Head Statistics, PDC Official Match Archives & Darts Database (dartsdatabase.co.uk)",
+  "rivalries": [
+    {
+      "rivalry_id": "humphries-vs-littler",
+      "title": "Luke Humphries vs Luke Littler",
+      "tagline": "The Premier Rivalry of Modern Darts",
+      "as_of_date": "October 2026",
+      "record_scope": "All PDC competitive meetings (Ranked majors, Premier League, World Series & European Tour)",
+      "source": "PDC Official Match Records",
+      "player_1": { "name": "Luke Humphries", "slug": "luke-humphries", "nickname": "Cool Hand Luke", "world_titles": 1 },
+      "player_2": { "name": "Luke Littler", "slug": "luke-littler", "nickname": "The Nuke", "world_titles": 0 },
+      "match_overview": "A rivalry that transformed global interest in professional darts. From the unforgettable 2024 World Championship final to weekly Premier League battles, Humphries and Littler consistently produce 100+ average blockbusters.",
+      "head_to_head_record": {
+        "total_meetings": 14,
+        "humphries_wins": 7,
+        "littler_wins": 7,
+        "draws": 0
+      },
+      "defining_matches": [
+        {
+          "event": "2024 PDC World Darts Championship Final",
+          "venue": "Alexandra Palace, London",
+          "score": "Luke Humphries 7 – 4 Luke Littler",
+          "summary": "Littler led 4-2 in sets before Humphries unleashed a blistering 5-set streak averaging 103.67 to claim his maiden World Championship crown."
+        },
+        {
+          "event": "2024 Premier League Darts Play-Off Final",
+          "venue": "The O2, London",
+          "score": "Luke Littler 11 – 7 Luke Humphries",
+          "summary": "Littler hit a sensational televised nine-darter in the final to defeat the world number one and claim the £275,000 Premier League title on debut."
+        }
+      ],
+      "tactical_analysis": "Humphries relies on relentless consistency and clinical 100+ checkouts, while Littler attacks with rapid-fire 180 scoring and aggressive treble-switching."
+    },
+    {
+      "rivalry_id": "van-gerwen-vs-price",
+      "title": "Michael van Gerwen vs Gerwyn Price",
+      "tagline": "The Green Machine vs The Iceman",
+      "as_of_date": "October 2026",
+      "record_scope": "Official PDC senior circuit matches (televised majors, Premier League & ProTour)",
+      "source": "Darts Database & PDC Head-to-Head Archive",
+      "player_1": { "name": "Michael van Gerwen", "slug": "michael-van-gerwen", "nickname": "Mighty Mike", "world_titles": 3 },
+      "player_2": { "name": "Gerwyn Price", "slug": "gerwyn-price", "nickname": "The Iceman", "world_titles": 1 },
+      "match_overview": "One of the fiercest, most emotionally charged rivalries in darts history. Filled with roaring celebrations, stage flexes, and epic matchplay battles.",
+      "head_to_head_record": {
+        "total_meetings": 38,
+        "van_gerwen_wins": 26,
+        "price_wins": 11,
+        "draws": 1
+      },
+      "defining_matches": [
+        {
+          "event": "2022 World Matchplay Final",
+          "venue": "Winter Gardens, Blackpool",
+          "score": "Michael van Gerwen 18 – 14 Gerwyn Price",
+          "summary": "An extraordinary slugfest where MVG clawed back from 0-4 down to claim his third World Matchplay title with a 101.19 average."
+        },
+        {
+          "event": "2019 Grand Slam of Darts Semi-Final",
+          "venue": "Aldersley Leisure Village, Wolverhampton",
+          "score": "Gerwyn Price 16 – 12 Michael van Gerwen",
+          "summary": "Price's landmark breakthrough victory over MVG after 19 previous defeats, on his way to defending the Grand Slam title."
+        }
+      ],
+      "tactical_analysis": "Both players feed directly off crowd electricity and aggressive tempo. Van Gerwen dominates in rapid high-scoring bursts, whereas Price excels in grinding down opponents with heavy double-top checkouts."
+    },
+    {
+      "rivalry_id": "anderson-vs-van-gerwen",
+      "title": "Gary Anderson vs Michael van Gerwen",
+      "tagline": "The Purest High-Tempo Darting Spectacle",
+      "as_of_date": "October 2026",
+      "record_scope": "Official PDC senior circuit head-to-head matches (1993–present)",
+      "source": "Darts Database & PDC Head-to-Head Archive",
+      "player_1": { "name": "Gary Anderson", "slug": "gary-anderson", "nickname": "The Flying Scotsman", "world_titles": 2 },
+      "player_2": { "name": "Michael van Gerwen", "slug": "michael-van-gerwen", "nickname": "Mighty Mike", "world_titles": 3 },
+      "match_overview": "For over a decade, Anderson vs MVG represented the gold standard of world darts: blistering throwing speed, virtually zero gamesmanship, and astronomical scoring.",
+      "head_to_head_record": {
+        "total_meetings": 71,
+        "van_gerwen_wins": 46,
+        "anderson_wins": 22,
+        "draws": 3
+      },
+      "defining_matches": [
+        {
+          "event": "2017 PDC World Darts Championship Final",
+          "venue": "Alexandra Palace, London",
+          "score": "Michael van Gerwen 7 – 3 Gary Anderson",
+          "summary": "The highest-scoring final in history: 42 maximum 180s combined (Anderson 22, MVG 20), with Van Gerwen averaging 107.79 and Anderson averaging 104.93."
+        },
+        {
+          "event": "2015 Premier League Darts Final",
+          "venue": "The O2, London",
+          "score": "Gary Anderson 11 – 7 Michael van Gerwen",
+          "summary": "Anderson dismantled van Gerwen with a 104.85 average to secure his second Premier League crown."
+        }
+      ],
+      "tactical_analysis": "Zero delay on the oche. When both are firing, legs routinely finish in 11 to 13 darts with continuous 180s."
+    },
+    {
+      "rivalry_id": "smith-vs-van-gerwen",
+      "title": "Michael Smith vs Michael van Gerwen",
+      "tagline": "Architects of the Greatest Leg in History",
+      "as_of_date": "October 2026",
+      "record_scope": "Official PDC senior circuit head-to-head meetings",
+      "source": "Darts Database & PDC Head-to-Head Archive",
+      "player_1": { "name": "Michael Smith", "slug": "michael-smith", "nickname": "Bully Boy", "world_titles": 1 },
+      "player_2": { "name": "Michael van Gerwen", "slug": "michael-van-gerwen", "nickname": "Mighty Mike", "world_titles": 3 },
+      "match_overview": "Forever etched into sporting immortality following their clash on 3 January 2023 at Alexandra Palace.",
+      "head_to_head_record": {
+        "total_meetings": 54,
+        "van_gerwen_wins": 37,
+        "smith_wins": 16,
+        "draws": 1
+      },
+      "defining_matches": [
+        {
+          "event": "2023 PDC World Darts Championship Final",
+          "venue": "Alexandra Palace, London",
+          "score": "Michael Smith 7 – 4 Michael van Gerwen",
+          "summary": "Featured the legendary leg where MVG missed double-12 for a 9-darter, and Smith stepped up to hit double-12 for a nine-darter of his own. Smith went on to win his first world title."
+        },
+        {
+          "event": "2019 PDC World Darts Championship Final",
+          "venue": "Alexandra Palace, London",
+          "score": "Michael van Gerwen 7 – 3 Michael Smith",
+          "summary": "Van Gerwen won his third world title with early dominance, leading 4-0 before Smith fought back."
+        }
+      ],
+      "tactical_analysis": "Pure natural rhythm versus controlled aggressive dominance. High 180 frequency across every meeting."
+    }
+  ]
+}
