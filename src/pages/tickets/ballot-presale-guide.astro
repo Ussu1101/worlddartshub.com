@@ -1,0 +1,442 @@
+---
+// src/pages/tickets/ballot-presale-guide.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "PDC World Darts Ballot & Presale Guide: Priority Tickets";
+const pageDescription = "Official guide to the PDC World Darts Championship priority ballot. PDCTV subscriber eligibility, See Tickets presale windows, and booking rules.";
+
+const breadcrumbItems = [
+  { name: 'Tickets', url: '/tickets/' },
+  { name: 'Ballot & Presale Guide' }
+];
+
+const presaleFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "PDC World Darts Championship Ballot & Presale Guide FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is eligible for the PDC World Darts priority presale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first priority presale window is granted exclusively to active paid PDCTV Annual Subscribers who hold a verified subscription prior to the official summer qualifying cutoff date. A second priority window is subsequently offered to fans who register free priority interest on the official PDC ticketing portal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a PDCTV Annual Subscription guarantee tickets to Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A PDCTV Annual Subscription provides priority access to the earliest booking window, but tickets are sold strictly on a first-come, first-served basis within that window. Peak sessions such as Friday/Saturday evenings and Finals Weekend experience extraordinary demand and can sell out rapidly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are priority presale access links distributed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eligible members receive a unique priority booking link or verification token via email directly from the PDC or See Tickets ahead of the window opening. The link connects to the official See Tickets priority booking queue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the session ticket limits during the presale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To prevent bulk buying and touting, the PDC enforces transaction limits—typically a maximum of 6 table seats per session and up to 12 tiered bleacher seats per booking, subject to published tournament terms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if tickets remain after the presale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any inventory remaining across all 28 sessions after the priority presale windows close rolls forward into the open General Sale for the general public."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={presaleFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="presale-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">OFFICIAL TICKETING UTILITY</span>
+        <span class="badge">PRIORITY BOOKING WINDOWS</span>
+      </div>
+      <h1 class="presale-title">PDC World Darts Ballot & Presale Guide 2026/27</h1>
+      <p class="presale-lead">
+        The official priority ballot and subscriber presale represent the highest-probability route to securing face-value tickets for Alexandra Palace. Learn how the priority windows operate, who qualifies, and how to prepare.
+      </p>
+    </div>
+  </header>
+
+  <div class="container presale-layout">
+    <article class="presale-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Official Ticketing Regulations & Priority Ballot Procedures" />
+
+      <!-- Section 1: Overview -->
+      <section class="presale-section">
+        <h2>What Is the Priority Ballot & Presale?</h2>
+        <p>
+          Due to overwhelming global demand for the 28 tournament sessions at Alexandra Palace, the Professional Darts Corporation (PDC) distributes tickets through staggered priority access windows rather than an unmanaged open free-for-all.
+        </p>
+        <p>
+          Managed exclusively through official ticketing provider <strong>See Tickets</strong>, the priority process gives registered and qualifying darts fans early access to inventory before any remaining tickets are released to the open market in the <a href="/tickets/general-sale/">General Sale</a>.
+        </p>
+
+        <div class="callout callout-info">
+          <h4>Essential Distinction: Priority Access vs Guaranteed Allocation</h4>
+          <p>
+            Entry into a priority presale window grants you access to purchase tickets before the wider public. It does <strong>not</strong> guarantee that tickets for your preferred session will be available. Because demand exceeds venue capacity several times over, tickets are allocated strictly on a first-come, first-served basis within each window.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: Priority Windows Hierarchy -->
+      <section class="presale-section">
+        <h2>The Three Staggered Ticket Release Phases</h2>
+        <p>
+          The PDC operates a strict hierarchy for tournament ticket sales. Every spectator seeking standard tickets at face value must understand where they sit in this release cycle:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Phase</th>
+                <th>Eligibility Requirement</th>
+                <th>Typical Window</th>
+                <th>Access Mechanism</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Window 1: PDCTV Annual Subscribers</strong></td>
+                <td>Paid PDCTV Annual Subscriber prior to published cutoff</td>
+                <td>Late July (typically 48 hrs)</td>
+                <td>Unique email priority link / account token via See Tickets</td>
+              </tr>
+              <tr>
+                <td><strong>Window 2: Registered Priority Fans</strong></td>
+                <td>Registered free priority interest on official PDC portal</td>
+                <td>Late July / Early August</td>
+                <td>Verified email access link sent to registered email address</td>
+              </tr>
+              <tr>
+                <td><strong>Window 3: Open General Sale</strong></td>
+                <td>General public (all registered See Tickets users)</td>
+                <td>Early August</td>
+                <td>Public queue on See Tickets portal (<a href="/tickets/general-sale/">learn more</a>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="presale-guide-mid-ad" />
+
+      <!-- Section 3: PDCTV Annual Subscriber Presale -->
+      <section class="presale-section">
+        <h2>Phase 1: PDCTV Annual Subscriber Priority Access</h2>
+        <p>
+          The most coveted priority window is reserved for paid <strong>PDCTV Annual Subscribers</strong>. Under PDC policy:
+        </p>
+        <ul>
+          <li><strong>Annual Subscriptions Only:</strong> Monthly PDCTV passes, day passes, or event-specific passes do <strong>not</strong> qualify for priority ticket access. Only active annual memberships are recognized.</li>
+          <li><strong>The Qualifying Cutoff Date:</strong> The PDC announces a hard deadline (usually in early to mid-July) by which an annual subscription must be active. Purchasing an annual subscription <em>after</em> the cutoff does not grant eligibility for that year’s priority window.</li>
+          <li><strong>Single Account Verification:</strong> The email registered to your PDCTV account must match or be verified against the See Tickets purchasing profile to access the booking queue.</li>
+        </ul>
+      </section>
+
+      <!-- Section 4: Transaction Limits & Session Rules -->
+      <section class="presale-section">
+        <h2>Booking Rules, Basket Limits & Session Caps</h2>
+        <p>
+          To maintain fair distribution and curb commercial ticket harvesting, the PDC and See Tickets enforce clear booking restrictions across all presale windows:
+        </p>
+        <div class="grid-2col">
+          <div class="feature-card">
+            <h3>Floor Table Seating Limits</h3>
+            <p>
+              Floor table seating is strictly capped—historically at a maximum of <strong>6 tickets per session</strong> per transaction. Group bookings exceeding 6 table seats cannot be processed under a single presale basket.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Tiered Bleacher Seating Limits</h3>
+            <p>
+              Tiered grandstand seating provides elevated views and typically permits up to <strong>12 tickets per session</strong> per transaction, making it more accommodating for larger groups and social clubs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Step-by-Step Presale Preparation -->
+      <section class="presale-section">
+        <h2>How to Prepare Before the Priority Window Opens</h2>
+        <p>
+          When the queue goes live, thousands of fans attempt to checkout simultaneously. Following these practical preparation steps minimizes technical delays:
+        </p>
+        <ol class="action-list">
+          <li><strong>Create Your See Tickets Profile Early:</strong> Register your official account on <a href="https://www.seetickets.com" target="_blank" rel="noopener noreferrer">seetickets.com</a> well in advance. Save payment details and confirm your billing address.</li>
+          <li><strong>Whitelist Official Sender Domains:</strong> Ensure emails from <code>@pdc.tv</code> and <code>@seetickets.com</code> are not filtered to junk or spam folders.</li>
+          <li><strong>Decide Target Sessions in Advance:</strong> Familiarize yourself with the <a href="/schedule/">tournament session schedule</a>. Identify primary and backup dates beforehand. Weekend evening sessions sell out significantly faster than weekday afternoon sessions.</li>
+          <li><strong>Join the Waiting Room Promptly:</strong> See Tickets opens an online waiting room prior to the scheduled on-sale time. Refreshing repeatedly once inside the queue can reset your queue position.</li>
+          <li><strong>Use a Stable Connection:</strong> Checkout windows allow a limited duration (typically 8–10 minutes) to finalize payment once tickets are reserved in your basket.</li>
+        </ol>
+      </section>
+
+      <!-- Section 6: What If You Miss Out? -->
+      <section class="presale-section">
+        <h2>What to Do If You Miss Out in the Presale</h2>
+        <p>
+          If your preferred session sells out during the presale windows, you have several legitimate, authorized avenues:
+        </p>
+        <ul>
+          <li><strong>Open General Sale:</strong> Check the public release in August (<a href="/tickets/general-sale/">General Sale Guide</a>) for any newly released allocations or production adjustments.</li>
+          <li><strong>Official See Tickets Fan-to-Fan Resale:</strong> Darts fans who can no longer attend list unwanted tickets at face value on the official secondary platform. Read our <a href="/tickets/resale-returns/">Fan-to-Fan Resale & Returns Guide</a> for monitoring advice.</li>
+          <li><strong>Official Hospitality Packages:</strong> For guaranteed prime seating with fine dining and guest legend appearances, explore official <a href="/tickets/hospitality-packages/">Hospitality Packages</a>.</li>
+        </ul>
+        <div class="callout callout-warning">
+          <h4>Warning on Unauthorized Secondary Websites</h4>
+          <p>
+            Do <strong>not</strong> turn to unofficial ticket resale platforms such as Viagogo, StubHub, or social media sellers. The PDC cancels barcodes resold on unauthorized sites without refund, and security scanners at Alexandra Palace will deny admission.
+          </p>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="presale-sidebar">
+      <div class="sidebar-card">
+        <h3>Ticketing Hub Navigation</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tickets/">Tickets Overview & Prices</a></li>
+          <li><a href="/tickets/general-sale/">General Public Sale Guide</a></li>
+          <li><a href="/tickets/resale-returns/">Official Fan-to-Fan Resale</a></li>
+          <li><a href="/tickets/hospitality-packages/">Hospitality & VIP Packages</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">Great Hall Seating Plan</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Tournament Resources</h3>
+        <ul class="sidebar-links">
+          <li><a href="/schedule/">28 Session Schedule</a></li>
+          <li><a href="/travel/">Getting to Alexandra Palace</a></li>
+          <li><a href="/travel/night-travel-london/">Night Travel & Late Trains</a></li>
+          <li><a href="/faq/">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="mpu" id="presale-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .presale-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+  .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: #334155;
+    color: #cbd5e1;
+  }
+  .badge-accent {
+    background: #e11d48;
+    color: #ffffff;
+  }
+  .presale-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  .presale-lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+  }
+  .presale-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 992px) {
+    .presale-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .presale-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .presale-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .presale-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .presale-section ul, .presale-section ol {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .presale-section li {
+    margin-bottom: 0.5rem;
+  }
+  .callout {
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+  .callout h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .callout-info {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    color: #166534;
+  }
+  .callout-info p {
+    color: #166534;
+    margin: 0;
+  }
+  .callout-warning {
+    background: #fff1f2;
+    border-left: 4px solid #e11d48;
+    color: #9f1239;
+  }
+  .callout-warning p {
+    color: #9f1239;
+    margin: 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 640px) {
+    .grid-2col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .feature-card p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.92rem;
+  }
+  .presale-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-links a {
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+</style>

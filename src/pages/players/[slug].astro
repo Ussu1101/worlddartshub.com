@@ -15,8 +15,10 @@ export async function getStaticPaths() {
 
 const { player } = Astro.props;
 
-const pageTitle = `${player.name} ("${player.nickname}") — Darts Setup, Walk-On Song, Career Prize Money & Stats`;
-const pageDescription = `Complete 2026/27 player dossier for ${player.name}. Official ${player.equipment.barrel_weight_grams} ${player.equipment.manufacturer} darts specs, walk-on anthem "${player.walk_on_song}", career prize earnings, and World Darts Championship records.`;
+const cleanWeight = player.equipment.barrel_weight_grams ? player.equipment.barrel_weight_grams.split(' ')[0] : '23g';
+const songTitle = player.walk_on_song ? player.walk_on_song.split(' by ')[0] : 'Walk-On Music';
+const pageTitle = `${player.name}: Darts Specs, Walk-On Song & Career Stats`;
+const pageDescription = `Official profile for ${player.name}: verified ${cleanWeight} ${player.equipment.manufacturer} darts setup, walk-on anthem "${songTitle}", career earnings, and records.`;
 
 const breadcrumbItems = [
   { name: 'Players', url: '/players/' },

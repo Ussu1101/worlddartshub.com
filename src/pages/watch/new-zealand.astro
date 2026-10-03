@@ -1,0 +1,493 @@
+---
+// src/pages/watch/new-zealand.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Watch PDC World Darts in New Zealand: Sky Sport TV Guide";
+const pageDescription = "Official New Zealand broadcast guide for the 2026/27 World Darts Championship. Sky Sport NZ channels, Sky Sport Now streaming, NZDT session times, and PDCTV.";
+
+const breadcrumbItems = [
+  { name: 'Watch & Stream', url: '/watch/' },
+  { name: 'New Zealand' }
+];
+
+const nzFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "PDC World Darts Championship New Zealand Broadcast Guide FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which TV channel broadcasts the PDC World Darts in New Zealand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In New Zealand, official live broadcast rights are held by Sky Sport NZ (Sky Network Television). Matches are televised across Sky Sport channels (Sky Sport 1, 2, or Select on Sky Box)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I stream the World Darts Championship live in New Zealand without a satellite dish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kiwi darts fans can stream live sessions without a traditional Sky Box through Sky Sport Now (skysportnow.co.nz). The platform offers contract-free daily, weekly, and monthly streaming passes compatible with Smart TVs, phones, tablets, and web browsers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I watch the darts on PDCTV in New Zealand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Viewers in New Zealand can also access live sessions and official English stage commentary directly via PDCTV (video.pdc.tv) by purchasing an official international tournament pass or annual subscription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What time do World Darts matches air in New Zealand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "New Zealand operates on New Zealand Daylight Time (NZDT), which is 13 hours ahead of London (GMT). London evening sessions (19:00 GMT) air live at 08:00 NZDT the following morning, making them ideal for breakfast and morning viewing. London afternoon sessions (12:30 GMT) air early the following morning at 01:30 NZDT."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={nzFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="nz-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">LEGAL BROADCAST GUIDE</span>
+        <span class="badge">NEW ZEALAND (SKY SPORT & PDCTV)</span>
+      </div>
+      <h1 class="nz-title">How to Watch PDC World Darts in New Zealand 2026/27</h1>
+      <p class="nz-lead">
+        The verified broadcast guide for Kiwi darts supporters. Find official TV channels, contract-free Sky Sport Now streaming options, and NZDT match start times for all 28 sessions.
+      </p>
+    </div>
+  </header>
+
+  <div class="container nz-layout">
+    <article class="nz-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="Sky Network Television NZ & PDC International Rights Schedule" />
+
+      <!-- Section 1: Overview Card -->
+      <section class="nz-section">
+        <h2>New Zealand Broadcast Summary: 2026/27 Season</h2>
+        <div class="broadcaster-summary-card">
+          <div class="card-header-row">
+            <div>
+              <span class="country-tag">🇳🇿 NEW ZEALAND</span>
+              <h3 class="card-title">Sky Sport NZ & Sky Sport Now</h3>
+            </div>
+            <span class="status-pill status-verified">Official Partner</span>
+          </div>
+
+          <div class="summary-grid">
+            <div class="summary-item">
+              <span class="item-label">Primary Channels:</span>
+              <span class="item-value">Sky Sport 1, 2, 3 or Sky Sport Select</span>
+            </div>
+            <div class="summary-item">
+              <span class="item-label">Streaming Platform:</span>
+              <span class="item-value">Sky Sport Now (Web, iOS, Android, Smart TVs) & Sky Go</span>
+            </div>
+            <div class="summary-item">
+              <span class="item-label">Alternative Direct Pass:</span>
+              <span class="item-value">PDCTV (video.pdc.tv) Official International Pass</span>
+            </div>
+            <div class="summary-item">
+              <span class="item-label">Access Model:</span>
+              <span class="item-value">Paid Subscription / Flexible Day & Month Passes</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: How to Watch in NZ -->
+      <section class="nz-section">
+        <h2>Viewing Options in New Zealand</h2>
+        <p>
+          The Professional Darts Corporation maintains a long-standing broadcast partnership with <strong>Sky Network Television New Zealand</strong>, ensuring complete live coverage of every session from Alexandra Palace:
+        </p>
+
+        <div class="grid-2col">
+          <div class="feature-card">
+            <h3>1. Sky Box Satellite Customers</h3>
+            <p>
+              Traditional Sky TV subscribers with the Sky Sport Tier can tune directly into dedicated Sky Sport channels with standard digital recording and multi-room viewing. Satellite subscribers also receive inclusive mobile access via the <strong>Sky Go</strong> application.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h3>2. Sky Sport Now (Contract-Free OTT)</h3>
+            <p>
+              For cord-cutters without a satellite dish, <strong>Sky Sport Now</strong> provides direct broadband streaming. You can subscribe instantly using flexible day passes, week passes, or monthly plans, with full HD support on Apple TV, Samsung/LG Smart TVs, Chromecast, and mobile devices.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout callout-info">
+          <h4>PDCTV Direct-to-Consumer Alternative</h4>
+          <p>
+            If you prefer direct stage audio with the PDC's international commentary team, New Zealand fans can also purchase an official <strong>PDCTV</strong> tournament pass directly at <a href="https://video.pdc.tv" target="_blank" rel="noopener noreferrer">video.pdc.tv</a>.
+          </p>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="nz-watch-mid-ad" />
+
+      <!-- Section 3: Time Zone Conversion (NZDT) -->
+      <section class="nz-section">
+        <h2>NZDT Time Zone Guide: Match Times for Kiwi Viewers</h2>
+        <p>
+          During the tournament period in December and January, New Zealand observes <strong>New Zealand Daylight Time (NZDT)</strong>, which is <strong>13 hours ahead of London (GMT)</strong>.
+        </p>
+        <p>
+          Because of the time difference, Alexandra Palace evening sessions provide prime morning and breakfast viewing for fans across New Zealand:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>London Session (GMT)</th>
+                <th>New Zealand Time (NZDT)</th>
+                <th>Viewing Context in NZ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Afternoon Session:</strong> 12:30 GMT</td>
+                <td><strong>01:30 NZDT</strong> (Following Morning)</td>
+                <td>Late-night / early hours viewing for hardcore darts fans</td>
+              </tr>
+              <tr>
+                <td><strong>Evening Session:</strong> 19:00 GMT</td>
+                <td><strong>08:00 NZDT</strong> (Following Morning)</td>
+                <td><strong>Prime Breakfast Darts:</strong> Matches run live from 08:00 to ~12:00 midday</td>
+              </tr>
+              <tr>
+                <td><strong>Finals Weekend:</strong> 19:00 / 20:00 GMT</td>
+                <td><strong>08:00 / 09:00 NZDT</strong> (Following Morning)</td>
+                <td>Morning final on Monday, 4 January 2027 NZDT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          For the complete round-by-round dates and session breakdown, consult the <a href="/schedule/">28 Session Tournament Schedule</a>.
+        </p>
+      </section>
+
+      <!-- Section 4: On-Demand Replays & Pause Features -->
+      <section class="nz-section">
+        <h2>Catching Up: On-Demand Replays on Sky Sport Now</h2>
+        <p>
+          If you are unable to catch early 01:30 NZDT sessions live, Sky Sport Now offers comprehensive catch-up tools:
+        </p>
+        <ul>
+          <li><strong>Live Pause & Rewind:</strong> Rewind matches in real time if you tune in mid-session.</li>
+          <li><strong>Full Session On-Demand:</strong> Every match and session is archived immediately following the live broadcast for convenient on-demand viewing throughout the morning.</li>
+          <li><strong>Mini-Matches & Highlights:</strong> Condensed highlight packages and key 9-darter clips are posted daily across Sky Sport NZ's digital channels.</li>
+        </ul>
+      </section>
+
+      <!-- Section 5: Legal Streams Policy -->
+      <section class="nz-section">
+        <h2>Strictly Legal & Official Streams Only</h2>
+        <p>
+          World Darts Hub is an independent informational guide committed to official sports broadcasting. We strictly reject and do not link to unauthorized streaming websites, illicit IPTV providers, or pirated feeds.
+        </p>
+        <p>
+          Watching via official rightsholders like Sky Sport NZ and PDCTV guarantees stable 1080p high-definition video, professional audio sync, and zero security risks for your personal devices.
+        </p>
+        <p>
+          Interested in how international broadcast rights have evolved? Read our <a href="/watch/broadcaster-history/">History of PDC Television Rights (1993–Present)</a>.
+        </p>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="nz-sidebar">
+      <div class="sidebar-card">
+        <h3>Broadcaster Directory</h3>
+        <ul class="sidebar-links">
+          <li><a href="/watch/">Global Broadcaster Directory</a></li>
+          <li><a href="/watch/australia/">Australia (Fox Sports & Kayo)</a></li>
+          <li><a href="/watch/uk/">United Kingdom (Sky Sports & NOW)</a></li>
+          <li><a href="/watch/usa/">United States (ESPN & Peacock)</a></li>
+          <li><a href="/watch/free-streams/">Legal Free Streams Guide</a></li>
+          <li><a href="/watch/broadcaster-history/">TV Rights History</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Match Schedules</h3>
+        <ul class="sidebar-links">
+          <li><a href="/schedule/">Full 2026/27 Schedule</a></li>
+          <li><a href="/schedule/finals-weekend/">Finals Weekend Times</a></li>
+          <li><a href="/live/">Live Match Center</a></li>
+          <li><a href="/faq/">Tournament FAQ</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="mpu" id="nz-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .nz-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+  .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: #334155;
+    color: #cbd5e1;
+  }
+  .badge-accent {
+    background: #e11d48;
+    color: #ffffff;
+  }
+  .nz-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  .nz-lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+  }
+  .nz-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 992px) {
+    .nz-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .nz-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .nz-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .nz-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .nz-section ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .nz-section li {
+    margin-bottom: 0.5rem;
+  }
+  .broadcaster-summary-card {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+  .country-tag {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.05em;
+  }
+  .card-title {
+    margin: 0.25rem 0 0;
+    font-size: 1.35rem;
+    color: #0f172a;
+  }
+  .status-pill {
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .status-verified {
+    background: #dcfce7;
+    color: #15803d;
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .summary-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .summary-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .item-label {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .item-value {
+    font-size: 0.95rem;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 640px) {
+    .grid-2col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .feature-card p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.92rem;
+  }
+  .callout {
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+  .callout h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .callout-info {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    color: #166534;
+  }
+  .callout-info p {
+    color: #166534;
+    margin: 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .nz-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-links a {
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+</style>

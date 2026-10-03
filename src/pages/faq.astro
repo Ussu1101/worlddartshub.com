@@ -1,0 +1,450 @@
+---
+// src/pages/faq.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AdSlot from '../components/AdSlot.astro';
+import VerificationBadge from '../components/VerificationBadge.astro';
+
+const pageTitle = "PDC World Darts Championship FAQ: Tickets, Venue & TV Guide";
+const pageDescription = "Frequently asked questions about the 2026/27 PDC World Darts Championship at Alexandra Palace. Dates, tickets, travel, venue policies, and TV broadcasts.";
+
+const breadcrumbItems = [
+  { name: 'Tournament FAQ' }
+];
+
+const mainFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "PDC World Darts Championship 2026/27 Frequently Asked Questions",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When does the PDC World Darts Championship 2026/27 take place?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 2026/27 championship takes place from Friday, 11 December 2026 through Sunday, 3 January 2027 at Alexandra Palace in London, featuring 28 sessions with a three-day Christmas break (24–26 December)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I buy official tickets for the World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See Tickets (seetickets.com) is the exclusive primary ticketing agent. Tickets are sold via staggered priority windows in late July and early August. Unwanted genuine tickets can be bought via See Tickets Fan-to-Fan Resale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the bag policy at Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alexandra Palace strictly permits only one small bag per spectator, measuring a maximum of 30cm x 20cm x 10cm (roughly A4 size). Large bags, backpacks, and suitcases cannot enter past security."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Night Tube run after evening sessions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Piccadilly Line operates a continuous 24-hour Night Tube from Wood Green Station on Friday and Saturday nights only. On Sunday through Thursday nights, the last southbound trains depart Wood Green around 00:15–00:30."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I watch the tournament on TV and streaming?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the UK, Sky Sports and NOW hold exclusive live rights through 2030. In Germany, Austria, and Switzerland, DAZN streams every match, with Sport1 providing free-to-air coverage in Germany for 2026/27. In the USA, coverage is on ESPN and Peacock; in Belgium, on VTM 2; in New Zealand, on Sky Sport NZ; and internationally via PDCTV."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you wear football shirts or masks in fancy dress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Football club shirts, scarves, and badges, as well as full face masks, are strictly prohibited by Alexandra Palace security."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={mainFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="faq-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">KNOWLEDGE BASE</span>
+        <span class="badge">VERIFIED 2026/27 TOURNAMENT GUIDE</span>
+      </div>
+      <h1 class="faq-title">PDC World Darts Championship 2026/27 FAQ</h1>
+      <p class="faq-lead">
+        Find fast, verified answers to the most common questions regarding tickets, venue rules, night travel, TV streaming, and fan traditions at Alexandra Palace.
+      </p>
+    </div>
+  </header>
+
+  <div class="container faq-layout">
+    <article class="faq-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Tournament Guidelines, Venue Policies & Official Ticketing Standards" />
+
+      <!-- Section 1: Tournament Dates & Schedule -->
+      <section class="faq-section">
+        <h2>1. Dates, Format & Schedule</h2>
+        <div class="faq-item">
+          <h3>When does the 2026/27 PDC World Darts Championship take place?</h3>
+          <p>
+            The tournament runs from <strong>Friday, 11 December 2026 to Sunday, 3 January 2027</strong> at the Alexandra Palace Great Hall in London. The championship features 28 sessions across 16 days of action, pausing for a three-day Christmas hiatus (24–26 December) and New Year's Eve (31 December).
+          </p>
+          <p>
+            <a href="/schedule/" class="faq-link">View Full 28 Session Schedule & Dates →</a> | <a href="/schedule/finals-weekend/" class="faq-link">Finals Weekend Start Times →</a>
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the total tournament prize money?</h3>
+          <p>
+            The PDC World Darts Championship boasts a <strong>£5,000,000 total prize purse</strong>, with the champion lifting the Sid Waddell Trophy and taking home £1,000,000.
+          </p>
+          <p>
+            <a href="/tournament/prize-money/" class="faq-link">Explore Round-by-Round Prize Money Breakdown →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: Tickets & Ballot -->
+      <section class="faq-section">
+        <h2>2. Tickets, Ballot & Resale</h2>
+        <div class="faq-item">
+          <h3>How do you get tickets for Alexandra Palace?</h3>
+          <p>
+            Tickets are sold exclusively through official ticketing agent <strong>See Tickets</strong>. Primary tickets are released in summer via staggered priority windows: first to active PDCTV Annual Subscribers (late July), followed by registered priority fans, and finally open public sale (early August).
+          </p>
+          <p>
+            <a href="/tickets/ballot-presale-guide/" class="faq-link">Ballot & Presale Guide →</a> | <a href="/tickets/general-sale/" class="faq-link">General Public Sale Guide →</a>
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How much do face value tickets cost?</h3>
+          <p>
+            Standard face value tickets range from <strong>£40 to £65</strong> for Tiered Bleachers and <strong>£50 to £85</strong> for Floor Tables during early rounds, rising to <strong>£75 to £120</strong> for the semi-finals and final, plus standard See Tickets booking fees.
+          </p>
+          <p>
+            <a href="/tickets/" class="faq-link">Detailed Price Tiers & Session Limits →</a>
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What should I do if tickets sell out?</h3>
+          <p>
+            The only safe, authorized option is the official <strong>See Tickets Fan-to-Fan Resale Marketplace</strong>, where fans resell unwanted tickets strictly at face value with digital barcodes re-issued to the new buyer. Never use Viagogo or StubHub, as unauthorized barcodes are voided by security.
+          </p>
+          <p>
+            <a href="/tickets/resale-returns/" class="faq-link">Official Fan-to-Fan Resale & Anti-Scam Rules →</a>
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Are hospitality packages available?</h3>
+          <p>
+            Yes. Official corporate and spectator hospitality packages—combining reserved prime seating, two-to-three course dining, complimentary bar service, and legends meet-and-greets—are available via Matchroom Hospitality.
+          </p>
+          <p>
+            <a href="/tickets/hospitality-packages/" class="faq-link">Hospitality Packages & Dining Guide →</a>
+          </p>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="faq-mid-ad" />
+
+      <!-- Section 3: Venue, Bags & Bars -->
+      <section class="faq-section">
+        <h2>3. Alexandra Palace Venue & Policies</h2>
+        <div class="faq-item">
+          <h3>What is the bag policy at Alexandra Palace?</h3>
+          <p>
+            Security strictly enforces a small-bag rule: only <strong>one small bag per person (maximum 30cm x 20cm x 10cm)</strong> is permitted. Backpacks, holdalls, and suitcases are not permitted inside the venue.
+          </p>
+          <p>
+            <a href="/venue/security-bag-policy/" class="faq-link">Full Security & Bag Policy Details →</a>
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I pay with cash inside the arena?</h3>
+          <p>
+            No. Alexandra Palace is a <strong>100% cashless venue</strong>. All bars, food stalls in the Festival Village, and merchandise counters accept contactless cards, debit/credit cards, and mobile payments (Apple Pay / Google Pay) only.
+          </p>
+          <p>
+            <a href="/venue/food-drink-bars/" class="faq-link">Food, Drink, Pitchers & Bars Guide →</a>
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the difference between Table and Bleacher seats?</h3>
+          <p>
+            <strong>Floor Tables</strong> are shared wooden banquet benches on the arena floor that foster a lively party atmosphere where fans share 4-pint pitchers. <strong>Tiered Bleachers</strong> are raised grandstand seats offering elevated, unobstructed views of the stage and screens.
+          </p>
+          <p>
+            <a href="/venue/great-hall-seating-plan/" class="faq-link">Great Hall Seating Plan & Sightlines →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4: Travel & Night Transport -->
+      <section class="faq-section">
+        <h2>4. Travel & Night Egress</h2>
+        <div class="faq-item">
+          <h3>How do I travel to Alexandra Palace?</h3>
+          <p>
+            The easiest route is the London Underground <strong>Piccadilly Line to Wood Green Station</strong> (Zone 3), followed by the TfL <strong>W3 bus</strong> directly up the hill to the Palm Court entrance (or a 20-minute walk). Alternatively, Great Northern trains serve <strong>Alexandra Palace Rail Station</strong> at the foot of the park.
+          </p>
+          <p>
+            <a href="/travel/tube-train-routes/" class="faq-link">Complete Tube, Train & Bus Routes Guide →</a>
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I get home after a late evening session?</h3>
+          <p>
+            Evening sessions finish around 23:00. On <strong>Friday and Saturday nights</strong>, the Piccadilly Line operates 24-hour Night Tube from Wood Green. On Sunday–Thursday nights, the last southbound tubes depart around 00:15–00:30, supported by the 24-hour N29 night bus to Trafalgar Square.
+          </p>
+          <p>
+            <a href="/travel/night-travel-london/" class="faq-link">Night Travel, Last Trains & Egress Guide →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 5: TV & Streaming -->
+      <section class="faq-section">
+        <h2>5. Television & Legal Streaming</h2>
+        <div class="faq-item">
+          <h3>Where can I watch the World Darts Championship live?</h3>
+          <p>
+            Official broadcast rightsholders include:
+          </p>
+          <ul>
+            <li><strong>UK & Ireland:</strong> Sky Sports Darts & NOW TV (<a href="/watch/uk/">UK Guide</a> | <a href="/watch/ireland/">Ireland Guide</a>)</li>
+            <li><strong>Germany:</strong> DAZN & Sport1 free-to-air for 2026/27 (<a href="/watch/germany/">Germany Guide</a>)</li>
+            <li><strong>Austria & Switzerland:</strong> DAZN (<a href="/watch/austria-switzerland/">DACH Guide</a>)</li>
+            <li><strong>Belgium:</strong> VTM 2 & VTM GO free-to-air (<a href="/watch/belgium/">Belgium Guide</a>)</li>
+            <li><strong>USA:</strong> ESPN, Peacock & PDCTV (<a href="/watch/usa/">USA Guide</a>)</li>
+            <li><strong>Australia:</strong> Fox Sports & Kayo (<a href="/watch/australia/">Australia Guide</a>)</li>
+            <li><strong>New Zealand:</strong> Sky Sport NZ & Sky Sport Now (<a href="/watch/new-zealand/">New Zealand Guide</a>)</li>
+            <li><strong>International:</strong> PDCTV live pass (<a href="/watch/international/">PDCTV Guide</a>)</li>
+          </ul>
+          <p>
+            <a href="/watch/free-streams/" class="faq-link">Legal Free-to-Air Streams & Broadcasters →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 6: Darts Rules & Culture -->
+      <section class="faq-section">
+        <h2>6. Darts Rules & Fan Culture</h2>
+        <div class="faq-item">
+          <h3>What are the official dartboard dimensions?</h3>
+          <p>
+            Under official DRA rules, the dartboard is mounted so the center of the Bullseye is exactly <strong>5ft 8in (1.73m)</strong> from the floor, and the throwing distance (oche to face of board) is <strong>7ft 9.25in (2.37m)</strong>.
+          </p>
+          <p>
+            <a href="/darts/rules/" class="faq-link">Official 501 Rules & Board Specs →</a> | <a href="/darts/checkout-chart/" class="faq-link">501 Checkout Chart & Bogey Numbers →</a>
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What fancy dress costumes are allowed?</h3>
+          <p>
+            Costumes are warmly encouraged, but venue security strictly bans football club jerseys, rugby shirts, full face masks, and offensive themes.
+          </p>
+          <p>
+            <a href="/fancy-dress/" class="faq-link">Fancy Dress Rules & Permitted Costumes →</a>
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What advice do you have for first-time spectators?</h3>
+          <p>
+            Arrive 60–75 minutes early, carry a small bag under 30x20x10cm, have photo ID ready for Challenge 25 bars, download digital tickets to your phone in advance, and observe quiet respect when players throw for decisive doubles.
+          </p>
+          <p>
+            <a href="/fan-culture/first-timer-guide/" class="faq-link">Full First-Timer Spectator Survival Guide →</a> | <a href="/fan-culture/chants-songs/" class="faq-link">Fan Chants & Song Traditions →</a>
+          </p>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="faq-sidebar">
+      <div class="sidebar-card">
+        <h3>Primary Site Hubs</h3>
+        <ul class="sidebar-links">
+          <li><a href="/schedule/">2026/27 Match Schedule</a></li>
+          <li><a href="/tickets/">Tickets & Ballot Hub</a></li>
+          <li><a href="/venue/">Alexandra Palace Venue Guide</a></li>
+          <li><a href="/travel/">Travel & Transit Directory</a></li>
+          <li><a href="/watch/">Global TV & Streaming Guide</a></li>
+          <li><a href="/players/">Player Stats & Dossiers</a></li>
+          <li><a href="/history/">Tournament History & Finals</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>About This Project</h3>
+        <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 0.75rem;">
+          World Darts Hub is an independent fan, spectator, and broadcast reference.
+        </p>
+        <ul class="sidebar-links">
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/editorial-policy/">Editorial Policy</a></li>
+          <li><a href="/contact/">Contact Editorial Team</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="mpu" id="faq-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .faq-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+  .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: #334155;
+    color: #cbd5e1;
+  }
+  .badge-accent {
+    background: #e11d48;
+    color: #ffffff;
+  }
+  .faq-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  .faq-lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+  }
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 992px) {
+    .faq-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .faq-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .faq-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .faq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .faq-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-item p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .faq-item ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+  }
+  .faq-item li {
+    margin-bottom: 0.35rem;
+  }
+  .faq-link {
+    color: #1e40af;
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 0.92rem;
+  }
+  .faq-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-links a {
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+</style>

@@ -284,5 +284,31 @@
     "verification_source": "DAZN DACH Broadcast Rights Announcement (Feb 2026)",
     "last_verified": "2026-10-03",
     "editorial_notes": "DAZN retains master PDC rights in Switzerland through at least 2031. No separate free-to-air World Championship broadcaster has been confirmed in our current source set for Switzerland. Swiss public broadcaster SRF and blue Sport do not hold World Championship rights."
+  },
+  {
+    "broadcaster_id": "new-zealand-sky-sport",
+    "country": "New Zealand",
+    "territory": "New Zealand",
+    "country_code": "NZ",
+    "region": "Australasia / Oceania",
+    "event": "PDC World Darts Championship 2026/27",
+    "broadcaster": "Sky Sport NZ & Sky Sport Now",
+    "broadcaster_name": "Sky Sport NZ & Sky Sport Now",
+    "parent_network": "Sky Network Television Limited (NZ)",
+    "platform": "Linear Satellite/Cable TV & Sky Sport Now Streaming App",
+    "platform_types": ["Linear TV (Sky Box)", "Sky Sport Now App", "Sky Go", "PDCTV (Alternative Pass)"],
+    "coverage": "All 28 sessions live with official English stage commentary",
+    "official_website": "https://www.sky.co.nz/sport",
+    "official_watch_url": "https://www.skysportnow.co.nz",
+    "linear_channels": "Sky Sport channels (Sky Sport 1 / 2 / Select)",
+    "access_model": "Paid Subscription / Sky Sport Now Day, Week or Month Pass",
+    "price_info": "Check skysportnow.co.nz for current NZD subscription and pass rates",
+    "rights_period": "Official multi-year broadcast rights agreement with the PDC",
+    "free_or_paid": "paid",
+    "status": "verified",
+    "source": "Sky Network Television NZ Sports Broadcast Partnership Announcement",
+    "verification_source": "Sky Network Television NZ Sports Broadcast Partnership Announcement",
+    "last_verified": "2026-10-03",
+    "editorial_notes": "Live coverage airs on Sky Sport linear channels and streams via Sky Sport Now. Evening London sessions (19:00 GMT) air at 08:00 NZDT the following morning, providing prime morning viewing for New Zealand darts fans. Full on-demand replays are available on Sky Sport Now."
   }
 ]

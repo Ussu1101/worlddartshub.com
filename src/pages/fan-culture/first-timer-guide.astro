@@ -1,0 +1,486 @@
+---
+// src/pages/fan-culture/first-timer-guide.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "First-Timer Guide to Ally Pally Darts: What to Expect & Tips";
+const pageDescription = "Complete beginner guide for attending the PDC World Darts Championship at Alexandra Palace. Arrival times, dress rules, seating, pitchers, and travel tips.";
+
+const breadcrumbItems = [
+  { name: 'Fan Culture', url: '/fancy-dress/' },
+  { name: 'First-Timer Spectator Guide' }
+];
+
+const firstTimerFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Alexandra Palace Darts First-Timer Guide FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What time should I arrive at Alexandra Palace for a darts session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Venue doors open 90 minutes prior to the scheduled match start (11:00 for 12:30 afternoon sessions; 17:30 for 19:00 evening sessions). Arriving at least 60 to 75 minutes early allows ample time to clear security checks, visit the bars in the Festival Village, and locate your seats before the opening walk-on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you bring bags or backpacks into the Great Hall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alexandra Palace operates a strict small-bag policy: only one small bag per person measuring no larger than 30cm x 20cm x 10cm (roughly A4 size) is permitted inside. Large backpacks, luggage, and suitcases are not allowed through security."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Alexandra Palace a cashless venue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All bars, food stalls, and merchandise kiosks inside Alexandra Palace operate on a 100% cashless basis. Payment is accepted via contactless cards, debit/credit cards, Apple Pay, and Google Pay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you have to wear fancy dress to the World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fancy dress is not mandatory, but a large portion of the audience participates in costume. Regular casual attire is completely welcome. Remember that football club shirts and full face masks are strictly prohibited by venue security."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={firstTimerFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="ft-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">SPECTATOR SURVIVAL GUIDE</span>
+        <span class="badge">FIRST-TIME VISITORS</span>
+      </div>
+      <h1 class="ft-title">First-Timer Guide to Ally Pally: What to Expect & Practical Tips</h1>
+      <p class="ft-lead">
+        Attending the PDC World Darts Championship for the first time? Here is everything you need to know about arrival timings, security checks, table culture, pitchers, and getting home safely.
+      </p>
+    </div>
+  </header>
+
+  <div class="container ft-layout">
+    <article class="ft-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="Alexandra Palace Spectator Regulations & Matchday Visitor Protocols" />
+
+      <!-- Section 1: What to Expect -->
+      <section class="ft-section">
+        <h2>What to Expect: The Atmosphere & Sensory Experience</h2>
+        <p>
+          Stepping inside the Alexandra Palace Great Hall for the first time is unlike any other sporting event on the planet. With over 5,000 spectators united in festive celebration, the arena feels like a cross between a major sports championship and a massive indoor beer festival.
+        </p>
+        <p>
+          The acoustics are intense: pulsing basslines accompany dramatic player walk-ons, referee calls reverberate across the hall, and thousands of fans chant terrace anthems (<a href="/fan-culture/chants-songs/">explore chants & songs</a>) while waving neon-yellow 180 placards.
+        </p>
+      </section>
+
+      <!-- Section 2: Arrival & Timings -->
+      <section class="ft-section">
+        <h2>Doors & Arrival Timeline</h2>
+        <p>
+          Managing your arrival window ensures you avoid rushing through peak entrance congestion:
+        </p>
+
+        <div class="timeline-box">
+          <div class="time-item">
+            <span class="time-label">T-90 Mins</span>
+            <div class="time-content">
+              <strong>Doors & Food Village Open:</strong> Palm Court and Great Hall doors open. Palm Court hosts the Festival Village with food trucks, bars, DJ sets, and official PDC merchandise stands.
+            </div>
+          </div>
+
+          <div class="time-item">
+            <span class="time-label">T-60 Mins</span>
+            <div class="time-content">
+              <strong>Ideal Arrival Window:</strong> Arrive at the venue gates between 60 and 75 minutes prior to match launch. Security checks and ticket barcode scanners move briskly, giving you time to grab initial drinks.
+            </div>
+          </div>
+
+          <div class="time-item">
+            <span class="time-label">T-15 Mins</span>
+            <div class="time-content">
+              <strong>Take Your Seats:</strong> House lights dim, screens fire up preview graphics, and MC John McDonald takes to the stage to introduce the opening match.
+            </div>
+          </div>
+
+          <div class="time-item">
+            <span class="time-label">Match Start</span>
+            <div class="time-content">
+              <strong>Game On:</strong> Afternoon sessions start at 12:30 GMT; evening sessions commence at 19:00 GMT sharp.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="first-timer-mid-ad" />
+
+      <!-- Section 3: Bag Policy & Security Checks -->
+      <section class="ft-section">
+        <h2>Security, Bag Policy & What You Cannot Bring</h2>
+        <p>
+          Alexandra Palace enforces strict entrance screening protocols to protect spectator safety:
+        </p>
+        <ul>
+          <li><strong>Small Bag Rule:</strong> Only one small bag per spectator measuring a maximum of <strong>30cm x 20cm x 10cm</strong> (roughly A4 size) is permitted. Backpacks, suitcases, and large sports bags are rejected at the gates. See our detailed <a href="/venue/security-bag-policy/">Security & Bag Policy Guide</a>.</li>
+          <li><strong>Prohibited Items:</strong> Strictly no outside liquids, cans, bottles, or food. Permanent marker pens are confiscated on entry to protect venue property and tournament branding.</li>
+          <li><strong>Photo ID & Challenge 25:</strong> Bars operate a strict Challenge 25 age verification policy. Always carry official government photo ID (passport or driving license).</li>
+          <li><strong>Costume Restrictions:</strong> Fancy dress is celebrated, but football club shirts, rugby jerseys, full face masks, and offensive costumes are banned at security (<a href="/fancy-dress/">Costume rules</a>).</li>
+        </ul>
+      </section>
+
+      <!-- Section 4: Seating Types Comparison -->
+      <section class="ft-section">
+        <h2>Seating Dynamics: Tables vs Tiered Bleachers</h2>
+        <p>
+          Your experience inside the arena will vary depending on your ticket category:
+        </p>
+
+        <div class="grid-2col">
+          <div class="feature-card">
+            <h3>Floor Table Seating</h3>
+            <p><strong>The Party Epicenter:</strong> Long wooden banquet tables on the flat arena floor. Spectators stand on benches during walk-ons, share 4-pint pitchers, and interact with neighboring tables.</p>
+            <p style="font-size: 0.88rem; color: #64748b; margin-top: 0.5rem;"><em>Best for:</em> Groups of friends, high-energy party atmosphere, social camaraderie.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Tiered Grandstand Bleachers</h3>
+            <p><strong>Elevated Arena Views:</strong> Raked stadium seating rising up the sides and rear of the hall. Provides clear, elevated sightlines over the table floor straight toward the stage and giant LED screens.</p>
+            <p style="font-size: 0.88rem; color: #64748b; margin-top: 0.5rem;"><em>Best for:</em> Pure darts purists, better match visibility, slightly calmer viewing.</p>
+          </div>
+        </div>
+
+        <p>
+          Check out the detailed sightline breakdowns in our <a href="/venue/great-hall-seating-plan/">Great Hall Seating Plan & Views Guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 5: Food, Drink & 4-Pint Pitchers -->
+      <section class="ft-section">
+        <h2>Ordering Drinks & Managing the Bars</h2>
+        <p>
+          Inside the Great Hall, bars are designed for rapid crowd service:
+        </p>
+        <ul>
+          <li><strong>4-Pint Draught Pitchers:</strong> The standard order at tables. Purchasing four pints in a stackable pitcher reduces bar trips so you don't miss legs during sets.</li>
+          <li><strong>Reusable Cup System:</strong> Drinks are served in sturdy reusable polycarbonate cups with a returnable deposit fee. Return your cup to designated collection stations to redeem your refund.</li>
+          <li><strong>100% Cashless:</strong> Only contactless payment and bank cards are accepted. Cash is not taken anywhere in the venue.</li>
+          <li><strong>Full Food Guide:</strong> Explore food stalls, street vendors, and local pubs in our <a href="/venue/food-drink-bars/">Food, Drink & Bars Guide</a>.</li>
+        </ul>
+      </section>
+
+      <!-- Section 6: Night Travel & Leaving the Venue -->
+      <section class="ft-section">
+        <h2>Leaving Alexandra Palace at the End of the Night</h2>
+        <p>
+          When the final match concludes at approximately 23:00, 5,000 fans leave the Great Hall simultaneously. Getting down the hill requires advance planning:
+        </p>
+        <div class="callout callout-info">
+          <h4>Key Night Travel Pointers</h4>
+          <ul>
+            <li><strong>Wood Green Tube:</strong> Walk 15–20 minutes downhill to Wood Green (Piccadilly Line). On Friday and Saturday nights, the 24-hour Night Tube operates continuously into Central London.</li>
+            <li><strong>Sunday–Thursday Curfews:</strong> Midweek last southbound tubes depart Wood Green around 00:15–00:30.</li>
+            <li><strong>Avoid Ordering Taxis to the Crest:</strong> Roads on the hill experience heavy gridlock. Walk down into Wood Green High Road before requesting an Uber or Bolt.</li>
+            <li>For full details, read our complete <a href="/travel/night-travel-london/">Night Travel & Egress Guide</a>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 7: First-Timer Checklist -->
+      <section class="ft-section">
+        <h2>The Essential First-Timer Checklist</h2>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Recommendation</th>
+                <th>Why It Matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tickets</strong></td>
+                <td>Downloaded to See Tickets App or offline wallet</td>
+                <td>Mobile data can be patchy inside dense crowds</td>
+              </tr>
+              <tr>
+                <td><strong>Photo ID</strong></td>
+                <td>Physical Driving License or Passport</td>
+                <td>Challenge 25 strictly enforced at all bars</td>
+              </tr>
+              <tr>
+                <td><strong>Payment Card</strong></td>
+                <td>Contactless Card / Apple Pay / Google Pay</td>
+                <td>Venue is 100% cashless; cash is not accepted</td>
+              </tr>
+              <tr>
+                <td><strong>Clothing</strong></td>
+                <td>Warm coat over fancy dress costume</td>
+                <td>Hall is warm inside, but the hill is freezing outside at 23:00</td>
+              </tr>
+              <tr>
+                <td><strong>Bag</strong></td>
+                <td>Small bag under 30x20x10cm (or no bag)</td>
+                <td>Oversized bags are turned away at security gates</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="ft-sidebar">
+      <div class="sidebar-card">
+        <h3>Spectator Resources</h3>
+        <ul class="sidebar-links">
+          <li><a href="/venue/">Alexandra Palace Venue Guide</a></li>
+          <li><a href="/venue/security-bag-policy/">Security & Bag Regulations</a></li>
+          <li><a href="/venue/food-drink-bars/">Food, Drink & Pitchers Guide</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">Seating Plan & Sightlines</a></li>
+          <li><a href="/fancy-dress/">Fancy Dress & Costume Rules</a></li>
+          <li><a href="/fan-culture/chants-songs/">Fan Chants & Song Traditions</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Travel & Ticketing</h3>
+        <ul class="sidebar-links">
+          <li><a href="/travel/">London Transport Overview</a></li>
+          <li><a href="/travel/night-travel-london/">Night Travel & Late Transport</a></li>
+          <li><a href="/tickets/">Tickets Overview & Resale</a></li>
+          <li><a href="/schedule/">Tournament Match Schedule</a></li>
+          <li><a href="/faq/">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="mpu" id="first-timer-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .ft-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+  .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: #334155;
+    color: #cbd5e1;
+  }
+  .badge-accent {
+    background: #e11d48;
+    color: #ffffff;
+  }
+  .ft-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  .ft-lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+  }
+  .ft-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 992px) {
+    .ft-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .ft-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .ft-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .ft-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .ft-section ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .ft-section li {
+    margin-bottom: 0.5rem;
+  }
+  .callout {
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+  .callout h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .callout-info {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    color: #166534;
+  }
+  .callout-info ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  .timeline-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+  .time-item {
+    display: flex;
+    gap: 1.25rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  .time-label {
+    background: #1e293b;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 4px;
+    height: fit-content;
+    white-space: nowrap;
+  }
+  .time-content {
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 640px) {
+    .grid-2col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .ft-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-links a {
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+</style>

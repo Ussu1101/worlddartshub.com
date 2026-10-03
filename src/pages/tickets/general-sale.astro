@@ -1,0 +1,403 @@
+---
+// src/pages/tickets/general-sale.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "PDC World Darts General Sale Guide: Alexandra Palace Tickets";
+const pageDescription = "Complete guide to the official See Tickets general public sale for the PDC World Darts Championship. Queue advice, seating options, and authorized resale.";
+
+const breadcrumbItems = [
+  { name: 'Tickets', url: '/tickets/' },
+  { name: 'General Public Sale' }
+];
+
+const generalSaleFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "PDC World Darts Championship General Sale FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When does the general public ticket sale take place?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The general sale typically opens in early August, immediately following the PDCTV annual subscriber and registered priority presale windows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which ticketing agency sells official PDC World Darts general tickets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See Tickets (seetickets.com) is the exclusive primary ticketing partner for the PDC World Darts Championship at Alexandra Palace. Tickets are not sold through any other primary vendor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly do general sale tickets sell out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "High-demand sessions—specifically Friday and Saturday evenings, the post-Christmas rounds, and Finals Weekend—frequently sell out in floor tables within minutes of the queue opening. Midweek afternoon sessions in early rounds offer relatively higher availability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do if my desired session sells out during the general sale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If a session sells out, monitor the official See Tickets Fan-to-Fan Resale Marketplace, where genuine ticket holders who can no longer attend return tickets at face value."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={generalSaleFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="general-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">PRIMARY TICKETING</span>
+        <span class="badge">SEE TICKETS PUBLIC RELEASE</span>
+      </div>
+      <h1 class="general-title">PDC World Darts General Sale Guide 2026/27</h1>
+      <p class="general-lead">
+        Everything you need to know about purchasing tickets during the open public sale for the 2026/27 World Darts Championship at Alexandra Palace. Queue mechanisms, seat types, and authorized alternatives.
+      </p>
+    </div>
+  </header>
+
+  <div class="container general-layout">
+    <article class="general-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Official Ticketing Terms & See Tickets Public Release Standards" />
+
+      <!-- Section 1: What is General Sale -->
+      <section class="general-section">
+        <h2>Understanding the General Ticket Sale</h2>
+        <p>
+          The <strong>General Sale</strong> is the final primary ticket release window for the PDC World Darts Championship. Following the conclusion of the closed <a href="/tickets/ballot-presale-guide/">priority presale windows</a> (for PDCTV subscribers and registered priority applicants), all remaining unsold ticket inventory across the 28 sessions is opened to the wider public.
+        </p>
+        <p>
+          General sale tickets are sold exclusively through <strong>See Tickets</strong>. No other ticketing agency, box office, or platform has an allocation of primary standard admission tickets.
+        </p>
+
+        <div class="callout callout-info">
+          <h4>Availability Reality Check</h4>
+          <p>
+            Because substantial proportions of floor table seating and weekend sessions are claimed during the subscriber presales, general sale inventory can be limited for prime dates. Entering the queue at the precise launch second is essential.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: Floor Tables vs Tiered Bleachers -->
+      <section class="general-section">
+        <h2>Ticket Categories in the General Sale</h2>
+        <p>
+          Spectators purchasing during the public release choose between two primary seating formats inside the Alexandra Palace Great Hall:
+        </p>
+
+        <div class="grid-2col">
+          <div class="feature-card">
+            <h3>Floor Table Seating</h3>
+            <p><strong>The Traditional Ally Pally Experience:</strong> Shared banquet-style trestle tables directly on the Great Hall arena floor. Maximum party atmosphere, in-seat pitcher sharing, and costume camaraderie.</p>
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; font-size: 0.9rem; color: #475569;">
+              <li>Face value: ~£50–£85 (early rounds) up to £120 (Finals)</li>
+              <li>Sells out within minutes on prime dates</li>
+              <li>Strict cap of 6 tickets per booking</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <h3>Tiered Bleacher Seating</h3>
+            <p><strong>Raked Stadium Seating:</strong> Raised grandstand seating along the arena flanks and rear. Offers unobstructed elevated sightlines of the stage, dartboard, and giant LED video walls.</p>
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; font-size: 0.9rem; color: #475569;">
+              <li>Face value: ~£40–£65 (early rounds) up to £90 (Finals)</li>
+              <li>Better availability during public general sale</li>
+              <li>Accommodates larger groups (up to 12 tickets)</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          For a detailed layout breakdown and viewing angle analysis, consult our <a href="/venue/great-hall-seating-plan/">Great Hall Seating Plan & Sightlines Guide</a>.
+        </p>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="general-sale-mid-ad" />
+
+      <!-- Section 3: The Online Queue & Checkout Mechanics -->
+      <section class="general-section">
+        <h2>How the See Tickets Virtual Queue Works</h2>
+        <p>
+          On the morning of the general sale, See Tickets deploys an automated queuing system to manage high traffic volumes:
+        </p>
+        <ol class="action-list">
+          <li><strong>The Holding Room:</strong> If you navigate to the ticket page 15–30 minutes prior to on-sale, you are placed in a pre-queue waiting room. When the sale officially opens, users in the waiting room are assigned randomized queue positions to prevent server bot gaming.</li>
+          <li><strong>Queue Progression:</strong> Your screen displays a progress indicator or estimated wait time. <em>Do not refresh your browser</em> while in the queue, as doing so can push you to the back of the line.</li>
+          <li><strong>Session Selection:</strong> Once admitted, you will see the 28-session schedule. Have your top 3 preferred dates ready; if your primary choice shows as sold out, move immediately to your backup session.</li>
+          <li><strong>The Basket Timer:</strong> Once you successfully reserve tickets in your basket, a countdown timer (typically 8–10 minutes) begins. Complete your billing details and finalize payment before the timer expires.</li>
+        </ol>
+      </section>
+
+      <!-- Section 4: What to Do If General Sale Sells Out -->
+      <section class="general-section">
+        <h2>Sold Out? Your Safe, Authorized Next Steps</h2>
+        <p>
+          If you are unable to secure tickets during the general public release, do <strong>not</strong> panic or buy from unauthorized secondary tout websites. Safe, legitimate paths remain open:
+        </p>
+        
+        <div class="path-card">
+          <h3>1. Official See Tickets Fan-to-Fan Resale</h3>
+          <p>
+            The PDC operates a strictly controlled secondary marketplace through See Tickets. Any fan who can no longer attend can relist their tickets at <strong>face value only</strong>. When a ticket is resold, the original barcode is invalidated, and a brand-new barcode is issued to the buyer.
+          </p>
+          <p>
+            <a href="/tickets/resale-returns/" class="text-link">Explore the Full Fan-to-Fan Resale Guide & Barcode Security Rules →</a>
+          </p>
+        </div>
+
+        <div class="path-card">
+          <h3>2. Official VIP & Hospitality Packages</h3>
+          <p>
+            Corporate and spectator hospitality packages—combining reserved prime seating, two-course dining, complimentary drinks, and guest legend meet-and-greets—are available through official PDC hospitality partners.
+          </p>
+          <p>
+            <a href="/tickets/hospitality-packages/" class="text-link">Review Official Hospitality & VIP Dining Packages →</a>
+          </p>
+        </div>
+
+        <div class="callout callout-warning">
+          <h4>Warning: Secondary Touts Void Barcodes</h4>
+          <p>
+            Purchasing tickets through unauthorized platforms like Viagogo, StubHub, Gigsberg, or social media sellers is a breach of the PDC Conditions of Entry. Such tickets are regularly cancelled prior to the event, leaving buyers denied entry at the Alexandra Palace Palm Court security gates without recourse.
+          </p>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="general-sidebar">
+      <div class="sidebar-card">
+        <h3>Ticketing Hub Navigation</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tickets/">Tickets Overview & Face Values</a></li>
+          <li><a href="/tickets/ballot-presale-guide/">Priority Ballot & Presale Guide</a></li>
+          <li><a href="/tickets/resale-returns/">Official Fan-to-Fan Resale</a></li>
+          <li><a href="/tickets/hospitality-packages/">Hospitality Packages</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">Seating Plan & Sightlines</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Match & Venue Resources</h3>
+        <ul class="sidebar-links">
+          <li><a href="/schedule/">28 Session Tournament Schedule</a></li>
+          <li><a href="/venue/">Alexandra Palace Venue Guide</a></li>
+          <li><a href="/venue/security-bag-policy/">Security & Bag Regulations</a></li>
+          <li><a href="/travel/night-travel-london/">Night Travel & Egress Guide</a></li>
+          <li><a href="/faq/">Tournament FAQ</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="mpu" id="general-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .general-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+  .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: #334155;
+    color: #cbd5e1;
+  }
+  .badge-accent {
+    background: #e11d48;
+    color: #ffffff;
+  }
+  .general-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  .general-lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+  }
+  .general-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 992px) {
+    .general-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .general-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .general-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .general-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .general-section ul, .general-section ol {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .general-section li {
+    margin-bottom: 0.5rem;
+  }
+  .callout {
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+  .callout h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .callout-info {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    color: #166534;
+  }
+  .callout-info p {
+    color: #166534;
+    margin: 0;
+  }
+  .callout-warning {
+    background: #fff1f2;
+    border-left: 4px solid #e11d48;
+    color: #9f1239;
+  }
+  .callout-warning p {
+    color: #9f1239;
+    margin: 0;
+  }
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 640px) {
+    .grid-2col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .path-card {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .path-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .path-card p {
+    margin-bottom: 0.5rem;
+  }
+  .text-link {
+    color: #1e40af;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .general-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-links a {
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+</style>

@@ -6,8 +6,8 @@ import AdSlot from '../../components/AdSlot.astro';
 import VerificationBadge from '../../components/VerificationBadge.astro';
 import dartsRules from '../../data/darts-rules.json';
 
-const pageTitle = "Official Darts Rules — 501 Scoring, Board Dimensions & Oche Distance";
-const pageDescription = "Comprehensive official guide to 501 darts rules. Precise dartboard dimensions (5ft 8in), oche throwline distance (7ft 9.25in), double-out checkout rules, and the bust rule.";
+const pageTitle = "Official Darts Rules: 501 Scoring, Board Height & Oche Distance";
+const pageDescription = "Official guide to 501 darts rules: regulation board height (5ft 8in), oche distance (7ft 9.25in), double-out checkout rules, and the bust rule.";
 const siteUrl = "https://worlddartshub.com";
 
 const breadcrumbItems = [
@@ -264,12 +264,19 @@ const rulesSchema = {
         <p>
           Any finish of 100 or higher is officially recorded as a "ton-plus checkout." Checkouts cannot be completed in three darts from 169, 168, 166, 165, 163, 162, or 159 (known as "bogey numbers").
         </p>
+        <p style="margin-top: 0.75rem;">
+          <a href="/darts/checkout-chart/" style="color: #2563eb; font-weight: 700; text-decoration: underline;">View Complete 501 Darts Checkout Chart & Bogey Numbers →</a>
+        </p>
       </section>
 
       <!-- Knowledge Cluster Links -->
       <section class="content-card">
         <h2>Explore More Darts Knowledge & Formats</h2>
         <div class="links-grid">
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>501 Checkout Chart</strong>
+            <span>Master 2-dart and 3-dart out combinations from 170 down to 41.</span>
+          </a>
           <a href="/darts/legs-vs-sets/" class="link-card">
             <strong>Sets vs Legs Explained</strong>
             <span>Understand the World Championship set-play format, tiebreaks, and round distances.</span>

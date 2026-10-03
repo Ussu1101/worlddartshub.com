@@ -1,0 +1,600 @@
+---
+// src/pages/darts/checkout-chart.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Darts Checkout Chart: 170 to 41 Out Combinations & Bogey Numbers";
+const pageDescription = "Complete 501 darts checkout guide. Standard 2-dart and 3-dart out combinations from 170 down to 41, favorite professional finishes, and bogey numbers.";
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: '501 Checkout Chart' }
+];
+
+const checkoutFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "501 Darts Checkout Chart & Combinations FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the highest possible checkout in 501 darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The highest possible finish in 501 darts is 170, famously known as 'The Big Fish'. It is achieved by hitting Treble 20 (60), Treble 20 (60), and the inner Bullseye (50)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are bogey numbers in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bogey numbers are scores between 159 and 169 that are mathematically impossible to check out in three darts. The seven bogey numbers are 159, 162, 163, 165, 166, 168, and 169."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the highest two-dart checkout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The highest two-dart finish is 110, achieved with Treble 20 (60) followed by the inner Bullseye (50)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if a player 'busts' during a checkout attempt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under official DRA rules, if a player scores more points than their remaining score, reduces their score to exactly 1 (which cannot be finished on a double), or reduces their score to 0 without ending on a valid double, their turn is called a 'Bust'. Their score immediately resets to what it was at the start of that visit, and their turn ends."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={checkoutFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="checkout-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">DARTS EDUCATION</span>
+        <span class="badge">DRA UNIVERSAL SCORING</span>
+      </div>
+      <h1 class="checkout-title">501 Darts Checkout Chart: 170 to 41 Finishes</h1>
+      <p class="checkout-lead">
+        The definitive tactical guide to checking out in 501 darts. Master the classic out-shot combinations, preferred professional routes, 2-dart finishes, and the seven famous bogey numbers.
+      </p>
+    </div>
+  </header>
+
+  <div class="container checkout-layout">
+    <article class="checkout-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="DRA Official Scoring Specifications & Professional PDC Checkout Routes" />
+
+      <!-- Section 1: Checkout Fundamentals -->
+      <section class="checkout-section">
+        <h2>What Is a Darts Checkout?</h2>
+        <p>
+          In standard 501 darts (the format played at the PDC World Darts Championship), the objective of every leg is to reduce your score from 501 to exactly zero. Under <a href="/darts/rules/">official 501 rules</a>, the leg must conclude on a "double"—meaning the final dart of the leg must land in the outer double ring or the 50-point inner <strong>Bullseye</strong> (which counts as double 25).
+        </p>
+        <p>
+          Knowing checkout combinations by memory is what separates seasoned tournament players from beginners. When players step up to the oche, they do not pause to calculate; they instinctively follow high-percentage routes designed to maximize their margin for error.
+        </p>
+
+        <div class="callout callout-info">
+          <h4>Multiple Valid Routes</h4>
+          <p>
+            For many scores, multiple checkout paths exist. The combinations detailed below represent <strong>standard professional routes</strong> preferred on television because they leave classic doubles (like Tops or Double 16) if the player hits single numbers with their setup darts.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: The Big Fish & 160+ Out-Shots -->
+      <section class="checkout-section">
+        <h2>The 160–170 Elite Finishes ("The Big Fish")</h2>
+        <p>
+          Finishes above 160 represent the pinnacle of high-pressure darts finishing. Every finish in this bracket requires hitting the 50-point inner Bullseye with the final dart (except 160, which ends on Double 20):
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Score</th>
+                <th>Standard Checkout Route</th>
+                <th>Key Tactical Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>170</strong></td>
+                <td><strong>T20 → T20 → Bullseye</strong></td>
+                <td><strong>"The Big Fish"</strong> — Maximum possible finish in 501 darts (60 + 60 + 50).</td>
+              </tr>
+              <tr>
+                <td><strong>167</strong></td>
+                <td><strong>T20 → T19 → Bullseye</strong></td>
+                <td>Requires switching from 20 to 19 on the second dart (60 + 57 + 50).</td>
+              </tr>
+              <tr>
+                <td><strong>164</strong></td>
+                <td><strong>T20 → T18 → Bullseye</strong> (or T19 → T19 → Bull)</td>
+                <td>T20 first; hitting T18 leaves the 50 Bullseye (60 + 54 + 50).</td>
+              </tr>
+              <tr>
+                <td><strong>161</strong></td>
+                <td><strong>T20 → T17 → Bullseye</strong></td>
+                <td>Lowest finish requiring the Bullseye after two trebles (60 + 51 + 50).</td>
+              </tr>
+              <tr>
+                <td><strong>160</strong></td>
+                <td><strong>T20 → T20 → D20</strong></td>
+                <td>Highest finish that ends on an outer double (60 + 60 + 40).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Bogey Numbers -->
+      <section class="checkout-section">
+        <h2>The Seven "Bogey Numbers" in Darts</h2>
+        <p>
+          Between 159 and 169, there are exactly seven scores that <strong>cannot be checked out in three darts</strong> under any combination of legal throws. These are universally referred to in darts terminology as <strong>bogey numbers</strong>:
+        </p>
+
+        <div class="bogey-grid">
+          <div class="bogey-pill">159</div>
+          <div class="bogey-pill">162</div>
+          <div class="bogey-pill">163</div>
+          <div class="bogey-pill">165</div>
+          <div class="bogey-pill">166</div>
+          <div class="bogey-pill">168</div>
+          <div class="bogey-pill">169</div>
+        </div>
+
+        <div class="callout callout-warning">
+          <h4>Why Are These Impossible?</h4>
+          <p>
+            Two Treble 20s total 120 points. Subtracting 120 from these numbers leaves a remainder that cannot be made with a single double. For example: 169 minus two Treble 20s (120) leaves 49—which is an odd number and therefore cannot be an outer double or Bullseye. If a player is on a bogey number, their goal is simply to set up a clean two-dart finish on their next visit.
+          </p>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="checkout-mid-ad" />
+
+      <!-- Section 4: 101 to 158 High Checkouts -->
+      <section class="checkout-section">
+        <h2>Popular 3-Dart High Finishes (111 to 158)</h2>
+        <p>
+          These common combinations appear frequently during professional televised majors:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Score</th>
+                <th>Standard Route</th>
+                <th>Score</th>
+                <th>Standard Route</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>158</strong></td>
+                <td>T20 → T20 → D19</td>
+                <td><strong>140</strong></td>
+                <td>T20 → T20 → D10</td>
+              </tr>
+              <tr>
+                <td><strong>157</strong></td>
+                <td>T20 → T19 → D20</td>
+                <td><strong>136</strong></td>
+                <td>T20 → T20 → D8</td>
+              </tr>
+              <tr>
+                <td><strong>156</strong></td>
+                <td>T20 → T20 → D18</td>
+                <td><strong>132</strong></td>
+                <td>Bull → Bull → D16 (or T20 → T16 → D12)</td>
+              </tr>
+              <tr>
+                <td><strong>154</strong></td>
+                <td>T20 → T18 → D20</td>
+                <td><strong>130</strong></td>
+                <td>T20 → T20 → D5 (or T20 → T18 → D8)</td>
+              </tr>
+              <tr>
+                <td><strong>152</strong></td>
+                <td>T20 → T20 → D16</td>
+                <td><strong>126</strong></td>
+                <td>T19 → T19 → D6 (or T20 → T18 → D6)</td>
+              </tr>
+              <tr>
+                <td><strong>150</strong></td>
+                <td>T20 → T18 → D18</td>
+                <td><strong>124</strong></td>
+                <td>T20 → T14 → D11 (or T20 → T16 → D8)</td>
+              </tr>
+              <tr>
+                <td><strong>148</strong></td>
+                <td>T20 → T20 → D14</td>
+                <td><strong>121</strong></td>
+                <td>T20 → T15 → D8 (or T20 → T11 → D14)</td>
+              </tr>
+              <tr>
+                <td><strong>144</strong></td>
+                <td>T20 → T20 → D12</td>
+                <td><strong>116</strong></td>
+                <td>T20 → S16 → D20</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 5: Two-Dart Finishes (41 to 110) -->
+      <section class="checkout-section">
+        <h2>Key Two-Dart Finishes (41 to 110)</h2>
+        <p>
+          When a player has two darts remaining in hand, being on a two-dart checkout provides an immediate chance to clinch the leg:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Score</th>
+                <th>Standard 2-Dart Route</th>
+                <th>Score</th>
+                <th>Standard 2-Dart Route</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>110</strong></td>
+                <td>T20 → Bullseye (Highest 2-dart out)</td>
+                <td><strong>80</strong></td>
+                <td>T20 → D10</td>
+              </tr>
+              <tr>
+                <td><strong>107</strong></td>
+                <td>T19 → Bullseye</td>
+                <td><strong>76</strong></td>
+                <td>T20 → D8</td>
+              </tr>
+              <tr>
+                <td><strong>104</strong></td>
+                <td>T18 → Bullseye</td>
+                <td><strong>70</strong></td>
+                <td>T18 → D8 (or T10 → D20)</td>
+              </tr>
+              <tr>
+                <td><strong>101</strong></td>
+                <td>T17 → Bullseye</td>
+                <td><strong>68</strong></td>
+                <td>T20 → D4 (or T16 → D10)</td>
+              </tr>
+              <tr>
+                <td><strong>100</strong></td>
+                <td>T20 → D20</td>
+                <td><strong>64</strong></td>
+                <td>T16 → D8</td>
+              </tr>
+              <tr>
+                <td><strong>96</strong></td>
+                <td>T20 → D18</td>
+                <td><strong>60</strong></td>
+                <td>S20 → D20</td>
+              </tr>
+              <tr>
+                <td><strong>92</strong></td>
+                <td>T20 → D16</td>
+                <td><strong>56</strong></td>
+                <td>S16 → D20</td>
+              </tr>
+              <tr>
+                <td><strong>88</strong></td>
+                <td>T20 → D14 (or T16 → D20)</td>
+                <td><strong>50</strong></td>
+                <td>S10 → D20 (or Bullseye)</td>
+              </tr>
+              <tr>
+                <td><strong>84</strong></td>
+                <td>T20 → D12 (or T16 → D18)</td>
+                <td><strong>40</strong></td>
+                <td>Double 20 ("Tops")</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="footnote-text">
+          <em>Note on 99, 102, 103, 105, 106, 108, and 109:</em> These numbers cannot be taken out in 2 darts because no single treble leaves a valid double. They require a 3-dart combination.
+        </p>
+      </section>
+
+      <!-- Section 6: Favorite Professional Doubles -->
+      <section class="checkout-section">
+        <h2>Professional Favorite Finishing Doubles</h2>
+        <p>
+          Players deliberately shape their checkout mathematics to leave their favorite doubles:
+        </p>
+        <div class="grid-2col">
+          <div class="feature-card">
+            <h3>Double 20 ("Tops")</h3>
+            <p>The most favored double in world darts. Missing inside leaves Single 20, which gives an immediate second attempt at <strong>Double 10</strong>, followed by <strong>Double 5</strong>.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Double 16 ("The Optician's Double")</h3>
+            <p>Favored by legends like Phil Taylor. Missing inside leaves Single 16, which splits evenly down to <strong>Double 8</strong>, then <strong>Double 4</strong>, <strong>Double 2</strong>, and <strong>Double 1</strong> without needing odd adjustments.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: The Bust Rule -->
+      <section class="checkout-section">
+        <h2>The Bust Rule Explained</h2>
+        <p>
+          Under official Darts Regulation Authority rules, a visit is declared a <strong>Bust</strong> if:
+        </p>
+        <ul>
+          <li>A player scores more points than their remaining score (e.g., throwing 60 when requiring 40).</li>
+          <li>A player reduces their score to exactly 1 point (since 1 cannot be halved into an integer double).</li>
+          <li>A player reduces their score to 0 without the final dart landing in an outer double or Bullseye (e.g., hitting Single 20 when on 20).</li>
+        </ul>
+        <p>
+          When a bust occurs, any darts remaining in that three-dart visit are forfeited. The player's score resets to their starting total at the beginning of that visit, and their opponent steps up to throw.
+        </p>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="checkout-sidebar">
+      <div class="sidebar-card">
+        <h3>Darts Knowledge Hub</h3>
+        <ul class="sidebar-links">
+          <li><a href="/darts/rules/">Official 501 Rules & Board Specs</a></li>
+          <li><a href="/darts/average-explained/">How 3-Dart Averages Work</a></li>
+          <li><a href="/darts/legs-vs-sets/">Sets vs Legs Match Format</a></li>
+          <li><a href="/players/darts-equipment-specs/">Pro Equipment & Barrel Weights</a></li>
+          <li><a href="/history/nine-darters/">9-Darter Perfection History</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Tournament Resources</h3>
+        <ul class="sidebar-links">
+          <li><a href="/schedule/">2026/27 Match Schedule</a></li>
+          <li><a href="/players/">Player Stats & Records</a></li>
+          <li><a href="/faq/">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="mpu" id="checkout-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .checkout-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+  .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: #334155;
+    color: #cbd5e1;
+  }
+  .badge-accent {
+    background: #e11d48;
+    color: #ffffff;
+  }
+  .checkout-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  .checkout-lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+  }
+  .checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 992px) {
+    .checkout-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .checkout-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .checkout-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .checkout-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .checkout-section ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .checkout-section li {
+    margin-bottom: 0.5rem;
+  }
+  .callout {
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+  .callout h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .callout-info {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    color: #166534;
+  }
+  .callout-info p {
+    color: #166534;
+    margin: 0;
+  }
+  .callout-warning {
+    background: #fff1f2;
+    border-left: 4px solid #e11d48;
+    color: #9f1239;
+  }
+  .callout-warning p {
+    color: #9f1239;
+    margin: 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .bogey-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+  .bogey-pill {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+  }
+  .footnote-text {
+    font-size: 0.88rem;
+    color: #64748b;
+    font-style: italic;
+  }
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 640px) {
+    .grid-2col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .feature-card p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.92rem;
+  }
+  .checkout-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-links a {
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+</style>

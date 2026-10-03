@@ -1,0 +1,518 @@
+---
+// src/pages/travel/night-travel-london.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import travelData from '../../data/travel.json';
+
+const pageTitle = "Night Travel from Alexandra Palace Darts: Late Trains & Tube";
+const pageDescription = "Essential late-night transport guide from Alexandra Palace darts. Wood Green Night Tube, last National Rail trains, night buses, and taxi egress advice.";
+
+const breadcrumbItems = [
+  { name: 'Travel Guide', url: '/travel/' },
+  { name: 'Night Travel & Late Transport' }
+];
+
+const nightTravelFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Alexandra Palace Darts Night Travel & Egress FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What time do evening sessions finish at the World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evening sessions at Alexandra Palace generally conclude between 22:45 and 23:15, though matches that go to deciding sets or sudden-death legs can push completion toward 23:30."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Night Tube run from Wood Green after the darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but on Friday and Saturday nights only. On Friday and Saturday nights, the Piccadilly Line operates a continuous 24-hour Night Tube service through Wood Green, providing direct trains into Central London (Finsbury Park, King's Cross, Covent Garden). On Sunday through Thursday nights, the final southbound Piccadilly Line trains leave Wood Green between approximately 00:15 and 00:30."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is the last National Rail train from Alexandra Palace station?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Great Northern services from Alexandra Palace station into Finsbury Park and Moorgate typically see final southbound departures between 23:45 and 00:15. Spectators attending late-running matches must check National Rail live departures to ensure they do not miss the final train."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which night buses serve Alexandra Palace after midnight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The N29 night bus runs all night with high frequency from Wood Green High Road directly through Camden Town and Tottenham Court Road to Trafalgar Square. Additionally, the W3 bus operates until late connecting to Finsbury Park."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you easily book an Uber or Bolt directly from Alexandra Palace at 23:00?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Booking directly at the venue gates is rarely advisable. With over 5,000 spectators exiting into Alexandra Palace Way simultaneously, access roads experience severe gridlock and apps trigger intense surge pricing. Walking down the hill to Wood Green High Road or Muswell Hill before hailing a rideshare saves substantial time and cost."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={nightTravelFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="night-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">POST-MATCH EGRESS</span>
+        <span class="badge">NIGHT TUBE & RAIL TIMETABLES</span>
+      </div>
+      <h1 class="night-title">Night Travel from Alexandra Palace: Getting Home After Darts</h1>
+      <p class="night-lead">
+        Evening sessions at Ally Pally finish late, and over 5,000 fans exit onto a dark, steep North London hill at once. Here is the verified night travel playbook for Night Tube, last trains, night buses, and taxis.
+      </p>
+    </div>
+  </header>
+
+  <div class="container night-layout">
+    <article class="night-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="TfL Night Transport Specifications & National Rail Timetables" />
+
+      <!-- Section 1: Session Curfew & The 23:00 Rush -->
+      <section class="night-section">
+        <h2>The Post-Match Reality: Leaving Ally Pally at 23:00</h2>
+        <p>
+          Evening tournament sessions scheduled to start at 19:00 GMT typically finish between <strong>22:45 and 23:15</strong>, depending on match length, tiebreak sets, and walk-on pacing.
+        </p>
+        <p>
+          When the final dart hits the double, the entire Great Hall audience empties simultaneously into Palm Court and the surrounding park. Planning your exit route before you enter the arena avoids missed trains, crowded bus stops, and freezing winter delays.
+        </p>
+
+        <div class="callout callout-warning">
+          <h4>Steep Hill & Winter Footwear Reminder</h4>
+          <p>
+            Alexandra Palace sits at the highest point of Haringey. Walking downhill to either Wood Green Underground or Alexandra Palace Rail Station involves steep park paths or tarmac pavements. Temperatures in late December often hover near freezing, and park paths can be slick. Warm coats and sensible footwear are essential.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: London Underground & Night Tube -->
+      <section class="night-section">
+        <h2>Wood Green Underground: Night Tube vs Weekday Timetables</h2>
+        <p>
+          <strong>Wood Green Station</strong> (Piccadilly Line, London Fare Zone 3) is the primary transport artery back to Central London hotels and transit hubs. However, service frequency and operating hours differ dramatically by day of the week:
+        </p>
+
+        <div class="grid-2col">
+          <div class="feature-card">
+            <h3>Friday & Saturday Nights: 24-Hour Night Tube</h3>
+            <p><strong>Continuous All-Night Service:</strong> The Piccadilly Line operates throughout the entire night without stopping.</p>
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; font-size: 0.9rem; color: #475569;">
+              <li>Trains depart Wood Green approximately every 10 minutes all night</li>
+              <li>Direct to Finsbury Park (7 min), King's Cross (14 min), Leicester Square (22 min)</li>
+              <li>Zero risk of being stranded if a match runs past midnight</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <h3>Sunday Through Thursday: Standard Weekday Curfews</h3>
+            <p><strong>Definite Last-Train Deadlines:</strong> Night Tube does <em>not</em> run mid-week.</p>
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; font-size: 0.9rem; color: #475569;">
+              <li>Last southbound train to Central London leaves Wood Green around <strong>00:15 – 00:30</strong></li>
+              <li>Last northbound train toward Cockfosters departs around <strong>00:45 – 01:00</strong></li>
+              <li>Always verify live TfL timetables on match evening</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          To reach Wood Green from the venue, walk downhill along Station Road (approx. 15–20 minutes) or join the W3 bus queue outside Palm Court. On busy evenings, walking is frequently faster than waiting for multiple crowded buses to fill up.
+        </p>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="night-travel-mid-ad" />
+
+      <!-- Section 3: National Rail Timetables -->
+      <section class="night-section">
+        <h2>Alexandra Palace Rail Station: Last Southbound Trains</h2>
+        <p>
+          <strong>Alexandra Palace Rail Station</strong> (Great Northern) is situated at the foot of the south park slopes, roughly 0.6 miles from the Great Hall (a 10–12 minute walk downhill).
+        </p>
+        <p>
+          National Rail provides high-speed connections south toward <strong>Finsbury Park, Highbury & Islington, Old Street, and Moorgate</strong>.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Destination</th>
+                <th>Journey Duration</th>
+                <th>Typical Last Train (Mon–Sat)</th>
+                <th>Typical Last Train (Sun)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Finsbury Park</strong> (Interchange for Victoria & Thameslink)</td>
+                <td>8 – 10 mins</td>
+                <td>Approx. 23:55 – 00:15</td>
+                <td>Approx. 23:30 – 23:45</td>
+              </tr>
+              <tr>
+                <td><strong>Highbury & Islington</strong> (Victoria Line & Overground)</td>
+                <td>12 – 14 mins</td>
+                <td>Approx. 23:55 – 00:15</td>
+                <td>Approx. 23:30 – 23:45</td>
+              </tr>
+              <tr>
+                <td><strong>Moorgate</strong> (City of London)</td>
+                <td>18 – 20 mins</td>
+                <td>Approx. 23:50 (Check National Rail)</td>
+                <td>Terminates at King's Cross / Finsbury Park on Sundays</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-info">
+          <h4>Interchange Advantage at Finsbury Park</h4>
+          <p>
+            Catching Great Northern to Finsbury Park is often the fastest egress route. From Finsbury Park, you can connect directly to the <strong>Victoria Line</strong> (which also runs 24-hour Night Tube on Fridays and Saturdays) or Thameslink services toward London St Pancras and Blackfriars.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4: Buses & 24-Hour Night Buses -->
+      <section class="night-section">
+        <h2>TfL Night Buses: The Ultimate Weekday Safety Net</h2>
+        <p>
+          If you attend a midweek evening session (Sunday–Thursday) and miss the final tube or train, London's comprehensive 24-hour night bus network provides guaranteed transport back to Central London:
+        </p>
+
+        <div class="bus-grid">
+          <div class="bus-card">
+            <span class="bus-badge">Route N29</span>
+            <h3>Wood Green to Trafalgar Square</h3>
+            <p><strong>Frequency:</strong> Every 10–15 minutes all night</p>
+            <p><strong>Route:</strong> Wood Green High Road → Turnpike Lane → Finsbury Park → Camden Town → Warren Street → Tottenham Court Road → Leicester Square → Trafalgar Square.</p>
+            <p class="bus-tip">The definitive night bus for central London hotels and West End destinations.</p>
+          </div>
+
+          <div class="bus-card">
+            <span class="bus-badge">Route N91</span>
+            <h3>Crouch End / Turnpike Lane to Holborn</h3>
+            <p><strong>Frequency:</strong> Every 15–20 minutes all night</p>
+            <p><strong>Route:</strong> Hornsey Rise → Crouch End → Caledonian Road → King's Cross St. Pancras → Russell Square → Holborn → Aldwych.</p>
+            <p class="bus-tip">Excellent alternative route terminating right next to King's Cross and Covent Garden.</p>
+          </div>
+
+          <div class="bus-card">
+            <span class="bus-badge">Route W3</span>
+            <h3>Palm Court to Finsbury Park</h3>
+            <p><strong>Frequency:</strong> Every 12–15 minutes until approx 00:30</p>
+            <p><strong>Route:</strong> Directly from Alexandra Palace Palm Court bus stop down to Wood Green Station and Finsbury Park Interchange.</p>
+            <p class="bus-tip">Operates standard day/evening schedule; transfers to N29 at Wood Green once night hours begin.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Uber, Bolt & Taxi Advice -->
+      <section class="night-section">
+        <h2>Rideshare & Black Cab Strategy: Avoid the Hill Gridlock</h2>
+        <p>
+          Attempting to summon an Uber, Bolt, or FreeNow car directly to the crest of Alexandra Palace Way at 23:00 is one of the most common mistakes made by first-time visitors:
+        </p>
+        <ol class="action-list">
+          <li><strong>Road Congestion:</strong> Alexandra Palace Way is a single-lane road winding through the park. When hundreds of cars, shuttle coaches, and delivery vans arrive at the same time, traffic grinds to a complete standstill.</li>
+          <li><strong>Surge Pricing:</strong> Demand spikes by 200–400% within seconds of the match concluding, driving prices for short trips into Central London to £60–£100+.</li>
+          <li><strong>The Smart Downhill Walk:</strong> Walk 15 minutes down the hill into Wood Green (High Road) or west into Muswell Hill (Broadway). Once on major thoroughfares outside the park perimeter, vehicle availability jumps dramatically, drivers can pull over safely, and surge multipliers drop substantially.</li>
+        </ol>
+      </section>
+
+      <!-- Section 6: Staying Nearby -->
+      <section class="night-section">
+        <h2>Staying Locally to Avoid Night Travel</h2>
+        <p>
+          If you want to bypass late-night London transport entirely, booking accommodation within walking distance of the venue is the stress-free solution.
+        </p>
+        <p>
+          Check out our curated reviews of local hotels:
+        </p>
+        <ul>
+          <li><a href="/hotels/budget-options/">Budget Hotels Near Ally Pally (Premier Inn & Travelodge Wood Green)</a></li>
+          <li><a href="/hotels/">Comprehensive Alexandra Palace Hotels Directory</a></li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="night-sidebar">
+      <div class="sidebar-card">
+        <h3>Travel Hub Navigation</h3>
+        <ul class="sidebar-links">
+          <li><a href="/travel/">London Transport Overview</a></li>
+          <li><a href="/travel/tube-train-routes/">Daytime Tube & Train Routes</a></li>
+          <li><a href="/hotels/budget-options/">Budget Hotels in Wood Green</a></li>
+          <li><a href="/venue/">Alexandra Palace Venue Guide</a></li>
+          <li><a href="/venue/security-bag-policy/">Security & Bag Regulations</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Live Transit Portals</h3>
+        <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 0.75rem;">
+          Always check live departure boards before travelling:
+        </p>
+        <ul class="sidebar-links">
+          <li><a href="https://tfl.gov.uk" target="_blank" rel="noopener noreferrer">TfL Live Travel Status (tfl.gov.uk)</a></li>
+          <li><a href="https://www.nationalrail.co.uk" target="_blank" rel="noopener noreferrer">National Rail Enquiries</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="mpu" id="night-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .night-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+  .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: #334155;
+    color: #cbd5e1;
+  }
+  .badge-accent {
+    background: #e11d48;
+    color: #ffffff;
+  }
+  .night-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  .night-lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+  }
+  .night-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 992px) {
+    .night-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .night-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .night-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .night-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .night-section ul, .night-section ol {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .night-section li {
+    margin-bottom: 0.5rem;
+  }
+  .callout {
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+  .callout h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .callout-info {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    color: #166534;
+  }
+  .callout-info p {
+    color: #166534;
+    margin: 0;
+  }
+  .callout-warning {
+    background: #fff1f2;
+    border-left: 4px solid #e11d48;
+    color: #9f1239;
+  }
+  .callout-warning p {
+    color: #9f1239;
+    margin: 0;
+  }
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 640px) {
+    .grid-2col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .bus-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 768px) {
+    .bus-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .bus-card {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .bus-badge {
+    display: inline-block;
+    background: #dc2626;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  .bus-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .bus-card p {
+    margin-bottom: 0.5rem;
+    font-size: 0.92rem;
+  }
+  .bus-tip {
+    font-style: italic;
+    color: #1e40af !important;
+    margin-top: 0.5rem;
+  }
+  .night-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-links a {
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+</style>

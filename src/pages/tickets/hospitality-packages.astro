@@ -1,0 +1,432 @@
+---
+// src/pages/tickets/hospitality-packages.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "PDC World Darts Hospitality Packages: VIP Tickets & Dining";
+const pageDescription = "Official hospitality and VIP packages for the PDC World Darts Championship at Alexandra Palace. Matchroom fine dining, complimentary bar, and prime tables.";
+
+const breadcrumbItems = [
+  { name: 'Tickets', url: '/tickets/' },
+  { name: 'Hospitality & VIP Packages' }
+];
+
+const hospitalityFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "PDC World Darts Championship Hospitality & VIP Packages FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is included in an official PDC World Darts hospitality package?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Official hospitality packages typically include a dedicated VIP fast-track entrance, reserved prime table or terrace seating, pre-session multi-course dining or luxury buffet, a complimentary bar serving beers, wines, and soft drinks, an official event programme, and guest appearances from darts legends."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who sells official corporate and VIP hospitality for Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Official hospitality is managed by Matchroom Hospitality and authorized official corporate agency partners. These packages are not sold through standard primary ticketing queues."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do VIP hospitality packages cost for the World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing varies significantly by tournament session and package tier. Indicative rates across recent tournaments have ranged from approximately £250 to £500+ per person for early and pre-Christmas sessions, with semi-finals and finals commanding higher premium rates. Exact 2026/27 packages are confirmed upon official release by Matchroom Hospitality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can individual fans book hospitality, or is it strictly for corporate groups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While hospitality is popular for corporate entertainment, individual fans and small social groups can also book packages, subject to minimum booking sizes (typically pairs or tables of 6 to 10)."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={hospitalityFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="hosp-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">PREMIUM TICKETING</span>
+        <span class="badge">OFFICIAL MATCHROOM HOSPITALITY</span>
+      </div>
+      <h1 class="hosp-title">PDC World Darts Hospitality & VIP Packages 2026/27</h1>
+      <p class="hosp-lead">
+        Upgrade your Alexandra Palace experience with official hospitality. Guaranteed premium seating, gourmet pre-session dining, complimentary bars, and legend appearances.
+      </p>
+    </div>
+  </header>
+
+  <div class="container hosp-layout">
+    <article class="hosp-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="Matchroom Sport & PDC Official Corporate Hospitality Guidelines" />
+
+      <!-- Section 1: Overview -->
+      <section class="hosp-section">
+        <h2>What Is Official Darts Hospitality?</h2>
+        <p>
+          For spectators and corporate groups seeking an elevated visit to Alexandra Palace, the Professional Darts Corporation (PDC) and parent promoter <strong>Matchroom Sport</strong> offer official hospitality packages.
+        </p>
+        <p>
+          Unlike standard admission tickets sold via the <a href="/tickets/ballot-presale-guide/">priority presale</a> or <a href="/tickets/general-sale/">general public sale</a>, hospitality packages provide an all-inclusive matchday experience combining fine hospitality lounges, formal dining, free-flowing drinks, and prime seating with superior stage views.
+        </p>
+
+        <div class="callout callout-info">
+          <h4>Authorized Booking Channels Only</h4>
+          <p>
+            Official hospitality is sold exclusively through <strong>Matchroom Hospitality</strong> and authorized corporate booking agents (such as Keith Prowse). Never purchase alleged "VIP passes" from secondary touts or unauthorized resale websites, which are strictly non-transferable and subject to cancellation.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: Core Inclusions -->
+      <section class="hosp-section">
+        <h2>Typical Hospitality Package Inclusions</h2>
+        <p>
+          While exact package specifications vary by package tier, guests in official hospitality typically receive the following core benefits:
+        </p>
+
+        <div class="grid-2col">
+          <div class="feature-card">
+            <h3>VIP Fast-Track Entrance</h3>
+            <p>Skip the main public queues with dedicated VIP entry points at Alexandra Palace, providing immediate access to hospitality suites.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Prime Arena Seating</h3>
+            <p>Reserved seating in prime stage-adjacent floor tables or elevated VIP terrace sections, ensuring superb sightlines of the oche.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Gourmet Dining</h3>
+            <p>Pre-session dining options, ranging from two-to-three course fine dining banquets to artisan grazing stations and dessert tables.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Complimentary Bar</h3>
+            <p>Complimentary draught beers, wines, ciders, and soft drinks throughout the pre-session hospitality window and between matches.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Darts Legend Meet & Greet</h3>
+            <p>Guest appearances from legendary former world champions and PDC personalities, featuring exclusive Q&A sessions and photo opportunities.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Commemorative Souvenirs</h3>
+            <p>An official 2026/27 tournament programme, VIP lanyard, and commemorative merchandise pack for every attending guest.</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="hospitality-mid-ad" />
+
+      <!-- Section 3: Package Tiers -->
+      <section class="hosp-section">
+        <h2>Hospitality Package Tiers & Structures</h2>
+        <p>
+          Matchroom Hospitality traditionally offers tiered options to cater to corporate parties, sponsor guests, and private groups:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Package Tier</th>
+                <th>Dining Format</th>
+                <th>Seating Location</th>
+                <th>Target Audience</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Platinum / Private Table</strong></td>
+                <td>3-course seated gourmet meal with table service</td>
+                <td>Front floor tables directly adjacent to stage walk-on path</td>
+                <td>Corporate entertaining, high-end clients, premium groups</td>
+              </tr>
+              <tr>
+                <td><strong>VIP Lounge / Club</strong></td>
+                <td>Gourmet grazing buffet and artisan street food stations</td>
+                <td>Reserved floor tables or central tiered VIP seating</td>
+                <td>Small groups, passionate darts fans, celebratory parties</td>
+              </tr>
+              <tr>
+                <td><strong>Corporate Boxes / Suites</strong></td>
+                <td>Private catering and dedicated host service</td>
+                <td>Private elevated box suites overlooking the Great Hall</td>
+                <td>Executive corporate events (limited annual availability)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 4: Pricing & Availability Guidance -->
+      <section class="hosp-section">
+        <h2>Pricing Framework & Availability Caveat</h2>
+        <p>
+          Because official hospitality packages for the 2026/27 tournament are priced on a session-by-session basis, rates reflect the tournament round and scheduling demand:
+        </p>
+        <ul>
+          <li><strong>Early Rounds (Dec 11–23):</strong> Afternoon and midweek sessions historically represent the most accessible price point, with packages typically starting around £250–£350 + VAT per guest.</li>
+          <li><strong>Post-Christmas Rounds (Dec 27–30):</strong> Evening sessions featuring Round 3 and Round 4 matches increase to approximately £350–£450 + VAT.</li>
+          <li><strong>Finals Weekend (Jan 1–3):</strong> Semi-Final and Final sessions represent peak corporate demand, often priced from £500+ + VAT per guest.</li>
+        </ul>
+
+        <div class="callout callout-warning">
+          <h4>2026/27 Pricing Verification Note</h4>
+          <p>
+            Official 2026/27 package rates and booking contracts are subject to confirmation upon formal release by Matchroom Hospitality. We advise prospective bookers to register interest directly with Matchroom Sport sales executives to secure quotes and provisional holds well ahead of the autumn.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 5: Venue & Food Comparison -->
+      <section class="hosp-section">
+        <h2>Hospitality vs General Admission Bars</h2>
+        <p>
+          Standard admission ticket holders access the public bars and the Festival Village inside Alexandra Palace. While public bars offer 4-pint draught pitchers and street food stalls (see our <a href="/venue/food-drink-bars/">Food, Drink & Bars Guide</a>), they operate under 100% cashless payment and queue systems.
+        </p>
+        <p>
+          Official hospitality circumvents public concourses with private bars, dedicated restrooms, and inclusive catering, making it particularly advantageous for entertaining clients or enjoying a relaxed dining environment before the electric session begins.
+        </p>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="hosp-sidebar">
+      <div class="sidebar-card">
+        <h3>Ticketing Hub Navigation</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tickets/">Tickets Overview & Face Values</a></li>
+          <li><a href="/tickets/ballot-presale-guide/">Priority Ballot & Presale Guide</a></li>
+          <li><a href="/tickets/general-sale/">General Public Sale Guide</a></li>
+          <li><a href="/tickets/resale-returns/">Official Fan-to-Fan Resale</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">Seating Plan & Sightlines</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Venue & Food Guides</h3>
+        <ul class="sidebar-links">
+          <li><a href="/venue/">Alexandra Palace Venue Guide</a></li>
+          <li><a href="/venue/food-drink-bars/">Food, Drink & Cashless Bars</a></li>
+          <li><a href="/venue/security-bag-policy/">Security & Bag Regulations</a></li>
+          <li><a href="/schedule/">28 Session Tournament Schedule</a></li>
+          <li><a href="/faq/">Tournament FAQ</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="mpu" id="hospitality-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .hosp-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+  .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: #334155;
+    color: #cbd5e1;
+  }
+  .badge-accent {
+    background: #e11d48;
+    color: #ffffff;
+  }
+  .hosp-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  .hosp-lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+  }
+  .hosp-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 992px) {
+    .hosp-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .hosp-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .hosp-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .hosp-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .hosp-section ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .hosp-section li {
+    margin-bottom: 0.5rem;
+  }
+  .callout {
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+  .callout h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .callout-info {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    color: #166534;
+  }
+  .callout-info p {
+    color: #166534;
+    margin: 0;
+  }
+  .callout-warning {
+    background: #fff1f2;
+    border-left: 4px solid #e11d48;
+    color: #9f1239;
+  }
+  .callout-warning p {
+    color: #9f1239;
+    margin: 0;
+  }
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 640px) {
+    .grid-2col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .feature-card p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.92rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .hosp-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-links a {
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+</style>

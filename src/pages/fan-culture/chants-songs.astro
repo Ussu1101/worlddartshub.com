@@ -1,0 +1,495 @@
+---
+// src/pages/fan-culture/chants-songs.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Darts Fan Chants & Songs Guide: Alexandra Palace Atmosphere";
+const pageDescription = "Guide to the famous songs and chants at the PDC World Darts Championship. Stand Up If You Love The Darts, walk-on culture, and spectator etiquette.";
+
+const breadcrumbItems = [
+  { name: 'Fan Culture', url: '/fancy-dress/' },
+  { name: 'Chants & Atmosphere Guide' }
+];
+
+const chantsFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Alexandra Palace Darts Chants & Atmosphere FAQ",
+  "description": pageDescription,
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the most famous chant at Alexandra Palace darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The signature anthem of the World Darts Championship is 'Stand Up If You Love The Darts', sung to the melody of the Village People / Pet Shop Boys classic 'Go West'. When the chant begins, thousands of spectators across both floor tables and tiered bleachers stand up and hold their drinks aloft."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are spectators allowed to whistle or shout when players throw for a double?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. While vocal cheering and singing are celebrated during walk-ons and between legs, whistling, shouting, or deliberately distracting a player mid-throw on crucial finishing doubles breaches PDC spectator etiquette and can lead to warnings or ejection by security stewards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do darts fans sing the Yaya / Kolo Touré chant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adapted from English football terraces, the Touré chant became an Ally Pally staple where opposite sides of the Great Hall alternate crouching and bouncing while chanting the names of football brothers Kolo and Yaya Touré."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are 'beer snakes' and are they allowed at Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A beer snake is a long column formed by stacking empty plastic pint cups together through the crowd. Alexandra Palace security and the PDC strictly confiscate beer snakes due to safety risks and cup deposit collection rules."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={chantsFaqSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="chants-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">FAN CULTURE & ATMOSPHERE</span>
+        <span class="badge">ALLY PALLY MATCHDAY TRADITIONS</span>
+      </div>
+      <h1 class="chants-title">Darts Fan Chants, Songs & Alexandra Palace Atmosphere</h1>
+      <p class="chants-lead">
+        The PDC World Darts Championship is world-renowned for its thunderous carnival atmosphere. Discover the historic chants, walk-on singalongs, table traditions, and spectator etiquette that define the Great Hall.
+      </p>
+    </div>
+  </header>
+
+  <div class="container chants-layout">
+    <article class="chants-main-col">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Fan Culture Traditions & Alexandra Palace Spectator Regulations" />
+
+      <!-- Section 1: The Ally Pally Atmosphere -->
+      <section class="chants-section">
+        <h2>The Unique World of Alexandra Palace Darts</h2>
+        <p>
+          Nowhere in international sports does the crowd contribute to the spectacle quite like the PDC World Darts Championship. Inside the Alexandra Palace Great Hall, more than 5,000 spectators unite in fancy dress (<a href="/fancy-dress/">see costume rules</a>), creating an electric wall of sound punctuated by dramatic referee calls and theatrical player entrances.
+        </p>
+        <p>
+          Unlike traditional sports matches where crowds are strictly partisan, darts crowds generally celebrate the spectacle as a collective community. Understanding the songs and terrace traditions will have you singing along from the very first leg.
+        </p>
+      </section>
+
+      <!-- Section 2: Core Crowd Anthems -->
+      <section class="chants-section">
+        <h2>The Signature Terrace Anthems of Ally Pally</h2>
+        <p>
+          Several established songs echo through the Great Hall across all 28 tournament sessions:
+        </p>
+
+        <div class="chant-grid">
+          <div class="chant-card">
+            <span class="chant-badge">The Signature Anthem</span>
+            <h3>"Stand Up If You Love The Darts"</h3>
+            <p><strong>Melody:</strong> "Go West" (Village People / Pet Shop Boys)</p>
+            <p><strong>The Ritual:</strong> The quintessential Alexandra Palace chant. It typically erupts spontaneously during commercial breaks or following a high-pressure checkout. The entire arena rises to its feet, raising plastic pitchers and 180 cards aloft while swaying in unison.</p>
+          </div>
+
+          <div class="chant-card">
+            <span class="chant-badge">Festival Terrace Staple</span>
+            <h3>"Don't Take Me Home"</h3>
+            <p><strong>Melody:</strong> Traditional football terrace chant</p>
+            <p><strong>The Ritual:</strong> Adopted from European football tournaments, this chant captures the euphoric refusal of spectators to leave the festival party, celebrating evening sessions extending toward midnight.</p>
+          </div>
+
+          <div class="chant-card">
+            <span class="chant-badge">Interactive Crowd Classic</span>
+            <h3>"The Yaya / Kolo Touré Bounce"</h3>
+            <p><strong>Melody:</strong> "No Limit" by 2 Unlimited</p>
+            <p><strong>The Ritual:</strong> The arena divides into two halves, with table and bleacher fans alternately crouching low for "Kolo, Kolo Kolo" before leaping up to pump their arms for "Yaya, Yaya Yaya".</p>
+          </div>
+
+          <div class="chant-card">
+            <span class="chant-badge">Table Banter Chant</span>
+            <h3>"Please Don't Take My Table Away"</h3>
+            <p><strong>Melody:</strong> "You Are My Sunshine"</p>
+            <p><strong>The Ritual:</strong> Sung playfully when venue stewards circulate between matches to clear empty glasses and manage floor walkways.</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="chants-mid-ad" />
+
+      <!-- Section 3: Player Walk-Ons -->
+      <section class="chants-section">
+        <h2>Player Walk-On Songs: The Arena Singalongs</h2>
+        <p>
+          The walk-on is darts' ultimate theatrical moment. As house lights dim and pyrotechnics erupt, players make their entrance flanked by security while the entire Great Hall roars their signature entrance music.
+        </p>
+        <p>
+          Some of the most famous crowd singalongs include:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Walk-On Song & Artist</th>
+                <th>Crowd Interaction & Chants</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Michael van Gerwen</strong></td>
+                <td>"Seven Nation Army" by The White Stripes</td>
+                <td>Arena bellows the iconic guitar riff ("Oh, Michael van Gerwen!")</td>
+              </tr>
+              <tr>
+                <td><strong>Luke Littler</strong></td>
+                <td>"Greenlight" by Pitbull ft. Flo Rida & LunchMoney Lewis</td>
+                <td>High-energy festival bounce celebrating the young superstar</td>
+              </tr>
+              <tr>
+                <td><strong>Luke Humphries</strong></td>
+                <td>"Cake by the Ocean" by DNCE</td>
+                <td>Upbeat dance anthem for the reigning World Champion</td>
+              </tr>
+              <tr>
+                <td><strong>Stephen Bunting</strong></td>
+                <td>"Titanium" by David Guetta ft. Sia</td>
+                <td>Crowd adapts the chorus to "Bunting's on fire, your defense is terrified!"</td>
+              </tr>
+              <tr>
+                <td><strong>Gerwyn Price</strong></td>
+                <td>"Ice Ice Baby" by Vanilla Ice</td>
+                <td>Electrifying bassline accompanied by boos, cheers, and theatrical chest pumps</td>
+              </tr>
+              <tr>
+                <td><strong>Gary Anderson</strong></td>
+                <td>"Jump Around" by House of Pain</td>
+                <td>The entire 5,000-strong arena bounces violently on the spot</td>
+              </tr>
+              <tr>
+                <td><strong>Raymond van Barneveld</strong></td>
+                <td>"Eye of the Tiger" by Survivor</td>
+                <td>The classic Barney Army tribute with arms punching the air</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          For complete profiles of every player's official entrance track, visit our dedicated <a href="/players/walk-on-songs/">Player Walk-On Songs Directory</a>.
+        </p>
+      </section>
+
+      <!-- Section 4: Spectator Etiquette & Double Respect -->
+      <section class="chants-section">
+        <h2>Spectator Etiquette: The Golden Rule on the Doubles</h2>
+        <p>
+          While the Ally Pally atmosphere is raucous and fun, darts is an intensely focused target sport where millimeters decide hundreds of thousands of pounds. Professional players and the Darts Regulation Authority (DRA) emphasize crucial spectator boundaries:
+        </p>
+
+        <div class="callout callout-info">
+          <h4>The Code of Silence on Deciding Darts</h4>
+          <p>
+            When a player steps up to throw for a match-winning double, silence across the oche is traditional and expected. <strong>Deliberate whistling, booing, or shouting</strong> in the backswing of a player's throw is considered bad sportsmanship. Master caller referees like Russ Bray and George Noble frequently remind the crowd with a firm: <em>"Quiet please, thank you."</em>
+          </p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="feature-card">
+            <h3>Celebrated Fan Behavior</h3>
+            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.92rem; color: #475569;">
+              <li>Singing and chanting between legs and sets</li>
+              <li>Waving the official 180 placards on maximums</li>
+              <li>Creative, respectful fancy dress costumes</li>
+              <li>Good-natured banter with neighboring tables</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <h3>Prohibited Actions & Ejection Risks</h3>
+            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.92rem; color: #475569;">
+              <li>Throwing drinks, cups, or objects onto the stage or floor</li>
+              <li>Discriminatory, offensive, or abusive chanting</li>
+              <li>Building unstable "beer snakes" across tables</li>
+              <li>Invading the walkway or walk-on security barrier</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: First-Time Advice -->
+      <section class="chants-section">
+        <h2>Attending for the First Time?</h2>
+        <p>
+          If this is your first time walking through the Palm Court arches into the Great Hall, consult our practical companion guide:
+        </p>
+        <p>
+          <a href="/fan-culture/first-timer-guide/" class="text-link">Read the Complete First-Timer Guide to Alexandra Palace Darts →</a>
+        </p>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="chants-sidebar">
+      <div class="sidebar-card">
+        <h3>Fan Culture Resources</h3>
+        <ul class="sidebar-links">
+          <li><a href="/fan-culture/first-timer-guide/">First-Timer Spectator Guide</a></li>
+          <li><a href="/fancy-dress/">Fancy Dress Rules & Costume Ideas</a></li>
+          <li><a href="/players/walk-on-songs/">Player Walk-On Songs Database</a></li>
+          <li><a href="/venue/food-drink-bars/">Food, Drink & Pitchers Guide</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">Seating Plan & Sightlines</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Tournament Links</h3>
+        <ul class="sidebar-links">
+          <li><a href="/schedule/">Tournament Match Schedule</a></li>
+          <li><a href="/schedule/finals-weekend/">Finals Weekend Times</a></li>
+          <li><a href="/history/roll-of-honour/">World Championship Champions</a></li>
+          <li><a href="/faq/">Tournament FAQ</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="mpu" id="chants-sidebar-ad" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .chants-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #334155;
+  }
+  .badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: #334155;
+    color: #cbd5e1;
+  }
+  .badge-accent {
+    background: #e11d48;
+    color: #ffffff;
+  }
+  .chants-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  .chants-lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+  }
+  .chants-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 992px) {
+    .chants-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .chants-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .chants-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .chants-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .chants-section ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .chants-section li {
+    margin-bottom: 0.5rem;
+  }
+  .callout {
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+  .callout h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .callout-info {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    color: #166534;
+  }
+  .callout-info p {
+    color: #166534;
+    margin: 0;
+  }
+  .chant-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 640px) {
+    .chant-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .chant-card {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .chant-badge {
+    display: inline-block;
+    background: #3b82f6;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  .chant-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .chant-card p {
+    margin-bottom: 0.5rem;
+    font-size: 0.92rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 640px) {
+    .grid-2col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .text-link {
+    color: #1e40af;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .chants-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-links a {
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+</style>
