@@ -24,7 +24,7 @@ const {
   noindex = false,
 } = Astro.props;
 
-const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://worlddartsguide.com';
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://worlddartshub.com';
 const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).toString();
 const resolvedOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
@@ -32,13 +32,13 @@ const resolvedOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogIm
 const baseWebsiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "World Darts Guide",
+  "name": "World Darts Hub",
   "url": siteUrl,
   "description": "Comprehensive independent fan guide to the PDC World Darts Championship 2026/27 at Alexandra Palace.",
   "inLanguage": "en-GB",
   "publisher": {
     "@type": "Organization",
-    "name": "World Darts Guide Editorial Team",
+    "name": "World Darts Hub Editorial Team",
     "url": siteUrl
   }
 };
@@ -68,7 +68,7 @@ const baseWebsiteSchema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={resolvedOgImage} />
-    <meta property="og:site_name" content="World Darts Guide" />
+    <meta property="og:site_name" content="World Darts Hub" />
     <meta property="og:locale" content="en_GB" />
 
     <!-- Twitter -->

@@ -74,7 +74,7 @@ for (const file of htmlFiles) {
   } else {
     const canon = canonMatch[1];
     let expectedPath = rel === 'index.html' ? '/' : '/' + rel.replace(/\/index\.html$/, '/');
-    const expectedCanon = `https://worlddartsguide.com${expectedPath}`;
+    const expectedCanon = `https://worlddartshub.com${expectedPath}`;
     if (canon !== expectedCanon) {
       canonErrors.push({ file: rel, issue: `Canonical mismatch: got ${canon}, expected ${expectedCanon}` });
     }

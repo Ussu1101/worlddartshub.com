@@ -84,7 +84,7 @@ const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
 
   <!-- Footer Domain -->
   <text x="80" y="530" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#64748b">
-    worlddartsguide.com
+    worlddartshub.com
   </text>
 </svg>`;
 

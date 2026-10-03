@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://worlddartsguide.com',
+  site: 'https://worlddartshub.com',
   integrations: [sitemap()],
   build: {
     format: 'directory'
