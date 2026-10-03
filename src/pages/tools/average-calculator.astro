@@ -1,0 +1,2045 @@
+---
+// src/pages/tools/average-calculator.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+
+const pageTitle = "Darts Average Calculator: 3-Dart Average & Match Average";
+const pageDescription = "Calculate your darts three-dart average from points and darts, work out 501 leg averages, and combine multiple legs into an accurate match average.";
+const siteUrl = "https://worlddartshub.com";
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/average-explained/' },
+  { name: 'Average Calculator' }
+];
+
+const calculatorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Darts Average Calculator",
+  "url": `${siteUrl}/tools/average-calculator/`,
+  "applicationCategory": "SportsApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": pageDescription,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={calculatorSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <!-- Hero Header -->
+  <header class="calculator-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">INTERACTIVE TOOL</span>
+        <span class="badge">3-DART BENCHMARK</span>
+      </div>
+      <h1>Darts Average Calculator</h1>
+      <p class="hero-lead">
+        Calculate your exact three-dart average from points scored and darts thrown, analyze individual X01 legs, and correctly combine multiple legs into a true weighted match average without mathematical skew.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column" id="main-content">
+      
+      <!-- Interactive Calculator Card -->
+      <section class="calculator-card" aria-label="Darts Average Calculator Tool">
+        
+        <!-- Mode Switcher Tabs -->
+        <div class="tab-nav" role="tablist" aria-label="Calculator Modes">
+          <button
+            type="button"
+            class="tab-btn active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="pane-quick"
+            id="tab-quick"
+            data-mode="quick"
+          >
+            ⚡ Quick Calc
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            aria-controls="pane-leg"
+            id="tab-leg"
+            data-mode="leg"
+          >
+            🎯 Single Leg (X01)
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            aria-controls="pane-match"
+            id="tab-match"
+            data-mode="match"
+          >
+            🏆 Multi-Leg Match
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            aria-controls="pane-target"
+            id="tab-target"
+            data-mode="target"
+          >
+            ⏱️ Target Pace
+          </button>
+        </div>
+
+        <div class="calculator-body">
+          
+          <!-- Primary Results Banner (Universal) -->
+          <div class="results-display" id="primary-results-card" aria-live="polite">
+            <div class="results-header">
+              <span class="result-badge" id="results-mode-label">QUICK CALCULATION RESULT</span>
+              <span class="live-indicator">● LIVE CALCULATION</span>
+            </div>
+            
+            <div class="results-main">
+              <div class="result-primary-number">
+                <span class="avg-label">Three-Dart Average</span>
+                <span class="avg-value" id="res-3dart-avg">83.50</span>
+              </div>
+              
+              <div class="results-grid">
+                <div class="result-stat-box">
+                  <span class="stat-label">Points Per Dart (PPD)</span>
+                  <span class="stat-value" id="res-ppd">27.83</span>
+                </div>
+                <div class="result-stat-box">
+                  <span class="stat-label">Points Scored</span>
+                  <span class="stat-value" id="res-points">501</span>
+                </div>
+                <div class="result-stat-box">
+                  <span class="stat-label">Darts Thrown</span>
+                  <span class="stat-value" id="res-darts">18</span>
+                </div>
+                <div class="result-stat-box">
+                  <span class="stat-label">Visits (3 Darts)</span>
+                  <span class="stat-value" id="res-visits">6.0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-readout" id="formula-readout-box">
+              <span class="formula-icon">📐</span>
+              <span class="formula-text" id="res-formula-text">Formula: (501 ÷ 18) × 3 = 83.50</span>
+            </div>
+          </div>
+
+          <!-- PANE A: QUICK CALCULATOR -->
+          <div class="mode-pane active" id="pane-quick" role="tabpanel" aria-labelledby="tab-quick">
+            <h2 class="pane-title">Quick Points &amp; Darts Calculator</h2>
+            <p class="pane-description">
+              Enter your total points scored and total darts thrown to work out your overall 3-dart average instantly.
+            </p>
+
+            <form class="calc-form" id="form-quick" onsubmit="event.preventDefault();">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="quick-points">Total Points Scored</label>
+                  <input
+                    type="number"
+                    id="quick-points"
+                    name="quick-points"
+                    class="form-input"
+                    value="501"
+                    min="0"
+                    max="100000"
+                    step="1"
+                    placeholder="e.g. 501"
+                    required
+                  />
+                  <span class="input-hint">Sum of all scores recorded across your throw</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="quick-darts">Total Darts Thrown</label>
+                  <input
+                    type="number"
+                    id="quick-darts"
+                    name="quick-darts"
+                    class="form-input"
+                    value="18"
+                    min="1"
+                    max="10000"
+                    step="1"
+                    placeholder="e.g. 18"
+                    required
+                  />
+                  <span class="input-hint">Every dart thrown at the board (including misses)</span>
+                </div>
+              </div>
+
+              <!-- Presets -->
+              <div class="presets-row">
+                <span class="presets-label">Quick 501 Presets:</span>
+                <div class="preset-buttons">
+                  <button type="button" class="preset-btn" data-points="501" data-darts="12">12 Darts (125.25)</button>
+                  <button type="button" class="preset-btn" data-points="501" data-darts="15">15 Darts (100.20)</button>
+                  <button type="button" class="preset-btn" data-points="501" data-darts="18">18 Darts (83.50)</button>
+                  <button type="button" class="preset-btn" data-points="501" data-darts="21">21 Darts (71.57)</button>
+                  <button type="button" class="preset-btn" data-points="501" data-darts="24">24 Darts (62.63)</button>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="btn-reset-quick">Reset Quick Calculator</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- PANE B: SINGLE X01 LEG -->
+          <div class="mode-pane" id="pane-leg" role="tabpanel" aria-labelledby="tab-leg" hidden>
+            <h2 class="pane-title">Single X01 Leg Average Calculator</h2>
+            <p class="pane-description">
+              Select your game format, specify any remaining points (if unfinished), and calculate your exact leg average.
+            </p>
+
+            <form class="calc-form" id="form-leg" onsubmit="event.preventDefault();">
+              
+              <!-- Starting Score Selector -->
+              <div class="form-group">
+                <label>Starting Leg Format</label>
+                <div class="pill-selector" role="radiogroup" aria-label="Starting Score">
+                  <button type="button" class="pill-btn" data-start="301">301</button>
+                  <button type="button" class="pill-btn active" data-start="501">501</button>
+                  <button type="button" class="pill-btn" data-start="701">701</button>
+                  <button type="button" class="pill-btn" data-start="custom">Custom</button>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group" id="group-custom-start" style="display: none;">
+                  <label for="leg-custom-start">Custom Starting Score</label>
+                  <input
+                    type="number"
+                    id="leg-custom-start"
+                    class="form-input"
+                    value="501"
+                    min="1"
+                    max="10001"
+                    step="1"
+                  />
+                  <span class="input-hint">Enter custom X01 starting target</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="leg-remaining">Remaining Score</label>
+                  <input
+                    type="number"
+                    id="leg-remaining"
+                    class="form-input"
+                    value="0"
+                    min="0"
+                    max="10000"
+                    step="1"
+                    placeholder="0 if completed"
+                  />
+                  <span class="input-hint">Enter 0 if the leg was won/checked out</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="leg-darts">Darts Thrown</label>
+                  <input
+                    type="number"
+                    id="leg-darts"
+                    class="form-input"
+                    value="15"
+                    min="1"
+                    max="500"
+                    step="1"
+                    placeholder="e.g. 15"
+                    required
+                  />
+                  <span class="input-hint">Total darts thrown in this leg</span>
+                </div>
+              </div>
+
+              <div id="leg-warning" class="input-alert" style="display: none;" role="alert">
+                Remaining score cannot exceed starting score.
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="btn-reset-leg">Reset Leg Calculator</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- PANE C: MULTI-LEG MATCH -->
+          <div class="mode-pane" id="pane-match" role="tabpanel" aria-labelledby="tab-match" hidden>
+            <h2 class="pane-title">Multi-Leg Match Aggregator</h2>
+            <p class="pane-description">
+              Combine multiple legs into a mathematically correct weighted match average. <strong>Leg averages are never simply averaged together</strong>; all points and darts are aggregated across the entire match.
+            </p>
+
+            <div class="match-notice">
+              <span class="notice-icon">💡</span>
+              <span class="notice-text">
+                <strong>Why weighted aggregation matters:</strong> Averaging leg averages introduces mathematical skew because legs with more darts have greater statistical weight. This tool computes true match averages identically to official PDC tournament scoring systems.
+              </span>
+            </div>
+
+            <!-- Dynamic Legs Table -->
+            <div class="match-legs-wrapper">
+              <div class="table-responsive">
+                <table class="match-table" id="match-legs-table">
+                  <thead>
+                    <tr>
+                      <th>Leg #</th>
+                      <th>Game</th>
+                      <th>Remaining</th>
+                      <th>Darts Thrown</th>
+                      <th>Points Scored</th>
+                      <th>Leg Average</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="match-legs-tbody">
+                    <!-- Dynamic Leg Rows Inserted Here via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="match-controls">
+              <button type="button" class="btn btn-primary" id="btn-add-leg">+ Add Leg</button>
+              <button type="button" class="btn btn-secondary" id="btn-reset-match">Reset Match</button>
+            </div>
+
+            <!-- Multi-leg Match Summary Strip -->
+            <div class="match-summary-card">
+              <h3>Match Aggregation Summary</h3>
+              <div class="match-summary-grid">
+                <div class="summary-metric">
+                  <span class="summary-label">Legs Counted</span>
+                  <span class="summary-val" id="match-summary-legs">2</span>
+                </div>
+                <div class="summary-metric">
+                  <span class="summary-label">Total Match Points</span>
+                  <span class="summary-val" id="match-summary-points">1,002</span>
+                </div>
+                <div class="summary-metric">
+                  <span class="summary-label">Total Match Darts</span>
+                  <span class="summary-val" id="match-summary-darts">39</span>
+                </div>
+                <div class="summary-metric summary-highlight">
+                  <span class="summary-label">True Weighted Match Avg</span>
+                  <span class="summary-val" id="match-summary-avg">77.08</span>
+                </div>
+              </div>
+              <p class="summary-subtext" id="match-summary-comparison">
+                Comparison: True weighted average is <strong>77.08</strong> (vs an incorrect unweighted average of <strong>81.42</strong>).
+              </p>
+            </div>
+          </div>
+
+          <!-- PANE D: TARGET PACE ESTIMATOR -->
+          <div class="mode-pane" id="pane-target" role="tabpanel" aria-labelledby="tab-target" hidden>
+            <h2 class="pane-title">Target Average 501 Leg Estimator</h2>
+            <p class="pane-description">
+              Set a target 3-dart average to estimate how many darts and visits are theoretically required to complete a 501 leg at that scoring pace.
+            </p>
+
+            <form class="calc-form" id="form-target" onsubmit="event.preventDefault();">
+              <div class="form-group">
+                <label for="target-avg-input">Target Three-Dart Average</label>
+                <input
+                  type="number"
+                  id="target-avg-input"
+                  class="form-input"
+                  value="85.00"
+                  min="10"
+                  max="167"
+                  step="0.5"
+                  placeholder="e.g. 85.00"
+                  required
+                />
+                <span class="input-hint">Enter your target scoring benchmark (e.g., 60, 75, 90, 100)</span>
+              </div>
+
+              <!-- Target Benchmark Presets -->
+              <div class="presets-row">
+                <span class="presets-label">Benchmark Targets:</span>
+                <div class="preset-buttons">
+                  <button type="button" class="target-preset-btn" data-target="60">60.00 (Pub / Social)</button>
+                  <button type="button" class="target-preset-btn" data-target="75">75.00 (Superleague / Club)</button>
+                  <button type="button" class="target-preset-btn" data-target="85">85.00 (County Standard)</button>
+                  <button type="button" class="target-preset-btn" data-target="100">100.00 (Elite PDC Pro)</button>
+                </div>
+              </div>
+
+              <!-- Target Output Box -->
+              <div class="target-output-card">
+                <div class="target-output-grid">
+                  <div class="target-output-item">
+                    <span class="target-label">Estimated Darts for 501</span>
+                    <span class="target-val" id="target-res-darts">17.7</span>
+                  </div>
+                  <div class="target-output-item">
+                    <span class="target-label">Estimated Visits Required</span>
+                    <span class="target-val" id="target-res-visits">~6 visits (18 darts)</span>
+                  </div>
+                  <div class="target-output-item">
+                    <span class="target-label">Required Points Per Dart</span>
+                    <span class="target-val" id="target-res-ppd">28.33 PPD</span>
+                  </div>
+                </div>
+                <p class="target-disclaimer">
+                  ⚠️ <em>Note: This is a theoretical mathematical estimate based on consistent scoring pace (501 × 3 ÷ target average). Real-world 501 legs require finishing on a double, which typically lowers the final leg average if multiple double attempts are needed.</em>
+                </p>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="btn-reset-target">Reset Estimator</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: How to Calculate a Darts Average -->
+      <section class="content-card">
+        <h2>How to Calculate a Darts Average</h2>
+        <p>
+          In professional darts, player performance is benchmarked by the <strong>three-dart average</strong>. Because a standard turn (visit) at the board consists of exactly three darts, the three-dart average represents the expected number of points a player scores every time they step up to the oche.
+        </p>
+
+        <div class="formula-box">
+          <div class="formula-math">
+            <span class="formula-label">Three-Dart Average</span> = 
+            <span class="fraction">
+              <span class="numerator">Total Points Scored</span>
+              <span class="denominator">Total Darts Thrown</span>
+            </span>
+            &times; 3
+          </div>
+        </div>
+
+        <h3>Step-by-Step Calculation Example</h3>
+        <ol class="step-list">
+          <li>
+            <strong>Determine total points scored:</strong> In a completed 501 leg, you scored exactly 501 points. If the leg was unfinished, subtract your remaining score from the starting score.
+          </li>
+          <li>
+            <strong>Count every dart thrown:</strong> Count all darts thrown at the board, including misses and darts aimed at doubles. For example, suppose you won the leg in <strong>18 darts</strong>.
+          </li>
+          <li>
+            <strong>Divide points by darts:</strong> Calculate your single-dart average (Points Per Dart, or PPD):<br />
+            <code>501 &divide; 18 = 27.833 points per dart</code>.
+          </li>
+          <li>
+            <strong>Multiply by 3:</strong> Multiply the single-dart figure by 3 to reach your standard visit benchmark:<br />
+            <code>27.833 &times; 3 = 83.50 three-dart average</code>.
+          </li>
+        </ol>
+      </section>
+
+      <!-- Section: Three-Dart Average vs Points Per Dart -->
+      <section class="content-card">
+        <h2>Three-Dart Average vs Points Per Dart (PPD)</h2>
+        <p>
+          Depending on whether you play steel-tip or soft-tip darts, or which mobile scoring app you use, you may encounter both <strong>Three-Dart Average</strong> and <strong>Points Per Dart (PPD)</strong>:
+        </p>
+
+        <div class="comparison-grid">
+          <div class="comparison-box">
+            <h4>Three-Dart Average (PDC / Steel-Tip Standard)</h4>
+            <p>
+              Standardized across all PDC television events (such as the <a href="/tournament/world-darts-championship/">World Darts Championship</a>), the BDO/WDF, and traditional pub leagues. It reflects the points scored per full three-dart visit.
+            </p>
+            <div class="conversion-pill">Formula: PPD &times; 3</div>
+          </div>
+
+          <div class="comparison-box">
+            <h4>Points Per Dart (PPD / Soft-Tip Standard)</h4>
+            <p>
+              Commonly used in electronic soft-tip darts leagues, North American tournaments, and certain scoring apps. It represents the average value of each individual arrow thrown at the board.
+            </p>
+            <div class="conversion-pill">Formula: 3-Dart Average &divide; 3</div>
+          </div>
+        </div>
+
+        <p class="conversion-summary">
+          To convert from PPD to 3-Dart Average, simply <strong>multiply by 3</strong>. To convert from 3-Dart Average to PPD, <strong>divide by 3</strong>. For example, a 90.00 three-dart average equals exactly 30.00 PPD.
+        </p>
+      </section>
+
+      <!-- Section: How to Calculate a 501 Average -->
+      <section class="content-card">
+        <h2>How to Calculate a 501 Average</h2>
+        <p>
+          The 501 leg is the universal competition format in professional darts. Calculating your average across a single 501 leg differs slightly depending on whether the leg was won or left unfinished:
+        </p>
+
+        <h3>1. Completed 501 Leg (Leg Won)</h3>
+        <p>
+          When you check out and win a 501 leg, you scored all 501 points. Divide 501 by the number of darts thrown to finish, then multiply by 3:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Darts to Finish</th>
+                <th>Visits Taken</th>
+                <th>Points Per Dart (PPD)</th>
+                <th>Three-Dart Average</th>
+                <th>PDC Rating Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>9 Darts</strong></td>
+                <td>3 Visits</td>
+                <td>55.67 PPD</td>
+                <td><strong class="text-accent">167.00</strong></td>
+                <td>Perfect 9-Dart Leg (Maximum possible average)</td>
+              </tr>
+              <tr>
+                <td><strong>12 Darts</strong></td>
+                <td>4 Visits</td>
+                <td>41.75 PPD</td>
+                <td><strong class="text-accent">125.25</strong></td>
+                <td>World-Class Broadcast TV standard</td>
+              </tr>
+              <tr>
+                <td><strong>15 Darts</strong></td>
+                <td>5 Visits</td>
+                <td>33.40 PPD</td>
+                <td><strong>100.20</strong></td>
+                <td>Elite Premier League / Major standard</td>
+              </tr>
+              <tr>
+                <td><strong>18 Darts</strong></td>
+                <td>6 Visits</td>
+                <td>27.83 PPD</td>
+                <td><strong>83.50</strong></td>
+                <td>Strong County / Superleague standard</td>
+              </tr>
+              <tr>
+                <td><strong>21 Darts</strong></td>
+                <td>7 Visits</td>
+                <td>23.86 PPD</td>
+                <td><strong>71.57</strong></td>
+                <td>Solid Pub / Competitive League standard</td>
+              </tr>
+              <tr>
+                <td><strong>24 Darts</strong></td>
+                <td>8 Visits</td>
+                <td>20.88 PPD</td>
+                <td><strong>62.63</strong></td>
+                <td>Intermediate Club standard</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>2. Unfinished Leg (Opponent Checked Out First)</h3>
+        <p>
+          If your opponent checks out while you still have points left, calculate only the points you actually scored:
+        </p>
+        <p class="formula-inline">
+          <code>Points Scored = 501 &minus; Remaining Score</code><br />
+          <code>Unfinished Average = (Points Scored &divide; Darts Thrown) &times; 3</code>
+        </p>
+        <p>
+          <strong>Example:</strong> You had 40 points left after throwing 15 darts when your opponent took out the leg. You scored <code>501 - 40 = 461 points</code>. Your average for that leg is <code>(461 &divide; 15) &times; 3 = 92.20</code>.
+        </p>
+      </section>
+
+      <!-- Section: How to Calculate a Match Average -->
+      <section class="content-card">
+        <h2>How to Calculate a Match Average</h2>
+        <p>
+          A darts match consists of multiple legs (e.g. best of 9 legs, best of 11 legs, or sets play). To calculate your overall match average, track your cumulative statistics across the entire contest:
+        </p>
+        
+        <div class="callout callout-info">
+          <h4>Match Average Formula</h4>
+          <p>
+            <code>Match Three-Dart Average = (Total Match Points Scored &divide; Total Match Darts Thrown) &times; 3</code>
+          </p>
+        </div>
+
+        <p>
+          You must record two running totals throughout the match:
+        </p>
+        <ul>
+          <li><strong>Total Points:</strong> Add together every point scored across all legs (both legs won and legs lost).</li>
+          <li><strong>Total Darts:</strong> Add together every dart thrown across all legs.</li>
+        </ul>
+      </section>
+
+      <!-- Section: The Aggregation Trap -->
+      <section class="content-card">
+        <h2>The Aggregation Trap: Why You Cannot Average Separate Leg Averages</h2>
+        <p>
+          The most widespread mathematical mistake made by amateur dart players and scorekeepers is <strong>taking the simple average of individual leg averages</strong>. Doing so produces a statistically incorrect result known as an unweighted average skew.
+        </p>
+
+        <div class="trap-comparison">
+          <div class="trap-box trap-wrong">
+            <h4>❌ The Wrong Method (Unweighted Arithmetic Mean)</h4>
+            <p>Suppose you play a short 2-leg practice match:</p>
+            <ul>
+              <li><strong>Leg 1:</strong> 501 points in <strong>15 darts</strong> = 100.20 Average</li>
+              <li><strong>Leg 2:</strong> 501 points in <strong>24 darts</strong> = 62.63 Average</li>
+            </ul>
+            <p>Incorrectly averaging the two leg numbers together:</p>
+            <p class="trap-calc"><code>(100.20 + 62.63) &divide; 2 = 81.42 Average</code></p>
+            <p class="trap-flaw">
+              <strong>Why it's wrong:</strong> This gives equal weight to both legs, ignoring the fact that Leg 2 took 24 darts (61.5% of your throws) while Leg 1 only took 15 darts (38.5% of your throws).
+            </p>
+          </div>
+
+          <div class="trap-box trap-correct">
+            <h4>✅ The Correct Method (True Weighted Aggregate)</h4>
+            <p>Summing total points and total darts thrown across the entire match:</p>
+            <ul>
+              <li><strong>Total Points:</strong> 501 + 501 = 1,002 points</li>
+              <li><strong>Total Darts:</strong> 15 + 24 = 39 darts</li>
+            </ul>
+            <p>Applying the true match formula:</p>
+            <p class="trap-calc"><code>(1,002 &divide; 39) &times; 3 = 77.08 Average</code></p>
+            <p class="trap-flaw">
+              <strong>The reality:</strong> Your actual match average is <strong>77.08</strong>, more than <strong>4.3 points lower</strong> than the flawed 81.42 estimate. Longer legs have a proportionally greater impact on your true scoring rate.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          Our <a href="#main-content">Multi-Leg Match Calculator</a> automatically applies this correct weighted formula, ensuring your calculated averages match official PDC statistical records exactly.
+        </p>
+      </section>
+
+      <!-- Section: First-Nine Average -->
+      <section class="content-card">
+        <h2>First-Nine Average (Scoring Power vs Finishing Pressure)</h2>
+        <p>
+          On professional television broadcasts, commentators and statisticians frequently display a player's <strong>First-Nine Average</strong> alongside their overall 3-dart average.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>What Is the First-Nine Average?</h4>
+            <p>
+              The First-Nine average measures the points scored during the first 9 darts (the first 3 visits) of every 501 leg. Because a leg cannot be won in fewer than 9 darts, these first visits are virtually always thrown at the treble 20 without any double-finishing attempts.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Why Does PDC Track It Separately?</h4>
+            <p>
+              The First-Nine isolates pure scoring power from double conversion. When a player struggles on their finishing doubles (throwing multiple darts scoring 0 points), their overall average drops sharply while their First-Nine average accurately reveals how heavily they were scoring in the opening visits.
+            </p>
+          </div>
+        </div>
+
+        <p class="guide-note">
+          For a comprehensive analysis of how First-Nine averages interact with match strategy and why a player with a higher average can still lose, read our in-depth guide on <a href="/darts/average-explained/">How 3-Dart Averages Work in Professional Darts</a>.
+        </p>
+      </section>
+
+      <!-- Section: Benchmark Darts Averages -->
+      <section class="content-card">
+        <h2>Benchmark Darts Averages: Where Do You Stand?</h2>
+        <p>
+          While official darts governing bodies do not enforce statutory rating divisions, three-dart averages serve as a universally recognized barometer of competitive skill. The following editorial benchmark ranges illustrate typical performance standards observed across grass-roots leagues, county circuits, and professional tours:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Average Range</th>
+                <th>Standard Category</th>
+                <th>Typical Leg Length</th>
+                <th>Competitive Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>35.00 – 48.00</strong></td>
+                <td>Beginner / Social</td>
+                <td>31 – 43 darts</td>
+                <td>Casual home play, learning board arithmetic and setup shots</td>
+              </tr>
+              <tr>
+                <td><strong>50.00 – 62.00</strong></td>
+                <td>Pub League / Club</td>
+                <td>24 – 30 darts</td>
+                <td>Regular pub league player with consistent treble 20 visits</td>
+              </tr>
+              <tr>
+                <td><strong>65.00 – 78.00</strong></td>
+                <td>Superleague / Advanced Club</td>
+                <td>19 – 23 darts</td>
+                <td>Competitive league standout; clinical finishes on favorite doubles</td>
+              </tr>
+              <tr>
+                <td><strong>80.00 – 90.00</strong></td>
+                <td>County / Challenge Tour</td>
+                <td>17 – 19 darts</td>
+                <td>PDC Q-School aspirant, Challenge Tour contender, top county representative</td>
+              </tr>
+              <tr>
+                <td><strong>92.00 – 102.00</strong></td>
+                <td>PDC Tour Card Professional</td>
+                <td>14 – 16 darts</td>
+                <td>PDC ProTour regular, qualifying for European Tour and major stages</td>
+              </tr>
+              <tr>
+                <td><strong>105.00+</strong></td>
+                <td>World Championship Elite</td>
+                <td>12 – 14 darts</td>
+                <td>World-title winning form displayed by Luke Littler, Luke Humphries, and Michael van Gerwen</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-footnote">
+          *Note: Benchmark ranges represent typical sustained single-match scoring averages. In shorter legs or best-of-5 formats, statistical variance is significantly higher because a single missed dart at double has a heavier mathematical impact.
+        </p>
+      </section>
+
+      <!-- Section: Frequently Asked Questions -->
+      <section class="content-card">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-list">
+          <div class="faq-item">
+            <h4>How do you calculate a darts average?</h4>
+            <p>
+              To calculate a three-dart average, divide the total points you scored by the total number of darts you threw, then multiply the result by 3: <code>(Points &divide; Darts) &times; 3</code>. For example, 501 points scored in 18 darts equals <code>(501 &divide; 18) &times; 3 = 83.50</code>.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What is a three-dart average?</h4>
+            <p>
+              A three-dart average is the standard statistical metric used in professional darts. Because each turn at the board consists of throwing three darts, the three-dart average represents the expected scoring value of one complete visit to the oche.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>How do you calculate a 501 average?</h4>
+            <p>
+              For a completed 501 leg that you won, divide 501 by the number of darts thrown and multiply by 3. If the leg was unfinished when your opponent won, subtract your remaining score from 501 to find your points scored, divide by your darts thrown, and multiply by 3.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Does this calculator work for 301, 701, and custom formats?</h4>
+            <p>
+              Yes. In our Single Leg (X01) mode, you can select 301, 501, 701, or any custom starting score. The calculator determines your net points scored (Starting Score minus Remaining Score) and computes your exact three-dart average.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Can I calculate a match average across multiple legs?</h4>
+            <p>
+              Yes. Use our Multi-Leg Match mode. You should never average individual leg averages together because legs with more darts thrown carry more statistical weight. The calculator combines all points scored across all legs and divides by the combined darts thrown before multiplying by 3.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Why might my average differ slightly from a scoring app?</h4>
+            <p>
+              Differences typically arise from how scoring apps handle edge cases. For instance, in a "bust" scenario, some platforms record all 3 darts for the visit while others only count the darts thrown before the bust occurred. Additionally, some apps truncate decimals rather than rounding them. Our calculator adheres strictly to standard PDC weighted arithmetic.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Related Guides & Internal Links -->
+      <section class="content-card">
+        <h2>Related Darts Knowledge &amp; Strategy Guides</h2>
+        <p>
+          Master the rules, scoring mechanics, and checkout mathematics of competitive darts:
+        </p>
+
+        <div class="related-links-grid">
+          <a href="/darts/average-explained/" class="link-card">
+            <h4>📈 How 3-Dart Averages Work</h4>
+            <p>Deep-dive into the PDC formula, First-9 statistics, and why higher averages don't always win.</p>
+          </a>
+
+          <a href="/darts/checkout-chart/" class="link-card">
+            <h4>🎯 501 Checkout Chart</h4>
+            <p>Official 2-dart and 3-dart finishing routes from 170 down to 41, plus bogey numbers.</p>
+          </a>
+
+          <a href="/darts/rules/" class="link-card">
+            <h4>📋 Official 501 Darts Rules</h4>
+            <p>Board height (5ft 8in), oche throw line distance (7ft 9.25in), and match regulations.</p>
+          </a>
+
+          <a href="/darts/legs-vs-sets/" class="link-card">
+            <h4>⚔️ Legs vs Sets Format Explained</h4>
+            <p>How the Alexandra Palace World Championship format works and how set play affects averages.</p>
+          </a>
+
+          <a href="/players/180-records/" class="link-card">
+            <h4>🔥 180 Maximum Records</h4>
+            <p>All-time 180 records, tournament maximum counts, and historic scoring benchmarks.</p>
+          </a>
+
+          <a href="/tournament/world-darts-championship/" class="link-card">
+            <h4>🏆 World Darts Championship Hub</h4>
+            <p>Complete £5M tournament schedule, prize money breakdown, and spectator guides.</p>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // Client-side Interactive Darts Average Calculator
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // Elements: Tabs
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const modePanes = document.querySelectorAll('.mode-pane');
+      const resultsModeLabel = document.getElementById('results-mode-label');
+      
+      // Elements: Universal Result Display
+      const res3DartAvg = document.getElementById('res-3dart-avg');
+      const resPpd = document.getElementById('res-ppd');
+      const resPoints = document.getElementById('res-points');
+      const resDarts = document.getElementById('res-darts');
+      const resVisits = document.getElementById('res-visits');
+      const resFormulaText = document.getElementById('res-formula-text');
+
+      // Elements: Quick Calc
+      const quickPointsInput = document.getElementById('quick-points') as HTMLInputElement | null;
+      const quickDartsInput = document.getElementById('quick-darts') as HTMLInputElement | null;
+      const btnResetQuick = document.getElementById('btn-reset-quick');
+      const quickPresetBtns = document.querySelectorAll('.preset-btn');
+
+      // Elements: Single Leg (X01)
+      const legPillBtns = document.querySelectorAll('.pill-btn');
+      const groupCustomStart = document.getElementById('group-custom-start');
+      const legCustomStartInput = document.getElementById('leg-custom-start') as HTMLInputElement | null;
+      const legRemainingInput = document.getElementById('leg-remaining') as HTMLInputElement | null;
+      const legDartsInput = document.getElementById('leg-darts') as HTMLInputElement | null;
+      const legWarning = document.getElementById('leg-warning');
+      const btnResetLeg = document.getElementById('btn-reset-leg');
+      let legStartScore = 501;
+
+      // Elements: Multi-Leg Match
+      const matchLegsTbody = document.getElementById('match-legs-tbody');
+      const btnAddLeg = document.getElementById('btn-add-leg');
+      const btnResetMatch = document.getElementById('btn-reset-match');
+      const matchSummaryLegs = document.getElementById('match-summary-legs');
+      const matchSummaryPoints = document.getElementById('match-summary-points');
+      const matchSummaryDarts = document.getElementById('match-summary-darts');
+      const matchSummaryAvg = document.getElementById('match-summary-avg');
+      const matchSummaryComparison = document.getElementById('match-summary-comparison');
+
+      // Elements: Target Estimator
+      const targetAvgInput = document.getElementById('target-avg-input') as HTMLInputElement | null;
+      const targetPresetBtns = document.querySelectorAll('.target-preset-btn');
+      const targetResDarts = document.getElementById('target-res-darts');
+      const targetResVisits = document.getElementById('target-res-visits');
+      const targetResPpd = document.getElementById('target-res-ppd');
+      const btnResetTarget = document.getElementById('btn-reset-target');
+
+      // State: Multi-Leg Match
+      interface MatchLeg {
+        id: number;
+        start: number;
+        remaining: number;
+        darts: number;
+      }
+      
+      let matchLegs: MatchLeg[] = [
+        { id: 1, start: 501, remaining: 0, darts: 15 },
+        { id: 2, start: 501, remaining: 0, darts: 24 }
+      ];
+      let nextLegId = 3;
+
+      // Active Mode Tracker
+      let activeMode = 'quick';
+
+      // Update Universal Primary Results Box
+      function updateUniversalResults(avg: number, ppd: number, points: number, darts: number, customFormula?: string) {
+        if (!res3DartAvg || !resPpd || !resPoints || !resDarts || !resVisits || !resFormulaText) return;
+        
+        if (darts <= 0 || isNaN(avg) || !isFinite(avg)) {
+          res3DartAvg.textContent = '0.00';
+          resPpd.textContent = '0.00';
+          resPoints.textContent = points > 0 ? points.toLocaleString() : '0';
+          resDarts.textContent = '0';
+          resVisits.textContent = '0.0';
+          resFormulaText.textContent = 'Enter darts thrown (at least 1) to calculate average';
+          return;
+        }
+
+        res3DartAvg.textContent = avg.toFixed(2);
+        resPpd.textContent = ppd.toFixed(2);
+        resPoints.textContent = points.toLocaleString();
+        resDarts.textContent = darts.toString();
+        resVisits.textContent = (darts / 3).toFixed(1);
+
+        if (customFormula) {
+          resFormulaText.textContent = customFormula;
+        } else {
+          resFormulaText.textContent = `Formula: (${points.toLocaleString()} ÷ ${darts}) × 3 = ${avg.toFixed(2)}`;
+        }
+      }
+
+      // --- 1. QUICK CALCULATOR LOGIC ---
+      function calculateQuick() {
+        if (!quickPointsInput || !quickDartsInput) return;
+        const points = Math.max(0, parseInt(quickPointsInput.value, 10) || 0);
+        const darts = Math.max(0, parseInt(quickDartsInput.value, 10) || 0);
+
+        if (darts <= 0) {
+          updateUniversalResults(0, 0, points, 0);
+          return;
+        }
+
+        const ppd = points / darts;
+        const avg = ppd * 3;
+        updateUniversalResults(avg, ppd, points, darts);
+      }
+
+      quickPointsInput?.addEventListener('input', calculateQuick);
+      quickDartsInput?.addEventListener('input', calculateQuick);
+
+      quickPresetBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const target = e.currentTarget as HTMLElement;
+          const p = target.getAttribute('data-points');
+          const d = target.getAttribute('data-darts');
+          if (p && d && quickPointsInput && quickDartsInput) {
+            quickPointsInput.value = p;
+            quickDartsInput.value = d;
+            calculateQuick();
+          }
+        });
+      });
+
+      btnResetQuick?.addEventListener('click', () => {
+        if (quickPointsInput && quickDartsInput) {
+          quickPointsInput.value = '501';
+          quickDartsInput.value = '18';
+          calculateQuick();
+        }
+      });
+
+      // --- 2. SINGLE LEG (X01) LOGIC ---
+      function calculateLeg() {
+        if (!legRemainingInput || !legDartsInput) return;
+
+        let start = legStartScore;
+        if (legStartScore === -1 && legCustomStartInput) {
+          start = Math.max(1, parseInt(legCustomStartInput.value, 10) || 501);
+        }
+
+        const remaining = Math.max(0, parseInt(legRemainingInput.value, 10) || 0);
+        const darts = Math.max(0, parseInt(legDartsInput.value, 10) || 0);
+
+        if (remaining > start) {
+          if (legWarning) legWarning.style.display = 'block';
+          updateUniversalResults(0, 0, 0, darts, 'Error: Remaining score exceeds starting score');
+          return;
+        } else {
+          if (legWarning) legWarning.style.display = 'none';
+        }
+
+        const pointsScored = start - remaining;
+        if (darts <= 0) {
+          updateUniversalResults(0, 0, pointsScored, 0);
+          return;
+        }
+
+        const ppd = pointsScored / darts;
+        const avg = ppd * 3;
+        const formula = `Formula: (${start} - ${remaining} = ${pointsScored} pts) ÷ ${darts} × 3 = ${avg.toFixed(2)}`;
+        updateUniversalResults(avg, ppd, pointsScored, darts, formula);
+      }
+
+      legPillBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          legPillBtns.forEach(b => b.classList.remove('active'));
+          const target = e.currentTarget as HTMLElement;
+          target.classList.add('active');
+          const val = target.getAttribute('data-start');
+          if (val === 'custom') {
+            legStartScore = -1;
+            if (groupCustomStart) groupCustomStart.style.display = 'block';
+          } else {
+            legStartScore = parseInt(val || '501', 10);
+            if (groupCustomStart) groupCustomStart.style.display = 'none';
+          }
+          calculateLeg();
+        });
+      });
+
+      legCustomStartInput?.addEventListener('input', calculateLeg);
+      legRemainingInput?.addEventListener('input', calculateLeg);
+      legDartsInput?.addEventListener('input', calculateLeg);
+
+      btnResetLeg?.addEventListener('click', () => {
+        legStartScore = 501;
+        legPillBtns.forEach(b => {
+          b.classList.toggle('active', b.getAttribute('data-start') === '501');
+        });
+        if (groupCustomStart) groupCustomStart.style.display = 'none';
+        if (legRemainingInput) legRemainingInput.value = '0';
+        if (legDartsInput) legDartsInput.value = '15';
+        if (legWarning) legWarning.style.display = 'none';
+        calculateLeg();
+      });
+
+      // --- 3. MULTI-LEG MATCH LOGIC ---
+      function renderMatchTable() {
+        if (!matchLegsTbody) return;
+        matchLegsTbody.innerHTML = '';
+
+        matchLegs.forEach((leg, index) => {
+          const row = document.createElement('tr');
+          const ptsScored = Math.max(0, leg.start - leg.remaining);
+          const legAvg = leg.darts > 0 ? ((ptsScored / leg.darts) * 3).toFixed(2) : '0.00';
+
+          row.innerHTML = `
+            <td><strong>Leg ${index + 1}</strong></td>
+            <td>
+              <select class="table-select leg-start-select" data-id="${leg.id}">
+                <option value="501" ${leg.start === 501 ? 'selected' : ''}>501</option>
+                <option value="301" ${leg.start === 301 ? 'selected' : ''}>301</option>
+                <option value="701" ${leg.start === 701 ? 'selected' : ''}>701</option>
+              </select>
+            </td>
+            <td>
+              <input type="number" class="table-input leg-remaining-input" data-id="${leg.id}" value="${leg.remaining}" min="0" max="${leg.start}" style="width: 70px;" />
+            </td>
+            <td>
+              <input type="number" class="table-input leg-darts-input" data-id="${leg.id}" value="${leg.darts}" min="1" max="300" style="width: 70px;" />
+            </td>
+            <td><span class="pts-cell">${ptsScored}</span></td>
+            <td><strong class="avg-cell text-accent">${legAvg}</strong></td>
+            <td>
+              <button type="button" class="btn-delete-leg" data-id="${leg.id}" aria-label="Delete Leg ${index + 1}" ${matchLegs.length <= 1 ? 'disabled style="opacity: 0.4;"' : ''}>✕</button>
+            </td>
+          `;
+
+          matchLegsTbody.appendChild(row);
+        });
+
+        // Add event listeners to table inputs
+        const startSelects = matchLegsTbody.querySelectorAll('.leg-start-select');
+        startSelects.forEach(el => {
+          el.addEventListener('change', (e) => {
+            const target = e.target as HTMLSelectElement;
+            const id = parseInt(target.getAttribute('data-id') || '0', 10);
+            const leg = matchLegs.find(l => l.id === id);
+            if (leg) {
+              leg.start = parseInt(target.value, 10);
+              renderMatchTable();
+              calculateMatch();
+            }
+          });
+        });
+
+        const remInputs = matchLegsTbody.querySelectorAll('.leg-remaining-input');
+        remInputs.forEach(el => {
+          el.addEventListener('input', (e) => {
+            const target = e.target as HTMLInputElement;
+            const id = parseInt(target.getAttribute('data-id') || '0', 10);
+            const leg = matchLegs.find(l => l.id === id);
+            if (leg) {
+              leg.remaining = Math.max(0, parseInt(target.value, 10) || 0);
+              updateRowCalculations(target.closest('tr'), leg);
+              calculateMatch();
+            }
+          });
+        });
+
+        const dartsInputs = matchLegsTbody.querySelectorAll('.leg-darts-input');
+        dartsInputs.forEach(el => {
+          el.addEventListener('input', (e) => {
+            const target = e.target as HTMLInputElement;
+            const id = parseInt(target.getAttribute('data-id') || '0', 10);
+            const leg = matchLegs.find(l => l.id === id);
+            if (leg) {
+              leg.darts = Math.max(1, parseInt(target.value, 10) || 1);
+              updateRowCalculations(target.closest('tr'), leg);
+              calculateMatch();
+            }
+          });
+        });
+
+        const deleteButtons = matchLegsTbody.querySelectorAll('.btn-delete-leg');
+        deleteButtons.forEach(el => {
+          el.addEventListener('click', (e) => {
+            if (matchLegs.length <= 1) return;
+            const target = e.target as HTMLElement;
+            const id = parseInt(target.getAttribute('data-id') || '0', 10);
+            matchLegs = matchLegs.filter(l => l.id !== id);
+            renderMatchTable();
+            calculateMatch();
+          });
+        });
+      }
+
+      function updateRowCalculations(row: HTMLTableRowElement | null, leg: MatchLeg) {
+        if (!row) return;
+        const ptsScored = Math.max(0, leg.start - leg.remaining);
+        const legAvg = leg.darts > 0 ? ((ptsScored / leg.darts) * 3).toFixed(2) : '0.00';
+        const ptsCell = row.querySelector('.pts-cell');
+        const avgCell = row.querySelector('.avg-cell');
+        if (ptsCell) ptsCell.textContent = ptsScored.toString();
+        if (avgCell) avgCell.textContent = legAvg;
+      }
+
+      function calculateMatch() {
+        let totalPoints = 0;
+        let totalDarts = 0;
+        let legAveragesSum = 0;
+        let validLegsCount = 0;
+
+        matchLegs.forEach(leg => {
+          const pts = Math.max(0, leg.start - leg.remaining);
+          totalPoints += pts;
+          totalDarts += leg.darts;
+          if (leg.darts > 0) {
+            legAveragesSum += (pts / leg.darts) * 3;
+            validLegsCount++;
+          }
+        });
+
+        const matchAvg = totalDarts > 0 ? (totalPoints / totalDarts) * 3 : 0;
+        const matchPpd = totalDarts > 0 ? totalPoints / totalDarts : 0;
+        const unweightedMean = validLegsCount > 0 ? legAveragesSum / validLegsCount : 0;
+
+        if (matchSummaryLegs) matchSummaryLegs.textContent = matchLegs.length.toString();
+        if (matchSummaryPoints) matchSummaryPoints.textContent = totalPoints.toLocaleString();
+        if (matchSummaryDarts) matchSummaryDarts.textContent = totalDarts.toString();
+        if (matchSummaryAvg) matchSummaryAvg.textContent = matchAvg.toFixed(2);
+
+        if (matchSummaryComparison) {
+          matchSummaryComparison.innerHTML = `Comparison: True weighted average is <strong>${matchAvg.toFixed(2)}</strong> (vs an incorrect unweighted leg average of <strong>${unweightedMean.toFixed(2)}</strong>).`;
+        }
+
+        if (activeMode === 'match') {
+          const formula = `Weighted Match: (${totalPoints.toLocaleString()} pts ÷ ${totalDarts} darts) × 3 = ${matchAvg.toFixed(2)}`;
+          updateUniversalResults(matchAvg, matchPpd, totalPoints, totalDarts, formula);
+        }
+      }
+
+      btnAddLeg?.addEventListener('click', () => {
+        matchLegs.push({
+          id: nextLegId++,
+          start: 501,
+          remaining: 0,
+          darts: 18
+        });
+        renderMatchTable();
+        calculateMatch();
+      });
+
+      btnResetMatch?.addEventListener('click', () => {
+        matchLegs = [
+          { id: 1, start: 501, remaining: 0, darts: 15 },
+          { id: 2, start: 501, remaining: 0, darts: 24 }
+        ];
+        nextLegId = 3;
+        renderMatchTable();
+        calculateMatch();
+      });
+
+      // --- 4. TARGET PACE ESTIMATOR LOGIC ---
+      function calculateTarget() {
+        if (!targetAvgInput || !targetResDarts || !targetResVisits || !targetResPpd) return;
+        const target = Math.max(1, parseFloat(targetAvgInput.value) || 0);
+
+        if (target <= 0) {
+          targetResDarts.textContent = '--';
+          targetResVisits.textContent = '--';
+          targetResPpd.textContent = '--';
+          return;
+        }
+
+        // Formula: 501 * 3 / target
+        const estDarts = (501 * 3) / target;
+        const estVisits = Math.ceil(estDarts / 3);
+        const ppd = target / 3;
+
+        targetResDarts.textContent = estDarts.toFixed(1) + ' darts';
+        targetResVisits.textContent = `~${(estDarts / 3).toFixed(1)} visits (approx ${Math.round(estDarts)} darts)`;
+        targetResPpd.textContent = ppd.toFixed(2) + ' PPD';
+
+        if (activeMode === 'target') {
+          const formula = `Pace Estimate: 501 pts × 3 ÷ ${target.toFixed(2)} target avg = ${estDarts.toFixed(1)} darts`;
+          updateUniversalResults(target, ppd, 501, Math.round(estDarts), formula);
+        }
+      }
+
+      targetAvgInput?.addEventListener('input', calculateTarget);
+
+      targetPresetBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const target = e.currentTarget as HTMLElement;
+          const val = target.getAttribute('data-target');
+          if (val && targetAvgInput) {
+            targetAvgInput.value = val;
+            calculateTarget();
+          }
+        });
+      });
+
+      btnResetTarget?.addEventListener('click', () => {
+        if (targetAvgInput) {
+          targetAvgInput.value = '85.00';
+          calculateTarget();
+        }
+      });
+
+      // --- TAB SWITCHER LOGIC ---
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const clickedBtn = e.currentTarget as HTMLButtonElement;
+          const mode = clickedBtn.getAttribute('data-mode') || 'quick';
+          activeMode = mode;
+
+          // Update tabs
+          tabButtons.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          clickedBtn.classList.add('active');
+          clickedBtn.setAttribute('aria-selected', 'true');
+
+          // Switch panes
+          modePanes.forEach(pane => {
+            pane.classList.remove('active');
+            pane.setAttribute('hidden', '');
+          });
+
+          const activePane = document.getElementById(`pane-${mode}`);
+          if (activePane) {
+            activePane.classList.add('active');
+            activePane.removeAttribute('hidden');
+          }
+
+          // Update label on primary banner
+          if (resultsModeLabel) {
+            if (mode === 'quick') resultsModeLabel.textContent = 'QUICK CALCULATION RESULT';
+            else if (mode === 'leg') resultsModeLabel.textContent = 'SINGLE X01 LEG RESULT';
+            else if (mode === 'match') resultsModeLabel.textContent = 'MULTI-LEG MATCH RESULT';
+            else if (mode === 'target') resultsModeLabel.textContent = 'TARGET PACE RESULT';
+          }
+
+          // Trigger active mode calculation for universal display
+          if (mode === 'quick') calculateQuick();
+          else if (mode === 'leg') calculateLeg();
+          else if (mode === 'match') calculateMatch();
+          else if (mode === 'target') calculateTarget();
+        });
+      });
+
+      // Initial execution
+      renderMatchTable();
+      calculateQuick();
+    });
+  </script>
+
+  <style>
+    /* Calculator Page Specific Styling */
+    .calculator-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 2.75rem 0 3.25rem;
+      border-bottom: 1px solid #334155;
+    }
+    .badge-group {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+    .calculator-hero h1 {
+      color: #ffffff;
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-lead {
+      color: #cbd5e1;
+      font-size: 1.15rem;
+      max-width: 800px;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .content-layout {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+    .main-column {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Calculator Main Card */
+    .calculator-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Tab Switcher */
+    .tab-nav {
+      display: flex;
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--color-border);
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    .tab-btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 1rem 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .tab-btn:hover {
+      color: var(--color-primary);
+      background: rgba(255, 255, 255, 0.6);
+    }
+    .tab-btn.active {
+      color: var(--color-primary);
+      background: #ffffff;
+      border-bottom-color: var(--color-accent);
+    }
+
+    .calculator-body {
+      padding: 1.75rem;
+    }
+
+    /* Primary Results Banner */
+    .results-display {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      color: #ffffff;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+    }
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 0.75rem;
+    }
+    .result-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--color-accent);
+      text-transform: uppercase;
+    }
+    .live-indicator {
+      font-size: 0.75rem;
+      color: #34d399;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .results-main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    @media (min-width: 640px) {
+      .results-main {
+        grid-template-columns: 220px 1fr;
+      }
+    }
+
+    .result-primary-number {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .avg-label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .avg-value {
+      display: block;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--color-accent);
+      font-family: var(--font-mono);
+      letter-spacing: -0.03em;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+    .result-stat-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+    }
+    .stat-label {
+      display: block;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-bottom: 0.25rem;
+    }
+    .stat-value {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f8fafc;
+      font-family: var(--font-mono);
+    }
+
+    .formula-readout {
+      margin-top: 1.25rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      font-family: var(--font-mono);
+    }
+    .formula-icon {
+      font-size: 1rem;
+    }
+
+    /* Mode Panes */
+    .mode-pane {
+      display: none;
+    }
+    .mode-pane.active {
+      display: block;
+    }
+    .pane-title {
+      font-size: 1.4rem;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+      margin-top: 0;
+    }
+    .pane-description {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Form Layouts */
+    .calc-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1.05rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background-color: #f8fafc;
+      color: var(--color-primary);
+      font-family: var(--font-mono);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      background-color: #ffffff;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+    .input-hint {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+    }
+    .input-alert {
+      background-color: #fee2e2;
+      border-left: 4px solid var(--color-dart-red);
+      color: #991b1b;
+      padding: 0.75rem 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Pill Selector for 301, 501, 701 */
+    .pill-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    .pill-btn {
+      padding: 0.5rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: 1px solid var(--color-border);
+      border-radius: 9999px;
+      background: #f8fafc;
+      color: var(--color-primary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .pill-btn:hover {
+      background: #e2e8f0;
+    }
+    .pill-btn.active {
+      background: var(--color-primary);
+      color: #ffffff;
+      border-color: var(--color-primary);
+    }
+
+    /* Presets Strip */
+    .presets-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+      background: #f8fafc;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+    }
+    @media (min-width: 640px) {
+      .presets-row {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    .presets-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+    .preset-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .preset-btn, .target-preset-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      color: var(--color-primary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .preset-btn:hover, .target-preset-btn:hover {
+      background: #f1f5f9;
+      border-color: var(--color-accent);
+      color: #92400e;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.5rem;
+    }
+
+    /* Multi-Leg Match Specifics */
+    .match-notice {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 0.9rem 1.1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+    .notice-icon {
+      font-size: 1.1rem;
+    }
+    .match-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .match-table th {
+      background: #f8fafc;
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid var(--color-border);
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    .match-table td {
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: middle;
+    }
+    .table-select, .table-input {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.9rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background: #ffffff;
+      font-family: var(--font-mono);
+    }
+    .btn-delete-leg {
+      background: #fee2e2;
+      color: #dc2626;
+      border: 1px solid #fca5a5;
+      border-radius: 4px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.15s ease;
+    }
+    .btn-delete-leg:hover:not(:disabled) {
+      background: #fecaca;
+    }
+    .match-controls {
+      display: flex;
+      gap: 0.75rem;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .match-summary-card {
+      background: #f8fafc;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+    }
+    .match-summary-card h3 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+    }
+    .match-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .match-summary-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .summary-metric {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+    }
+    .summary-highlight {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+    .summary-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .summary-val {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      font-family: var(--font-mono);
+    }
+    .summary-highlight .summary-val {
+      color: #b45309;
+    }
+    .summary-subtext {
+      margin-top: 1rem;
+      margin-bottom: 0;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    /* Target Estimator Card */
+    .target-output-card {
+      background: #f8fafc;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .target-output-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .target-output-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .target-output-item {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      text-align: center;
+    }
+    .target-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .target-val {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      font-family: var(--font-mono);
+    }
+    .target-disclaimer {
+      margin-top: 1.25rem;
+      margin-bottom: 0;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* Content Cards (Articles / Explanations) */
+    .content-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .content-card h2 {
+      margin-top: 0;
+      font-size: 1.6rem;
+      color: var(--color-primary);
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .content-card h3 {
+      font-size: 1.2rem;
+      color: var(--color-primary);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Math Formula Display */
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .formula-math {
+      font-size: 1.3rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--color-primary);
+    }
+    .formula-label {
+      color: #b45309;
+    }
+    .fraction {
+      display: inline-flex;
+      flex-direction: column;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0 0.5rem;
+    }
+    .numerator {
+      border-bottom: 2px solid var(--color-primary);
+      padding-bottom: 0.25rem;
+      font-size: 1.05rem;
+    }
+    .denominator {
+      padding-top: 0.25rem;
+      font-size: 1.05rem;
+    }
+    .formula-inline {
+      background: #f1f5f9;
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-sm);
+      margin: 1rem 0;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+    }
+
+    .step-list {
+      margin: 1.25rem 0;
+      padding-left: 1.5rem;
+    }
+    .step-list li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Comparison Grids */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    @media (min-width: 640px) {
+      .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .comparison-box {
+      background: #f8fafc;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+    }
+    .comparison-box h4 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+      color: var(--color-primary);
+    }
+    .conversion-pill {
+      display: inline-block;
+      margin-top: 0.75rem;
+      background: #e2e8f0;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--color-primary);
+    }
+    .conversion-summary {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* The Aggregation Trap */
+    .trap-comparison {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    @media (min-width: 768px) {
+      .trap-comparison {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .trap-box {
+      border-radius: var(--radius-sm);
+      padding: 1.5rem;
+    }
+    .trap-wrong {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+    }
+    .trap-wrong h4 {
+      color: #991b1b;
+      margin-top: 0;
+    }
+    .trap-correct {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+    }
+    .trap-correct h4 {
+      color: #166534;
+      margin-top: 0;
+    }
+    .trap-calc {
+      background: #ffffff;
+      padding: 0.75rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      margin: 1rem 0;
+    }
+    .trap-flaw {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    .guide-note {
+      background: #f8fafc;
+      border-left: 4px solid var(--color-accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* FAQ List */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+    }
+    .faq-item h4 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+      color: var(--color-primary);
+    }
+    .faq-item p:last-child {
+      margin-bottom: 0;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Related Links Grid */
+    .related-links-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .related-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .link-card {
+      background: #f8fafc;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .link-card:hover {
+      border-color: var(--color-accent);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .link-card h4 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: 1rem;
+      color: var(--color-primary);
+    }
+    .link-card p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .text-accent {
+      color: #b45309;
+    }
+    .table-footnote {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+    }
+  </style>
+</BaseLayout>
