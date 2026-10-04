@@ -172,6 +172,30 @@
       "status": "current_known_walk_on",
       "crowd_reaction": "Thunderous arena-wide chorus chants of 'Hey! Teachers! Leave them kids alone!' with air drumming and waving German flags.",
       "walk_on_history": "A signature tribute to his 'The Wall' moniker and disciplined defensive playing style, energizing German traveling contingents at Alexandra Palace."
+    },
+    {
+      "player_id": "jonny-clayton",
+      "player_name": "Jonny Clayton",
+      "nickname": "The Ferret",
+      "song_title": "Johnny B. Goode",
+      "artist": "Chuck Berry",
+      "genre": "Rock and Roll",
+      "release_year": "1958",
+      "status": "current_known_walk_on",
+      "crowd_reaction": "High-octane retro rock and roll guitar riffs triggering spontaneous clapping, foot-stomping, and singing across the arena.",
+      "walk_on_history": "Adopted during his meteoric rise in 2021 when he captured the Premier League and World Grand Prix crowns."
+    },
+    {
+      "player_id": "chris-dobey",
+      "player_name": "Chris Dobey",
+      "nickname": "Hollywood",
+      "song_title": "Hey Jude",
+      "artist": "The Beatles",
+      "genre": "Classic Rock / Pop Rock",
+      "release_year": "1968",
+      "status": "current_known_walk_on",
+      "crowd_reaction": "Thunderous collective stadium singalong where the entire Alexandra Palace crowd belts out the extended 'Na-na-na-na' outro in unison.",
+      "walk_on_history": "Introduced as his headline walk-on anthem leading into the 2024 season, replacing his long-time cult hit 'Let's Get Ready to Rhumble'."
     }
   ]
 }

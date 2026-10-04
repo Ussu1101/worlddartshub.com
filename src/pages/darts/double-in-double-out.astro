@@ -1,0 +1,752 @@
+---
+// src/pages/darts/double-in-double-out.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Double-In Double-Out Darts: Rules, Tactics & World Grand Prix Format";
+const pageDescription = "What is double-in double-out in darts? Learn how double-start 501 works, why the Bullseye counts, tactical differences from straight-in, and the World Grand Prix format.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/darts/double-in-double-out/`;
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Double-In Double-Out' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Hub Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does double-in double-out mean in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Double-in double-out (often called 'double-start') is a darts format where a player must hit an outer double segment or the 50-point inner bullseye to begin scoring points in a leg, and must also hit an outer double or inner bullseye to finish the leg."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do points count before you hit a starting double?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Any darts thrown before striking a legal starting double score zero points. Even if a dart lands in Treble 20, it is dead and does not count unless preceded by a legal starting double in that turn or earlier in the leg."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you start on the bullseye in double-in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The red inner bullseye (50 points) is officially classified as a 'double 25', making it a legal double to start or finish a leg. However, the green outer bullseye (25 points) is a single sector and cannot be used to start or finish."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the World Darts Championship double-in double-out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The PDC World Darts Championship at Alexandra Palace uses the standard 'straight-in, double-out' format, where any segment scores immediately from dart one. The premier double-in double-out tournament in professional darts is the PDC World Grand Prix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which double is most popular for starting in double-in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Double 16 and Double 20 ('Tops') are the most favored starting targets. Double 16 is especially popular because an errant dart missing inside strikes Single 16, which still leaves Double 8 on the next attempt."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <header class="page-header">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      <h1>Double-In Double-Out Darts: Rules, Tactics & World Grand Prix Format</h1>
+      <p class="lead-text">
+        In standard 501, players blast straight into Treble 20 from their very first throw. In double-in double-out darts, the scoreboard stays locked at 501 until a player nails an outer wire or inner bullseye. Discover how this ruthless format works, why it creates supreme drama, and how the world's best conquer the PDC World Grand Prix.
+      </p>
+      <div class="meta-row">
+        <VerificationBadge />
+        <span class="meta-item">Tournament Format: PDC World Grand Prix & Traditional League Rules</span>
+        <span class="meta-item">Read Time: 7 mins</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-layout">
+    <main class="main-content">
+      <!-- Section: What Is Double-In Double-Out -->
+      <section class="content-card">
+        <h2>What Does Double-In Double-Out Mean?</h2>
+        <p>
+          In traditional English pub leagues and televised PDC competition, <strong>Double-In Double-Out (DIDO)</strong>—also referred to universally as <strong>"Double-Start"</strong>—is an alternate variation of standard 501 darts.
+        </p>
+        <p>
+          While standard professional tournaments like the <a href="/tournament/world-darts-championship/">PDC World Darts Championship</a> operate on a <strong>"Straight-In, Double-Out"</strong> basis, double-start darts imposes an uncompromising condition at the very beginning of every single leg:
+        </p>
+
+        <div class="rules-step-list">
+          <div class="rule-step">
+            <span class="step-num">1</span>
+            <div class="step-body">
+              <h3>Double-In: The Opening Condition</h3>
+              <p>
+                A player cannot begin deducting points from their starting score of 501 until a dart lands cleanly inside an <strong>outer double segment</strong> (e.g., D20, D16, D10) or the <strong>50-point inner bullseye</strong>. Any darts thrown before that first legal double land score exactly zero points.
+              </p>
+            </div>
+          </div>
+
+          <div class="rule-step">
+            <span class="step-num">2</span>
+            <div class="step-body">
+              <h3>The Scoring Visit: Points Accumulate Once "Off the Mark"</h3>
+              <p>
+                The moment a starting double is hit, that dart's points are deducted from 501, and every subsequent dart thrown in that leg scores normally. For example, striking Double 20 with your first dart leaves 461, and your second and third darts can target Treble 20 normally.
+              </p>
+            </div>
+          </div>
+
+          <div class="rule-step">
+            <span class="step-num">3</span>
+            <div class="step-body">
+              <h3>Double-Out: The Concluding Condition</h3>
+              <p>
+                Just as in standard 501 under <a href="/darts/rules/">DRA tournament regulations</a>, the final dart to reduce the score to zero must land in an outer double or the inner bullseye. The <a href="/darts/bust-rule-in-darts/">darts bust rule</a> applies fully to all finishing attempts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Scoring Before First Double -->
+      <section class="content-card">
+        <h2>How Scoring Works Before the First Double Lands</h2>
+        <p>
+          The most striking aspect of double-start darts is the complete nullification of errant throws before finding a double.
+        </p>
+        <p>
+          Consider this common scenario at the start of a leg:
+        </p>
+        <ul>
+          <li><strong>Dart 1:</strong> Aims at Double 20, but drifts low into <strong>Single 20</strong> &rarr; <em>Scores 0 points. Remaining score: 501.</em></li>
+          <li><strong>Dart 2:</strong> Aims at Double 20, but drifts high off the board into the surround &rarr; <em>Scores 0 points. Remaining score: 501.</em></li>
+          <li><strong>Dart 3:</strong> Slams directly into <strong>Treble 20 (60 points)</strong> &rarr; <em>Scores 0 points. Remaining score: 501.</em></li>
+        </ul>
+        <p>
+          Even though the thrower landed a maximum single-dart score of 60 on dart three, because the leg was not legally opened with a double, the caller announces <strong>"No score"</strong> and the player remains on 501.
+        </p>
+        <p>
+          Conversely, if Dart 1 hits Double 20 (40 points) and Darts 2 and 3 strike Treble 20 (60 + 60 = 120 points), the total visit scores <strong>160 points</strong>, leaving a remaining score of <strong>341</strong> (501 &minus; 160).
+        </p>
+
+        <div class="callout-box">
+          <div class="callout-title">The Psychology of the Double-In "Freeze"</div>
+          <p>
+            In straight-in darts, a struggling player can still score 41, 45, or 60 points to keep moving down the board. In double-start play, missing three darts at doubles means remaining stranded on 501. If your opponent hits their double on dart one, they immediately begin power scoring while you remain frozen at the starting gate.
+          </p>
+        </div>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: Does Bullseye Count as Double In -->
+      <section class="content-card">
+        <h2>Does the Bullseye Count as a Double-In?</h2>
+        <p>
+          One of the most frequent rules questions among both amateur and club players is whether the center target counts as a double:
+        </p>
+
+        <div class="scenarios-grid">
+          <div class="scenario-card">
+            <div class="scenario-header">Inner Bullseye (50 Points)</div>
+            <div class="scenario-body">
+              <p><strong>Ring Classification:</strong> Red Center Circle ("Double 25")</p>
+              <p><strong>Legal Double-In:</strong> <strong>YES</strong></p>
+              <p>Under official rules, the red inner bullseye is classified as a double (2 &times; 25 = 50). Landing your opening dart in the inner bull legally starts the leg and immediately reduces your score to <strong>451</strong>.</p>
+              <div class="scenario-outcome legal">Valid Starting Double</div>
+            </div>
+          </div>
+
+          <div class="scenario-card">
+            <div class="scenario-header">Outer Bullseye (25 Points)</div>
+            <div class="scenario-body">
+              <p><strong>Ring Classification:</strong> Green Outer Ring ("Single 25")</p>
+              <p><strong>Legal Double-In:</strong> <strong>NO</strong></p>
+              <p>The green outer ring is classified as a single scoring segment. Striking the outer bull before landing a double scores <strong>0 points</strong> and does not activate the leg.</p>
+              <div class="scenario-outcome bust">Invalid Starting Segment</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: World Grand Prix Format -->
+      <section class="content-card">
+        <h2>The PDC World Grand Prix: The Double-Start Showcase</h2>
+        <p>
+          Established in 1998, the <strong>PDC World Grand Prix</strong> is the premier televised darts tournament staged under double-in double-out regulations. Held annually every October (traditionally in Dublin, Ireland, and more recently at the Morningside Arena in Leicester), it is widely regarded by players as the most mentally demanding major on the PDC calendar.
+        </p>
+        <p>
+          Key characteristics of the World Grand Prix format:
+        </p>
+        <ul>
+          <li><strong>Sets Play:</strong> Matches are contested over <a href="/darts/legs-vs-sets/">sets and legs</a> (e.g., best of 3 sets in Round 1 up to best of 9 sets in the final).</li>
+          <li><strong>High Volatility:</strong> Because starting doubles introduce high variance, early rounds frequently produce shock upsets where unseeded tour card holders topple world top-10 seeds.</li>
+          <li><strong>Lower Running Averages:</strong> Because opening darts frequently miss and register zero points, match averages at the World Grand Prix are typically 5 to 10 points lower than standard straight-in tournaments, despite world-class play.</li>
+        </ul>
+      </section>
+
+      <!-- Section: Tactical Approaches to Starting Doubles -->
+      <section class="content-card">
+        <h2>Tactical Masterclass: How Professionals Choose Starting Doubles</h2>
+        <p>
+          Just as players develop favorite finishing beds on our <a href="/darts/checkout-chart/">darts checkout chart</a>, professional double-start players develop strict opening strategies based on grouping probability:
+        </p>
+
+        <h3>1. Double 16: The Ultimate Margin-of-Error Bed</h3>
+        <p>
+          Double 16 is statistically the most popular starting target among PDC professionals. The reason lies in the neighboring beds:
+        </p>
+        <ul>
+          <li>If you aim at Double 16 and drift slightly inside, you land in <strong>Single 16</strong>.</li>
+          <li>While Single 16 scores zero on that first dart, you can instantly shift your second dart down to <strong>Double 8</strong> or across to <strong>Double 16</strong> again without radically changing your body angle or throw line.</li>
+          <li>Double 16 also sits horizontally on the board, offering a natural lateral alignment for right-handed players.</li>
+        </ul>
+
+        <h3>2. Double 20 ("Tops"): Maximum Scoring Transition</h3>
+        <p>
+          Aggressive power scorers like Michael van Gerwen frequently start on Double 20. Hitting D20 not only starts the leg with 40 points, but leaves the thrower's eyes, arm mechanics, and follow-through already locked onto the top of the board, allowing an immediate seamless transition straight into Treble 20 on darts two and three.
+        </p>
+
+        <h3>3. Backup Doubles: D18 and D10</h3>
+        <p>
+          Left-handed players or throwers with flat dart trajectory often favor Double 18 (top right) or Double 10 (right side), tailoring their starting choice to their natural flight angle rather than convention.
+        </p>
+      </section>
+
+      <!-- Section: Historic Double-Start 9-Darters -->
+      <section class="content-card">
+        <h2>Historic Double-Start Nine-Dart Finishes</h2>
+        <p>
+          Hitting a nine-dart finish in straight-in darts is rare; doing so in double-start play is extraordinarily difficult. Because dart one must land on an outer double, the mathematical route requires starting with an elite 160 visit:
+        </p>
+        <div class="formula-box">
+          <strong>Starting 160:</strong> Double 20 &rarr; Treble 20 &rarr; Treble 20 (Leaves 341)
+        </div>
+        <p>
+          Only three double-start nine-darters have ever been achieved in televised PDC history:
+        </p>
+        <ul>
+          <li>
+            <strong>Brendan Dolan (2011 World Grand Prix):</strong> The Northern Irishman made sporting history in his semi-final against James Wade by hitting the first televised double-start nine-darter (D20 &rarr; T20 &rarr; T20 | T20 &rarr; T20 &rarr; T20 | T20 &rarr; T17 &rarr; Bullseye), forever earning him the nickname <em>"The History Maker"</em>.
+          </li>
+          <li>
+            <strong>James Wade (2014 World Grand Prix):</strong> Hit a double-start nine-darter in the second round against Robert Thornton.
+          </li>
+          <li>
+            <strong>Robert Thornton (2014 World Grand Prix):</strong> In the very same match, Thornton responded by hitting a nine-darter of his own—creating the only match in darts history where both players achieved a nine-dart finish!
+          </li>
+        </ul>
+        <p>
+          Explore our complete archive of all televised <a href="/darts/what-is-a-9-dart-finish/">nine-dart finishes</a> for detailed shot-by-shot logs.
+        </p>
+      </section>
+
+      <!-- Section: Comparison Table -->
+      <section class="content-card">
+        <h2>Side-by-Side: Straight-In 501 vs Double-In Double-Out</h2>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Standard 501 (Ally Pally)</th>
+                <th>Double-In Double-Out (World Grand Prix)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Starting Requirement</strong></td>
+                <td>Any segment (Straight-in from Dart 1)</td>
+                <td>Outer double or Inner Bullseye only</td>
+              </tr>
+              <tr>
+                <td><strong>Scoring Before Double</strong></td>
+                <td>N/A — all darts score immediately</td>
+                <td>Zero points (all non-double darts void)</td>
+              </tr>
+              <tr>
+                <td><strong>Inner Bullseye (50)</strong></td>
+                <td>Legal 50-point score / Legal finish</td>
+                <td>Legal starting double (D25) & legal finish</td>
+              </tr>
+              <tr>
+                <td><strong>Outer Bullseye (25)</strong></td>
+                <td>Legal 25-point score</td>
+                <td>Single sector — cannot start or finish leg</td>
+              </tr>
+              <tr>
+                <td><strong>Finishing Requirement</strong></td>
+                <td>Outer double or Inner Bullseye (Double-out)</td>
+                <td>Outer double or Inner Bullseye (Double-out)</td>
+              </tr>
+              <tr>
+                <td><strong>First Dart Target</strong></td>
+                <td>Treble 20 (60 points)</td>
+                <td>Double 16 or Double 20 (32 or 40 points)</td>
+              </tr>
+              <tr>
+                <td><strong>Three-Dart Averages</strong></td>
+                <td>Typically higher (90–108 at elite level)</td>
+                <td>Typically lower (85–98 due to missed start darts)</td>
+              </tr>
+              <tr>
+                <td><strong>Premier Showcase</strong></td>
+                <td>PDC World Championship (London)</td>
+                <td>PDC World Grand Prix (Leicester/Dublin)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section: FAQ -->
+      <section class="content-card">
+        <h2>Frequently Asked Questions About Double-In Darts</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>What does double-in double-out mean in darts?</h3>
+            <p>
+              Double-in double-out (often called 'double-start') is a darts format where a player must hit an outer double segment or the 50-point inner bullseye to begin scoring points in a leg, and must also hit an outer double or inner bullseye to finish the leg.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do points count before you hit a starting double?</h3>
+            <p>
+              No. Any darts thrown before striking a legal starting double score zero points. Even if a dart lands in Treble 20, it is dead and does not count unless preceded by a legal starting double in that turn or earlier in the leg.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can you start on the bullseye in double-in darts?</h3>
+            <p>
+              Yes. The red inner bullseye (50 points) is officially classified as a 'double 25', making it a legal double to start or finish a leg. However, the green outer bullseye (25 points) is a single sector and cannot be used to start or finish.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Is the World Darts Championship double-in double-out?</h3>
+            <p>
+              No. The PDC World Darts Championship at Alexandra Palace uses the standard 'straight-in, double-out' format, where any segment scores immediately from dart one. The premier double-in double-out tournament in professional darts is the PDC World Grand Prix.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Which double is most popular for starting in double-in darts?</h3>
+            <p>
+              Double 16 and Double 20 ('Tops') are the most favored starting targets. Double 16 is especially popular because an errant dart missing inside strikes Single 16, which still leaves Double 8 on the next attempt.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Related Links -->
+      <section class="content-card">
+        <h2>Essential Darts Knowledge Guides</h2>
+        <div class="links-grid">
+          <a href="/darts/rules/" class="link-card">
+            <strong>Official 501 Darts Rules</strong>
+            <span>Complete DRA regulations, straight-in play & tournament setup.</span>
+          </a>
+          <a href="/darts/bust-rule-in-darts/" class="link-card">
+            <strong>What Is a Bust in Darts?</strong>
+            <span>The 3 bust conditions, score reset penalty & why leaving 1 is illegal.</span>
+          </a>
+          <a href="/darts/legs-vs-sets/" class="link-card">
+            <strong>Legs vs Sets Format Guide</strong>
+            <span>Tiebreak rules, sudden-death legs & Ally Pally match progression.</span>
+          </a>
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>501 Checkout Chart (170–41)</strong>
+            <span>Optimal 2-dart and 3-dart finishing combinations and bogey numbers.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Double-Start Quick Facts</h3>
+        <ul class="fact-list">
+          <li><strong>Tournament:</strong> World Grand Prix</li>
+          <li><strong>Starting Requirement:</strong> Outer Double or Inner Bull</li>
+          <li><strong>Pre-Double Darts:</strong> Score 0 Points</li>
+          <li><strong>Inner Bull (50):</strong> Double 25 (Legal Start)</li>
+          <li><strong>Outer Bull (25):</strong> Single (Illegal Start)</li>
+          <li><strong>Opening Maximum:</strong> 160 (D20 &rarr; T20 &rarr; T20)</li>
+        </ul>
+      </div>
+
+      <AdSlot position="sidebar" />
+
+      <div class="sidebar-card">
+        <h3>Historic Highlights</h3>
+        <ul class="fact-list">
+          <li><strong>First 9-Darter:</strong> Brendan Dolan (2011)</li>
+          <li><strong>Dual 9-Darter Match:</strong> Wade vs Thornton (2014)</li>
+          <li><strong>Most Preferred Bed:</strong> Double 16</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 2.5rem 0 2rem;
+    border-bottom: 3px solid #f59e0b;
+  }
+  .page-header h1 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+    margin: 0.5rem 0 1rem;
+    font-weight: 800;
+    color: #ffffff;
+  }
+  .lead-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 1.25rem;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: #94a3b8;
+  }
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+  }
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .article-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .content-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.45rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f1f5f9;
+  }
+  .content-card h3 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .content-card p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+  .content-card ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    color: #334155;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.55;
+  }
+  .rules-step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .rule-step {
+    display: flex;
+    gap: 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: #0f172a;
+    color: #f59e0b;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .step-body h3 {
+    margin: 0 0 0.35rem 0;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .step-body p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.55;
+  }
+  .callout-box {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 6px 6px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .callout-title {
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
+  }
+  .callout-box p {
+    color: #1e3a8a;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.55;
+  }
+  .formula-box {
+    background: #0f172a;
+    color: #fbbf24;
+    padding: 0.85rem 1.25rem;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    margin: 1rem 0;
+    text-align: center;
+    font-family: monospace;
+  }
+  .scenarios-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  @media (min-width: 640px) {
+    .scenarios-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .scenario-card {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .scenario-header {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .scenario-body p {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+  }
+  .scenario-outcome {
+    margin-top: auto;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  .scenario-outcome.legal {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+  }
+  .scenario-outcome.bust {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #f8fafc;
+    font-weight: 700;
+  }
+  .data-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 1rem;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin: 0 0 0.35rem 0;
+  }
+  .faq-item p {
+    font-size: 0.95rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.55;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: all 0.15s ease;
+  }
+  .link-card:hover {
+    border-color: #f59e0b;
+    background: #fffbeb;
+  }
+  .link-card strong {
+    color: #0f172a;
+    font-size: 0.98rem;
+  }
+  .link-card span {
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .sidebar-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #f1f5f9;
+  }
+  .fact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .fact-list li {
+    font-size: 0.88rem;
+    color: #475569;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #f8fafc;
+    line-height: 1.4;
+  }
+  .fact-list li:last-child {
+    border-bottom: none;
+  }
+  .fact-list strong {
+    color: #0f172a;
+  }
+</style>

@@ -851,5 +851,127 @@
     "tier": "A",
     "last_verified": "2026-10-04",
     "status": "verified"
+  },
+  {
+    "player_id": "jonny-clayton",
+    "name": "Jonny Clayton",
+    "slug": "jonny-clayton",
+    "nickname": "The Ferret",
+    "nationality": "Wales",
+    "country_code": "GB-WLS",
+    "date_of_birth": "1974-10-04",
+    "birthplace": "Pontyberem, Carmarthenshire, Wales",
+    "pdc_order_of_merit_rank": "World No. 8 Seed",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Johnny B. Goode by Chuck Berry",
+    "walk_on_artist": "Chuck Berry",
+    "walk_on_atmosphere": "Electrifying 1950s rock-and-roll guitar anthem that gets the entire Alexandra Palace crowd clapping and singing along.",
+    "career_overview": "A former plasterer for Carmarthenshire County Council who rose to the summit of professional darts. In a sensational 2021 campaign, Clayton claimed four major televised PDC titles—the Premier League, World Grand Prix, The Masters, and World Series Finals—establishing himself as one of the most clinical double finishers in modern darts.",
+    "major_pdc_titles": [
+      "Premier League Darts Champion (2021)",
+      "World Grand Prix Champion (2021)",
+      "The Masters Champion (2021)",
+      "World Series of Darts Finals Champion (2021)",
+      "2x World Cup of Darts Champion (2020, 2023 with Gerwyn Price)",
+      "Austrian Darts Open Champion (2018, 2023)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2017",
+      "best_finish": "Quarter-Finalist (2023)",
+      "total_appearances": 9,
+      "matches_played": 20,
+      "matches_won": 11,
+      "history_highlights": [
+        "2017: Debut appearance (defeated Gerwyn Price 3-1 in first round before falling to Ian White)",
+        "2022: Reached Last 16 in a thrilling 3-4 deciding-set epic against Michael Smith",
+        "2023: Quarter-Finalist (defeated Danny van Trijp, Brendan Dolan, and Josh Rock; lost 3-5 to Dimitri Van den Bergh)",
+        "2024: Fourth Round / Last 16 appearance"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£1,800,000+ career PDC prize money",
+      "order_of_merit_contribution": "Ranked #8 on the PDC Order of Merit with £580,000 in two-year rolling ranking prize money",
+      "financial_note": "Prize money figures reflect official PDC Order of Merit earnings; commercial sponsorships and invitational exhibition fees are separate."
+    },
+    "nine_darters_televised": 1,
+    "notable_nine_darters": [
+      "2020 UK Open Sixth Round (vs. Chris Dobey - televised nine-dart finish)"
+    ],
+    "equipment": {
+      "manufacturer": "Red Dragon Darts",
+      "brand_model": "Red Dragon Jonny Clayton Signature / Hiraeth",
+      "barrel_weight_grams": "22g",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Tapered front profile with precision ringed grip zones and black/silver accents",
+      "shafts": "Red Dragon Nitrotech Short",
+      "flights": "Hardcore Jonny Clayton Signature Standard",
+      "points": "High-tensile black standard steel points (32mm)",
+      "verified_source": "Red Dragon Darts Official Player Specification Roster"
+    },
+    "playing_style": "Smooth, rhythmic, and relaxed throwing action with exceptional composure under pressure and deadly accuracy on Double 16 and Double 8.",
+    "tier": "A",
+    "last_verified": "2026-10-04",
+    "status": "verified"
+  },
+  {
+    "player_id": "chris-dobey",
+    "name": "Chris Dobey",
+    "slug": "chris-dobey",
+    "nickname": "Hollywood",
+    "nationality": "England",
+    "country_code": "GB-ENG",
+    "date_of_birth": "1990-05-31",
+    "birthplace": "Bedlington, Northumberland, England",
+    "pdc_order_of_merit_rank": "World No. 13 Seed",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Hey Jude by The Beatles",
+    "walk_on_artist": "The Beatles",
+    "walk_on_atmosphere": "Legendary British rock anthem with thousands of Ally Pally fans joining in full voice for the extended 'Na-na-na-na' outro.",
+    "career_overview": "Hailing from Bedlington in the North East of England, Chris Dobey developed through the PDC Challenge Tour to become a premier televised champion. After several deep major semi-final runs, Dobey broke through in sensational fashion to win the 2023 Masters, defeating Rob Cross 11–7 in the final, and establishing himself as an elite Order of Merit top-16 seed and Premier League competitor.",
+    "major_pdc_titles": [
+      "The Masters Champion (2023)",
+      "Multiple Players Championship Titles (PC18 2021, PC28 2021, PC19 2024)",
+      "World Grand Prix Semi-Finalist (2019)",
+      "World Championship Quarter-Finalist (2023, 2024)",
+      "Premier League Darts Competitor (2023)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2017",
+      "best_finish": "Quarter-Finalist (2023, 2024)",
+      "total_appearances": 8,
+      "matches_played": 20,
+      "matches_won": 12,
+      "history_highlights": [
+        "2019: Reached Last 16 in a memorable 3-4 thriller against Gary Anderson",
+        "2023: Quarter-Finalist (defeated Martijn Kleermaker, Gary Anderson, and Rob Cross; lost 0-5 to Michael van Gerwen)",
+        "2024: Quarter-Finalist (hit back-to-back ton-plus averages, led Rob Cross 4-0 in sets before an unprecedented 4-5 comeback)"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£1,200,000+ career PDC prize money",
+      "order_of_merit_contribution": "Ranked #13 on the PDC Order of Merit with £450,000 in two-year rolling ranking funds",
+      "financial_note": "Official PDC ranking prize money only. Commercial sponsorships and invitational exhibition earnings are separate."
+    },
+    "nine_darters_televised": 0,
+    "notable_nine_darters": [
+      "PDC ProTour floor events (multiple 9-darters in Players Championship competition)"
+    ],
+    "equipment": {
+      "manufacturer": "Target Darts",
+      "brand_model": "Target Chris Dobey Generation 1 (Hollywood Action)",
+      "barrel_weight_grams": "23g",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Straight barrel design with continuous radial grooves, black and white rings paying homage to Newcastle United, and Swiss Point technology",
+      "shafts": "Target Pro Grip Short / Intermediate",
+      "flights": "Target Chris Dobey Signature Pro.Ultra No.2 Standard",
+      "points": "Target Swiss Point Smooth Black (35mm)",
+      "verified_source": "Target Darts Official Player Specification Roster"
+    },
+    "playing_style": "Upright, balanced stance with a fluid high-elbow draw back, relentless treble-20 grouping power, and high-percentage finishing on Double 20 and Double 10.",
+    "tier": "A",
+    "last_verified": "2026-10-04",
+    "status": "verified"
   }
 ]

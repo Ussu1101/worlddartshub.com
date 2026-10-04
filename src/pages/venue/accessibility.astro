@@ -1,0 +1,622 @@
+---
+// src/pages/venue/accessibility.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Alexandra Palace Darts Accessibility Guide: Wheelchair Access & Facilities";
+const pageDescription = "Comprehensive accessibility guide for Alexandra Palace PDC World Darts. Step-free access, wheelchair viewing platforms, PA tickets, Blue Badge parking & facilities.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/venue/accessibility/`;
+
+const breadcrumbItems = [
+  { name: 'Venue Guide', url: '/venue/' },
+  { name: 'Accessibility Guide' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Hub Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Alexandra Palace step-free for darts spectators?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Alexandra Palace features step-free level access into the venue via the Palm Court entrance, with ramped and lift access connecting directly into the Great Hall, Fans Village, and catering areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are complimentary companion tickets provided for disabled darts fans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The PDC and See Tickets operate an Essential Companion scheme providing a free personal assistant ticket for disabled spectators with registered accessibility requirements (verified via the Nimbus Disability Access Card system)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Blue Badge parking free at Alexandra Palace during the World Darts Championship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Blue Badge holders park free of charge in dedicated accessible bays in the East Court Car Park. However, drivers must scan the barcode on the back of their physical Blue Badge at an on-site payment machine before exiting to validate the exemption."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are guide dogs and assistance dogs permitted at the darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Trained and registered assistance dogs are welcome across all public areas of Alexandra Palace. Water bowls and designated outdoor spending areas are accommodated upon request with venue staff."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Alexandra Palace have a Changing Places accessible toilet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Alexandra Palace provides an official Changing Places toilet facility equipped with an overhead ceiling track hoist, height-adjustable adult changing bench, and privacy screen, accessible via the East Court concourse."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <header class="page-header">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      <h1>Alexandra Palace Darts Accessibility Guide: Wheelchair Access & Facilities</h1>
+      <p class="lead-text">
+        Attending the PDC World Darts Championship with access requirements? Explore comprehensive spectator details covering step-free arrival routes, wheelchair viewing platforms, free companion tickets, Blue Badge parking protocols, and sensory respite facilities.
+      </p>
+      <div class="meta-row">
+        <VerificationBadge />
+        <span class="meta-item">Venue Standard: Alexandra Palace & PDC Access Charter</span>
+        <span class="meta-item">Read Time: 8 mins</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-layout">
+    <main class="main-content">
+      <!-- Section: Overview & Step-Free Arrival -->
+      <section class="content-card">
+        <h2>Step-Free Arrival & Palm Court Entrance</h2>
+        <p>
+          Perched at the top of a historic North London hill, <a href="/venue/">Alexandra Palace</a> presents steep terrain externally, but provides well-established step-free infrastructure internally for wheelchair users and spectators with limited mobility.
+        </p>
+
+        <div class="steps-list">
+          <div class="step-card">
+            <span class="step-badge">1</span>
+            <div class="step-content">
+              <h3>Dedicated Step-Free Main Entrance (Palm Court)</h3>
+              <p>
+                All accessible ticket holders enter through the <strong>Palm Court Entrance</strong> located on the south-west terrace of the building. This entrance offers flat, dropped-kerb level access directly into the security screening lobby, avoiding all external stone stairs.
+              </p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <span class="step-badge">2</span>
+            <div class="step-content">
+              <h3>Accessible Fast-Track Security Lane</h3>
+              <p>
+                A designated accessible security lane operates at Palm Court for wheelchair users, visitors with mobility aids, and spectators carrying essential medical equipment or diabetic supplies.
+              </p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <span class="step-badge">3</span>
+            <div class="step-content">
+              <h3>Internal Ramps & Level Corridors</h3>
+              <p>
+                Once inside, wide, level corridors connect Palm Court seamlessly to the <strong>Great Hall</strong> (main arena), <strong>Fans Village</strong>, merchandise hubs, and catering pavilions without requiring stairs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Wheelchair Viewing Platforms -->
+      <section class="content-card">
+        <h2>Wheelchair Viewing Platforms & Seating in the Great Hall</h2>
+        <p>
+          Standard floor seating in the Great Hall consists of long banquet tables where thousands of fans stand to cheer during walk-ons and 180s. To guarantee safety and clear sightlines, the PDC and Alexandra Palace construct dedicated accessible platforms:
+        </p>
+
+        <h3>Elevated Sightlines Over Standing Crowds</h3>
+        <p>
+          Dedicated raised viewing platforms are situated strategically inside the Great Hall, providing wheelchair users with an uninterrupted, elevated view directly over the floor tables toward the stage and giant ultra-HD LED projection screens.
+        </p>
+
+        <h3>Companion / Personal Assistant Adjacent Seating</h3>
+        <p>
+          Every wheelchair position on the platform includes an adjacent companion seat so personal assistants and friends sit directly beside each other throughout the session.
+        </p>
+
+        <h3>Powerchair Charging & Wheelchair Dimensions</h3>
+        <p>
+          Standard UK power points are available adjacent to the platform control point for emergency powerchair and mobility scooter battery charging. Platforms accommodate standard manual wheelchairs and motorized powerchairs within standard UK event safety guidelines (maximum 300kg combined user and chair weight).
+        </p>
+        <p>
+          For complete arena layouts, tiered comparisons, and acoustics, consult our <a href="/venue/great-hall-seating-plan/">Great Hall Seating Plan & Sightlines Guide</a>.
+        </p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: Companion Tickets & Booking Process -->
+      <section class="content-card">
+        <h2>Personal Assistant / Companion Tickets & How to Book</h2>
+        <p>
+          Under the official PDC accessibility policy administered through See Tickets, disabled darts spectators requiring assistance are entitled to a <strong>complimentary Personal Assistant (PA) ticket</strong>:
+        </p>
+
+        <div class="callout-box">
+          <div class="callout-title">The Nimbus Disability Access Card Scheme</div>
+          <p>
+            The PDC and See Tickets utilize the nationally recognized <strong>Access Card</strong> scheme operated by Nimbus Disability. When purchasing accessible tickets during the official <a href="/tickets/">tickets ballot and presale</a>, spectators with a validated Access Card featuring the "+1" (Essential Companion) symbol can secure their complimentary companion ticket automatically online or via the dedicated accessibility booking line.
+          </p>
+        </div>
+
+        <h3>Alternative Proof of Eligibility</h3>
+        <p>
+          If you do not currently hold an Access Card, you can submit supporting documentation directly to See Tickets Customer Services, including:
+        </p>
+        <ul>
+          <li>Disability Living Allowance (DLA) middle or higher rate care component.</li>
+          <li>Personal Independence Payment (PIP) daily living component.</li>
+          <li>Attendance Allowance documentation.</li>
+          <li>Certificate of Visual Impairment (BD8 or CVI).</li>
+          <li>Valid Blue Badge (must be accompanied by medical confirmation of essential companion requirement).</li>
+        </ul>
+      </section>
+
+      <!-- Section: Blue Badge Parking -->
+      <section class="content-card">
+        <h2>Blue Badge Parking & Mandatory Kiosk Validation</h2>
+        <p>
+          Driving to Alexandra Palace is generally discouraged due to event traffic, but spectators holding a valid Blue Badge receive dedicated on-site parking privileges:
+        </p>
+
+        <div class="warning-callout">
+          <div class="callout-title">⚠️ Mandatory Action: Scan Your Blue Badge at the Kiosk</div>
+          <p>
+            Alexandra Palace operates an automated barrier-free Automatic Number Plate Recognition (ANPR) parking management system. <strong>Cameras cannot see a physical badge resting on your vehicle dashboard.</strong> To claim free parking, you <em>must</em> bring your physical Blue Badge to an on-site payment machine before exiting and scan the barcode on the back of the badge, or register at the East Court Visitor Services desk. Unvalidated vehicles receive an automated Parking Charge Notice (PCN).
+          </p>
+        </div>
+
+        <p>
+          Dedicated accessible parking bays are situated at the front of the <strong>East Court Car Park</strong>, providing the shortest step-free route toward the Palm Court security entrance. Review our in-depth <a href="/travel/parking-guide/">Alexandra Palace Parking Guide</a> for exact GPS navigation and alternative transport links.
+        </p>
+      </section>
+
+      <!-- Section: Accessible Toilets & Changing Places -->
+      <section class="content-card">
+        <h2>Accessible Toilets & Changing Places Facility</h2>
+        <p>
+          Alexandra Palace provides extensive, high-specification accessible bathroom amenities across the complex:
+        </p>
+
+        <h3>Dedicated Accessible Cubicles</h3>
+        <p>
+          Individual unisex accessible toilets fitted with grab rails, emergency call pull-chords, and lowered basins are situated directly adjacent to the Great Hall wheelchair platform and along the Palm Court concourse. These are accessed either via a standard National Radar Key or by requesting assistance from adjacent venue stewarding staff.
+        </p>
+
+        <h3>Official Changing Places Facility</h3>
+        <p>
+          For visitors requiring specialized personal care, Alexandra Palace features an official, fully certified <strong>Changing Places toilet</strong> located in the East Court. Features include:
+        </p>
+        <ul>
+          <li>Overhead ceiling track hoist system.</li>
+          <li>Height-adjustable adult changing bench.</li>
+          <li>Centrally located toilet with room for two carers.</li>
+          <li>Height-adjustable washbasin and privacy screen.</li>
+        </ul>
+      </section>
+
+      <!-- Section: Medical Supplies & Bag Exemptions -->
+      <section class="content-card">
+        <h2>Medical Equipment & Bag Policy Exemptions</h2>
+        <p>
+          Under normal entry protocols, Alexandra Palace enforces a strict bag limit (maximum size: 30cm &times; 20cm &times; 10cm / A4 size). However, medical exemptions are fully recognized:
+        </p>
+        <ul>
+          <li><strong>Medication & Insulin:</strong> Essential medication, insulin delivery pens, testing kits, and Epi-pens are permitted without bag size restrictions.</li>
+          <li><strong>Diabetic Nutrition:</strong> Necessary glucose drinks and diabetic snacks required to manage blood sugar levels are allowed through security.</li>
+          <li><strong>Medical Exemption Procedure:</strong> Enter via the dedicated accessible security lane at Palm Court and inform security supervisors that you are carrying essential medical equipment. Bringing a prescription or doctor's letter is strongly recommended.</li>
+        </ul>
+        <p>
+          See our complete <a href="/venue/security-bag-policy/">Security & Bag Policy Guide</a> for full security rules and prohibited items.
+        </p>
+      </section>
+
+      <!-- Section: Assistance Dogs & Sensory Notes -->
+      <section class="content-card">
+        <h2>Assistance Dogs & Sensory Considerations</h2>
+        
+        <h3>Assistance Dogs Policy</h3>
+        <p>
+          Certified assistance dogs and guide dogs are fully permitted throughout Alexandra Palace. Spectators attending with an assistance dog are encouraged to contact venue visitor services prior to the event so staff can provide water bowls and direct you to the dedicated outdoor grass relief areas situated on the South Terrace.
+        </p>
+
+        <h3>Sensory Considerations & Crowd Acoustics</h3>
+        <p>
+          The atmosphere inside the Great Hall during the World Championship is loud, vibrant, and energetic:
+        </p>
+        <ul>
+          <li><strong>Acoustic Levels:</strong> Arena sound levels frequently exceed 100dB during dramatic legs and player walk-ons. Spectators sensitive to loud noises are strongly encouraged to bring ear defenders or earplugs.</li>
+          <li><strong>Strobe Lighting & Pyrotechnics:</strong> Flashing strobe lights, moving stage lasers, and pyrotechnic effects are used extensively during televised player walk-ons and match climaxes.</li>
+          <li><strong>Quiet Respite Areas:</strong> If the Great Hall becomes overwhelming, the spacious Palm Court outer corridor offers a substantially quieter environment with seating and ambient natural light.</li>
+        </ul>
+      </section>
+
+      <!-- Section: FAQ -->
+      <section class="content-card">
+        <h2>Frequently Asked Questions About Ally Pally Accessibility</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Is Alexandra Palace step-free for darts spectators?</h3>
+            <p>
+              Yes. Alexandra Palace features step-free level access into the venue via the Palm Court entrance, with ramped and lift access connecting directly into the Great Hall, Fans Village, and catering areas.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Are complimentary companion tickets provided for disabled darts fans?</h3>
+            <p>
+              Yes. The PDC and See Tickets operate an Essential Companion scheme providing a free personal assistant ticket for disabled spectators with registered accessibility requirements (verified via the Nimbus Disability Access Card system).
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Is Blue Badge parking free at Alexandra Palace during the World Darts Championship?</h3>
+            <p>
+              Yes. Blue Badge holders park free of charge in dedicated accessible bays in the East Court Car Park. However, drivers must scan the barcode on the back of their physical Blue Badge at an on-site payment machine before exiting to validate the exemption.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Are guide dogs and assistance dogs permitted at the darts?</h3>
+            <p>
+              Yes. Trained and registered assistance dogs are welcome across all public areas of Alexandra Palace. Water bowls and designated outdoor spending areas are accommodated upon request with venue staff.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Does Alexandra Palace have a Changing Places accessible toilet?</h3>
+            <p>
+              Yes. Alexandra Palace provides an official Changing Places toilet facility equipped with an overhead ceiling track hoist, height-adjustable adult changing bench, and privacy screen, accessible via the East Court concourse.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Related Links -->
+      <section class="content-card">
+        <h2>Spectator & Venue Handbook Guides</h2>
+        <div class="links-grid">
+          <a href="/venue/" class="link-card">
+            <strong>Alexandra Palace Handbook</strong>
+            <span>Comprehensive arena guide, bars, food village & essential policies.</span>
+          </a>
+          <a href="/venue/great-hall-seating-plan/" class="link-card">
+            <strong>Great Hall Seating Plan</strong>
+            <span>Table seating vs tiered grandstand, sightlines & screen views.</span>
+          </a>
+          <a href="/venue/security-bag-policy/" class="link-card">
+            <strong>Security & Bag Policy</strong>
+            <span>A4 bag size limits, prohibited items & medical exemption lanes.</span>
+          </a>
+          <a href="/travel/parking-guide/" class="link-card">
+            <strong>Parking & Transport Guide</strong>
+            <span>East Court ANPR parking rules, Blue Badge validation & bus connections.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Accessibility Quick Facts</h3>
+        <ul class="fact-list">
+          <li><strong>Step-Free Entrance:</strong> Palm Court</li>
+          <li><strong>Viewing Platforms:</strong> Elevated in Great Hall</li>
+          <li><strong>Companion Tickets:</strong> Free (+1 scheme)</li>
+          <li><strong>Blue Badge Parking:</strong> Free (Kiosk scan required)</li>
+          <li><strong>Changing Places:</strong> Available in East Court</li>
+          <li><strong>Assistance Dogs:</strong> Welcome (Water provided)</li>
+          <li><strong>Sensory Warning:</strong> Strobes &gt;100dB audio</li>
+        </ul>
+      </div>
+
+      <AdSlot position="sidebar" />
+
+      <div class="sidebar-card">
+        <h3>Contacting Access Support</h3>
+        <p style="font-size: 0.88rem; color: #475569; line-height: 1.5; margin-bottom: 0.5rem;">
+          To register companion tickets or discuss specific requirements, contact See Tickets Accessibility Customer Support or visit the Alexandra Palace Visitor Services desk in the Palm Court upon arrival.
+        </p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 2.5rem 0 2rem;
+    border-bottom: 3px solid #f59e0b;
+  }
+  .page-header h1 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+    margin: 0.5rem 0 1rem;
+    font-weight: 800;
+    color: #ffffff;
+  }
+  .lead-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 1.25rem;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: #94a3b8;
+  }
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+  }
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .article-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+  .content-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.45rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f1f5f9;
+  }
+  .content-card h3 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .content-card p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+  .content-card ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    color: #334155;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.55;
+  }
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .step-card {
+    display: flex;
+    gap: 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .step-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: #0f172a;
+    color: #f59e0b;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .step-content h3 {
+    margin: 0 0 0.35rem 0;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+  .step-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.55;
+  }
+  .callout-box {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 6px 6px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .warning-callout {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0 6px 6px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .callout-title {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
+  }
+  .callout-box p {
+    color: #1e3a8a;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.55;
+  }
+  .warning-callout p {
+    color: #92400e;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.55;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 1rem;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin: 0 0 0.35rem 0;
+  }
+  .faq-item p {
+    font-size: 0.95rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.55;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: all 0.15s ease;
+  }
+  .link-card:hover {
+    border-color: #f59e0b;
+    background: #fffbeb;
+  }
+  .link-card strong {
+    color: #0f172a;
+    font-size: 0.98rem;
+  }
+  .link-card span {
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .sidebar-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #f1f5f9;
+  }
+  .fact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .fact-list li {
+    font-size: 0.88rem;
+    color: #475569;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #f8fafc;
+    line-height: 1.4;
+  }
+  .fact-list li:last-child {
+    border-bottom: none;
+  }
+  .fact-list strong {
+    color: #0f172a;
+  }
+</style>
