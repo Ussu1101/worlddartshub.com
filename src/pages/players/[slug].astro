@@ -18,7 +18,7 @@ const { player } = Astro.props;
 const cleanWeight = player.equipment.barrel_weight_grams ? player.equipment.barrel_weight_grams.split(' ')[0] : '23g';
 const songTitle = player.walk_on_song ? player.walk_on_song.split(' by ')[0] : 'Walk-On Music';
 const pageTitle = `${player.name}: Darts Specs, Walk-On Song & Career Stats`;
-const pageDescription = `Official profile for ${player.name}: verified ${cleanWeight} ${player.equipment.manufacturer} darts setup, walk-on anthem "${songTitle}", career earnings, and records.`;
+const pageDescription = `Player dossier for ${player.name}: verified ${cleanWeight} ${player.equipment.manufacturer} darts setup, walk-on anthem "${songTitle}", career earnings, and tournament records.`;
 
 const breadcrumbItems = [
   { name: 'Players', url: '/players/' },
@@ -111,9 +111,8 @@ const playerFaqSchema = {
   <div class="container player-layout">
     <article class="player-content-col">
       <VerificationBadge 
-        source={`PDC Official Player Records & ${player.equipment.manufacturer}`}
+        topic={`${player.name} Tournament Dossier (PDC Records & ${player.equipment.manufacturer})`}
         verifiedDate={player.last_verified}
-        status="CONFIRMED PLAYER DOSSIER"
       />
 
       <!-- Quick Stats Card -->
@@ -201,7 +200,7 @@ const playerFaqSchema = {
           <a href="/players/walk-on-songs/" class="header-link">View All Walk-On Songs ↗</a>
         </div>
         <div class="card walkon-card">
-          <div class="walkon-badge">OFFICIAL ENTRANCE ANTHEM</div>
+          <div class="walkon-badge">PLAYER ENTRANCE ANTHEM</div>
           <h3 class="walkon-title">{player.walk_on_song}</h3>
           <p class="walkon-desc">
             {player.walk_on_atmosphere}

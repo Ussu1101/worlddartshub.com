@@ -9,8 +9,8 @@ import VerificationBadge from '../../components/VerificationBadge.astro';
 import liveData from '../../data/live.json';
 import scheduleData from '../../data/schedule.json';
 
-const pageTitle = "PDC World Darts Match Center, Today's Fixtures & Board Order — 2026/27";
-const pageDescription = "Daily order of play, confirmed session start times, board order, and latest results for the 2026/27 PDC World Darts Championship at Alexandra Palace. Updated daily.";
+const pageTitle = "PDC World Darts Match Center & Daily Session Guide — 2026/27";
+const pageDescription = "Tournament schedule guide, session start times, board order protocol, and fixture schedule for the 2026/27 PDC World Darts Championship at Alexandra Palace. Pre-tournament hub.";
 
 const breadcrumbItems = [
   { name: 'Match Center' }
@@ -35,16 +35,16 @@ const liveSchema = {
   <header class="live-hero">
     <div class="container">
       <div class="live-badge-row">
-        <span class="badge">MATCH TRACKER</span>
-        <span class="badge">SESSION SCHEDULE</span>
+        <span class="badge badge-accent">PRE-TOURNAMENT HUB</span>
+        <span class="badge">SESSION SCHEDULE &amp; TIMINGS</span>
       </div>
-      <h1>PDC World Darts Match Center & Daily Session Hub</h1>
+      <h1>PDC World Darts Match Center &amp; Session Guide</h1>
       <p class="live-lead">
-        Daily order of play, confirmed fixtures, session start times, and tournament results direct from the Great Hall at Alexandra Palace. (Last updated: October 2026).
+        Session start times, board order protocol, and provisional match fixtures direct from the Great Hall at Alexandra Palace. Live match updates and in-play session scores activate when the tournament begins on Friday, 11 December 2026.
       </p>
 
       <div class="quick-stream-callout">
-        <span>Looking for legal television or streaming options?</span>
+        <span>Looking for legal television or streaming options ahead of opening night?</span>
         <a href="/watch/" class="btn btn-primary btn-sm">Find Your Broadcaster &rarr;</a>
       </div>
     </div>
@@ -52,13 +52,20 @@ const liveSchema = {
 
   <div class="container live-page-layout">
     <div class="live-main-col">
+      <div class="pre-tournament-banner">
+        <div class="banner-icon">ℹ️</div>
+        <div class="banner-text">
+          <strong>Pre-Tournament Status Notice:</strong> Live match tracking and score updates are currently inactive. Professional darts play at Alexandra Palace begins on <strong>11 December 2026</strong>. This page currently serves as the verified session timing, format, and board order reference guide.
+        </div>
+      </div>
+
       <VerificationBadge verifiedDate="October 2026" topic="Session Timings, Round Structures & Board Order" />
 
       <!-- Active / Today's Matches -->
       <section class="live-section">
         <div class="section-title-row">
-          <h2>🎯 Today's Featured Fixtures</h2>
-          <span class="live-clock-pill">Updated for 2026/27 Schedule • Times GMT</span>
+          <h2>🎯 Opening Fixtures &amp; Scheduled Sessions</h2>
+          <span class="live-clock-pill">Provisional 2026/27 Schedule • Times GMT</span>
         </div>
 
         <div class="matches-list-grid">
@@ -225,6 +232,31 @@ const liveSchema = {
     gap: 2.5rem;
     margin-top: 2rem;
     margin-bottom: 4rem;
+  }
+
+  .pre-tournament-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    color: #1e293b;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .banner-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .banner-text {
+    flex: 1;
   }
 
   .live-section {
