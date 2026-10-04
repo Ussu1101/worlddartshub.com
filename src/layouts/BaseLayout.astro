@@ -50,7 +50,7 @@ const baseWebsiteSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0f172a" />
-    
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
@@ -97,6 +97,39 @@ const baseWebsiteSchema = {
         <script type="application/ld+json" set:html={JSON.stringify(schema)} />
       )
     )}
+
+    <!-- Suppress Netlify HUD & Floating Badge Overlays -->
+    <script is:inline>
+      try {
+        localStorage.setItem('nl-hud:public:v1', 'hidden');
+        localStorage.setItem('nl-hud:owner-private:v1', 'hidden');
+      } catch (e) {}
+
+      if (typeof MutationObserver !== 'undefined') {
+        const removeNetlifyOverlays = () => {
+          const selectors = [
+            '#nl-badge-frame',
+            '#nl-hud-frame',
+            'iframe[id^="nl-"]',
+            'script[src*="/.netlify/scripts/hud"]',
+            'script[data-nf-variant]',
+            '.nl-badge',
+            '#nl-badge',
+            '#nl-card'
+          ];
+          for (const s of selectors) {
+            document.querySelectorAll(s).forEach((el) => el.remove());
+          }
+        };
+
+        const observer = new MutationObserver(removeNetlifyOverlays);
+        if (document.documentElement) {
+          observer.observe(document.documentElement, { childList: true, subtree: true });
+        }
+        document.addEventListener('DOMContentLoaded', removeNetlifyOverlays);
+        window.addEventListener('load', removeNetlifyOverlays);
+      }
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>

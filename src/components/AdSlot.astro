@@ -1,11 +1,24 @@
 ---
 // src/components/AdSlot.astro
 interface Props {
-  slotType: 'leaderboard' | 'rectangle' | 'in-feed' | 'billboard';
+  slotType?: 'leaderboard' | 'rectangle' | 'in-feed' | 'billboard';
   id?: string;
+  position?: string;
+  enabled?: boolean;
 }
 
-const { slotType, id = 'ad-slot-' + Math.random().toString(36).substring(2, 7) } = Astro.props;
+// Advertising kill-switch:
+// While ad networks (e.g. AdSense / Header Bidding) are not active, hide empty ad containers
+// to prevent displaying unstyled placeholder boxes and eliminate unnecessary visual noise.
+// When enabled, stable dimensions (min-height/max-width) are preserved to prevent CLS.
+const ADS_ENABLED = false;
+
+const {
+  slotType = 'rectangle',
+  id = 'ad-slot-' + Math.random().toString(36).substring(2, 7),
+  position,
+  enabled = ADS_ENABLED
+} = Astro.props;
 
 let heightClass = 'ad-rectangle';
 let label = 'Advertisement';
@@ -22,13 +35,15 @@ if (slotType === 'leaderboard') {
 }
 ---
 
-<aside class="ad-slot-wrapper" aria-label={label}>
-  <span class="ad-label">{label}</span>
-  <div class:list={['ad-slot-box', heightClass]} id={id}>
-    <!-- Ad Network Integration Slot (e.g. Google AdSense / Header Bidding) -->
-    <span class="ad-placeholder-text">Ad Slot ({slotType})</span>
-  </div>
-</aside>
+{enabled && (
+  <aside class="ad-slot-wrapper" aria-label={label}>
+    <span class="ad-label">{label}</span>
+    <div class:list={['ad-slot-box', heightClass]} id={id}>
+      <!-- Ad Network Integration Slot (e.g. Google AdSense / Header Bidding) -->
+      <span class="ad-placeholder-text">Ad Slot ({slotType})</span>
+    </div>
+  </aside>
+)}
 
 <style>
   .ad-slot-wrapper {
@@ -39,6 +54,7 @@ if (slotType === 'leaderboard') {
     justify-content: center;
     width: 100%;
     clear: both;
+    contain: layout;
   }
 
   .ad-label {

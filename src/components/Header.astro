@@ -1,16 +1,25 @@
 ---
 // src/components/Header.astro
-const navLinks = [
+const primaryNav = [
   { href: '/live/', label: 'Match Center' },
   { href: '/watch/', label: 'Watch & Stream' },
   { href: '/schedule/', label: 'Schedule' },
   { href: '/players/', label: 'Players' },
-  { href: '/venue/', label: 'Ally Pally Guide' },
-  { href: '/travel/', label: 'Travel & Hotels' },
-  { href: '/tickets/', label: 'Tickets' },
+];
+
+const secondaryNav = [
+  { href: '/venue/', label: 'Alexandra Palace Venue Guide' },
+  { href: '/travel/', label: 'London Travel & Hotels' },
+  { href: '/venue/great-hall-seating-plan/', label: 'Great Hall Seating Plan' },
+  { href: '/darts/rules/', label: 'Official 501 Rules & Board Specs' },
+  { href: '/tools/checkout-calculator/', label: '501 Checkout Calculator' },
+  { href: '/tools/average-calculator/', label: '3-Dart Average Calculator' },
 ];
 
 const currentPath = Astro.url.pathname;
+const isSecondaryActive = secondaryNav.some(
+  (link) => currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+);
 ---
 
 <header class="site-header">
@@ -34,28 +43,324 @@ const currentPath = Astro.url.pathname;
         </div>
       </a>
 
-      <nav class="nav-menu" aria-label="Main Navigation">
+      <!-- Desktop Navigation (Balanced Single Row) -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-list">
-          {navLinks.map((link) => {
+          {primaryNav.map((link) => {
             const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
             return (
               <li class="nav-item">
-                <a 
-                  href={link.href} 
+                <a
+                  href={link.href}
                   class:list={['nav-link', { active: isActive }]}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {link.label}
-                  {link.badge && <span class="nav-badge">{link.badge}</span>}
                 </a>
               </li>
             );
           })}
+
+          <!-- Secondary Dropdown on Desktop -->
+          <li class:list={['nav-item', 'has-dropdown', { 'dropdown-active': isSecondaryActive }]}>
+            <button
+              type="button"
+              class:list={['nav-link', 'desktop-dropdown-toggle', { active: isSecondaryActive }]}
+              aria-expanded="false"
+              aria-haspopup="true"
+              id="desktop-venue-dropdown-btn"
+            >
+              <span>Venue &amp; More</span>
+              <span class="dropdown-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div class="dropdown-menu" role="menu" aria-labelledby="desktop-venue-dropdown-btn">
+              {secondaryNav.map((link) => {
+                const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+                return (
+                  <a
+                    href={link.href}
+                    class:list={['dropdown-item', { active: isActive }]}
+                    role="menuitem"
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
+            </div>
+          </li>
+
+          <!-- Tickets CTA Button -->
+          <li class="nav-item">
+            <a
+              href="/tickets/"
+              class:list={['nav-link', 'nav-link-tickets', { active: currentPath.startsWith('/tickets/') }]}
+              aria-current={currentPath.startsWith('/tickets/') ? 'page' : undefined}
+            >
+              Tickets
+            </a>
+          </li>
         </ul>
       </nav>
+
+      <!-- Mobile Hamburger Toggle Button (44x44px minimum touch target) -->
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobile-menu-toggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav-drawer"
+      >
+        <span class="hamburger-box" aria-hidden="true">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
     </div>
   </div>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Drawer Menu -->
+  <aside
+    class="mobile-nav-drawer"
+    id="mobile-nav-drawer"
+    aria-label="Mobile Navigation"
+    aria-hidden="true"
+  >
+    <div class="drawer-header">
+      <a href="/" class="drawer-brand" aria-label="World Darts Hub Home">
+        <span class="logo-icon">🎯</span>
+        <div class="drawer-brand-text">
+          <span class="brand-title">WORLD DARTS HUB</span>
+          <span class="brand-subtitle">Ally Pally 2026/27</span>
+        </div>
+      </a>
+      <button
+        type="button"
+        class="drawer-close-btn"
+        id="drawer-close-btn"
+        aria-label="Close navigation menu"
+      >
+        <span class="close-icon" aria-hidden="true">✕</span>
+      </button>
+    </div>
+
+    <!-- Quick-Access Priority Buttons (Schedule, Watch, Tickets) -->
+    <div class="drawer-quick-actions" aria-label="Quick Access Tournament Essentials">
+      <span class="quick-actions-label">TOURNAMENT ESSENTIALS</span>
+      <div class="quick-actions-grid">
+        <a href="/schedule/" class="quick-action-btn quick-schedule">
+          <span class="qa-icon">📅</span>
+          <span class="qa-text">Schedule</span>
+        </a>
+        <a href="/watch/" class="quick-action-btn quick-watch">
+          <span class="qa-icon">📺</span>
+          <span class="qa-text">Watch Live</span>
+        </a>
+        <a href="/tickets/" class="quick-action-btn quick-tickets">
+          <span class="qa-icon">🎟️</span>
+          <span class="qa-text">Tickets</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Full Mobile Navigation List -->
+    <nav class="drawer-nav">
+      <div class="drawer-section-title">CORE NAVIGATION</div>
+      <ul class="drawer-list">
+        <li>
+          <a href="/live/" class:list={['drawer-link', { active: currentPath.startsWith('/live/') }]}>
+            <span class="drawer-link-icon">⚡</span>
+            <span>Match Center (Live Scores)</span>
+          </a>
+        </li>
+        <li>
+          <a href="/watch/" class:list={['drawer-link', { active: currentPath.startsWith('/watch/') }]}>
+            <span class="drawer-link-icon">📺</span>
+            <span>Watch &amp; Global Broadcasts</span>
+          </a>
+        </li>
+        <li>
+          <a href="/schedule/" class:list={['drawer-link', { active: currentPath.startsWith('/schedule/') }]}>
+            <span class="drawer-link-icon">📅</span>
+            <span>2026/27 Match Schedule</span>
+          </a>
+        </li>
+        <li>
+          <a href="/players/" class:list={['drawer-link', { active: currentPath.startsWith('/players/') }]}>
+            <span class="drawer-link-icon">🎯</span>
+            <span>Player Profiles &amp; Stats</span>
+          </a>
+        </li>
+        <li>
+          <a href="/tickets/" class:list={['drawer-link', { active: currentPath.startsWith('/tickets/') }]}>
+            <span class="drawer-link-icon">🎟️</span>
+            <span>Tickets, Ballot &amp; Resale</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-section-title">VENUE &amp; ATTENDING</div>
+      <ul class="drawer-list">
+        <li>
+          <a href="/venue/" class:list={['drawer-link', { active: currentPath === '/venue/' }]}>
+            <span class="drawer-link-icon">🏛️</span>
+            <span>Alexandra Palace Venue Guide</span>
+          </a>
+        </li>
+        <li>
+          <a href="/travel/" class:list={['drawer-link', { active: currentPath.startsWith('/travel/') }]}>
+            <span class="drawer-link-icon">🚇</span>
+            <span>London Travel, Tube &amp; Parking</span>
+          </a>
+        </li>
+        <li>
+          <a href="/venue/great-hall-seating-plan/" class:list={['drawer-link', { active: currentPath.startsWith('/venue/great-hall-seating-plan/') }]}>
+            <span class="drawer-link-icon">💺</span>
+            <span>Great Hall Seating Plan</span>
+          </a>
+        </li>
+        <li>
+          <a href="/hotels/" class:list={['drawer-link', { active: currentPath.startsWith('/hotels/') }]}>
+            <span class="drawer-link-icon">🏨</span>
+            <span>Hotels Near Alexandra Palace</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-section-title">DARTS HUB &amp; TOOLS</div>
+      <ul class="drawer-list">
+        <li>
+          <a href="/tools/checkout-calculator/" class:list={['drawer-link', { active: currentPath.startsWith('/tools/checkout-calculator/') }]}>
+            <span class="drawer-link-icon">🧮</span>
+            <span>501 Checkout Calculator</span>
+          </a>
+        </li>
+        <li>
+          <a href="/tools/average-calculator/" class:list={['drawer-link', { active: currentPath.startsWith('/tools/average-calculator/') }]}>
+            <span class="drawer-link-icon">📈</span>
+            <span>3-Dart Average Calculator</span>
+          </a>
+        </li>
+        <li>
+          <a href="/darts/rules/" class:list={['drawer-link', { active: currentPath.startsWith('/darts/rules/') }]}>
+            <span class="drawer-link-icon">📋</span>
+            <span>Official 501 Rules &amp; Specs</span>
+          </a>
+        </li>
+        <li>
+          <a href="/darts/checkout-chart/" class:list={['drawer-link', { active: currentPath.startsWith('/darts/checkout-chart/') }]}>
+            <span class="drawer-link-icon">🎯</span>
+            <span>501 Checkout Chart (170–41)</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
 </header>
+
+<script>
+  // Mobile Navigation Drawer & Desktop Dropdown Controller
+  function initHeader() {
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const drawer = document.getElementById('mobile-nav-drawer');
+    const backdrop = document.getElementById('mobile-drawer-backdrop');
+    const closeBtn = document.getElementById('drawer-close-btn');
+    const drawerLinks = document.querySelectorAll('.drawer-link, .quick-action-btn');
+
+    if (toggleBtn && drawer && backdrop) {
+      function openDrawer() {
+        drawer.classList.add('is-open');
+        backdrop.classList.add('is-open');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.setAttribute('aria-label', 'Close navigation menu');
+        drawer.setAttribute('aria-hidden', 'false');
+        backdrop.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (closeBtn) closeBtn.focus();
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('is-open');
+        backdrop.classList.remove('is-open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.setAttribute('aria-label', 'Open navigation menu');
+        drawer.setAttribute('aria-hidden', 'true');
+        backdrop.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = drawer.classList.contains('is-open');
+        if (isOpen) closeDrawer();
+        else openDrawer();
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeDrawer);
+      }
+
+      backdrop.addEventListener('click', closeDrawer);
+
+      drawerLinks.forEach((link) => {
+        link.addEventListener('click', closeDrawer);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+          closeDrawer();
+          toggleBtn.focus();
+        }
+      });
+    }
+
+    // Desktop Dropdown Support
+    const dropdownContainers = document.querySelectorAll('.has-dropdown');
+    dropdownContainers.forEach((container) => {
+      const toggle = container.querySelector('.desktop-dropdown-toggle');
+      if (!toggle) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = container.classList.contains('is-open');
+        dropdownContainers.forEach((c) => {
+          c.classList.remove('is-open');
+          c.querySelector('.desktop-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          container.classList.add('is-open');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.addEventListener('click', () => {
+      dropdownContainers.forEach((c) => {
+        c.classList.remove('is-open');
+        c.querySelector('.desktop-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        dropdownContainers.forEach((c) => {
+          c.classList.remove('is-open');
+          c.querySelector('.desktop-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  }
+
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeader);
+  } else {
+    initHeader();
+  }
+</script>
 
 <style>
   .site-header {
@@ -66,6 +371,7 @@ const currentPath = Astro.url.pathname;
     z-index: 50;
   }
 
+  /* Top Announcement Bar */
   .top-announcement-bar {
     background: #020617;
     border-bottom: 1px solid #1e293b;
@@ -109,33 +415,40 @@ const currentPath = Astro.url.pathname;
     text-decoration: underline;
   }
 
+  /* Main Header Container */
   .main-header {
-    padding: 0.85rem 0;
+    padding: 0.75rem 0;
   }
 
   .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 0.75rem;
+    width: 100%;
   }
 
+  /* Brand Logo */
   .brand-logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
     text-decoration: none;
     color: #ffffff;
+    min-width: 0;
+    flex-shrink: 1;
   }
 
   .logo-icon {
     font-size: 1.85rem;
     line-height: 1;
+    flex-shrink: 0;
   }
 
   .logo-text-group {
     display: flex;
     flex-direction: column;
+    min-width: 0;
   }
 
   .brand-title {
@@ -144,6 +457,9 @@ const currentPath = Astro.url.pathname;
     letter-spacing: -0.02em;
     color: #ffffff;
     line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .brand-subtitle {
@@ -151,33 +467,51 @@ const currentPath = Astro.url.pathname;
     color: #94a3b8;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .nav-menu {
+  /* Desktop Navigation: Balanced Single Row */
+  .desktop-nav {
     display: flex;
+    align-items: center;
   }
 
   .nav-list {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.35rem;
     list-style: none;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+
+  .nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
   }
 
   .nav-link {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 0.5rem 0.85rem;
+    height: 38px;
+    padding: 0 0.8rem;
     color: #e2e8f0;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
     border-radius: 6px;
     transition: background-color 0.15s ease, color 0.15s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: transparent;
+    box-sizing: border-box;
+    line-height: 1;
   }
 
   .nav-link:hover {
@@ -188,33 +522,421 @@ const currentPath = Astro.url.pathname;
   .nav-link.active {
     background-color: #1e293b;
     color: #f59e0b;
+    border-color: #334155;
+  }
+
+  .nav-link-tickets {
+    background-color: #f59e0b;
+    color: #0f172a !important;
+    font-weight: 700;
+    border-color: #f59e0b;
+  }
+  .nav-link-tickets:hover {
+    background-color: #d97706;
+    border-color: #d97706;
+    color: #0f172a !important;
+  }
+  .nav-link-tickets.active {
+    background-color: #d97706;
+    color: #0f172a !important;
+    border-color: #b45309;
+  }
+
+  /* Desktop Dropdown Menu */
+  .has-dropdown {
+    position: relative;
+  }
+
+  .desktop-dropdown-toggle {
+    font-family: inherit;
+  }
+
+  .dropdown-arrow {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+  }
+
+  .has-dropdown:hover .dropdown-arrow,
+  .has-dropdown.is-open .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    min-width: 260px;
+    background: #0f172a;
     border: 1px solid #334155;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    padding: 0.4rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.15rem;
+    z-index: 100;
   }
 
-  .nav-badge {
-    background-color: #ef4444;
+  /* Display dropdown on hover or on click/focus */
+  .has-dropdown:hover .dropdown-menu,
+  .has-dropdown:focus-within .dropdown-menu,
+  .has-dropdown.is-open .dropdown-menu {
+    display: flex;
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.85rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 0.15s ease;
+  }
+
+  .dropdown-item:hover {
+    background: #1e293b;
+    color: #f59e0b;
+  }
+
+  .dropdown-item.active {
+    background: #1e293b;
+    color: #f59e0b;
+    font-weight: 700;
+  }
+
+  /* Mobile Hamburger Toggle (Minimum 44x44px touch area) */
+  .mobile-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
     color: #ffffff;
-    font-size: 0.65rem;
-    font-weight: 800;
-    padding: 0.1rem 0.35rem;
-    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    flex-shrink: 0;
   }
 
-  @media (max-width: 900px) {
-    .header-container {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
+  .mobile-menu-toggle:hover {
+    background-color: #334155;
+  }
+
+  .hamburger-box {
+    width: 22px;
+    height: 16px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    width: 22px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    position: absolute;
+    transition: transform 0.2s ease, top 0.2s ease;
+  }
+
+  .hamburger-inner {
+    top: 7px;
+  }
+
+  .hamburger-inner::before {
+    content: '';
+    top: -7px;
+    left: 0;
+  }
+
+  .hamburger-inner::after {
+    content: '';
+    top: 7px;
+    left: 0;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] .hamburger-inner {
+    background-color: transparent;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] .hamburger-inner::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] .hamburger-inner::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* Mobile Drawer Backdrop */
+  .mobile-drawer-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    pointer-events: none;
+  }
+
+  .mobile-drawer-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Mobile Drawer Menu */
+  .mobile-nav-drawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(340px, 86vw);
+    background: #0f172a;
+    border-left: 1px solid #1e293b;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s ease;
+    flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .mobile-nav-drawer.is-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  /* Drawer Header */
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #1e293b;
+    margin-bottom: 1.25rem;
+  }
+
+  .drawer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .drawer-brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .drawer-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: all 0.15s ease;
+  }
+
+  .drawer-close-btn:hover {
+    background: #334155;
+    color: #ffffff;
+  }
+
+  /* Quick-Access Priority Buttons (Schedule, Watch, Tickets) */
+  .drawer-quick-actions {
+    margin-bottom: 1.5rem;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 0.85rem;
+  }
+
+  .quick-actions-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #f59e0b;
+    margin-bottom: 0.6rem;
+  }
+
+  .quick-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .quick-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    min-height: 52px;
+    padding: 0.5rem 0.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+  }
+
+  .quick-schedule {
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+  }
+  .quick-schedule:hover {
+    background: rgba(56, 189, 248, 0.22);
+  }
+
+  .quick-watch {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+  }
+  .quick-watch:hover {
+    background: rgba(239, 68, 68, 0.22);
+  }
+
+  .quick-tickets {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: #f59e0b;
+  }
+  .quick-tickets:hover {
+    background: rgba(245, 158, 11, 0.25);
+  }
+
+  .qa-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+
+  /* Drawer Navigation Sections */
+  .drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .drawer-section-title {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.35rem;
+    padding-left: 0.5rem;
+  }
+
+  .drawer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .drawer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 48px;
+    padding: 0.6rem 0.85rem;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .drawer-link:hover {
+    background-color: #1e293b;
+    color: #f59e0b;
+  }
+
+  .drawer-link.active {
+    background-color: #1e293b;
+    color: #f59e0b;
+    border-left: 3px solid #f59e0b;
+  }
+
+  .drawer-link-icon {
+    font-size: 1.1rem;
+    width: 22px;
+    text-align: center;
+  }
+
+  /* Responsive Breakpoints: Tablet & Mobile (<1024px) */
+  @media (max-width: 1024px) {
+    .desktop-nav {
+      display: none;
     }
-    .nav-list {
-      gap: 0.2rem;
+    .mobile-menu-toggle {
+      display: inline-flex;
     }
-    .nav-link {
-      padding: 0.4rem 0.6rem;
-      font-size: 0.82rem;
+    .mobile-drawer-backdrop {
+      display: block;
     }
+    .mobile-nav-drawer {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 640px) {
     .announcement-text {
       display: none;
+    }
+    .brand-title {
+      font-size: 1.05rem;
+    }
+    .brand-subtitle {
+      font-size: 0.65rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-nav-drawer,
+    .mobile-drawer-backdrop,
+    .dropdown-menu,
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after,
+    .quick-action-btn,
+    .nav-link,
+    .drawer-link {
+      transition: none !important;
     }
   }
 </style>
