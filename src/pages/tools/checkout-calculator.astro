@@ -1,0 +1,1313 @@
+---
+// src/pages/tools/checkout-calculator.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "501 Darts Checkout Calculator: Find Optimal Out Combinations";
+const pageDescription = "Interactive 501 darts checkout calculator. Enter any score from 2 to 170 to find recommended 1-dart, 2-dart, and 3-dart finishes, bogey numbers, and alternative out routes.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tools/checkout-calculator/`;
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Checkout Calculator' }
+];
+
+const calculatorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "501 Darts Checkout Calculator",
+  "url": canonicalUrl,
+  "applicationCategory": "SportsApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": pageDescription,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the highest possible checkout in 501 darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The highest possible 3-dart checkout is 170, famously known as 'The Big Fish'. It is achieved by throwing Treble 20 (60), Treble 20 (60), and finishing on the 50-point red inner Bullseye."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the seven bogey numbers in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bogey numbers are scores between 159 and 169 that cannot be checked out in three darts under any legal combination. The seven bogey numbers are 159, 162, 163, 165, 166, 168, and 169."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the highest two-dart finish in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The highest two-dart checkout is 110, achieved with Treble 20 (60 points) followed by the inner Bullseye (50 points)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can you not checkout a score of 1 in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under official double-out rules, you must finish on an outer double (minimum 2 points for Double 1) or the inner bullseye (50 points). Leaving a remaining score of 1 requires a 0.5 segment, which does not exist, triggering an automatic bust."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator prioritize pro checkout preferences?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The calculator prioritizes favorite professional routes that leave favorable doubles (such as Double 20, Double 16, and Double 8) and provides common alternative routes where multiple accepted paths exist."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(calculatorSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <header class="calculator-hero">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      <div class="badge-group">
+        <span class="badge badge-accent">INTERACTIVE TOOL</span>
+        <span class="badge">501 FINISHING MATRIX</span>
+      </div>
+      <h1>501 Darts Checkout Calculator</h1>
+      <p class="hero-lead">
+        Enter your remaining score (2 to 170) to instantly calculate recommended 1-dart, 2-dart, or 3-dart checkout routes. Discover conventional alternative paths, verify double-out legality, and identify bogey numbers.
+      </p>
+      <div class="meta-row">
+        <VerificationBadge />
+        <span class="meta-item">Official DRA Double-Out Rules Compliant</span>
+        <span class="meta-item">Instant Client-Side Calculation</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column" id="main-content">
+      <!-- Interactive Calculator Card -->
+      <section class="calculator-card" aria-label="501 Checkout Calculator">
+        <div class="calc-header">
+          <h2>Enter Remaining Score</h2>
+          <span class="calc-hint">Valid 3-dart out-shots: 2 to 170</span>
+        </div>
+
+        <form class="calc-form" id="checkout-form" onsubmit="event.preventDefault();">
+          <div class="input-row">
+            <div class="input-wrapper">
+              <label for="score-input" class="input-label">Remaining Target (Points)</label>
+              <div class="input-group">
+                <span class="input-prefix">🎯</span>
+                <input
+                  type="number"
+                  id="score-input"
+                  name="score"
+                  class="score-input"
+                  min="1"
+                  max="501"
+                  step="1"
+                  value="170"
+                  placeholder="e.g. 170"
+                  required
+                />
+              </div>
+            </div>
+            <div class="action-buttons">
+              <button type="submit" id="calc-btn" class="btn btn-primary">
+                Calculate Checkout &rarr;
+              </button>
+              <button type="button" id="reset-btn" class="btn btn-secondary">
+                Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Presets -->
+          <div class="presets-section">
+            <span class="presets-title">Popular Target Presets:</span>
+            <div class="presets-grid">
+              <button type="button" class="preset-pill" data-score="170">170 (Big Fish)</button>
+              <button type="button" class="preset-pill" data-score="167">167 (Bull)</button>
+              <button type="button" class="preset-pill" data-score="164">164 (Bull)</button>
+              <button type="button" class="preset-pill" data-score="161">161 (Bull)</button>
+              <button type="button" class="preset-pill" data-score="121">121</button>
+              <button type="button" class="preset-pill" data-score="120">120 (Shanghai)</button>
+              <button type="button" class="preset-pill" data-score="100">100 (Ton Out)</button>
+              <button type="button" class="preset-pill" data-score="80">80</button>
+              <button type="button" class="preset-pill" data-score="60">60</button>
+              <button type="button" class="preset-pill" data-score="50">50 (Bull)</button>
+              <button type="button" class="preset-pill" data-score="40">40 (Tops)</button>
+              <button type="button" class="preset-pill" data-score="32">32 (D16)</button>
+              <button type="button" class="preset-pill alert-pill" data-score="169">169 (Bogey)</button>
+              <button type="button" class="preset-pill alert-pill" data-score="1">1 (Bust)</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Results Display Panel -->
+        <div class="result-panel" id="result-panel" aria-live="polite">
+          <div class="result-header">
+            <div class="status-indicator">
+              <span class="badge" id="res-badge">VALID 3-DART CHECKOUT</span>
+              <span class="score-display">Score: <strong id="res-target-number">170</strong></span>
+            </div>
+            <span class="darts-needed-tag" id="res-darts-needed">3 Darts Required</span>
+          </div>
+
+          <!-- Primary Route Sequence -->
+          <div class="route-display" id="res-route-container">
+            <span class="route-label">Recommended Route:</span>
+            <div class="darts-sequence" id="res-darts-sequence">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+
+          <!-- Arithmetic Breakdown -->
+          <div class="arithmetic-card" id="res-arithmetic-card">
+            <span class="arithmetic-icon">📐</span>
+            <span class="arithmetic-text" id="res-arithmetic-text">
+              60 (T20) + 60 (T20) + 50 (Bullseye) = 170 Total Points
+            </span>
+          </div>
+
+          <!-- Alternative Route Box -->
+          <div class="alternative-box" id="res-alt-box" style="display: none;">
+            <span class="alt-title">Alternative Pro Route:</span>
+            <span class="alt-sequence" id="res-alt-sequence"></span>
+          </div>
+
+          <!-- Tactical Note Box -->
+          <div class="tactical-note-box" id="res-note-box">
+            <span class="note-icon">💡</span>
+            <span class="note-text" id="res-note-text">
+              The Big Fish — Maximum possible checkout in professional darts.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot slotType="in-feed" id="checkout-calc-infeed" />
+
+      <!-- Educational Section: How It Works -->
+      <section class="content-card">
+        <h2>How 501 Darts Checkouts Work</h2>
+        <p>
+          In professional 501 darts under <a href="/darts/rules/">DRA tournament rules</a>, a leg concludes only when a player reduces their score to exactly zero, with the decisive final dart landing in an outer double or the 50-point red inner bullseye.
+        </p>
+        <p>
+          Finishing involves strict mathematical parameters:
+        </p>
+        <ul>
+          <li><strong>Maximum 3-Dart Finish (170):</strong> Treble 20 (60) + Treble 20 (60) + Bullseye (50) = 170. Check out <a href="/darts/why-is-170-the-highest-checkout/">why 170 is the highest checkout</a> for full historical analysis.</li>
+          <li><strong>Maximum 2-Dart Finish (110):</strong> Treble 20 (60) + Bullseye (50) = 110.</li>
+          <li><strong>Maximum 1-Dart Finish (50):</strong> The red inner bullseye (50 points). Outer doubles range from D1 (2 points) up to D20 (40 points).</li>
+        </ul>
+      </section>
+
+      <!-- Educational Section: Bogey Numbers -->
+      <section class="content-card">
+        <h2>The Seven Bogey Numbers (159 to 169)</h2>
+        <p>
+          Between 159 and 169, there are exactly seven scores that <strong>cannot be checked out in three darts</strong> under any legal mathematical combination. These are known as <a href="/darts/bogey-numbers-in-darts/">bogey numbers in darts</a>:
+        </p>
+
+        <div class="bogey-display-grid">
+          <div class="bogey-card"><strong>159</strong><span>Max 2 trebles (120) leaves 39 (No double)</span></div>
+          <div class="bogey-card"><strong>162</strong><span>162 &minus; 120 = 42 (Requires 2 darts)</span></div>
+          <div class="bogey-card"><strong>163</strong><span>163 &minus; 120 = 43 (Requires 2 darts)</span></div>
+          <div class="bogey-card"><strong>165</strong><span>165 &minus; 120 = 45 (Requires 2 darts)</span></div>
+          <div class="bogey-card"><strong>166</strong><span>166 &minus; 120 = 46 (Requires 2 darts)</span></div>
+          <div class="bogey-card"><strong>168</strong><span>168 &minus; 120 = 48 (Requires 2 darts)</span></div>
+          <div class="bogey-card"><strong>169</strong><span>169 &minus; 120 = 49 (Requires 2 darts)</span></div>
+        </div>
+
+        <p style="margin-top: 1rem;">
+          If your score sits on a bogey number, our calculator will instantly notify you and recommend throwing a scoring visit (targeting Treble 20) to leave an active double next turn.
+        </p>
+      </section>
+
+      <!-- Educational Section: The Bust Rule -->
+      <section class="content-card">
+        <h2>Why You Cannot Check Out 1 Point (The Bust Rule)</h2>
+        <p>
+          New players often ask why a score of 1 cannot be checked out. Because the lowest double on a dartboard is Double 1 (worth 2 points), reaching zero from 1 would require hitting a "0.5 point" segment.
+        </p>
+        <p>
+          Because there is no half-point segment on a board, leaving a remaining score of 1 triggers an automatic bust under DRA Rule 5.4. Your visit ends immediately and your score resets to what it was at the beginning of that turn. Read our comprehensive guide on <a href="/darts/bust-rule-in-darts/">what is a bust in darts</a> for complete penalty rules.
+        </p>
+      </section>
+
+      <!-- Section: FAQ -->
+      <section class="content-card">
+        <h2>Frequently Asked Questions About Darts Checkouts</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>What is the highest possible checkout in 501 darts?</h3>
+            <p>
+              The highest possible 3-dart checkout is 170, famously known as 'The Big Fish'. It is achieved by throwing Treble 20 (60), Treble 20 (60), and finishing on the 50-point red inner Bullseye.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What are the seven bogey numbers in darts?</h3>
+            <p>
+              Bogey numbers are scores between 159 and 169 that cannot be checked out in three darts under any legal combination. The seven bogey numbers are 159, 162, 163, 165, 166, 168, and 169.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the highest two-dart finish in darts?</h3>
+            <p>
+              The highest two-dart checkout is 110, achieved with Treble 20 (60 points) followed by the inner Bullseye (50 points).
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why can you not checkout a score of 1 in darts?</h3>
+            <p>
+              Under official double-out rules, you must finish on an outer double (minimum 2 points for Double 1) or the inner bullseye (50 points). Leaving a remaining score of 1 requires a 0.5 segment, which does not exist, triggering an automatic bust.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Does the calculator prioritize pro checkout preferences?</h3>
+            <p>
+              Yes. The calculator prioritizes favorite professional routes that leave favorable doubles (such as Double 20, Double 16, and Double 8) and provides common alternative routes where multiple accepted paths exist.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Related Links -->
+      <section class="content-card">
+        <h2>Related Tools & Finishing Guides</h2>
+        <div class="links-grid">
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>Static 501 Checkout Chart</strong>
+            <span>Complete printed reference guide from 170 down to 41.</span>
+          </a>
+          <a href="/tools/average-calculator/" class="link-card">
+            <strong>Darts Average Calculator</strong>
+            <span>Calculate 3-dart averages, points per dart, and match stats.</span>
+          </a>
+          <a href="/darts/bogey-numbers-in-darts/" class="link-card">
+            <strong>Bogey Numbers in Darts</strong>
+            <span>Explore all 7 mathematically impossible checkouts under 170.</span>
+          </a>
+          <a href="/darts/rules/" class="link-card">
+            <strong>Official 501 Darts Rules</strong>
+            <span>DRA tournament regulations, board dimensions, and scoring.</span>
+          </a>
+          <a href="/darts/bust-rule-in-darts/" class="link-card">
+            <strong>What Is a Bust in Darts?</strong>
+            <span>Score reset penalties, leaving 1, and tactical bust mechanics.</span>
+          </a>
+          <a href="/darts/double-in-double-out/" class="link-card">
+            <strong>Double-In Double-Out Rules</strong>
+            <span>World Grand Prix double-start format and tactical strategies.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Finishing Rules Quick Reference</h3>
+        <ul class="fact-list">
+          <li><strong>Max 3-Dart Out:</strong> 170 (T20, T20, Bull)</li>
+          <li><strong>Max 2-Dart Out:</strong> 110 (T20, Bull)</li>
+          <li><strong>Max 1-Dart Out:</strong> 50 (Bullseye)</li>
+          <li><strong>Lowest Double Out:</strong> 2 (Double 1)</li>
+          <li><strong>Finishing Rule:</strong> Outer Double or Bull</li>
+          <li><strong>Total Bogey Numbers:</strong> Exactly 7</li>
+          <li><strong>1 Point Remaining:</strong> Automatic Bust</li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="checkout-calc-sidebar" />
+
+      <div class="sidebar-card">
+        <h3>Pro Finishing Strategy</h3>
+        <p style="font-size: 0.88rem; color: #475569; line-height: 1.5; margin-bottom: 0.5rem;">
+          Elite players always aim to leave even double combinations—primarily <strong>Double 16</strong> or <strong>Double 20 (Tops)</strong>. If a dart misses inside Double 16, it leaves Single 16 and a clean attempt at Double 8 without losing a visit!
+        </p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<script>
+  // Complete deterministic 501 checkout engine
+  const BOGEYS = [159, 162, 163, 165, 166, 168, 169];
+
+  const CHECKOUTS: Record<number, { primary: string[]; alt: string[] | null; note: string }> = {
+    170: { primary: ['T20', 'T20', 'Bull'], alt: null, note: "The Big Fish — Maximum possible checkout in world darts" },
+    167: { primary: ['T20', 'T19', 'Bull'], alt: null, note: "Requires treble switch to leave 50" },
+    164: { primary: ['T20', 'T18', 'Bull'], alt: ['T19', 'T19', 'Bull'], note: "Treble 20 leaves 104" },
+    161: { primary: ['T20', 'T17', 'Bull'], alt: ['T19', 'T18', 'Bull'], note: "Lowest 3-dart finish requiring Bullseye" },
+    160: { primary: ['T20', 'T20', 'D20'], alt: null, note: "Highest finish ending on an outer double" },
+
+    158: { primary: ['T20', 'T20', 'D19'], alt: null, note: "Leaves 38 for Double 19" },
+    157: { primary: ['T20', 'T19', 'D20'], alt: null, note: "Leaves Tops (Double 20)" },
+    156: { primary: ['T20', 'T20', 'D18'], alt: null, note: "Leaves Double 18" },
+    155: { primary: ['T20', 'T19', 'D19'], alt: ['T20', 'T15', 'Bull'], note: "Leaves Double 19" },
+    154: { primary: ['T20', 'T18', 'D20'], alt: ['T20', 'T20', 'D17'], note: "Leaves Tops (Double 20)" },
+    153: { primary: ['T20', 'T19', 'D18'], alt: null, note: "Leaves Double 18" },
+    152: { primary: ['T20', 'T20', 'D16'], alt: null, note: "Leaves pro favorite Double 16" },
+    151: { primary: ['T20', 'T17', 'D20'], alt: null, note: "Leaves Tops (Double 20)" },
+    150: { primary: ['T20', 'T18', 'D18'], alt: ['T19', 'T19', 'D18'], note: "Leaves Double 18" },
+
+    149: { primary: ['T20', 'T19', 'D16'], alt: null, note: "Leaves Double 16" },
+    148: { primary: ['T20', 'T20', 'D14'], alt: ['T20', 'T16', 'D20'], note: "Leaves Double 14 or D20" },
+    147: { primary: ['T20', 'T17', 'D18'], alt: ['T19', 'T18', 'D18'], note: "Leaves Double 18" },
+    146: { primary: ['T20', 'T18', 'D16'], alt: ['T19', 'T19', 'D16'], note: "Leaves Double 16" },
+    145: { primary: ['T20', 'T15', 'D20'], alt: ['T20', 'T19', 'D14'], note: "Leaves Tops (Double 20)" },
+    144: { primary: ['T20', 'T20', 'D12'], alt: null, note: "Leaves Double 12" },
+    143: { primary: ['T20', 'T17', 'D16'], alt: null, note: "Leaves Double 16" },
+    142: { primary: ['T20', 'T14', 'D20'], alt: ['T20', 'T20', 'D11'], note: "Leaves Tops (Double 20)" },
+    141: { primary: ['T20', 'T19', 'D12'], alt: ['T20', 'T15', 'D18'], note: "Leaves Double 12 or D18" },
+    140: { primary: ['T20', 'T20', 'D10'], alt: ['T20', 'T16', 'D16'], note: "Leaves Double 10 or D16" },
+
+    139: { primary: ['T20', 'T13', 'D20'], alt: ['T19', 'T14', 'D20'], note: "Leaves Tops (Double 20)" },
+    138: { primary: ['T20', 'T18', 'D12'], alt: ['T20', 'T14', 'D18'], note: "Leaves Double 12" },
+    137: { primary: ['T20', 'T19', 'D10'], alt: ['T19', 'T16', 'D16'], note: "Leaves Double 10 or D16" },
+    136: { primary: ['T20', 'T20', 'D8'], alt: ['T20', 'T16', 'D14'], note: "Leaves Double 8" },
+    135: { primary: ['T20', 'T15', 'D15'], alt: ['T20', 'T17', 'D12'], note: "Leaves Double 15 or D12" },
+    134: { primary: ['T20', 'T14', 'D16'], alt: null, note: "Leaves Double 16" },
+    133: { primary: ['T20', 'T19', 'D8'], alt: ['T20', 'T17', 'D11'], note: "Leaves Double 8" },
+    132: { primary: ['T20', 'T20', 'D6'], alt: ['T20', 'T16', 'D12'], note: "Leaves Double 6 or D12" },
+    131: { primary: ['T20', 'T13', 'D16'], alt: ['T19', 'T14', 'D16'], note: "Leaves Double 16" },
+    130: { primary: ['T20', 'T20', 'D5'], alt: ['T20', 'T18', 'D8'], note: "T20, T18 leaves Double 8" },
+
+    129: { primary: ['T19', 'T20', 'D6'], alt: ['T20', 'T19', 'D6'], note: "Leaves Double 6" },
+    128: { primary: ['T18', 'T20', 'D7'], alt: ['T20', 'T20', 'D4'], note: "Leaves Double 7 or D4" },
+    127: { primary: ['T20', 'T17', 'D8'], alt: ['T19', 'T18', 'D8'], note: "Leaves Double 8" },
+    126: { primary: ['T19', 'T19', 'D6'], alt: ['T20', 'T16', 'D9'], note: "Leaves Double 6" },
+    125: { primary: ['T20', 'T19', 'D4'], alt: ['25', 'T20', 'D20'], note: "25 leaves 100 for T20, D20" },
+    124: { primary: ['T20', 'T14', 'D11'], alt: ['T20', 'T16', 'D8'], note: "T20, T16 leaves Double 8" },
+    123: { primary: ['T19', 'T16', 'D9'], alt: ['T20', 'T13', 'D12'], note: "Leaves Double 12" },
+    122: { primary: ['T18', 'T18', 'D7'], alt: ['T18', 'T20', 'D4'], note: "Leaves Double 7 or D4" },
+    121: { primary: ['T20', 'T15', 'D8'], alt: ['T20', 'S11', 'Bull'], note: "T20, T15 leaves Double 8; or Bull route (T20, S11, Bull)" },
+    120: { primary: ['T20', 'S20', 'D20'], alt: null, note: "The Shanghai 120 checkout" },
+
+    119: { primary: ['T19', 'T12', 'D13'], alt: ['T20', 'T19', 'D1'], note: "Leaves Double 13" },
+    118: { primary: ['T20', 'S18', 'D20'], alt: ['T20', 'T18', 'D2'], note: "T20 leaves 58, S18 leaves Tops" },
+    117: { primary: ['T20', 'S17', 'D20'], alt: ['T19', 'S20', 'D20'], note: "T20 leaves 57, S17 leaves Tops" },
+    116: { primary: ['T20', 'S16', 'D20'], alt: ['T19', 'S19', 'D20'], note: "T20 leaves 56, S16 leaves Tops" },
+    115: { primary: ['T20', 'S15', 'D20'], alt: ['T19', 'S18', 'D20'], note: "T20 leaves 55, S15 leaves Tops" },
+    114: { primary: ['T20', 'S14', 'D20'], alt: ['T19', 'S17', 'D20'], note: "T20 leaves 54, S14 leaves Tops" },
+    113: { primary: ['T20', 'S13', 'D20'], alt: ['T19', 'S16', 'D20'], note: "T20 leaves 53, S13 leaves Tops" },
+    112: { primary: ['T20', 'T12', 'D8'], alt: ['T20', 'S20', 'D16'], note: "T20, S20 leaves Double 16" },
+    111: { primary: ['T20', 'S19', 'D16'], alt: ['T19', 'S14', 'D20'], note: "T20 leaves 51, S19 leaves D16" },
+    110: { primary: ['T20', 'Bull'], alt: ['T20', 'S18', 'D16'], note: "Highest 2-dart checkout (T20, Bull)" },
+
+    109: { primary: ['T19', 'S20', 'D16'], alt: ['T20', 'S17', 'D16'], note: "Leaves Double 16" },
+    108: { primary: ['T20', 'S16', 'D16'], alt: ['T19', 'S19', 'D16'], note: "Leaves Double 16" },
+    107: { primary: ['T19', 'S18', 'D16'], alt: ['T20', 'S15', 'D16'], note: "Leaves Double 16" },
+    106: { primary: ['T20', 'S14', 'D16'], alt: ['T20', 'T10', 'D8'], note: "Leaves Double 16" },
+    105: { primary: ['T20', 'S13', 'D16'], alt: ['T19', 'S16', 'D16'], note: "Leaves Double 16" },
+    104: { primary: ['T20', 'S12', 'D16'], alt: ['T18', 'S18', 'D16'], note: "Leaves Double 16" },
+    103: { primary: ['T20', 'S11', 'D16'], alt: ['T19', 'S14', 'D16'], note: "Leaves Double 16" },
+    102: { primary: ['T20', 'S10', 'D16'], alt: ['T19', 'S13', 'D16'], note: "T20 leaves 42, S10 leaves D16" },
+    101: { primary: ['T20', 'S9', 'D16'], alt: ['T17', 'Bull'], note: "T17, Bull (2-dart out) or T20, S9, D16" },
+    100: { primary: ['T20', 'D20'], alt: ['T20', 'S8', 'D16'], note: "Classic 2-dart ton finish" },
+
+    99: { primary: ['T19', 'S10', 'D16'], alt: ['T19', 'S14', 'D14'], note: "Leaves Double 16" },
+    98: { primary: ['T20', 'D19'], alt: ['T20', 'S6', 'D16'], note: "T20 leaves 38 for Double 19" },
+    97: { primary: ['T19', 'D20'], alt: ['T19', 'S8', 'D16'], note: "T19 leaves 40 for Tops" },
+    96: { primary: ['T20', 'D18'], alt: ['T20', 'S4', 'D16'], note: "T20 leaves 36 for Double 18" },
+    95: { primary: ['T19', 'D19'], alt: ['T15', 'Bull'], note: "T19 leaves 38 for Double 19" },
+    94: { primary: ['T18', 'D20'], alt: ['T20', 'D17'], note: "T18 leaves 40 for Tops" },
+    93: { primary: ['T19', 'D18'], alt: ['T17', 'S10', 'D16'], note: "T19 leaves 36 for Double 18" },
+    92: { primary: ['T20', 'D16'], alt: null, note: "T20 leaves favorite Double 16" },
+    91: { primary: ['T17', 'D20'], alt: ['T19', 'D17'], note: "T17 leaves 40 for Tops" },
+    90: { primary: ['T20', 'D15'], alt: ['T18', 'D18'], note: "T18, D18 or T20, D15" },
+
+    89: { primary: ['T19', 'D16'], alt: null, note: "T19 leaves favorite Double 16" },
+    88: { primary: ['T16', 'D20'], alt: ['T20', 'D14'], note: "T16 leaves Tops" },
+    87: { primary: ['T17', 'D18'], alt: null, note: "T17 leaves Double 18" },
+    86: { primary: ['T18', 'D16'], alt: null, note: "T18 leaves Double 16" },
+    85: { primary: ['T15', 'D20'], alt: ['T19', 'D14'], note: "T15 leaves Tops" },
+    84: { primary: ['T20', 'D12'], alt: ['T16', 'D18'], note: "T20 leaves Double 12" },
+    83: { primary: ['T17', 'D16'], alt: null, note: "T17 leaves Double 16" },
+    82: { primary: ['T14', 'D20'], alt: ['Bull', 'D16'], note: "T14 leaves Tops" },
+    81: { primary: ['T19', 'D12'], alt: ['T15', 'D18'], note: "T19 leaves Double 12" },
+    80: { primary: ['T20', 'D10'], alt: ['T16', 'D16'], note: "T20 leaves D10; or T16 leaves D16" },
+
+    79: { primary: ['T19', 'D11'], alt: ['T13', 'D20'], note: "T13 leaves Tops" },
+    78: { primary: ['T18', 'D12'], alt: ['T14', 'D18'], note: "T18 leaves Double 12" },
+    77: { primary: ['T19', 'D10'], alt: ['T15', 'D16'], note: "T15 leaves Double 16" },
+    76: { primary: ['T20', 'D8'], alt: ['T16', 'D14'], note: "T20 leaves Double 8" },
+    75: { primary: ['T17', 'D12'], alt: ['T15', 'D15'], note: "T17 leaves Double 12" },
+    74: { primary: ['T14', 'D16'], alt: null, note: "T14 leaves Double 16" },
+    73: { primary: ['T19', 'D8'], alt: ['T17', 'D11'], note: "T19 leaves Double 8" },
+    72: { primary: ['T16', 'D12'], alt: ['T20', 'D6'], note: "T16 leaves Double 12" },
+    71: { primary: ['T13', 'D16'], alt: ['T17', 'D10'], note: "T13 leaves Double 16" },
+    70: { primary: ['T18', 'D8'], alt: ['T10', 'D20'], note: "T18 leaves Double 8" },
+
+    69: { primary: ['T15', 'D12'], alt: ['T19', 'D6'], note: "T15 leaves Double 12" },
+    68: { primary: ['T20', 'D4'], alt: ['T16', 'D10'], note: "T20 leaves Double 4" },
+    67: { primary: ['T17', 'D8'], alt: null, note: "T17 leaves Double 8" },
+    66: { primary: ['T14', 'D12'], alt: ['T10', 'D18'], note: "T14 leaves Double 12" },
+    65: { primary: ['25', 'D20'], alt: ['T15', 'D10'], note: "25 leaves Tops (D20)" },
+    64: { primary: ['T16', 'D8'], alt: ['S14', 'Bull'], note: "T16 leaves Double 8" },
+    63: { primary: ['T13', 'D12'], alt: ['S13', 'Bull'], note: "T13 leaves Double 12" },
+    62: { primary: ['T10', 'D16'], alt: ['S12', 'Bull'], note: "T10 leaves Double 16" },
+    61: { primary: ['25', 'D18'], alt: ['T15', 'D8'], note: "25 leaves Double 18" },
+    60: { primary: ['S20', 'D20'], alt: null, note: "Single 20 leaves Tops" },
+
+    59: { primary: ['S19', 'D20'], alt: null, note: "Single 19 leaves Tops" },
+    58: { primary: ['S18', 'D20'], alt: null, note: "Single 18 leaves Tops" },
+    57: { primary: ['S17', 'D20'], alt: null, note: "Single 17 leaves Tops" },
+    56: { primary: ['S16', 'D20'], alt: null, note: "Single 16 leaves Tops" },
+    55: { primary: ['S15', 'D20'], alt: null, note: "Single 15 leaves Tops" },
+    54: { primary: ['S14', 'D20'], alt: null, note: "Single 14 leaves Tops" },
+    53: { primary: ['S13', 'D20'], alt: null, note: "Single 13 leaves Tops" },
+    52: { primary: ['S12', 'D20'], alt: null, note: "Single 12 leaves Tops" },
+    51: { primary: ['S19', 'D16'], alt: ['S11', 'D20'], note: "Single 19 leaves Double 16" },
+    50: { primary: ['Bull'], alt: ['S10', 'D20'], note: "Inner Bullseye (1 dart) or S10, Tops" },
+
+    49: { primary: ['S17', 'D16'], alt: ['S9', 'D20'], note: "Single 17 leaves Double 16" },
+    48: { primary: ['S16', 'D16'], alt: ['S8', 'D20'], note: "Single 16 leaves Double 16" },
+    47: { primary: ['S15', 'D16'], alt: ['S7', 'D20'], note: "Single 15 leaves Double 16" },
+    46: { primary: ['S14', 'D16'], alt: ['S6', 'D20'], note: "Single 14 leaves Double 16" },
+    45: { primary: ['S13', 'D16'], alt: ['S5', 'D20'], note: "Single 13 leaves Double 16" },
+    44: { primary: ['S12', 'D16'], alt: ['S4', 'D20'], note: "Single 12 leaves Double 16" },
+    43: { primary: ['S11', 'D16'], alt: ['S3', 'D20'], note: "Single 11 leaves Double 16" },
+    42: { primary: ['S10', 'D16'], alt: ['S2', 'D20'], note: "Single 10 leaves Double 16" },
+    41: { primary: ['S9', 'D16'], alt: ['S1', 'D20'], note: "Single 9 leaves Double 16" },
+    40: { primary: ['D20'], alt: ['S20', 'D10'], note: "Tops (Double 20)" },
+
+    39: { primary: ['S7', 'D16'], alt: null, note: "Single 7 leaves Double 16" },
+    38: { primary: ['D19'], alt: ['S18', 'D10'], note: "Double 19" },
+    37: { primary: ['S5', 'D16'], alt: null, note: "Single 5 leaves Double 16" },
+    36: { primary: ['D18'], alt: ['S18', 'D9'], note: "Double 18" },
+    35: { primary: ['S3', 'D16'], alt: null, note: "Single 3 leaves Double 16" },
+    34: { primary: ['D17'], alt: ['S10', 'D12'], note: "Double 17" },
+    33: { primary: ['S1', 'D16'], alt: null, note: "Single 1 leaves Double 16" },
+    32: { primary: ['D16'], alt: ['S16', 'D8'], note: "Double 16 (Pro favorite bed)" },
+    31: { primary: ['S15', 'D8'], alt: ['S7', 'D12'], note: "Single 15 leaves Double 8" },
+    30: { primary: ['D15'], alt: ['S10', 'D10'], note: "Double 15" },
+
+    29: { primary: ['S13', 'D8'], alt: null, note: "Single 13 leaves Double 8" },
+    28: { primary: ['D14'], alt: ['S12', 'D8'], note: "Double 14" },
+    27: { primary: ['S11', 'D8'], alt: null, note: "Single 11 leaves Double 8" },
+    26: { primary: ['D13'], alt: ['S10', 'D8'], note: "Double 13" },
+    25: { primary: ['S9', 'D8'], alt: ['S17', 'D4'], note: "Single 9 leaves Double 8" },
+    24: { primary: ['D12'], alt: ['S8', 'D8'], note: "Double 12" },
+    23: { primary: ['S7', 'D8'], alt: null, note: "Single 7 leaves Double 8" },
+    22: { primary: ['D11'], alt: ['S6', 'D8'], note: "Double 11" },
+    21: { primary: ['S5', 'D8'], alt: null, note: "Single 5 leaves Double 8" },
+    20: { primary: ['D10'], alt: ['S10', 'D5'], note: "Double 10" },
+
+    19: { primary: ['S3', 'D8'], alt: ['S11', 'D4'], note: "Single 3 leaves Double 8" },
+    18: { primary: ['D9'], alt: ['S10', 'D4'], note: "Double 9" },
+    17: { primary: ['S1', 'D8'], alt: ['S9', 'D4'], note: "Single 1 leaves Double 8" },
+    16: { primary: ['D8'], alt: ['S8', 'D4'], note: "Double 8" },
+    15: { primary: ['S7', 'D4'], alt: null, note: "Single 7 leaves Double 4" },
+    14: { primary: ['D7'], alt: ['S6', 'D4'], note: "Double 7" },
+    13: { primary: ['S5', 'D4'], alt: null, note: "Single 5 leaves Double 4" },
+    12: { primary: ['D6'], alt: ['S4', 'D4'], note: "Double 6" },
+    11: { primary: ['S3', 'D4'], alt: null, note: "Single 3 leaves Double 4" },
+    10: { primary: ['D5'], alt: ['S2', 'D4'], note: "Double 5" },
+
+    9: { primary: ['S1', 'D4'], alt: null, note: "Single 1 leaves Double 4" },
+    8: { primary: ['D4'], alt: ['S4', 'D2'], note: "Double 4" },
+    7: { primary: ['S3', 'D2'], alt: null, note: "Single 3 leaves Double 2" },
+    6: { primary: ['D3'], alt: ['S2', 'D2'], note: "Double 3" },
+    5: { primary: ['S1', 'D2'], alt: null, note: "Single 1 leaves Double 2" },
+    4: { primary: ['D2'], alt: ['S2', 'D1'], note: "Double 2" },
+    3: { primary: ['S1', 'D1'], alt: null, note: "Single 1 leaves Double 1" },
+    2: { primary: ['D1'], alt: null, note: "Double 1 ('Madhouse')" }
+  };
+
+  function getDartScore(dart: string): number {
+    if (dart === 'Bull' || dart === 'Bullseye') return 50;
+    if (dart === '25' || dart === 'Outer Bull') return 25;
+    const match = dart.match(/^([STD])(\d+)$/);
+    if (!match) return 0;
+    const multiplier = match[1] === 'S' ? 1 : match[1] === 'D' ? 2 : 3;
+    return multiplier * parseInt(match[2], 10);
+  }
+
+  function getDartDescription(dart: string): string {
+    if (dart === 'Bull' || dart === 'Bullseye') return 'Bullseye (50)';
+    if (dart === '25') return 'Outer Bull (25)';
+    const match = dart.match(/^([STD])(\d+)$/);
+    if (!match) return dart;
+    const type = match[1] === 'S' ? 'Single' : match[1] === 'D' ? 'Double' : 'Treble';
+    return `${type} ${match[2]}`;
+  }
+
+  function updateCalculator(score: number) {
+    const resBadge = document.getElementById('res-badge') as HTMLElement;
+    const resTargetNumber = document.getElementById('res-target-number') as HTMLElement;
+    const resDartsNeeded = document.getElementById('res-darts-needed') as HTMLElement;
+    const resDartsSequence = document.getElementById('res-darts-sequence') as HTMLElement;
+    const resArithmeticText = document.getElementById('res-arithmetic-text') as HTMLElement;
+    const resArithmeticCard = document.getElementById('res-arithmetic-card') as HTMLElement;
+    const resAltBox = document.getElementById('res-alt-box') as HTMLElement;
+    const resAltSequence = document.getElementById('res-alt-sequence') as HTMLElement;
+    const resNoteText = document.getElementById('res-note-text') as HTMLElement;
+
+    if (!resBadge || !resTargetNumber) return;
+
+    resTargetNumber.textContent = isNaN(score) ? '?' : score.toString();
+
+    // 1. Boundary & validation checks
+    if (isNaN(score) || score <= 0) {
+      resBadge.textContent = 'INVALID INPUT';
+      resBadge.className = 'badge badge-error';
+      resDartsNeeded.textContent = 'Error';
+      resDartsSequence.innerHTML = '<span class="status-error-text">Please enter a valid positive number between 2 and 170.</span>';
+      resArithmeticCard.style.display = 'none';
+      resAltBox.style.display = 'none';
+      resNoteText.textContent = 'Darts target scores must be positive integers.';
+      return;
+    }
+
+    // 2. Score = 1 (Automatic Bust)
+    if (score === 1) {
+      resBadge.textContent = 'AUTOMATIC BUST (1 REMAINING)';
+      resBadge.className = 'badge badge-error';
+      resDartsNeeded.textContent = 'Bust (0 Darts Possible)';
+      resDartsSequence.innerHTML = `
+        <div class="bust-notice">
+          <span class="bust-title">⚠️ Score of 1 Cannot Be Checked Out</span>
+          <p>Under official DRA double-out rules, you must finish on an outer double (minimum 2 points for D1) or inner bull (50 points). There is no 0.5 segment on a dartboard. Reducing your score to 1 is an instant bust!</p>
+        </div>
+      `;
+      resArithmeticCard.style.display = 'none';
+      resAltBox.style.display = 'none';
+      resNoteText.textContent = 'DRA Rule 5.4: If a player leaves 1 point remaining, their visit terminates and their score resets to their starting total.';
+      return;
+    }
+
+    // 3. Score > 170 (Setup required)
+    if (score > 170) {
+      resBadge.textContent = 'SETUP VISIT REQUIRED';
+      resBadge.className = 'badge badge-warning';
+      resDartsNeeded.textContent = '4+ Darts Required';
+      resDartsSequence.innerHTML = `
+        <div class="setup-notice">
+          <span class="setup-title">🎯 Score Exceeds 3-Dart Maximum</span>
+          <p>The highest possible 3-dart checkout is 170 (T20, T20, Bull). Any score of ${score} requires at least one setup visit to reach a finishable out-shot.</p>
+        </div>
+      `;
+      resArithmeticCard.style.display = 'block';
+      const pointsTo170 = score - 170;
+      resArithmeticText.textContent = `Score is ${pointsTo170} points above the 170 maximum out-shot threshold. Aim for maximum scoring (T20 bed).`;
+      resAltBox.style.display = 'none';
+      resNoteText.textContent = `A standard 180 visit reduces ${score} to ${score - 180 <= 0 ? 0 : score - 180}.`;
+      return;
+    }
+
+    // 4. Bogey Number Check (159, 162, 163, 165, 166, 168, 169)
+    if (BOGEYS.includes(score)) {
+      resBadge.textContent = 'BOGEY NUMBER (NO 3-DART OUT)';
+      resBadge.className = 'badge badge-bogey';
+      resDartsNeeded.textContent = 'Impossible in 3 Darts';
+      resDartsSequence.innerHTML = `
+        <div class="bogey-notice">
+          <span class="bogey-title">🚫 Bogey Number: Mathematical Dead-End</span>
+          <p>Score ${score} is one of the seven recognized bogey numbers. Two trebles leave a remaining total that cannot be completed on a legal double with the third dart.</p>
+        </div>
+      `;
+      resArithmeticCard.style.display = 'block';
+      resArithmeticText.textContent = `Mathematical Proof: Even hitting T20 + T20 (120) leaves ${score - 120}, which cannot be finished on a single dart.`;
+      resAltBox.style.display = 'none';
+      resNoteText.textContent = `Tactical Recommendation: Throw your first dart at Treble 20 to set up a finish next visit. If you hit Single 20, re-adjust!`;
+      return;
+    }
+
+    // 5. Valid Checkout (2 to 170)
+    const data = CHECKOUTS[score];
+    if (data) {
+      resBadge.textContent = 'VALID DOUBLE-OUT FINISH';
+      resBadge.className = 'badge badge-success';
+
+      const dartsCount = data.primary.length;
+      resDartsNeeded.textContent = `${dartsCount} Dart${dartsCount > 1 ? 's' : ''} Required`;
+
+      // Render primary darts badges
+      resDartsSequence.innerHTML = data.primary.map((dart, index) => {
+        let badgeClass = 'dart-badge';
+        if (dart.startsWith('T')) badgeClass += ' dart-treble';
+        else if (dart.startsWith('D') || dart === 'Bull') badgeClass += ' dart-double';
+        else badgeClass += ' dart-single';
+
+        const isLast = index === dartsCount - 1;
+        return `
+          <div class="dart-step">
+            <span class="dart-step-num">Dart ${index + 1}</span>
+            <div class="${badgeClass}">${dart}</div>
+            <span class="dart-desc">${getDartDescription(dart)}</span>
+          </div>
+          ${!isLast ? '<span class="dart-arrow">&rarr;</span>' : ''}
+        `;
+      }).join('');
+
+      // Arithmetic text
+      resArithmeticCard.style.display = 'block';
+      const breakdown = data.primary.map(d => `${getDartScore(d)} (${d})`).join(' + ');
+      resArithmeticText.textContent = `${breakdown} = ${score} Points (Clean Finish)`;
+
+      // Alternative route
+      if (data.alt && data.alt.length > 0) {
+        resAltBox.style.display = 'block';
+        resAltSequence.innerHTML = data.alt.map(d => `<span class="alt-pill">${d}</span>`).join(' &rarr; ');
+      } else {
+        resAltBox.style.display = 'none';
+      }
+
+      // Tactical note
+      resNoteText.textContent = data.note || 'Standard professional finishing route.';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('checkout-form');
+    const input = document.getElementById('score-input') as HTMLInputElement;
+    const resetBtn = document.getElementById('reset-btn');
+    const presetPills = document.querySelectorAll('.preset-pill');
+
+    if (form && input) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const score = parseInt(input.value.trim(), 10);
+        updateCalculator(score);
+      });
+
+      input.addEventListener('input', () => {
+        const val = input.value.trim();
+        if (val === '') return;
+        const score = parseInt(val, 10);
+        updateCalculator(score);
+      });
+    }
+
+    if (resetBtn && input) {
+      resetBtn.addEventListener('click', () => {
+        input.value = '170';
+        updateCalculator(170);
+        input.focus();
+      });
+    }
+
+    presetPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const scoreVal = pill.getAttribute('data-score');
+        if (scoreVal && input) {
+          input.value = scoreVal;
+          updateCalculator(parseInt(scoreVal, 10));
+        }
+      });
+    });
+
+    // Run initial calculation on page load (170)
+    updateCalculator(170);
+  });
+</script>
+
+<style>
+  .calculator-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 2.5rem 0 2rem;
+    border-bottom: 3px solid #f59e0b;
+  }
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+  .calculator-hero h1 {
+    font-size: 2.3rem;
+    line-height: 1.25;
+    margin: 0.5rem 0 1rem;
+    font-weight: 800;
+    color: #ffffff;
+  }
+  .hero-lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 1.25rem;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: #94a3b8;
+  }
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .content-layout {
+      grid-template-columns: 2.5fr 1fr;
+    }
+  }
+
+  /* Calculator Card */
+  .calculator-card {
+    background: #ffffff;
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+  }
+  .calc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .calc-header h2 {
+    font-size: 1.35rem;
+    margin: 0;
+    color: #0f172a;
+  }
+  .calc-hint {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  /* Form & Inputs */
+  .calc-form {
+    margin-bottom: 1.5rem;
+  }
+  .input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+  }
+  .input-wrapper {
+    flex: 1;
+    min-width: 200px;
+  }
+  .input-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+  }
+  .input-group {
+    display: flex;
+    align-items: center;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    background: #f8fafc;
+    transition: border-color 0.15s ease;
+  }
+  .input-group:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  }
+  .input-prefix {
+    padding: 0 0.75rem;
+    font-size: 1.2rem;
+  }
+  .score-input {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #0f172a;
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s ease;
+  }
+  .btn-primary {
+    background: #2563eb;
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    background: #1d4ed8;
+  }
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+  }
+  .btn-secondary:hover {
+    background: #e2e8f0;
+  }
+
+  /* Presets */
+  .presets-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+  }
+  .presets-title {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+  .presets-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .preset-pill {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    padding: 0.35rem 0.65rem;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.1s ease;
+  }
+  .preset-pill:hover {
+    background: #e0f2fe;
+    border-color: #38bdf8;
+    color: #0369a1;
+  }
+  .preset-pill.alert-pill {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #991b1b;
+  }
+  .preset-pill.alert-pill:hover {
+    background: #fee2e2;
+    border-color: #f87171;
+  }
+
+  /* Result Panel */
+  .result-panel {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+  .result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .badge {
+    padding: 0.25rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  .badge-success {
+    background: #dcfce7;
+    color: #166534;
+  }
+  .badge-warning {
+    background: #fef9c3;
+    color: #854d0e;
+  }
+  .badge-error {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  .badge-bogey {
+    background: #f3e8ff;
+    color: #6b21a8;
+  }
+  .score-display {
+    font-size: 1rem;
+    color: #475569;
+  }
+  .score-display strong {
+    font-size: 1.3rem;
+    color: #0f172a;
+  }
+  .darts-needed-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  /* Route Darts Badges */
+  .route-display {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .route-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+  .darts-sequence {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .dart-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .dart-step-num {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .dart-badge {
+    min-width: 65px;
+    padding: 0.55rem 0.85rem;
+    font-size: 1.35rem;
+    font-weight: 900;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+  .dart-treble {
+    background: #0f172a;
+    color: #fbbf24;
+    border: 2px solid #f59e0b;
+  }
+  .dart-double {
+    background: #15803d;
+    color: #ffffff;
+    border: 2px solid #22c55e;
+  }
+  .dart-single {
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 2px solid #cbd5e1;
+  }
+  .dart-desc {
+    font-size: 0.72rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+    font-weight: 600;
+  }
+  .dart-arrow {
+    font-size: 1.4rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Arithmetic & Feedback Boxes */
+  .arithmetic-card {
+    background: #f1f5f9;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .alternative-box {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  .alt-title {
+    font-weight: 700;
+    color: #475569;
+    margin-right: 0.5rem;
+  }
+  .alt-pill {
+    background: #e2e8f0;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-weight: 700;
+    color: #0f172a;
+    font-family: monospace;
+  }
+  .tactical-note-box {
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    padding: 0.75rem 1rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.9rem;
+    color: #92400e;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.5;
+  }
+
+  /* Notices */
+  .bust-notice, .setup-notice, .bogey-notice {
+    padding: 0.5rem 0;
+  }
+  .bust-title, .bogey-title, .setup-title {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 0.35rem;
+  }
+  .bust-title { color: #dc2626; }
+  .bogey-title { color: #7e22ce; }
+  .setup-title { color: #d97706; }
+  .bust-notice p, .bogey-notice p, .setup-notice p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #334155;
+  }
+  .status-error-text {
+    color: #dc2626;
+    font-weight: 700;
+  }
+
+  /* Educational Cards */
+  .content-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.45rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f1f5f9;
+  }
+  .content-card p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+  .content-card ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    color: #334155;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.55;
+  }
+
+  /* Bogey Cards */
+  .bogey-display-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+  .bogey-card {
+    background: #faf5ff;
+    border: 1px solid #e9d5ff;
+    border-radius: 6px;
+    padding: 0.75rem;
+    text-align: center;
+  }
+  .bogey-card strong {
+    display: block;
+    font-size: 1.4rem;
+    color: #7e22ce;
+    margin-bottom: 0.25rem;
+  }
+  .bogey-card span {
+    font-size: 0.75rem;
+    color: #6b21a8;
+    line-height: 1.3;
+    display: block;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 1rem;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin: 0 0 0.35rem 0;
+  }
+  .faq-item p {
+    font-size: 0.95rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* Links Grid */
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: all 0.15s ease;
+  }
+  .link-card:hover {
+    border-color: #f59e0b;
+    background: #fffbeb;
+  }
+  .link-card strong {
+    color: #0f172a;
+    font-size: 0.98rem;
+  }
+  .link-card span {
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .sidebar-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #f1f5f9;
+  }
+  .fact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .fact-list li {
+    font-size: 0.88rem;
+    color: #475569;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #f8fafc;
+    line-height: 1.4;
+  }
+  .fact-list li:last-child {
+    border-bottom: none;
+  }
+  .fact-list strong {
+    color: #0f172a;
+  }
+</style>
