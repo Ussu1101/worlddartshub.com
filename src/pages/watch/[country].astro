@@ -203,6 +203,7 @@ const countryFaqSchema = {
         <ul class="widget-list">
           <li><a href="/watch/uk/">🇬🇧 United Kingdom</a></li>
           <li><a href="/watch/germany/">🇩🇪 Germany</a></li>
+          <li><a href="/watch/nordics/">🇸🇪/🇳🇴/🇩🇰 Nordic Region (Viaplay)</a></li>
           <li><a href="/watch/usa/">🇺🇸 United States</a></li>
           <li><a href="/watch/netherlands/">🇳🇱 Netherlands</a></li>
           <li><a href="/watch/australia/">🇦🇺 Australia</a></li>
@@ -211,6 +212,18 @@ const countryFaqSchema = {
           <li><a href="/watch/international/">🌍 International / PDCTV</a></li>
         </ul>
       </div>
+
+      {country === 'germany' && (
+        <div class="sidebar-widget">
+          <h3 class="widget-title">German Stars at Ally Pally</h3>
+          <p style="font-size: 0.88rem; color: #475569; margin-bottom: 0.75rem;">
+            Follow Germany's top-ranked professional competing at Alexandra Palace:
+          </p>
+          <ul class="widget-list">
+            <li><a href="/players/martin-schindler/">🎯 Martin Schindler ("The Wall") Dossier &rarr;</a></li>
+          </ul>
+        </div>
+      )}
 
       <AdSlot slotType="rectangle" id={`country-${country}-sidebar-ad`} />
 

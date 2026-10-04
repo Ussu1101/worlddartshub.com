@@ -160,6 +160,18 @@
       "status": "current_known_walk_on",
       "crowd_reaction": "Infectious retro disco rhythm prompting spontaneous dancing, singing, and table clapping.",
       "walk_on_history": "Adopted during her historic record-shattering dominance on the PDC Women's Series and WDF World Championships."
+    },
+    {
+      "player_id": "martin-schindler",
+      "player_name": "Martin Schindler",
+      "nickname": "The Wall",
+      "song_title": "Another Brick in the Wall (Part 2)",
+      "artist": "Pink Floyd",
+      "genre": "Classic Rock",
+      "release_year": "1979",
+      "status": "current_known_walk_on",
+      "crowd_reaction": "Thunderous arena-wide chorus chants of 'Hey! Teachers! Leave them kids alone!' with air drumming and waving German flags.",
+      "walk_on_history": "A signature tribute to his 'The Wall' moniker and disciplined defensive playing style, energizing German traveling contingents at Alexandra Palace."
     }
   ]
 }

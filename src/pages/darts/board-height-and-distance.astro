@@ -1,0 +1,792 @@
+---
+// src/pages/darts/board-height-and-distance.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Official Dartboard Height & Distance: Regulation Setup Measurements";
+const pageDescription = "Official regulation dartboard height, oche throwline distance, bullseye measurements, diagonal verification, raised oche rules, and home setup mistakes.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/darts/board-height-and-distance/`;
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Dartboard Height & Distance' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Hub Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the official regulation height for a dartboard?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The official regulation height for a dartboard is 5 feet 8 inches (1.73 meters / 173 centimeters), measured plumb from the finished playing floor surface directly to the exact dead center of the red inner bullseye."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the official throwing distance to a dartboard?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The official throwing distance (oche distance) for steel-tip darts is 7 feet 9.25 inches (2.37 meters / 237 centimeters). This measurement must be taken along the horizontal floor from the front face of the dartboard to the back (throwing edge) of the raised oche, not from the supporting wall."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you verify a dartboard setup diagonally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You verify the setup by measuring diagonally from the exact center of the bullseye directly down to the back throwing edge of the oche. The diagonal measurement must equal exactly 9 feet 7.5 inches (2.93 meters / 293.4 centimeters), confirming both height and distance simultaneously via the Pythagorean theorem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you measure throwing distance from the wall or the board?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You must always measure throwing distance from the front face of the bristle dartboard, never from the wall. Because regulation bristle boards are approximately 1.5 inches (3.8 cm) thick plus bracket depth, measuring from the wall positions the throw line too close to the target."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the height and width of an official raised oche?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under Darts Regulation Authority (DRA) rules, an official raised oche must be at least 1.5 inches (38 millimeters) in height and a minimum of 2 feet (610 millimeters) in width, providing a physical raised barrier that prevents the thrower's foot from crossing the throw line."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <header class="page-header">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      <h1>Official Dartboard Height & Distance: Regulation Setup Measurements</h1>
+      <p class="lead-text">
+        Whether constructing a tournament arena stage or installing a bristle board in a home games room, every regulation darts setup relies on exact millimeter tolerances. Explore official DRA and WDF measurements, the diagonal verification check, and essential installation guidance.
+      </p>
+      <div class="meta-row">
+        <VerificationBadge />
+        <span class="meta-item">Governing Body Standard: DRA Section 5 & WDF Code</span>
+        <span class="meta-item">Read Time: 7 mins</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-layout">
+    <main class="main-content">
+      <!-- Section: Quick Reference Table -->
+      <section class="content-card">
+        <h2>Official Regulation Dartboard Dimensions at a Glance</h2>
+        <p>
+          Under the official regulations of the <strong>Darts Regulation Authority (DRA)</strong> and the <strong>World Darts Federation (WDF)</strong>, all competitive steel-tip darts competitions—including the PDC World Darts Championship at Alexandra Palace—must be played on a board mounted to exact imperial and metric measurements.
+        </p>
+
+        <div class="specs-grid">
+          <div class="spec-card">
+            <span class="spec-icon">📏</span>
+            <div class="spec-title">Bullseye Height</div>
+            <div class="spec-val-primary">5ft 8in</div>
+            <div class="spec-val-secondary">1.73 m (172.7 cm)</div>
+            <p class="spec-desc">Measured plumb from finished floor to bullseye center.</p>
+          </div>
+
+          <div class="spec-card">
+            <span class="spec-icon">📐</span>
+            <div class="spec-title">Oche Throwing Distance</div>
+            <div class="spec-val-primary">7ft 9.25in</div>
+            <div class="spec-val-secondary">2.37 m (236.9 cm)</div>
+            <p class="spec-desc">Horizontal from front face of board to back of oche.</p>
+          </div>
+
+          <div class="spec-card">
+            <span class="spec-icon">📐</span>
+            <div class="spec-title">Diagonal Verification</div>
+            <div class="spec-val-primary">9ft 7.5in</div>
+            <div class="spec-val-secondary">2.93 m (293.4 cm)</div>
+            <p class="spec-desc">Direct hypotenuse from bull center to oche back edge.</p>
+          </div>
+
+          <div class="spec-card">
+            <span class="spec-icon">🎯</span>
+            <div class="spec-title">Raised Oche Bar</div>
+            <div class="spec-val-primary">1.5in High</div>
+            <div class="spec-val-secondary">38 mm (Min 610 mm wide)</div>
+            <p class="spec-desc">Physical raised lip behind which the thrower stands.</p>
+          </div>
+        </div>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: Bullseye Height -->
+      <section class="content-card">
+        <h2>Dartboard Height: From Floor to Bullseye Center</h2>
+        <p>
+          The universal regulation height for a standard English sisal bristle dartboard is <strong>5 feet 8 inches (1.727 meters / 173 cm)</strong>.
+        </p>
+
+        <h3>The 5ft 8in (1.73m) Standard</h3>
+        <p>
+          This vertical measurement is taken directly from the finished floor surface upon which the player stands to the exact center of the red inner bullseye (50-point ring). If the player stands on a raised darts mat, carpet runner, or tournament stage platform, the height must be calculated from the top of that specific standing surface, not the bare subfloor underneath.
+        </p>
+
+        <h3>Why the Center Bullseye Is the Universal Reference Point</h3>
+        <p>
+          Unlike rectangular targets measured from top or bottom edges, a circular dartboard is centered around its pivotal scoring axis. Because different board manufacturers vary slightly in outer rim diameter (450mm &plusmn; 3mm), measuring to the outer wire or outer rim introduces error. The center of the inner bullseye (12.7mm diameter) is the absolute geometric and mathematical origin of all segment wires, trebles, and doubles.
+        </p>
+
+        <h3>Mounting Bracket Height on the Wall</h3>
+        <p>
+          Most modern tournament dartboards utilize a standard center-screw mounting bracket (such as a metal U-bracket or a three-wheel roto-lock system). Because the primary mounting screw is located in the dead center on the reverse side of the board:
+        </p>
+        <ul>
+          <li><strong>Wall Bracket Mounting Height:</strong> Screw the central bracket into the wall or backboard at exactly <strong>5ft 8in (173cm)</strong> from the floor.</li>
+          <li><strong>Center Screw on Board:</strong> Fix the large mounting screw into the pre-drilled central hole on the back of the board, leaving approximately 5mm of screw head protruding.</li>
+          <li><strong>Level Adjustment:</strong> Slide the board down into the wall bracket and ensure the number 20 segment is positioned perpendicularly upright at the absolute top of the board.</li>
+        </ul>
+      </section>
+
+      <!-- Section: Oche Throwing Distance -->
+      <section class="content-card">
+        <h2>Oche Throwing Distance: Board Face to Throw Line</h2>
+        <p>
+          The official horizontal throwing distance for steel-tip darts is <strong>7 feet 9.25 inches (2.369 meters / 237 cm)</strong>.
+        </p>
+
+        <h3>The 7ft 9.25in (2.37m) Distance Explained</h3>
+        <p>
+          Under DRA Section 5 regulations, this distance defines the boundary behind which both of the thrower's feet must remain when executing a throw. The player may lean their upper torso, head, and throwing arm over the line during the release, provided their footwear does not step onto or cross the back edge of the oche marker.
+        </p>
+
+        <h3>Critical Distinction: Measuring from Board Face vs Wall</h3>
+        <p>
+          The most prevalent error in amateur darts setups is measuring throwing distance from the plaster wall rather than the front playing surface of the board.
+        </p>
+        <div class="callout-box">
+          <div class="callout-title">⚠️ The Plumb-Line Rule</div>
+          <p>
+            A regulation bristle dartboard has a depth of approximately <strong>1.5 inches (38mm)</strong>. When combined with mounting bracket clearance and wall spacers, the front sisal surface sits <strong>1.75 to 2.0 inches (45–50mm)</strong> forward of the wall. If you measure 7ft 9.25in from the wall, your throwline will be nearly 2 inches too close to the board!
+          </p>
+        </div>
+        <p>
+          <strong>How to measure accurately:</strong> Drop a weighted plumb line (or tape a string with a small weight) from the front sisal face of the board down to the floor. Mark the exact spot where the weight touches the floor, and measure 7ft 9.25in horizontally backward from that mark to position your oche.
+        </p>
+
+        <h3>Historical Context: The 8-Foot Metric Transition</h3>
+        <p>
+          In vintage British pub leagues throughout the mid-20th century, standard throwing distances varied regionally between 8 feet (the brewery standard in Yorkshire and the Midlands) and 7 feet 6 inches. In 1977, the British Darts Organisation (BDO) and World Darts Federation standardized international competition to <strong>2.37 meters</strong>, which translates in imperial notation to 7 feet 9.25 inches. Note that electronic soft-tip darts commonly utilizes an 8-foot (2.44m) throwing distance.
+        </p>
+      </section>
+
+      <!-- Section: Diagonal Verification Method -->
+      <section class="content-card">
+        <h2>The Diagonal Verification Method (The 9ft 7.5in Check)</h2>
+        <p>
+          Tournament venue officials and PDC stage technicians verify every competition board using a diagonal hypotenuse check.
+        </p>
+
+        <h3>The Pythagorean Geometry Formula</h3>
+        <p>
+          Because the vertical bullseye height (a = 5ft 8in / 1.727m) and horizontal throwing distance (b = 7ft 9.25in / 2.369m) form a right-angled triangle, the diagonal measurement (c) from the bullseye to the oche edge can be calculated using the Pythagorean theorem:
+        </p>
+        <div class="formula-box">
+          <strong>a&sup2; + b&sup2; = c&sup2; &rArr; (1.727)&sup2; + (2.369)&sup2; = 2.9825 + 5.6122 = 8.5947</strong><br />
+          <span style="display: block; margin-top: 0.5rem; font-size: 1.15rem;">c = &radic;8.5947 &approx; 2.932 meters = <strong>9 feet 7.5 inches (2.93m)</strong></span>
+        </div>
+
+        <h3>How to Perform the String or Tape Check in 60 Seconds</h3>
+        <ol class="setup-steps">
+          <li><strong>Anchor the Tape:</strong> Secure the metal hook of a standard tape measure into the center pin of the inner bullseye (or have a partner hold the zero mark firmly against the bull center).</li>
+          <li><strong>Extend Diagonally:</strong> Pull the tape measure taut down to the floor at the center of the oche.</li>
+          <li><strong>Check the Reading:</strong> The tape should align exactly with <strong>9 feet 7.5 inches (2.93m)</strong> at the back edge of your throwline. If the reading is longer or shorter, your height or distance is misaligned.</li>
+        </ol>
+      </section>
+
+      <!-- Section: Raised Oche vs Floor Throw Lines -->
+      <section class="content-card">
+        <h2>Raised Oche vs Floor Throw Lines: PDC & DRA Regulations</h2>
+        <p>
+          The barrier that marks the throwing boundary is universally called the <strong>oche</strong> (pronounced <em>"ockey"</em>).
+        </p>
+
+        <h3>Official Tournament Raised Oche Specifications</h3>
+        <p>
+          In professional televised tournaments such as the PDC World Darts Championship, flat tape lines are strictly prohibited. Under DRA Rule 5.1:
+        </p>
+        <ul>
+          <li><strong>Height:</strong> The raised oche must be a physical timber or composite barrier exactly <strong>1.5 inches (38mm)</strong> high.</li>
+          <li><strong>Width:</strong> It must span a minimum width of <strong>2 feet (610mm)</strong>, though tournament arena stages typically feature oches measuring 3 feet (914mm) wide to accommodate players standing wide on the board line.</li>
+          <li><strong>Color Contrast:</strong> It must be clearly painted in a contrasting color (typically white or high-visibility yellow on black carpet) so officials and cameras can verify foot placement.</li>
+        </ul>
+
+        <h3>Toe-Line Etiquette: Standing Behind vs Leaning Over</h3>
+        <p>
+          A player is legally allowed to brace their front foot firmly against the vertical rear face of the raised oche. They may pivot on their toes and lean their entire upper torso over the oche, bringing their release point closer to the board. However, placing any portion of their shoe sole on top of the raised oche or crossing past its front plane constitutes a foot fault ("foul throw"), rendering any dart thrown during that visit void.
+        </p>
+      </section>
+
+      <!-- Section: Lighting & Surrounds -->
+      <section class="content-card">
+        <h2>Dartboard Lighting, Surrounds & Room Requirements</h2>
+        <p>
+          Correct spatial planning and uniform illumination are critical for competitive play.
+        </p>
+
+        <h3>Circular 360-Degree Shadowless Lighting Systems</h3>
+        <p>
+          Traditional ceiling spotlights or single directional lamps create harsh shadows behind wire segments, obscuring the bed when a dart is stuck in the treble. Modern tournament standards employ circular LED lighting rings (such as the Target Corona Vision, Winmau Polaris, or Mission Torus). These magnetic or bracketed rings cast uniform, shadow-free 360-degree illumination directly onto the sisal face without blinding the thrower.
+        </p>
+
+        <h3>EVA Foam Wall Protection Surrounds</h3>
+        <p>
+          A regulation dartboard surround is made from high-density EVA foam that snugly hugs the outside rim of the dartboard:
+        </p>
+        <ul>
+          <li><strong>Outer Diameter:</strong> Approximately 27 inches (68.5cm).</li>
+          <li><strong>Protection Margin:</strong> Provides approximately 4.75 inches (12cm) of dense protective cushioning in every direction around the outer double ring.</li>
+          <li><strong>Installation:</strong> Fits friction-tight around the outer board edge without requiring additional wall fixings.</li>
+        </ul>
+
+        <h3>Clearance Space & Thrower Safety Lanes</h3>
+        <p>
+          Ensure your playing area provides adequate clearance:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Dimension Area</th>
+                <th>Minimum Clearance Required</th>
+                <th>Recommended Comfortable Space</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ceiling Height</strong></td>
+                <td>6ft 6in (1.98 m)</td>
+                <td>7ft 0in+ (2.13 m) to prevent high-arc dart strikes</td>
+              </tr>
+              <tr>
+                <td><strong>Throwing Lane Length</strong></td>
+                <td>10ft 6in (3.20 m)</td>
+                <td>12ft 0in+ (3.65 m) allowing player follow-through space</td>
+              </tr>
+              <tr>
+                <td><strong>Lateral Width</strong></td>
+                <td>5ft 0in (1.52 m)</td>
+                <td>6ft 6in+ (2.00 m) centered on board for elbow clearance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section: Common Mistakes -->
+      <section class="content-card">
+        <h2>The 5 Most Common Home Setup Mistakes</h2>
+        <p>
+          Amateur setups frequently suffer from subtle dimensional flaws that distort muscle memory when transitioning to pub or tournament boards:
+        </p>
+        <div class="mistakes-list">
+          <div class="mistake-item">
+            <span class="mistake-num">1</span>
+            <div class="mistake-body">
+              <h3>Measuring Throw Distance from the Wall</h3>
+              <p>The number-one setup error. Failing to drop a plumb line from the board's front face creates an oche that is 1.5 to 2 inches too short.</p>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <span class="mistake-num">2</span>
+            <div class="mistake-body">
+              <h3>Measuring to the Bottom or Top of the Board</h3>
+              <p>Different brands have minor variances in outer rim width. Always measure height directly to the dead center of the bullseye screw.</p>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <span class="mistake-num">3</span>
+            <div class="mistake-body">
+              <h3>Ignoring Carpet Pile Compression</h3>
+              <p>Thick carpets and underlays compress by up to half an inch when a thrower stands on them. Calibrate your bullseye height with an adult standing on the mat.</p>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <span class="mistake-num">4</span>
+            <div class="mistake-body">
+              <h3>Unlevel Floors Skewing Distance</h3>
+              <p>Floors in older buildings or garages often slope. Always verify the diagonal hypotenuse (9ft 7.5in / 2.93m) to ensure height and distance align harmoniously.</p>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <span class="mistake-num">5</span>
+            <div class="mistake-body">
+              <h3>Using Soft-Tip Darts Distances</h3>
+              <p>Soft-tip electronic boards use an 8ft (2.44m) throwline, whereas traditional steel-tip bristle boards strictly require 7ft 9.25in (2.37m).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: FAQ -->
+      <section class="content-card">
+        <h2>Frequently Asked Questions About Dartboard Setup</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>What is the official regulation height for a dartboard?</h3>
+            <p>
+              The official regulation height for a dartboard is 5 feet 8 inches (1.73 meters / 173 centimeters), measured plumb from the finished playing floor surface directly to the exact dead center of the red inner bullseye.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the official throwing distance to a dartboard?</h3>
+            <p>
+              The official throwing distance (oche distance) for steel-tip darts is 7 feet 9.25 inches (2.37 meters / 237 centimeters). This measurement must be taken along the horizontal floor from the front face of the dartboard to the back (throwing edge) of the raised oche, not from the supporting wall.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do you verify a dartboard setup diagonally?</h3>
+            <p>
+              You verify the setup by measuring diagonally from the exact center of the bullseye directly down to the back throwing edge of the oche. The diagonal measurement must equal exactly 9 feet 7.5 inches (2.93 meters / 293.4 centimeters), confirming both height and distance simultaneously via the Pythagorean theorem.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do you measure throwing distance from the wall or the board?</h3>
+            <p>
+              You must always measure throwing distance from the front face of the bristle dartboard, never from the wall. Because regulation bristle boards are approximately 1.5 inches (3.8 cm) thick plus bracket depth, measuring from the wall positions the throw line too close to the target.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the height and width of an official raised oche?</h3>
+            <p>
+              Under Darts Regulation Authority (DRA) rules, an official raised oche must be at least 1.5 inches (38 millimeters) in height and a minimum of 2 feet (610 millimeters) in width, providing a physical raised barrier that prevents the thrower's foot from crossing the throw line.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Related Guides -->
+      <section class="content-card">
+        <h2>Related Darts Rules & Equipment Guides</h2>
+        <div class="links-grid">
+          <a href="/darts/rules/" class="link-card">
+            <strong>Official 501 Darts Rules</strong>
+            <span>Master match gameplay, double-out requirements, scoring, and set play.</span>
+          </a>
+          <a href="/players/darts-equipment-specs/" class="link-card">
+            <strong>Professional Equipment Specs</strong>
+            <span>Explore tungsten barrel weights, flight shapes, and points used by elite players.</span>
+          </a>
+          <a href="/darts/what-is-a-180-in-darts/" class="link-card">
+            <strong>What Is a 180 in Darts?</strong>
+            <span>Why three Treble 20s form the maximum score and how it beats three bullseyes.</span>
+          </a>
+          <a href="/tools/average-calculator/" class="link-card">
+            <strong>Darts Average Calculator</strong>
+            <span>Calculate 3-dart averages and scoring metrics with our interactive tool.</span>
+          </a>
+          <a href="/darts/bust-rule-in-darts/" class="link-card">
+            <strong>The Bust Rule Explained</strong>
+            <span>Learn what happens when you exceed a score, leave 1, or miss a double.</span>
+          </a>
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>501 Darts Checkout Chart</strong>
+            <span>Complete 2-dart and 3-dart finishing combinations from 170 down to 41.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Regulation Quick Specs</h3>
+        <ul class="fact-list">
+          <li><strong>Bull Height:</strong> 5ft 8in (1.73m)</li>
+          <li><strong>Oche Distance:</strong> 7ft 9.25in (2.37m)</li>
+          <li><strong>Diagonal:</strong> 9ft 7.5in (2.93m)</li>
+          <li><strong>Board Thickness:</strong> ~1.5in (38mm)</li>
+          <li><strong>Board Diameter:</strong> 17.75in (450mm)</li>
+          <li><strong>Raised Oche:</strong> 1.5in high (38mm)</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Official Rules Standard</h3>
+        <p class="final-highlight">
+          Complies with Darts Regulation Authority (DRA) Section 5 and World Darts Federation (WDF) global standards.
+        </p>
+        <a href="/darts/rules/" class="btn btn-secondary full-width">Read Full Rules Guide</a>
+      </div>
+
+      <AdSlot position="sidebar" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-brand-primary, #0c1a2c) 0%, #162a45 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0.5rem 0 1rem;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 800px;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+  }
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .article-layout {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .content-card ul, .content-card ol {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+  }
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 600px) {
+    .specs-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .spec-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .spec-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .spec-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+  .spec-val-primary {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-brand-primary, #0c1a2c);
+    line-height: 1.2;
+  }
+  .spec-val-secondary {
+    font-size: 0.9rem;
+    color: #0284c7;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .spec-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0 !important;
+    line-height: 1.4;
+  }
+  .callout-box {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+  }
+  .callout-title {
+    font-weight: 700;
+    color: #991b1b;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+  }
+  .callout-box p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #7f1d1d;
+  }
+  .formula-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin: 1.25rem 0;
+    color: #166534;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .setup-steps {
+    padding-left: 1.5rem;
+  }
+  .setup-steps li {
+    margin-bottom: 0.75rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 700;
+  }
+  .data-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  .mistakes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .mistake-item {
+    display: flex;
+    gap: 1.25rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .mistake-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dc2626;
+    color: #fff;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .mistake-body h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .mistake-body p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.95rem;
+  }
+  .faq-list {
+    margin-top: 1rem;
+  }
+  .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #475569;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .sidebar-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .fact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .fact-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+    color: #334155;
+  }
+  .fact-list li:last-child {
+    border-bottom: none;
+  }
+  .fact-list strong {
+    color: #0f172a;
+  }
+  .final-highlight {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .full-width {
+    width: 100%;
+    text-align: center;
+  }
+</style>

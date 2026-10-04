@@ -5,6 +5,9 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import VerificationBadge from '../../components/VerificationBadge.astro';
 import oomData from '../../data/order-of-merit.json';
+import players from '../../data/players.json';
+
+const playerSlugMap = Object.fromEntries(players.map((p) => [p.name, p.slug]));
 
 const pageTitle = "PDC World Darts Rankings 2026/27 — Official Order of Merit & Seeds";
 const pageDescription = "Official PDC Order of Merit world rankings for 2026/27. Track provisional seeds, the 2-year rolling prize money system, cut-off rules, and race for Ally Pally.";
@@ -104,7 +107,13 @@ const rankingsSchema = {
                     </span>
                   </td>
                   <td>
-                    <strong>{item.player}</strong>
+                    {playerSlugMap[item.player] ? (
+                      <a href={`/players/${playerSlugMap[item.player]}/`} class="player-rank-link">
+                        <strong>{item.player}</strong>
+                      </a>
+                    ) : (
+                      <strong>{item.player}</strong>
+                    )}
                   </td>
                   <td><span class="nation-text">{item.nationality}</span></td>
                   <td><strong class="money-text">{item.prize_money}</strong></td>
@@ -289,6 +298,15 @@ const rankingsSchema = {
     padding: 0.85rem 1rem;
     border-bottom: 1px solid #334155;
     vertical-align: middle;
+  }
+  .player-rank-link {
+    color: #38bdf8;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .player-rank-link:hover {
+    color: #f59e0b;
+    text-decoration: underline;
   }
   .top-four-row {
     background: rgba(245, 158, 11, 0.05);

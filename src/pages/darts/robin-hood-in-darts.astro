@@ -1,0 +1,786 @@
+---
+// src/pages/darts/robin-hood-in-darts.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "What Is a Robin Hood in Darts? Scoring Rules & Meaning";
+const pageDescription = "Learn what a Robin Hood in darts is, whether it scores points under official DRA rules, why it happens, and how modern flights reduce shaft robin hoods.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/darts/robin-hood-in-darts/`;
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Robin Hood in Darts Explained' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Hub Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Robin Hood in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Robin Hood in darts occurs when a thrown dart embeds its point directly into the flight, shaft slot, or stem of a dart that is already lodged in the dartboard, rather than penetrating the board's bristle surface."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a Robin Hood score any points in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Under official Darts Regulation Authority (DRA) and World Darts Federation (WDF) rules, a dart only scores if its point is touching the bristle scoring surface of the dartboard. A Robin Hood scores zero (0) points."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if a Robin Hood lands in a dart stuck in the Treble 20?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Even if the first dart is lodged firmly in the Treble 20, the second dart that impales it scores zero points because its point does not touch the board. The first dart still scores 60 points, but the visit total receives zero additional points from the impaled dart."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a Robin Hood count on electronic soft-tip boards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On soft-tip electronic dartboards, scoring is determined by whether the board's sensor matrix registers the impact. If a Robin Hood occurs without triggering an electronic segment switch, it scores zero points. Under standard soft-tip league rules, the machine's electronic sensor readout is final."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can dart players prevent Robin Hoods?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Players prevent Robin Hoods by using molded all-in-one flight and shaft systems (such as Target K-Flex or Condor Zero Stress) that deflect incoming points, flight punch tools with slot lock rings to clamp shaft prongs, or metal flight protectors fitted onto traditional folded flights."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <header class="page-header">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      <h1>What Is a Robin Hood in Darts? Rules, Scoring & Causes Explained</h1>
+      <p class="lead-text">
+        Few spectacles at the oche generate louder spectator cheers and deeper player frustration than a Robin Hood. Learn the official DRA scoring rules, why it scores zero points, the physics of shaft deflections, and how modern equipment eliminates stem splits.
+      </p>
+      <div class="meta-row">
+        <VerificationBadge />
+        <span class="meta-item">Updated: Official DRA & WDF Rulebook Guidance</span>
+        <span class="meta-item">Read Time: 6 mins</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-layout">
+    <main class="main-content">
+      <!-- Section: Definition & Meaning -->
+      <section class="content-card">
+        <h2>What Is a Robin Hood in Darts? (Definition & Origin)</h2>
+        <p>
+          In the sport of darts, a <strong>Robin Hood</strong> refers to an uncommon occurrence where a thrown dart's steel point pierces or wedges directly into the flight, shaft prongs, or stem of another dart already sticking in the dartboard, suspending the incoming dart in mid-air without touching the sisal bristle.
+        </p>
+
+        <div class="callout-box">
+          <div class="callout-title">At a Glance: The Robin Hood Summary</div>
+          <p>
+            <strong>What happens:</strong> One dart embeds itself into the back of another dart.<br />
+            <strong>Official score awarded:</strong> <strong>0 points</strong> (no score for the trailing dart).<br />
+            <strong>Primary cause:</strong> Pinpoint throwing consistency and tight mechanical grouping.<br />
+            <strong>Consequences:</strong> Damaged stems or flights, zero points, and disrupted throwing rhythm.
+          </p>
+        </div>
+
+        <h3>The Archery Legend Connection</h3>
+        <p>
+          The term draws its heritage directly from English folklore and competitive archery. In legendary lore, the heroic archer Robin Hood famously split his rival's arrow cleanly down the center of the shaft during an archery tournament at Nottingham Castle. In modern target archery, splitting an opponent's or one's own arrow nock is colloquially known as a "Robin Hood."
+        </p>
+        <p>
+          Because steel-tip darts are aerodynamically stabilized mini-missiles thrown at a tight bullseye-pattern target, dart players adopted the terminology to describe any instance where one dart's point strikes and nests into the rear assembly of an existing dart.
+        </p>
+
+        <h3>How It Physically Happens on the Board</h3>
+        <p>
+          A Robin Hood typically occurs when a player achieves exceptional grouping. When throwing multiple darts towards a high-value bed such as the <a href="/darts/what-is-a-180-in-darts/">Treble 20</a>, the first dart enters the board at a steady angle—often between 5 and 20 degrees above horizontal.
+        </p>
+        <p>
+          If the second or third dart follows an identical release path, trajectory, and entry velocity, its sharpened point can strike the center cross-slot of a traditional nylon or polycarbonate shaft. Rather than deflecting off the surface, the hardened steel point forces its way between the prongs or punches directly through the laminated plastic flight, locking the trailing dart firmly into the rear of the leading barrel.
+        </p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: Official Rules & Scoring -->
+      <section class="content-card">
+        <h2>Does a Robin Hood Score Any Points? (Official DRA Rules)</h2>
+        <p>
+          Many casual pub players mistakenly believe that a Robin Hood earns the same score as the dart it impales, or that it deserves bonus points for extraordinary precision. Under professional tournament regulations, the exact opposite is true.
+        </p>
+
+        <div class="rule-highlight">
+          <strong>The Universal Rule:</strong> A Robin Hood scores <strong>ZERO (0) points</strong>. The trailing dart receives no score whatsoever, regardless of where the first dart is landed.
+        </div>
+
+        <h3>DRA Rule 5.2.2: The Bristle Contact Rule</h3>
+        <p>
+          Under the official rules of the <strong>Darts Regulation Authority (DRA)</strong>—which govern all PDC events including the World Darts Championship—and the <strong>World Darts Federation (WDF)</strong>, a dart only scores if its point remains in contact with the scoring surface until the visit is retrieved:
+        </p>
+        <blockquote class="rules-quote">
+          "A dart shall only score points if its point remains in or touches all or any part of the scoring surface of the dartboard until retrieved by the thrower after the completion of the throw."
+          <footer>— Darts Regulation Authority (DRA) Official Rulebook, Section 5 (Rules of Play)</footer>
+        </blockquote>
+        <p>
+          Because the point of a Robin Hood dart is resting entirely within the plastic shaft, aluminum slot, or flight material of the preceding dart, it never makes physical contact with the sisal bristle. As a result, the tournament referee or marker must record <strong>0 points</strong> for that dart.
+        </p>
+
+        <h3>What If It Sticks in the Back of a Treble 20?</h3>
+        <p>
+          Consider a scenario where a player throws their first dart cleanly into the Treble 20 (worth 60 points). They throw their second dart with matching accuracy, but it lodges directly into the shaft of the first dart.
+        </p>
+        <ul>
+          <li><strong>Dart 1 (in Treble 20):</strong> Scores <strong>60 points</strong> (point remains firmly lodged in the bristle).</li>
+          <li><strong>Dart 2 (Robin Hood in Dart 1):</strong> Scores <strong>0 points</strong> (point does not touch the board surface).</li>
+          <li><strong>Dart 3 (thrown into Single 20):</strong> Scores <strong>20 points</strong>.</li>
+          <li><strong>Total Visit Score:</strong> 80 points instead of the 140 points the player aimed for.</li>
+        </ul>
+        <p>
+          Similarly, if a player is attempting a <a href="/darts/shanghai-finish-in-darts/">Shanghai checkout</a> on 120 and their final dart for Double 20 impales the flight of their first dart, the leg does not conclude. Because the dart scores 0 points and never touches the double ring, the player cannot win the leg on that turn.
+        </p>
+
+        <h3>Steel-Tip vs Soft-Tip (Electronic) Board Differences</h3>
+        <p>
+          The scoring consequences of a Robin Hood can differ between traditional steel-tip bristle boards and modern electronic soft-tip boards:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Attribute</th>
+                <th>Steel-Tip Darts (DRA / WDF)</th>
+                <th>Electronic Soft-Tip Darts (FIDODARTS / DARTSLIVE)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Board Surface</strong></td>
+                <td>Self-healing sisal bristle with metal spider wire</td>
+                <td>Molded plastic matrix with thousands of sensor holes</td>
+              </tr>
+              <tr>
+                <td><strong>Scoring Mechanism</strong></td>
+                <td>Visual referee inspection; point must touch bristle</td>
+                <td>Microswitch sensor activated behind plastic matrix segment</td>
+              </tr>
+              <tr>
+                <td><strong>Robin Hood Score</strong></td>
+                <td><strong>Always 0 Points</strong> (point does not touch sisal)</td>
+                <td><strong>0 Points</strong> unless the physical impact triggers sensor switch</td>
+              </tr>
+              <tr>
+                <td><strong>Equipment Damage</strong></td>
+                <td>High risk of split stems and punctured flights</td>
+                <td>Lower frequency due to flexible plastic tip flexing or falling</td>
+              </tr>
+              <tr>
+                <td><strong>Official Decision</strong></td>
+                <td>Point touching board is absolute requirement</td>
+                <td>Board electronic readout is final under most tournament codes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section: Why It Happens -->
+      <section class="content-card">
+        <h2>Why Do Robin Hoods Happen? Mechanical & Technical Causes</h2>
+        <p>
+          Non-dart players often assume a Robin Hood is a freak accident or a lucky stunt. In reality, it is a byproduct of sound throwing biomechanics and uniform equipment setup.
+        </p>
+
+        <h3>Tight Grouping & Consistent Trajectory</h3>
+        <p>
+          Elite dart players strive for repeatable muscle memory. When a thrower releases each dart from the exact same standing position along the oche, with identical wrist snap, follow-through, and release timing, their darts travel along almost identical parabolic flight paths.
+        </p>
+        <p>
+          When darts cluster within an area no larger than a two-pence coin, incoming darts naturally collide with darts already in the board. Most collisions result in deflections into adjacent segments, but a fraction of direct trajectory alignments lead to a point entering the shaft aperture.
+        </p>
+
+        <h3>Angle of Entry & Board Stems</h3>
+        <p>
+          The angle at which a dart sits in the board strongly influences Robin Hood probability:
+        </p>
+        <ul>
+          <li><strong>Tail-Up Angle:</strong> Players like Phil Taylor threw darts that rested tail-up, leaving the rear shaft exposed as an upright target for following throws.</li>
+          <li><strong>Flat or Tail-Down Angle:</strong> Darts resting horizontally or slightly drooped present a smaller frontal cross-section of the shaft, reducing direct frontal impact.</li>
+        </ul>
+
+        <h3>Traditional Four-Prong Nylon Shafts</h3>
+        <p>
+          The construction of traditional darts stems plays a significant role in creating Robin Hoods. Standard nylon and polycarbonate shafts have four slotted prongs that grip the four wings of a folded polyester flight.
+        </p>
+        <p>
+          This cross-shaped opening acts as a funnel. When an incoming steel dart point strikes the exact center of the flight cross, the four prongs pry open, guiding the sharp point directly into the center channel of the shaft where it wedges tight.
+        </p>
+      </section>
+
+      <!-- Section: Equipment Impact & Player Frustration -->
+      <section class="content-card">
+        <h2>The Impact on Equipment & Player Costs</h2>
+        <p>
+          While television commentators and arena crowds usually react with laughter and cheers when a Robin Hood occurs, competitive players regard it with dread.
+        </p>
+
+        <h3>Damaged Shafts & Split Stems</h3>
+        <p>
+          The force of a 22-gram steel dart traveling at approximately 15 miles per hour concentrated into a 2mm hardened point delivers substantial kinetic energy upon impact. When that point wedges into a nylon shaft, it almost always snaps one of the four prongs or splits the stem down its center seam. Once a shaft is split, it loses its tension and cannot hold a flight securely, requiring immediate replacement.
+        </p>
+
+        <h3>Torn Flights & Broken Aluminium Slots</h3>
+        <p>
+          Even if the shaft survives, the flight rarely emerges unscathed. Flights struck by incoming points suffer torn laminates, puncture holes, or deformed wings that compromise aerodynamic balance. On aluminium stems, incoming steel points can bend the metal slots permanently inward, making it impossible to insert a replacement flight without a reshaping tool.
+        </p>
+
+        <h3>Crowd Reaction vs Professional Player Reality</h3>
+        <p>
+          The contrast between spectator excitement and competitor disappointment highlights the unique nature of the phenomenon:
+        </p>
+        <div class="comparison-grid">
+          <div class="comparison-card cheer">
+            <div class="comparison-title">Spectator Perspective</div>
+            <ul>
+              <li>Viewed as a rare, entertaining party trick.</li>
+              <li>Often prompts spectators to pull out smartphones for photos.</li>
+              <li>Treated as evidence of "impossible pinpoint accuracy."</li>
+            </ul>
+          </div>
+          <div class="comparison-card groans">
+            <div class="comparison-title">Player Reality</div>
+            <ul>
+              <li>Scores exactly 0 points, potentially costing a crucial leg.</li>
+              <li>Destroys a favorite stem or finely tuned flight setup.</li>
+              <li>Breaks mental focus and delays the game while replacing gear.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: How to Prevent Robin Hoods -->
+      <section class="content-card">
+        <h2>How to Prevent Robin Hoods: Modern Equipment Solutions</h2>
+        <p>
+          Because Robin Hoods destroy equipment and waste scoring darts, modern manufacturers have developed specialized accessories and molded systems designed to deflect incoming points safely into the board.
+        </p>
+
+        <div class="solutions-list">
+          <div class="solution-item">
+            <span class="solution-num">1</span>
+            <div class="solution-body">
+              <h3>Flight Protectors (Crowns)</h3>
+              <p>
+                Small metal or hard plastic caps fitted onto the trailing edge of traditional folded flights. The curved metallic crown shields the exposed plastic edges and causes incoming darts to bounce off the rear rather than penetrating the flight or stem slots.
+              </p>
+            </div>
+          </div>
+
+          <div class="solution-item">
+            <span class="solution-num">2</span>
+            <div class="solution-body">
+              <h3>Molded All-in-One Flight and Shaft Systems</h3>
+              <p>
+                In recent years, integrated systems such as <strong>Target K-Flex</strong>, <strong>Condor Zero Stress</strong>, and <strong>Winmau Fusion</strong> have surged in popularity across professional tours. Because the flight and shaft are molded as a single seamless unit with rounded contours and no prong slots, there is no open channel for a point to enter. Darts glance off the smooth material and slide directly into the bristle board.
+              </p>
+            </div>
+          </div>
+
+          <div class="solution-item">
+            <span class="solution-num">3</span>
+            <div class="solution-body">
+              <h3>Flight Punching with Slot Lock Rings</h3>
+              <p>
+                A flight punch cuts a precise rectangular hole into a standard flight. A small spring ring or machined metal collar is positioned inside the punched hole before the flight is pushed onto the stem. The ring compresses the nylon prongs tightly around the flight, preventing the stem from prying open when struck by an incoming point.
+              </p>
+            </div>
+          </div>
+
+          <div class="solution-item">
+            <span class="solution-num">4</span>
+            <div class="solution-body">
+              <h3>Specialty Stem Systems (Cosmo Fit Flight & L-Style)</h3>
+              <p>
+                Japanese engineering innovations like Cosmo Fit Flight (push-in stems without prongs) and L-Style with Champagne Rings eliminate open shaft cross-slots entirely. L-Style Champagne rings sit over the shaft tip to act as a protective bullet cap, deflecting incoming steel points with near 100% reliability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: FAQ -->
+      <section class="content-card">
+        <h2>Frequently Asked Questions About Robin Hoods in Darts</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>What is a Robin Hood in darts?</h3>
+            <p>
+              A Robin Hood in darts occurs when a thrown dart embeds its point directly into the flight, shaft slot, or stem of a dart that is already lodged in the dartboard, rather than penetrating the board's bristle surface.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Does a Robin Hood score any points in darts?</h3>
+            <p>
+              No. Under official Darts Regulation Authority (DRA) and World Darts Federation (WDF) rules, a dart only scores if its point is touching the bristle scoring surface of the dartboard. A Robin Hood scores zero (0) points.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What happens if a Robin Hood lands in a dart stuck in the Treble 20?</h3>
+            <p>
+              Even if the first dart is lodged firmly in the Treble 20, the second dart that impales it scores zero points because its point does not touch the board. The first dart still scores 60 points, but the visit total receives zero additional points from the impaled dart.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Does a Robin Hood count on electronic soft-tip boards?</h3>
+            <p>
+              On soft-tip electronic dartboards, scoring is determined by whether the board's sensor matrix registers the impact. If a Robin Hood occurs without triggering an electronic segment switch, it scores zero points. Under standard soft-tip league rules, the machine's electronic sensor readout is final.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How can dart players prevent Robin Hoods?</h3>
+            <p>
+              Players prevent Robin Hoods by using molded all-in-one flight and shaft systems (such as Target K-Flex or Condor Zero Stress) that deflect incoming points, flight punch tools with slot lock rings to clamp shaft prongs, or metal flight protectors fitted onto traditional folded flights.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Related Guides -->
+      <section class="content-card">
+        <h2>Related Darts Rules & Knowledge Guides</h2>
+        <p>
+          Deepen your understanding of professional darts rules, tactical scoring, and historical achievements with our core guides:
+        </p>
+        <div class="links-grid">
+          <a href="/darts/rules/" class="link-card">
+            <strong>Official Darts Rules & 501 Regulations</strong>
+            <span>Master board heights, throwline distances, straight-in play, and double-out rules.</span>
+          </a>
+          <a href="/darts/what-is-a-180-in-darts/" class="link-card">
+            <strong>What Is a 180 in Darts?</strong>
+            <span>Why three Treble 20s form the maximum score and how it beats three bullseyes.</span>
+          </a>
+          <a href="/darts/shanghai-finish-in-darts/" class="link-card">
+            <strong>Shanghai Finish Explained</strong>
+            <span>The classic 120 checkout, the 6N formula, and double-out order requirements.</span>
+          </a>
+          <a href="/darts/what-is-a-9-dart-finish/" class="link-card">
+            <strong>What Is a 9-Dart Finish?</strong>
+            <span>How players complete the perfect 501 leg in the absolute minimum number of darts.</span>
+          </a>
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>Complete 501 Checkout Chart</strong>
+            <span>Strategic 2-dart and 3-dart out paths from 170 down to double 1.</span>
+          </a>
+          <a href="/darts/board-height-and-distance/" class="link-card">
+            <strong>Dartboard Height & Distance</strong>
+            <span>Regulation setup dimensions, 9ft 7.5in diagonal check, and oche rules.</span>
+          </a>
+          <a href="/darts/bust-rule-in-darts/" class="link-card">
+            <strong>The Bust Rule in Darts</strong>
+            <span>What happens when you exceed a score, leave 1, or miss a finishing double.</span>
+          </a>
+          <a href="/tools/average-calculator/" class="link-card">
+            <strong>Darts Average Calculator</strong>
+            <span>Calculate 3-dart averages, leg totals, and checkouts with our interactive tool.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Robin Hood Quick Facts</h3>
+        <ul class="fact-list">
+          <li><strong>Points Awarded:</strong> 0 Points (DRA Rule)</li>
+          <li><strong>Condition:</strong> Point in flight/shaft, not bristle</li>
+          <li><strong>Origin:</strong> Archery (splitting arrow nock)</li>
+          <li><strong>Frequency:</strong> Higher with tight grouping</li>
+          <li><strong>Equipment Harm:</strong> Broken shafts, split flights</li>
+          <li><strong>Prevention:</strong> Molded flights, protectors, rings</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Official Rules Reference</h3>
+        <p class="final-highlight">
+          Under DRA Section 5.2.2, a dart point must touch the bristle board face to be counted by the referee.
+        </p>
+        <a href="/darts/rules/" class="btn btn-secondary full-width">Read Full Rules Guide</a>
+      </div>
+
+      <AdSlot position="sidebar" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-brand-primary, #0c1a2c) 0%, #162a45 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0.5rem 0 1rem;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 800px;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+  }
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .article-layout {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .content-card ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+  }
+  .callout-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-primary, #0c1a2c);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+  }
+  .callout-title {
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+  }
+  .callout-box p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .rule-highlight {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    margin: 1.25rem 0;
+  }
+  .rules-quote {
+    background: #f8fafc;
+    border-left: 4px solid #94a3b8;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    font-style: italic;
+    color: #334155;
+    line-height: 1.6;
+  }
+  .rules-quote footer {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 700;
+  }
+  .data-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 640px) {
+    .comparison-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .comparison-card {
+    border-radius: 6px;
+    padding: 1.25rem;
+    border: 1px solid #e2e8f0;
+  }
+  .comparison-card.cheer {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+  }
+  .comparison-card .comparison-title {
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+  }
+  .comparison-card.cheer .comparison-title {
+    color: #166534;
+  }
+  .comparison-card.groans {
+    background: #fef2f2;
+    border-color: #fecaca;
+  }
+  .comparison-card.groans .comparison-title {
+    color: #991b1b;
+  }
+  .comparison-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+  }
+  .solutions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .solution-item {
+    display: flex;
+    gap: 1.25rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .solution-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-brand-primary, #0c1a2c);
+    color: #fff;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .solution-body h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .solution-body p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.95rem;
+  }
+  .faq-list {
+    margin-top: 1rem;
+  }
+  .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #475569;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .sidebar-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .fact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .fact-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+    color: #334155;
+  }
+  .fact-list li:last-child {
+    border-bottom: none;
+  }
+  .fact-list strong {
+    color: #0f172a;
+  }
+  .final-highlight {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .full-width {
+    width: 100%;
+    text-align: center;
+  }
+</style>

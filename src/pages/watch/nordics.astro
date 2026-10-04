@@ -1,0 +1,788 @@
+---
+// src/pages/watch/nordics.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Watch PDC World Darts in the Nordics: Viaplay TV & Streaming Guide";
+const pageDescription = "Official guide to watching the PDC World Darts Championship in Sweden, Norway, Denmark, Finland, and Iceland via Viaplay streaming and linear television.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/watch/nordics/`;
+
+const breadcrumbItems = [
+  { name: 'Watch & Stream', url: '/watch/' },
+  { name: 'Nordics (Viaplay)' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Hub Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who broadcasts the PDC World Darts Championship in the Nordic countries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Viaplay Group holds the exclusive multi-year master broadcast rights to the PDC World Darts Championship across Sweden, Norway, Denmark, Finland, and Iceland, streaming all 28 sessions live on the Viaplay platform alongside coverage on selected linear V sport and TV3 channels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you watch World Darts live on linear TV in Denmark and Sweden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. In Denmark, key sessions are broadcast live on linear television via TV3 Sport and TV3 MAX. In Sweden and Norway, selected sessions are carried across linear channels including V sport 1, V sport Extra, and V sport Vinter, in addition to complete live coverage on the Viaplay app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What time do World Darts Championship sessions start in Scandinavian timezones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Central European Time (CET - Sweden, Norway, Denmark), afternoon sessions start at 13:30 CET and evening sessions start at 20:00 CET. In Finland (EET), sessions start at 14:30 EET and 21:00 EET. In Iceland (GMT), sessions start at 12:30 GMT and 19:00 GMT."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is English commentary available on Viaplay for darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Viaplay streaming interface allows subscribers to select between local-language commentary (Danish, Swedish, or Finnish depending on territory) and the official English world feed provided by Sky Sports and the PDC."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you use PDCTV to watch darts in the Nordic countries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because Viaplay holds exclusive live video broadcasting rights in the Nordic region, live video streams on PDCTV are geo-blocked in Sweden, Norway, Denmark, Finland, and Iceland. However, live audio commentary and post-match video highlights remain accessible via PDCTV."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <header class="page-header">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      <h1>Watch PDC World Darts in the Nordics: Viaplay TV & Streaming Guide</h1>
+      <p class="lead-text">
+        Complete broadcast schedule, streaming packages, linear television channels, and local kick-off times for fans watching the 2026/27 World Darts Championship across Sweden, Norway, Denmark, Finland, and Iceland via Viaplay.
+      </p>
+      <div class="meta-row">
+        <VerificationBadge />
+        <span class="meta-item">Rights Cycle: Viaplay Group Official PDC Master Agreement</span>
+        <span class="meta-item">Read Time: 6 mins</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-layout">
+    <main class="main-content">
+      <!-- Section: Overview Card -->
+      <section class="content-card">
+        <h2>Nordic Broadcast Overview: Viaplay Group Master Rights</h2>
+        <p>
+          Throughout Scandinavia and the Nordic region, professional darts enjoys an enthusiastic and rapidly growing winter following. Whether supporting Scandinavian contenders through the PDC Nordic & Baltic tour or tuning in for the dramatic Christmas holiday drama at Alexandra Palace, fans across Northern Europe access live coverage through <strong>Viaplay Group</strong>.
+        </p>
+
+        <div class="specs-grid">
+          <div class="spec-card">
+            <span class="spec-icon">📺</span>
+            <div class="spec-title">Official Rights Holder</div>
+            <div class="spec-val-primary">Viaplay Group</div>
+            <div class="spec-val-secondary">Multi-Year Exclusive Master License</div>
+            <p class="spec-desc">Complete coverage across all 5 Nordic nations.</p>
+          </div>
+
+          <div class="spec-card">
+            <span class="spec-icon">📱</span>
+            <div class="spec-title">Streaming Platform</div>
+            <div class="spec-val-primary">Viaplay App</div>
+            <div class="spec-val-secondary">Viaplay Total / Sport Tier</div>
+            <p class="spec-desc">Live on Smart TV, mobile, tablet & browser.</p>
+          </div>
+
+          <div class="spec-card">
+            <span class="spec-icon">📡</span>
+            <div class="spec-title">Linear TV Channels</div>
+            <div class="spec-val-primary">V sport & TV3</div>
+            <div class="spec-val-secondary">TV3 Sport, TV3 MAX, V sport 1</div>
+            <p class="spec-desc">Selected linear sessions in Denmark, Sweden & Norway.</p>
+          </div>
+
+          <div class="spec-card">
+            <span class="spec-icon">🎯</span>
+            <div class="spec-title">Session Coverage</div>
+            <div class="spec-val-primary">All 28 Sessions</div>
+            <div class="spec-val-secondary">From Round One to the World Final</div>
+            <p class="spec-desc">100% live ball-by-ball tournament coverage.</p>
+          </div>
+        </div>
+
+        <div class="cta-box">
+          <a 
+            href="https://viaplay.com" 
+            target="_blank" 
+            rel="noopener noreferrer nofollow" 
+            class="btn btn-primary"
+          >
+            Visit Official Viaplay Sports Portal &rarr;
+          </a>
+          <span class="cta-note">Redirects to official Nordic broadcast provider. Subscription required for live sport.</span>
+        </div>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: Country Breakdown -->
+      <section class="content-card">
+        <h2>Country-by-Country Availability & Viewing Platforms</h2>
+        <p>
+          While Viaplay provides seamless app-based streaming across all Nordic territories, distribution across traditional linear television varies by country:
+        </p>
+
+        <div class="territory-list">
+          <div class="territory-item">
+            <div class="territory-flag">🇩🇰</div>
+            <div class="territory-body">
+              <h3>Denmark (Danmark)</h3>
+              <p>
+                Darts is exceptionally popular in Denmark. Live coverage is available through the <strong>Viaplay</strong> app and broadcast heavily on linear television via <strong>TV3 Sport</strong> and <strong>TV3 MAX</strong>. Danish broadcasts frequently include localized studio analysis with resident darts commentators and former Danish tour card holders.
+              </p>
+            </div>
+          </div>
+
+          <div class="territory-item">
+            <div class="territory-flag">🇸🇪</div>
+            <div class="territory-body">
+              <h3>Sweden (Sverige)</h3>
+              <p>
+                In Sweden, every session is streamed live on <strong>Viaplay Total</strong>. Key marquee sessions and the finals weekend are typically simulcast on linear channels including <strong>V sport 1</strong>, <strong>V sport Extra</strong>, or <strong>V sport Vinter</strong>. Viewers can toggle between Swedish commentary and the native English broadcast feed.
+              </p>
+            </div>
+          </div>
+
+          <div class="territory-item">
+            <div class="territory-flag">🇳🇴</div>
+            <div class="territory-body">
+              <h3>Norway (Norge)</h3>
+              <p>
+                Norwegian fans can stream all 28 sessions via <strong>Viaplay</strong> with Norwegian and English audio options. Selected evening sessions are featured across the <strong>V sport</strong> linear tier through major domestic cable and fiber providers (such as Telenor and Telia).
+              </p>
+            </div>
+          </div>
+
+          <div class="territory-item">
+            <div class="territory-flag">🇫🇮</div>
+            <div class="territory-body">
+              <h3>Finland (Suomi)</h3>
+              <p>
+                Finnish coverage is anchored by <strong>Viaplay Total</strong>, carrying every dart thrown from Alexandra Palace. Linear distribution is carried on <strong>V sport 1 Suomi</strong> and <strong>V sport +</strong>, catering to Finland's passionate darts enthusiast community.
+              </p>
+            </div>
+          </div>
+
+          <div class="territory-item">
+            <div class="territory-flag">🇮🇸</div>
+            <div class="territory-body">
+              <h3>Iceland (Ísland)</h3>
+              <p>
+                Icelandic subscribers access live tournament feeds directly via <strong>Viaplay Ísland</strong> online and through supported smart television applications, complete with official English commentary.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: App vs Linear -->
+      <section class="content-card">
+        <h2>App Streaming vs Linear Television Channels</h2>
+        <p>
+          Depending on your home entertainment setup, Nordic viewers have two primary viewing paths:
+        </p>
+
+        <div class="comparison-grid">
+          <div class="comparison-card app-card">
+            <div class="comparison-title">Viaplay App Streaming (Recommended)</div>
+            <ul>
+              <li><strong>Complete Coverage:</strong> Every session, court feed, and match from first dart to trophy lift.</li>
+              <li><strong>Multi-Device:</strong> Apple TV, Chromecast, Android TV, Samsung/LG smart TVs, iOS/Android apps, and web browsers.</li>
+              <li><strong>Audio Toggle:</strong> Effortlessly switch between Nordic language commentary and English commentary.</li>
+              <li><strong>Pause & Rewind:</strong> Live time-shifting to replay 9-darters or dramatic checkout finishes.</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card tv-card">
+            <div class="comparison-title">Linear Cable & Satellite TV</div>
+            <ul>
+              <li><strong>Plug-and-Play:</strong> Available via existing set-top box subscriptions without consuming broadband bandwidth.</li>
+              <li><strong>Curated Sessions:</strong> Primary focus on prime-time evening sessions and finals weekend.</li>
+              <li><strong>Broadcaster Channels:</strong> TV3 Sport / TV3 MAX (Denmark), V sport 1 / V sport Extra (Sweden, Norway, Finland).</li>
+              <li><strong>Broadcast Guide:</strong> Check local electronic program guides (EPG) daily for channel assignments.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Timezone & Sessions -->
+      <section class="content-card">
+        <h2>Timezone Breakdown & Session Air Times Across Scandinavia</h2>
+        <p>
+          Because London operates on Greenwich Mean Time (GMT / UTC+0) during December and January, live sessions air at convenient afternoon and prime-time evening hours across Northern Europe:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Session</th>
+                <th>London Time (GMT)</th>
+                <th>CET (Sweden, Norway, Denmark)</th>
+                <th>EET (Finland)</th>
+                <th>GMT (Iceland)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Afternoon Session</strong></td>
+                <td>12:30 GMT</td>
+                <td><strong>13:30 CET</strong></td>
+                <td><strong>14:30 EET</strong></td>
+                <td><strong>12:30 GMT</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Evening Session</strong></td>
+                <td>19:00 GMT</td>
+                <td><strong>20:00 CET</strong></td>
+                <td><strong>21:00 EET</strong></td>
+                <td><strong>19:00 GMT</strong></td>
+              </tr>
+              <tr>
+                <td><strong>World Final (3 January)</strong></td>
+                <td>19:30 GMT</td>
+                <td><strong>20:30 CET</strong></td>
+                <td><strong>21:30 EET</strong></td>
+                <td><strong>19:30 GMT</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">
+          Consult our full <a href="/schedule/">PDC World Darts Championship Match Schedule</a> for daily match allocations and round-by-round fixture dates.
+        </p>
+      </section>
+
+      <!-- Section: Alternatives & Warnings -->
+      <section class="content-card">
+        <h2>Legitimate Alternatives & Warning Against Unauthorized Streams</h2>
+        <p>
+          Understanding access rights ensures you avoid disrupted coverage:
+        </p>
+
+        <h3>PDCTV-HD International Subscriptions in the Nordics</h3>
+        <p>
+          Under PDC territorial exclusivity agreements, live video broadcasts on PDCTV-HD are <strong>geo-restricted</strong> within Sweden, Norway, Denmark, Finland, and Iceland to protect Viaplay's exclusive rights. However, Nordic subscribers holding a PDCTV account can legally access <strong>live audio commentary</strong>, live on-screen scoreboards, and delayed on-demand highlight packages.
+        </p>
+
+        <div class="callout warning-box">
+          <div class="callout-title">⚠️ Notice: Avoid Unauthorized Streaming Websites</div>
+          <p>
+            Unlicensed free streaming links circulating on social media and forum boards present severe security risks. These websites routinely bombard visitors with malicious popups, credential phishers, and bandwidth-throttling ads, and frequently terminate feeds midway through high-stakes deciding sets. Always access live darts through legitimate broadcast partners. Review our comprehensive breakdown on <a href="/watch/free-streams/">legal free trials vs illegal darts streams</a> for full consumer safety advice.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section: FAQ -->
+      <section class="content-card">
+        <h2>Frequently Asked Questions About Watching Darts in the Nordics</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Who broadcasts the PDC World Darts Championship in the Nordic countries?</h3>
+            <p>
+              Viaplay Group holds the exclusive multi-year master broadcast rights to the PDC World Darts Championship across Sweden, Norway, Denmark, Finland, and Iceland, streaming all 28 sessions live on the Viaplay platform alongside coverage on selected linear V sport and TV3 channels.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can you watch World Darts live on linear TV in Denmark and Sweden?</h3>
+            <p>
+              Yes. In Denmark, key sessions are broadcast live on linear television via TV3 Sport and TV3 MAX. In Sweden and Norway, selected sessions are carried across linear channels including V sport 1, V sport Extra, and V sport Vinter, in addition to complete live coverage on the Viaplay app.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What time do World Darts Championship sessions start in Scandinavian timezones?</h3>
+            <p>
+              In Central European Time (CET - Sweden, Norway, Denmark), afternoon sessions start at 13:30 CET and evening sessions start at 20:00 CET. In Finland (EET), sessions start at 14:30 EET and 21:00 EET. In Iceland (GMT), sessions start at 12:30 GMT and 19:00 GMT.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Is English commentary available on Viaplay for darts?</h3>
+            <p>
+              Yes. The Viaplay streaming interface allows subscribers to select between local-language commentary (Danish, Swedish, or Finnish depending on territory) and the official English world feed provided by Sky Sports and the PDC.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can you use PDCTV to watch darts in the Nordic countries?</h3>
+            <p>
+              Because Viaplay holds exclusive live video broadcasting rights in the Nordic region, live video streams on PDCTV are geo-blocked in Sweden, Norway, Denmark, Finland, and Iceland. However, live audio commentary and post-match video highlights remain accessible via PDCTV.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Related Guides -->
+      <section class="content-card">
+        <h2>Related Tournament & Broadcast Resources</h2>
+        <div class="links-grid">
+          <a href="/watch/" class="link-card">
+            <strong>Global Broadcast Hub</strong>
+            <span>Complete territory-by-territory guide to TV and streaming networks worldwide.</span>
+          </a>
+          <a href="/watch/germany/" class="link-card">
+            <strong>Watch Darts in Germany (DACH)</strong>
+            <span>DAZN live streaming and SPORT1 free-to-air broadcast schedules.</span>
+          </a>
+          <a href="/watch/uk/" class="link-card">
+            <strong>Watch Darts in the UK</strong>
+            <span>Sky Sports Darts and NOW pass options for British viewers.</span>
+          </a>
+          <a href="/watch/free-streams/" class="link-card">
+            <strong>Free Streams & Legal Trials Guide</strong>
+            <span>Understanding free trials, free-to-air rights, and consumer protection.</span>
+          </a>
+          <a href="/schedule/" class="link-card">
+            <strong>Complete Tournament Schedule</strong>
+            <span>All 28 sessions, daily fixtures, session start times, and round dates.</span>
+          </a>
+          <a href="/results/" class="link-card">
+            <strong>Live Results & Match Scores</strong>
+            <span>Track match scores, tournament averages, and set progression from Ally Pally.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>Nordic Broadcast Summary</h3>
+        <ul class="fact-list">
+          <li><strong>Master Rights:</strong> Viaplay Group</li>
+          <li><strong>Territories:</strong> SE, NO, DK, FI, IS</li>
+          <li><strong>Streaming App:</strong> Viaplay Total</li>
+          <li><strong>Linear TV:</strong> TV3 Sport / V sport</li>
+          <li><strong>Afternoon CET:</strong> 13:30 Start</li>
+          <li><strong>Evening CET:</strong> 20:00 Start</li>
+          <li><strong>Audio Feeds:</strong> Nordic & English</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Official Streaming Access</h3>
+        <p class="final-highlight">
+          Subscribe to Viaplay to stream all 28 sessions of the PDC World Darts Championship live.
+        </p>
+        <a href="https://viaplay.com" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-secondary full-width">Visit Viaplay.com &rarr;</a>
+      </div>
+
+      <AdSlot position="sidebar" />
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-brand-primary, #0c1a2c) 0%, #162a45 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0.5rem 0 1rem;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 800px;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+  }
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (min-width: 992px) {
+    .article-layout {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .content-card ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+  }
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 600px) {
+    .specs-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .spec-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .spec-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .spec-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+  .spec-val-primary {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-brand-primary, #0c1a2c);
+    line-height: 1.2;
+  }
+  .spec-val-secondary {
+    font-size: 0.9rem;
+    color: #0284c7;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .spec-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0 !important;
+    line-height: 1.4;
+  }
+  .cta-box {
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+  }
+  .cta-note {
+    display: block;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #16a34a;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .btn-primary:hover {
+    background: #15803d;
+  }
+  .territory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .territory-item {
+    display: flex;
+    gap: 1.25rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .territory-flag {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .territory-body h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .territory-body p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.95rem;
+  }
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 640px) {
+    .comparison-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .comparison-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .comparison-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+  }
+  .comparison-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 700;
+  }
+  .data-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  .table-note {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 0.75rem;
+  }
+  .callout-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+  }
+  .warning-box {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+  }
+  .warning-box .callout-title {
+    color: #b45309;
+  }
+  .warning-box p {
+    margin: 0;
+    color: #92400e;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .faq-list {
+    margin-top: 1rem;
+  }
+  .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #475569;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .sidebar-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .fact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .fact-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+    color: #334155;
+  }
+  .fact-list li:last-child {
+    border-bottom: none;
+  }
+  .fact-list strong {
+    color: #0f172a;
+  }
+  .final-highlight {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .full-width {
+    width: 100%;
+    text-align: center;
+  }
+</style>

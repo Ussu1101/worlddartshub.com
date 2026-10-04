@@ -1,0 +1,620 @@
+---
+// src/pages/darts/shanghai-finish-in-darts.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "What Is a Shanghai Finish in Darts? The 120 Route & Rules";
+const pageDescription = "What is a Shanghai finish in darts? Learn the formula (single, treble, and double of the same number), the classic 120 checkout, order rules, and game history.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/darts/shanghai-finish-in-darts/`;
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Shanghai Finish Explained' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Hub Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Shanghai finish in darts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Shanghai finish is a checkout achieved by hitting the Single, Treble, and Double of the exact same number in a single three-dart visit, with the double hit last to win the leg."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most famous Shanghai finish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The classic Shanghai finish is on 120, achieved by hitting Single 20 (20), Treble 20 (60), and Double 20 (40) to total exactly 120 points."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the order of darts matter in a Shanghai finish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Under standard 501 double-out rules, the final dart must be the double to legally conclude the leg. A player can hit Single then Treble (or Treble then Single), but the Double must be landed last."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What other numbers can produce a Shanghai finish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any target number N multiplied by 6 produces a Shanghai finish (N + 3N + 2N = 6N). Common examples include 120 (Shanghai 20), 114 (Shanghai 19), 108 (Shanghai 18), 102 (Shanghai 17), and 96 (Shanghai 16)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a Shanghai finish related to the game called Shanghai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The finish takes its name from the traditional pub game 'Shanghai', where hitting a single, treble, and double on the active target number results in an instant knockout victory."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={[articleSchema, faqSchema]}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">CHECKOUT TRADITIONS</span>
+        <span class="badge">TACTICAL SHOT</span>
+      </div>
+      <h1>What Is a Shanghai Finish in Darts? The 120 Route & Rules Explained</h1>
+      <p class="lead-text">
+        In the vast lexicon of darts checkouts, few shots carry the elegance and historical prestige of the "Shanghai." Learn how this three-dart sequence works, the arithmetic behind it, and why professional commentators celebrate it.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="DRA Official Checkout Rules & Darts Terminology" />
+
+      <!-- Quick Answer Summary Box -->
+      <section class="content-card summary-box">
+        <h2>At A Glance: What Is a Shanghai Finish?</h2>
+        <p>
+          In 501 steel-tip darts, a <strong>Shanghai finish</strong> is a checkout achieved by landing three darts into the <strong>Single</strong>, <strong>Treble</strong>, and <strong>Double</strong> of the exact same number segment in a single turn.
+        </p>
+        <div class="shanghai-formula">
+          <code>Single (1x) + Treble (3x) + Double (2x) = 6x the Segment Value</code>
+        </div>
+        <p>
+          By far the most famous and frequent Shanghai in professional darts is the <strong>Shanghai 20</strong> (a 120 checkout), where a player lands <strong>Single 20</strong>, <strong>Treble 20</strong>, and <strong>Double 20 (Tops)</strong>.
+        </p>
+      </section>
+
+      <!-- Section: The Classic 120 Breakdown -->
+      <section class="content-card">
+        <h2>The Classic 120 Shanghai Breakdown</h2>
+        <p>
+          A checkout of 120 is one of the most common three-dart finishes in professional competition. When a player elects to take the Shanghai route on 20, their three darts must land as follows:
+        </p>
+
+        <div class="shanghai-grid">
+          <div class="target-card">
+            <span class="dart-label">Dart 1 or 2</span>
+            <h3>Single 20</h3>
+            <span class="dart-score">20 Points</span>
+            <p>Hits the large single bed of the 20 segment.</p>
+          </div>
+
+          <div class="target-card">
+            <span class="dart-label">Dart 1 or 2</span>
+            <h3>Treble 20</h3>
+            <span class="dart-score">60 Points</span>
+            <p>Hits the red treble ring inside the 20 bed.</p>
+          </div>
+
+          <div class="target-card target-finish">
+            <span class="dart-label">Dart 3 (Must Be Last)</span>
+            <h3>Double 20 (Tops)</h3>
+            <span class="dart-score">40 Points</span>
+            <p>Pins the outer double ring to legally conclude the leg.</p>
+          </div>
+        </div>
+
+        <div class="total-summary">
+          <code>20 + 60 + 40 = Exactly 120 Game Shot</code>
+        </div>
+
+        <h3>Why the Double Must Be Landed Last</h3>
+        <p>
+          Under official <a href="/darts/rules/">DRA tournament rules</a>, a leg of 501 can only be won when a dart lands in a legal double to reduce the remaining total to zero.
+        </p>
+        <p>
+          If a player on 120 hits Double 20 first (leaving 80), and then hits Treble 20 (leaving 20), and then hits Single 20, they have reduced their score to 0—<strong>but on a single, not a double!</strong> That visit is ruled a <em>Bust</em>, and the player forfeits their turn. Therefore, a Shanghai finish in 501 requires the double to be struck as the final dart of the visit.
+        </p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <!-- Section: The Mathematics of Shanghai Finishes -->
+      <section class="content-card">
+        <h2>The Mathematical Property: The 6N Formula</h2>
+        <p>
+          Because every Shanghai consists of a Single ($1\times$), a Treble ($3\times$), and a Double ($2\times$) of the same number $N$, the total score of any Shanghai is always:
+        </p>
+        <p style="text-align: center; font-size: 1.25rem; font-weight: 700; color: #0f172a; margin: 1rem 0;">
+          $1N + 3N + 2N = 6N$
+        </p>
+        <p>
+          This means every Shanghai finish is mathematically a multiple of 6. Below are all the valid Shanghai checkouts possible on a standard dartboard:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Target Number</th>
+                <th>Total Score (6 &times; N)</th>
+                <th>Combination Sequence</th>
+                <th>Tactical Usage in 501</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>20</strong></td>
+                <td><strong>120</strong></td>
+                <td>S20 (20) + T20 (60) + D20 (40)</td>
+                <td>The premier Shanghai finish in darts. Very common on TV.</td>
+              </tr>
+              <tr>
+                <td><strong>19</strong></td>
+                <td><strong>114</strong></td>
+                <td>S19 (19) + T19 (57) + D19 (38)</td>
+                <td>Valid route for 114; alternative to T20 &rarr; S14 &rarr; D20.</td>
+              </tr>
+              <tr>
+                <td><strong>18</strong></td>
+                <td><strong>108</strong></td>
+                <td>S18 (18) + T18 (54) + D18 (36)</td>
+                <td>Natural Shanghai if player misses into Single 18 on first dart.</td>
+              </tr>
+              <tr>
+                <td><strong>17</strong></td>
+                <td><strong>102</strong></td>
+                <td>S17 (17) + T17 (51) + D17 (34)</td>
+                <td>Valid Shanghai; most pros prefer T20 &rarr; S10 &rarr; D16 for 102.</td>
+              </tr>
+              <tr>
+                <td><strong>16</strong></td>
+                <td><strong>96</strong></td>
+                <td>S16 (16) + T16 (48) + D16 (32)</td>
+                <td>Popular backup route when 96 is required.</td>
+              </tr>
+              <tr>
+                <td><strong>15</strong></td>
+                <td><strong>90</strong></td>
+                <td>S15 (15) + T15 (45) + D15 (30)</td>
+                <td>Valid route; T20 &rarr; D15 is preferred in 2 darts.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section: Why Do Players Choose or Avoid a Shanghai? -->
+      <section class="content-card">
+        <h2>Tactical Psychology: Why Do Pros Shoot Shanghai?</h2>
+        <p>
+          In modern televised darts, a player facing 120 has several tactical considerations:
+        </p>
+
+        <div class="tactics-list">
+          <div class="tactic-item">
+            <h3>1. Target Continuity (No Angle Shifting)</h3>
+            <p>
+              When shooting a Shanghai on 20, all three darts are aimed along the exact same vertical slice of the board. The player does not have to shift their stance, head angle, or release point to another number across the board. They stay locked into the 20 wire from top to bottom.
+            </p>
+          </div>
+
+          <div class="tactic-item">
+            <h3>2. The "Cover Shot" Factor</h3>
+            <p>
+              If a player with 120 left aims at Treble 20 on their first dart and slips into the Single 20, they have not ruined their checkout. They are still sitting on 100 with two darts in hand—meaning a Treble 20 followed by Double 20 cleans up the leg seamlessly.
+            </p>
+          </div>
+
+          <div class="tactic-item">
+            <h3>3. Comparison to Alternative 120 Routes</h3>
+            <p>
+              Some players on 120 prefer <strong>T20 &rarr; S20 &rarr; D20</strong>. Others might explore unorthodox combinations, but the Shanghai route remains the gold standard because it finishes on <strong>Double 20 ("Tops")</strong>, the most practiced double in the sport.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Shanghai Finish vs The Game of Shanghai -->
+      <section class="content-card">
+        <h2>Shanghai Finish vs The Traditional Game "Shanghai"</h2>
+        <p>
+          Many beginners are surprised to learn that "Shanghai" is also a standalone darts game with its own rules:
+        </p>
+
+        <div class="diff-panel">
+          <div class="diff-card">
+            <h3>The Shanghai Finish (501 Out-Shot)</h3>
+            <p>
+              A specific combination during standard 501 play where a player takes out their remaining score using the Single, Treble, and Double of the same segment to win a leg.
+            </p>
+          </div>
+
+          <div class="diff-card">
+            <h3>The Traditional Game of "Shanghai"</h3>
+            <p>
+              A separate multi-player party or pub game where players throw around the board (usually numbers 1 through 7 or 1 through 20). In each round, only hits on the designated number count. If a player hits a Single, Treble, and Double of that active number in a single turn, they score an immediate <strong>Shanghai knockout</strong> and win the entire game on the spot, regardless of cumulative points.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Origin of the Term -->
+      <section class="content-card">
+        <h2>The Origins of the Term "Shanghai"</h2>
+        <p>
+          The exact historical etymology of the word "Shanghai" in darts lore is <strong>uncertain and unverified</strong>.
+        </p>
+        <p>
+          Darts historians suggest two plausible theories:
+        </p>
+        <ul>
+          <li><strong>Naval Slang:</strong> In the 19th and early 20th centuries, British merchant sailors who popularized darts during colonial trade routes may have linked the sudden knockout nature of hitting three distinct rings to the nautical slang phrase "to shanghai" (meaning to press-gang or knock out unexpectedly).</li>
+          <li><strong>The Pub Game Precedent:</strong> The 501 checkout term likely derived directly from the traditional pub game of Shanghai, where hitting the trio of segments triggered an instant, dramatic victory.</li>
+        </ul>
+        <p>
+          Rather than relying on romanticized pub myths, reputable darts organizations recognize that while the shot's origin remains folk history, its tactical brilliance is indisputable.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqSchema.mainEntity.map((item) => (
+          <div class="faq-item">
+            <h3>{item.name}</h3>
+            <p>{item.acceptedAnswer.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <!-- Related Navigation -->
+      <section class="content-card">
+        <h2>Related Checkout & Rules Resources</h2>
+        <div class="links-grid">
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>501 Darts Checkout Chart</strong>
+            <span>Standard finishes from 170 down to 41, setup math & doubles.</span>
+          </a>
+          <a href="/darts/why-is-170-the-highest-checkout/" class="link-card">
+            <strong>Why 170 Is the Highest Checkout</strong>
+            <span>Mathematical proof of "The Big Fish" & why 171+ cannot be finished.</span>
+          </a>
+          <a href="/darts/bogey-numbers-in-darts/" class="link-card">
+            <strong>Bogey Numbers in Darts</strong>
+            <span>The 7 impossible checkouts below 170 explained mathematically.</span>
+          </a>
+          <a href="/darts/what-is-a-180-in-darts/" class="link-card">
+            <strong>What Is a 180 in Darts?</strong>
+            <span>The maximum score explained: math, terminology, and tactics.</span>
+          </a>
+          <a href="/darts/robin-hood-in-darts/" class="link-card">
+            <strong>What Is a Robin Hood in Darts?</strong>
+            <span>DRA rules, why it scores 0 points, and how flights prevent stem damage.</span>
+          </a>
+          <a href="/darts/bust-rule-in-darts/" class="link-card">
+            <strong>The Bust Rule in Darts</strong>
+            <span>Why leaving 1 is an auto-bust, score reset mechanics, and tactical busts.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .content-card ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #334155;
+    line-height: 1.7;
+  }
+  .summary-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-primary, #0c1a2c);
+  }
+  .shanghai-formula {
+    background: #e2e8f0;
+    border-radius: 6px;
+    padding: 0.85rem 1.25rem;
+    margin: 1rem 0;
+  }
+  .shanghai-formula code {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .shanghai-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    .shanghai-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .target-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .target-finish {
+    background: #f0fdf4;
+    border-color: #86efac;
+  }
+  .dart-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+  .target-card h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .dart-score {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #0284c7;
+  }
+  .target-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+  .total-summary {
+    background: #eff6ff;
+    padding: 0.85rem 1.25rem;
+    border-radius: 6px;
+    text-align: center;
+    margin: 1rem 0 1.5rem;
+  }
+  .total-summary code {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1e40af;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 700;
+  }
+  .data-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  .tactics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .tactic-item {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .tactic-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  .tactic-item p {
+    margin: 0;
+  }
+  .diff-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    .diff-panel {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .diff-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .diff-card h3 {
+    margin-top: 0;
+  }
+  .diff-card p {
+    margin: 0;
+  }
+  .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #475569;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  @media (min-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--color-brand-primary, #0c1a2c);
+    transform: translateY(-2px);
+  }
+  .link-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .link-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+</style>

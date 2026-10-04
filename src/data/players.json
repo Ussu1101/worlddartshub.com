@@ -791,5 +791,65 @@
     "tier": "A",
     "last_verified": "2026-10-03",
     "status": "verified"
+  },
+  {
+    "player_id": "martin-schindler",
+    "name": "Martin Schindler",
+    "slug": "martin-schindler",
+    "nickname": "The Wall",
+    "nationality": "Germany",
+    "country_code": "DE",
+    "date_of_birth": "1996-08-16",
+    "birthplace": "Strausberg, Brandenburg, Germany",
+    "pdc_order_of_merit_rank": "Germany No. 1 / World Top 24 Seed",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Another Brick in the Wall (Part 2) by Pink Floyd",
+    "walk_on_artist": "Pink Floyd",
+    "walk_on_atmosphere": "Classic rock anthem with thunderous crowd singalongs to the iconic guitar riffs and chorus, accompanied by German flags throughout the arena.",
+    "career_overview": "Martin Schindler has emerged as Germany's leading professional darts player and a consistent European Tour champion. Capturing premier PDC European Tour titles at the 2024 International Darts Open in Riesa and the 2024 Swiss Darts Trophy in Basel, Schindler's metronomic precision and disciplined rhythm have established him as Germany's highest-ranked competitor on the PDC Order of Merit and a seeded star at Alexandra Palace.",
+    "major_pdc_titles": [
+      "International Darts Open Champion (2024 - Riesa)",
+      "Swiss Darts Trophy Champion (2024 - Basel)",
+      "PDC World Cup of Darts Semi-Finalist (with Germany)",
+      "German Darts Grand Prix Finalist (2022)",
+      "Multiple PDC Development Tour Titles"
+    ],
+    "world_championship_record": {
+      "debut_year": "2018",
+      "best_finish": "Third Round (2023, 2024, 2025)",
+      "total_appearances": 6,
+      "matches_played": 10,
+      "matches_won": 4,
+      "history_highlights": [
+        "2023: Third Round (led eventual champion Michael Smith 3-1 in sets in a classic Ally Pally thriller)",
+        "2024: Third Round (defeated Jermaine Wattimena before falling 3-4 to Scott Williams in a sudden-death contest)",
+        "2025: Third Round seeded contender"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£350,000+ (Two-year rolling PDC Order of Merit ranking funds)",
+      "order_of_merit_contribution": "Ranked #22 on the provisional PDC Order of Merit (Germany's highest-ranked professional)",
+      "financial_note": "Official PDC ranking prize money only. Commercial sponsorships, equipment royalties, and exhibition appearances are separate."
+    },
+    "nine_darters_televised": 0,
+    "notable_nine_darters": [
+      "PDC ProTour floor events (multiple 9-darters in Players Championship tournaments)"
+    ],
+    "equipment": {
+      "manufacturer": "Bull's Darts",
+      "brand_model": "Bull's Martin Schindler 'The Wall' Generation 2",
+      "barrel_weight_grams": "23g",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Torpedo-tapered barrel with dual ring grip zones and black titanium carbide coating",
+      "shafts": "L-Style L-Shaft Carbon Straight (Medium)",
+      "flights": "L-Style Martin Schindler The Wall Signature Pro L1 Standard",
+      "points": "Bull's 35mm Smooth Black Steel Points",
+      "verified_source": "Bull's Darts Official Equipment Roster & L-Style Global Player Catalog"
+    },
+    "playing_style": "Compact, repeatable throwing mechanics with deliberate pre-shot rhythm, aggressive Treble-20 scoring, and reliable finishes on Double 16 and Double 8.",
+    "tier": "A",
+    "last_verified": "2026-10-04",
+    "status": "verified"
   }
 ]
