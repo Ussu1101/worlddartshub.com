@@ -1,0 +1,382 @@
+---
+// src/pages/travel/best-pubs-watch-darts-london.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Best Pubs to Watch Darts in London (Near Alexandra Palace & Central)";
+const pageDescription = "Big screens, proper dartboards and walkable routes to Ally Pally: discover the best London pubs to watch the World Darts Championship, by area.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/travel/best-pubs-watch-darts-london/`;
+
+const breadcrumbItems = [
+  { name: 'Travel', url: '/travel/' },
+  { name: 'Best Pubs in London' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": { "@type": "Organization", "name": "World Darts Hub Editorial Team" },
+  "publisher": { "@type": "Organization", "name": "World Darts Hub", "url": siteUrl }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do pubs near Alexandra Palace let you in with fancy dress?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. On World Darts Championship match days, pubs within the Wood Green, Muswell Hill, and Hornsey corridor actively welcome fans in costumes. Whether dressed as superheroes, traffic cones, or 1980s darts legends, door security will welcome you provided costumes are family-appropriate and behavior remains good-natured." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which pub is closest to the Alexandra Palace entrance?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Phoenix Bar & Kitchen is physically located inside the palace building, directly adjacent to the Palm Court entrance. Outside the palace grounds, The Victoria Stakes (at the base of Muswell Hill) and The Starting Gate (opposite Alexandra Palace Rail Station) are the closest traditional pubs, each requiring an uphill walk of approximately 10 to 15 minutes to reach the palace entrance." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do London sports bars charge entry fees to watch darts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Generally, no. Most London pubs and sports bars offer free general admission for televised sport. During high-demand occasions\u2014such as the World Championship final or major holiday fixtures\u2014some central sports venues offer optional advance table packages with reserved seating and drinks vouchers, while general standing areas remain free of charge." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you buy darts in pubs near Alexandra Palace?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pubs do not sell professional tungsten darts over the counter. If you need replacement stems, flights, or match-weight barrels before a session, visit specialist sports shops in Central London or browse the official PDC merchandise and merchandise village stalls situated inside the Alexandra Palace Fans Village." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the nearest Tube station for pubs near Alexandra Palace?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Wood Green Station on the Piccadilly Line is the primary Underground hub. It sits directly on the high street within walking distance of multiple bars, and the W3 bus connects the station directly to the palace gates in under 10 minutes. Alternatively, Finsbury Park provides an interchange for the Victoria Line and Great Northern rail services directly to Alexandra Palace station." }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={[articleSchema, faqSchema]}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">TRAVEL GUIDE</span>
+        <span class="badge">LONDON</span>
+      </div>
+      <h1>Best Pubs to Watch Darts in London</h1>
+      <p class="lead-text">When December arrives and the PDC World Darts Championship takes over Alexandra Palace, London transforms into the undisputed capital of world darts. Over 90,000 spectators make the pilgrimage up the hill to Ally Pally’s Great Hall, but thousands more descend upon London’s pubs and sports bars to soak up the drama, sing the terrace chants, and watch the tungsten fly on supersized screens.</p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="London Venue Information" />
+
+      <section class="content-card">
+
+<p>Finding the right venue is not just about having a screen on the wall. Darts demands an authentic pub environment: pristine television sightlines where you can actually see the double-top wire, dedicated commentary audio turned up for big sessions, cold pints served without a 30-minute queue, and an electric crowd that erupts in unison at every 180 and 170 checkout.</p>
+<p>Whether you are looking for a lively pre-match pint within walking distance of the palace gates, an all-day viewing headquarters in Central London, or a traditional boozer where you can throw a few legs yourself between sessions, this curated guide breaks down London's premier darts venues by zone.</p>
+<p>Planning your journey to North London? Check our comprehensive <a href="/travel/">London Travel &amp; Accommodation Hub</a> and study the fastest transit connections on our <a href="/travel/tube-train-routes/">Ally Pally Tube &amp; Train Route Guide</a>.</p>
+      </section>
+      <section class="content-card">
+<h2>How We Picked the Best Darts Pubs</h2>
+<p>London boasts thousands of licensed premises, but only a select few deliver the sensory experience darts fans expect during the festive major season. Every pub included in this guide was evaluated against four strict editorial criteria:</p>
+<ol>
+<li>
+<p><strong>Screen Visibility and Sightlines:</strong> We prioritized venues featuring large high-definition screens and well-positioned wall displays to ensure clear viewing angles of the dartboard from key seating and standing areas.</p>
+</li>
+<li>
+<p><strong>Sports Atmosphere:</strong> Darts demands an energetic environment where fans can follow the drama. We selected established sports bars and popular match-day hubs known for showing major televised events, with several venues prioritizing live commentary audio for high-profile sessions.</p>
+</li>
+<li>
+<p><strong>Capacity, Flow, and Queues:</strong> Festive sessions draw huge crowds. We selected venues with efficient multi-till bar layouts, dedicated cellar cooling to keep pints crisp under heavy demand, and enough floor space to prevent gridlock.</p>
+</li>
+<li>
+<p><strong>Distance and Accessibility to Alexandra Palace:</strong> For match-day fans, proximity to the hill is vital. We mapped exact walking times to the Great Hall entrance, verified bus connections, and identified the nearest London Underground and National Rail stations so you are never stranded when late legs finish.</p>
+</li>
+</ol>
+<p>For guidance on what to expect inside the arena itself, review our <a href="/venue/">Alexandra Palace Venue Guide</a> and check session start times in our <a href="/tickets/">World Championship Ticket &amp; Session Guide</a>.</p>
+      </section>
+      <AdSlot position="in-article" />
+      <section class="content-card">
+<h2>Near Alexandra Palace &amp; Wood Green (Match-Day Picks)</h2>
+<p>If you hold tickets for an afternoon or evening session—or if you simply want to soak up the infectious match-day energy alongside costumed fans before walking up the hill—these North London venues are your prime staging grounds.</p>
+<p><code>[ Alexandra Palace / The Phoenix ]
+                                   ▲
+        (10–12 min steep walk)    │     (12–15 min park walk)
+                                  │
+    [ The Victoria Stakes ] ──────┴────── [ The Starting Gate ]
+        (Muswell Hill N10)                    (Station Road N22)
+                                                      │
+                                             (Opposite Rail Station /
+                                             12-min walk Wood Green Tube)</code></p>
+<h3>The Starting Gate (Wood Green / Alexandra Palace Station)</h3>
+<ul>
+<li><strong>Address:</strong> Buckingham Road / Station Road, Wood Green, London, <strong>N22 7SS</strong></li>
+<li><strong>Nearest Station:</strong> <strong>Alexandra Palace Rail Station</strong> (directly opposite) or <strong>Wood Green Tube</strong> (Piccadilly Line, 12-minute walk)</li>
+<li><strong>Distance to Ally Pally:</strong> 12–15 minute walk uphill through Alexandra Park</li>
+<li><strong>Atmosphere &amp; Screens:</strong> Positioned directly opposite Alexandra Palace rail station, The Starting Gate is one of the primary meeting points for attendees arriving by train before walking up the hill. A traditional Victorian pub featuring an outdoor patio garden and bar screens showing live sports, it regularly draws event crowds and darts fans during the World Championship. Because screen priority and audio settings depend on the pub's daily sports schedule, checking with staff on arrival is recommended if you plan to watch specific matches.</li>
+<li><strong>Top Tip:</strong> Due to its location right by the station, it becomes busy ahead of session start times. Allow extra time if stopping for a pre-event drink before making the uphill walk into the park.</li>
+</ul>
+<h3>The Victoria Stakes (Muswell Hill)</h3>
+<ul>
+<li><strong>Address:</strong> 1 Muswell Hill, London, <strong>N10 3TH</strong></li>
+<li><strong>Nearest Station:</strong> <strong>Highgate Tube</strong> (Northern Line, then short W7 bus) or <strong>Finsbury Park</strong> (W7 bus to bottom of hill)</li>
+<li><strong>Distance to Ally Pally:</strong> 10–12 minute walk uphill to the Palm Court entrance</li>
+<li><strong>Atmosphere &amp; Screens:</strong> Located at the foot of Muswell Hill near the entrance to Alexandra Park, The Victoria Stakes is an established neighborhood pub and dining room. It features a covered courtyard and interior screens showing live televised sport, serving as a popular food and drink stop for visitors to the area. With a strong focus on quality dining, table bookings are recommended if you plan to sit down for a meal before walking up to the palace.</li>
+</ul>
+<h3>The Mossy Well (Muswell Hill Broadway)</h3>
+<ul>
+<li><strong>Address:</strong> 258 Muswell Hill Broadway, London, <strong>N10 3SH</strong></li>
+<li><strong>Nearest Station:</strong> <strong>Highgate Tube</strong> (Northern Line) or <strong>Finsbury Park</strong> (via W7 bus)</li>
+<li><strong>Distance to Ally Pally:</strong> 15–20 minute walk across the park ridge</li>
+<li><strong>Atmosphere &amp; Screens:</strong> Housed in a former express dairy building on Muswell Hill Broadway, this expansive Wetherspoon pub features high ceilings, a large beer garden, and multiple television screens showing Sky Sports. With substantial floor space and standard pub fare, it offers a reliable, budget-friendly option for larger groups visiting the area.</li>
+</ul>
+<h3>The Phoenix Bar &amp; Kitchen (Inside Alexandra Palace)</h3>
+<ul>
+<li><strong>Address:</strong> Alexandra Palace Way, London, <strong>N22 7AY</strong></li>
+<li><strong>Nearest Station:</strong> <strong>Alexandra Palace Rail</strong> or <strong>Wood Green Tube</strong> (W3 bus stops outside)</li>
+<li><strong>Distance to Ally Pally:</strong> 0 minutes (located directly in the Palm Court complex)</li>
+<li><strong>Atmosphere &amp; Screens:</strong> Located inside the palace complex itself, The Phoenix offers panoramic views across London from its terrace and dining area, along with bar screens showing broadcast coverage during event days. Note that access during major championship sessions is often subject to event admission rules or restricted to ticket holders, so check entry conditions on arrival.</li>
+</ul>
+      </section>
+      <section class="content-card">
+<h2>Central London (Big-Screen Sports Pubs)</h2>
+<p>Do not have tickets for the Great Hall? You can still capture the cauldron-like energy of the championship by joining hundreds of passionate fans at Central London’s dedicated sports bars.</p>
+<div class="table-responsive"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: left;">Venue Name</th>
+<th style="text-align: center;">Postcode</th>
+<th style="text-align: left;">Nearest Tube Station</th>
+<th style="text-align: center;">Total Screens</th>
+<th style="text-align: center;">Dartboards Available?</th>
+<th style="text-align: left;">Highlights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Greenwood</strong></td>
+<td style="text-align: center;"><strong>SW1E 5LB</strong></td>
+<td style="text-align: left;">Victoria (1-min walk)</td>
+<td style="text-align: center;">Over 30</td>
+<td style="text-align: center;">No (Shuffleboard/Pool)</td>
+<td style="text-align: left;">Large HD video walls, 2 floors, central sports lounge</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Famous Three Kings</strong></td>
+<td style="text-align: center;"><strong>W14 9NL</strong></td>
+<td style="text-align: left;">West Kensington (1-min walk)</td>
+<td style="text-align: center;">16+</td>
+<td style="text-align: center;">Yes (Traditional)</td>
+<td style="text-align: left;">Multi-award-winning sports pub, multi-feed sports coverage</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Moretown Belle</strong></td>
+<td style="text-align: center;"><strong>E1W 1YN</strong></td>
+<td style="text-align: left;">Tower Hill (5-min walk)</td>
+<td style="text-align: center;">Over 30</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: left;">Multi-screen video walls, spacious sports bar setting</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sports Bar &amp; Grill</strong></td>
+<td style="text-align: center;"><strong>NW1 6JJ</strong></td>
+<td style="text-align: left;">Marylebone (Inside Station)</td>
+<td style="text-align: center;">20+</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: left;">Convenient rail hub location, bookable viewing booths</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Greenwood (Victoria)</h3>
+<ul>
+<li><strong>Address:</strong> 170 Victoria Street, London, <strong>SW1E 5LB</strong></li>
+<li><strong>Nearest Station:</strong> <strong>Victoria</strong> (Victoria, District, and Circle Lines; 1-minute walk)</li>
+<li><strong>The Experience:</strong> Located in Nova Victoria, Greenwood is a large two-floor sports lounge and dining venue. It features over 30 HD screens across both levels, including prominent central video walls broadcasting major live sports. While the venue does not have dartboards, the first-floor lounge includes 8-ball pool and shuffleboard tables. It is a popular central London destination for watching televised sports including major darts tournaments, with table bookings recommended during championship stages.</li>
+</ul>
+<h3>Famous Three Kings (West Kensington)</h3>
+<ul>
+<li><strong>Address:</strong> 171 North End Road, London, <strong>W14 9NL</strong></li>
+<li><strong>Nearest Station:</strong> <strong>West Kensington</strong> (District Line; right outside the exit)</li>
+<li><strong>The Experience:</strong> Consistently recognized as one of the UK’s leading sports pubs, "F3K" features 16+ screens and multi-channel capability allowing concurrent broadcasts of major sporting events. It attracts a dedicated sports crowd, maintains a traditional steel-tip dartboard area in the lounge for casual play, and offers an extensive selection of draught beers and pub food.</li>
+</ul>
+<h3>Moretown Belle (Tower Hill / St Katharine Docks)</h3>
+<ul>
+<li><strong>Address:</strong> 5 Thomas More Street, London, <strong>E1W 1YN</strong></li>
+<li><strong>Nearest Station:</strong> <strong>Tower Hill</strong> or <strong>Wapping</strong> (5–7 minute walk)</li>
+<li><strong>The Experience:</strong> A spacious modern sports bar and kitchen near St Katharine Docks equipped with over 30 screens and five multi-screen video walls. With multi-screen sports feeds, it regularly shows televised darts alongside football and other seasonal fixtures. The food menu includes stone-baked pizzas and burgers, with bookable booths and tables available for major sports broadcasts.</li>
+</ul>
+      </section>
+      <section class="content-card">
+<h2>South, East, and West London (One Pick Per Zone)</h2>
+<p>If you live in or are staying in outer London neighbourhoods, you do not need to trek into the West End to catch first-class darts coverage. Here are our top zone-by-zone picks:</p>
+<h3>South London: The Alexandra (Clapham)</h3>
+<ul>
+<li><strong>Address:</strong> 14 Clapham Common South Side, London, <strong>SW4 7AA</strong></li>
+<li><strong>Nearest Station:</strong> <strong>Clapham Common</strong> (Northern Line; 1-minute walk)</li>
+<li><strong>Why It Rates:</strong> Known locally as "The Alex," this lively South London pub features large projection screens and multiple HD televisions situated around an expansive central bar. The venue frequently shows Sky Sports coverage and draws an energetic crowd on tournament weekends, making it a dependable neighborhood choice for following the darts south of the river.</li>
+</ul>
+<h3>East London: The Bat and Ball (Stratford)</h3>
+<ul>
+<li><strong>Address:</strong> Westfield Stratford City, London, <strong>E20 1EJ</strong></li>
+<li><strong>Nearest Station:</strong> <strong>Stratford</strong> (Central, Jubilee, Elizabeth Lines &amp; DLR; 3-minute walk)</li>
+<li><strong>Why It Rates:</strong> Spread across two floors within Westfield Stratford City, The Bat and Ball combines interactive games—including table tennis and pool—with an array of large sports screens. The venue shows major televised sports tournaments in its bar areas, and bookable private areas are available for groups.</li>
+</ul>
+<h3>West London: The Black Lion (Hammersmith / Chiswick)</h3>
+<ul>
+<li><strong>Address:</strong> 2 South Black Lion Lane, London, <strong>W6 9TJ</strong></li>
+<li><strong>Nearest Station:</strong> <strong>Stamford Brook</strong> or <strong>Ravenscourt Park</strong> (District Line; 8-minute walk)</li>
+<li><strong>Why It Rates:</strong> Dating back to the 18th century along the Thames footpath, The Black Lion combines historic riverside charm with live sports viewing. While the main bar retains historic panelling and fireplaces, the conservatory and covered garden area feature screens showing Sky Sports. It provides an appealing West London setting for fans seeking cask ales and classic pub character.</li>
+</ul>
+      </section>
+      <section class="content-card">
+<h2>Pubs Where You Can Also Play Darts (Board Hire &amp; Etiquette)</h2>
+<p>Watching world-class players wire double 16 invariably inspires spectators to pick up three arrows. If you want a pint in hand while stepping up to the oche yourself, London offers two distinct options: traditional pub boards and modern social interactive oches.</p>
+<p><code>TRADITIONAL PUB OCHES                SOCIAL INTERACTIVE DARTS
+  ─────────────────────────────────     ─────────────────────────────────
+  • Steel-tip bristle boards            • Augmented projection boards
+  • Free play or refundable deposit     • Paid hourly lane reservations
+  • Chalkboard mental arithmetic        • Automatic electronic camera scoring
+  • Serious pub league etiquette        • Multiplayer party mini-games
+  • Example: Famous Three Kings (W14)   • Example: Flight Club (Multiple sites)</code></p>
+<h3>Traditional Steel-Tip Venues</h3>
+<p>For authentic chalk-and-board action, several London pubs maintain dedicated, match-compliant oches with raised toe boards:
+- <strong>The Famous Three Kings (West Kensington):</strong> Houses a dedicated steel-tip dartboard area in the side lounge. Boards are typically free to use when quiet, though bringing your own tungsten arrows is strongly recommended on weekends.
+- <strong>The Old China Hand (Clerkenwell, EC1R 0ET):</strong> A classic British boozer on Tysoe Street maintaining a well-lit traditional board, popular with central London league players.
+- <strong>Pub Darts Etiquette:</strong> If playing on a traditional board, always allow players in a leg to throw all three darts before retrieving your own. Keep drinks well clear of the scoring shelf, and offer to mark (chalk) the next game if other players are waiting.</p>
+<h3>Social "Flight Club" &amp; Interactive Oches</h3>
+<p>If your group includes casual players or beginners who prefer automated scoring over mental arithmetic, interactive venues offer an accessible social alternative:
+- <strong>Flight Club (Bloomsbury, Victoria, Shoreditch, Islington):</strong> The pioneer of "social darts." Players throw steel-tip darts into patent-protected boards equipped with motion-tracking cameras that calculate scores, suggest finishes, and guide multiplayer games. Booking weeks in advance is essential during November and December.
+- <strong>Oche (Strand / Covent Garden, WC2R 1HA):</strong> Premium gastro-gaming venue combining 85-minute electronic oche sessions with artisanal tapas and craft cocktails. Every booth features a screen showing live sports while you play.</p>
+<p>First time stepping into the world of live darts? Brush up on costumes, arena culture, and chants in our <a href="/fan-culture/first-timer-guide/">Ally Pally First-Timer Fan Guide</a>.</p>
+      </section>
+      <section class="content-card">
+<h2>Match-Day Tips: Booking, Arrival Times &amp; Night Travel</h2>
+<p>A successful darts outing in London requires forward planning, particularly during the peak festive season between 15 December and 3 January.</p>
+<h3>1. Booking Policies vs Walk-Ins</h3>
+<ul>
+<li><strong>Near Alexandra Palace:</strong> Pubs close to the venue, including The Starting Gate, primarily operate on a walk-in basis on busy match days to handle the natural flow of attendees, while dining pubs such as The Victoria Stakes recommend table bookings for sit-down meals.</li>
+<li><strong>Central Sports Lounges:</strong> Dedicated central venues like Greenwood, Moretown Belle, and Sports Bar &amp; Grill take advance table reservations for televised sports. For marquee tournament stages such as the semi-finals or final, reserving several weeks in advance is strongly advised to guarantee seating.</li>
+</ul>
+<h3>2. Match-Day Arrival Considerations</h3>
+<ul>
+<li><strong>Afternoon Sessions (12:30 PM Start):</strong> Pubs in Wood Green and Muswell Hill experience increased footfall from late morning as attendees gather before venue doors open.</li>
+<li><strong>Evening Sessions (7:00 PM Start):</strong> Local pubs see their busiest pre-match rush between 4:30 PM and 6:00 PM as evening session ticket holders arrive and afternoon crowds depart.</li>
+</ul>
+<h3>3. Late Night Transit Back from North London</h3>
+<p>Matches at Alexandra Palace can run past 11:00 PM if legs go to sudden-death tiebreakers. 
+- <strong>National Rail:</strong> Trains from Alexandra Palace station run directly into Finsbury Park, Highbury &amp; Islington, and Moorgate, but frequency drops significantly after 11:30 PM.
+- <strong>Piccadilly Line Tube:</strong> Wood Green Tube station is a 15-minute downhill walk or 5-minute W3 bus ride. The Piccadilly Line operates 24-hour Night Tube services on Friday and Saturday nights.
+- <strong>Night Buses:</strong> The <strong>N91</strong> runs directly from Trafalgar Square through King's Cross to Wood Green and Crouch End, providing a reliable round-the-clock safety net.</p>
+<p>Plan your late-night journey home with our dedicated <a href="/travel/night-travel-london/">London Night Travel &amp; Tube Guide</a>.</p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>Do pubs near Alexandra Palace let you in with fancy dress?</h3>
+            <p>Yes. On World Darts Championship match days, pubs within the Wood Green, Muswell Hill, and Hornsey corridor actively welcome fans in costumes. Whether dressed as superheroes, traffic cones, or 1980s darts legends, door security will welcome you provided costumes are family-appropriate and behavior remains good-natured.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Which pub is closest to the Alexandra Palace entrance?</h3>
+            <p>The <strong>Phoenix Bar &amp; Kitchen</strong> is physically located inside the palace building, directly adjacent to the Palm Court entrance. Outside the palace grounds, <strong>The Victoria Stakes</strong> (at the base of Muswell Hill) and <strong>The Starting Gate</strong> (opposite Alexandra Palace Rail Station) are the closest traditional pubs, each requiring an uphill walk of approximately 10 to 15 minutes to reach the palace entrance.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do London sports bars charge entry fees to watch darts?</h3>
+            <p>Generally, no. Most London pubs and sports bars offer free general admission for televised sport. During high-demand occasions—such as the World Championship final or major holiday fixtures—some central sports venues offer optional advance table packages with reserved seating and drinks vouchers, while general standing areas remain free of charge.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can you buy darts in pubs near Alexandra Palace?</h3>
+            <p>Pubs do not sell professional tungsten darts over the counter. If you need replacement stems, flights, or match-weight barrels before a session, visit specialist sports shops in Central London or browse the official PDC merchandise and merchandise village stalls situated inside the Alexandra Palace Fans Village.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is the nearest Tube station for pubs near Alexandra Palace?</h3>
+            <p><strong>Wood Green Station</strong> on the Piccadilly Line is the primary Underground hub. It sits directly on the high street within walking distance of multiple bars, and the W3 bus connects the station directly to the palace gates in under 10 minutes. Alternatively, <strong>Finsbury Park</strong> provides an interchange for the Victoria Line and Great Northern rail services directly to Alexandra Palace station.</p>
+          </div>
+      </section>
+
+      <section class="content-card">
+        <h2>Related Guides</h2>
+        <div class="links-grid">
+          <a href="/travel/" class="link-card">
+            <strong>Travel to Alexandra Palace</strong>
+            <span>Trains, tubes, buses and routes to Ally Pally.</span>
+          </a>
+          <a href="/travel/tube-train-routes/" class="link-card">
+            <strong>Tube & Train Routes</strong>
+            <span>The fastest public transport routes to the venue.</span>
+          </a>
+          <a href="/venue/" class="link-card">
+            <strong>Alexandra Palace Venue Guide</strong>
+            <span>Seating, food, drink and bag policy at Ally Pally.</span>
+          </a>
+          <a href="/tickets/" class="link-card">
+            <strong>World Championship Tickets</strong>
+            <span>Prices, ballot and resale for the 2026/27 event.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255, 255, 255, 0.15); color: #f8fafc; font-size: 0.75rem;
+    font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .badge-accent { background: var(--color-brand-accent, #c99700); color: #0c1a2c; }
+  .page-header h1 { font-size: 2.25rem; font-weight: 800; margin: 0 0 1rem; line-height: 1.2; }
+  .lead-text { font-size: 1.15rem; line-height: 1.6; color: #cbd5e1; max-width: 800px; margin: 0; }
+  .content-layout { margin-bottom: 4rem; }
+  .main-column { display: flex; flex-direction: column; gap: 2rem; }
+  .content-card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-top: 0;
+    margin-bottom: 1.25rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem;
+  }
+  .content-card h3 { font-size: 1.25rem; font-weight: 700; color: #1e293b; margin: 1.5rem 0 0.75rem; }
+  .content-card p { color: #334155; line-height: 1.7; margin-bottom: 1rem; }
+  .content-card ul, .content-card ol { margin: 1rem 0 1.5rem 1.5rem; color: #334155; line-height: 1.7; }
+  .content-card li { margin-bottom: 0.4rem; }
+  .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .data-table th, .data-table td { padding: 0.85rem 1rem; border: 1px solid #e2e8f0; text-align: left; }
+  .data-table th { background: #0f172a; color: #fff; font-weight: 700; }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
+  .faq-item { border-bottom: 1px solid #e2e8f0; padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-item h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+  .faq-item p { margin: 0; color: #475569; }
+  .links-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+  @media (min-width: 600px) { .links-grid { grid-template-columns: 1fr 1fr; } }
+  .link-card {
+    display: block; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;
+    padding: 1rem; text-decoration: none; transition: all 0.2s ease;
+  }
+  .link-card:hover { border-color: var(--color-brand-primary, #0c1a2c); transform: translateY(-2px); }
+  .link-card strong { display: block; color: #0f172a; font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .link-card span { display: block; color: #64748b; font-size: 0.85rem; line-height: 1.4; }
+</style>
