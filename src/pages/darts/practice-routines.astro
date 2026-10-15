@@ -1,0 +1,445 @@
+---
+// src/pages/darts/practice-routines.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Best Darts Practice Routines: Solo, Pairs & 20-Minute Drills";
+const pageDescription = "Structured darts practice that actually improves your game: around-the-clock, checkout and scoring drills for solo and pairs practice.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/darts/practice-routines/`;
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'Practice Routines' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": { "@type": "Organization", "name": "World Darts Hub Editorial Team" },
+  "publisher": { "@type": "Organization", "name": "World Darts Hub", "url": siteUrl }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long should you practice darts every day?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For most amateur and league players, 20 to 45 minutes of deliberate practice per day is far more effective than a two-hour unstructured session once a week. Deliberate practice requires intense mental concentration; past 45 minutes, mental fatigue sets in, leading to lazy follow-throughs and bad mechanical habits." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it better to practice scoring or doubles first?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Beginners should spend approximately 60% of their practice time on board grouping and scoring mechanics to establish a repeatable arm action. Once you can reliably hit fat singles and average 45+ in 501, shift your focus so that at least 50% to 60% of your practice time is dedicated to doubles and checkouts. As the old darts axiom states: scoring gets you to the board, but doubles win the cash." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I score high in practice but miss everything in league matches?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In solo practice, you throw without consequences. If you miss treble 20, you instantly pull another dart from your hand and correct your line. In a live match, your opponent throws between your visits, introducing pressure, pauses, and adrenaline. To bridge this gap, replace open throwing with pressure routines like Bob's 27 and The 50-Up/Down Ladder, where missed darts carry an immediate penalty." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most effective double to practice for beginners?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Focus on the \"Rule of Halves\" starting on Double 20 (Tops) and Double 16. If you miss Double 20 inside into single 20, you have an even number left (Double 10). If you miss Double 10 inside, you leave Double 5. Similarly, Double 16 breaks down smoothly into Double 8, Double 4, Double 2, and Double 1. Mastering Double 20 and Double 16 gives you safety margins on match-winning visits." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I track my darts practice progress over time?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pick two measurable benchmark drills\u2014such as The 100-Dart Treble 20 Challenge and Bob's 27\u2014and record your scores once every seven days. Use our Interactive Average Calculator to monitor your three-dart average trends across weeks. If your 100-dart score rises by 15 points over a month, your match scoring average will inevitably climb alongside it." }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={[articleSchema, faqSchema]}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">DARTS ESSENTIALS</span>
+        <span class="badge">PRACTICE</span>
+      </div>
+      <h1>Darts Practice Routines That Improve Your Game</h1>
+      <p class="lead-text">Most dart players hit a scoring plateau for a simple reason: they stand at the oche, throw three darts at treble 20 without a plan, retrieve them, and repeat the cycle for an hour. While throwing hundreds of mindless arrows feels productive, it ingrains bad mechanical habits and fails to build the psychological resilience needed under tournament pressure.</p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="Darts Practice Methods" />
+
+      <section class="content-card">
+
+<p>Elite darts is not about casual repetition; it is about <strong>deliberate practice</strong>. Top PDC professionals like Michael van Gerwen, Luke Humphries, and Gerwyn Price do not just throw at the board—they measure their accuracy, track their grouping, force themselves into pressure situations, and rotate between heavy scoring beds and critical double targets.</p>
+<p>Whether you have twenty minutes before work or an entire evening with a practice partner, this guide details battle-tested, structured practice routines designed to improve your three-dart average, sharpen your checkouts, and transform your consistency under pressure.</p>
+      </section>
+      <section class="content-card">
+<h2>5-Minute Warm-Up (Around the Board)</h2>
+<p>Throwing cold darts directly at treble 20 strains shoulder and elbow tendons, encourages erratic releases, and damages confidence early in a session. A proper warm-up gradually activates the forearm, establishes an effortless rhythm, and calibrates your sightline.</p>
+<p><code>THE 5-MINUTE WARM-UP LADDER
+   ─────────────────────────────────────────────────────────────
+   [Min 0–2]  Rhythm &amp; Alignment    ──►  12–15 Darts at Bull / 25
+   [Min 2–4]  Around the Clock      ──►  Relaxed rotation across singles 1–20
+   [Min 4–5]  Transition Scoring   ──►  2–3 Visits alternating T20 / T19</code></p>
+<h3>1. Rhythm &amp; Centre-Board Alignment (Minutes 0–2)</h3>
+<p>Begin by throwing four to five relaxed visits directly at the centre bullseye and 25 ring. 
+* <strong>The Goal:</strong> Do not worry about hitting the red inner bull. Focus entirely on stance stability, smooth arm draw-back, and a consistent elbow hinge with a clean follow-through.
+* <strong>The Sensation:</strong> Ensure your shoulder remains steady and your wrist snaps naturally without tension. Once your arm feels loose and your release feels fluid, transition to board navigation.</p>
+<h3>2. Around the Clock on Fat Singles (Minutes 2–4)</h3>
+<p>Move around the board at an unhurried, comfortable pace, throwing at the large single beds ("the fat numbers") from 1 through 20.
+* <strong>The Focus:</strong> Use this warm-up window to establish a natural rhythm across the upper, lower, left, and right quadrants of the board. Aim for the broad single wedge between the bullseye and the treble ring, or between the treble and double rings.
+* <strong>Accuracy Benchmark (Untimed Practice Goal):</strong> In a dedicated, untimed drill session, test yourself to see if you can complete all 20 segments in 24 darts or fewer. During the warm-up itself, do not rush against the clock—if you miss a number, simply proceed to the next segment to keep your arm moving freely.</p>
+<h3>3. Diagnostic Release Check (Minute 5)</h3>
+<p>Use your final warm-up visits to observe grouping patterns. While throwing mechanics vary widely among players, persistent clusters can offer helpful diagnostic clues to investigate:
+* <strong>Darts landing low:</strong> May be a clue that your elbow is dipping prior to release, your follow-through is checking short, or your release timing is slightly late.
+* <strong>Darts drifting left (for right-handed throwers):</strong> Often suggests checking whether your wrist is twisting inward upon release or your lead shoulder is pulling across the target line.
+* <strong>Darts drifting right:</strong> Can indicate pushing the dart from the elbow rather than hinging smoothly, or releasing with outward wrist flare.</p>
+<p>If you are struggling with your fundamental arm motion or foot alignment before starting your drills, review our comprehensive <a href="/darts/how-to-throw-darts/">Darts Grip, Stance &amp; Technique Guide</a>.</p>
+      </section>
+      <AdSlot position="in-article" />
+      <section class="content-card">
+<h2>Scoring Power: 100-Dart and 9-Dart-Score Drills</h2>
+<p>In 501, heavy scoring dictates match tempo. Out-scoring your opponent gives you multiple visits at a double, buffering against missed match darts. These two drills measure your raw scoring power and train you to switch beds smoothly when a target is blocked.</p>
+<h3>The 100-Dart Treble 20 Challenge</h3>
+<p>The 100-Dart Challenge is a popular practice drill designed to track your accuracy and grouping specifically on the 20 segment over extended stints.</p>
+<p><code>100-DARTS T20 SCORING MATRIX
+   ┌───────────────────────┬────────────┬───────────────────────────────┐
+   │ Hit Segment           │ Drill Pts  │ Notes                         │
+   ├───────────────────────┼────────────┼───────────────────────────────┤
+   │ Treble 20 (T20)       │ 3 Points   │ Direct hit in the treble ring │
+   │ Single 20 (Fat or Bed)│ 1 Point    │ Hit in the single 20 segment  │
+   │ Miss / 1 / 5 / Wire   │ 0 Points   │ Any dart outside the 20 bed   │
+   └───────────────────────┴────────────┴───────────────────────────────┘</code></p>
+<h4>How to Execute:</h4>
+<ol>
+<li>
+<p>Throw 33 visits of three darts, followed by one single dart (100 darts total), aimed exclusively at the 20 bed.</p>
+</li>
+<li>
+<p>Record your drill points after each visit using the matrix above.</p>
+</li>
+<li>
+<p>Sum your total score at the end of the 100 darts (Maximum possible score: 300 points).</p>
+</li>
+</ol>
+<h4>Informal Drill Score Ranges:</h4>
+<p>This 3-point / 1-point framework is a <strong>custom training drill metric</strong>, not an official PDC benchmark or a calculation of match averages. Use these informal point ranges solely to track your personal progress within this specific drill over time:
+* <strong>60–90 points:</strong> Reflects developing accuracy where darts land primarily in the single 20 wedge with occasional trebles.
+* <strong>100–135 points:</strong> Demonstrates solid board control with consistent single 20 grouping and regular treble hits.
+* <strong>140–180 points:</strong> Reflects high scoring consistency with frequent multi-treble visits.
+* <strong>190+ points:</strong> Represents exceptional precision, requiring a very high proportion of trebles across all 100 darts.</p>
+<p>To calculate your actual match-play scoring averages across complete 501 legs, log your match scores in our <a href="/tools/average-calculator/">Interactive Average Calculator</a>.</p>
+<h3>The 9-Dart Switch Ladder</h3>
+<p>Match play frequently requires abandoning treble 20 when your first dart lands crookedly or blocks the flight path. The 9-Dart Switch Ladder conditions your brain and arm to switch targets without dropping accuracy.</p>
+<ul>
+<li><strong>Visit 1 (3 darts):</strong> Target Treble 20.</li>
+<li><strong>Visit 2 (3 darts):</strong> Target Treble 19.</li>
+<li><strong>Visit 3 (3 darts):</strong> Target Treble 18.</li>
+</ul>
+<p><strong>Scoring:</strong> Count the number of trebles hit out of nine darts. Target hitting at least three trebles across the nine darts (one per visit). If your first dart in any visit hits the single bed, use the remaining two darts to correct your marker line rather than switching prematurely.</p>
+      </section>
+      <section class="content-card">
+<h2>Checkout Practice (Use the Calculator)</h2>
+<p>Scoring creates opportunities, but clinical finishing wins legs. Practicing checkouts teaches board arithmetic, eliminates mid-throw hesitation, and builds confidence on critical setup shots.</p>
+<p><code>PRESSURE CHECKOUT PROGRESSION
+   ─────────────────────────────────────────────────────────────────────
+   Target Zone       Drill Format        Primary Skill Tested
+   ─────────────────────────────────────────────────────────────────────
+   41 – 60           2-Dart Checkout     Single setup into preferred double
+   61 – 100          Catch 40            Covering missed singles under pressure
+   101 – 120         3-Dart Outshot      Treble hit + single setup + double</code></p>
+<p>Before stepping to the oche, memorize your mathematical outshot routes using our <a href="/darts/checkout-chart/">Official Two-Dart and Three-Dart Checkout Chart</a> or test situational out routes on our <a href="/tools/checkout-calculator/">Interactive Checkout Calculator</a>.</p>
+<h3>1. The "Catch 40" Routine</h3>
+<p>Catch 40 is an intense finishing drill that covers every two-dart combination from 61 to 100.</p>
+<h4>The Rules:</h4>
+<ol>
+<li>
+<p>Take two darts in hand (or three if you require a setup dart) for each target number from 61 through 100 (40 individual targets).</p>
+</li>
+<li>
+<p>For each number, you have three darts to check out according to standard <a href="/darts/rules/">Darts Rules</a> (finishing on a double).</p>
+</li>
+<li>
+<p><strong>Scoring System:</strong></p>
+</li>
+<li>Checked out in 2 darts: <strong>3 points</strong></li>
+<li>Checked out in 3 darts: <strong>2 points</strong></li>
+<li>
+<p>Failed to check out: <strong>0 points</strong></p>
+</li>
+<li>
+<p>The maximum possible score across all 40 numbers is <strong>120 points</strong>.</p>
+</li>
+</ol>
+<h4>What Catch 40 Teaches:</h4>
+<p>Catch 40 forces you to understand your setup routes and execute mathematical pivots when a dart drifts. For example, on a 65 checkout, a standard tournament route begins on 15:
+* If your first dart hits <strong>Treble 15 (45)</strong>, you leave <strong>20 (Double 10)</strong> with two darts in hand.
+* If your first dart catches <strong>Single 15 (15)</strong>, you leave <strong>50</strong>: with two darts remaining, you can shoot directly at the <strong>Bullseye (50)</strong> for a two-dart checkout, or throw <strong>Single 10</strong> to leave <strong>Double 20 (Tops)</strong> for your third dart (15 + 10 + D20 = 65).
+* If your first dart strays into adjacent <strong>Single 10 (10)</strong>, you leave <strong>55</strong>: throwing <strong>Single 15</strong> sets up <strong>Double 20</strong> with your final dart (10 + 15 + D20 = 65).</p>
+<p>Catch 40 ingrains these adjustments so you make them automatically without hesitating on the oche.</p>
+<h3>2. The 50-Up / 50-Down Pressure Ladder</h3>
+<p>This game introduces immediate stakes, replicating the tension of a decider leg in a league match.</p>
+<ul>
+<li><strong>Starting Score:</strong> Begin at <strong>50</strong>.</li>
+<li><strong>The Visit:</strong> You have three darts to check out the score.</li>
+<li><strong>The Rule:</strong></li>
+<li>If you take out the score in three darts or fewer: <strong>Add 10 points</strong> to your target for the next visit (e.g., move to 60, then 70, 80, etc.).</li>
+<li>If you fail to take out the score: <strong>Subtract 1 point</strong> from your target (e.g., drop to 49, 48, etc.).</li>
+<li><strong>Target Objective:</strong> Climb the ladder to reach 100 within 15 visits. Because a single miss drops your score, you cannot coast through easy finishes.</li>
+</ul>
+      </section>
+      <section class="content-card">
+<h2>Doubles &amp; Trebles Accuracy Drills</h2>
+<p>Targeting the narrow outer ring requires a tighter release tolerance than scoring in the fat segments. These three dedicated accuracy drills train precision, rhythm, and mental fortitude.</p>
+<p><code>THE BOB'S 27 SURVIVAL THRESHOLD
+   Start: 27 Points ──► Throw 3 darts per double from D1 to D20 + Bull
+   ├── Hit Double:   Add total value (e.g., 2 hits on D16 = +64 pts)
+   └── Miss All 3:   Deduct face value (e.g., 0 hits on D16 = -32 pts)
+   * Score ≤ 0 at any point = Game Over (Elimination)</code></p>
+<h3>1. Bob's 27 (The Classic Doubles Challenge)</h3>
+<p>Created by 1983 World Champion Bob Anderson as a personal training routine, Bob's 27 has become one of the most popular and enduring doubles drills in the sport.</p>
+<h4>Rules &amp; Execution:</h4>
+<ol>
+<li>
+<p>Start with an initial score of <strong>27 points</strong>.</p>
+</li>
+<li>
+<p>Throw three darts at Double 1, then three darts at Double 2, continuing sequentially through to Double 20 and concluding on the Bullseye (in standard Anderson play, the 50-point red inner bull counts as the double, worth 50 points).</p>
+</li>
+<li>
+<p><strong>Scoring:</strong></p>
+</li>
+<li>Each time a dart hits the designated double, add that double's full scoring value to your running total. (For example, hitting one D5 adds 10 points; hitting two D5s adds 20 points).</li>
+<li>
+<p><strong>If you miss the target double with all three darts, subtract the face value of that double from your score.</strong> (For example, missing all three darts at D10 deducts 20 points; missing all three at D20 deducts 40 points).</p>
+</li>
+<li>
+<p><strong>Elimination Rule:</strong> If your running total drops to zero or below at any stage, the drill ends immediately (<strong>Game Over</strong>). Record the double on which you were eliminated to track progress over time.</p>
+</li>
+</ol>
+<h4>Suggested Personal Benchmarks:</h4>
+<p>Bob's 27 is notoriously unforgiving because missing late doubles incurs heavy point penalties. Use these as informal, suggested personal targets rather than official grades:
+* <strong>Eliminated before Double 10:</strong> Indicates early-round inconsistency; focus on basic alignment and single-double grouping drills.
+* <strong>Surviving Double 20 with a positive score (50–200 points):</strong> A solid milestone showing steady double hitting across the board.
+* <strong>Completing the full board through the Bullseye (300+ points):</strong> Represents advanced doubles accuracy with minimal consecutive misses.</p>
+<h3>2. Round the Board on Doubles</h3>
+<p>A pure accuracy challenge without elimination pressure:
+* Throw three darts at each double from Double 1 to Double 20 in order.
+* Move to the next double only after hitting the current one.
+* Track the <strong>total number of darts thrown</strong> to complete the entire board.
+* <strong>Target:</strong> Completing the circuit in under 60 darts represents accomplished club standard; under 40 darts is world-class.</p>
+<h3>3. The Treble Triangle Switch (T20 – T19 – T18)</h3>
+<p>To hone your target transition across visits, throw one dart at Treble 20, one at Treble 19, and one at Treble 18 in every turn. 
+* Award yourself <strong>1 point</strong> for hitting the correct single bed and <strong>3 points</strong> for hitting the treble bed.
+* Play 10 visits (30 darts total; maximum 90 points). This routine conditions your eye to recalibrate distance and trajectory on every single throw.</p>
+      </section>
+      <section class="content-card">
+<h2>Pairs / Multiplayer Games for Practice Night</h2>
+<p>Solo practice builds technical muscle memory, but competitive practice develops tactical intelligence and psychological composure. Use these structured two-player routines during practice nights with teammates.</p>
+<h3>1. 170 Shootout</h3>
+<ul>
+<li><strong>Format:</strong> Both players start on 170, the highest mathematical outshot in darts.</li>
+<li><strong>The Play:</strong> Players take turns throwing three darts, attempting to check out 170 according to standard <a href="/darts/rules/">Darts Rules</a> (finishing on a double).</li>
+<li><strong>Game Variants:</strong></li>
+<li><strong>Standard Elimination Match:</strong> Players alternate visits until one player successfully hits a legal double to finish. The player who checks out wins the leg (typically played as a first-to-3 or first-to-5 legs match).</li>
+<li><strong>9-Dart Cap (Casual Practice House Rule):</strong> To maintain pace during practice nights, many players adopt an informal 9-dart (three visits per player) limit. If neither player checks out within nine darts, common house rules award the leg to the player with the lower remaining score, declare a draw/re-throw, or score zero points for both players. Note that awarding the leg to the lower remaining score is strictly a training house rule, as standard competition 501 rules always require hitting a double to win.</li>
+<li><strong>Why It Works:</strong> It places both competitors under instant pressure on every visit, encouraging mastery of the classic T20-T20-Bullseye combination and critical setup scores like 130, 126, and 120.</li>
+</ul>
+<h3>2. The Bermuda Triangle (House-Rule Practice Game)</h3>
+<p>Bermuda Triangle is a classic pub training game that challenges players across various sectors of the board under penalty conditions.</p>
+<p><code>BERMUDA TRIANGLE ROUND ORDER
+   ┌───────┬──────────────────────┬───────┬───────────────────────────┐
+   │ Round │ Target Segment       │ Round │ Target Segment            │
+   ├───────┼──────────────────────┼───────┼───────────────────────────┤
+   │ 1     │ Number 12            │ 7     │ Number 17                 │
+   │ 2     │ Number 13            │ 8     │ Any Treble (Face Value x3)│
+   │ 3     │ Number 14            │ 9     │ Number 18                 │
+   │ 4     │ Any Double (Face x2) │ 10    │ Number 19                 │
+   │ 5     │ Number 15            │ 11    │ Number 20                 │
+   │ 6     │ Number 16            │ 12    │ Bullseye (25 or 50)       │
+   └───────┴──────────────────────┴───────┴───────────────────────────┘</code></p>
+<h4>Rules &amp; Scoring Mechanics:</h4>
+<ol>
+<li>
+<p>In number rounds (12 through 20), only darts landing in the designated number score points (singles score face value, doubles score face × 2, trebles score face × 3).</p>
+</li>
+<li>
+<p><strong>Round 4 (Any Double):</strong> Any dart landing in any double ring on the board scores points equal to that double's value (e.g. D20 = 40 pts, D16 = 32 pts). Singles and trebles score 0.</p>
+</li>
+<li>
+<p><strong>Round 8 (Any Treble):</strong> Any dart landing in any treble ring on the board scores points equal to that treble's value (e.g. T20 = 60 pts, T19 = 57 pts). Singles and doubles score 0.</p>
+</li>
+<li>
+<p><strong>Round 12 (Bullseye):</strong> Outer bull (25) scores 25 points, and inner bull (50) scores 50 points.</p>
+</li>
+<li>
+<p><strong>The Halving Penalty (Traditional House Rule):</strong> If a player fails to land at least one dart in the designated target segment during their three-dart turn, <strong>their total accumulated score is halved</strong> (rounded down if odd). While the 50% penalty is the traditional format, some casual groups play a gentler house variant where a scoreless turn simply awards zero points without penalty. The player with the highest total score after 12 rounds wins.</p>
+</li>
+</ol>
+<h3>3. Double-In, Double-Out (DIDO) 301</h3>
+<p>Adopt the format of the PDC World Grand Prix. Players cannot begin scoring until they hit any double on the board, and they must finish on a double. Playing 301 DIDO forces players to treat early visits with the same precision and focus normally reserved for match darts.</p>
+      </section>
+      <section class="content-card">
+<h2>20-Minute Daily Plan (Printable Table)</h2>
+<p>If you only have twenty minutes per day, consistency beats marathon weekend sessions every time. Following this compact, high-efficiency workout five days a week will yield dramatic improvements in your match play within four weeks.</p>
+<div class="table-responsive"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: center;">Time (Minutes)</th>
+<th style="text-align: left;">Training Phase</th>
+<th style="text-align: left;">Specific Drill Routine</th>
+<th style="text-align: left;">Mechanical Focus</th>
+<th style="text-align: left;">Target Benchmark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>00:00 – 05:00</strong></td>
+<td style="text-align: left;"><strong>Warm-Up &amp; Alignment</strong></td>
+<td style="text-align: left;">Around the Clock Fat Singles + Bullseye</td>
+<td style="text-align: left;">Smooth elbow hinge, rhythmic release</td>
+<td style="text-align: left;">Relaxed board rotation across quadrants (aim for ≤24 darts as untimed goal)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>05:00 – 10:00</strong></td>
+<td style="text-align: left;"><strong>Heavy Scoring Power</strong></td>
+<td style="text-align: left;">8–10 Visits at Treble 20 (24–30 Darts total)</td>
+<td style="text-align: left;">Vertical grouping, stacking darts</td>
+<td style="text-align: left;">Aim for ≥15–20 drill points (e.g. 4–5 trebles [12–15 pts] + steady singles)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>10:00 – 15:00</strong></td>
+<td style="text-align: left;"><strong>Doubles Precision</strong></td>
+<td style="text-align: left;">Bob's 27 (or High Doubles: D20, D16, D10, D8)</td>
+<td style="text-align: left;">Target alignment on outer wire</td>
+<td style="text-align: left;">Complete D20 with a positive running score</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>15:00 – 20:00</strong></td>
+<td style="text-align: left;"><strong>Pressure Finishing</strong></td>
+<td style="text-align: left;">50-Up / 50-Down Ladder (or Catch 40: 61–75)</td>
+<td style="text-align: left;">Math execution, double commitment</td>
+<td style="text-align: left;">Climb to 80+ / Hit 3 of 5 checkouts</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Daily Tracking Checklist:</h3>
+<ul>
+<li><strong>Log Your Scores:</strong> Keep a notebook or mobile spreadsheet by your oche. Track your Bob's 27 finish score and your 100-Dart score once per week.</li>
+<li><strong>Stop on Good Form:</strong> When your 20 minutes expire, finish on a clean double or a treble 20 rather than walking away after a missed dart. Ending on a positive neural pathway reinforces confidence.</li>
+<li><strong>Re-Check Stance &amp; Balance:</strong> If your grouping suddenly widens during the scoring phase, pause for ten seconds, reset your front foot against the oche, and verify your elbow height before resuming.</li>
+</ul>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>How long should you practice darts every day?</h3>
+            <p>For most amateur and league players, <strong>20 to 45 minutes of deliberate practice</strong> per day is far more effective than a two-hour unstructured session once a week. Deliberate practice requires intense mental concentration; past 45 minutes, mental fatigue sets in, leading to lazy follow-throughs and bad mechanical habits.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is it better to practice scoring or doubles first?</h3>
+            <p>Beginners should spend approximately 60% of their practice time on board grouping and scoring mechanics to establish a repeatable arm action. Once you can reliably hit fat singles and average 45+ in 501, shift your focus so that <strong>at least 50% to 60% of your practice time is dedicated to doubles and checkouts</strong>. As the old darts axiom states: scoring gets you to the board, but doubles win the cash.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Why do I score high in practice but miss everything in league matches?</h3>
+            <p>In solo practice, you throw without consequences. If you miss treble 20, you instantly pull another dart from your hand and correct your line. In a live match, your opponent throws between your visits, introducing pressure, pauses, and adrenaline. To bridge this gap, replace open throwing with pressure routines like <strong>Bob's 27</strong> and <strong>The 50-Up/Down Ladder</strong>, where missed darts carry an immediate penalty.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is the most effective double to practice for beginners?</h3>
+            <p>Focus on the "Rule of Halves" starting on <strong>Double 20 (Tops)</strong> and <strong>Double 16</strong>. If you miss Double 20 inside into single 20, you have an even number left (Double 10). If you miss Double 10 inside, you leave Double 5. Similarly, Double 16 breaks down smoothly into Double 8, Double 4, Double 2, and Double 1. Mastering Double 20 and Double 16 gives you safety margins on match-winning visits.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How do I track my darts practice progress over time?</h3>
+            <p>Pick two measurable benchmark drills—such as <strong>The 100-Dart Treble 20 Challenge</strong> and <strong>Bob's 27</strong>—and record your scores once every seven days. Use our <a href="/tools/average-calculator/">Interactive Average Calculator</a> to monitor your three-dart average trends across weeks. If your 100-dart score rises by 15 points over a month, your match scoring average will inevitably climb alongside it.</p>
+          </div>
+      </section>
+
+      <section class="content-card">
+        <h2>Related Guides</h2>
+        <div class="links-grid">
+          <a href="/tools/checkout-calculator/" class="link-card">
+            <strong>Checkout Calculator</strong>
+            <span>Work out any finish while you practise.</span>
+          </a>
+          <a href="/tools/average-calculator/" class="link-card">
+            <strong>Darts Average Calculator</strong>
+            <span>Track your scoring average as you improve.</span>
+          </a>
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>501 Checkout Chart</strong>
+            <span>Every standard finish from 170 down.</span>
+          </a>
+          <a href="/darts/how-to-throw-darts/" class="link-card">
+            <strong>How to Throw Darts</strong>
+            <span>Grip, stance and technique fundamentals.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255, 255, 255, 0.15); color: #f8fafc; font-size: 0.75rem;
+    font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .badge-accent { background: var(--color-brand-accent, #c99700); color: #0c1a2c; }
+  .page-header h1 { font-size: 2.25rem; font-weight: 800; margin: 0 0 1rem; line-height: 1.2; }
+  .lead-text { font-size: 1.15rem; line-height: 1.6; color: #cbd5e1; max-width: 800px; margin: 0; }
+  .content-layout { margin-bottom: 4rem; }
+  .main-column { display: flex; flex-direction: column; gap: 2rem; }
+  .content-card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-top: 0;
+    margin-bottom: 1.25rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem;
+  }
+  .content-card h3 { font-size: 1.25rem; font-weight: 700; color: #1e293b; margin: 1.5rem 0 0.75rem; }
+  .content-card p { color: #334155; line-height: 1.7; margin-bottom: 1rem; }
+  .content-card ul, .content-card ol { margin: 1rem 0 1.5rem 1.5rem; color: #334155; line-height: 1.7; }
+  .content-card li { margin-bottom: 0.4rem; }
+  .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .data-table th, .data-table td { padding: 0.85rem 1rem; border: 1px solid #e2e8f0; text-align: left; }
+  .data-table th { background: #0f172a; color: #fff; font-weight: 700; }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
+  .faq-item { border-bottom: 1px solid #e2e8f0; padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-item h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+  .faq-item p { margin: 0; color: #475569; }
+  .links-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+  @media (min-width: 600px) { .links-grid { grid-template-columns: 1fr 1fr; } }
+  .link-card {
+    display: block; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;
+    padding: 1rem; text-decoration: none; transition: all 0.2s ease;
+  }
+  .link-card:hover { border-color: var(--color-brand-primary, #0c1a2c); transform: translateY(-2px); }
+  .link-card strong { display: block; color: #0f172a; font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .link-card span { display: block; color: #64748b; font-size: 0.85rem; line-height: 1.4; }
+</style>
