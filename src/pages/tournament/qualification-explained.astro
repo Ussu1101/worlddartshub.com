@@ -1,0 +1,600 @@
+---
+// src/pages/tournament/qualification-explained.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "How to Qualify for the World Darts Championship (128-Player Guide)";
+const pageDescription = "Every route into the expanded 128-player World Championship explained: Order of Merit, Pro Tour, qualifiers, international and African spots.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/qualification-explained/`;
+
+const breadcrumbItems = [
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'Qualification Explained' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": { "@type": "Organization", "name": "World Darts Hub Editorial Team" },
+  "publisher": { "@type": "Organization", "name": "World Darts Hub", "url": siteUrl }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can an amateur or non-Tour Card holder qualify for Alexandra Palace?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Amateurs and non-Tour Card holders have numerous paths into the tournament: finishing in the top three of the Challenge Tour or Development Tour Order of Merit, finishing in qualifying positions on the Women's Series, winning the Women's World Matchplay, or winning an official regional international affiliate qualifier (such as CDC events, Asian Tour events, or ADG African qualifiers)." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the Women's World Matchplay winner has already qualified?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Under official PDPA rules, if the Women's World Matchplay winner has already qualified for the World Championship (or declines), the invitation does not roll down the Women's Series Order of Merit. Instead, the unused spot is transferred directly to the PDPA Tour Card Holder Qualifier." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the PDC World Youth Champion has already qualified?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If the reigning World Youth Champion qualifies through the senior PDC Order of Merit, ProTour rankings, or Development Tour Order of Merit, no replacement is selected from the youth standings. The vacant berth transfers to the PDPA Tour Card Holder Qualifier." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do roll-downs operate on the Challenge and Development Tours?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On both the Winmau Challenge Tour and Winmau Development Tour, if an eligible player in the top three has already qualified via higher ranking lists, places roll down sequentially to the next eligible player on that tour's final Order of Merit until all three spots are filled." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Q-School differ from the Tour Card Holder Qualifier?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Q-School (Qualifying School) takes place every January in the UK and Europe. It is an open tournament where hundreds of players compete to win a professional two-year PDC Tour Card. The PDPA Tour Card Holder Qualifier takes place in late November. It is a closed, last-chance event open exclusively to current Tour Card holders who have not yet qualified for that season's World Championship." }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={[articleSchema, faqSchema]}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">TOURNAMENT GUIDE</span>
+        <span class="badge">128-PLAYER FIELD</span>
+      </div>
+      <h1>How Players Qualify for the World Darts Championship</h1>
+      <p class="lead-text">Qualifying for the PDC World Darts Championship is the most demanding achievement in professional darts. Every December, 128 competitors from around the globe assemble at London's Alexandra Palace to compete for the Sid Waddell Trophy and a record <strong>£5,000,000 prize fund</strong>, with £1,000,000 awarded to the world champion.</p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="2026/27 World Championship Qualification" />
+
+      <section class="content-card">
+
+<p>Staged in Alexandra Palace’s historic <strong>Great Hall</strong>, the expanded 128-player championship brings together the world's elite tour professionals, seasonal form leaders, secondary tour frontrunners, and champions from international partner circuits.</p>
+<p>The 128 places are determined through three primary pathways:</p>
+<ol>
+<li>
+<p><strong>The PDC Order of Merit (40 players):</strong> The official world rankings based on two-year rolling prize money.</p>
+</li>
+<li>
+<p><strong>The PDC ProTour Order of Merit (40 players):</strong> The highest-earning non-qualified players over a single season on the European Tour and Players Championship floor circuit.</p>
+</li>
+<li>
+<p><strong>The International &amp; Secondary Tour Tier (48 places):</strong> An itemized ledger of developmental tours, women's pathways, continental affiliate champions, and the final Tour Card holder qualifier.</p>
+</li>
+</ol>
+<p>Below is the verified breakdown of how all 128 spots are allocated under official Professional Darts Corporation (<a href="https://www.pdc.tv/">PDC</a>) and Professional Darts Players Association (<a href="https://pdpa.co.uk/">PDPA</a>) regulations.</p>
+      </section>
+      <section class="content-card">
+<h2>Summary: The 128-Player Field at a Glance</h2>
+<div class="table-responsive"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: left;">Qualification Pathway</th>
+<th style="text-align: center;">Berths</th>
+<th style="text-align: left;">Eligibility Criteria</th>
+<th style="text-align: left;">Bracket Status</th>
+<th style="text-align: left;">Primary Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>PDC Order of Merit</strong></td>
+<td style="text-align: center;"><strong>40</strong></td>
+<td style="text-align: left;">Top 40 on two-year rolling world rankings at late November cut-off.</td>
+<td style="text-align: left;">Round 1 (Seeds 1–32 seeded; Nos. 33–40 drawn in left-hand side ties)</td>
+<td style="text-align: left;"><a href="https://www.pdc.tv/order-of-merit">PDC Order of Merit</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PDC ProTour Order of Merit</strong></td>
+<td style="text-align: center;"><strong>40</strong></td>
+<td style="text-align: left;">Top 40 non-qualified players on one-year ProTour prize money list.</td>
+<td style="text-align: left;">Round 1</td>
+<td style="text-align: left;"><a href="https://www.pdc.tv/order-of-merit">PDC ProTour Rankings</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>International &amp; Secondary Tier</strong></td>
+<td style="text-align: center;"><strong>48</strong></td>
+<td style="text-align: left;">Structured 48-slot ledger of secondary tours, regional circuits, Tour Card qualifier, and unconfirmed slots.</td>
+<td style="text-align: left;">Round 1</td>
+<td style="text-align: left;"><a href="https://australiandartsassociation.com.au/2026/02/24/2026-27-paddy-power-world-championship-international-qualifying-structure-confirmed/">ADA 2026/27 Structure Announcement</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total Field</strong></td>
+<td style="text-align: center;"><strong>128</strong></td>
+<td style="text-align: left;"><strong>Complete Alexandra Palace Championship Field</strong></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>Official 128-Player Roster</strong></td>
+</tr>
+</tbody>
+</table></div>
+      </section>
+      <AdSlot position="in-article" />
+      <section class="content-card">
+<h2>The Complete 48-Slot International &amp; Secondary Allocation Ledger</h2>
+<p>The official season announcement establishes the 48 non-ranking places in a strict, ordered ledger. Confirmed routes, provisional berths, and unallocated slots are cataloged below:</p>
+<div class="table-responsive"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: center;">Slot(s)</th>
+<th style="text-align: left;">Qualification Pathway / Regional Event</th>
+<th style="text-align: center;">Places</th>
+<th style="text-align: left;">Status / Circuit Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">PDC World Youth Champion</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (<a href="https://pdpa.co.uk/dt-info-induction/">PDPA Development Tour</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2–4</strong></td>
+<td style="text-align: left;">Winmau Development Tour (1st, 2nd, 3rd)</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Confirmed (<a href="https://pdpa.co.uk/dt-info-induction/">PDPA Development Tour</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5–7</strong></td>
+<td style="text-align: left;">Winmau Challenge Tour (1st, 2nd, 3rd)</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Confirmed (<a href="https://pdpa.co.uk/ct-info/">PDPA Challenge Tour</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: left;">Betfred Women's World Matchplay Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (<a href="https://pdpa.co.uk/ws-info-induction/">PDPA Women's Series</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>9–11</strong></td>
+<td style="text-align: left;">PDC Women's Series Order of Merit (1st, 2nd, 3rd)</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Confirmed (<a href="https://pdpa.co.uk/news/womens-series-season-concludes/">PDPA Season Report</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>12</strong></td>
+<td style="text-align: left;">Japanese Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDC Asian Affiliate)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>13</strong></td>
+<td style="text-align: left;">PDC China Championship Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDC China Affiliate)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>14</strong></td>
+<td style="text-align: left;">Indian Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDC Asian Affiliate)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>15–16</strong></td>
+<td style="text-align: left;">PDC Asian Championship Winner &amp; Runner-Up</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Confirmed (PDC Asian Tour)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>17–21</strong></td>
+<td style="text-align: left;">PDC Asian Tour Order of Merit Qualifiers</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Confirmed (PDC Asian Tour)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>22</strong></td>
+<td style="text-align: left;">PDCE Netherlands &amp; Belgium Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDC Europe)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>23</strong></td>
+<td style="text-align: left;">PDCE Mediterranean Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDC Europe)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>24</strong></td>
+<td style="text-align: left;">PDCE South-East Europe Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDC Europe)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>25</strong></td>
+<td style="text-align: left;">PDCE Czechia Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDC Europe)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>26</strong></td>
+<td style="text-align: left;">PDO Polish Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (Polska Darts Organisation)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>27</strong></td>
+<td style="text-align: left;">PDCE DACH Super League Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDC Europe — DACH Region)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>28</strong></td>
+<td style="text-align: left;">Hungarian Super League Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (Hungarian Darts Federation / PDCE)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>29</strong></td>
+<td style="text-align: left;">UK &amp; Ireland Tour Card Holder &amp; Associate Member Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDPA / PDC Domestic Event)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>30</strong></td>
+<td style="text-align: left;">Championship Darts Corporation (CDC) Continental Cup Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (Championship Darts Corporation)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>31</strong></td>
+<td style="text-align: left;">CDC Cross-Border Challenge Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (Championship Darts Corporation)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>32</strong></td>
+<td style="text-align: left;">PDC North American Championship Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDC / CDC Staged Major)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>33</strong></td>
+<td style="text-align: left;">Top-Ranked United States Player on CDC Tour</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (CDC Order of Merit)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>34</strong></td>
+<td style="text-align: left;">Top-Ranked Canadian Player on CDC Tour</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (CDC Order of Merit)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>35</strong></td>
+<td style="text-align: left;">Championship Darts Latin America &amp; Caribbean (CDLC) Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (CDLC Circuit)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>36</strong></td>
+<td style="text-align: left;">PDC Nordic &amp; Baltic Championship Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (PDCNB — Jann Hoffmann Trophy)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>37–38</strong></td>
+<td style="text-align: left;">PDC Nordic &amp; Baltic ProTour (1st &amp; 2nd)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Confirmed (PDCNB Order of Merit)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>39</strong></td>
+<td style="text-align: left;">ANZ Premier League Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (Oceania Affiliate Circuit)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>40</strong></td>
+<td style="text-align: left;">Australian Darts Association (ADA) Tour Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (Australian Darts Association)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>41</strong></td>
+<td style="text-align: left;">DartPlayers New Zealand (DPNZ) ProTour Winner</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (DartPlayers New Zealand)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>42</strong></td>
+<td style="text-align: left;">Australia / New Zealand Qualifier — <strong>TBC</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Unconfirmed (Oceania Playoff Format TBC)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>43</strong></td>
+<td style="text-align: left;">African Darts Group (ADG) Northern Africa Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (ADG Nairobi Event)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>44</strong></td>
+<td style="text-align: left;">African Darts Group (ADG) Southern Africa Qualifier</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Confirmed (ADG Cape Town Event)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>45–46</strong></td>
+<td style="text-align: left;">PDC Tour Card Holder Qualifier (Places 1 &amp; 2)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Confirmed (PDPA Leicester Qualifier)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>47–48</strong></td>
+<td style="text-align: left;">Additional Qualifying Places — <strong>TBC in Announcement</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Unconfirmed (PDC Administration TBC)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Total</strong></td>
+<td style="text-align: left;"><strong>International &amp; Secondary Tier Allocation</strong></td>
+<td style="text-align: center;"><strong>48</strong></td>
+<td style="text-align: left;"><strong>Full 48-Slot Sub-Tier</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Note on regional nomenclature:</em> In summary narratives, governing bodies frequently group North American pathways into "five CDC places" while listing Latin America (CDLC) separately. The itemized ledger above reflects the exact published 48-slot structure, distinguishing the five CDC spots (Slots 30–34) from the single CDLC spot (Slot 35).</p>
+      </section>
+      <section class="content-card">
+<h2>Route 1: The Main PDC Order of Merit (40 Players)</h2>
+<p>The principal route to Alexandra Palace is the <strong>PDC Order of Merit</strong>, which serves as professional darts' official world ranking table.</p>
+<h3>Two-Year Rolling Calculations</h3>
+<p>Unlike point-based tennis or golf systems, the PDC Order of Merit tracks prize money won in British pounds sterling (£) across sanctioned ranking tournaments over a rolling <strong>two-year (104-week) period</strong>. As new earnings enter a player's ledger, money earned at the corresponding event two years prior drops off.</p>
+<p>Ranking tournaments that count toward the main Order of Merit include:
+- PDC World Darts Championship
+- World Matchplay
+- World Grand Prix
+- UK Open
+- European Championship
+- Players Championship Finals
+- Grand Slam of Darts (PDC-ranked stage prize money)
+- All Players Championship floor events (up to 34 tournaments) and European Tour stages (15 tournaments)</p>
+<h3>Qualification Cut-Off and Bracket Seeding</h3>
+<p>The qualification ranking cut-off falls in late November in conjunction with the Players Championship Finals in Minehead (scheduled from 27 November 2026), after which the final top 40 allocations are confirmed:
+- <strong>Top 32 Seeded Players:</strong> The top 32 ranked players on the PDC Order of Merit receive protected seed positions in the 128-player draw. Under official regulations for the expanded field, <strong>all 128 players enter the tournament in Round 1</strong> (eliminating the second-round byes used in the former 96-player format).
+- <strong>Rankings 33 through 40:</strong> Eight additional players qualify directly through their two-year world ranking. In the official tournament draw structure, the 32 seeded players and the <strong>players ranked 33–64</strong> are drawn at random into the left-hand side of the 64 first-round ties to play against the remaining 64 qualifiers.</p>
+<p>Track real-time movements on our <a href="/tournament/order-of-merit/">PDC Order of Merit Guide</a> and review historical champions in our <a href="/tournament/world-darts-championship/">World Darts Championship Tournament Overview</a>.</p>
+      </section>
+      <section class="content-card">
+<h2>Route 2: The PDC ProTour Order of Merit (40 Players)</h2>
+<p>The <strong>PDC ProTour Order of Merit</strong> rewards current-season floor consistency rather than historical multi-year performance.</p>
+<h3>Single-Season Mechanics</h3>
+<p>Calculated across a rolling <strong>one-year period</strong>, the ProTour Order of Merit exclusively counts earnings from:
+- <strong>Players Championship Events:</strong> Non-televised floor events (scheduled for up to 34 tournaments) contested behind closed doors by the 128 PDC Tour Card holders and eligible reserve players.
+- <strong>European Tour Events:</strong> Staged events (15 tournaments across the European circuit) held in Germany, the Netherlands, Belgium, Austria, Switzerland, Poland, Slovakia, and the Czech Republic.</p>
+<p>Earnings from premier televised invitationals (such as the Premier League, World Matchplay, World Grand Prix, and World Cup of Darts) do not count toward this ranking.</p>
+<h3>The Top-40 Non-Qualified Gateway</h3>
+<p>Once the top 40 players from the main Order of Merit are removed, the <strong>next 40 highest-earning eligible players</strong> on the ProTour Order of Merit secure places at Alexandra Palace.</p>
+<p>All 40 ProTour qualifiers enter the tournament in Round 1. This list offers an essential lifeline for established tour veterans defending substantial two-year prize money and provides the primary qualification path for in-form newcomers holding Tour Cards.</p>
+      </section>
+      <section class="content-card">
+<h2>Route 3: Secondary Circuits, Youth &amp; Women's Pathways (11 Places)</h2>
+<p>To ensure competitive merit outside the senior Tour Card holder roster, the PDC and PDPA maintain dedicated pathways for secondary tours, youth development, and women's professional darts:</p>
+<h3>Winmau Challenge Tour (Slots 5–7: 3 Places)</h3>
+<p>The Winmau Challenge Tour provides competitive structure for players who attended PDC Qualifying School (Q-School) but did not win a Tour Card.
+- <strong>Allocation:</strong> Per official <a href="https://pdpa.co.uk/ct-info/">PDPA Challenge Tour Regulations</a>, the <strong>top three eligible players</strong> on the final Challenge Tour Order of Merit earn invitations to the World Championship.
+- <strong>Roll-Down Rule:</strong> If any of the top three players have already qualified through the main Order of Merit or ProTour rankings (or decline), invitations roll down sequentially to the next eligible player on the Challenge Tour list until filled.
+- <strong>PDC Tour Card Separation:</strong> The top two finishers on the final Challenge Tour Order of Merit also receive a two-year PDC Tour Card. This professional card award is a separate benefit and must not be confused with the three World Championship berths.</p>
+<h3>Winmau Development Tour &amp; Youth Championship (Slots 1–4: 4 Places)</h3>
+<p>The Winmau Development Tour caters to emerging players aged 16 to 23.
+- <strong>Standings Allocation (Slots 2–4: 3 Places):</strong> Per <a href="https://pdpa.co.uk/dt-info-induction/">PDPA Development Tour Regulations</a>, the <strong>top three eligible players</strong> on the final Development Tour Order of Merit qualify. Places roll down sequentially to non-qualified players if those in the top three qualify through higher ranking lists.
+- <strong>PDC World Youth Champion (Slot 1: 1 Place):</strong> The reigning World Youth Champion receives direct entry.
+- <strong>Crucial Replacement Rule:</strong> If the World Youth Champion has already qualified via the main Order of Merit, ProTour rankings, or Development Tour list (or declines), <strong>no replacement is offered through the youth standings</strong>. The unused place is transferred directly to the <strong>PDPA Tour Card Holder Qualifier</strong>.</p>
+<h3>Women's Professional Pathways (Slots 8–11: 4 Places)</h3>
+<p>Governed by <a href="https://pdpa.co.uk/ws-info-induction/">PDPA Women's Series Regulations</a> and official PDC season reports:
+- <strong>Betfred Women's World Matchplay Winner (Slot 8: 1 Place):</strong> The winner of the annual televised Women’s World Matchplay in Blackpool earns direct qualification.
+- <strong>Matchplay Replacement Rule:</strong> If the Women's World Matchplay winner has already qualified via the Women's Series Order of Merit (or declines), <strong>no replacement place is offered down the Women's Series rankings</strong>. Per PDPA rules, the vacant berth is reallocated to the <strong>PDPA Tour Card Holder Qualifier</strong>.
+- <strong>PDC Women’s Series Order of Merit (Slots 9–11: 3 Places):</strong> In accordance with the 128-player expanded tournament structure, the <strong>top three non-qualified players</strong> on the final Women's Series Order of Merit secure World Championship invitations (superseding the pre-expansion two-player threshold on general induction pages). This allocation was reaffirmed in the <a href="https://pdpa.co.uk/news/womens-series-season-concludes/">official PDPA season-conclusion report</a> following the final 2026 Women's Series weekend in Wigan, where third-spot qualification extended down to eligible ranking leaders including Vicky Pruim.</p>
+      </section>
+      <section class="content-card">
+<h2>Route 4: Global Affiliate Tours &amp; Regional Knockouts (32 Places)</h2>
+<p>The 48-slot tier allocates 32 spots (31 confirmed regional routes plus one unconfirmed Oceania berth) to continental tours, regional partner organizations, and domestic knockout qualifiers:</p>
+<h3>Asia (10 Places: Slots 12–21)</h3>
+<p>Organized under the PDC Asian Tour:
+- <strong>PDC Asian Tour Order of Merit (Slots 17–21):</strong> Top 5 players on the final seasonal ranking list.
+- <strong>PDC Asian Championship (Slots 15–16):</strong> The champion and runner-up of the annual premier continental championship.
+- <strong>Regional Qualifiers:</strong> Dedicated individual knockout qualifiers for Japan (Slot 12), India (Slot 14), and the winner of the PDC China Championship (Slot 13).</p>
+<h3>Europe &amp; Super Leagues (7 Places: Slots 22–28)</h3>
+<p>Sanctioned in partnership with PDC Europe and domestic federations:
+- <strong>Regional Knockouts:</strong> Dedicated qualifying events for Netherlands &amp; Belgium (Slot 22), Mediterranean (Slot 23), South-East Europe (Slot 24), and Czechia (Slot 25).
+- <strong>National League Champions:</strong> Polska Darts Organisation Qualifier (Slot 26), PDCE DACH Super League Champion covering Germany, Austria, and Switzerland (Slot 27), and the Hungarian Super League Champion (Slot 28).</p>
+<h3>North America &amp; Latin America (6 Places: Slots 30–35)</h3>
+<p>Administered with the <a href="https://champdarts.com/">Championship Darts Corporation (CDC)</a> and Championship Darts Latin America &amp; Caribbean (CDLC):
+- <strong>CDC Continental Cup Winner:</strong> Slot 30.
+- <strong>CDC Cross-Border Challenge Winner:</strong> Slot 31.
+- <strong>PDC North American Championship Winner:</strong> Slot 32 (staged during the US Darts Masters weekend).
+- <strong>CDC USA Order of Merit:</strong> Top-ranked American player (Slot 33).
+- <strong>CDC Canadian Order of Merit:</strong> Top-ranked Canadian player (Slot 34).
+- <strong>CDLC Qualifier:</strong> Champion of the Latin American and Caribbean tour (Slot 35).</p>
+<h3>Nordic &amp; Baltic (3 Places: Slots 36–38)</h3>
+<p>Operated by PDC Nordic &amp; Baltic:
+- <strong>PDC Nordic &amp; Baltic Championship:</strong> Winner receives Slot 36 (competing for the Jann Hoffmann Trophy).
+- <strong>PDCNB ProTour:</strong> The top two players on the final Nordic &amp; Baltic ProTour Order of Merit (Slots 37–38).</p>
+<h3>Oceania &amp; Australasia (4 Places: Slots 39–42)</h3>
+<p>Organized across Australian and New Zealand bodies:
+- <strong>ANZ Premier League:</strong> Winner receives Slot 39.
+- <strong>Australian Darts Association (ADA) Tour:</strong> Winner receives Slot 40.
+- <strong>DartPlayers New Zealand (DPNZ) ProTour:</strong> Winner receives Slot 41.
+- <strong>Oceanic Playoff:</strong> Slot 42 remains designated as <strong>TBC</strong> on the official tournament schedule.</p>
+<h3>Africa (2 Guaranteed Places: Slots 43–44)</h3>
+<p>Administered by the <a href="http://africandartgroup.com/">African Darts Group (ADG)</a>, providing permanent continental representation:
+- <strong>Northern / East Africa Qualifier (Slot 43):</strong> Staged in Nairobi, Kenya.
+- <strong>Southern Africa Qualifier (Slot 44):</strong> Staged in Cape Town, South Africa.</p>
+      </section>
+      <section class="content-card">
+<h2>Route 5: Tour Card Holder Qualifiers &amp; Unconfirmed Slots (5 Places)</h2>
+<p>The remainder of the 48-slot pool encompasses Tour Card holder events and unallocated berths:</p>
+<ul>
+<li><strong>UK &amp; Ireland Tour Card Holder &amp; Associate Member Qualifier (Slot 29: 1 Place):</strong> Staged as a dedicated British/Irish event per the season announcement.</li>
+<li><strong>PDPA Tour Card Holder Qualifier (Slots 45–46: 2 Confirmed Places):</strong> A high-stakes, closed-door knockout tournament held at the Mattioli Arena in Leicester. It is open strictly to PDC Tour Card holders who have not qualified via the main Order of Merit or ProTour rankings.</li>
+<li><strong>Reallocation Inflow:</strong> Any unused qualification berths resulting from the World Youth Champion or Women's World Matchplay winner having already qualified transfer directly into this qualifier.</li>
+<li><strong>Unconfirmed Places (Slots 47–48: 2 Places TBC):</strong> Two final berths remain designated as <strong>TBC</strong> in published governing documents. They are not assigned to specific circuits until formally ratified by the PDC.</li>
+</ul>
+      </section>
+      <section class="content-card">
+<h2>Key Qualification Dates &amp; Cut-Off Timeline (2026/27)</h2>
+<p>All dates are verified against the official <a href="https://pdpa.co.uk/events/calendar/">PDPA Event Calendar</a> and governing notices:</p>
+<ul>
+<li><strong>3–4 October 2026:</strong> Final weekend of the <strong>Winmau Development Tour</strong> in Wigan; top three Development Tour qualifiers confirmed.</li>
+<li><strong>10–11 October 2026:</strong> Final weekend of the <strong>PDC Women’s Series</strong> in Wigan; Women's Series Order of Merit qualifiers confirmed.</li>
+<li><strong>Challenge Tour Conclusion:</strong> Season concludes per the official <a href="https://pdpa.co.uk/news/winmau-challenge-tour-season-concludes-with-hunt-on-top-spot/">Winmau Challenge Tour Announcement</a>.</li>
+<li><strong>Late October – Mid-November 2026:</strong> Final international affiliate playoffs conclude across Asia, Europe, Oceania, and Africa.</li>
+<li><strong>27–29 November 2026:</strong> The <strong>Players Championship Finals</strong> at Butlin's Minehead Resort; serves as the final ranking tournament establishing the closing cut-off for the <strong>PDC Order of Merit (Top 40)</strong> and tournament seedings. With the ProTour playing season already completed, the conclusion of this tournament also definitively confirms the top 40 non-qualified qualifiers from the <strong>ProTour Order of Merit</strong> once the main ranking list is locked.</li>
+<li><strong>30 November 2026:</strong> <strong>PDPA Tour Card Holder Qualifier</strong> staged at the Mattioli Arena in Leicester.</li>
+<li><strong>Early December 2026:</strong> The official PDC <a href="/draw/">World Darts Championship Draw</a> confirms first-round matchups and bracket pathways.</li>
+<li><strong>10 December 2026:</strong> Opening day of the <strong>2026/27 PDC World Darts Championship</strong> in the Great Hall at Alexandra Palace.</li>
+</ul>
+<p>Review the complete session schedule on our <a href="/schedule/">Alexandra Palace Match Schedule</a>, track bracket pairings on our <a href="/draw/">World Darts Championship Draw Guide</a>, and inspect prize money round-by-round in our <a href="/tournament/prize-money/">£5M Prize Money Guide</a>.</p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>Can an amateur or non-Tour Card holder qualify for Alexandra Palace?</h3>
+            <p>Yes. Amateurs and non-Tour Card holders have numerous paths into the tournament: finishing in the top three of the Challenge Tour or Development Tour Order of Merit, finishing in qualifying positions on the Women's Series, winning the Women's World Matchplay, or winning an official regional international affiliate qualifier (such as CDC events, Asian Tour events, or ADG African qualifiers).</p>
+          </div>
+          <div class="faq-item">
+            <h3>What happens if the Women's World Matchplay winner has already qualified?</h3>
+            <p>Under official PDPA rules, if the Women's World Matchplay winner has already qualified for the World Championship (or declines), <strong>the invitation does not roll down the Women's Series Order of Merit</strong>. Instead, the unused spot is transferred directly to the <strong>PDPA Tour Card Holder Qualifier</strong>.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What happens if the PDC World Youth Champion has already qualified?</h3>
+            <p>If the reigning World Youth Champion qualifies through the senior PDC Order of Merit, ProTour rankings, or Development Tour Order of Merit, no replacement is selected from the youth standings. The vacant berth transfers to the <strong>PDPA Tour Card Holder Qualifier</strong>.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How do roll-downs operate on the Challenge and Development Tours?</h3>
+            <p>On both the Winmau Challenge Tour and Winmau Development Tour, if an eligible player in the top three has already qualified via higher ranking lists, places roll down sequentially to the next eligible player on that tour's final Order of Merit until all three spots are filled.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How does Q-School differ from the Tour Card Holder Qualifier?</h3>
+            <p><strong>Q-School (Qualifying School)</strong> takes place every January in the UK and Europe. It is an open tournament where hundreds of players compete to win a professional two-year PDC Tour Card. </p>
+<p>The <strong>PDPA Tour Card Holder Qualifier</strong> takes place in late November. It is a closed, last-chance event open <strong>exclusively to current Tour Card holders</strong> who have not yet qualified for that season's World Championship.</p>
+          </div>
+      </section>
+
+      <section class="content-card">
+      <h2>Authoritative Source Register &amp; Regulatory Notes</h2>
+      <p>Every allocation, date, and rule in this guide was compiled from primary regulatory records:</p>
+      <ol>
+      <li><strong>Season-Specific International Qualifying Announcement (Australian Darts Association / PDC):</strong> Confirms the 40 + 40 + 48 qualification breakdown, the itemized 48-slot ledger, 32 seeds, Round 1 entry for all 128 players, and bracket placement for players ranked 33–64 on the left-hand side of ties. (<a href="https://australiandartsassociation.com.au/2026/02/24/2026-27-paddy-power-world-championship-international-qualifying-structure-confirmed/">ADA Announcement</a>)</li>
+      <li><strong>PDPA Winmau Challenge Tour Regulations:</strong> Confirms that the top three eligible players earn World Championship invitations with roll-down down that list. (<a href="https://pdpa.co.uk/ct-info/">PDPA Challenge Tour Info</a>)</li>
+      <li><strong>PDPA Winmau Development Tour Regulations:</strong> Confirms top three Development Tour qualifiers, the World Youth Champion berth, and the rule reallocating youth champion roll-down spots to the Tour Card Holder Qualifier. (<a href="https://pdpa.co.uk/dt-info-induction/">PDPA Development Tour Info</a>)</li>
+      <li><strong>PDPA Women’s Series Regulations &amp; Season Conclusion Reports:</strong> Confirms the 3 Women's Series Order of Merit qualifying places under the expanded 128-player format alongside the Women's Matchplay winner, and establishes that any unused Matchplay berth transfers directly to the Tour Card Holder Qualifier. (<a href="https://pdpa.co.uk/ws-info-induction/">PDPA Women's Series Info</a> and <a href="https://pdpa.co.uk/news/womens-series-season-concludes/">PDPA Season Conclusion Report</a>)</li>
+      <li><strong>PDPA Official Event Calendar:</strong> Confirms Development Tour final events (3–4 Oct 2026), Women's Series final events (10–11 Oct 2026), Players Championship Finals (27 Nov 2026), Tour Card Holder Qualifier (30 Nov 2026), and World Championship commencement (10 Dec 2026). (<a href="https://pdpa.co.uk/events/calendar/">PDPA Events Calendar</a>)</li>
+      <li><strong>Winmau Challenge Tour Season Announcement:</strong> (<a href="https://pdpa.co.uk/news/winmau-challenge-tour-season-concludes-with-hunt-on-top-spot/">PDPA News Announcement</a>)</li>
+      <li><strong>PDC Rule Book (2026 Season):</strong> Official tournament precedence, Order of Merit rolling mechanics, and affiliate rules. (<a href="https://pdpa.co.uk/news/pdc-rules-2026/">PDPA PDC Rules 2026 Announcement</a>)</li>
+      <li><strong>PDC Official Order of Merit:</strong> Authoritative two-year ranking definitions. (<a href="https://www.pdc.tv/order-of-merit">PDC Order of Merit</a>)</li>
+      <li><strong>African Darts Group (ADG):</strong> Authoritative confirmation of the two guaranteed African qualification places. (<a href="http://africandartgroup.com/">African Darts Group</a>)</li>
+      </ol>
+      </section>
+
+      <section class="content-card">
+        <h2>Related Guides</h2>
+        <div class="links-grid">
+          <a href="/tournament/world-darts-championship/" class="link-card">
+            <strong>World Darts Championship Hub</strong>
+            <span>Dates, format, prize money and the road to Alexandra Palace.</span>
+          </a>
+          <a href="/tournament/order-of-merit/" class="link-card">
+            <strong>PDC Order of Merit Explained</strong>
+            <span>How the two-year rolling rankings decide seeds and qualification.</span>
+          </a>
+          <a href="/draw/" class="link-card">
+            <strong>World Championship Draw</strong>
+            <span>When the draw is made and how the 128-player bracket works.</span>
+          </a>
+          <a href="/schedule/" class="link-card">
+            <strong>Tournament Schedule</strong>
+            <span>Session dates and times for the 2026/27 World Championship.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255, 255, 255, 0.15); color: #f8fafc; font-size: 0.75rem;
+    font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .badge-accent { background: var(--color-brand-accent, #c99700); color: #0c1a2c; }
+  .page-header h1 { font-size: 2.25rem; font-weight: 800; margin: 0 0 1rem; line-height: 1.2; }
+  .lead-text { font-size: 1.15rem; line-height: 1.6; color: #cbd5e1; max-width: 800px; margin: 0; }
+  .content-layout { margin-bottom: 4rem; }
+  .main-column { display: flex; flex-direction: column; gap: 2rem; }
+  .content-card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-top: 0;
+    margin-bottom: 1.25rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem;
+  }
+  .content-card h3 { font-size: 1.25rem; font-weight: 700; color: #1e293b; margin: 1.5rem 0 0.75rem; }
+  .content-card p { color: #334155; line-height: 1.7; margin-bottom: 1rem; }
+  .content-card ul, .content-card ol { margin: 1rem 0 1.5rem 1.5rem; color: #334155; line-height: 1.7; }
+  .content-card li { margin-bottom: 0.4rem; }
+  .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .data-table th, .data-table td { padding: 0.85rem 1rem; border: 1px solid #e2e8f0; text-align: left; }
+  .data-table th { background: #0f172a; color: #fff; font-weight: 700; }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
+  .faq-item { border-bottom: 1px solid #e2e8f0; padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-item h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+  .faq-item p { margin: 0; color: #475569; }
+  .links-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+  @media (min-width: 600px) { .links-grid { grid-template-columns: 1fr 1fr; } }
+  .link-card {
+    display: block; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;
+    padding: 1rem; text-decoration: none; transition: all 0.2s ease;
+  }
+  .link-card:hover { border-color: var(--color-brand-primary, #0c1a2c); transform: translateY(-2px); }
+  .link-card strong { display: block; color: #0f172a; font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .link-card span { display: block; color: #64748b; font-size: 0.85rem; line-height: 1.4; }
+</style>
