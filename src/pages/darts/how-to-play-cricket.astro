@@ -1,0 +1,630 @@
+---
+// src/pages/darts/how-to-play-cricket.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "How to Play Cricket Darts: Rules, Scoring & Strategy";
+const pageDescription = "Cricket darts explained simply: numbers 20-15 and the bull, closing, pointing and scoring - with a worked example game.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/darts/how-to-play-cricket/`;
+
+const breadcrumbItems = [
+  { name: 'Darts Knowledge', url: '/darts/rules/' },
+  { name: 'How to Play Cricket' }
+];
+
+const schemaGraph = [
+  {
+    "@type": "Article",
+    "@id": "https://worlddartshub.com/darts/how-to-play-cricket/#article",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://worlddartshub.com/#website",
+      "name": "World Darts Hub",
+      "url": "https://worlddartshub.com"
+    },
+    "headline": "How to Play Cricket Darts: Rules, Scoring & Strategy",
+    "description": "Cricket darts explained simply: numbers 20-15 and the bull, closing, pointing and scoring - with a worked example game.",
+    "url": "https://worlddartshub.com/darts/how-to-play-cricket/",
+    "inLanguage": "en-GB",
+    "datePublished": "2026-10-15T00:00:00+00:00",
+    "dateModified": "2026-10-15T00:00:00+00:00",
+    "mainEntityOfPage": "https://worlddartshub.com/darts/how-to-play-cricket/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "World Darts Hub",
+      "url": "https://worlddartshub.com"
+    }
+  },
+  {
+    "@type": "BreadcrumbList",
+    "@id": "https://worlddartshub.com/darts/how-to-play-cricket/#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://worlddartshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Darts",
+        "item": "https://worlddartshub.com/darts/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Play Cricket Darts",
+        "item": "https://worlddartshub.com/darts/how-to-play-cricket/"
+      }
+    ]
+  },
+  {
+    "@type": "HowTo",
+    "@id": "https://worlddartshub.com/darts/how-to-play-cricket/#howto",
+    "name": "How to Play and Score Cricket Darts",
+    "description": "Step-by-step instructions for setting up, playing, and scoring a regulation match of Cricket darts.",
+    "totalTime": "PT15M",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Understand Active Numbers",
+        "text": "Recognize that only numbers 20, 19, 18, 17, 16, 15, and the Bullseye count in Cricket. All other board segments are inactive."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Determine Turn Order",
+        "text": "Throw a single dart at the bullseye with your opponent. The player whose dart lands closest to the centre throws first."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Close Numbers with Three Marks",
+        "text": "Hit each target three times to close it. Singles award 1 mark (/), doubles award 2 marks (X), and trebles award 3 marks (circled X)."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Point on Open Numbers",
+        "text": "Once you close a number, score points equal to that segment's value on every additional hit, provided your opponent has not yet closed it."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Kill Opponent Scoring",
+        "text": "If an opponent closes a number and begins pointing, hit three marks on that number to deaden it and prevent them from scoring further."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "Complete Both Winning Requirements",
+        "text": "Win the game by closing all seven active targets while maintaining equal or greater total points than your opponent."
+      }
+    ]
+  },
+  {
+    "@type": "FAQPage",
+    "@id": "https://worlddartshub.com/darts/how-to-play-cricket/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does a treble close a number in a single dart?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. In Cricket, a treble segment counts as three marks. If you hit a Treble 20 on an unworked number, all three required marks are satisfied immediately, closing the number in one throw."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you win Cricket if you close all numbers but have fewer points?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. You cannot win standard Cricket while trailing on points. If you close your final target but your opponent leads on points, the game continues until you score enough points on remaining unclosed numbers to equal or exceed their score."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if you hit a number outside 15\u201320 or Bull?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any dart landing in segments 1 through 14, or outside the double wire, is out of play. It registers no marks, awards no points, and counts as one of your three thrown darts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Outer Bull and Inner Bull in Cricket?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The green outer ring (Single Bull) counts as one mark (25 points). The red inner ring (Double Bull) counts as two marks (50 points). Hitting an inner and outer bull in the same turn closes the bullseye in two darts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the optimal basic strategy in Cricket?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Points protect you, but closing wins the game. If you have an opportunity to point on a number your opponent has left open, establishing a 40- to 60-point buffer forces your opponent into a defensive posture."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={schemaGraph}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">DARTS ESSENTIALS</span>
+        <span class="badge">GAMES</span>
+      </div>
+      <h1>How to Play Cricket Darts</h1>
+      <p class="lead-text">While 501 is the global tournament standard seen on television, <strong>Cricket</strong> is arguably the most popular casual and league dart game played across North America and in soft-tip darts worldwide. </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="Cricket Darts Rules" />
+
+      <section class="content-card">
+
+<p>Cricket is a tactical game of territory and timing. Rather than counting down from a large total to zero, players compete to claim ("close") seven specific target areas on the board while accumulating points on open targets before their opponent can shut them down. </p>
+<p>Whether you are stepping up to a pub board on league night or practicing precision clustering at home, this complete guide covers the rules, the scoring notation, a full turn-by-turn worked example, and the strategic choices between attacking for points and defending your lead.</p>
+      </section>
+      <section class="content-card">
+<h2>Cricket at a glance (numbers in play, goal of the game)</h2>
+<p>In standard Cricket, only seven targets on the dartboard are active. All other segments on the board are out of play.</p>
+<p><code>+-------------------------------------------------------------+
+|               ACTIVE CRICKET TARGETS (7 TOTAL)              |
+|                                                             |
+|    [ 20 ]   [ 19 ]   [ 18 ]   [ 17 ]   [ 16 ]   [ 15 ]      |
+|                                                             |
+|                       [ BULLSEYE ]                          |
+|             (Outer Bull = 25  |  Inner Bull = 50)           |
++-------------------------------------------------------------+</code></p>
+<h3>The Active Numbers</h3>
+<p>The only numbers in play are <strong>20, 19, 18, 17, 16, 15</strong>, and the <strong>Bullseye</strong>. </p>
+<p>If a dart lands in any segment numbered 1 through 14, or in the outer ring outside the doubles wire, it scores nothing: no marks, no points, and no effect on the game state.</p>
+<h3>The Objective of the Game</h3>
+<p>To win a standard game of Cricket, a player (or team) must achieve two conditions:</p>
+<ol>
+<li>
+<p><strong>Close all seven targets:</strong> You must register three "marks" on 20, 19, 18, 17, 16, 15, and the Bullseye.</p>
+</li>
+<li>
+<p><strong>Have equal or greater points:</strong> Your total point score must be equal to or higher than your opponent's score when your final target is closed.</p>
+</li>
+</ol>
+<p>If you close every number first but trail on points, the game continues. You cannot claim victory until you score enough points on remaining open numbers to equal or exceed your opponent's tally.</p>
+<h3>How Marks Are Counted</h3>
+<p>To close any active target, a player must land <strong>three marks</strong> in that number. The board segments award marks based on their ring multiplier:</p>
+<ul>
+<li><strong>Single ring segment:</strong> 1 mark</li>
+<li><strong>Double ring segment (outer thin ring):</strong> 2 marks</li>
+<li><strong>Treble ring segment (inner thin ring):</strong> 3 marks (closes the number in a single dart)</li>
+<li><strong>Outer Bull (single green bull, 25 points):</strong> 1 mark</li>
+<li><strong>Inner Bull (double red bull, 50 points):</strong> 2 marks</li>
+</ul>
+      </section>
+      <AdSlot position="in-article" />
+      <section class="content-card">
+<h2>Setup &amp; turn order</h2>
+<p>Setting up a game of Cricket follows the same standard board dimensions and throwing regulations governed by the <a href="/darts/rules/">DRA standard rules of darts</a>:</p>
+<ul>
+<li><strong>Board height:</strong> The centre of the bullseye hangs <strong>5 ft 8 in (1.73 m)</strong> from the floor.</li>
+<li><strong>Throwing distance:</strong> The front toe line (oche) sits <strong>7 ft 9¼ in (2.37 m)</strong> measured horizontally along the floor from the face of the board.</li>
+<li><strong>Darts per turn:</strong> Each player delivers three darts per turn, retrieving them only after all three darts have been thrown and scored.</li>
+</ul>
+<h3>Determining Who Throws First</h3>
+<p>Players decide starting order by throwing a single dart at the bullseye (known as "diddling for the middle" or "corking"). The player whose dart lands closest to the centre of the inner bull throws first. If both players hit the outer bull, both hit the inner bull, or the distance is too close to judge by eye, both retrieve their darts and re-throw in reverse order.</p>
+<h3>The Scoreboard Layout</h3>
+<p>A Cricket scoreboard is typically drawn on a chalkboard, dry-erase board, or electronic scoring app with three columns:</p>
+<ol>
+<li>
+<p><strong>Left column:</strong> Player 1's marks and points</p>
+</li>
+<li>
+<p><strong>Middle column:</strong> The target numbers listed vertically in descending order: <strong>20, 19, 18, 17, 16, 15, B</strong></p>
+</li>
+<li>
+<p><strong>Right column:</strong> Player 2's marks and points</p>
+</li>
+</ol>
+<p><code>Player 1       Target       Player 2
+ -----------   ----------   -----------
+                   20       
+                   19       
+                   18       
+                   17       
+                   16       
+                   15       
+                    B       
+ -----------   ----------   -----------
+   Pts: 0                      Pts: 0</code></p>
+<h3>Traditional Scoring Symbols</h3>
+<p>As players land darts on active targets, the scorekeeper records marks beside the corresponding number using a progressive 3-stroke system:</p>
+<ul>
+<li><strong>First mark (1 hit):</strong> A single forward slash <code>/</code></li>
+<li><strong>Second mark (2 hits):</strong> An <code>X</code> (formed by crossing the initial slash)</li>
+<li><strong>Third mark (3 hits — Closed):</strong> A circle around the <code>X</code> (<code>⨂</code>)</li>
+</ul>
+      </section>
+      <section class="content-card">
+<h2>Closing a number vs pointing (scoring on your opponent)</h2>
+<p>Understanding the distinction between <strong>closing</strong> a number and <strong>pointing</strong> is the core strategic foundation of Cricket.</p>
+<p><code>PLAYER A HITS TARGET
+                 |
+                 v
+     Has Player A closed it? (&lt; 3 marks)
+       /                   \
+     YES                    NO
+      |                      |
+Number is now OPEN     Add marks (/, X, or ⨂)
+for Player A to point.  until 3 marks reached.
+      |
+      v
+Has Player B ALSO closed it?
+  /             \
+YES              NO
+ |               |
+DEAD / DEADLOCK  POINT SCORING!
+No points can    Player A scores segment value
+be scored by     (e.g., S20 = 20 pts, T20 = 60 pts)
+either player.   on every additional hit.</code></p>
+<h3>1. Opening / Closing for Yourself</h3>
+<p>When you land three marks on a number, that number is <strong>closed for you</strong>. This means two things:
+* You have satisfied that number's requirement toward your ultimate winning condition.
+* The number is now "open" for you to score points on, as long as your opponent has not yet closed it.</p>
+<h3>2. Pointing (Scoring on an Opponent)</h3>
+<p>Once you have closed a number, every subsequent hit you land on that target scores its point value, <strong>provided your opponent has fewer than three marks on it</strong>:
+* Hitting a Single 20 after closing it awards <strong>20 points</strong>.
+* Hitting a Treble 20 after closing it awards <strong>60 points</strong>.
+* Hitting an Outer Bull after closing bullseyes awards <strong>25 points</strong>; an Inner Bull awards <strong>50 points</strong>.</p>
+<p>These points are added to your running score total.</p>
+<h3>3. Killing / Deadening a Number</h3>
+<p>If your opponent also scores three marks on that same number, the number is now <strong>dead</strong> (fully closed by both sides). </p>
+<p>Once a number is dead:
+* Neither player can ever score points on it again for the remainder of the leg.
+* Further hits on that segment are wasted darts.</p>
+<h3>The Surplus Marks Rule</h3>
+<p>If you hit a multiple segment that exceeds the three marks required to close a number, the excess marks immediately convert into points—provided your opponent has not closed it:
+* <strong>Example:</strong> You have two marks on 20 (<code>X</code>). You throw a Treble 20 (3 marks). One mark is used to complete the close (<code>⨂</code>), and the remaining two marks immediately score <strong>40 points</strong> (2 × 20).
+* If your opponent had already closed 20 before your throw, the Treble simply closes your 20, and the excess marks produce zero points because the number is dead.</p>
+      </section>
+      <section class="content-card">
+<h2>Worked example: 6-turn sample game (scoring table)</h2>
+<p>To see how closing, pointing, surplus marks, and defensive responses work in live play, follow this turn-by-turn breakdown between <strong>Player 1</strong> and <strong>Player 2</strong>.</p>
+<h3>Turn-by-Turn Game Log</h3>
+<ul>
+<li><strong>Turn 1 (Player 1):</strong> Throws at 20.</li>
+<li>Dart 1: Treble 20 (3 marks). Closes 20 immediately.</li>
+<li>Dart 2: Single 20. Scores 20 points (P1 has 20 closed, P2 does not).</li>
+<li>Dart 3: Single 20. Scores 20 points.</li>
+<li>
+<p><em>Result:</em> P1 closes 20 and leads 40–0.</p>
+</li>
+<li>
+<p><strong>Turn 2 (Player 2):</strong> Responds to P1's scoring threat on 20.</p>
+</li>
+<li>Dart 1: Single 20 (1 mark).</li>
+<li>Dart 2: Treble 20 (3 marks). Two marks close 20 for P2; the leftover mark yields zero points because P1 already closed 20. Number 20 is now <strong>dead</strong>.</li>
+<li>Dart 3: Switches to 19, hits Treble 19 (3 marks). Closes 19 immediately.</li>
+<li>
+<p><em>Result:</em> 20 is dead. P2 closes 19. Score remains P1 40, P2 0.</p>
+</li>
+<li>
+<p><strong>Turn 3 (Player 1):</strong> With 20 dead and P2 threatening to point on 19, P1 plays defense on 19.</p>
+</li>
+<li>Dart 1: Single 19 (1 mark).</li>
+<li>Dart 2: Single 19 (1 mark, now 2 marks total).</li>
+<li>Dart 3: Miss (lands in 3).</li>
+<li>
+<p><em>Result:</em> P1 has 2 marks on 19. 19 remains open for P2 to point.</p>
+</li>
+<li>
+<p><strong>Turn 4 (Player 2):</strong> Takes advantage of open 19 to attack for points.</p>
+</li>
+<li>Dart 1: Treble 19. Scores 57 points.</li>
+<li>Dart 2: Single 19. Scores 19 points.</li>
+<li>Dart 3: Switches to 18, hits Single 18 (1 mark).</li>
+<li>
+<p><em>Result:</em> P2 accumulates 76 points on 19 and now leads 76–40.</p>
+</li>
+<li>
+<p><strong>Turn 5 (Player 1):</strong> Must kill 19 to stop P2 from pointing, then opens 18.</p>
+</li>
+<li>Dart 1: Single 19 (1 mark). Closes 19 for P1. 19 is now <strong>dead</strong>.</li>
+<li>Dart 2: Treble 18 (3 marks). Closes 18 for P1.</li>
+<li>Dart 3: Single 18. Scores 18 points (P2 only has 1 mark on 18).</li>
+<li>
+<p><em>Result:</em> 19 is dead. P1 closes 18 and scores 18 points. Score is now P1 58, P2 76.</p>
+</li>
+<li>
+<p><strong>Turn 6 (Player 2):</strong> Defends 18 and attacks 17.</p>
+</li>
+<li>Dart 1: Double 18 (2 marks). Closes 18 for P2. 18 is now <strong>dead</strong>.</li>
+<li>Dart 2: Treble 17 (3 marks). Closes 17 for P2.</li>
+<li>Dart 3: Single 17. Scores 17 points.</li>
+<li><em>Result:</em> 18 is dead. P2 closes 17 and adds 17 points. Score is P1 58, P2 93.</li>
+</ul>
+<h3>Complete 6-Turn Scoreboard State</h3>
+<div class="table-responsive"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: center;">Target</th>
+<th style="text-align: center;">Player 1 Marks</th>
+<th style="text-align: center;">Player 1 Status</th>
+<th style="text-align: center;">Player 2 Marks</th>
+<th style="text-align: center;">Player 2 Status</th>
+<th style="text-align: center;">Board Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>20</strong></td>
+<td style="text-align: center;"><code>⨂</code> (3 marks)</td>
+<td style="text-align: center;">Closed</td>
+<td style="text-align: center;"><code>⨂</code> (3 marks)</td>
+<td style="text-align: center;">Closed</td>
+<td style="text-align: center;"><strong>DEAD</strong> (No further points)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>19</strong></td>
+<td style="text-align: center;"><code>⨂</code> (3 marks)</td>
+<td style="text-align: center;">Closed</td>
+<td style="text-align: center;"><code>⨂</code> (3 marks)</td>
+<td style="text-align: center;">Closed</td>
+<td style="text-align: center;"><strong>DEAD</strong> (No further points)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>18</strong></td>
+<td style="text-align: center;"><code>⨂</code> (3 marks)</td>
+<td style="text-align: center;">Closed</td>
+<td style="text-align: center;"><code>⨂</code> (3 marks)</td>
+<td style="text-align: center;">Closed</td>
+<td style="text-align: center;"><strong>DEAD</strong> (No further points)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>17</strong></td>
+<td style="text-align: center;">Unmarked</td>
+<td style="text-align: center;">Open to P2</td>
+<td style="text-align: center;"><code>⨂</code> (3 marks)</td>
+<td style="text-align: center;">Closed &amp; Pointing</td>
+<td style="text-align: center;"><strong>P2 Scoring Active</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>16</strong></td>
+<td style="text-align: center;">Unmarked</td>
+<td style="text-align: center;">Unclaimed</td>
+<td style="text-align: center;">Unmarked</td>
+<td style="text-align: center;">Unclaimed</td>
+<td style="text-align: center;">Inactive</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>15</strong></td>
+<td style="text-align: center;">Unmarked</td>
+<td style="text-align: center;">Unclaimed</td>
+<td style="text-align: center;">Unmarked</td>
+<td style="text-align: center;">Unclaimed</td>
+<td style="text-align: center;">Inactive</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Bull</strong></td>
+<td style="text-align: center;">Unmarked</td>
+<td style="text-align: center;">Unclaimed</td>
+<td style="text-align: center;">Unmarked</td>
+<td style="text-align: center;">Unclaimed</td>
+<td style="text-align: center;">Inactive</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Points</strong></td>
+<td style="text-align: center;"><strong>58 pts</strong></td>
+<td style="text-align: center;">Trailing</td>
+<td style="text-align: center;"><strong>93 pts</strong></td>
+<td style="text-align: center;">Leading (+35)</td>
+<td style="text-align: center;">P2 leads by 35</td>
+</tr>
+</tbody>
+</table></div>
+      </section>
+      <section class="content-card">
+<h2>Winning &amp; common house rules / variants</h2>
+<p>A standard leg of Cricket ends the instant a player completes both winning requirements: all seven targets closed, and points greater than or equal to their opponent.</p>
+<p><code>+-------------------------------------------------------------+
+|                      WIN CHECK DECISION                     |
+|                                                             |
+|   1. Have you closed 15, 16, 17, 18, 19, 20, and Bull?      |
+|      -&gt; YES: Proceed to Step 2.                             |
+|      -&gt; NO:  Game continues.                                |
+|                                                             |
+|   2. Are your points &gt;= opponent's points?                  |
+|      -&gt; YES: YOU WIN THE GAME!                              |
+|      -&gt; NO:  Game continues. You must score points on       |
+|              remaining unclosed numbers until ahead.        |
++-------------------------------------------------------------+</code></p>
+<h3>Common Variants and House Rules</h3>
+<p>Depending on whether you are playing in a league, a pub, or on an electronic soft-tip machine, you will encounter several established variants:</p>
+<h4>1. Cut-Throat Cricket (A Common Variant for 3+ Players)</h4>
+<p>In standard two-player Cricket, pointing adds points to your own tally. In <strong>Cut-Throat Cricket</strong>—a common variant when three or more players compete—the scoring rule flips:
+* When you score on a number you have closed, points are awarded to <strong>every opponent who has not closed that number</strong>.
+* The winning condition reverses: you must close all numbers and have the <strong>lowest</strong> (or zero) point total.
+* Cut-Throat prevents collusion in multi-player games, because pointing directly penalizes opponents who are lagging behind on marks.</p>
+<h4>2. No-Score Cricket (Simple Cricket)</h4>
+<p>Points are completely eliminated. Players simply race to be the first to close all seven targets (15 through 20 and Bullseye). 
+* The first person to place three marks on all seven targets wins immediately.
+* This format is ideal for beginners focusing purely on board navigation and cluster accuracy without the arithmetic of points.</p>
+<h4>3. Scram (Stopper vs. Scorer)</h4>
+<p>A two-player practice variant played across two halves:
+* <strong>First half:</strong> Player 1 is the "Stopper" and tries to close numbers 1–20 and the Bull. Player 2 is the "Scorer" and scores points on any number Player 1 has not yet closed. Once the Stopper closes everything, the round ends and points are tallied.
+* <strong>Second half:</strong> Roles reverse. Player 2 becomes the Stopper and Player 1 becomes the Scorer.
+* The player with the highest points at the end of their scoring half wins.</p>
+      </section>
+      <section class="content-card">
+<h2>Cricket vs 501 - which to learn first</h2>
+<p>Beginners often wonder whether they should concentrate on Cricket or standard 501. While both games use the same dartboard and throwing fundamentals, they train distinctly different aspects of a dart player's skillset.</p>
+<div class="table-responsive"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Cricket Darts</th>
+<th style="text-align: left;">501 Darts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Primary Goal</strong></td>
+<td style="text-align: left;">Close 7 targets &amp; hold points advantage</td>
+<td style="text-align: left;">Count down from 501 to exactly 0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Finishing Requirement</strong></td>
+<td style="text-align: left;">Any mark on last target (if ahead on points)</td>
+<td style="text-align: left;">Must finish on a Double segment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Numbers Utilized</strong></td>
+<td style="text-align: left;">15–20 and Bullseye</td>
+<td style="text-align: left;">Full board (focus on T20, T19, and outer doubles)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bust Rule Applied?</strong></td>
+<td style="text-align: left;">No <a href="/darts/bust-rule-in-darts/">bust rule</a> (misses simply score 0 marks)</td>
+<td style="text-align: left;">Yes (scoring more than remaining total busts turn)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Math Complexity</strong></td>
+<td style="text-align: left;">Addition of segment values (e.g. 20, 40, 60)</td>
+<td style="text-align: left;">Subtraction, countdowns, and checkout factoring</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tactical Element</strong></td>
+<td style="text-align: left;">Offensive pointing vs defensive blocking</td>
+<td style="text-align: left;">Optimal pathing and setup shots</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Checkout Calculation</strong></td>
+<td style="text-align: left;">None required</td>
+<td style="text-align: left;">Crucial (consult our <a href="/tools/checkout-calculator/">Checkout Calculator</a>)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Which Game Should You Start With?</h3>
+<ul>
+<li><strong>Start with Cricket if:</strong> You are playing in North America, enjoy social head-to-head pub matches, or want to develop repeatable grouping on the board's largest scoring segments (treble 20 down to treble 15). Cricket gives beginners immediate target feedback without the frustration of repeated checkout misses.</li>
+<li><strong>Start with 501 if:</strong> You aspire to play in official tournament streams, want to follow PDC/WDF competitive circuits, or want to master the double-out finish from day one.</li>
+</ul>
+<p><strong>Coaching Recommendation:</strong> Intermediate players should practice both. Cricket builds exceptional vertical accuracy across the top and bottom of the board, while 501 sharpens pressure finishes and arithmetic. You can incorporate both disciplines into your training using our structured <a href="/darts/practice-routines/">darts practice routines</a>.</p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>Does a treble close a number in a single dart?</h3>
+            <p>Yes. In Cricket, a treble segment counts as three marks. If you hit a Treble 20 on an unworked number, all three required marks are satisfied immediately, closing the number in one throw.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can you win Cricket if you close all numbers but have fewer points?</h3>
+            <p>No. You cannot win standard Cricket while trailing on points. If you close your final target (e.g., Bullseye) but your opponent leads 85 to 60, the game continues. You must use remaining open numbers where your opponent has fewer than three marks to score points until your total equals or exceeds your opponent's score.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What happens if you hit a number outside 15–20 or Bull?</h3>
+            <p>Any dart landing in segments 1 through 14, or outside the double wire, is completely out of play. It registers no marks, awards no points, and simply counts as one of your three thrown darts for that turn.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is the difference between Outer Bull and Inner Bull in Cricket?</h3>
+            <p>The green outer ring (Single Bull) counts as <strong>one mark</strong> and is worth 25 points if pointing. The red inner ring (Double Bull) counts as <strong>two marks</strong> and is worth 50 points if pointing. Hitting an inner bull and an outer bull in the same turn provides three marks, closing the bullseye in two darts.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is the optimal basic strategy in Cricket?</h3>
+            <p>The fundamental rule of thumb is: <strong>Points protect you, but closing wins the game.</strong> If you have an opportunity to point on a number your opponent has left open, establishing a 40- to 60-point buffer forces your opponent into a defensive posture, preventing them from running away with the leg.</p>
+          </div>
+      </section>
+
+      <section class="content-card">
+        <h2>Related Guides</h2>
+        <div class="links-grid">
+          <a href="/darts/rules/" class="link-card">
+            <strong>Official Darts Rules</strong>
+            <span>The laws of 501 and standard darts.</span>
+          </a>
+          <a href="/darts/bust-rule-in-darts/" class="link-card">
+            <strong>The Bust Rule</strong>
+            <span>What happens when you score too many.</span>
+          </a>
+          <a href="/darts/practice-routines/" class="link-card">
+            <strong>Darts Practice Routines</strong>
+            <span>Drills for scoring and finishing.</span>
+          </a>
+          <a href="/tools/checkout-calculator/" class="link-card">
+            <strong>Checkout Calculator</strong>
+            <span>Plan your finishes like a pro.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255, 255, 255, 0.15); color: #f8fafc; font-size: 0.75rem;
+    font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .badge-accent { background: var(--color-brand-accent, #c99700); color: #0c1a2c; }
+  .page-header h1 { font-size: 2.25rem; font-weight: 800; margin: 0 0 1rem; line-height: 1.2; }
+  .lead-text { font-size: 1.15rem; line-height: 1.6; color: #cbd5e1; max-width: 800px; margin: 0; }
+  .content-layout { margin-bottom: 4rem; }
+  .main-column { display: flex; flex-direction: column; gap: 2rem; }
+  .content-card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-top: 0;
+    margin-bottom: 1.25rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem;
+  }
+  .content-card h3 { font-size: 1.25rem; font-weight: 700; color: #1e293b; margin: 1.5rem 0 0.75rem; }
+  .content-card p { color: #334155; line-height: 1.7; margin-bottom: 1rem; }
+  .content-card ul, .content-card ol { margin: 1rem 0 1.5rem 1.5rem; color: #334155; line-height: 1.7; }
+  .content-card li { margin-bottom: 0.4rem; }
+  .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .data-table th, .data-table td { padding: 0.85rem 1rem; border: 1px solid #e2e8f0; text-align: left; }
+  .data-table th { background: #0f172a; color: #fff; font-weight: 700; }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
+  .faq-item { border-bottom: 1px solid #e2e8f0; padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-item h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+  .faq-item p { margin: 0; color: #475569; }
+  .links-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+  @media (min-width: 600px) { .links-grid { grid-template-columns: 1fr 1fr; } }
+  .link-card {
+    display: block; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;
+    padding: 1rem; text-decoration: none; transition: all 0.2s ease;
+  }
+  .link-card:hover { border-color: var(--color-brand-primary, #0c1a2c); transform: translateY(-2px); }
+  .link-card strong { display: block; color: #0f172a; font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .link-card span { display: block; color: #64748b; font-size: 0.85rem; line-height: 1.4; }
+</style>
