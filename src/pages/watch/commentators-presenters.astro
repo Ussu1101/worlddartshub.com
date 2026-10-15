@@ -1,0 +1,330 @@
+---
+// src/pages/watch/commentators-presenters.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Darts Commentators & Presenters: Who Is on the Mic? (Sky, ITV, BBC)";
+const pageDescription = "Meet the voices of TV darts: lead commentators, presenters, pundits, MCs and callers on Sky Sports, ITV and BBC - updated for the 2026 season.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/watch/commentators-presenters/`;
+
+const breadcrumbItems = [
+  { name: 'Watch Darts', url: '/watch/' },
+  { name: 'Commentators & Presenters' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "author": { "@type": "Organization", "name": "World Darts Hub Editorial Team" },
+  "publisher": { "@type": "Organization", "name": "World Darts Hub", "url": siteUrl }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who says \"One Hundred and Eighty\" in darts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The score of 180 is announced by the official match referee (caller) standing beside the dartboard on stage, not by the television commentators in the media gantry. While multiple referees call 180s\u2014including Kirk Bevins, Huw Ware, and Charlie Corstorphine\u2014the most famous gravelly voice belongs to legendary referee Russ Bray, who officiated major PDC finals for 28 years before transitioning to an ambassadorial role." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Wayne Mardle work for both Sky Sports and ITV?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Wayne Mardle is an independent freelance broadcaster. Because Sky Sports and ITV cover different tournaments throughout the calendar year and do not directly compete for live rights on the same weekends, Mardle is contracted to provide expert analysis and co-commentary across both networks." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is the man in the tuxedo who introduces the players?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Master of Ceremonies is John McDonald. Employed by the PDC, McDonald stands on stage with a handheld microphone, calling each player onto the stage to their entrance music and announcing: *\"Ladies and gentlemen, let's play darts!\"*" }
+    },
+    {
+      "@type": "Question",
+      "name": "How many darts commentators are in the box during a match?",
+      "acceptedAnswer": { "@type": "Answer", "text": "PDC broadcasts almost always use a two-person commentary booth: one lead play-by-play caller (such as Stuart Pyke, Rod Studd, or Dan Dawson) who describes the action and scores, paired with one former professional player (such as Wayne Mardle, John Part, Mark Webster, or Glen Durrant) who provides technical and psychological analysis. During major tournament finals, networks occasionally employ a three-person booth for added occasion." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happened to Dave Clark?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dave Clark served as the beloved lead anchor of Sky Sports Darts for almost two decades from 2001 until 2020. Diagnosed with Parkinson's disease in 2011, Clark continued presenting at the highest level for nine years before stepping down in 2020 to focus on charitable fundraising and family life. He remains a celebrated ambassador for Parkinson's UK and an iconic figure in darts broadcasting history." }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={[articleSchema, faqSchema]}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">WATCH GUIDE</span>
+        <span class="badge">TV & STREAMING</span>
+      </div>
+      <h1>Who Are the Darts Commentators and Presenters?</h1>
+      <p class="lead-text">Turn on televised darts at any point between October and January, and you will hear some of the most distinctive, passionate, and eccentric broadcasting voices in global sports. From the rhythmic cadence of a lead commentator tracking a nine-dart attempt to the gravelly roar of a 180 call, the soundscape of professional darts is central to its identity.</p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="2026/27 Broadcast Line-ups" />
+
+      <section class="content-card">
+
+<p>Yet because television rights in the United Kingdom and internationally are split across multiple networks—most notably between <strong>Sky Sports</strong> and <strong>ITV Sport</strong>, alongside audio coverage from the <strong>BBC</strong>—fans frequently wonder who is holding the microphone, why commentary teams rotate between events, and who the figures behind the stage referee desks actually are.</p>
+<p>Whether you are tuning into the World Darts Championship at Alexandra Palace, following the Premier League roadshow, or watching free-to-air weekend majors, this definitive guide profiles every presenter, commentator, analyst, master of ceremonies (MC), and referee working in televised darts for the 2026/27 season.</p>
+<p>For full channel listings and live broadcast schedules, visit our comprehensive <a href="/watch/">Darts TV Hub</a> and our dedicated <a href="/watch/uk/">UK Darts Streaming &amp; TV Guide</a>.</p>
+      </section>
+      <section class="content-card">
+<h2>Quick List: Channel-by-Channel Team Table</h2>
+<p>Television coverage in professional darts divides primarily along tournament lines. Sky Sports holds exclusive live television rights to the PDC World Darts Championship, the Premier League, the World Matchplay, the World Grand Prix, and the Grand Slam of Darts. ITV Sport—broadcasting via ITV4 and ITVX under a refreshed production partnership with Matchroom—broadcasts major non-subscription tournaments including the UK Open, European Championship, Players Championship Finals, The Masters, and the World Series of Darts Finals.</p>
+<div class="table-responsive"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: left;">Network / Outlet</th>
+<th style="text-align: left;">Lead Presenters</th>
+<th style="text-align: left;">Lead Commentators</th>
+<th style="text-align: left;">Pundits &amp; Co-Commentators</th>
+<th style="text-align: left;">Stage MC &amp; Referees</th>
+<th style="text-align: left;">Primary Tournaments Covered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Sky Sports</strong></td>
+<td style="text-align: left;">Emma Paton (Regular Anchor), Anna Woolhouse (Marquee Co-Host)</td>
+<td style="text-align: left;">Stuart Pyke, Rod Studd, Dan Dawson</td>
+<td style="text-align: left;">Wayne Mardle, John Part, Mark Webster, Glen Durrant, Laura Turner</td>
+<td style="text-align: left;">John McDonald (MC), Kirk Bevins, Huw Ware, Charlie Corstorphine</td>
+<td style="text-align: left;">World Darts Championship, Premier League, World Matchplay, World Grand Prix, Grand Slam of Darts</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ITV Sport</strong></td>
+<td style="text-align: left;">Pete Graves (Lead Host), Gabbie Partington (Interviewer / Co-Host)</td>
+<td style="text-align: left;">Dan Dawson, Mark Wilson, Ian Danter</td>
+<td style="text-align: left;">Wayne Mardle, Mark Webster, Glen Durrant, Chris Mason</td>
+<td style="text-align: left;">John McDonald (MC), Kirk Bevins, Huw Ware, Charlie Corstorphine</td>
+<td style="text-align: left;">UK Open, European Championship, Players Championship Finals, World Series of Darts, The Masters</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>BBC (Digital / 5 Live)</strong></td>
+<td style="text-align: left;">Colin Murray, Abigail Davies</td>
+<td style="text-align: left;">— (No live commentary rights)</td>
+<td style="text-align: left;">Guest pundits &amp; regular sports contributors</td>
+<td style="text-align: left;">Stage personnel as above</td>
+<td style="text-align: left;">BBC Sport digital live text, news bulletins, podcasts &amp; player interviews</td>
+</tr>
+</tbody>
+</table></div>
+<p>To understand how broadcast rights evolved from the 1970s split to today’s dual-network structure, explore our guide to <a href="/watch/broadcaster-history/">Televised Darts Broadcaster History</a>.</p>
+      </section>
+      <AdSlot position="in-article" />
+      <section class="content-card">
+<h2>Sky Sports Team</h2>
+<p>Sky Sports has served as the broadcast home of the Professional Darts Corporation since the company's inception in 1993. Over three decades, Sky transformed darts from a pub-game curiosity into a primetime theatrical spectacle, establishing high production standards that rely heavily on engaging studio personalities and knowledgeable former tour champions.</p>
+<h3>Studio Presenters</h3>
+<h4>Emma Paton</h4>
+<p>Emma Paton is the primary full-time lead anchor of Sky Sports Darts. A former international 400-metre hurdler and experienced broadcast journalist, Paton joined Sky Sports News in 2012 before making her darts presenting debut in 2019. Since succeeding long-time host Dave Clark, Paton has served as the permanent studio anchor fronting Sky’s year-round coverage of the World Championship, Premier League, World Matchplay, World Grand Prix, and Grand Slam of Darts.</p>
+<h4>Anna Woolhouse</h4>
+<p>Anna Woolhouse serves as an event-specific marquee co-host, primarily joining the broadcast team during extensive multi-week events like the World Darts Championship at Alexandra Palace. Best known as the lead presenter for Sky Sports Boxing, Woolhouse shares daily hosting duties during the double-session stages of the festive showpiece.</p>
+<h3>Lead Commentators</h3>
+<h4>Stuart Pyke</h4>
+<p>Stuart Pyke has been a mainstay of the Sky commentary box for over two decades. A seasoned sports journalist with an extensive background in rugby league and football commentary for the BBC and independent radio, Pyke is one of Sky's primary ball-by-ball commentators, renowned for calling historic 170 checkouts and televised nine-darters.</p>
+<h4>Rod Studd</h4>
+<p>Recognizable by his quick wit, statistical recall, and rhythmic cadence, Rod Studd is a core member of Sky's lead commentary team. Drawing on extensive experience in sports journalism and betting editorial, Studd is celebrated for capturing momentum shifts in set-play formats and anchoring big-stage evening sessions.</p>
+<h4>Dan Dawson</h4>
+<p>Dan Dawson is one of the most versatile commentators in professional darts. In addition to his regular appearances in the Sky Sports commentary booth for premier majors, Dawson is the principal lead commentator for the PDC European Tour streaming feeds on PDCTV, making him a central voice across both floor events and televised stages.</p>
+<h3>Pundits and Co-Commentators</h3>
+<h4>Wayne Mardle ("Hawaii 501")</h4>
+<p>Wayne Mardle is Sky Sports’ lead darts analyst and regular co-commentator. A five-time World Championship semi-finalist during his playing career, Mardle is a permanent fixture of Sky's live coverage, known for his touchscreen tactical analysis, technical breakdowns of throwing mechanics, and energetic reactions.</p>
+<h4>John Part ("Darth Maple")</h4>
+<p>Three-time World Champion (1994 BDO, 2003 and 2008 PDC) and PDC Hall of Fame inductee John Part serves as a regular expert co-commentator across Sky’s premier majors. Drawing on his experience winning world titles across multiple eras, the Canadian offers deep tactical breakdowns of board management and pressure checkout strategy.</p>
+<h4>Mark Webster</h4>
+<p>The 2008 BDO World Champion and former PDC World Cup finalist is a core co-commentator and studio analyst for Sky Sports. Webster’s calm analytical delivery, left-handed perspective, and intimate knowledge of current tour form make him a regular feature throughout the Premier League and World Championship.</p>
+<h4>Glen Durrant ("Duzza")</h4>
+<p>The three-time BDO World Champion and 2020 PDC Premier League Champion contributes as an analyst on an event-specific basis. Following his retirement from the professional tour, Durrant regularly joins the studio and commentary box during major tournament weeks to provide fresh perspective on elite tour preparation.</p>
+<h4>Laura Turner</h4>
+<p>Current professional player and women's darts pioneer Laura Turner is a regular broadcast contributor for Sky Sports. Turner provides expert analysis across major PDC tournaments and headlines Sky’s coverage of the PDC Women’s Series, specializing in technical throwing dynamics, equipment setup, and match psychology.</p>
+      </section>
+      <section class="content-card">
+<h2>ITV Team (Matchroom Production)</h2>
+<p>In recent seasons, ITV Sport’s darts output underwent a significant revitalization through a direct production collaboration with Matchroom Multi Sport. Broadcasting free-to-air across <strong>ITV4</strong> and streaming via <strong>ITVX</strong>, the network delivers extensive multi-session coverage of premier PDC weekend tournaments.</p>
+<p>Because ITV’s events feature open multi-board setups (such as the 160-player UK Open at Minehead) alongside high-stakes European staged finals, the production balances lighthearted entertainment with fast-paced tournament tracking.</p>
+<h3>Presenting Team</h3>
+<h4>Pete Graves</h4>
+<p>Pete Graves serves as the regular lead studio anchor for ITV’s PDC tournament coverage. A well-known broadcaster across Sky Sports News and live sports coverage, Graves brings journalistic sharpness and high energy to the studio desk, managing rapid turnarounds across multi-session tournament weekends.</p>
+<h4>Gabbie Partington</h4>
+<p>Gabriella Partington is the regular co-host and trackside presenter for ITV's live broadcasts. Partington conducts post-match walk-off interviews, player green room features, and fan reaction segments, providing a conversational counterpoint to the studio desk.</p>
+<h3>Commentary and Analysis Roster</h3>
+<p>ITV's broadcast structure distinguishes between core commentary voices and event-specific guest analysts:</p>
+<ul>
+<li><strong>Core Play-by-Play Commentators:</strong> Mark Wilson and Ian Danter form ITV’s primary commentary partnership, joined regularly by Dan Dawson across afternoon and evening sessions.</li>
+<li><strong>Dedicated ITV Pundit:</strong> Chris Mason ("Mace the Ace"), a former world semi-finalist, serves as ITV's signature regular studio analyst. Known for his technical scrutiny of player equipment, stem lengths, and psychological pressure, Mason provides straightforward, uncompromising tactical insight.</li>
+<li><strong>Event-Specific Multi-Network Analysts:</strong> Wayne Mardle, Mark Webster, and Glen Durrant join ITV’s commentary and studio desks on an event-by-event basis for major tournaments (such as the UK Open, European Championship, and Players Championship Finals) under commercial agreements with Matchroom Multi Sport, balancing their appearances around other broadcasting schedules.</li>
+</ul>
+      </section>
+      <section class="content-card">
+<h2>BBC and Digital News Coverage</h2>
+<p>While the British Broadcasting Corporation (BBC) no longer holds live broadcast commentary rights for PDC tournaments—having previously televised the BDO World Darts Championship until 2016 and the Champions League of Darts between 2016 and 2019—it remains a prominent platform for darts coverage through news journalism, interviews, and digital reporting.</p>
+<h3>BBC Sport Digital &amp; Radio 5 Live</h3>
+<p>BBC coverage focuses on regular tournament reporting, audio packages, and digital engagement rather than live ball-by-ball commentary:
+- <strong>Digital Live Text:</strong> BBC Sport operates dedicated live text commentary pages for major tournament sessions on its website and app, providing end-of-leg updates, statistics, and social reaction.
+- <strong>Radio Reports &amp; Bulletins:</strong> BBC Radio 5 Live and 5 Live Sports Extra deliver regular live sports bulletins, session roundups, and tournament dispatches, frequently featuring sports broadcaster Colin Murray and reporter Abigail Davies.
+- <strong>Features and Podcasts:</strong> In-depth player interviews, digital video features, and audio discussions on BBC Sounds follow the biggest human-interest storylines and record-breaking performances across the PDC circuit.</p>
+      </section>
+      <section class="content-card">
+<h2>The Iconic Voices: Callers and MCs Explained</h2>
+<p>While television presenters and commentators sit in elevated media boxes behind soundproof glass, the live arena atmosphere is governed by the figures standing on the stage itself: the <strong>Master of Ceremonies (MC)</strong> and the <strong>referees (callers)</strong>.</p>
+<p>These individuals are employed directly by the Professional Darts Corporation (PDC), meaning their voices remain constant regardless of whether you watch on Sky Sports, ITV, DAZN, Viaplay, or PDCTV.</p>
+<h3>The Master of Ceremonies: John McDonald</h3>
+<p>Known universally as <strong>"The Voice of Darts,"</strong> John McDonald is the master of ceremonies who introduces every player to the stage. </p>
+<p>With his tailored tuxedo, booming baritone delivery, and signature command—<em>"Ladies and gentlemen, let's play darts!"</em>—McDonald orchestrates the arena entrance walk-ons. A former paratrooper in the British Armed Forces, McDonald has introduced players at every major PDC tournament for over two decades. His introductions are tailored to match each competitor’s musical entrance and official nickname, making him central to the spectacle of player walk-ons. </p>
+<p>Learn how entrance music interacts with stage introductions in our comprehensive guide to <a href="/players/walk-on-songs/">PDC Player Walk-On Songs &amp; Anthems</a>.</p>
+<h3>The Stage Referees and Callers</h3>
+<p>Stage referees perform two critical, high-pressure functions during a match:</p>
+<ol>
+<li>
+<p><strong>Verifying Darts in the Board:</strong> Referees must confirm with their own eyes that a thrown dart has penetrated the bristle within the scoring wire before calling the score aloud.</p>
+</li>
+<li>
+<p><strong>Mental Arithmetic &amp; Subtraction:</strong> While off-stage scorers track points electronically, the stage referee must instantaneously calculate remaining checkout totals, communicate permissible finishes to players, and roar out triple-treble visits to thousands of chanting spectators.</p>
+</li>
+</ol>
+<h4>Kirk Bevins ("The Kirkulator")</h4>
+<p>Kirk Bevins is recognized as the world's premier darts mathematician. A former junior chess champion and contestant on television’s <em>Countdown</em>, Bevins possesses extraordinary calculation speed. He rarely pauses to compute complex three-dart checkouts, calling scores instantly while projecting an authoritative, clear voice across the arena.</p>
+<h4>Huw Ware</h4>
+<p>Hailing from Wales, Huw Ware made his stage refereeing debut as a teenager on the BDO circuit before joining the PDC officiating team. Calm, articulate, and meticulously accurate, Ware has called numerous televised major finals, earning universal respect from players for his consistent tempo and unflappable stage presence.</p>
+<h4>Charlie Corstorphine</h4>
+<p>Representing the modern generation of PDC officiating, Charlie Corstorphine stepped into high-profile televised duties following the retirement of legendary veteran officials. Corstorphine brings a sharp, resonant vocal delivery and precise arithmetic to major televised stages.</p>
+<h4>The Legacy of Russ Bray ("The Voice")</h4>
+<p>No discussion of darts officiating is complete without mentioning <strong>Russ Bray</strong>. Renowned for his gravel-throated, roof-raising roar of <em>"One hundred and eighty!"</em>, Bray served as a senior PDC referee from 1996 through January 2024. Bray stepped down from full-time PDC stage refereeing following the historic 2024 World Darts Championship final between Luke Humphries and Luke Littler. Today, Bray acts as an official PDC Global Ambassador, continuing to officiate on the World Series of Darts and Asian Tour.</p>
+<h4>George Noble ("The Right Honourable")</h4>
+<p>One of the most decorated officials in sporting history, George Noble has refereed premier stage finals across four separate decades. Known for his distinctive, smooth vocal delivery and composure under intense pressure, Noble announced his decision to step down from full-time PDC stage refereeing duties after more than three decades officiating major finals across both the BDO and PDC circuits.</p>
+      </section>
+      <section class="content-card">
+<h2>How Commentary Teams Are Picked + Why Fans Ask This Every December</h2>
+<p>Every December, internet searches for <em>"who is commentating on the darts"</em> surge by several thousand percent. This phenomenon is unique to professional darts for several specific reasons:</p>
+<h3>1. The Festive December Influx</h3>
+<p>The PDC World Darts Championship at Alexandra Palace runs for nearly three weeks across the Christmas and New Year holiday window. Millions of casual sports fans, family viewers, and holiday attendees tune in who do not watch week-to-week tour events. When casual viewers hear Wayne Mardle's infectious enthusiasm or John Part's tactical breakdowns, they actively search for the names behind the voices.</p>
+<h3>2. Network Rights Confusion</h3>
+<p>Because darts fans see ITV4 broadcast major tournaments like the European Championship and Players Championship Finals in October and November, many expect the same broadcast team to cover the World Championship in December. However, because <strong>Sky Sports holds exclusive domestic television rights to the World Championship</strong>, viewers must transition to Sky’s presentation team for the sport’s flagship tournament.</p>
+<h3>3. The Alternating "A-Team" Rotation</h3>
+<p>During a 16-day tournament like the World Darts Championship, Sky Sports produces afternoon and evening sessions comprising up to eight hours of live television per day. To prevent vocal strain and maintain high analytical energy, the broadcaster divides duties across two distinct shifts:
+- <strong>Lead Play-by-Play Commentators</strong> (e.g., Stuart Pyke, Rod Studd, Dan Dawson) rotate match-by-match.
+- <strong>Expert Pundit Pairs</strong> (e.g., Mardle paired with Part, or Webster paired with Durrant) alternate across sessions, ensuring fresh perspectives and contrasting analytical styles.</p>
+<h3>4. Co-Commentary Chemistry</h3>
+<p>Modern darts commentary succeeds because it pairs a professional broadcast journalist with an elite former player. The journalist manages the match narrative, score tracking, and commercial timing, while the former pro explains dart selection, target switching, and psychological tension. This balance ensures that coverage remains welcoming to newcomers while delivering tactical depth to seasoned fans.</p>
+<p>Explore the complete tournament structure and history of the sport's biggest event in our <a href="/tournament/world-darts-championship/">World Darts Championship Tournament Overview</a>.</p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>Who says "One Hundred and Eighty" in darts?</h3>
+            <p>The score of 180 is announced by the official match <strong>referee (caller)</strong> standing beside the dartboard on stage, not by the television commentators in the media gantry. While multiple referees call 180s—including Kirk Bevins, Huw Ware, and Charlie Corstorphine—the most famous gravelly voice belongs to legendary referee <strong>Russ Bray</strong>, who officiated major PDC finals for 28 years before transitioning to an ambassadorial role.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Why does Wayne Mardle work for both Sky Sports and ITV?</h3>
+            <p>Wayne Mardle is an independent freelance broadcaster. Because Sky Sports and ITV cover different tournaments throughout the calendar year and do not directly compete for live rights on the same weekends, Mardle is contracted to provide expert analysis and co-commentary across both networks.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Who is the man in the tuxedo who introduces the players?</h3>
+            <p>The Master of Ceremonies is <strong>John McDonald</strong>. Employed by the PDC, McDonald stands on stage with a handheld microphone, calling each player onto the stage to their entrance music and announcing: <em>"Ladies and gentlemen, let's play darts!"</em></p>
+          </div>
+          <div class="faq-item">
+            <h3>How many darts commentators are in the box during a match?</h3>
+            <p>PDC broadcasts almost always use a <strong>two-person commentary booth</strong>: one lead play-by-play caller (such as Stuart Pyke, Rod Studd, or Dan Dawson) who describes the action and scores, paired with one former professional player (such as Wayne Mardle, John Part, Mark Webster, or Glen Durrant) who provides technical and psychological analysis. During major tournament finals, networks occasionally employ a three-person booth for added occasion.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What happened to Dave Clark?</h3>
+            <p>Dave Clark served as the beloved lead anchor of Sky Sports Darts for almost two decades from 2001 until 2020. Diagnosed with Parkinson's disease in 2011, Clark continued presenting at the highest level for nine years before stepping down in 2020 to focus on charitable fundraising and family life. He remains a celebrated ambassador for Parkinson's UK and an iconic figure in darts broadcasting history.</p>
+          </div>
+      </section>
+
+      <section class="content-card">
+        <h2>Related Guides</h2>
+        <div class="links-grid">
+          <a href="/watch/" class="link-card">
+            <strong>How to Watch Darts</strong>
+            <span>Every way to watch the World Championship live, worldwide.</span>
+          </a>
+          <a href="/watch/uk/" class="link-card">
+            <strong>Watch Darts in the UK</strong>
+            <span>Sky Sports, ITV and BBC coverage for UK viewers.</span>
+          </a>
+          <a href="/watch/broadcaster-history/" class="link-card">
+            <strong>Darts Broadcaster History</strong>
+            <span>How TV darts coverage evolved over the decades.</span>
+          </a>
+          <a href="/tournament/world-darts-championship/" class="link-card">
+            <strong>World Darts Championship Hub</strong>
+            <span>Dates, format and prize money for Ally Pally.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255, 255, 255, 0.15); color: #f8fafc; font-size: 0.75rem;
+    font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .badge-accent { background: var(--color-brand-accent, #c99700); color: #0c1a2c; }
+  .page-header h1 { font-size: 2.25rem; font-weight: 800; margin: 0 0 1rem; line-height: 1.2; }
+  .lead-text { font-size: 1.15rem; line-height: 1.6; color: #cbd5e1; max-width: 800px; margin: 0; }
+  .content-layout { margin-bottom: 4rem; }
+  .main-column { display: flex; flex-direction: column; gap: 2rem; }
+  .content-card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-top: 0;
+    margin-bottom: 1.25rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem;
+  }
+  .content-card h3 { font-size: 1.25rem; font-weight: 700; color: #1e293b; margin: 1.5rem 0 0.75rem; }
+  .content-card p { color: #334155; line-height: 1.7; margin-bottom: 1rem; }
+  .content-card ul, .content-card ol { margin: 1rem 0 1.5rem 1.5rem; color: #334155; line-height: 1.7; }
+  .content-card li { margin-bottom: 0.4rem; }
+  .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .data-table th, .data-table td { padding: 0.85rem 1rem; border: 1px solid #e2e8f0; text-align: left; }
+  .data-table th { background: #0f172a; color: #fff; font-weight: 700; }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
+  .faq-item { border-bottom: 1px solid #e2e8f0; padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-item h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+  .faq-item p { margin: 0; color: #475569; }
+  .links-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+  @media (min-width: 600px) { .links-grid { grid-template-columns: 1fr 1fr; } }
+  .link-card {
+    display: block; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;
+    padding: 1rem; text-decoration: none; transition: all 0.2s ease;
+  }
+  .link-card:hover { border-color: var(--color-brand-primary, #0c1a2c); transform: translateY(-2px); }
+  .link-card strong { display: block; color: #0f172a; font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .link-card span { display: block; color: #64748b; font-size: 0.85rem; line-height: 1.4; }
+</style>
