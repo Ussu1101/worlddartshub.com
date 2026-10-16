@@ -1,0 +1,519 @@
+---
+// src/pages/players/checkout-percentage-explained.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Checkout Percentage in Darts Explained (What the Stats Mean)";
+const pageDescription = "What checkout percentage means in darts, how it is calculated, what counts as a good percentage, and why clinical finishing decides matches.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/checkout-percentage-explained/`;
+
+const breadcrumbItems = [
+  { name: 'Players', url: '/players/' },
+  { name: 'Checkout Percentage Explained' }
+];
+
+// Note: BreadcrumbList JSON-LD is emitted by the Breadcrumbs component,
+// so it is intentionally not duplicated in this graph.
+const schemaGraph = [
+  {
+    "@type": "Article",
+    "@id": "https://worlddartshub.com/players/checkout-percentage-explained/#article",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://worlddartshub.com/#website",
+      "name": "World Darts Hub",
+      "url": "https://worlddartshub.com"
+    },
+    "headline": "Checkout Percentage in Darts Explained (What the Stats Mean)",
+    "description": "What checkout percentage means in darts, how it is calculated, what counts as a good percentage, and why clinical finishing decides matches.",
+    "url": "https://worlddartshub.com/players/checkout-percentage-explained/",
+    "inLanguage": "en-GB",
+    "datePublished": "2026-10-15T00:00:00+00:00",
+    "dateModified": "2026-10-16T00:00:00+00:00",
+    "mainEntityOfPage": "https://worlddartshub.com/players/checkout-percentage-explained/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "World Darts Hub",
+      "url": "https://worlddartshub.com"
+    }
+  },
+  {
+    "@type": "FAQPage",
+    "@id": "https://worlddartshub.com/players/checkout-percentage-explained/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is considered a good checkout percentage in darts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In professional darts, an individual checkout percentage between 40% and 45% is widely regarded as an illustrative elite benchmark, highlighted by PDC stats analyst Christopher Kempf's report of Jonny Clayton leading Tour Card holders with 43% double accuracy over his latest 200 legs (PDC Form Guide, October 2026) — an individual rolling-window analyst statistic, not a tour-wide norm or season-long average. Across the broader professional circuit, 35% to 40% is an unverified editorial approximation frequently mentioned in commentary, rather than an audited population-wide census. At the amateur level, where no centralized database or published scoreboard dataset exists, all figures are purely illustrative estimates: competitive county standards are informally estimated at roughly 25% to 33%, local pub leagues at 18% to 25%, and beginners learning double-out math at 10% to 18%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a dart thrown at Bullseye count as a double attempt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, in legal rules of play, but recording depends on provider conventions. Under Darts Regulation Authority (DRA) rules (Sections 5.2.3 and 5.4.1), the central 50-point red Bullseye (inner bull) is legally defined as a double (an inner ring worth twice the 25-point outer bull) and satisfies the requirement to finish on a double. Any dart thrown at the 50-point Bullseye when an outshot is mathematically achievable (such as 170, 164, 124, or 50) is treated as a double attempt under standard broadcast conventions. However, the DRA rulebook governs rules of play, not statistical tracking: whether and how a provider labels the dart in a statistical feed depends on that provider's tracking convention."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between checkout percentage and 3-dart average?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 3-dart average measures the average points scored across all three-dart visits, reflecting overall scoring power. A checkout percentage measures finishing efficiency by dividing successful checkouts by the total individual darts aimed at a double. While scoring average determines how quickly a player arrives at an outshot, checkout percentage determines whether they convert that opportunity into a won leg."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does missing a setup dart affect checkout percentage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A dart thrown at a single or treble to reduce a score down to a double (such as throwing at Single 20 from 60 to leave Double 20) is a setup shot, not an attempt at a double. Setup shots do not count toward the checkout percentage denominator. Only darts thrown directly at a finishing double or the 50-point Bullseye when an outshot is mathematically achievable are logged as double attempts under standard conventions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to a player's score during a bust?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under DRA Rule 5.4.1, if a player scores more points than required, leaves a remaining score of 1, or reduces their score to 0 without hitting a valid double, a bust occurs. The player's turn ends immediately, and their score reverts back to the exact score they held at the start of that visit (before throwing the first dart of that turn)."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={schemaGraph}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PLAYER GUIDE</span>
+        <span class="badge">CHECKOUT %</span>
+      </div>
+      <h1>Checkout Percentage Explained</h1>
+      <p class="lead-text">Trebles for show, doubles for dough. Checkout percentage measures how efficiently a player converts finishing opportunities into won legs — here is how it is calculated, what counts as a good percentage, and why clinical finishing decides big matches.</p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="Checkout Percentage in Darts" />
+
+      <section class="content-card">
+<p>In professional and grassroots darts, television broadcasts frequently highlight the phrase: <strong>"Trebles for show, doubles for dough."</strong></p>
+<p>While explosive maximums and 180s captivate spectators at Alexandra Palace, matches are ultimately decided on the outer ring of the board. A player can produce overwhelming power scoring with a 105 three-dart average, but if they miss their required finishing doubles, an opponent with a lower scoring average can step up and win the leg.</p>
+<p>The metric that evaluates this finishing efficiency is <strong>checkout percentage</strong> (commonly labeled on broadcast graphics as <strong>doubles percentage</strong> or <strong>checkout efficiency</strong>).</p>
+<p>This guide provides a comprehensive, source-grounded breakdown of how checkout percentage is calculated, how scoring platforms track attempts at a double alongside official <a href="https://www.thedra.co.uk/dra-rulebook">Darts Regulation Authority (DRA) rules</a> for finishing and busts, realistic benchmarks from grassroots pub leagues to world champion standards, and why finishing percentage plays such a decisive role in match outcomes.</p>
+      </section>
+
+      <section class="content-card">
+<h2>Definition and formula</h2>
+<p>Checkout percentage measures a player's accuracy in converting finishing opportunities into won legs.</p>
+<h3>The standard explanatory convention</h3>
+<p>In darts broadcasting and tutorial analysis, checkout percentage is commonly explained using an individual-dart conversion convention:</p>
+<div class="formula-box">
+  <div class="formula-math">
+    <span class="formula-label">Checkout Percentage</span> =
+    <span class="fraction">
+      <span class="numerator">Checkouts Completed (Winning Doubles Landed)</span>
+      <span class="denominator">Total Individual Darts Aimed at a Finishing Double</span>
+    </span>
+    &times; 100
+  </div>
+</div>
+<p>For instance, if a player throws at a finishing double 10 times across a match and successfully lands the required double 4 times to win 4 legs, their conversion rate is:</p>
+<p class="formula-line"><code>4 &divide; 10 &times; 100 = 40.0%</code></p>
+<div class="note-box">
+<p><strong>Explanatory convention vs proprietary definitions:</strong> The formula above serves as an intuitive explanatory convention to interpret broadcast graphics such as 4/10 (40.0%). It is <strong>not</strong> a universal statutory definition codified by the Darts Regulation Authority (DRA), nor is it confirmed to be applied identically across every broadcaster, digital scoring platform (such as <a href="https://app.dartconnect.com/">DartConnect</a>), or sports database. While the DRA regulates official playing laws (including legal double-out finishes and bust score restoration), statistical tracking protocols, denominator definitions, and bust-handling rules are determined independently by individual data providers and scoring platforms.</p>
+</div>
+<h3>Individual double-attempt success rate vs match-level checkout percentage</h3>
+<p>The phrase "checkout percentage" is applied to distinct metrics across broadcast analysis and academic research:</p>
+<ol>
+<li><strong>Individual Double-Attempt Success Rate (Broadcast Doubles Percentage):</strong> the practical explanatory convention is successful finishing-double darts divided by total individual darts aimed at a legal finishing double, &times; 100. This is the primary metric displayed on television broadcast graphics during a match (e.g. "Doubles: 4/10 — 40.0%"). In professional tour analytics, it is evaluated across specified rolling windows — such as Christopher Kempf's report of Jonny Clayton leading Tour Card holders with 43% double accuracy over his <strong>latest 200 legs played</strong> (<a href="https://www.pdc.tv/news/2026/october/14/Form-Guide--Clayton-the-checkout-king/">PDC Form Guide, 14 Oct 2026</a>). Clayton's individual 200-leg statistic does not establish a tour-wide norm or season-long average.</li>
+<li><strong>Study-Defined Match-Level Checkout Percentage (Archival Research):</strong> in peer-reviewed sports science, Greve, van Meurs &amp; Strauss (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10390587/"><em>Scientific Reports</em> / PMC10390587</a>) explicitly define checkout percentage (CP) as a player's percentage of successful double-field hits to finish a leg, analysed at the individual match-performance level across N = 26,724 individual match performances from 442 players (2018–2021 via Darts Orakel). This metric captures match-performance-level finishing efficiency in econometric models, rather than serving as a universal broadcast denominator counting every individual dart thrown.</li>
+</ol>
+<h3>What counts as an "attempt at a double"?</h3>
+<p>The <a href="https://www.thedra.co.uk/dra-rulebook">Darts Regulation Authority (DRA) Rulebook</a> governs the official rules of play (such as Rule 5.2.3 defining the 50-point inner bullseye and Rule 5.4.1 defining legal double-out finishes and bust restorations). The DRA rulebook does not mandate statistical formulas or define how broadcasters and software providers record attempts.</p>
+<p>In standard broadcast and scoring platform practice, double attempts are logged according to the following conventions:</p>
+<ol>
+<li><strong>Direct shots at a finishing double:</strong> when a player's remaining score is an even number between 2 and 40 (or an outshot where a double is mathematically required), any dart thrown directly at that finishing double is logged as an attempt. A hit that concludes the leg counts as 1 attempt and 1 hit in the numerator; a miss outside or into the adjacent single bed counts as 1 attempt and 0 hits.</li>
+<li><strong>The 50-point bullseye counts as a double:</strong> under <strong>DRA Rule 5.2.3 and Rule 5.4.1</strong>, the central red Bullseye (inner bull) is worth 50 points and legally functions as a double (double 25). Therefore, any dart aimed at the Bullseye to conclude an outshot (such as on 170, 164, 124, or 50) is counted as an attempt at a double under standard broadcast conventions.</li>
+<li><strong>Setup darts do NOT count:</strong> a dart thrown at a single or treble to reduce a score down to a preferred double is a <strong>setup shot</strong>, not a checkout attempt. For example, if a player has 80 points remaining and throws at Single 16 to leave 64, or Single 20 from 60 to leave 40, those darts are setup throws. Only the final dart thrown at the double counts toward the checkout percentage denominator.</li>
+<li><strong>Scoring rules for bust visits:</strong> under <strong>DRA Rule 5.4.1 and Rule 5.4.2 (The Bust Rule)</strong>, if a player scores more points than required, leaves a remaining score of 1, or reduces their score to 0 without landing on a legal double, a bust occurs. When a bust occurs:
+<ul>
+<li><strong>Score restoration:</strong> the player's score <strong>strictly reverts back to the exact score they held at the beginning of that visit/turn</strong> (prior to throwing their first dart of that turn).</li>
+<li><strong>Statistical denominator nuance:</strong> official playing rules govern score restoration, but do not dictate proprietary software algorithms or data provider rules. For example, if a player starts a turn on 32 points, hits Single 16 (leaving 16), and then accidentally lands in Double 16, they bust their visit, and under DRA Rule 5.4.1 their score strictly reverts to 32 (not 16). In statistical tracking, whether that second errant dart is recorded in the denominator as a double attempt depends on the specific scoring platform, tracking prompt, or scorekeeper convention. No universal cross-platform tracking standard has been verified across all digital scoring applications.</li>
+</ul>
+</li>
+<li><strong>Darts that hit a double ring without finishing the leg:</strong>
+<ul>
+<li><strong>Errant darts causing a bust:</strong> if a player requires 16 points and accidentally lands in Double 16, they score 32 points, causing a bust under DRA Rule 5.4.1. The turn is voided, and the score reverts to the start of the visit. Because the dart did not successfully win the leg, it never counts as a successful checkout in the numerator (0 hits). In statistical tracking, whether an errant bust dart is recorded as a double attempt depends on the specific scoring software or scorekeeper convention; it never counts as a successful checkout in the numerator.</li>
+<li><strong>Accidental doubles on setup visits:</strong> if a player is on a score where no double can finish the leg (e.g. 100 points) and an errant throw intended for Single 20 hits Double 20, that throw simply scores 40 points toward score reduction. Because it was not a finishing shot, it does not count in either the numerator or the denominator of checkout percentage.</li>
+</ul>
+</li>
+</ol>
+<p>To explore valid outshots and checkout paths, consult our <a href="/darts/checkout-chart/">Complete Darts Checkout Chart</a> or test combinations with our <a href="/tools/checkout-calculator/">Interactive Checkout Calculator</a>.</p>
+      </section>
+
+      <section class="content-card">
+<h2>Worked example from a match</h2>
+<p>The following five-leg scenario is a <strong>hypothetical worked example</strong> constructed to demonstrate how leg-by-leg conversion, multiple visits, and difficult passages ("double trouble") impact the cumulative calculation:</p>
+<div class="table-responsive"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: left;">Leg</th>
+<th style="text-align: left;">Starting Score for Outshot</th>
+<th style="text-align: left;">Sequence of Darts Thrown</th>
+<th style="text-align: left;">Darts at Double</th>
+<th style="text-align: left;">Leg Won?</th>
+<th style="text-align: left;">Cumulative Doubles</th>
+<th style="text-align: left;">Match Checkout %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Leg 1</strong></td>
+<td style="text-align: left;">56</td>
+<td style="text-align: left;">S16 (leaves 40) &rarr; <strong>D20</strong> (Miss outside) &rarr; <strong>D20</strong> (Hit)</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Yes (1 hit)</td>
+<td style="text-align: left;">1 / 2</td>
+<td style="text-align: left;"><strong>50.0%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Leg 2</strong></td>
+<td style="text-align: left;">40</td>
+<td style="text-align: left;"><strong>D20</strong> (Miss outside) &rarr; <strong>D20</strong> (Hit)</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Yes (1 hit)</td>
+<td style="text-align: left;">2 / 4</td>
+<td style="text-align: left;"><strong>50.0%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Leg 3 (Visit 1)</strong></td>
+<td style="text-align: left;">120 remaining</td>
+<td style="text-align: left;">T20 (leaves 60) &rarr; S20 (leaves 40) &rarr; <strong>D20</strong> (Miss inside into S20, leaves 20)</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">2 / 5</td>
+<td style="text-align: left;"><strong>40.0%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Leg 3 (Visit 2)</em></td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;"><strong>D10</strong> (Miss inside into S10, leaves 10) &rarr; <strong>D5</strong> (Miss outside)</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">No (Opponent checks out)</td>
+<td style="text-align: left;">2 / 7</td>
+<td style="text-align: left;"><strong>28.6%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Leg 4</strong></td>
+<td style="text-align: left;">170</td>
+<td style="text-align: left;">T20 (leaves 110) &rarr; T20 (leaves 50) &rarr; <strong>Bullseye</strong> (Hit)</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Yes (1 hit)</td>
+<td style="text-align: left;">3 / 8</td>
+<td style="text-align: left;"><strong>37.5%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Leg 5</strong></td>
+<td style="text-align: left;">32</td>
+<td style="text-align: left;"><strong>D16</strong> (Hit on first dart)</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Yes (1 hit)</td>
+<td style="text-align: left;">4 / 9</td>
+<td style="text-align: left;"><strong>44.4%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>Breakdown of the calculation</h3>
+<ul>
+<li><strong>Total legs contested:</strong> 5</li>
+<li><strong>Total legs won (checkouts hit):</strong> 4</li>
+<li><strong>Total darts thrown at a finishing double:</strong> 9</li>
+<li><strong>Overall match checkout percentage:</strong> <strong>44.4%</strong> (4 &divide; 9 = 0.4444...)</li>
+</ul>
+<h3>Arithmetic and rounding check</h3>
+<ul>
+<li><strong>After Leg 1:</strong> 1 &divide; 2 = <strong>50.0%</strong></li>
+<li><strong>After Leg 2:</strong> 2 &divide; 4 = <strong>50.0%</strong></li>
+<li><strong>After Leg 3, Visit 1:</strong> 2 &divide; 5 = <strong>40.0%</strong></li>
+<li><strong>After Leg 3, Visit 2:</strong> 2 &divide; 7 = <strong>28.57%</strong> (rounds to <strong>28.6%</strong>)</li>
+<li><strong>After Leg 4:</strong> 3 &divide; 8 = <strong>37.5%</strong></li>
+<li><strong>After Leg 5 (Final):</strong> 4 &divide; 9 = <strong>44.44%</strong> (rounds to <strong>44.4%</strong>)</li>
+</ul>
+<p>Notice the mathematical swing in <strong>Leg 3</strong>: missing three double opportunities across two visits dragged the player's cumulative rate down from 50.0% to 28.6%. Clinical single-dart finishes on 170 and 32 in the following legs restored the overall conversion rate to 44.4%.</p>
+      </section>
+
+      <section class="content-card">
+<h2>What is a good checkout percentage?</h2>
+<p>What constitutes a "good" checkout percentage depends heavily on sample size and competitive environment. In short single matches (e.g. best of 9 legs), individual percentages are volatile because a player may only throw 5 to 10 total darts at a double. Over an entire tournament or season, however, reliable statistical patterns emerge.</p>
+<h3>Performance benchmarks</h3>
+<p>The table below outlines observed professional benchmarks alongside indicative community rules of thumb:</p>
+<div class="table-responsive"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: left;">Tier</th>
+<th style="text-align: left;">Checkout Percentage Range</th>
+<th style="text-align: left;">Context &amp; Level</th>
+<th style="text-align: left;">Empirical Source &amp; Evidence Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>World-Class Single-Match Peak</strong></td>
+<td style="text-align: left;"><strong>50.0% – 60.0%+</strong></td>
+<td style="text-align: left;">Elite major matchplay (unplayable form)</td>
+<td style="text-align: left;"><em>Illustrative short-sample peak:</em> Observed in televised PDC match centers in short matches or weekend tournament runs; not an audited seasonal standard.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Top Professional / Major Contender</strong></td>
+<td style="text-align: left;"><strong>40.0% – 45.0%</strong></td>
+<td style="text-align: left;">Indicative elite performance range</td>
+<td style="text-align: left;"><em>Illustrative benchmark only:</em> Published PDC Form Guide analysis by Christopher Kempf (<a href="https://www.pdc.tv/news/2026/october/14/Form-Guide--Clayton-the-checkout-king/">Form Guide: Clayton the checkout king</a>, 14 Oct 2026) reports Jonny Clayton leading Tour Card holders with 43% double accuracy over his latest 200 legs played. Clayton's individual rolling-window statistic does not establish a tour-wide average or prove a universal 40%–45% Top 16 standard.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PDC Tour Card Holder Baseline</strong></td>
+<td style="text-align: left;"><strong>35.0% – 40.0%</strong></td>
+<td style="text-align: left;">Approximate tour-level standard</td>
+<td style="text-align: left;"><em>Unverified editorial approximation:</em> Frequently cited in commentary as an informal professional baseline, but not substantiated by a published population-wide census table or verified multi-tournament dataset.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Competitive Super League / County</strong></td>
+<td style="text-align: left;"><strong>25.0% – 33.0%</strong></td>
+<td style="text-align: left;">Advanced amateur and county leagues</td>
+<td style="text-align: left;"><em>Illustrative estimate:</em> Informal editorial guideline only. No centralized dataset, published scoreboards, or empirical studies exist for this tier.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pub League / Local Club</strong></td>
+<td style="text-align: left;"><strong>18.0% – 25.0%</strong></td>
+<td style="text-align: left;">Weekly recreational pub divisions</td>
+<td style="text-align: left;"><em>Illustrative estimate:</em> Informal editorial guideline only. Represents an illustrative range without verified empirical data.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Beginner / Casual Home Player</strong></td>
+<td style="text-align: left;"><strong>10.0% – 18.0%</strong></td>
+<td style="text-align: left;">Novice home and social players</td>
+<td style="text-align: left;"><em>Illustrative estimate:</em> Informal editorial guideline only. Characterized by frequent visits to close legs; no empirical study supports this range.</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Note on sources: The professional figures above are illustrative only. Jonny Clayton's 43% figure is specifically a PDC-reported rolling analyst statistic over his latest 200 legs played, and does not demonstrate a universal 40%–45% elite standard or a tour-wide average. The 35%–40% baseline is an unverified editorial approximation without an accessible population-wide census table. World-class match peaks, county, pub, and beginner figures are purely informal illustrative estimates; no centralized league scoreboards or representative empirical datasets exist for grassroots darts.</em></p>
+<h3>The mathematical meaning of the 40% benchmark</h3>
+<p>Commentators frequently cite <strong>40%</strong> as the benchmark of a winning performance on television.</p>
+<p>Mathematically, a 40% conversion rate corresponds to an average of <strong>2.5 individual double attempts per successful conversion over a sufficiently large sample</strong>:</p>
+<p class="formula-line"><code>1 &divide; 0.40 = 2.5 individual double attempts per checkout hit</code></p>
+<p>Over an extended match or tournament, this means an elite finisher requires an average of 25 double attempts to secure 10 winning legs.</p>
+<p>However, this ratio does <strong>not</strong> guarantee a specific leg length or scoring average on its own. A player's overall three-dart average and the number of darts required to win a leg depend on their scoring cadence in non-finishing visits, the number of setup throws required, whether missed doubles resulted in lost legs, and how quickly their opponent applied pressure. Checkout percentage measures finishing conversion in isolation; it does not dictate a guaranteed 12-to-15-dart leg or a 100-point match average.</p>
+      </section>
+
+      <AdSlot position="in-article" />
+
+      <section class="content-card">
+<h2>Checkout percentage vs 3-dart average: which matters more?</h2>
+<p>The debate over whether power scoring (<a href="/darts/average-explained/">3-Dart Average</a>) or clinical finishing (<a href="/players/checkout-percentage-explained/">Checkout Percentage</a>) is more decisive is a central topic in modern darts analytics.</p>
+<p>Rather than viewing them in opposition, sports data researchers and PDC analysts recognize that both metrics interact to determine match outcomes:</p>
+<div class="table-responsive"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: left;">Performance Metric</th>
+<th style="text-align: left;">Player A (Hypothetical Power Scorer)</th>
+<th style="text-align: left;">Player B (Hypothetical Clinical Finisher)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>3-Dart Average</strong></td>
+<td style="text-align: left;"><strong>104.20</strong></td>
+<td style="text-align: left;"><strong>93.80</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Doubles Converted</strong></td>
+<td style="text-align: left;">2 of 12</td>
+<td style="text-align: left;"><strong>6 of 9</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Checkout Percentage</strong></td>
+<td style="text-align: left;">16.7% (Severe Double Trouble)</td>
+<td style="text-align: left;"><strong>66.7% (Devastating Efficiency)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Hypothetical Match Outcome</strong></td>
+<td style="text-align: left;">Lost 2–6</td>
+<td style="text-align: left;"><strong>Won 6–2</strong></td>
+</tr>
+</tbody>
+</table></div>
+<div class="note-box">
+<p><strong>Illustrative context:</strong> In this hypothetical scenario, Player A outscored Player B by more than 10 points per visit. However, by squandering 10 darts at doubles across multiple visits, Player A granted Player B the extra visits needed to break throw and win the match.</p>
+</div>
+<h3>The "false high average" phenomenon</h3>
+<p>Peer-reviewed sports analytics research explores the interaction and distinct characteristics of scoring averages and checkout conversion:</p>
+<ul>
+<li>In an archival study of N = 26,724 professional match performances from 442 players (2018–2021), Greve, van Meurs &amp; Strauss (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10390587/"><em>Scientific Reports</em> / PMC10390587</a>) examined the relationship between match-level checkout percentage and three-dart average, observing a moderate correlation (r = .41).</li>
+<li>The authors discuss CP and 3DA as complementary but separate performance indicators: checkout percentage offers higher content validity for finishing efficiency, whereas its statistical reliability is constrained by the smaller number of attempts per leg compared to general scoring visits.</li>
+<li>Traditional three-dart averages can also reflect leg dynamics: missed darts at doubles record zero points, which mechanically lowers that leg's visit average, whereas a player whose opponent checks out rapidly may have their average calculated purely from uninterrupted high-scoring setup visits.</li>
+</ul>
+<h3>Situational pressure, timing, and environmental factors</h3>
+<p>A raw checkout percentage does not capture the situational context or timing of when a double is attempted:</p>
+<ul>
+<li>In a study analysing 32,274 checkout-related observations from 122 professional players across PDC tournaments (April 2017 to September 2018), Ötting et al. (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0230528"><em>PLOS ONE</em>, 2020</a>) investigated performance under within-leg pressure (operationalized by players' and opponents' chances of checking out). The authors found no evidence of a systematic overall choking or excelling effect under their defined pressure conditions, indicating robust motor stability among tour professionals.</li>
+<li>External social and environmental factors can also interact with fine motor coordination. Greve et al. (2023) evaluated audience conditions across 26,724 professional match performances and found small negative associations between audience presence and checkout percentage in their multilevel models. While the reported real-audience and simulated-audience effects were statistically significant, the authors characterized the effect sizes as small, emphasizing substantial within-player variability.</li>
+<li>In matchplay, clinical finishers distinguish themselves by high conversion on <strong>"first-dart doubles"</strong> when an opponent is sitting on an outshot, eliminating the opponent's opportunity to return to the oche.</li>
+</ul>
+      </section>
+
+      <section class="content-card">
+<h2>Where to see checkout percentage stats</h2>
+<p>To follow verified checkout statistics across professional circuits and check your own finishing progress, consult the following resources:</p>
+<ul>
+<li><strong>PDC tournament coverage:</strong> Matches broadcast on television feature match-level checkout percentages on graphic overlays. For curated player analysis, visit our <a href="/players/stats/">PDC Player Stats Hub</a>.</li>
+<li><strong>PDC all-time records:</strong> Historic scoring achievements and notable match checkout performances. Explore our <a href="/players/records/">PDC All-Time Records Directory</a>.</li>
+<li><strong>World Darts Championship records:</strong> Tournament records and milestones from Alexandra Palace. See our <a href="/players/world-championship-records/">World Championship Records Dossier</a>.</li>
+<li><strong>Digital scoring platforms (e.g. DartConnect):</strong> Widely utilized across competitive floor events and grassroots leagues for match scoring; specific double tracking and summary stats depend on application settings and league configurations.</li>
+<li><strong>Finishing math resources:</strong> Review optimal paths from 170 to 2 in our <a href="/darts/checkout-chart/">PDC Checkout Chart</a> or test checkouts with our <a href="/tools/checkout-calculator/">Interactive Checkout Calculator</a>.</li>
+</ul>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>What is considered a good checkout percentage in darts?</h3>
+            <p>In professional darts, an individual checkout percentage between <strong>40% and 45%</strong> is widely regarded as an illustrative elite benchmark, highlighted by PDC stats analyst Christopher Kempf's report of Jonny Clayton leading Tour Card holders with <strong>43% double accuracy over his latest 200 legs</strong> (PDC Form Guide, October 2026) — an individual rolling-window analyst statistic, not a tour-wide norm or season-long average. Across the broader professional circuit, <strong>35% to 40%</strong> is an unverified editorial approximation frequently mentioned in commentary, rather than an audited population-wide census. At the amateur level, where no centralized database or published scoreboard dataset exists, all figures are purely illustrative estimates: competitive county standards are informally estimated at roughly <strong>25% to 33%</strong>, local pub leagues at <strong>18% to 25%</strong>, and beginners learning double-out math at <strong>10% to 18%</strong>.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Does a dart thrown at Bullseye count as a double attempt?</h3>
+            <p><strong>Yes, in legal rules of play, but recording depends on provider conventions.</strong> Under Darts Regulation Authority (DRA) rules (Sections 5.2.3 and 5.4.1), the central 50-point red Bullseye (inner bull) is legally defined as a double (an inner ring worth twice the 25-point outer bull) and satisfies the requirement to finish on a double. Any dart thrown at the 50-point Bullseye when an outshot is mathematically achievable (such as 170, 164, 124, or 50) is treated as a double attempt under standard broadcast conventions. However, the DRA rulebook governs rules of play, not statistical tracking: whether and how a provider labels the dart in a statistical feed depends on that provider's tracking convention.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is the difference between checkout percentage and 3-dart average?</h3>
+            <p>A <strong>3-dart average</strong> measures the average points scored across all three-dart visits, reflecting overall scoring power. A <strong>checkout percentage</strong> measures finishing efficiency by dividing successful checkouts by the total individual darts aimed at a double. While scoring average determines how quickly a player arrives at an outshot, checkout percentage determines whether they convert that opportunity into a won leg.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How does missing a setup dart affect checkout percentage?</h3>
+            <p>A dart thrown at a single or treble to reduce a score down to a double (such as throwing at Single 20 from 60 to leave Double 20) is a <strong>setup shot</strong>, not an attempt at a double. Setup shots do <strong>not</strong> count toward the checkout percentage denominator. Only darts thrown directly at a finishing double or the 50-point Bullseye when an outshot is mathematically achievable are logged as double attempts under standard conventions.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What happens to a player's score during a bust?</h3>
+            <p>Under <strong>DRA Rule 5.4.1</strong>, if a player scores more points than required, leaves a remaining score of 1, or reduces their score to 0 without hitting a valid double, a bust occurs. The player's turn ends immediately, and their score <strong>reverts back to the exact score they held at the start of that visit</strong> (before throwing the first dart of that turn).</p>
+          </div>
+      </section>
+
+      <section class="content-card">
+        <h2>Related Guides</h2>
+        <div class="links-grid">
+          <a href="/darts/average-explained/" class="link-card">
+            <strong>3-Dart Average Explained</strong>
+            <span>How scoring averages are calculated and what the benchmarks mean.</span>
+          </a>
+          <a href="/darts/checkout-chart/" class="link-card">
+            <strong>Darts Checkout Chart</strong>
+            <span>Every finishing route from 2 to 170.</span>
+          </a>
+          <a href="/tools/checkout-calculator/" class="link-card">
+            <strong>Checkout Calculator</strong>
+            <span>Test any outshot combination interactively.</span>
+          </a>
+          <a href="/players/stats/" class="link-card">
+            <strong>PDC Player Stats Hub</strong>
+            <span>Follow verified checkout statistics across the tour.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255, 255, 255, 0.15); color: #f8fafc; font-size: 0.75rem;
+    font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .badge-accent { background: var(--color-brand-accent, #c99700); color: #0c1a2c; }
+  .page-header h1 { font-size: 2.25rem; font-weight: 800; margin: 0 0 1rem; line-height: 1.2; color: #fff; }
+  .lead-text { font-size: 1.15rem; line-height: 1.6; color: #cbd5e1; max-width: 800px; margin: 0; }
+  .content-layout { margin-bottom: 4rem; }
+  .main-column { display: flex; flex-direction: column; gap: 2rem; }
+  .content-card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-top: 0;
+    margin-bottom: 1.25rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem;
+  }
+  .content-card h3 { font-size: 1.25rem; font-weight: 700; color: #1e293b; margin: 1.5rem 0 0.75rem; }
+  .content-card p { color: #334155; line-height: 1.7; margin-bottom: 1rem; }
+  .content-card ul, .content-card ol { margin: 1rem 0 1.5rem 1.5rem; color: #334155; line-height: 1.7; }
+  .content-card li { margin-bottom: 0.4rem; }
+  .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .data-table th, .data-table td { padding: 0.85rem 1rem; border: 1px solid #e2e8f0; text-align: left; }
+  .data-table th { background: #0f172a; color: #fff; font-weight: 700; }
+  .data-table tr:nth-child(even) { background: #f8fafc; }
+  .faq-item { border-bottom: 1px solid #e2e8f0; padding: 1.25rem 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-item h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+  .faq-item p { margin: 0; color: #475569; }
+  .links-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+  @media (min-width: 600px) { .links-grid { grid-template-columns: 1fr 1fr; } }
+  .link-card {
+    display: block; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;
+    padding: 1rem; text-decoration: none; transition: all 0.2s ease;
+  }
+  .link-card:hover { border-color: var(--color-brand-primary, #0c1a2c); transform: translateY(-2px); }
+  .link-card strong { display: block; color: #0f172a; font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .link-card span { display: block; color: #64748b; font-size: 0.85rem; line-height: 1.4; }
+  .formula-box {
+    background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px;
+    padding: 1.75rem; text-align: center; margin: 1.5rem 0;
+  }
+  .formula-math {
+    font-size: 1.35rem; font-weight: 700; color: #0f172a;
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.75rem; flex-wrap: wrap;
+  }
+  .formula-label { font-size: 1.1rem; }
+  .fraction {
+    display: inline-flex; flex-direction: column; vertical-align: middle;
+    text-align: center; padding: 0 0.5rem;
+  }
+  .numerator {
+    border-bottom: 2px solid #0f172a; padding-bottom: 0.2rem;
+    font-weight: 700; color: #0c1a2c; font-size: 1rem;
+  }
+  .denominator { padding-top: 0.2rem; font-weight: 700; color: #0c1a2c; font-size: 1rem; }
+  .formula-line { text-align: center; font-size: 1.15rem; margin: 1.25rem 0; }
+  .formula-line code {
+    background: #f1f5f9; padding: 0.5rem 1rem; border-radius: 6px;
+    font-weight: 700; color: #0f172a;
+  }
+  .note-box {
+    background: #fffbeb; border-left: 4px solid #c99700; border-radius: 0 6px 6px 0;
+    padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+  }
+  .note-box p { margin: 0; color: #475569; }
+</style>
