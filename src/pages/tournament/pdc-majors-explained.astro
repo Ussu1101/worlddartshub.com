@@ -1,0 +1,536 @@
+---
+// src/pages/tournament/pdc-majors-explained.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "PDC Major Tournaments Explained: Full List & Formats";
+const pageDescription = "Guide to every PDC major tournament: World Championship, World Matchplay, World Grand Prix, Premier League, Grand Slam, formats, and Order of Merit status.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/pdc-majors-explained/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'PDC Majors Explained', url: '/tournament/pdc-majors-explained/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-17T00:00:00+00:00",
+      "dateModified": "2026-10-17T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tournament",
+          "item": `${siteUrl}/tournament/world-darts-championship/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PDC Majors Explained",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the biggest major tournament in darts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The PDC World Darts Championship is the biggest and most lucrative tournament in the sport. Held from mid-December to early January at London's Alexandra Palace, it features a 128-player field, a record £5,000,000 prize fund, and awards £1,000,000 to the world champion along with the iconic Sid Waddell Trophy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Premier League Darts count toward the world rankings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Premier League Darts is a non-ranking invitational tournament. While the champion receives £275,000, none of the prize money counts toward the official two-year rolling PDC Order of Merit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between set play and leg play?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In leg play (used in the World Matchplay and Premier League), the first player to reach a target number of legs wins the match. In set play (used in the World Championship and World Grand Prix), players must win three legs to win a single set; the first player to win the designated number of sets wins the match. Set play allows a player to reset mentally between sets even after losing multiple legs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the World Grand Prix unique?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The World Grand Prix is the only televised major in professional darts played under Double-In, Double-Out rules. Competitors must hit a double to begin scoring in each leg before finishing on a double to win the leg."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the darts Triple Crown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Triple Crown consists of winning the sport's three most prestigious major titles: the PDC World Darts Championship, the World Matchplay, and Premier League Darts. Only three players in history have won all three: Phil Taylor, Michael van Gerwen, and Luke Humphries."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">TOURNAMENT CALENDAR</span>
+        <span class="badge">PDC MAJORS GUIDE</span>
+      </div>
+      <h1>PDC Major Tournaments Explained: The Complete Guide to Darts Majors</h1>
+      <p class="lead-text">
+        While the World Darts Championship at Alexandra Palace is the pinnacle of the sport, professional darts operates an elite calendar of televised major tournaments from January to November. Discover how each major works, from ranking status to unique set and leg formats.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Tournament Structure & Order of Merit Regulations" />
+
+      <section class="content-card">
+        <h2>The Master Comparison Matrix: PDC Major Tournaments</h2>
+        <p>
+          Below is the definitive reference table of the PDC's premier televised majors:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament</th>
+                <th>Month Held</th>
+                <th>Venue &amp; City</th>
+                <th>Format Type</th>
+                <th>Ranking Status</th>
+                <th>Historical Trophy / Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>World Darts Championship</strong></td>
+                <td>Dec–Jan</td>
+                <td>Alexandra Palace, London</td>
+                <td>Sets (501)</td>
+                <td><strong>Ranking</strong> (Flagship)</td>
+                <td>Sid Waddell Trophy (<a href="/tournament/prize-money/">£5M purse</a>)</td>
+              </tr>
+              <tr>
+                <td><strong>The Masters</strong></td>
+                <td>Jan/Feb</td>
+                <td>Marshall Arena, Milton Keynes</td>
+                <td>Legs (501)</td>
+                <td>Non-Ranking</td>
+                <td>Season-opening top-seed invitational</td>
+              </tr>
+              <tr>
+                <td><strong>UK Open</strong></td>
+                <td>March</td>
+                <td>Butlin's Resort, Minehead</td>
+                <td>Legs (501)</td>
+                <td><strong>Ranking</strong></td>
+                <td>"The FA Cup of Darts" (Open Draw)</td>
+              </tr>
+              <tr>
+                <td><strong>Premier League Darts</strong></td>
+                <td>Feb–May</td>
+                <td>Roadshow (16 European Arenas)</td>
+                <td>Legs (501)</td>
+                <td>Non-Ranking</td>
+                <td>8 Elite Players (Weekly Mini-Knockouts)</td>
+              </tr>
+              <tr>
+                <td><strong>World Cup of Darts</strong></td>
+                <td>June</td>
+                <td>Eissporthalle, Frankfurt</td>
+                <td>Pairs (501)</td>
+                <td>Non-Ranking</td>
+                <td>40-Nation National Pairs Championship</td>
+              </tr>
+              <tr>
+                <td><strong>World Matchplay</strong></td>
+                <td>July</td>
+                <td>Winter Gardens, Blackpool</td>
+                <td>Legs (Win by 2)</td>
+                <td><strong>Ranking</strong></td>
+                <td>Phil Taylor Trophy (Summer Crown)</td>
+              </tr>
+              <tr>
+                <td><strong>World Series Finals</strong></td>
+                <td>September</td>
+                <td>AFAS Live, Amsterdam</td>
+                <td>Legs (501)</td>
+                <td>Non-Ranking</td>
+                <td>Culmination of Global Tour events</td>
+              </tr>
+              <tr>
+                <td><strong>World Grand Prix</strong></td>
+                <td>October</td>
+                <td>Mattioli Arena, Leicester</td>
+                <td>Sets (<a href="/darts/double-in-double-out/">Double-In</a>)</td>
+                <td><strong>Ranking</strong></td>
+                <td>Only Double-In, Double-Out TV Major</td>
+              </tr>
+              <tr>
+                <td><strong>European Championship</strong></td>
+                <td>October</td>
+                <td>Westfalenhallen, Dortmund</td>
+                <td>Legs (501)</td>
+                <td><strong>Ranking</strong></td>
+                <td>Top 32 from European Tour Order of Merit</td>
+              </tr>
+              <tr>
+                <td><strong>Grand Slam of Darts</strong></td>
+                <td>November</td>
+                <td>Aldersley Village, Wolverhampton</td>
+                <td>Groups + Legs</td>
+                <td><strong>Ranking</strong></td>
+                <td>Eric Bristow Trophy (Cross-code heritage)</td>
+              </tr>
+              <tr>
+                <td><strong>Players Championship Finals</strong></td>
+                <td>November</td>
+                <td>Butlin's Resort, Minehead</td>
+                <td>Legs (501)</td>
+                <td><strong>Ranking</strong></td>
+                <td>Top 64 floor-event form leaders</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <h2>Ranked Majors vs Non-Ranked Invitationals: Why It Matters</h2>
+        <p>
+          The distinction between ranking and non-ranking tournaments is fundamental to understanding professional darts:
+        </p>
+
+        <div class="ascii-box">
+          <pre><code>+-----------------------------------------------------------------+
+|                   PREMIER RANKING MAJORS                        |
+|  • Prize money WON is added to the 2-Year PDC Order of Merit    |
+|  • Determines Official World Seedings &amp; Tour Card Survival      |
+|  • Examples: World Championship, World Matchplay, Grand Prix    |
++-----------------------------------------------------------------+
+                                vs
++-----------------------------------------------------------------+
+|                 PREMIER INVITATIONAL EVENTS                     |
+|  • Players earn lucrative prize money, but £0 is added to OoM   |
+|  • Entry determined by invitation, selection, or specific criteria|
+|  • Examples: Premier League Darts, The Masters, World Cup       |
++-----------------------------------------------------------------+</code></pre>
+        </div>
+
+        <p>
+          Because the <a href="/tournament/order-of-merit/">PDC Order of Merit</a> is a rolling two-year ranking ledger, prize money won in a ranking major expires after 24 months. Winning a £100,000 ranking title provides immediate protection in the world rankings, whereas winning the £275,000 Premier League title boosts a player's earnings without moving them up the official world ranking ladder.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>The "Big Four" Premier Ranking Majors</h2>
+        <p>
+          Outside of the festive <a href="/tournament/world-darts-championship/">World Championship at Alexandra Palace</a>, four ranking majors represent the backbone of the PDC season:
+        </p>
+
+        <h3>1. The World Matchplay (Winter Gardens, Blackpool)</h3>
+        <p>
+          Staged since 1994 inside the Empress Ballroom at Blackpool's Winter Gardens, the Matchplay is widely considered by players and purists as the finest tournament in world darts. Playing for the Phil Taylor Trophy, competitors must win by <strong>two clear legs</strong>, producing epic overtime marathons in the mid-summer heat.
+        </p>
+
+        <h3>2. The World Grand Prix (Leicester / Dublin)</h3>
+        <p>
+          The Grand Prix is the only televised tournament in professional darts played under <a href="/darts/double-in-double-out/">Double-In, Double-Out</a> rules. Competitors cannot begin scoring until they hit a finishing double or the 50-point red Bullseye, brutally punishing slow starters in set-play combat.
+        </p>
+
+        <h3>3. The UK Open ("The FA Cup of Darts", Minehead)</h3>
+        <p>
+          Featuring 160 competitors, the UK Open has no seedings. A multi-board open draw takes place after each round, allowing top world champions to collide in the early rounds across eight simultaneous stages at Butlin's Minehead.
+        </p>
+
+        <h3>4. The Grand Slam of Darts (Wolverhampton)</h3>
+        <p>
+          Awarded the Eric Bristow Trophy, this tournament combines an eight-group round-robin stage with a grueling knockout format, pitting major champions against continental qualifiers and the top female players from the PDC Women's Series.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>The Premier League: Darts' Biggest Arena Roadshow</h2>
+        <p>
+          Staged weekly from February to May across 16 major arenas in the UK, Ireland, Germany, and the Netherlands, Premier League Darts is the sport’s most commercially successful property.
+        </p>
+
+        <div class="ascii-box">
+          <pre><code>+-------------------------------------------------------------+
+|                 PREMIER LEAGUE DARTS AT A GLANCE            |
++-------------------------------------------------------------+
+|  Field:         8 Elite Players                             |
+|                 (Top 4 Order of Merit + 4 Wildcards)        |
+|  Format:        16 Weekly Knockout Nights (Best of 11)      |
+|  Points:        Night Winner (5 pts), Runner-Up (3 pts),    |
+|                 Semi-Finalists (2 pts each)                 |
+|  Play-Offs:     Top 4 advance to The O2, London             |
+|                 Semi-Finals &amp; Final on one dramatic night   |
+|  Status:        NON-RANKING (Prize money does not affect    |
+|                 PDC Order of Merit)                         |
++-------------------------------------------------------------+</code></pre>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <h2>The "Triple Crown" of Professional Darts</h2>
+        <p>
+          In professional darts, the prestigious <strong>Triple Crown</strong> comprises the sport's three traditional pillar events:
+        </p>
+        <ol>
+          <li><strong>The PDC World Darts Championship</strong> (Alexandra Palace)</li>
+          <li><strong>The World Matchplay</strong> (Winter Gardens, Blackpool)</li>
+          <li><strong>Premier League Darts</strong> (Play-Off Finals at The O2, London)</li>
+        </ol>
+
+        <p>
+          Winning all three titles requires mastering set-play stamina at Alexandra Palace, summer leg-play overtime in Blackpool, and a 16-week touring marathon. In darts history, only <strong>three players</strong> have achieved the Triple Crown across their careers:
+        </p>
+
+        <div class="ascii-box">
+          <pre><code>+-----------------------------------------------------------------+
+|                   DARTS TRIPLE CROWN HOLDERS                    |
++-----------------------------------------------------------------+
+|  1. Phil Taylor         • Won all three multiple times          |
+|                         • 16 World Titles, 16 Matchplays, 6 PLs |
++-----------------------------------------------------------------+
+|  2. Michael van Gerwen  • 3 World Titles, 3 Matchplays, 7 PLs  |
++-----------------------------------------------------------------+
+|  3. Luke Humphries      • Completed Triple Crown in 2024        |
+|                         • Won 2024 World Championship,          |
+|                           2024 Premier League, &amp; 2024 Matchplay |
+|                           within a single calendar year!        |
++-----------------------------------------------------------------+</code></pre>
+        </div>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+          <h3>What is the biggest major tournament in darts?</h3>
+          <p>
+            The <strong>PDC World Darts Championship</strong> is the biggest and most lucrative tournament in the sport. Held from mid-December to early January at London's Alexandra Palace, it features a 128-player field, a record £5,000,000 prize fund, and awards £1,000,000 to the world champion along with the iconic Sid Waddell Trophy.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does Premier League Darts count toward the world rankings?</h3>
+          <p>
+            No. Premier League Darts is a non-ranking invitational tournament. While the champion receives £275,000, none of the prize money counts toward the official two-year rolling PDC Order of Merit.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the difference between set play and leg play?</h3>
+          <p>
+            In <a href="/darts/legs-vs-sets/">leg play</a> (used in the World Matchplay and Premier League), the first player to reach a target number of legs wins the match. In set play (used in the World Championship and World Grand Prix), players must win three legs to win a single set; the first player to win the designated number of sets wins the match. Set play allows a player to reset mentally between sets even after losing multiple legs.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Why is the World Grand Prix unique?</h3>
+          <p>
+            The World Grand Prix is the only televised major in professional darts played under <strong>Double-In, Double-Out</strong> rules. Competitors must hit a double to begin scoring in each leg before finishing on a double to win the leg.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the darts Triple Crown?</h3>
+          <p>
+            The Triple Crown consists of winning the sport's three most prestigious major titles: the PDC World Darts Championship, the World Matchplay, and Premier League Darts. Only three players in history have won all three: Phil Taylor, Michael van Gerwen, and Luke Humphries.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .page-header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 850px;
+    margin: 0;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .content-card p, .content-card li {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .ascii-box {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .ascii-box pre {
+    margin: 0;
+    font-family: monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #1e293b;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

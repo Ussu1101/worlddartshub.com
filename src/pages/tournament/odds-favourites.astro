@@ -1,0 +1,529 @@
+---
+// src/pages/tournament/odds-favourites.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Darts Championship Odds & Favourites Explained";
+const pageDescription = "Independent guide to World Darts Championship odds, title favourites, market structure, statistical indicators, and responsible betting principles.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/odds-favourites/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'Odds & Favourites', url: '/tournament/odds-favourites/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-17T00:00:00+00:00",
+      "dateModified": "2026-10-17T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tournament",
+          "item": `${siteUrl}/tournament/world-darts-championship/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Odds & Favourites",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who sets World Darts Championship odds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Odds are formulated by odds-compiling teams and quantitative data analysts at licensed bookmakers and betting exchanges. They use complex predictive models incorporating player averages, historical set-play data, head-to-head records, bracket paths, and market liquidity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does \"implied probability\" mean in darts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Implied probability is the mathematical percentage chance of an outcome occurring as indicated by the odds. For example, odds of 3/1 represent a 25% implied probability (1 / (3 + 1) * 100%). If an analyst believes a player has a 35% chance of winning, the 3/1 market price would be considered \"value.\""
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When are World Darts Championship odds released?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Outright winner markets for the next World Darts Championship are typically opened by sportsbooks within 24 hours of the previous final ending in January. However, prices become highly active in late November once the 128-player field and tournament draw bracket are officially confirmed by the PDC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between outright odds and match odds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Outright odds reflect a player's probability of winning the entire tournament and lifting the Sid Waddell Trophy. Match odds reflect the probability of winning an individual head-to-head contest against a specific opponent in a specific round."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I get help if gambling becomes a problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the United Kingdom, free, confidential, and professional support is available 24/7 through GamCare and BeGambleAware. You can call the National Gambling Helpline toll-free on 0808 8020 133 or access live online chat at begambleaware.org."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">MARKET ANALYSIS</span>
+        <span class="badge">STATISTICAL PROBABILITY</span>
+      </div>
+      <h1>World Darts Championship Odds and Favourites Explained</h1>
+      <p class="lead-text">
+        Every December, the sports world turns its attention to London's Alexandra Palace for the PDC World Darts Championship. Explore how tournament odds work, how to calculate mathematical implied probability, and the statistical metrics that define the leading title contenders.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <div class="responsible-notice">
+        <div class="notice-header">
+          <span class="age-badge">18+</span>
+          <strong>Responsible Sports Information &amp; Editorial Independence Notice</strong>
+        </div>
+        <p>
+          This guide is an independent editorial analysis of tournament probabilities, market mechanics, and statistical contenders for the <strong>PDC World Darts Championship</strong>. World Darts Hub does not provide gambling facilities, does not accept wagers, and does not operate commercial bookmaker referral partnerships. Darts odds are referenced strictly as numerical representations of market consensus. If you choose to wager, please gamble responsibly. For free, confidential advice and support in the UK, visit <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware.org</a> or call the National Gambling Helpline on <strong>0808 8020 133</strong>.
+        </p>
+      </div>
+
+      <VerificationBadge verifiedDate="October 2026" topic="Tournament Market Structure &amp; Analytical Models" />
+
+      <section class="content-card">
+        <h2>How Darts Outright Odds Work: Converting Prices to Probability</h2>
+        <p>
+          In sports analytics, betting odds are simply expressions of probability. Understanding what the numbers represent requires converting fractional or decimal odds into <strong>mathematical implied probability</strong>:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Fractional Price</th>
+                <th>Decimal Equivalent</th>
+                <th>Implied Probability (%)</th>
+                <th>Analytical Interpretation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>5/2</strong></td>
+                <td>3.50</td>
+                <td><strong>28.6%</strong></td>
+                <td>Heavy pre-tournament co-favourite</td>
+              </tr>
+              <tr>
+                <td><strong>3/1</strong></td>
+                <td>4.00</td>
+                <td><strong>25.0%</strong></td>
+                <td>Clear primary frontrunner</td>
+              </tr>
+              <tr>
+                <td><strong>7/2</strong></td>
+                <td>4.50</td>
+                <td><strong>22.2%</strong></td>
+                <td>Top-tier major title contender</td>
+              </tr>
+              <tr>
+                <td><strong>5/1</strong></td>
+                <td>6.00</td>
+                <td><strong>16.7%</strong></td>
+                <td>Elite seed with established major pedigree</td>
+              </tr>
+              <tr>
+                <td><strong>8/1</strong></td>
+                <td>9.00</td>
+                <td><strong>11.1%</strong></td>
+                <td>Dangerous former champion or hot form player</td>
+              </tr>
+              <tr>
+                <td><strong>14/1</strong></td>
+                <td>15.00</td>
+                <td><strong>6.7%</strong></td>
+                <td>Top 10 seed requiring a clean bracket run</td>
+              </tr>
+              <tr>
+                <td><strong>25/1</strong></td>
+                <td>26.00</td>
+                <td><strong>3.8%</strong></td>
+                <td>Elite dark horse capable of a deep semifinal run</td>
+              </tr>
+              <tr>
+                <td><strong>50/1</strong></td>
+                <td>51.00</td>
+                <td><strong>2.0%</strong></td>
+                <td>Dangerous unseeded qualifier or outsider</td>
+              </tr>
+              <tr>
+                <td><strong>100/1+</strong></td>
+                <td>101.00+</td>
+                <td><strong>&lt; 1.0%</strong></td>
+                <td>Massive longshot requiring historic upsets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-footnote">
+          <em>Note: In commercial markets, total implied probabilities across all 128 players exceed 100% due to the bookmaker's operating margin ("the overround").</em>
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>The Primary Contenders: Frontrunners for the World Title</h2>
+        <p>
+          Heading into Alexandra Palace, the tournament market typically coalesces around a compact group of elite contenders whose seasonal metrics satisfy the rigorous demands of set play:
+        </p>
+
+        <div class="ascii-box">
+          <pre><code>+-------------------------------------------------------------+
+|               THE ELITE TIER OF TITLE CONTENDERS            |
++-------------------------------------------------------------+
+|  1. Luke Humphries ("Cool Hand Luke")                       |
+|     • Defending World Champion &amp; Official World No. 1       |
+|     • Unshakeable scoring rhythm; mastered long-format sets  |
+|     • Triple Crown winner (World Champ, Matchplay, PL)      |
++-------------------------------------------------------------+
+|  2. Luke Littler ("The Nuke")                               |
+|     • Historic 2024 finalist at 16; 2024 Premier League Champ|
+|     • Highest ceiling for 180s and 100+ match averages       |
+|     • Fearless finishing on big stage checkout targets      |
++-------------------------------------------------------------+
+|  3. Michael van Gerwen ("Mighty Mike")                      |
+|     • Three-time World Champion; 7-time Premier League Champ|
+|     • Perennial tournament threat with unmatched stage aura |
++-------------------------------------------------------------+
+|  4. Gerwyn Price ("The Iceman")                             |
+|     • 2021 World Champion; ferocious competitor in set play |
+|     • High scoring ceiling when crowd energy aligns         |
++-------------------------------------------------------------+</code></pre>
+        </div>
+
+        <h3>1. Luke Humphries: The Benchmark of Consistency</h3>
+        <p>
+          <a href="/players/luke-humphries/">Luke Humphries</a> has established himself as the premier set-play competitor of his generation. His strength lies in mental endurance: across best-of-7, best-of-9, and best-of-13 set matches, Humphries rarely experiences the deep scoring slumps that derail less composed competitors.
+        </p>
+
+        <h3>2. Luke Littler: Explosive Ceiling</h3>
+        <p>
+          <a href="/players/luke-littler/">Luke Littler</a>'s pricing reflects his extraordinary scoring power. When Littler is locked into his rhythm, his First-9 scoring average regularly exceeds 110. In knockout darts, an opponent can throw a 98 average and barely earn a single throw at a double if Littler hits six consecutive trebles.
+        </p>
+
+        <h3>3. Michael van Gerwen: The Veteran Machine</h3>
+        <p>
+          Despite fierce competition from the younger generation, <a href="/players/michael-van-gerwen/">Michael van Gerwen</a> remains a tournament titan. His ability to produce 11-dart and 12-dart legs under extreme psychological pressure makes him an ever-present threat to lift the Sid Waddell Trophy. Compare head-to-head records on our <a href="/players/player-comparisons/">player comparisons tool</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>What Determines Outright Odds? Key Statistical Predictors</h2>
+        <p>
+          Casual fans often look solely at television reputation, but oddsmakers and statistical models rely on rigorous baseline metrics:
+        </p>
+        <ul>
+          <li><strong>The Power of Set Play vs Leg Play:</strong> In set play, a player can win fewer total legs than their opponent yet win the match in sets. Statistical models place immense value on break-back efficiency.</li>
+          <li><strong>First-9 Scoring Average:</strong> Players with high First-9 averages consistently reach a double in 12 to 15 darts, putting relentless pressure on their opponent's throw.</li>
+          <li><strong>High-Pressure Double Conversion:</strong> In the later rounds of the World Championship, checkout conversion is decisive. As tracked in our <a href="/players/stats/">player statistics and averages hub</a>, converting over 40% of doubles over long sets is essential to survival.</li>
+          <li><strong>Navigating the Christmas Break:</strong> The tournament pauses for three days over Christmas after the second round, frequently upsetting player rhythm and creating third-round volatility.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>Understanding "Each-Way" Betting in Darts</h2>
+        <p>
+          In outright tournament markets, spectators frequently encounter <strong>Each-Way (E/W)</strong> terms:
+        </p>
+
+        <div class="ascii-box">
+          <pre><code>+-----------------------------------------------------------------+
+|                    HOW EACH-WAY DARTS WORKS                     |
++-----------------------------------------------------------------+
+|  A £10 Each-Way Bet = £20 Total Stake:                          |
+|  • Part 1: £10 on the player to WIN the tournament             |
+|  • Part 2: £10 on the player to PLACE (Reach the Final)         |
+|                                                                 |
+|  Standard Terms: 1/2 Odds, 2 Places                             |
+|  • If your player wins the final: Both bets win.                |
+|  • If your player loses the final: The Win bet loses, but the   |
+|    Place bet wins at half the original odds.                    |
+|  • If your player loses in the semi-finals: Both bets lose.     |
++-----------------------------------------------------------------+</code></pre>
+        </div>
+
+        <p>
+          Review our complete guide to the <a href="/tournament/world-darts-championship/">PDC World Darts Championship</a> and the <a href="/tournament/prize-money/">£5,000,000 prize money distribution</a> for tournament context.
+        </p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+          <h3>Who sets World Darts Championship odds?</h3>
+          <p>
+            Odds are formulated by odds-compiling teams and quantitative data analysts at licensed bookmakers and betting exchanges. They use complex predictive models incorporating player averages, historical set-play data, head-to-head records, bracket paths, and market liquidity.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What does "implied probability" mean in darts?</h3>
+          <p>
+            Implied probability is the mathematical percentage chance of an outcome occurring as indicated by the odds. For example, odds of 3/1 represent a 25% implied probability (1 / (3 + 1) * 100%). If an analyst believes a player has a 35% chance of winning, the 3/1 market price would be considered "value."
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>When are World Darts Championship odds released?</h3>
+          <p>
+            Outright winner markets for the next World Darts Championship are typically opened by sportsbooks within 24 hours of the previous final ending in January. However, prices become highly active in late November once the 128-player field and tournament draw bracket are officially confirmed by the PDC.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the difference between outright odds and match odds?</h3>
+          <p>
+            Outright odds reflect a player's probability of winning the entire tournament and lifting the Sid Waddell Trophy. Match odds reflect the probability of winning an individual head-to-head contest against a specific opponent in a specific round.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Where can I get help if gambling becomes a problem?</h3>
+          <p>
+            In the United Kingdom, free, confidential, and professional support is available 24/7 through GamCare and BeGambleAware. You can call the National Gambling Helpline toll-free on 0808 8020 133 or access live online chat at <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">begambleaware.org</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .page-header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 850px;
+    margin: 0;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .responsible-notice {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 5px solid #d97706;
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .notice-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: #92400e;
+  }
+  .age-badge {
+    background: #dc2626;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+  .responsible-notice p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #78350f;
+    margin: 0;
+  }
+  .responsible-notice a {
+    color: #b45309;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .content-card p, .content-card li {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .ascii-box {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .ascii-box pre {
+    margin: 0;
+    font-family: monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #1e293b;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-footnote {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

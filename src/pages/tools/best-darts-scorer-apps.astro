@@ -1,0 +1,460 @@
+---
+// src/pages/tools/best-darts-scorer-apps.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Best Darts Scorer Apps: Top Scoring & Practice Apps";
+const pageDescription = "Detailed review of the best darts scorer apps for iPhone, Android, and tablets: DartConnect, Target Darts Counter, Russ Bray Scorer, and My Dart Training.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tools/best-darts-scorer-apps/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tools & Calculators', url: '/tools/average-calculator/' },
+  { name: 'Best Darts Scorer Apps', url: '/tools/best-darts-scorer-apps/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-17T00:00:00+00:00",
+      "dateModified": "2026-10-17T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools & Calculators",
+          "item": `${siteUrl}/tools/average-calculator/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Best Darts Scorer Apps",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What app is used by the PDC for scoring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The PDC uses DartConnect as its official scoring platform for all ProTour Players Championship events, the European Tour, Challenge Tour, Development Tour, and Qualifying School. Officials enter scores dart-by-dart on tablets, broadcasting real-time scores to fans via DartConnect TV (DCTV)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you use darts scorer apps without an internet connection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Apps such as My Dart Training, Russ Bray Darts Scorer Pro, and Darts Mind operate 100% offline with no Wi-Fi or mobile data required. Target Darts Counter also supports offline play against bots. Only online multiplayer features and real-time live broadcasting (like DartConnect TV) require an active internet connection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best free darts practice app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "My Dart Training is widely regarded as the best free practice app. It includes comprehensive solo training routines—such as Bob's 27, Catch 40, 121, and Around the Clock—and full historical stat tracking with minimal non-intrusive advertisements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do darts scorer apps calculate remaining checkouts automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All top scorer apps automatically display recommended two-dart and three-dart outshot combinations whenever your score falls to 170 or below. They dynamically update recommendations if you miss inside into a single, helping you maintain optimal checkout pathways."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you play darts online with friends using these apps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Target Darts Counter features dedicated online multiplayer with camera integration, enabling you to play live matches against friends or random players worldwide while viewing their board on screen."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">APP COMPARISON</span>
+        <span class="badge">TOOLS &amp; TRAINING</span>
+      </div>
+      <h1>Best Darts Scorer Apps: Comprehensive Review &amp; Comparison</h1>
+      <p class="lead-text">
+        Tossing darts without tracking your numbers is fun, but if you want to improve, a dedicated scorer app is indispensable. We tested the leading darts scoring and practice apps across iOS, Android, and web platforms to find the best options for practice, leagues, and online play.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="Darts Mobile Applications &amp; Scoring Software" />
+
+      <section class="content-card">
+        <h2>Comparison Matrix: Top 5 Darts Scorer Apps</h2>
+        <p>
+          Compare platforms, offline modes, multiplayer capabilities, and pricing across the five leading scoring apps:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Scorer App</th>
+                <th>Best For</th>
+                <th>Supported Platforms</th>
+                <th>Offline Mode?</th>
+                <th>Online Play?</th>
+                <th>Key Metric Depth</th>
+                <th>Pricing Model</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>DartConnect</strong></td>
+                <td>Tournaments &amp; Serious Leagues</td>
+                <td>Web Browser (iOS, Android, PC)</td>
+                <td>Limited (Syncs)</td>
+                <td>Yes (DCTV)</td>
+                <td>Advanced (Dart-by-dart, First-9, Double stats)</td>
+                <td>Freemium (£24/yr Premium)</td>
+              </tr>
+              <tr>
+                <td><strong>Target Darts Counter</strong></td>
+                <td>Online Multiplayer &amp; Smart Boards</td>
+                <td>iOS, Android</td>
+                <td>Yes</td>
+                <td>Yes (Camera)</td>
+                <td>High (Averages, Checkouts, 180s)</td>
+                <td>Free (Optional sub for stats)</td>
+              </tr>
+              <tr>
+                <td><strong>My Dart Training</strong></td>
+                <td>Solo Drills &amp; Skill Progression</td>
+                <td>Android, iOS</td>
+                <td>Yes (100% offline)</td>
+                <td>No (Bots only)</td>
+                <td>Industry-leading (Graphs, Routine logs)</td>
+                <td>Free (Ad-supported / Small one-off pro)</td>
+              </tr>
+              <tr>
+                <td><strong>Russ Bray Scorer Pro</strong></td>
+                <td>Authentic Stage Atmosphere</td>
+                <td>iOS, Android</td>
+                <td>Yes</td>
+                <td>No (Multiplayer local)</td>
+                <td>Moderate (Averages, Leg counts, Finishes)</td>
+                <td>Paid download (~£4.99)</td>
+              </tr>
+              <tr>
+                <td><strong>Darts Mind</strong></td>
+                <td>Minimalist Casual &amp; Pub Play</td>
+                <td>iOS, Android, Apple Watch</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>Clean &amp; Fast (Averages, Turn logs)</td>
+                <td>Free / Small upgrade</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <h2>1. DartConnect: The Professional Gold Standard</h2>
+        <div class="ascii-box">
+          <pre><code>+-------------------------------------------------------------+
+|                     DARTCONNECT SNAPSHOT                    |
++-------------------------------------------------------------+
+|  Platform:    Web App (Runs on any iPad, Tablet, or PC)     |
+|  Official:    Official Scoring Engine of the PDC ProTour    |
+|  Strengths:   Professional legitimacy, DCTV live score feeds|
+|  Best For:    Organised leagues, tournaments, super leagues |
++-------------------------------------------------------------+</code></pre>
+        </div>
+
+        <h3>Why It Leads the Field</h3>
+        <p>
+          DartConnect is the undisputed heavyweight of professional darts scoring. It is the official scoring system commissioned by the <strong>Professional Darts Corporation (PDC)</strong> to power every Players Championship floor event, the Winmau Challenge Tour, and the European Tour. Running in any browser, it avoids app store update issues and offers exceptional tablet stability.
+        </p>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Dart-by-Dart Precision:</strong> Allows stroke-by-stroke entry, logging exact double attempts, misses, and setup shots to calculate your true <a href="/tools/checkout-calculator/">checkout double conversion</a>.</li>
+          <li><strong>DCTV Broadcast Integration:</strong> Matches and brackets can be broadcast live to the web, letting friends and spectators follow along in real time.</li>
+          <li><strong>Deep Statistical Vault:</strong> Tracks lifetime career numbers, including <a href="/darts/average-explained/">First-9 averages</a>, checkout percentages by specific double ring, and head-to-head records.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>2. Target Darts Counter: Best for Online Multiplayer</h2>
+        <p>
+          Backed by equipment powerhouse Target Darts, <strong>Target Darts Counter</strong> is arguably the sleekest mobile scoring application on the market.
+        </p>
+        <ul>
+          <li><strong>Integrated Video Play:</strong> Mount your phone or tablet pointing at the board to play live matches against players anywhere in the world with real-time video verification.</li>
+          <li><strong>Intelligent Bot System:</strong> Offers adjustable virtual opponents ranging from beginner (30 average) to world-class tour standard (100+ average) with realistic scoring variance.</li>
+          <li><strong>Voice Calling:</strong> Includes crisp audio announcements that call out scores and remaining finishes.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>3. My Dart Training: Best for Solo Practice &amp; Drills</h2>
+        <p>
+          Created by developer Markus Fisch, <strong>My Dart Training</strong> is revered among competitive amateur dart players as the absolute benchmark for deliberate, structured skill building.
+        </p>
+
+        <div class="ascii-box">
+          <pre><code>+-----------------------------------------------------------------+
+|               FEATURED DRILLS IN MY DART TRAINING               |
++-----------------------------------------------------------------+
+|  • Bob's 27:        Classic double-accuracy survival test       |
+|  • Catch 40:        Pressure outshot routine from 61 to 100     |
+|  • 121:             Three-visit finishing simulation            |
+|  • Around the Clock: Singles, doubles, and trebles navigation   |
+|  • Halve-It:        Target precision under penalty deduction    |
++-----------------------------------------------------------------+</code></pre>
+        </div>
+
+        <p>
+          It incorporates every established drill into automated, tracked routines with zero internet connection required, complementing the official <a href="/darts/rules/">darts rules and training targets</a> while providing clean visual progress charts over weeks and months.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>4. Russ Bray Darts Scorer Pro: Best for Stage Atmosphere</h2>
+        <p>
+          If you miss the iconic, gravelly roar of legendary referee Russ Bray calling matches on television, <strong>Russ Bray Darts Scorer Pro</strong> brings the atmosphere of Alexandra Palace directly into your practice room. Every score from 1 to 180 is voiced personally by Russ Bray, delivering the unforgettable bone-shaking roar for maximum motivation.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>5. Darts Mind: Best for Minimalist Speed</h2>
+        <p>
+          For players who find feature-heavy apps distracting, <strong>Darts Mind</strong> offers a beautifully designed, minimalist interface. With fast number-pad input, complete support for 501 and Cricket, and Apple Watch integration, it keeps practice sessions snappy and effortless. Also explore our browser-based <a href="/tools/average-calculator/">online average calculator</a> and <a href="/tools/checkout-calculator/">interactive checkout calculator</a> for instant calculations.
+        </p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+          <h3>What app is used by the PDC for scoring?</h3>
+          <p>
+            The PDC uses <strong>DartConnect</strong> as its official scoring platform for all ProTour Players Championship events, the European Tour, Challenge Tour, Development Tour, and Qualifying School. Officials enter scores dart-by-dart on tablets, broadcasting real-time scores to fans via DartConnect TV (DCTV).
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can you use darts scorer apps without an internet connection?</h3>
+          <p>
+            Yes. Apps such as <strong>My Dart Training</strong>, <strong>Russ Bray Darts Scorer Pro</strong>, and <strong>Darts Mind</strong> operate 100% offline with no Wi-Fi or mobile data required. <strong>Target Darts Counter</strong> also supports offline play against bots. Only online multiplayer features and real-time live broadcasting (like DartConnect TV) require an active internet connection.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the best free darts practice app?</h3>
+          <p>
+            <strong>My Dart Training</strong> is widely regarded as the best free practice app. It includes comprehensive solo training routines—such as Bob's 27, Catch 40, 121, and Around the Clock—and full historical stat tracking with minimal non-intrusive advertisements.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do darts scorer apps calculate remaining checkouts automatically?</h3>
+          <p>
+            Yes. All top scorer apps automatically display recommended two-dart and three-dart outshot combinations whenever your score falls to 170 or below. They dynamically update recommendations if you miss inside into a single, helping you maintain optimal checkout pathways.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can you play darts online with friends using these apps?</h3>
+          <p>
+            Yes. <strong>Target Darts Counter</strong> features dedicated online multiplayer with camera integration, enabling you to play live matches against friends or random players worldwide while viewing their board on screen.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .page-header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 850px;
+    margin: 0;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .content-card p, .content-card li {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .ascii-box {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .ascii-box pre {
+    margin: 0;
+    font-family: monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #1e293b;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>
