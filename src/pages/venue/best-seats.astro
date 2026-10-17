@@ -1,0 +1,597 @@
+---
+// src/pages/venue/best-seats.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Best Seats at Ally Pally Darts: Tables vs Tiered Seating Guide";
+const pageDescription = "Deciding between floor tables and tiered grandstand seats at Alexandra Palace? Compare sightlines, atmosphere, ticket prices, and session advice for 2026/27.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/venue/best-seats/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Venue Guide', url: '/venue/' },
+  { name: 'Best Seats: Tables vs Tiered', url: '/venue/best-seats/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-17T00:00:00+00:00",
+      "dateModified": "2026-10-17T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Venue Guide",
+          "item": `${siteUrl}/venue/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Best Seats: Tables vs Tiered",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are table seats or tiered seats better at Alexandra Palace?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Neither is universally better; it depends on your priority. Table seats offer the authentic, high-energy party atmosphere and close proximity to the stage and player walk-on catwalk. Tiered seats offer elevated, unobstructed sightlines looking over the crowd directly at the giant screens, with faster access to bars and restrooms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you see the dartboard from table seats at Ally Pally?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No spectator beyond the first two or three rows of tables can clearly see the physical dartboard wires with the naked eye. Because the board is only 45 cm in diameter and over 15 to 50 meters away, table spectators watch the live scoring and doubles via giant high-definition LED screens flanking the stage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many people sit at a table at Alexandra Palace darts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Floor tables at Alexandra Palace typically seat six people per trestle banquet table. Tickets are sold individually or as whole tables, meaning smaller parties are seated alongside fellow darts supporters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which seats are best for families and first-time visitors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tiered grandstand seating—particularly the designated Family Section (typically Block D in previous configurations)—is strongly recommended for families, younger fans, and first-time spectators wanting a clearer view without being squeezed into banquet benches amidst celebratory beer runs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between afternoon and evening sessions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Afternoon sessions (starting at 12:30 GMT) feature a slightly more relaxed, darts-focused crowd with easier bar queues and family attendance. Evening sessions (starting at 19:00 GMT) are louder, heavily dominated by fancy dress, nonstop chants, and a vibrant party atmosphere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I safely buy official tickets for Ally Pally darts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Official tickets must be purchased through See Tickets via the PDC priority sales window for PDCTV Annual Members, followed by the general public sale. Official face-value resale is exclusively operated via See Tickets Fan-to-Fan Marketplace. Avoid unauthorised secondary ticket websites where tickets risk cancellation."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">VENUE SEATING GUIDE</span>
+        <span class="badge">ALLY PALLY 2026/27</span>
+      </div>
+      <h1>Best Seats at Ally Pally Darts: Tables vs Tiered Seating Guide</h1>
+      <p class="lead-text">
+        Planning your trip to Alexandra Palace for the PDC World Darts Championship? Deciding between raucous floor tables and elevated tiered grandstands is the single most important choice you will make. Here is our comprehensive, independent guide to sightlines, atmosphere, session choices, and booking safety.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="Alexandra Palace Great Hall Configuration & PDC Ticketing Protocols" />
+
+      <!-- Quick Comparison Section -->
+      <section class="content-card">
+        <h2>Quick Verdict: Tables vs Tiered at a Glance</h2>
+        <p>
+          There is no single "best seat" at Alexandra Palace. Instead, the right choice hinges entirely on whether you prioritize the immersive, standing-on-chairs party atmosphere of the arena floor, or unobstructed viewing angles, comfortable seating, and swift concourse access.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Floor Table Seating</th>
+                <th>Tiered Grandstand Seating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary Atmosphere</strong></td>
+                <td>Electric, raucous, chant-driven party environment</td>
+                <td>Enthusiastic but structured; focused on match play</td>
+              </tr>
+              <tr>
+                <td><strong>Vantage Point</strong></td>
+                <td>Flat arena floor; looking up towards the stage</td>
+                <td>Raked stadium tiers; elevated panoramic sightline</td>
+              </tr>
+              <tr>
+                <td><strong>Dartboard View</strong></td>
+                <td>Heavily screen-dependent; stage view can be blocked by standing fans</td>
+                <td>Direct line of sight to main screens above crowd level</td>
+              </tr>
+              <tr>
+                <td><strong>Proximity to Players</strong></td>
+                <td>Immediate; right beside the walk-on catwalk and oche</td>
+                <td>Distanced; panoramic view of walk-ons from above</td>
+              </tr>
+              <tr>
+                <td><strong>Seating Comfort</strong></td>
+                <td>Trestle banquet benches (6 fans per table; shared space)</td>
+                <td>Individual tip-up stadium seats with arm space</td>
+              </tr>
+              <tr>
+                <td><strong>Bar &amp; Restroom Access</strong></td>
+                <td>Requires navigating long table rows and packed gangways</td>
+                <td>Direct access stairs leading directly to concourse exits</td>
+              </tr>
+              <tr>
+                <td><strong>Typical Indicative Price</strong></td>
+                <td>£55 to £85+ (higher for prime weekend/evening sessions)</td>
+                <td>£45 to £75 (slightly lower baseline than floor tables)</td>
+              </tr>
+              <tr>
+                <td><strong>Ideal For</strong></td>
+                <td>Groups of friends, fancy dress revellers, partygoers</td>
+                <td>Darts purists, first-timers, couples, and families</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- The Great Hall Move Section -->
+      <section class="content-card">
+        <h2>The Great Hall Era (2026/27 Onwards): What It Means for Seating</h2>
+        <p>
+          For decades, the PDC World Darts Championship was hosted in Alexandra Palace’s West Hall, which accommodated approximately 3,200 spectators per session. Starting with the 2026/27 tournament, the event moves permanently into the magnificent <strong>Great Hall</strong> under an agreement running through to at least 2031.
+        </p>
+        <p>
+          This historic move increases individual session capacity to over <strong>5,000 spectators</strong> and lifts total tournament attendance past 180,000 fans across the festive period. For ticket buyers, this expansion changes several critical venue dynamics:
+        </p>
+        <ul>
+          <li><strong>More Tiered Options:</strong> The Great Hall accommodates larger, steeper temporary grandstand structures, improving rake angles and giving tiered ticket holders clearer elevation over the floor tables.</li>
+          <li><strong>Enhanced Big-Screen Grid:</strong> Because the Great Hall spans more than 4,000 square meters, the PDC deploys an expanded matrix of ultra-high-definition ceiling-hung and stage-side LED screens so that no seat suffers from poor digital visibility.</li>
+          <li><strong>Dedicated Acoustic Zones:</strong> The cavernous Victorian hall retains sound exceptionally well, meaning the roar of 5,000 fans delivers even more acoustic impact whether you sit on the floor or high in the stands.</li>
+        </ul>
+        <p>
+          To explore the physical blueprint of the venue, consult our interactive <a href="/venue/great-hall-seating-plan/">Alexandra Palace Great Hall Seating Plan</a>.
+        </p>
+      </section>
+
+      <!-- Floor Table Seating Deep Dive -->
+      <section class="content-card">
+        <h2>Floor Table Seating: The Epicentre of the Ally Pally Party</h2>
+        <p>
+          If you have watched darts on television and dreamed of holding up "180" placards, chanting along with <em>"Don't Take Me Home"</em>, and experiencing the walk-ons up close, table seating is what you are imagining.
+        </p>
+
+        <div class="feature-box">
+          <h3>What to Expect at Floor Tables</h3>
+          <ul>
+            <li><strong>Bench Configuration:</strong> Tables are long wooden banquet trestles, usually seating six people per table. If your group is smaller than six, you will share with fellow darts enthusiasts.</li>
+            <li><strong>Player Catwalk Proximity:</strong> Tables flank the raised central walkway. When stars like Michael van Gerwen, Luke Littler, or Gerwyn Price walk out, table spectators are inches away from high-fives and television cameras.</li>
+            <li><strong>The Fancy Dress Heartbeat:</strong> Floor tables are where 90% of the elaborate group fancy dress costumes congregate—from giant traffic cones and superheroes to Oompa Loompas.</li>
+          </ul>
+        </div>
+
+        <h3>The Reality of Table Sightlines</h3>
+        <p>
+          The most common misconception among first-time buyers is that sitting at a table guarantees a clear view of the dartboard. In reality, a regulation dartboard measures just 45 cm in diameter. Even if you sit in Table Row 4, tracking the flight of a 22-gram dart into a treble 20 with the naked eye is virtually impossible amidst the stage lighting and spectator movement.
+        </p>
+        <p>
+          Furthermore, because the arena floor is completely flat, the moment a crucial double is thrown or a maximum is struck, spectators frequently jump to their feet. When fans in rows ahead stand up, direct vision of the physical stage is obscured. Table attendees watch roughly 80% of the active darts match on the massive LED broadcast screens.
+        </p>
+      </section>
+
+      <!-- Tiered Seating Deep Dive -->
+      <section class="content-card">
+        <h2>Tiered Grandstand Seating: The Purist's Choice</h2>
+        <p>
+          Tiered seating flanks the sides and rear of the Great Hall on sturdy, raised stadium bleachers. While sometimes perceived by casual fans as "second best" compared to floor tables, many experienced darts followers actively prefer tiered tickets.
+        </p>
+
+        <div class="feature-box">
+          <h3>Advantages of Tiered Seating</h3>
+          <ul>
+            <li><strong>Uninterrupted Elevation:</strong> Because each row is stepped above the one in front, your sightline remains clear even when the floor tables stand up to celebrate.</li>
+            <li><strong>Straight-Ahead Screen Viewing:</strong> The giant projection displays are positioned at eye level for tiered spectators, eliminating the neck strain that can occur when sitting too close to stage-side screens.</li>
+            <li><strong>Individual Assigned Seats:</strong> Unlike bench seating, tiered stands feature standard tip-up arena seats, offering defined personal space and better back support over a four-hour session.</li>
+            <li><strong>Effortless Concourse Exits:</strong> Tiered blocks feature wide vomitory aisles leading directly down to concourse bars, food villages, and bathrooms, drastically reducing time spent queuing for pints.</li>
+          </ul>
+        </div>
+
+        <h3>The Designated Family Section</h3>
+        <p>
+          The PDC and Alexandra Palace traditionally operate a dedicated alcohol-free or family-focused seating block within the tiered grandstand (historically designated as Block D). This section is specifically reserved for families attending with children under 16, ensuring an enjoyable experience without excessive rowdiness.
+        </p>
+      </section>
+
+      <!-- Session Dynamics -->
+      <section class="content-card">
+        <h2>Session Differences: Afternoon vs Evening Atmosphere</h2>
+        <p>
+          When choosing your seats, the time of the session you attend is just as critical as your seating tier:
+        </p>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <div class="comparison-header">
+              <span class="badge badge-accent">12:30 GMT START</span>
+              <h3>Afternoon Sessions</h3>
+            </div>
+            <ul>
+              <li><strong>Pace:</strong> More relaxed, social, and spectator-friendly.</li>
+              <li><strong>Demographics:</strong> Higher proportion of families, couples, and traveling overseas supporters.</li>
+              <li><strong>Bar Access:</strong> Considerably shorter queues at food stalls and restrooms.</li>
+              <li><strong>Travel:</strong> Easy travel connections in daylight hours via tube and national rail.</li>
+              <li><strong>Seating Recommendation:</strong> Either tables or tiered seats provide a pleasant experience.</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card">
+            <div class="comparison-header">
+              <span class="badge">19:00 GMT START</span>
+              <h3>Evening Sessions</h3>
+            </div>
+            <ul>
+              <li><strong>Pace:</strong> High-octane, intense arena noise, nonstop party.</li>
+              <li><strong>Demographics:</strong> Large adult social groups, corporate parties, and fancy dress squads.</li>
+              <li><strong>Bar Access:</strong> High concourse traffic; pre-ordering or early bar runs advised.</li>
+              <li><strong>Travel:</strong> Requires planning for night transport and tube schedules from Wood Green.</li>
+              <li><strong>Seating Recommendation:</strong> Tables for full immersion; tiered seats if you want breathing room.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Practical Decision Matrix -->
+      <section class="content-card">
+        <h2>Practical Decision Matrix: Which Seats Should You Choose?</h2>
+        <p>
+          Use this quick diagnostic to match your party's expectations with the right ticket category:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Your Group Profile</th>
+                <th>Recommended Seating</th>
+                <th>Why It Fits Best</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>First-Time Spectators</strong></td>
+                <td>Tiered Seating (Mid-Rows)</td>
+                <td>Provides a panoramic overview of both the sporting drama and the spectacle without overwhelming you on the floor.</td>
+              </tr>
+              <tr>
+                <td><strong>Group of Friends in Fancy Dress</strong></td>
+                <td>Floor Table Seating</td>
+                <td>You will be surrounded by fellow costume groups, right in the thick of television camera pans and singing.</td>
+              </tr>
+              <tr>
+                <td><strong>Darts Purists &amp; Stat Trackers</strong></td>
+                <td>Tiered Seating (Front or Middle)</td>
+                <td>Allows uninterrupted focus on the live scoreboard, throwing rhythm, and checkout mathematical setups.</td>
+              </tr>
+              <tr>
+                <td><strong>Families with Children / Teens</strong></td>
+                <td>Family Tiered Block (e.g. Block D)</td>
+                <td>Safe, welcoming, clear sightlines, and insulated from heavy drinking culture.</td>
+              </tr>
+              <tr>
+                <td><strong>Corporate &amp; Premium Guests</strong></td>
+                <td>VIP / Hospitality Tables</td>
+                <td>Combines front-of-house table seats with access to private lounges, complimentary dining, and fast-track entry.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Accessibility -->
+      <section class="content-card">
+        <h2>Accessibility &amp; Special Needs Seating</h2>
+        <p>
+          Alexandra Palace and the PDC provide dedicated accessible seating facilities within the Great Hall. Dedicated wheelchair-accessible viewing platforms are elevated above floor level, guaranteeing that wheelchair users have an unobstructed line of sight to both the stage and the main video screens regardless of whether the crowd stands up.
+        </p>
+        <p>
+          Key accessibility details to note:
+        </p>
+        <ul>
+          <li><strong>Companion Tickets:</strong> Eligible disabled visitors can apply for a complimentary essential companion ticket through the official See Tickets accessibility booking portal.</li>
+          <li><strong>Ramped Ingress &amp; Accessible Facilities:</strong> The Great Hall offers step-free access from the Palm Court entrance, with dedicated accessible toilets nearby.</li>
+          <li><strong>Booking Requirement:</strong> Accessible seating cannot be booked through standard general sale links; applicants must provide supporting documentation via the official accessibility form.</li>
+        </ul>
+        <p>
+          For comprehensive venue accessibility details, check our <a href="/venue/accessibility/">Alexandra Palace Accessibility Guide</a>.
+        </p>
+      </section>
+
+      <!-- Ticketing Safety -->
+      <section class="content-card">
+        <h2>Official Ticketing Channels &amp; Resale Safety</h2>
+        <p>
+          Ticket demand for the World Darts Championship routinely exceeds 300,000 applications for the 180,000 available seats. Consequently, secondary ticketing scams are widespread. Protect your money by following these golden rules:
+        </p>
+        <ul>
+          <li><strong>Primary Ticket Agent:</strong> The only authorized primary ticket vendor is <strong>See Tickets</strong> via the official PDC portal.</li>
+          <li><strong>Priority Access:</strong> Members with an active PDCTV Annual Subscription gain access to the priority window, which opens roughly 48 hours before general release.</li>
+          <li><strong>Official Resale:</strong> If sessions sell out, the only safe and authorized secondary market is the <strong>See Tickets Fan-to-Fan Marketplace</strong>, where genuine ticket holders resell their tickets strictly at face value (plus standard booking fee).</li>
+          <li><strong>Avoid Unauthorised Secondary Sites:</strong> Platforms such as Viagogo, StubHub, and Gigsberg are not recognized by the PDC. The PDC reserves the right to cancel tickets identified on unauthorized resale platforms without refund, resulting in refusal of entry at the turnstiles.</li>
+        </ul>
+        <p>
+          Learn the complete timeline for ballots and presales in our <a href="/tickets/ballot-presale-guide/">Ticket Ballot &amp; Presale Guide</a> and review safe purchase rules in our <a href="/tickets/resale-returns/">Ticket Resale &amp; Returns Guide</a>.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions: Ally Pally Seating</h2>
+        
+        <div class="faq-item">
+          <h3>Are table seats or tiered seats better at Alexandra Palace?</h3>
+          <p>
+            Neither is universally better; it depends on your priority. Table seats offer the authentic, high-energy party atmosphere and close proximity to the stage and player walk-on catwalk. Tiered seats offer elevated, unobstructed sightlines looking over the crowd directly at the giant screens, with faster access to bars and restrooms.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can you see the dartboard from table seats at Ally Pally?</h3>
+          <p>
+            No spectator beyond the first two or three rows of tables can clearly see the physical dartboard wires with the naked eye. Because the board is only 45 cm in diameter and over 15 to 50 meters away, table spectators watch the live scoring and doubles via giant high-definition LED screens flanking the stage.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How many people sit at a table at Alexandra Palace darts?</h3>
+          <p>
+            Floor tables at Alexandra Palace typically seat six people per trestle banquet table. Tickets are sold individually or as whole tables, meaning smaller parties are seated alongside fellow darts supporters.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Which seats are best for families and first-time visitors?</h3>
+          <p>
+            Tiered grandstand seating—particularly the designated Family Section (typically Block D in previous configurations)—is strongly recommended for families, younger fans, and first-time spectators wanting a clearer view without being squeezed into banquet benches amidst celebratory beer runs.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the difference between afternoon and evening sessions?</h3>
+          <p>
+            Afternoon sessions (starting at 12:30 GMT) feature a slightly more relaxed, darts-focused crowd with easier bar queues and family attendance. Evening sessions (starting at 19:00 GMT) are louder, heavily dominated by fancy dress, nonstop chants, and a vibrant party atmosphere.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Where can I safely buy official tickets for Ally Pally darts?</h3>
+          <p>
+            Official tickets must be purchased through See Tickets via the PDC priority sales window for PDCTV Annual Members, followed by the general public sale. Official face-value resale is exclusively operated via See Tickets Fan-to-Fan Marketplace. Avoid unauthorised secondary ticket websites where tickets risk cancellation.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .page-header h1 {
+    color: #ffffff !important;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 850px;
+    margin: 0;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .content-card p, .content-card li {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .feature-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .comparison-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .comparison-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .comparison-header h3 {
+    margin: 0.5rem 0 0 0;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

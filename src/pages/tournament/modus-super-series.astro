@@ -1,0 +1,583 @@
+---
+// src/pages/tournament/modus-super-series.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "MODUS Super Series Explained: Format, Weekly Schedule, Prize Money & TV";
+const pageDescription = "Complete guide to the MODUS Super Series: weekly group format, Saturday Finals Night, Champions Week £25k prize, broadcast channels, and past champions.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/modus-super-series/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'MODUS Super Series', url: '/tournament/modus-super-series/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-17T00:00:00+00:00",
+      "dateModified": "2026-10-17T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tournament",
+          "item": `${siteUrl}/tournament/world-darts-championship/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "MODUS Super Series",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the MODUS Super Series?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The MODUS Super Series is a weekly, made-for-television darts competition staged in a purpose-built arena in Portsmouth, England. It features top non-PDC Tour Card holders, emerging prospects, international qualifiers, and established legends competing across Monday to Saturday."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is eligible to play in the MODUS Super Series?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The competition is strictly open to players who do NOT currently hold a full PDC Tour Card. If a player wins a PDC Tour Card at Q-School, they immediately become ineligible to compete in future MODUS Super Series events."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the weekly MODUS Super Series format work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each week features 12 players divided into three groups: Group A plays Monday to Wednesday morning (winner advances directly to Saturday). Groups B and C play Thursday and Friday (top 3 from Group B and top 2 from Group C advance). The six qualifiers contest Finals Night on Saturday to crown the Weekly Champion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Champions Week and how much prize money is awarded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every 13th week is Champions Week, bringing together the 12 weekly winners from the preceding 12 weeks of competition. The winner of Champions Week collects a £25,000 top prize and the series trophy, contributing to an annual prize fund exceeding £1,000,000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I watch the MODUS Super Series live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The MODUS Super Series is broadcast live globally for free on the official MODUS Super Series YouTube channel, as well as on Pluto TV via its dedicated darts streaming channel. Matches stream Monday through Saturday, covering more than 30 hours of live action weekly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Did Luke Littler play in the MODUS Super Series?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Luke Littler rose to prominence in the MODUS Super Series, winning back-to-back Champions Week titles in Series 3 (May 2023) and Series 4 (August 2023) as a 16-year-old before his historic run to the 2024 World Darts Championship final."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">INDEPENDENT DARTS LEAGUE</span>
+        <span class="badge">MODUS SUPER SERIES</span>
+      </div>
+      <h1>MODUS Super Series Explained: Format, Schedule &amp; How to Watch</h1>
+      <p class="lead-text">
+        Staged weekly from a bespoke broadcast arena in Portsmouth, the MODUS Super Series has become the premier proving ground in world darts. Explore how the weekly tournament structure works, the £25,000 Champions Week finale, free global broadcast channels, and the platform that nurtured Luke Littler.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="MODUS Super Series Competition Rules & Broadcast Directory" />
+
+      <!-- What is MODUS Super Series -->
+      <section class="content-card">
+        <h2>What Is the MODUS Super Series?</h2>
+        <p>
+          The <strong>MODUS Super Series</strong> is an innovative, weekly made-for-broadcast darts tournament organized by MODUS Events in partnership with the Live League. Broadcast live from a purpose-built studio arena known as the "Live Lounge" in Portsmouth, England, the competition runs virtually all year round, delivering over 30 hours of live, high-intensity tungsten action every single week.
+        </p>
+        <p>
+          The series was born out of the remote online darts competitions developed during the 2020 lockdowns, evolving into a world-class physical studio production complete with professional stage lighting, walk-on music, crowd bleachers, electronic scoring, and professional commentary.
+        </p>
+      </section>
+
+      <!-- Eligibility: Who Plays -->
+      <section class="content-card">
+        <h2>Eligibility: Who Can Compete?</h2>
+        <p>
+          The MODUS Super Series occupies a vital, unique niche in the global darts landscape. Its eligibility rules are strictly defined:
+        </p>
+        <div class="feature-box">
+          <h3>The Non-Tour Card Restriction</h3>
+          <p>
+            The competition is <strong>strictly reserved for players who do NOT hold a current two-year PDC Tour Card</strong>.
+          </p>
+          <ul>
+            <li><strong>Rising Phenoms:</strong> Elite youth and Challenge Tour players gaining televised stage experience.</li>
+            <li><strong>Former World Champions &amp; Legends:</strong> Established stars and major finalists who have dropped off the PDC ProTour (such as Colin Osborne, Robert Thornton, or Fallon Sherrock).</li>
+            <li><strong>International Champions:</strong> Leading talents from North America, Europe, Africa, and Asia looking to benchmark their game under broadcast studio pressure.</li>
+            <li><strong>Tour Card Graduation:</strong> The moment a competitor wins a full PDC Tour Card at Qualifying School (Q-School), they immediately "graduate" and become ineligible to play in future MODUS Super Series events.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Weekly Format Walkthrough -->
+      <section class="content-card">
+        <h2>The Weekly Tournament Format: Monday to Saturday</h2>
+        <p>
+          Every standard week features <strong>12 competitors</strong> battling through three preliminary groups to earn a spot on the prestigious Saturday Finals Night:
+        </p>
+
+        <div class="schedule-grid">
+          <div class="schedule-card">
+            <div class="schedule-header">
+              <span class="badge badge-accent">MON – WED (09:30 GMT)</span>
+              <h3>Group A: The Fast Track</h3>
+            </div>
+            <ul>
+              <li><strong>Competitors:</strong> 6 players.</li>
+              <li><strong>Format:</strong> Round-robin across three morning sessions (best of 7 legs).</li>
+              <li><strong>Outcome:</strong> The player who finishes <strong>1st</strong> in the league table qualifies directly for Saturday’s Finals Night.</li>
+              <li><strong>Elimination:</strong> Players finishing 2nd to 6th move into the second-chance groups (B &amp; C).</li>
+            </ul>
+          </div>
+
+          <div class="schedule-card">
+            <div class="schedule-header">
+              <span class="badge">THU – FRI (22:00 GMT)</span>
+              <h3>Group B: Evening Pressure</h3>
+            </div>
+            <ul>
+              <li><strong>Competitors:</strong> 6 players (mix of Group A survivors and fresh entrants).</li>
+              <li><strong>Format:</strong> Round-robin across two late-night sessions.</li>
+              <li><strong>Outcome:</strong> The <strong>top 3 players</strong> advance to Saturday's Finals Night.</li>
+              <li><strong>Elimination:</strong> Bottom 3 players are eliminated.</li>
+            </ul>
+          </div>
+
+          <div class="schedule-card">
+            <div class="schedule-header">
+              <span class="badge">THU – FRI (13:00 GMT)</span>
+              <h3>Group C: Daytime Battle</h3>
+            </div>
+            <ul>
+              <li><strong>Competitors:</strong> 6 players.</li>
+              <li><strong>Format:</strong> Round-robin across two afternoon sessions.</li>
+              <li><strong>Outcome:</strong> The <strong>top 2 players</strong> advance to Saturday's Finals Night.</li>
+              <li><strong>Elimination:</strong> Bottom 4 players are eliminated.</li>
+            </ul>
+          </div>
+
+          <div class="schedule-card highlight-card">
+            <div class="schedule-header">
+              <span class="badge badge-gold">SATURDAY (19:30 GMT)</span>
+              <h3>Finals Night: The Grand Finale</h3>
+            </div>
+            <ul>
+              <li><strong>Competitors:</strong> 6 Qualifiers (1 from Group A, 3 from Group B, 2 from Group C).</li>
+              <li><strong>Format:</strong> Two groups of three players, followed by cross-over Semi-Finals and the Grand Final.</li>
+              <li><strong>Prize:</strong> Winner receives £5,000 cash and automatic qualification for Champions Week.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Champions Week -->
+      <section class="content-card">
+        <h2>The Pinnacle: Champions Week</h2>
+        <p>
+          A single "Series" in the MODUS calendar spans 13 weeks. The first 12 weeks produce 12 weekly champions. On the 13th week, those 12 champions return to Portsmouth for the ultimate showdown: <strong>Champions Week</strong>.
+        </p>
+        <p>
+          Champions Week follows an identical intense format, culminating in a prime-time Saturday finale where the winner takes home a <strong>£25,000 top prize</strong>, the coveted Champions Trophy, and elite recognition across the global darts fraternity.
+        </p>
+      </section>
+
+      <!-- Prize Money Breakdown -->
+      <section class="content-card">
+        <h2>Prize Money Breakdown</h2>
+        <p>
+          The MODUS Super Series distributes more than <strong>£1,000,000 in total prize money</strong> annually, making it one of the most lucrative independent sporting properties in darts:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Event Stage</th>
+                <th>Champion Payout</th>
+                <th>Field Distribution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Regular Weekly Tournaments (Weeks 1–12)</strong></td>
+                <td><strong>£5,000</strong></td>
+                <td>Prize money awarded to all 12 participants based on group finishing positions.</td>
+              </tr>
+              <tr>
+                <td><strong>Champions Week (Week 13 Finale)</strong></td>
+                <td><strong>£25,000</strong></td>
+                <td>Elevated prize pool for all 12 returning weekly champions.</td>
+              </tr>
+              <tr>
+                <td><strong>Total Annual Circuit Purse</strong></td>
+                <td>—</td>
+                <td><strong>£1,000,000+</strong> across all series cycles.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Where and How to Watch -->
+      <section class="content-card">
+        <h2>Where and How to Watch Live</h2>
+        <p>
+          Unlike paywalled sports programming, the MODUS Super Series is widely accessible to darts enthusiasts worldwide through legal digital streams:
+        </p>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <div class="comparison-header">
+              <span class="badge badge-accent">FREE GLOBAL STREAMING</span>
+              <h3>Official YouTube Channel</h3>
+            </div>
+            <p>
+              Every single session—from Monday morning Group A openers to Saturday Finals Nights—is streamed live in 1080p high definition on the official <strong>MODUS Super Series YouTube Channel</strong>. Full match replays and individual leg highlights are permanently catalogued.
+            </p>
+          </div>
+
+          <div class="comparison-card">
+            <div class="comparison-header">
+              <span class="badge">CONNECTED TV APP</span>
+              <h3>Pluto TV</h3>
+            </div>
+            <p>
+              Viewers on Smart TVs, tablets, and streaming sticks can watch via the dedicated <strong>Pluto TV MODUS Channel</strong> in the UK and selected European territories, providing a traditional 24/7 linear broadcast experience.
+            </p>
+          </div>
+        </div>
+        <p class="table-note">
+          *Historical Broadcast Note: The series previously aired on linear television via SportyStuff TV on Sky and Freesat prior to the channel's closure in March 2024. Current live coverage is centered on YouTube and Pluto TV.
+        </p>
+      </section>
+
+      <!-- Famous Alumni: Luke Littler & Fallon Sherrock -->
+      <section class="content-card">
+        <h2>Famous Alumni: The Luke Littler Proving Ground</h2>
+        <p>
+          The greatest testimonial to the competitive standard of the MODUS Super Series is its alumni roll. No player embodies this more than teenage sensation <strong>Luke Littler</strong>.
+        </p>
+        <p>
+          Throughout 2023, while still 16 years old, Littler honed his stage composure and rhythm in the Live Lounge. He won <strong>Series 3 Champions Week</strong> in May 2023 (£20,000) and defended his title in <strong>Series 4 Champions Week</strong> in August 2023 (£20,000), becoming the first player in history to win back-to-back Champions Week crowns. Months later, Littler stormed to the 2024 PDC World Championship final and captured the Premier League title, crediting his MODUS experience for removing any fear of televised cameras.
+        </p>
+        <p>
+          Similarly, in March 2023, <a href="/players/fallon-sherrock/">Fallon Sherrock</a> made world headlines in the Live Lounge by hitting a perfect nine-dart finish against Marco Verhofstad, becoming the first woman to throw a nine-darter on an internationally broadcast stage.
+        </p>
+      </section>
+
+      <!-- Role in Ecosystem -->
+      <section class="content-card">
+        <h2>Role in the Darts Ecosystem: Pathway vs Independent Tour</h2>
+        <p>
+          It is important to understand what the MODUS Super Series is—and what it is not:
+        </p>
+        <ul>
+          <li><strong>Not an Official PDC Pathway:</strong> Winning the MODUS Super Series does not award a PDC Tour Card, nor does prize money count toward the PDC Order of Merit.</li>
+          <li><strong>Elite High-Stakes Practice:</strong> It offers non-card holders regular televised stage exposure under authentic broadcast lighting, complete with time constraints, television cameras, and significant cash incentives.</li>
+          <li><strong>Complementary to Q-School:</strong> It acts as the ultimate training ground for players preparing for annual PDC Qualifying School trials.</li>
+        </ul>
+        <p>
+          To understand how players progress through amateur ranks to the elite professional circuit, read our detailed guide on <a href="/players/how-to-become-pro/">How to Become a Professional Darts Player</a>.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions: MODUS Super Series</h2>
+        
+        <div class="faq-item">
+          <h3>What is the MODUS Super Series?</h3>
+          <p>
+            The MODUS Super Series is a weekly, made-for-television darts competition staged in a purpose-built arena in Portsmouth, England. It features top non-PDC Tour Card holders, emerging prospects, international qualifiers, and established legends competing across Monday to Saturday.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Who is eligible to play in the MODUS Super Series?</h3>
+          <p>
+            The competition is strictly open to players who do NOT currently hold a full PDC Tour Card. If a player wins a PDC Tour Card at Q-School, they immediately become ineligible to compete in future MODUS Super Series events.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How does the weekly MODUS Super Series format work?</h3>
+          <p>
+            Each week features 12 players divided into three groups: Group A plays Monday to Wednesday morning (winner advances directly to Saturday). Groups B and C play Thursday and Friday (top 3 from Group B and top 2 from Group C advance). The six qualifiers contest Finals Night on Saturday to crown the Weekly Champion.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is Champions Week and how much prize money is awarded?</h3>
+          <p>
+            Every 13th week is Champions Week, bringing together the 12 weekly winners from the preceding 12 weeks of competition. The winner of Champions Week collects a £25,000 top prize and the series trophy, contributing to an annual prize fund exceeding £1,000,000.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Where can I watch the MODUS Super Series live?</h3>
+          <p>
+            The MODUS Super Series is broadcast live globally for free on the official MODUS Super Series YouTube channel, as well as on Pluto TV via its dedicated darts streaming channel. Matches stream Monday through Saturday, covering more than 30 hours of live action weekly.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Did Luke Littler play in the MODUS Super Series?</h3>
+          <p>
+            Yes. Luke Littler rose to prominence in the MODUS Super Series, winning back-to-back Champions Week titles in Series 3 (May 2023) and Series 4 (August 2023) as a 16-year-old before his historic run to the 2024 World Darts Championship final.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .badge-gold {
+    background: #eab308;
+    color: #000;
+  }
+  .page-header h1 {
+    color: #ffffff !important;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 850px;
+    margin: 0;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .content-card p, .content-card li {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .feature-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+  }
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .schedule-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .highlight-card {
+    border: 2px solid var(--color-brand-accent, #c99700);
+    background: #fefce8;
+  }
+  .schedule-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .schedule-header h3 {
+    margin: 0.5rem 0 0 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-note {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .comparison-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .comparison-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .comparison-header h3 {
+    margin: 0.5rem 0 0 0;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

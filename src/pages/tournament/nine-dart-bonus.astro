@@ -1,0 +1,583 @@
+---
+// src/pages/tournament/nine-dart-bonus.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Nine-Dart Finish Prize Money & Bonuses Explained: Full Payout History";
+const pageDescription = "How much do darts players earn for a 9-dart finish? Explore PDC tournament prize money, sponsor bonuses, Paddy Power's £180k split, and payout history.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/nine-dart-bonus/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: '9-Dart Prize Money & Bonus', url: '/tournament/nine-dart-bonus/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-17T00:00:00+00:00",
+      "dateModified": "2026-10-17T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tournament",
+          "item": `${siteUrl}/tournament/world-darts-championship/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "9-Dart Prize Money & Bonus",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do PDC darts players automatically get prize money for hitting a nine-dart finish?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. There is no standard, guaranteed baseline prize money for hitting a nine-dart finish in the official PDC rulebook. Payouts depend entirely on whether an event's title sponsor funds an active promotional bonus or if a designated tournament rollover fund is in effect."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What was the Paddy Power £180,000 nine-dart bonus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "During the Paddy Power World Darts Championship, title sponsor Paddy Power created 'The BIGGER 180' campaign, offering a £180,000 bonus pool per nine-darter split three ways: £60,000 to the throwing player, £60,000 to charity partner Prostate Cancer UK, and £60,000 to a randomly selected fan in the Alexandra Palace arena."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which players triggered Paddy Power's £60k x 3 nine-dart payout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At the 2024/25 World Darts Championship, two players triggered the payout: Christian Kist on 17 December 2024 against Madars Razma, and Damon Heta on 27 December 2024 against Luke Woodhouse. On each occasion, Paddy Power paid £60,000 to the player, £60,000 to Prostate Cancer UK, and £60,000 to a lucky spectator in the crowd."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the biggest nine-dart bonus ever won?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The largest individual cash prize ever won for a single televised nine-dart finish belongs to John Lowe, who earned £102,000 at the MFI World Matchplay on 13 October 1984. By comparison, the tournament winner's prize that year was just £12,000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do players get bonus money for nine-darters on the ProTour floor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. On the non-televised PDC ProTour (Players Championship events), players receive no official cash bonus for hitting a nine-dart finish. They receive commemorative pin badges and official statistical recognition, but zero financial bonus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does nine-dart finish bonus money count towards the PDC Order of Merit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Any commercial sponsor bonus or special nine-dart prize money is strictly classified as unranked bonus money and does not count towards the official two-year rolling PDC Order of Merit world rankings."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PRIZE MONEY &amp; BONUSES</span>
+        <span class="badge">NINE-DART FINISH</span>
+      </div>
+      <h1>Nine-Dart Finish Prize Money &amp; Bonuses: Complete Payout History</h1>
+      <p class="lead-text">
+        Hitting a nine-darter in 501 darts is the pinnacle of sporting perfection. But how much cash does a player actually take home? From John Lowe's historic £102,000 jackpot to Paddy Power's £180,000 fan-and-charity split, here is the complete truth about nine-dart prize money, sponsor incentives, and historical payouts.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Tournament Prize Funds & Commercial Nine-Dart Bonus Terms" />
+
+      <!-- Core Distinction Section -->
+      <section class="content-card">
+        <h2>The Core Distinction: Official Prize Money vs Sponsor Bonuses</h2>
+        <p>
+          One of the biggest misconceptions among casual darts followers is that professional players are automatically handed a massive check whenever they complete a nine-dart leg. In reality, the financial reward attached to a nine-darter is governed by two entirely separate mechanisms:
+        </p>
+
+        <div class="feature-box">
+          <h3>1. Official PDC Tournament Prize Fund (Standing Regulations)</h3>
+          <p>
+            Under official Professional Darts Corporation (PDC) tournament rules, there is <strong>no guaranteed baseline prize money</strong> for throwing a nine-dart finish. Tournament prize money is awarded strictly based on round progression (e.g. winning Round 1, reaching the Quarter-Finals, or claiming the title). While previous decades featured rolling £5,000 or £25,000 tournament bonuses, the PDC officially phased out standing nine-dart funds in 2019, choosing instead to reinvest those monies directly into elevating round-by-round purses across all competitors.
+          </p>
+
+          <h3>2. Commercial Sponsor Promotions &amp; Title Incentives</h3>
+          <p>
+            Any substantial cash reward a player receives today is almost exclusively funded by <strong>commercial title sponsors</strong> (such as Paddy Power, BetMGM, or William Hill). These bonuses are bespoke marketing promotions negotiated per tournament, often carrying unique eligibility criteria, fan giveaways, charity pledges, or caps if multiple nine-darters are achieved.
+          </p>
+        </div>
+      </section>
+
+      <!-- Paddy Power BIGGER 180 Section -->
+      <section class="content-card">
+        <h2>The Landmark £180,000 Bonus: Paddy Power's "The BIGGER 180"</h2>
+        <p>
+          The most famous nine-dart incentive in modern darts history is the <strong>"The BIGGER 180"</strong> campaign, introduced by title sponsor Paddy Power at the PDC World Darts Championship at Alexandra Palace.
+        </p>
+        <p>
+          Rather than keeping the reward strictly between the player and the bookmaker, Paddy Power engineered an innovative three-way payout structure: every time a player hit a televised nine-dart finish at Ally Pally, a <strong>£180,000 total bonus pool</strong> was triggered and divided equally:
+        </p>
+
+        <div class="split-grid">
+          <div class="split-card">
+            <div class="split-amount">£60,000</div>
+            <h4>To the Player</h4>
+            <p>Direct cash performance bonus awarded to the professional player who executed the nine-dart leg.</p>
+          </div>
+
+          <div class="split-card">
+            <div class="split-amount">£60,000</div>
+            <h4>To Charity</h4>
+            <p>Direct donation to Paddy Power’s official campaign partner, <strong>Prostate Cancer UK</strong>, funding lifesaving research.</p>
+          </div>
+
+          <div class="split-card">
+            <div class="split-amount">£60,000</div>
+            <h4>To a Lucky Fan</h4>
+            <p>Cash prize handed to a randomly selected ticket-holding spectator attending that live session at Alexandra Palace.</p>
+          </div>
+        </div>
+
+        <h3>Verified Payouts: When Lightning Struck Twice</h3>
+        <p>
+          During the 2024/25 Paddy Power World Darts Championship, the £180,000 promotion was triggered twice in spectacular fashion:
+        </p>
+        <ul>
+          <li><strong>Christian Kist (17 December 2024):</strong> In his opening-round match against Madars Razma, Dutch qualifier Christian Kist struck back-to-back 180s followed by a 141 checkout (T20, T19, D12). Kist collected £60,000, Prostate Cancer UK received £60,000, and a spectator named Kris from Sutton took home £60,000. Remarkably, despite the perfection, Kist lost the match 3–1.</li>
+          <li><strong>Damon Heta (27 December 2024):</strong> Ten days later in the third round against Luke Woodhouse, Australian star Damon Heta repeated the feat with another 141 finish. Heta banked £60,000, another £60,000 went to charity, and a fan named Mauro won £60,000. Like Kist, Heta also suffered defeat in the match, losing 4–3 in a deciding set.</li>
+        </ul>
+        <p>
+          Paddy Power paid out an astounding <strong>£360,000 in total promotional prize money</strong> across those two magical moments alone.
+        </p>
+      </section>
+
+      <!-- Historical Timeline Table -->
+      <section class="content-card">
+        <h2>Sourced Historical Timeline: The Evolution of Nine-Dart Payouts</h2>
+        <p>
+          Nine-dart rewards have fluctuated wildly over 40 years of televised darts, from life-changing windfalls that dwarfed tournament first-place cheques to periods where players received nothing more than a commemorative tiepin.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Player &amp; Match</th>
+                <th>Tournament &amp; Sponsor</th>
+                <th>Bonus Amount Won</th>
+                <th>Historical Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1984</strong></td>
+                <td>John Lowe vs Keith Deller</td>
+                <td>MFI World Matchplay</td>
+                <td><strong>£102,000</strong></td>
+                <td>First televised 9-darter in history. The bonus was 8.5x larger than the champion's purse (£12,000).</td>
+              </tr>
+              <tr>
+                <td><strong>1990</strong></td>
+                <td>Paul Lim vs Jack McKenna</td>
+                <td>BDO World Championship (Embassy)</td>
+                <td><strong>£52,000</strong></td>
+                <td>Only 9-darter at the Lakeside Country Club; bonus more than doubled the tournament winner's prize (£24,000).</td>
+              </tr>
+              <tr>
+                <td><strong>2002</strong></td>
+                <td>Shaun Greatbatch vs Peter Manley</td>
+                <td>Dutch Open</td>
+                <td><strong>€10,000 / £20,000 bar tab</strong></td>
+                <td>First live broadcast nine-darter on European television.</td>
+              </tr>
+              <tr>
+                <td><strong>2006</strong></td>
+                <td>Raymond van Barneveld vs Peter Manley</td>
+                <td>PDC Premier League (Holsten)</td>
+                <td><strong>£5,000 + 75 Cases of Beer</strong></td>
+                <td>Novelty sponsor award by Holsten Pils alongside monetary prize.</td>
+              </tr>
+              <tr>
+                <td><strong>2009</strong></td>
+                <td>Raymond van Barneveld vs Jelle Klaasen</td>
+                <td>PDC World Championship (Ladbrokes)</td>
+                <td><strong>£20,000</strong></td>
+                <td>First nine-darter at Alexandra Palace; collected dedicated Ladbrokes tournament bonus.</td>
+              </tr>
+              <tr>
+                <td><strong>2012</strong></td>
+                <td>Michael van Gerwen &amp; Wes Newton</td>
+                <td>World Matchplay (Betfair)</td>
+                <td><strong>£2,500 each (£5,000 split)</strong></td>
+                <td>Under PDC rules, when multiple players hit a 9-darter in the same event, the pot was shared equally.</td>
+              </tr>
+              <tr>
+                <td><strong>2019</strong></td>
+                <td>PDC Regulatory Overhaul</td>
+                <td>All PDC Events</td>
+                <td><strong>£0 Baseline</strong></td>
+                <td>PDC officially abolished guaranteed rolling 9-dart prize funds, redirecting cash to main prize money pools.</td>
+              </tr>
+              <tr>
+                <td><strong>2021</strong></td>
+                <td>William Hill Promotion</td>
+                <td>PDC World Championship</td>
+                <td><strong>£100,000 (Unclaimed)</strong></td>
+                <td>William Hill offered £100k to any player hitting TWO nine-darters in the same event (neither achieved).</td>
+              </tr>
+              <tr>
+                <td><strong>2024</strong></td>
+                <td>Christian Kist &amp; Damon Heta</td>
+                <td>World Championship (Paddy Power)</td>
+                <td><strong>£180,000 x 2 (£360k total)</strong></td>
+                <td>Paddy Power's £60k x 3 model awarded £60k to each player, £60k to two fans, and £120k to Prostate Cancer UK.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Floor Events vs Televised Majors -->
+      <section class="content-card">
+        <h2>Floor Events vs Televised Majors: Where Do Bonuses Exist?</h2>
+        <p>
+          The financial reality of throwing a nine-darter depends heavily on whether you are standing on a televised arena stage or throwing in an empty sports hall on the ProTour:
+        </p>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <div class="comparison-header">
+              <span class="badge badge-accent">TELEVISED MAJORS</span>
+              <h3>Televised Stages (Sky Sports / ITV / DAZN)</h3>
+            </div>
+            <ul>
+              <li><strong>High Commercial Value:</strong> Broadcasters and title sponsors actively seek virality, frequently putting up special promotional bounties.</li>
+              <li><strong>Sponsor Backing:</strong> Promotions like Paddy Power’s £180k pool or BetMGM’s golden dart incentives exist exclusively on camera.</li>
+              <li><strong>Order of Merit Status:</strong> None of these bonuses count towards official world rankings (<a href="/tournament/order-of-merit/">Order of Merit</a>).</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card">
+            <div class="comparison-header">
+              <span class="badge">PROTOUR FLOOR</span>
+              <h3>Floor Circuit (Players Championships &amp; Q-School)</h3>
+            </div>
+            <ul>
+              <li><strong>Zero Direct Cash Prize:</strong> Players hitting a nine-darter on the ProTour receive £0 in official prize bonus.</li>
+              <li><strong>Non-Monetary Recognition:</strong> The PDC awards a commemorative gold nine-dart lapel badge and official statistical logging on DartConnect.</li>
+              <li><strong>Match Significance:</strong> It merely wins one leg out of the six needed to take the match; losing the match results in zero prize money progression.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rules on Multiple Nine Darters -->
+      <section class="content-card">
+        <h2>What Happens When Multiple Nine-Darters Are Thrown?</h2>
+        <p>
+          In historical PDC events featuring an advertised bonus (such as a £25,000 prize pool), tournament regulations stipulated that if two or more players threw a nine-darter during the same championship, <strong>the bonus was split equally</strong> among all successful throwers. For instance, at the 2012 World Matchplay, Michael van Gerwen and Wes Newton both achieved perfection, resulting in Betfair’s £5,000 pot being divided into £2,500 each.
+        </p>
+        <p>
+          In contrast, Paddy Power’s modern "BIGGER 180" campaign treated each nine-darter as an independent event: because the sponsor insured the promotion, both Christian Kist and Damon Heta received their full £60,000 share without dilution.
+        </p>
+      </section>
+
+      <!-- Sporting Significance vs Cash -->
+      <section class="content-card">
+        <h2>Sporting Significance vs Financial Reward</h2>
+        <p>
+          While nine-dart finishes generate sensational television clips, professional players often note that a nine-darter does not win you a trophy. In set play at Alexandra Palace, a nine-darter only secures a single leg in a best-of-five-leg set. Both Christian Kist and Damon Heta lost their matches immediately after throwing their nine-darters.
+        </p>
+        <p>
+          Conversely, winning the overall tournament title at the World Darts Championship earns the champion <a href="/tournament/prize-money/">£1,000,000</a> from the £5,000,000 total prize fund and secures their ranking at the top of the world. For elite professionals, lifting the Sid Waddell Trophy remains exponentially more valuable than any one-off sponsor bonus.
+        </p>
+        <p>
+          To understand the mechanical and mathematical permutations of completing a perfect leg, read our complete guide to <a href="/darts/what-is-a-9-dart-finish/">What Is a 9-Dart Finish? Routes &amp; Permutations</a>.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions: 9-Dart Prize Money</h2>
+        
+        <div class="faq-item">
+          <h3>Do PDC darts players automatically get prize money for hitting a nine-dart finish?</h3>
+          <p>
+            No. There is no standard, guaranteed baseline prize money for hitting a nine-dart finish in the official PDC rulebook. Payouts depend entirely on whether an event's title sponsor funds an active promotional bonus or if a designated tournament rollover fund is in effect.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What was the Paddy Power £180,000 nine-dart bonus?</h3>
+          <p>
+            During the Paddy Power World Darts Championship, title sponsor Paddy Power created 'The BIGGER 180' campaign, offering a £180,000 bonus pool per nine-darter split three ways: £60,000 to the throwing player, £60,000 to charity partner Prostate Cancer UK, and £60,000 to a randomly selected fan in the Alexandra Palace arena.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Which players triggered Paddy Power's £60k x 3 nine-dart payout?</h3>
+          <p>
+            At the 2024/25 World Darts Championship, two players triggered the payout: Christian Kist on 17 December 2024 against Madars Razma, and Damon Heta on 27 December 2024 against Luke Woodhouse. On each occasion, Paddy Power paid £60,000 to the player, £60,000 to Prostate Cancer UK, and £60,000 to a lucky spectator in the crowd.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the biggest nine-dart bonus ever won?</h3>
+          <p>
+            The largest individual cash prize ever won for a single televised nine-dart finish belongs to John Lowe, who earned £102,000 at the MFI World Matchplay on 13 October 1984. By comparison, the tournament winner's prize that year was just £12,000.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do players get bonus money for nine-darters on the ProTour floor?</h3>
+          <p>
+            No. On the non-televised PDC ProTour (Players Championship events), players receive no official cash bonus for hitting a nine-dart finish. They receive commemorative pin badges and official statistical recognition, but zero financial bonus.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does nine-dart finish bonus money count towards the PDC Order of Merit?</h3>
+          <p>
+            No. Any commercial sponsor bonus or special nine-dart prize money is strictly classified as unranked bonus money and does not count towards the official two-year rolling PDC Order of Merit world rankings.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .page-header h1 {
+    color: #ffffff !important;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 850px;
+    margin: 0;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .content-card p, .content-card li {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .feature-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+  }
+  .split-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .split-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .split-amount {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #166534;
+    background: #dcfce7;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+  .split-card h4 {
+    margin: 0.5rem 0;
+    color: #0f172a;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .comparison-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .comparison-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .comparison-header h3 {
+    margin: 0.5rem 0 0 0;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

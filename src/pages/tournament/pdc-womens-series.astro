@@ -1,0 +1,557 @@
+---
+// src/pages/tournament/pdc-womens-series.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "PDC Women's Series Explained: Format, Prize Money, Calendar & Major Routes";
+const pageDescription = "Complete guide to the PDC Women's Series: 24-event calendar, £15,000 per-tournament prize funds, Order of Merit mechanics, and routes to Ally Pally and Blackpool.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/pdc-womens-series/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'PDC Women\'s Series', url: '/tournament/pdc-womens-series/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-17T00:00:00+00:00",
+      "dateModified": "2026-10-17T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tournament",
+          "item": `${siteUrl}/tournament/world-darts-championship/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PDC Women's Series",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the PDC Women's Series?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The PDC Women's Series is the official professional darts tour for female players, organized by the Professional Darts Corporation. It consists of 24 tournaments held across six weekends each year, offering ranking points that feed directly into the PDC World Darts Championship, Women's World Matchplay, and Grand Slam of Darts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much prize money is on offer in the PDC Women's Series?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each of the 24 individual Women's Series events carries a £15,000 prize fund (£360,000 across the full season). The winner of each event receives £2,500, the runner-up receives £1,000, and prize money is distributed down to the Last 64."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do players qualify for the PDC World Darts Championship from the Women's Series?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The top two players on the final PDC Women's Series Order of Merit gain direct qualification into the first round of the PDC World Darts Championship at Alexandra Palace. If a player in the top two has already qualified via another route (such as winning the Women's World Matchplay), the place rolls down to the next highest-ranked eligible player."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who can enter the PDC Women's Series?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The circuit is open to all female dart players aged 16 and over. Competitors must hold PDPA Associate Membership or pay standard event entry fees through the PDC entry system. Female players who hold a standard PDC Tour Card ranked in the world's top 64 are excluded to keep the series focused on open development."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Women's World Matchplay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Women's World Matchplay is an elite eight-player televised major held at the Winter Gardens in Blackpool on the final Sunday of the World Matchplay. It features a £40,000 prize fund (£15,000 to the winner), with qualification determined by a rolling 12-month Women's Series Order of Merit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which players have won the most PDC Women's Series titles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Beau Greaves is the most dominant champion in Women's Series history, holding the record for the most consecutive titles and highest match averages. Fallon Sherrock, Lisa Ashton, and Mikuru Suzuki have also captured multiple series titles and major qualifications."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">WOMEN'S DARTS CIRCUIT</span>
+        <span class="badge">PDC TOUR EXPLAINED</span>
+      </div>
+      <h1>PDC Women's Series Explained: Format, Prize Money &amp; Pathways</h1>
+      <p class="lead-text">
+        The PDC Women’s Series has transformed women’s professional darts into an elite, lucrative global circuit. Discover how the 24-event calendar works, how prize funds are distributed, and how the tour provides a direct qualification pipeline to Alexandra Palace and the Winter Gardens.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Women's Series Regulatory Structure & Qualification Framework" />
+
+      <!-- What is the Women's Series -->
+      <section class="content-card">
+        <h2>What Is the PDC Women’s Series?</h2>
+        <p>
+          Established by the Professional Darts Corporation in 2020, the <strong>PDC Women’s Series</strong> is a dedicated standalone tour designed to provide female darts players with regular, high-standard competitive tournament play.
+        </p>
+        <p>
+          Before the creation of the Women's Series, female players were forced to rely on sporadic regional qualifiers or open mixed events to earn stage opportunities. Today, the circuit stands as a cornerstone of the professional darts ecosystem, offering an annual prize fund of £360,000 and providing definitive, merit-based routes into the sport's biggest televised major championships.
+        </p>
+      </section>
+
+      <!-- Eligibility and Entry -->
+      <section class="content-card">
+        <h2>Eligibility and Entry Requirements</h2>
+        <p>
+          The PDC operates clear, transparent regulatory criteria for players entering Women's Series events:
+        </p>
+        <ul>
+          <li><strong>Gender &amp; Age Eligibility:</strong> Open to all female players aged 16 and older on the date of the event.</li>
+          <li><strong>Membership:</strong> Entrants must register through the official PDC Sportradar entry system and hold an active PDPA (Professional Darts Players Association) Associate Membership.</li>
+          <li><strong>Top 64 Restriction:</strong> Any female competitor who holds a full two-year PDC Tour Card and is positioned within the top 64 of the main two-year rolling PDC Order of Merit is ineligible, ensuring the circuit remains focused on open development and challenger pathways.</li>
+          <li><strong>Global Participation:</strong> The tour welcomes international entries, with competitors traveling from across the UK, Europe, Japan, North America, and Australasia.</li>
+        </ul>
+      </section>
+
+      <!-- Calendar & Weekend Format -->
+      <section class="content-card">
+        <h2>Tournament Format &amp; Weekend Structure</h2>
+        <p>
+          The PDC Women's Series is designed around a multi-tournament weekend structure that minimizes travel overhead while maximizing competitive opportunities:
+        </p>
+
+        <div class="feature-box">
+          <h3>The 24-Event Annual Structure</h3>
+          <ul>
+            <li><strong>Six Multi-Event Weekends:</strong> The full season consists of 24 standalone tournaments held across six weekends (typically staged in Milton Keynes, Wigan, Hildesheim, and Leicester).</li>
+            <li><strong>Four Events per Weekend:</strong> Players compete in two complete tournaments on Saturday (Events 1 &amp; 2) and two complete tournaments on Sunday (Events 3 &amp; 4).</li>
+            <li><strong>Leg Format:</strong> All matches up to and including the Quarter-Finals are played as the best of 7 legs (first to 4). Semi-Finals and Finals are played as the best of 9 legs (first to 5).</li>
+            <li><strong>Straight Knockout:</strong> Draws are unseeded open brackets, creating thrilling match-ups where top stars can clash in early rounds.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Prize Money Table -->
+      <section class="content-card">
+        <h2>Prize Money Breakdown: Per Event and Season Purses</h2>
+        <p>
+          Each individual Women's Series event features a <strong>£15,000 prize fund</strong>, distributed among all players reaching the Last 64:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Finishing Position</th>
+                <th>Prize Money per Event</th>
+                <th>Total Distributed per Round</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Winner</strong></td>
+                <td><strong>£2,500</strong></td>
+                <td>£2,500 (1 player)</td>
+              </tr>
+              <tr>
+                <td><strong>Runner-Up</strong></td>
+                <td><strong>£1,000</strong></td>
+                <td>£1,000 (1 player)</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-Finalists</strong></td>
+                <td><strong>£750</strong></td>
+                <td>£1,500 (2 players)</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-Finalists</strong></td>
+                <td><strong>£500</strong></td>
+                <td>£2,000 (4 players)</td>
+              </tr>
+              <tr>
+                <td><strong>Last 16 Losers</strong></td>
+                <td><strong>£300</strong></td>
+                <td>£2,400 (8 players)</td>
+              </tr>
+              <tr>
+                <td><strong>Last 32 Losers</strong></td>
+                <td><strong>£200</strong></td>
+                <td>£3,200 (16 players)</td>
+              </tr>
+              <tr>
+                <td><strong>Last 64 Losers</strong></td>
+                <td><strong>£75</strong></td>
+                <td>£2,400 (32 players)</td>
+              </tr>
+              <tr>
+                <td><strong>Total per Event</strong></td>
+                <td>—</td>
+                <td><strong>£15,000</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Total Season Fund (24 Events)</strong></td>
+                <td>—</td>
+                <td><strong>£360,000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">
+          *Note: If an event has fewer than 128 entries, prize money distributions for preliminary rounds are adjusted under standard PDPA floor rules.
+        </p>
+      </section>
+
+      <!-- Qualification Pathways -->
+      <section class="content-card">
+        <h2>Major Tournament Qualification Pathways</h2>
+        <p>
+          Prize money won on the Women’s Series translates £-for-£ into points on the official <strong>PDC Women’s Series Order of Merit</strong>. This ranking list determines qualification for the sport's greatest stages:
+        </p>
+
+        <div class="pathway-grid">
+          <div class="pathway-card">
+            <div class="pathway-header">
+              <span class="badge badge-accent">PRIMARY TARGET</span>
+              <h3>PDC World Darts Championship</h3>
+            </div>
+            <p>
+              The <strong>top two eligible players</strong> on the final 12-month Women’s Series Order of Merit qualify directly into the First Round of the <a href="/tournament/world-darts-championship/">World Darts Championship</a> at Alexandra Palace.
+            </p>
+            <p>
+              If a player in the top two has already qualified via another method (e.g. winning the Women's World Matchplay), the Ally Pally place rolls down to the 3rd-ranked player on the list.
+            </p>
+          </div>
+
+          <div class="pathway-card">
+            <div class="pathway-header">
+              <span class="badge">SUMMER SHOWPIECE</span>
+              <h3>Women’s World Matchplay</h3>
+            </div>
+            <p>
+              The <strong>top eight players</strong> on a rolling 12-month Women's Series ranking list qualify for the prestigious Women's World Matchplay, held on the Sunday afternoon of the World Matchplay at the Winter Gardens in Blackpool.
+            </p>
+            <p>
+              Featuring an expanded <strong>£40,000 prize fund</strong> (£15,000 to the winner), the tournament champion secures automatic qualification for both the Grand Slam of Darts and the World Darts Championship.
+            </p>
+          </div>
+
+          <div class="pathway-card">
+            <div class="pathway-header">
+              <span class="badge">CROSS-CIRCUIT MAJOR</span>
+              <h3>Grand Slam of Darts</h3>
+            </div>
+            <p>
+              The PDC reserves dedicated qualification berths at the Grand Slam of Darts in Wolverhampton for female stars: one spot goes to the Women’s World Matchplay Champion, and a second spot is awarded to the highest-ranked player on the Women’s Series Order of Merit.
+            </p>
+          </div>
+
+          <div class="pathway-card">
+            <div class="pathway-header">
+              <span class="badge">CAREER PROGRESSION</span>
+              <h3>PDC Qualifying School (Q-School)</h3>
+            </div>
+            <p>
+              The top eight non-Tour Card holders on the final Women's Series Order of Merit receive free, subsidized entries directly into the final stage of PDC Q-School, giving them a direct platform to win a full Tour Card.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Champions and Records -->
+      <section class="content-card">
+        <h2>Record Milestones &amp; Historic Champions</h2>
+        <p>
+          The Women's Series has showcased extraordinary darting standard, spearheaded by pioneering champions:
+        </p>
+
+        <div class="feature-box">
+          <h3>Beau Greaves: Record-Breaking Dominance</h3>
+          <p>
+            Doncaster sensation <a href="/players/beau-greaves/">Beau Greaves</a> has established herself as the most statistically dominant force in women’s darts history. Greaves orchestrated an unprecedented streak of 15 consecutive tournament victories across 2022 and 2023, recording 70+ consecutive match wins and regularly posting three-dart averages above 95.00—including a staggering 107.86 match average.
+          </p>
+
+          <h3>Fallon Sherrock: The Historic Trailblazer</h3>
+          <p>
+            <a href="/players/fallon-sherrock/">Fallon Sherrock</a>, the "Queen of the Palace", was the first woman to win matches at the PDC World Darts Championship (2019/20) and reached the final of the Nordic Darts Masters. Sherrock has won multiple Women's Series crowns and made history in March 2023 by hitting the first verified nine-dart finish by a female player in a broadcast/streamed PDC-affiliated event.
+          </p>
+
+          <h3>Lisa Ashton: The Veteran Pioneer</h3>
+          <p>
+            Four-time World Champion Lisa Ashton made darting history at 2020 Q-School by becoming the first woman to win a full two-year PDC Tour Card through the open system. Ashton remains one of the most prolific title winners in Women's Series history.
+          </p>
+        </div>
+      </section>
+
+      <!-- Comparison: Women's Series vs WDF -->
+      <section class="content-card">
+        <h2>Women's Series vs WDF: Navigating the Circuits</h2>
+        <p>
+          Female players navigate two major international sanctioning bodies: the <strong>PDC (Professional Darts Corporation)</strong> and the <strong>WDF (World Darts Federation)</strong>.
+        </p>
+        <p>
+          While the WDF operates its historic Lakeside World Championship, the PDC has strict eligibility regulations governing major championships: players who qualify for and choose to play in the WDF World Championship are barred from competing in the concurrent PDC World Darts Championship. This rule famously led Beau Greaves to decline Ally Pally berths in previous years to defend her WDF Lakeside crown, before subsequently prioritizing PDC majors and Grand Slam opportunities.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions: PDC Women's Series</h2>
+        
+        <div class="faq-item">
+          <h3>What is the PDC Women's Series?</h3>
+          <p>
+            The PDC Women's Series is the official professional darts tour for female players, organized by the Professional Darts Corporation. It consists of 24 tournaments held across six weekends each year, offering ranking points that feed directly into the PDC World Darts Championship, Women's World Matchplay, and Grand Slam of Darts.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How much prize money is on offer in the PDC Women's Series?</h3>
+          <p>
+            Each of the 24 individual Women's Series events carries a £15,000 prize fund (£360,000 across the full season). The winner of each event receives £2,500, the runner-up receives £1,000, and prize money is distributed down to the Last 64.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do players qualify for the PDC World Darts Championship from the Women's Series?</h3>
+          <p>
+            The top two players on the final PDC Women's Series Order of Merit gain direct qualification into the first round of the PDC World Darts Championship at Alexandra Palace. If a player in the top two has already qualified via another route (such as winning the Women's World Matchplay), the place rolls down to the next highest-ranked eligible player.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Who can enter the PDC Women's Series?</h3>
+          <p>
+            The circuit is open to all female dart players aged 16 and over. Competitors must hold PDPA Associate Membership or pay standard event entry fees through the PDC entry system. Female players who hold a standard PDC Tour Card ranked in the world's top 64 are excluded to keep the series focused on open development.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the Women's World Matchplay?</h3>
+          <p>
+            The Women's World Matchplay is an elite eight-player televised major held at the Winter Gardens in Blackpool on the final Sunday of the World Matchplay. It features a £40,000 prize fund (£15,000 to the winner), with qualification determined by a rolling 12-month Women's Series Order of Merit.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Which players have won the most PDC Women's Series titles?</h3>
+          <p>
+            Beau Greaves is the most dominant champion in Women's Series history, holding the record for the most consecutive titles and highest match averages. Fallon Sherrock, Lisa Ashton, and Mikuru Suzuki have also captured multiple series titles and major qualifications.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .page-header h1 {
+    color: #ffffff !important;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 850px;
+    margin: 0;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .content-card p, .content-card li {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .feature-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-note {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+  .pathway-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .pathway-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .pathway-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .pathway-header h3 {
+    margin: 0.5rem 0 0 0;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>
