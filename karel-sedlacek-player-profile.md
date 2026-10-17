@@ -7,12 +7,12 @@
 - Primary Search Intent: Informational ("karel sedlacek darts", "evil charlie darts player", "karel sedlacek darts specs walk-on", "karel sedlacek pc30 win")
 - Target Audience: Darts fans, equipment collectors, European Tour followers, and Czech darts enthusiasts
 - Quality Gate Status: PASS
-- Last Verified: October 2026 (Verified for PC30 victory & Red Dragon Darts 24g specifications)
+- Last Verified: October 2026 (Verified for PC30 victory & Bull's Darts 23g specifications)
 
 ## SEO Metadata & Strategy Deliverables
 
 - SEO Title: Karel Sedláček: "Evil Charlie" Darts Specs, PC30 Win & Career Stats
-- Meta Description: Karel Sedláček ("Evil Charlie") player dossier: verified 24g Red Dragon darts setup, walk-on anthem, historic Players Championship 30 victory, and Czech darts boom. (160 chars)
+- Meta Description: Karel Sedláček ("Evil Charlie") player dossier: verified 23g Bull's NL darts setup, walk-on anthem, historic Players Championship 30 victory, and Czech darts boom. (160 chars)
 - Primary Keyword: karel sedlacek darts
 - Secondary Keywords:
   - evil charlie darts
@@ -32,7 +32,7 @@
   - /schedule/ (Full 2026/27 Tournament Schedule)
 - Outbound Primary Authority Links:
   - Professional Darts Corporation (PDC): https://www.pdc.tv/
-  - Red Dragon Darts Official Profile: https://www.reddragondarts.com/
+  - Bull's Darts (Bull's NL) Official Profile: https://www.bullsdarts.com/
   - Professional Darts Players Association (PDPA): https://pdpa.co.uk/
 
 -->
@@ -41,9 +41,9 @@
 
 Few players have carried the sporting hopes of an entire nation quite like **Karel Sedláček**. Known worldwide by his formidable moniker *"Evil Charlie"*—and hailed affectionately as *"Zlý Kája"* across his native Czech Republic—Sedláček is the unquestioned pioneer of professional Czech darts.
 
-From grinding through regional European soft-tip and steel-tip circuits to securing the Czech Republic’s first-ever PDC Tour Card in 2020, Sedláček reached the zenith of his career in September 2026 by capturing his maiden senior PDC ranking title at **Players Championship 30**.
+From grinding through regional European soft-tip and steel-tip circuits to securing the Czech Republic’s first-ever PDC Tour Card in 2020, Sedláček reached the zenith of his career on Wednesday, 23 September 2026 by capturing his maiden senior PDC ranking title at **Players Championship 30** in Den Bosch, Netherlands.
 
-This definitive player dossier provides the verified specifications of his 24g Red Dragon setup, walk-on music origins, tournament achievements, and his role in igniting the modern Czech darts revolution.
+This definitive player dossier provides the verified specifications of his 23g Bull's NL setup, walk-on music origins, tournament achievements, and his role in igniting the modern Czech darts revolution.
 
 ---
 
@@ -56,36 +56,36 @@ This definitive player dossier provides the verified specifications of his 24g R
 - **Nationality:** Czech Republic 🇨🇿
 - **Throwing Hand:** Right-handed
 - **Walk-On Anthem:** "Let Me Entertain You" by Robbie Williams
-- **Manufacturer Partner:** Red Dragon Darts
+- **Manufacturer Partner:** Bull's Darts (Bull's NL)
 - **Career Prize Money:** £280,000+ (Official PDC career prize earnings)
 
 ---
 
 ## 2. Verified Darts Equipment Specifications
 
-Developed in close engineering collaboration with **Red Dragon Darts**, Sedláček’s match darts are designed for stability, high front-finger tactile grip, and ultra-tight grouping:
+Developed in close engineering collaboration with **Bull's Darts (Bull's NL)**, Sedláček’s match darts are designed for stability, high front-finger tactile grip, and ultra-tight grouping:
 
 | Equipment Component | Exact Specification | Technical Notes & Performance Benefits |
 | :--- | :--- | :--- |
-| **Manufacturer** | **Red Dragon Darts** | Official technical sponsor and darts manufacturer |
-| **Barrel Weight** | **24 Grams** | Medium-heavy weight providing steady momentum through release |
+| **Manufacturer** | **Bull's Darts (Bull's NL)** | Official technical sponsor and darts manufacturer |
+| **Barrel Weight** | **23 Grams** | Balanced weight providing steady momentum through release |
 | **Tungsten Purity** | **90% Tungsten** | Premium military-grade tungsten allowing a slim barrel profile |
 | **Barrel Dimensions** | 50.8mm length × 6.6mm diameter | Parallel profile suited to middle-and-front finger grippers |
-| **Grip Texture** | Precision Dual-Zone Radial Ringed | Fine micro-grooves offering continuous tactile feedback |
-| **Stems / Shafts** | Red Dragon NitroTech Intermediate | Polycarbonate body with aluminium flight-locking clamp |
-| **Flights** | Hardcore Signature "Evil Charlie" No.2 | 100-micron standard shape for stable flight aerodynamics |
-| **Steel Points** | 32mm High-Tensile Black Steel | Standard tapered points for maximum board grip |
+| **Grip Texture** | Ringed & Shark Grip Zones | Dual-zone grip featuring Czech national red, blue, and white accents |
+| **Stems / Shafts** | Bull's Nylon Intermediate Shafts | Durable polycarbonate/nylon ensuring aerodynamic rigidity |
+| **Flights** | Bull's Signature "Evil Charlie" Standard | 100-micron standard shape for stable flight aerodynamics |
+| **Steel Points** | 35mm Black Steel Points | Standard tapered points for maximum board grip |
 
 ---
 
 ## 3. Historic Career Breakthrough: Players Championship 30 Champion
 
-On the final weekend of the 2026 PDC ProTour in Leicester, Sedláček achieved what no Czech player had ever accomplished: lifting a senior PDC ranking trophy.
+On Wednesday, 23 September 2026 at Players Championship 30 in Den Bosch, Netherlands, Sedláček achieved what no Czech player had ever accomplished: lifting a senior PDC ranking trophy.
 
 ### Path to the PC30 Title:
 1. **Early Pressure:** Overcame high-caliber European Tour qualifiers, surviving two sudden-death 6–5 deciding legs.
-2. **Quarter-Final & Semi-Final Dominance:** Averaged over 101.5 in consecutive matches, sweeping aside two former major champions with deadly doubling on Double 20 and Double 16.
-3. **The Emotional Final:** Defeated his opponent 8–6 in a tense, tactical final. When the winning double landed, Sedláček dropped to the oche floor in tears before draping himself in the Czech national flag.
+2. **Semi-Final Dominance:** Averaged over 101.5 in a high-octane 7–5 semifinal victory against world-class opposition.
+3. **The Emotional Final:** Defeated England's Scott Williams 8–7 in a pulsating deciding leg. When the winning double landed, Sedláček dropped to the oche floor in tears before draping himself in the Czech national flag.
 
 The £15,000 winner’s prize vaulted Sedláček up the ProTour Order of Merit, securing qualification for both the Players Championship Finals in Minehead and the Alexandra Palace World Darts Championship.
 
@@ -112,13 +112,13 @@ Despite the aggressive moniker *"Evil Charlie"*, Sedláček is widely recognized
 ## 6. Frequently Asked Questions
 
 ### What darts does Karel Sedláček use?
-Karel Sedláček throws 24g 90% tungsten darts manufactured by Red Dragon Darts, featuring a custom parallel profile with precision radial ringed grooves, fitted with Red Dragon NitroTech stems and Hardcore signature flights.
+Karel Sedláček throws 23g 90% tungsten darts manufactured by Bull's Darts (Bull's NL), featuring a specialized ringed and Shark grip barrel in Czech national colours, fitted with Bull's nylon intermediate shafts and Evil Charlie signature flights.
 
 ### What is Karel Sedláček's walk-on song and nickname?
 Karel Sedláček is nicknamed "Evil Charlie" (known as "Zlý Kája" in the Czech Republic). His iconic walk-on anthem is "Let Me Entertain You" by Robbie Williams.
 
 ### When did Karel Sedláček win his first PDC senior title?
-Sedláček claimed his historic maiden PDC ProTour title at Players Championship 30 in September 2026, defeating world-class opposition to become the first Czech player in darts history to win a senior PDC ranking event.
+Sedláček claimed his historic maiden PDC ProTour title on Wednesday, 23 September 2026 at Players Championship 30 in Den Bosch, Netherlands, defeating Scott Williams 8–7 in the final to become the first Czech player to win a senior PDC ranking title.
 
 ### When did Karel Sedláček first win his PDC Tour Card?
 Sedláček made history in January 2020 at European Q-School in Hildesheim, Germany, becoming the first player from the Czech Republic ever to secure a two-year professional PDC Tour Card.

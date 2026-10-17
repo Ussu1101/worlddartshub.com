@@ -85,23 +85,19 @@ Face value prices vary depending on tournament stage, session timing (afternoon 
 
 ## 3. Sold Out — Now What? How to Legally Buy Returned Tickets
 
-When standard allocation shows "Sold Out" across the board, fans frequently turn in desperation to unauthorized brokers. However, thousands of legitimate tickets cycle back into official circulation between September and January. Here are the four verified, legal strategies to secure entry:
+When standard allocation shows "Sold Out" across the board, genuine tickets frequently return to circulation through official channels as supporters' schedules change. Here are the verified official and practical pathways to secure tickets safely:
 
 ### 1. Monitor the Official SeeTickets Fan-to-Fan Resale Platform
 The PDC operates a zero-tolerance policy against unauthorized ticket touting. The **SeeTickets Fan-to-Fan Resale Portal** is the single authorized marketplace:
-- **Price Capped at Face Value:** Sellers are legally prohibited from charging scalper premiums. Tickets are listed at face value plus nominal administration fees.
-- **Instant Barcode Invalidation:** When a fan purchases a resale ticket, SeeTickets cancels the seller’s digital barcode immediately and issues a completely new, cryptographically unique barcode directly into the buyer’s SeeTickets app.
-- **Peak Re-listing Volumes:** Resale listings surge on Sunday nights and Monday mornings as travel plans fluctuate, and reach peak velocity 24–48 hours prior to each session.
+- **Price Capped at Face Value:** Sellers are legally prohibited from charging scalper premiums. Tickets are listed strictly at original face value plus nominal administration fees.
+- **Instant Barcode Invalidation:** When a fan purchases a resale ticket, SeeTickets cancels the seller’s digital barcode immediately and issues a completely new, cryptographically unique barcode directly into the buyer’s SeeTickets account.
+- **Live Dynamic Availability:** Listings appear dynamically as fans put tickets up for resale. Ticket availability fluctuates and is never guaranteed.
 
-### 2. Daily Morning Return Drops (9:00 AM – 11:00 AM UK Time)
-Customer service cancellations, failed payment retries, and suspected duplicate automated orders that have been audited and voided by SeeTickets security teams are quietly recirculated back into general inventory. 
-- Log in to your SeeTickets account at **8:55 AM UK time**.
-- Refresh targeted session pages between **9:00 AM and 11:00 AM**. Single seats and pairs frequently reappear without public fanfare.
+### 2. Fan Advice: Regular Portal Monitoring
+Neither the PDC nor SeeTickets operates scheduled release drops or guaranteed batch times. Instead, returns from processed order adjustments, failed payments, or cancellations are fed back into live inventory dynamically. Fans who check the official portal regularly throughout the autumn often discover single seats and pairs as supporters' travel plans shift.
 
-### 3. Early December Production Hold Releases
-During the first week of December, PDC broadcast directors, Sky Sports technical crews, and staging engineers arrive at Alexandra Palace to construct the Great Hall set. 
-- Sightlines are surveyed physically, camera track corridors are finalized, and safety clearances are signed off.
-- Seats originally held back as "production kills" or unallocated sponsor contingents are released back to public sale approximately 7 to 10 days before opening night.
+### 3. Broadcast & Staging Technical Holds (Subject to Confirmation)
+In early December, once Sky Sports and PDC production teams complete physical stage construction inside Alexandra Palace and finalize camera sightlines, any unallocated technical holds or unused sponsor reserves may be returned to general public sale. Such releases remain occasional and are not guaranteed.
 
 ### 4. Official Hospitality Upgrades
 When general floor tables and tiered seating are fully booked, official PDC hospitality packages often retain limited allocation:
@@ -133,7 +129,7 @@ Face value prices generally range from £40 to £65 for Tiered Bleacher seats, a
 The PDC and Alexandra Palace strictly void tickets resold on unauthorized secondary platforms like Viagogo, StubHub, or social media. Security scanners at the Palm Court entrance will cancel duplicated or unauthorized barcodes without refund.
 
 ### What can I do if PDC World Darts Championship tickets are completely sold out?
-If general sales are sold out, monitor the official SeeTickets Fan-to-Fan resale platform daily, check for morning returned ticket drops between 9:00 AM and 11:00 AM, look for late production hold releases in early December, or explore remaining official hospitality packages.
+If general sales are sold out, monitor the official SeeTickets Fan-to-Fan resale platform where genuine returned tickets are listed at face value, check the portal regularly for fluctuating returns, or explore remaining official hospitality packages.
 
 ### When are production hold and sponsor return tickets released?
-PDC and SeeTickets typically release unallocated sponsor, broadcast, and production hold tickets in early December once stage layouts and camera tracks are finalized.
+Unallocated production, broadcast, or sponsor holds are subject to technical stage sign-off in December. Any subsequent releases are occasional and never guaranteed, depending entirely on final camera corridors and venue configurations.

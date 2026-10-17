@@ -52,7 +52,7 @@ This complete financial guide provides the authoritative breakdown of the £350,
 - **Total Prize Fund:** £1,250,000
 - **Champion’s Cheque:** £350,000 (Awarded to the Play-Offs winner at The O2 in London)
 - **Runner-Up Payout:** £170,000
-- **Semi-Finalists:** £100,000 each (Two players eliminated in the Play-Offs)
+- **Semi-Finalists:** £110,000 each (Two players eliminated in the Play-Offs)
 - **Nightly Knockout Bonuses:** £160,000 total (£10,000 cash bonus awarded to each of the 16 weekly night champions)
 - **Order of Merit Status:** £0 (Unranked invitational tournament)
 
@@ -66,11 +66,11 @@ The eight elite competitors battle over 16 preliminary league nights to qualify 
 | :--- | :--- | :--- |
 | **Champion (Play-Off Winner)** | **£350,000** | Victor of the championship final at The O2 |
 | **Runner-Up** | **£170,000** | Reaches the championship final at The O2 |
-| **Semi-Finalists (2 players)** | **£100,000 each** | Finish in Top 4; eliminated in O2 semifinals |
-| **5th Place** | **£90,000** | Narrowly misses the top-four playoff threshold |
-| **6th Place** | **£85,000** | 6th in the final 16-night league table |
-| **7th Place** | **£80,000** | 7th in the final 16-night league table |
-| **8th Place** | **£75,000** | Bottom-placed finisher in the regular season |
+| **Semi-Finalists (2 players)** | **£110,000 each** | Finish in Top 4; eliminated in O2 semifinals |
+| **5th Place** | **£95,000** | Narrowly misses the top-four playoff threshold |
+| **6th Place** | **£90,000** | 6th in the final 16-night league table |
+| **7th Place** | **£85,000** | 7th in the final 16-night league table |
+| **8th Place** | **£80,000** | Bottom-placed finisher in the regular season |
 | **Nightly Winner Bonuses (16 Nights)** | **£160,000 (£10,000 x 16)** | Winner of each Thursday night 8-player bracket |
 | **Total Tournament Purse** | **£1,250,000** | Comprehensive season prize fund |
 
@@ -119,7 +119,7 @@ No. The Premier League is strictly an unranked invitational tournament. Under of
 Across each of the 16 regular league nights, an 8-player bracket is contested. The player who wins the final on the night receives an immediate £10,000 winner bonus in addition to 5 league table points. Runners-up and semifinalists receive league points but no nightly cash bonus.
 
 ### How much do players finishing 5th through 8th receive?
-Players failing to qualify for the Play-Offs still receive lucrative prize money: 5th place earns £90,000, 6th place receives £85,000, 7th place receives £80,000, and 8th place receives £75,000.
+Players failing to qualify for the Play-Offs still receive lucrative prize money: 5th place earns £95,000, 6th place receives £90,000, 7th place receives £85,000, and 8th place receives £80,000.
 
 ### Is there a bonus for hitting a nine-dart finish in the Premier League?
 While there is no standard PDC rolling prize fund for nine-darters, sponsor partners traditionally award commemorative prizes—such as custom 18-carat solid gold darts or partner charity donations—for a perfect leg hit live on broadcast.

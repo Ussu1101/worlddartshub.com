@@ -55,40 +55,40 @@ The decision to relocate across the palace complex was driven by unyielding glob
 
 | Dimension / Metric | Traditional West Hall (2007–2025) | Expanded Great Hall (2026/27 Onwards) | Operational Impact |
 | :--- | :--- | :--- | :--- |
-| **Capacity per Session** | ~3,200 spectators | 5,000+ spectators | +56% increase in seats per session |
+| **Capacity per Session** | ~3,200 spectators | 5,000+ spectators | Substantial increase in seats per session |
 | **Total Tournament Footfall** | ~90,000 across 28 sessions | ~180,000 across 28 sessions | Historic attendance record for global darts |
-| **Hall Dimensions** | 3,115 m² floor space | 6,550 m² floor space | More than double the internal square footage |
-| **Ceiling Height & Clearance** | 11.5 meters | 16.5 meters | Allows multi-tiered LED matrix trusses |
+| **Auditorium Scale** | Compact Victorian hall | Expansive Victorian exhibition hall | Greatly increased seating footprint |
+| **Ceiling Clearance** | Lower overhead clearance | High barrel-vaulted ceiling | Accommodates suspended 360° LED screen arrays |
 | **Acoustic Profile** | Intense, reverberant box acoustic | Grand arena acoustic with tuned line-arrays | Superior chant projection and crowd roar |
-| **Contract Security** | Rolling lease agreements | Fixed agreement through 2031 | 5-year guarantee at Alexandra Palace |
+| **Contract Security** | Rolling lease agreements | Fixed agreement through at least 2031 | 5-year guarantee at Alexandra Palace |
 
 ---
 
 ## 2. Floor Layout, Sightlines & The New Seating Architecture
 
-Moving to a hall with twice the floor area presents both opportunities and challenges for spectator sightlines. The physical regulation dartboard measures just 45 cm in diameter with a 50-point bullseye measuring a mere 1.27 cm wide. Spectators in row 45 cannot physically track the wire without digital magnification.
+Moving to the Great Hall presents both opportunities and challenges for spectator sightlines. The physical regulation dartboard measures just 45 cm in diameter with a 50-point bullseye measuring a mere 1.27 cm wide. Beyond the first few table rows, spectators rely on video screens to track individual darts.
 
 To address this, the Great Hall production features state-of-the-art technological enhancements:
 
 ### Suspended High-Definition LED Cube & Ring Truss
-Above the central table section, the PDC and Sky Sports have installed a massive 360-degree, high-resolution LED cube complemented by flanking perimeter display banners. Ultra-low-latency broadcast feeds ensure zero lag between the dart striking the sisal and the board visual updating.
+Above the central table section, the PDC and Sky Sports have installed a 360-degree, high-resolution suspended LED cube complemented by flanking perimeter display banners. Ultra-low-latency broadcast feeds ensure zero lag between the dart striking the sisal and the board visual updating.
 
 ### Elevated Staging & Steeper Grandstands
-The main walk-on stage and oche have been elevated by 45 cm compared to the West Hall configuration. Furthermore, the tiered bleacher stands lining the north, south, and east flanks are built at a steeper rake, providing clear sightlines over the heads of standing floor fans.
+The main walk-on stage and oche have been purpose-built for the larger space, complemented by tiered bleacher grandstands flanking the hall built at a steeper rake to provide clear sightlines above floor table level.
 
 ### Expanded Table Blocks
-Floor tables remain the most sought-after tickets in darts. In the Great Hall, floor tables accommodate up to 10 guests per trestle. Wider central and transverse aisles have been engineered to prevent crowd bottlenecks during walk-ons and intervals.
+Floor tables remain the most sought-after tickets in darts. In the Great Hall, floor tables accommodate up to 10 guests per trestle. Wider central and transverse aisles have been engineered to improve crowd circulation during walk-ons and intervals.
 
 ---
 
 ## 3. Bars, Catering & Concourse Flow: Managing 5,000 Fans
 
-One of the greatest operational friction points in the West Hall was bar congestion and restroom queuing between matches. The Great Hall layout dramatically expands hospitality infrastructure:
+One of the greatest operational friction points in the West Hall was bar congestion and restroom queuing between matches. The Great Hall layout expands hospitality infrastructure:
 
-- **Dual Flank Main Bars:** Two 40-meter continuous draught beer bars run along the outer perimeter walls, featuring rapid-pour multi-tap dispensing systems.
-- **4-Pint Pitcher Service:** To minimize transaction frequency, all main bars feature reusable 4-pint pitcher dispensing alongside standard 2-pint and 1-pint options.
+- **Extended Flank Bars:** Long continuous draught beer bars run along the outer perimeter walls to handle intermission surges.
+- **4-Pint Pitcher Service:** To minimize transaction frequency, main bars feature reusable 4-pint pitcher dispensing alongside standard 2-pint and 1-pint options.
 - **Dedicated Village & Food Court:** The adjacent Palm Court continues as the primary entry foyer and street food market, housing gourmet burger vendors, loaded fries, German bratwurst stations, and vegetarian/vegan food trucks.
-- **Expanded Restroom Capacity:** Purpose-built auxiliary restroom blocks have been added behind the tiered grandstands, cutting average wait times in half compared to peak West Hall sessions.
+- **Auxiliary Restrooms:** Purpose-built auxiliary restroom blocks are positioned behind the tiered grandstands to reduce queuing times.
 
 ---
 

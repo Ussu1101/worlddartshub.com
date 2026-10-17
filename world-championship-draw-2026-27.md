@@ -52,7 +52,7 @@ Here is the authoritative timed guide to the official draw ceremony, seeding cut
 The official tournament draw is synchronized with the conclusion of the PDC ProTour season:
 
 - **Seeding & Qualification Cutoff:** Late November 2026, immediately following the final match of the Players Championship Finals in Minehead.
-- **Official Draw Ceremony:** Held on the Monday following the Minehead finals (typically broadcast live at 16:30 GMT).
+- **Official Draw Ceremony:** Held on the Monday following the Minehead finals (typically broadcast live on Monday afternoon, with exact broadcast timing pending official PDC and Sky Sports programming confirmation).
 - **Television Coverage:** Broadcast live in high definition on **Sky Sports News** across the UK and Ireland.
 - **Global Digital Stream:** Streamed live worldwide free of charge via the **official PDC YouTube Channel** and **PDCTV**.
 - **Daily Match Schedule Release:** The confirmed day-by-day running order (dividing matches across 28 afternoon and evening sessions) is released within 48 to 72 hours of the draw.

@@ -38,29 +38,31 @@
 
 -->
 
-# PDC Darts Calendar 2027: Comprehensive Season Guide
+# PDC Darts Calendar 2027: Provisional Season Schedule
 
 The professional darts calendar is a relentless, year-round global circuit spanning over 150 competitive playing days. From the intense pressure of Qualifying School in early January to the winter coronation at Alexandra Palace, the **2027 PDC calendar** features 11 televised major championships, 14 continent-wide European Tour showcases, 30 ProTour floor tournaments, and expanding secondary circuits.
 
-This comprehensive guide delivers the definitive timeline of dates, host venues, ranking implications, and broadcast channels for the entire 2027 professional season.
+This comprehensive guide delivers the provisional roadmap of dates, host venues, ranking implications, and broadcast channels for the 2027 professional season based on established PDC scheduling cycles as of October 2026.
 
 ---
 
-## 1. 2027 Televised Majors & Premier Events at a Glance
+## 1. 2027 Televised Majors & Premier Events at a Glance (Provisional)
 
-| Dates / Window | Tournament | Host Venue & City | Format & Ranking Status |
+| Dates / Window (Provisional) | Tournament | Host Venue & City | Format & Ranking Status |
 | :--- | :--- | :--- | :--- |
-| **Early January 2027** | PDC Qualifying School (UK & EU) | Milton Keynes (UK) & Kalkar (GER) | Unranked; Tour Card Qualifying |
-| **Late Jan – Early Feb 2027** | The Masters | Marshall Arena, Milton Keynes | Unranked Invitational (Top 24) |
-| **Feb – May 2027 (Thursdays)** | Premier League Darts | 17 European Arenas; The O2 London | Unranked Invitational (£1.25M Purse) |
-| **Early March 2027** | UK Open ("FA Cup of Darts") | Butlin's Minehead Resort, Somerset | Ranked Major (160 Players, Open Draw) |
-| **June 2027** | World Cup of Darts | Eissporthalle, Frankfurt, Germany | Unranked (40 Nations, Doubles) |
-| **July 2027** | World Matchplay & Women's Matchplay | Winter Gardens, Blackpool | Ranked Major (£800k Purse) |
-| **October 2027** | World Grand Prix | Mattioli Arena, Leicester | Ranked Major (Double-In Double-Out) |
-| **Late October 2027** | European Championship | Westfalenhallen, Dortmund, Germany | Ranked Major (Top 32 European Tour) |
-| **November 2027** | Grand Slam of Darts | WV Active Aldersley, Wolverhampton | Ranked Major (Group Stage + Knockout) |
-| **Late November 2027** | Players Championship Finals | Butlin's Minehead Resort, Somerset | Ranked Major (Top 64 ProTour Order of Merit) |
-| **Dec 2027 – Jan 2028** | PDC World Darts Championship | Alexandra Palace Great Hall, London | Ranked Flagship Major (£5,000,000 Purse) |
+| **Early January 2027 (TBC)** | PDC Qualifying School (UK & EU) | Milton Keynes (UK) & Kalkar (GER) | Unranked; Tour Card Qualifying |
+| **Late Jan – Early Feb 2027 (TBC)** | The Masters | Marshall Arena, Milton Keynes | Unranked Invitational (Top 24) |
+| **Feb – May 2027 (Thursdays, TBC)** | Premier League Darts | 17 European Arenas; The O2 London | Unranked Invitational (£1.25M Purse) |
+| **Early March 2027 (TBC)** | UK Open ("FA Cup of Darts") | Butlin's Minehead Resort, Somerset | Ranked Major (160 Players, Open Draw) |
+| **June 2027 (TBC)** | World Cup of Darts | Eissporthalle, Frankfurt, Germany | Unranked (40 Nations, Doubles) |
+| **July 2027 (TBC)** | World Matchplay & Women's Matchplay | Winter Gardens, Blackpool | Ranked Major (£800k Purse) |
+| **October 2027 (TBC)** | World Grand Prix | Mattioli Arena, Leicester | Ranked Major (Double-In Double-Out) |
+| **Late October 2027 (TBC)** | European Championship | Westfalenhallen, Dortmund, Germany | Ranked Major (Top 32 European Tour) |
+| **November 2027 (TBC)** | Grand Slam of Darts | WV Active Aldersley, Wolverhampton | Ranked Major (Group Stage + Knockout) |
+| **Late November 2027 (TBC)** | Players Championship Finals | Butlin's Minehead Resort, Somerset | Ranked Major (Top 64 ProTour Order of Merit) |
+| **Dec 2027 – Jan 2028 (TBC)** | PDC World Darts Championship | Alexandra Palace Great Hall, London | Ranked Flagship Major (£5,000,000 Purse) |
+
+*Note: Dates and venues above reflect standard seasonal scheduling cycles as of October 2026. Specific weekend dates and full event schedules are subject to final confirmation upon official PDC release at the [PDC.tv Calendar](https://www.pdc.tv/tournaments/calendar).*
 
 ---
 
