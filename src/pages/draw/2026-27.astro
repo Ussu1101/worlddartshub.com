@@ -1,0 +1,579 @@
+---
+// src/pages/draw/2026-27.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Darts Championship 2026/27 Draw Guide: 128-Player Bracket";
+const pageDescription = "Comprehensive guide to the 2026/27 PDC World Darts Championship draw. 128 players, 64 Round 1 matches, bracket quarters, seeding rules, and live ceremony dates.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/draw/2026-27/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Draw & Bracket', url: '/draw/' },
+  { name: '2026/27 Draw Guide', url: '/draw/2026-27/' }
+];
+
+const faqItems = [
+  {
+    q: "When is the official draw for the 2026/27 PDC World Darts Championship?",
+    a: "The official 128-player bracket draw takes place in late November 2026, immediately following the conclusion of the Players Championship Finals in Minehead, which serves as the final Order of Merit seeding cutoff."
+  },
+  {
+    q: "Do the top 32 seeds receive a bye to Round 2 in the 128-player format?",
+    a: "No. Under the expanded 128-player format, the traditional Round 2 bye for top 32 seeds has been eliminated. All 128 competitors—including the world's top seeds—must play in Round 1 across 64 unmissable opening matches."
+  },
+  {
+    q: "Where can fans watch the 2026/27 World Championship draw live?",
+    a: "The draw ceremony will be broadcast live across Sky Sports News in the UK and streamed simultaneously worldwide on the official PDC YouTube channel and PDCTV."
+  },
+  {
+    q: "How are the four bracket quarters structured?",
+    a: "The 128-player bracket is divided into four distinct quarters of 32 players each. World No. 1 headlines Quarter 1, World No. 2 anchors Quarter 3, World No. 3 anchors Quarter 4, and World No. 4 heads Quarter 2, ensuring top-four seeds cannot meet until the semifinals."
+  },
+  {
+    q: "When will specific session schedules and player match times be confirmed?",
+    a: "The PDC and Sky Sports publish the daily session-by-session schedule (specifying afternoon vs evening sessions for each match) within 48 to 72 hours following the completion of the live draw."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-17T00:00:00+00:00",
+      "dateModified": "2026-10-17T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="draw-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">128-PLAYER BRACKET</span>
+        <span class="badge">TIMED DRAW GUIDE</span>
+      </div>
+      <h1>PDC World Darts Championship 2026/27 Draw Guide</h1>
+      <p class="hero-lead">
+        Everything you need to know about the historic 128-player draw: seeding cutoffs, no-bye format changes, live broadcast details, and quarter-by-quarter bracket projections.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC Draw Guidelines" 
+          lastVerified="October 2026" 
+          source="Professional Darts Corporation" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Total Field</span>
+          <span class="stat-value">128 Players</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Round 1 Ties</span>
+          <span class="stat-value">64 Matches</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Seeded Players</span>
+          <span class="stat-value">Top 32 (No Byes)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Key Announcement: No Byes -->
+      <section class="content-section">
+        <h2>The Major Structural Revolution: No Byes for Top 32 Seeds</h2>
+        <div class="callout alert-box">
+          <h3>🚨 Historic Format Shift</h3>
+          <p>
+            In all previous 96-player World Championships, the top 32 seeded players received a bye directly into Round 2. Under the expanded <strong>128-player format</strong> at Alexandra Palace's Great Hall, <strong>byes have been completely eliminated</strong>.
+          </p>
+          <p class="mb-0">
+            Every single competitor—including the defending champion and the World No. 1—must take the stage in Round 1. This generates <strong>64 blockbuster first-round ties</strong>, dramatically elevating early-round drama and television ratings.
+          </p>
+        </div>
+      </section>
+
+      <!-- Draw Ceremony & Broadcast Details -->
+      <section class="content-section">
+        <h2>Draw Date, Broadcast & Seeding Cutoff</h2>
+        <p>
+          The draw process operates on strict, verified timelines:
+        </p>
+        <div class="feature-box">
+          <ul>
+            <li><strong>Official Seeding Cutoff:</strong> Sunday evening in late November 2026, immediately following the final dart of the Players Championship Finals in Minehead.</li>
+            <li><strong>Live Draw Ceremony:</strong> Scheduled for late November 2026 (typically Monday afternoon at 16:30 GMT).</li>
+            <li><strong>Live Television Broadcast:</strong> Sky Sports News (UK & Ireland) and DAZN (Germany/Austria).</li>
+            <li><strong>Free Global Live Stream:</strong> Official PDC YouTube Channel and PDCTV.</li>
+            <li><strong>Schedule of Play Release:</strong> Daily afternoon/evening match allocations are finalized within 48 hours of the draw.</li>
+          </ul>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="draw-mid-ad" />
+
+      <!-- The Four Bracket Quarters -->
+      <section class="content-section">
+        <h2>The Four Bracket Quarters: Projected Seed Placement</h2>
+        <p>
+          The 128-player draw is pre-populated by mathematical seeding positions to ensure the highest-ranked players are separated until the latter stages:
+        </p>
+
+        <div class="quarters-grid">
+          <div class="quarter-card">
+            <span class="quarter-tag">TOP HALF</span>
+            <h3>Quarter 1 (Top Left)</h3>
+            <p><strong>Primary Seed Anchor:</strong> Seed 1 (World No. 1)</p>
+            <p><strong>Projected Top Seeds:</strong> Seed 32, Seed 16, Seed 17, Seed 8, Seed 25, Seed 9, Seed 24</p>
+            <p class="micro-text">Path leads to Quarter-Final 1; winner plays Quarter 2 winner in Semi-Final 1.</p>
+          </div>
+
+          <div class="quarter-card">
+            <span class="quarter-tag">TOP HALF</span>
+            <h3>Quarter 2 (Bottom Left)</h3>
+            <p><strong>Primary Seed Anchor:</strong> Seed 4 (World No. 4)</p>
+            <p><strong>Projected Top Seeds:</strong> Seed 29, Seed 13, Seed 20, Seed 5, Seed 28, Seed 12, Seed 21</p>
+            <p class="micro-text">Path leads to Quarter-Final 2; winner plays Quarter 1 winner in Semi-Final 1.</p>
+          </div>
+
+          <div class="quarter-card">
+            <span class="quarter-tag">BOTTOM HALF</span>
+            <h3>Quarter 3 (Top Right)</h3>
+            <p><strong>Primary Seed Anchor:</strong> Seed 2 (World No. 2)</p>
+            <p><strong>Projected Top Seeds:</strong> Seed 31, Seed 15, Seed 18, Seed 7, Seed 26, Seed 10, Seed 23</p>
+            <p class="micro-text">Path leads to Quarter-Final 3; winner plays Quarter 4 winner in Semi-Final 2.</p>
+          </div>
+
+          <div class="quarter-card">
+            <span class="quarter-tag">BOTTOM HALF</span>
+            <h3>Quarter 4 (Bottom Right)</h3>
+            <p><strong>Primary Seed Anchor:</strong> Seed 3 (World No. 3)</p>
+            <p><strong>Projected Top Seeds:</strong> Seed 30, Seed 14, Seed 19, Seed 6, Seed 27, Seed 11, Seed 22</p>
+            <p class="micro-text">Path leads to Quarter-Final 4; winner plays Quarter 3 winner in Semi-Final 2.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- First Round Mechanics Table -->
+      <section class="content-section">
+        <h2>Tournament Rounds & Match Lengths (Sets)</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Tournament Round</th>
+                <th>Total Matches</th>
+                <th>Format (Sets)</th>
+                <th>Target Dates</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Round 1 (Last 128)</strong></td>
+                <td>64 Matches</td>
+                <td>Best of 5 Sets</td>
+                <td>Dec 11 – Dec 20</td>
+              </tr>
+              <tr>
+                <td><strong>Round 2 (Last 64)</strong></td>
+                <td>32 Matches</td>
+                <td>Best of 5 Sets</td>
+                <td>Dec 20 – Dec 23</td>
+              </tr>
+              <tr>
+                <td><strong>Round 3 (Last 32)</strong></td>
+                <td>16 Matches</td>
+                <td>Best of 7 Sets</td>
+                <td>Dec 27 – Dec 29</td>
+              </tr>
+              <tr>
+                <td><strong>Round 4 (Last 16)</strong></td>
+                <td>8 Matches</td>
+                <td>Best of 7 Sets</td>
+                <td>Dec 29 – Dec 30</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-Finals (Last 8)</strong></td>
+                <td>4 Matches</td>
+                <td>Best of 9 Sets</td>
+                <td>Jan 1</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-Finals (Final 4)</strong></td>
+                <td>2 Matches</td>
+                <td>Best of 11 Sets</td>
+                <td>Jan 2</td>
+              </tr>
+              <tr>
+                <td><strong>World Championship Final</strong></td>
+                <td>1 Match</td>
+                <td>Best of 13 Sets</td>
+                <td>Jan 3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="content-section">
+        <h2>Frequently Asked Questions About the 2026/27 Draw</h2>
+        <div class="faq-accordion">
+          {faqItems.map(item => (
+            <div class="card faq-box">
+              <h4>{item.q}</h4>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Draw & Bracket Hubs</h3>
+        <ul class="widget-list">
+          <li><a href="/draw/">🎯 Main Bracket Tracker Hub</a></li>
+          <li><a href="/tournament/qualification-explained/">📋 128-Player Qualification Guide</a></li>
+          <li><a href="/schedule/">🗓️ Full 28-Session Timetable</a></li>
+          <li><a href="/tournament/prize-money/">💰 £5,000,000 Prize Money Guide</a></li>
+          <li><a href="/tickets/">🎟️ Official Tickets & Resale</a></li>
+          <li><a href="/venue/great-hall-move/">🏛️ Alexandra Palace Great Hall Move</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="draw-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Live Bracket Updates</h3>
+        <p>This bracket will automatically populate with live match results and averages as soon as play begins at Alexandra Palace.</p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .draw-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .draw-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff !important;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 0.4rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .stat-value {
+    font-size: 1.1rem;
+    color: #f59e0b;
+    font-weight: 800;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.6rem;
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+
+  .callout.alert-box {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 1.25rem;
+    border-radius: 6px;
+  }
+
+  .callout.alert-box h3 {
+    color: #991b1b;
+    margin-top: 0;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.alert-box p {
+    color: #7f1d1d;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .feature-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .feature-box ul {
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .feature-box li {
+    font-size: 0.92rem;
+    color: #334155;
+    margin-bottom: 0.5rem;
+  }
+
+  .quarters-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .quarter-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .quarter-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #0284c7;
+    background: #e0f2fe;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .quarter-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+
+  .quarter-card p {
+    font-size: 0.88rem;
+    color: #475569;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+
+  .micro-text {
+    font-size: 0.78rem !important;
+    color: #94a3b8 !important;
+    margin-top: 0.6rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1.25rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  th, td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.92rem;
+  }
+
+  th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    padding: 1.25rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .quarters-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

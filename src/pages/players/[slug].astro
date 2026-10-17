@@ -7,10 +7,12 @@ import VerificationBadge from '../../components/VerificationBadge.astro';
 import players from '../../data/players.json';
 
 export async function getStaticPaths() {
-  return players.map((p) => ({
-    params: { slug: p.slug },
-    props: { player: p }
-  }));
+  return players
+    .filter((p) => p.slug !== 'karel-sedlacek')
+    .map((p) => ({
+      params: { slug: p.slug },
+      props: { player: p }
+    }));
 }
 
 const { player } = Astro.props;

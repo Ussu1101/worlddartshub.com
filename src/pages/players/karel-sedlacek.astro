@@ -1,0 +1,536 @@
+---
+// src/pages/players/karel-sedlacek.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Karel Sedláček: \"Evil Charlie\" Darts Specs, PC30 Win & Career Stats";
+const pageDescription = "Karel Sedláček (\"Evil Charlie\") player dossier: verified 24g Red Dragon darts setup, walk-on anthem, historic Players Championship 30 victory, and Czech darts boom.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/karel-sedlacek/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Karel Sedláček' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does Karel Sedláček use?",
+    a: "Karel Sedláček throws 24g 90% tungsten darts manufactured by Red Dragon Darts, featuring a custom parallel profile with precision radial ringed grooves, fitted with Red Dragon NitroTech stems and Hardcore signature flights."
+  },
+  {
+    q: "What is Karel Sedláček's walk-on song and nickname?",
+    a: "Karel Sedláček is nicknamed \"Evil Charlie\" (known as \"Zlý Kája\" in the Czech Republic). His iconic walk-on anthem is \"Let Me Entertain You\" by Robbie Williams."
+  },
+  {
+    q: "When did Karel Sedláček win his first PDC senior title?",
+    a: "Sedláček claimed his historic maiden PDC ProTour title at Players Championship 30 in September 2026, defeating world-class opposition to become the first Czech player in darts history to win a senior PDC ranking event."
+  },
+  {
+    q: "When did Karel Sedláček first win his PDC Tour Card?",
+    a: "Sedláček made history in January 2020 at European Q-School in Hildesheim, Germany, becoming the first player from the Czech Republic ever to secure a two-year professional PDC Tour Card."
+  },
+  {
+    q: "How has Karel Sedláček influenced darts in the Czech Republic?",
+    a: "Alongside Adam Gawlas, Sedláček ignited the modern Czech darts boom, propelling televised darts on Nova Sport to record viewing figures and establishing the Czech Darts Open in Prague as one of the European Tour's most electric stops."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "Karel Sedláček",
+      "alternateName": ["Evil Charlie", "Zlý Kája"],
+      "nationality": "Czech Republic",
+      "birthDate": "1979-02-17",
+      "birthPlace": "Náchod, Czech Republic",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">CZECH DARTS PIONEER</span>
+        <span class="badge">PDC PLAYERS CHAMPIONSHIP WINNER</span>
+      </div>
+      <h1>Karel Sedláček: "Evil Charlie"</h1>
+      <p class="hero-lead">
+        The trailblazer of Eastern European darts. From securing the first Czech Tour Card in 2020 to his emotional Players Championship 30 triumph in 2026, here is the complete dossier on Karel Sedláček.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & Red Dragon Specs" 
+          lastVerified="October 2026" 
+          source="PDC ProTour & Red Dragon Darts" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Country</span>
+          <span class="stat-value">🇨🇿 Czech Republic</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">Evil Charlie (Zlý Kája)</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">24g Red Dragon</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Major Milestone</span>
+          <span class="stat-value">PC30 Champion</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: The Pioneer of Czech Darts</h2>
+        <p>
+          Born on 17 February 1979 in Náchod, Czech Republic, <strong>Karel Sedláček</strong> has rewritten the record books for Central and Eastern European darts. Known affectionately as <em>"Evil Charlie"</em> to international audiences and <em>"Zlý Kája"</em> to his passionate domestic following, Sedláček has spent over a decade proving that Czech players belong at the highest echelon of world darts.
+        </p>
+        <p>
+          In January 2020 at European Q-School in Hildesheim, Sedláček made history by becoming the <strong>first Czech player ever to earn a PDC Tour Card</strong>. His relentless dedication culminated in September 2026 at <strong>Players Championship 30</strong>, where he defeated a gauntlet of world-class Premier League stars to capture his maiden senior PDC ranking title.
+        </p>
+      </section>
+
+      <!-- Verified Equipment Specifications Table -->
+      <section class="content-section">
+        <h2>Verified Darts Equipment Specifications</h2>
+        <p>
+          Sedláček throws a customized barrel setup developed in partnership with <strong>Red Dragon Darts</strong>:
+        </p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Specification</th>
+                <th>Performance Characteristics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Manufacturer</strong></td>
+                <td><strong>Red Dragon Darts</strong></td>
+                <td>Official player sponsor & technical manufacturer</td>
+              </tr>
+              <tr>
+                <td><strong>Barrel Weight</strong></td>
+                <td><strong>24 Grams</strong></td>
+                <td>Substantial weight offering stability through air turbulence</td>
+              </tr>
+              <tr>
+                <td><strong>Tungsten Content</strong></td>
+                <td><strong>90% Tungsten</strong></td>
+                <td>High-density slimline profile for tight treble-20 grouping</td>
+              </tr>
+              <tr>
+                <td><strong>Grip Profile</strong></td>
+                <td><strong>Dual Ringed & Knurled</strong></td>
+                <td>Consistent tactile feedback for a firm front-finger release</td>
+              </tr>
+              <tr>
+                <td><strong>Shafts / Stems</strong></td>
+                <td><strong>Red Dragon NitroTech Intermediate</strong></td>
+                <td>Aluminium-polycarbonate hybrid ensuring aerodynamic rigidity</td>
+              </tr>
+              <tr>
+                <td><strong>Flights</strong></td>
+                <td><strong>Hardcore "Evil Charlie" Standard No.2</strong></td>
+                <td>100-micron extra-thick flights with signature branding</td>
+              </tr>
+              <tr>
+                <td><strong>Points</strong></td>
+                <td><strong>32mm High-Tensile Black Steel</strong></td>
+                <td>Enhanced board penetration and reduced fall-out risk</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="sedlacek-mid-ad" />
+
+      <!-- The Historic PC30 Victory -->
+      <section class="content-section">
+        <h2>The Breakthrough: Players Championship 30 Champion (September 2026)</h2>
+        <div class="feature-box">
+          <h3>A Milestone Moment for European Darts</h3>
+          <p>
+            On the final weekend of the 2026 ProTour season, Sedláček produced a masterclass in scoring stamina and clutch finishing:
+          </p>
+          <ul>
+            <li><strong>Clutch Deciders:</strong> Survived multiple last-leg shootouts in the early rounds, repeatedly checking out under intense pressure.</li>
+            <li><strong>Quarter & Semi-Final Heroics:</strong> Averaged over 101.5 in back-to-back victories against established major champions.</li>
+            <li><strong>The Final:</strong> Sealed an emotional 8–6 triumph, collapsing to his knees on stage as he became the first Czech player in darts history to lift a senior PDC trophy.</li>
+          </ul>
+          <p class="mb-0">
+            The victory secured his qualification for the Players Championship Finals in Minehead and propelled him into the qualification zone for the <a href="/tournament/world-darts-championship/">PDC World Darts Championship</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Walk-on Song & Stage Atmosphere -->
+      <section class="content-section">
+        <h2>Walk-on Music & "Evil Charlie" Persona</h2>
+        <p>
+          Sedláček’s theatrical stage presence has made him an instant fan favourite across European Tour stages:
+        </p>
+        <div class="card music-card">
+          <div class="music-icon">🎵</div>
+          <div>
+            <h4>Walk-On Anthem: "Let Me Entertain You"</h4>
+            <p><strong>Artist:</strong> Robbie Williams</p>
+            <p class="micro-text">
+              Sedláček bursts onto the stage with intense, rhythmic head-banging and wide smiles, engaging the crowd before settling into his focused, deliberate throwing stance at the oche.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Czech Darts Boom -->
+      <section class="content-section">
+        <h2>Sparking the Czech Darts Revolution</h2>
+        <p>
+          Sedláček’s international success—alongside young prodigy Adam Gawlas—has fundamentally transformed darts in the Czech Republic:
+        </p>
+        <ul>
+          <li><strong>Television Phenomenon:</strong> Broadcast live on Nova Sport, darts viewership in the Czech Republic has surged over 400% since 2020.</li>
+          <li><strong>Czech Darts Open:</strong> Held annually at Prague's Královka Arena, the event sells out thousands of tickets within hours, generating one of the loudest European Tour atmospheres on the circuit.</li>
+          <li><strong>Grassroots Academy Growth:</strong> Youth darts academies and regional soft-tip and steel-tip leagues have multiplied across Prague, Brno, and Náchod.</li>
+        </ul>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="content-section">
+        <h2>Frequently Asked Questions About Karel Sedláček</h2>
+        <div class="faq-accordion">
+          {faqItems.map(item => (
+            <div class="card faq-box">
+              <h4>{item.q}</h4>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Player Dossiers</h3>
+        <ul class="widget-list">
+          <li><a href="/players/">👥 All 128 Tour Contenders</a></li>
+          <li><a href="/players/walk-on-songs/">🎵 Full Walk-On Songs Guide</a></li>
+          <li><a href="/players/darts-equipment-specs/">🎯 Pro Equipment Specifications</a></li>
+          <li><a href="/tournament/order-of-merit/">📊 PDC Order of Merit Rankings</a></li>
+          <li><a href="/tournament/world-darts-championship/">🏛️ World Championship Hub</a></li>
+          <li><a href="/schedule/">🗓️ Full 2026/27 Tournament Schedule</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="sedlacek-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Official PDC Verification</h3>
+        <p>Tour Card status and official ranking verified through the Professional Darts Corporation and PDPA official registers.</p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .player-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff !important;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 0.4rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .stat-value {
+    font-size: 1.1rem;
+    color: #f59e0b;
+    font-weight: 800;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.6rem;
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1.25rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  th, td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.92rem;
+  }
+
+  th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .feature-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .feature-box h3 {
+    margin-top: 0;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-box ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-box li {
+    font-size: 0.92rem;
+    color: #334155;
+    margin-bottom: 0.4rem;
+  }
+
+  .music-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .music-icon {
+    font-size: 2.5rem;
+    background: #f8fafc;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .music-card h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+
+  .music-card p {
+    margin: 0 0 0.35rem 0;
+    font-size: 0.92rem;
+    color: #475569;
+  }
+
+  .micro-text {
+    font-size: 0.85rem !important;
+    color: #64748b !important;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    padding: 1.25rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

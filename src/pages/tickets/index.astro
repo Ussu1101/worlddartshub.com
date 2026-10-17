@@ -39,6 +39,22 @@ const ticketFaqSchema = {
         "@type": "Answer",
         "text": "The PDC and Alexandra Palace strictly void tickets resold on unauthorized secondary platforms like Viagogo, StubHub, or social media. Security scanners at the Palm Court entrance will cancel duplicated or unauthorized barcodes without refund."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What can I do if PDC World Darts Championship tickets are completely sold out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If general sales are sold out, monitor the official SeeTickets Fan-to-Fan resale platform daily, check for morning returned ticket drops between 9:00 AM and 11:00 AM, look for late production hold releases in early December, or explore remaining official hospitality packages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When are production hold and sponsor return tickets released?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDC and SeeTickets typically release unallocated sponsor, broadcast, and production hold tickets in early December once stage layouts and camera tracks are finalized."
+      }
     }
   ]
 };
@@ -160,6 +176,55 @@ const ticketFaqSchema = {
         <p class="table-micro">*Prices indicative of standard PDC face value tiers plus nominal booking fee. Family section discounts available on selected afternoon sessions.</p>
       </section>
 
+      <!-- Sold Out - Now What Section -->
+      <section class="tickets-section">
+        <h2>Sold Out — Now What? How to Legally Buy Returned Tickets</h2>
+        <p>
+          If you missed the initial PDCTV subscriber ballot and general public sale, all hope is not lost. Thousands of genuine tickets change hands legally every year between August and January through official channels. Here are the four verified pathways to secure tickets safely:
+        </p>
+
+        <div class="sold-out-grid">
+          <div class="sold-out-card">
+            <div class="card-icon">🔄</div>
+            <h3>1. The Official SeeTickets Fan-to-Fan Resale Portal</h3>
+            <p>
+              SeeTickets operates a proprietary fan-to-fan platform where ticket holders who can no longer attend list their tickets. Key rules:
+            </p>
+            <ul>
+              <li><strong>Face Value Cap:</strong> Sellers cannot mark up ticket prices; they are sold strictly at face value plus a nominal booking fee.</li>
+              <li><strong>Direct Digital Transfer:</strong> Once purchased, the original seller's barcode is instantly invalidated, and an authentic, fresh digital barcode is issued directly to your SeeTickets account.</li>
+              <li><strong>Peak Return Windows:</strong> Returns spike on Monday mornings and during the final 48 hours before match days as work and travel plans change.</li>
+            </ul>
+            <p><a href="/tickets/resale-returns/" class="text-accent font-semibold">Explore the complete Resale & Returns Guide →</a></p>
+          </div>
+
+          <div class="sold-out-card">
+            <div class="card-icon">⏰</div>
+            <h3>2. Daily Morning Return Drops (9:00 AM – 11:00 AM)</h3>
+            <p>
+              Customer service returns, cancelled fraudulent bulk orders, and processed group adjustments are fed back into live inventory daily. Bookmark the official SeeTickets portal and refresh between <strong>9:00 AM and 11:00 AM UK time</strong> on weekday mornings.
+            </p>
+          </div>
+
+          <div class="sold-out-card">
+            <div class="card-icon">🏗️</div>
+            <h3>3. Late December Production Hold Releases</h3>
+            <p>
+              During early December, the PDC broadcast and production teams complete the final physical set construction inside Alexandra Palace. Unused camera-kill allocations, press seats, and unused sponsor allocations are released back to the public, creating a major secondary buying window.
+            </p>
+          </div>
+
+          <div class="sold-out-card">
+            <div class="card-icon">🥂</div>
+            <h3>4. Official Hospitality Upgrades</h3>
+            <p>
+              When standard floor and tiered tickets are exhausted, fans often overlook official VIP and hospitality packages. While priced higher, packages include guaranteed floor table seats, premium dining in the Palm Court, and complimentary drinks packages.
+            </p>
+            <p><a href="/tickets/hospitality-packages/" class="text-accent font-semibold">View Hospitality & VIP Packages →</a></p>
+          </div>
+        </div>
+      </section>
+
       <!-- Crucial Anti-Tout Warning -->
       <section class="tickets-section">
         <div class="callout warning-box">
@@ -199,6 +264,7 @@ const ticketFaqSchema = {
           <li><a href="/tickets/resale-returns/">🔄 Official See Tickets Resale Guide</a></li>
           <li><a href="/tickets/hospitality-packages/">🥂 Hospitality & VIP Packages</a></li>
           <li><a href="/venue/great-hall-seating-plan/">🪑 Tables vs Tiered Seats Guide</a></li>
+          <li><a href="/venue/great-hall-move/">🏛️ Great Hall Move (2026/27)</a></li>
           <li><a href="/venue/accessibility/">♿ Accessible & Companion Tickets</a></li>
           <li><a href="/venue/">🏛️ Alexandra Palace Handbook</a></li>
           <li><a href="/travel/">🚇 Getting to Alexandra Palace</a></li>
@@ -233,7 +299,7 @@ const ticketFaqSchema = {
 
   .tickets-hero h1 {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: #ffffff !important;
     margin-bottom: 0.75rem;
   }
 
@@ -291,6 +357,7 @@ const ticketFaqSchema = {
   .step-content h3 {
     margin-top: 0;
     font-size: 1.15rem;
+    color: #0f172a;
     margin-bottom: 0.25rem;
   }
 
@@ -306,6 +373,42 @@ const ticketFaqSchema = {
     color: #475569;
     margin-bottom: 0;
     line-height: 1.5;
+  }
+
+  .sold-out-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .sold-out-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .sold-out-card h3 {
+    margin-top: 0.5rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+
+  .sold-out-card p, .sold-out-card li {
+    font-size: 0.88rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  .sold-out-card ul {
+    padding-left: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
   }
 
   .table-micro {
@@ -342,12 +445,16 @@ const ticketFaqSchema = {
 
   .faq-box {
     padding: 1.25rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
   }
 
   .faq-box h4 {
     margin-top: 0;
     margin-bottom: 0.4rem;
     font-size: 1.05rem;
+    color: #0f172a;
   }
 
   .faq-box p {
@@ -402,6 +509,9 @@ const ticketFaqSchema = {
 
   @media (max-width: 1024px) {
     .tickets-layout {
+      grid-template-columns: 1fr;
+    }
+    .sold-out-grid {
       grid-template-columns: 1fr;
     }
   }

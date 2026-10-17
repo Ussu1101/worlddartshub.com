@@ -973,5 +973,62 @@
     "tier": "A",
     "last_verified": "2026-10-04",
     "status": "verified"
+  },
+  {
+    "player_id": "karel-sedlacek",
+    "name": "Karel Sedláček",
+    "slug": "karel-sedlacek",
+    "nickname": "Evil Charlie / Zlý Kája",
+    "nationality": "Czech Republic",
+    "country_code": "CZ",
+    "date_of_birth": "1979-02-17",
+    "birthplace": "Náchod, Czech Republic",
+    "pdc_order_of_merit_rank": "PDC ProTour Winner",
+    "current_rank_verified": "October 2026",
+    "playing_hand": "Right-handed",
+    "walk_on_song": "Let Me Entertain You by Robbie Williams",
+    "walk_on_artist": "Robbie Williams",
+    "walk_on_atmosphere": "High-octane stadium anthem with enthusiastic theatrical walk-ons and crowd engagement.",
+    "career_overview": "Karel Sedláček is the pioneer of Czech professional darts. In January 2020 he became the first Czech player to earn a PDC Tour Card. His crowning achievement came in September 2026 at Players Championship 30, where he stormed to his maiden senior PDC ProTour title.",
+    "major_pdc_titles": [
+      "Players Championship 30 Champion (2026)",
+      "First Czech PDC Tour Card Holder (2020)",
+      "PDC World Darts Championship Qualifier (2019, 2021)",
+      "World Cup of Darts Quarter-Finalist (Czech Republic)"
+    ],
+    "world_championship_record": {
+      "debut_year": "2019",
+      "best_finish": "Round 1 (2019, 2021)",
+      "total_appearances": 2,
+      "matches_played": 2,
+      "matches_won": 0,
+      "history_highlights": [
+        "2019: Alexandra Palace debut against Keegan Brown",
+        "2021: First-round clash against Ryan Joyce (narrow 2-3 set defeat)"
+      ]
+    },
+    "career_prize_money": {
+      "official_pdc_earnings": "£280,000+ career PDC prize money",
+      "order_of_merit_contribution": "Bolstered by £15,000 winner's cheque from Players Championship 30",
+      "financial_note": "Official PDC prize money only. Commercial endorsements and exhibition appearances are separate."
+    },
+    "career_prize_money_estimate": "£280,000+",
+    "nine_darters_televised": 0,
+    "notable_nine_darters": [],
+    "equipment": {
+      "manufacturer": "Red Dragon Darts",
+      "brand_model": "Red Dragon Karel Sedláček 'Evil Charlie' Original",
+      "barrel_weight_grams": "24g",
+      "barrel_tungsten_pct": "90% Tungsten",
+      "barrel_profile": "Precision parallel profile with radial ringed grooves and fine micro-knurling",
+      "shafts": "Red Dragon NitroTech Intermediate",
+      "flights": "Hardcore Signature Evil Charlie Standard No.2",
+      "points": "32mm High-Tensile Black Steel Points",
+      "verified_source": "Red Dragon Darts Official Player Specification Registry"
+    },
+    "playing_style": "Deliberate, rhythmic setup with high front-finger tactile grip and exceptional clutch doubling on Double 20 and Double 16.",
+    "tier": "B",
+    "last_verified": "2026-10-17",
+    "status": "verified"
   }
 ]

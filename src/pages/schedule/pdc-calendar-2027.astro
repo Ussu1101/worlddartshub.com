@@ -1,0 +1,564 @@
+---
+// src/pages/schedule/pdc-calendar-2027.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "PDC Darts Calendar 2027: Full Schedule of Majors, ProTour & European Tour";
+const pageDescription = "Authoritative guide to the 2027 PDC darts calendar. Dates, venues, and formats for the Premier League, World Matchplay, Grand Slam, European Tour, and World Championship.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/schedule/pdc-calendar-2027/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Schedule', url: '/schedule/' },
+  { name: 'PDC Calendar 2027', url: '/schedule/pdc-calendar-2027/' }
+];
+
+const faqItems = [
+  {
+    q: "When does the 2027 PDC darts season officially begin?",
+    a: "The 2027 season kicks off in early January with Qualifying School (Q-School) held simultaneously in Milton Keynes (UK) and Kalkar (Europe), followed immediately by the opening Players Championship floor events and The Masters."
+  },
+  {
+    q: "Which PDC tournaments in 2027 are ranked for the Order of Merit?",
+    a: "All 30 Players Championship events, the 14 European Tour tournaments, UK Open, World Matchplay, World Grand Prix, European Championship, Grand Slam of Darts, Players Championship Finals, and World Darts Championship count towards the two-year rolling PDC Order of Merit. The Premier League, World Cup of Darts, and Masters are unranked invitationals."
+  },
+  {
+    q: "Where will the 2027 World Matchplay be held?",
+    a: "The 2027 World Matchplay will take place in July at its iconic spiritual home, the Empress Ballroom at the Winter Gardens in Blackpool, England."
+  },
+  {
+    q: "How many European Tour events are scheduled for 2027?",
+    a: "The PDC European Tour features 14 scheduled three-day events spanning Germany, Austria, Belgium, the Netherlands, Hungary, Switzerland, and the Czech Republic, offering vital ranking prize money and European Championship qualification."
+  },
+  {
+    q: "When will the 2027/28 PDC World Darts Championship begin?",
+    a: "The 2027/28 PDC World Darts Championship will commence in mid-December 2027 and conclude with the final in early January 2028 at Alexandra Palace's Great Hall in London."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-17T00:00:00+00:00",
+      "dateModified": "2026-10-17T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="calendar-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">PDC TOUR TIMETABLE</span>
+        <span class="badge">2027 SEASON GUIDE</span>
+      </div>
+      <h1>PDC Darts Calendar 2027: Comprehensive Season Guide</h1>
+      <p class="hero-lead">
+        From Q-School grit in January to the historic World Matchplay at Blackpool's Winter Gardens and the year-ending spectacle at Alexandra Palace, here is the complete 2027 PDC darts roadmap.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="PDC Official Scheduling Cycles" 
+          lastVerified="October 2026" 
+          source="Professional Darts Corporation & PDPA" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Televised Majors</span>
+          <span class="stat-value">11 Major Tournaments</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">European Tour</span>
+          <span class="stat-value">14 Tour Events</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">ProTour Floor</span>
+          <span class="stat-value">30 Players Championships</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Year-at-a-glance Table -->
+      <section class="content-section">
+        <h2>2027 Major Darts Tournaments at a Glance</h2>
+        <p>
+          Below is the chronological roadmap of premier televised tournaments and flagship championships across the 2027 professional calendar:
+        </p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Dates / Window</th>
+                <th>Tournament</th>
+                <th>Venue & Location</th>
+                <th>Status / Ranking</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Early January 2027</strong></td>
+                <td>PDC Qualifying School (UK & European)</td>
+                <td>Milton Keynes (UK) & Kalkar (Germany)</td>
+                <td>Tour Card Qualifying</td>
+              </tr>
+              <tr>
+                <td><strong>Late Jan – Early Feb 2027</strong></td>
+                <td>The Masters</td>
+                <td>Marshall Arena, Milton Keynes</td>
+                <td>Non-ranking Invitational (Top 24)</td>
+              </tr>
+              <tr>
+                <td><strong>Feb – May 2027 (Thursdays)</strong></td>
+                <td><a href="/tournament/premier-league-prize-money/">Premier League Darts</a></td>
+                <td>17 Arenas (UK, Ireland, Europe; The O2 Finals)</td>
+                <td>Non-ranking Invitational (£1.25M Purse)</td>
+              </tr>
+              <tr>
+                <td><strong>Early March 2027</strong></td>
+                <td>UK Open ("The FA Cup of Darts")</td>
+                <td>Butlin's Resort, Minehead</td>
+                <td>Ranked Major (160 Players, Open Draw)</td>
+              </tr>
+              <tr>
+                <td><strong>June 2027</strong></td>
+                <td>World Cup of Darts</td>
+                <td>Eissporthalle, Frankfurt, Germany</td>
+                <td>Non-ranking (40 Nations, Doubles)</td>
+              </tr>
+              <tr>
+                <td><strong>July 2027</strong></td>
+                <td>World Matchplay & Women's Matchplay</td>
+                <td>Winter Gardens, Blackpool</td>
+                <td>Ranked Major (£800k Purse, Cutoff Event)</td>
+              </tr>
+              <tr>
+                <td><strong>October 2027</strong></td>
+                <td>World Grand Prix</td>
+                <td>Mattioli Arena, Leicester</td>
+                <td>Ranked Major (Double-In Double-Out)</td>
+              </tr>
+              <tr>
+                <td><strong>Late October 2027</strong></td>
+                <td>European Championship</td>
+                <td>Westfalenhallen, Dortmund, Germany</td>
+                <td>Ranked Major (Top 32 European Tour)</td>
+              </tr>
+              <tr>
+                <td><strong>November 2027</strong></td>
+                <td>Grand Slam of Darts</td>
+                <td>WV Active Aldersley, Wolverhampton</td>
+                <td>Ranked Major (Group Stage + Knockout)</td>
+              </tr>
+              <tr>
+                <td><strong>Late November 2027</strong></td>
+                <td>Players Championship Finals</td>
+                <td>Butlin's Resort, Minehead</td>
+                <td>Ranked Major (Top 64 Floor Qualifiers)</td>
+              </tr>
+              <tr>
+                <td><strong>Dec 2027 – Jan 2028</strong></td>
+                <td><a href="/tournament/world-darts-championship/">PDC World Darts Championship</a></td>
+                <td>Alexandra Palace Great Hall, London</td>
+                <td>Ranked Flagship Major (£5,000,000 Purse)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="cal-mid-ad" />
+
+      <!-- The European Tour 2027 -->
+      <section class="content-section">
+        <h2>The 2027 PDC European Tour: 14 Continent-Wide Showcases</h2>
+        <p>
+          The European Tour continues its explosive expansion in 2027, featuring 14 three-day weekend festivals across Continental Europe. Each tournament awards £175,000 in total prize money (£30,000 to the champion), directly feeding the PDC Order of Merit and qualifying players for the European Championship in Dortmund.
+        </p>
+        <div class="feature-box">
+          <h3>Confirmed Host Nations & Iconic Stops:</h3>
+          <ul>
+            <li><strong>Germany (6 Stops):</strong> Munich (German Darts Grand Prix), Sindelfingen (European Darts Grand Prix), Riesa (International Darts Open), Kiel, Hildesheim, and Leverkusen.</li>
+            <li><strong>Austria (2 Stops):</strong> Graz (Austrian Darts Open) and Vienna.</li>
+            <li><strong>Belgium (2 Stops):</strong> Wieze (Belgian Darts Open) and Antwerp (Flanders Darts Trophy).</li>
+            <li><strong>Central & Eastern Europe:</strong> Budapest (Hungarian Darts Trophy), Prague (Czech Darts Open), and Basel (Swiss Darts Trophy).</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ProTour & Secondary Circuits -->
+      <section class="content-section">
+        <h2>ProTour Floor Events & Secondary Circuits</h2>
+        <p>
+          Behind the bright TV lights lies the engine room of the professional game:
+        </p>
+        <div class="grid-2 two-col-cards">
+          <div class="card detail-card">
+            <h4>Players Championship (30 Events)</h4>
+            <p>
+              Staged across midweek double-headers in Wigan, Leicester, and Hildesheim. All 128 Tour Card holders compete behind closed doors for £125,000 per event. The top 64 players on the PC Order of Merit qualify for Minehead.
+            </p>
+          </div>
+          <div class="card detail-card">
+            <h4>Challenge & Development Tours</h4>
+            <p>
+              The Winmau Challenge Tour offers non-Tour Card holders a second chance, while the Development Tour caters to young talent aged 16–23. Both tours award two direct two-year Tour Cards and spots at the World Darts Championship.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Women's Series Circuit -->
+      <section class="content-section">
+        <h2>PDC Women’s Series 2027 Expansion</h2>
+        <p>
+          The PDC Women's Series encompasses 24 events across six standalone weekends, offering direct pathways to the Women's World Matchplay in Blackpool, the Grand Slam of Darts in Wolverhampton, and three qualification spots at the Alexandra Palace World Championship. Learn more in our dedicated <a href="/tournament/pdc-womens-series/">PDC Women's Series Guide</a>.
+        </p>
+      </section>
+
+      <!-- Broadcast Guide -->
+      <section class="content-section">
+        <h2>How to Watch the 2027 PDC Tour Live</h2>
+        <p>
+          Global darts coverage is delivered through an extensive network of broadcast partners:
+        </p>
+        <ul>
+          <li><strong>UK & Ireland:</strong> Sky Sports (World Championship, Premier League, World Matchplay, World Grand Prix, Grand Slam); ITV Sport (UK Open, The Masters, European Championship, Players Championship Finals, World Series Finals).</li>
+          <li><strong>Germany, Austria & Switzerland:</strong> DAZN and Sport1.</li>
+          <li><strong>Netherlands:</strong> Viaplay.</li>
+          <li><strong>Rest of the World:</strong> PDCTV live streaming for all ProTour floor events, European Tour stages, and international broadcast feeds.</li>
+        </ul>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="content-section">
+        <h2>Frequently Asked Questions About the 2027 PDC Calendar</h2>
+        <div class="faq-accordion">
+          {faqItems.map(item => (
+            <div class="card faq-box">
+              <h4>{item.q}</h4>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Schedule & Event Hubs</h3>
+        <ul class="widget-list">
+          <li><a href="/schedule/">🗓️ World Championship 2026/27 Schedule</a></li>
+          <li><a href="/tournament/premier-league-prize-money/">🏆 Premier League Prize Money</a></li>
+          <li><a href="/tournament/prize-money/">💰 World Championship £5M Purse</a></li>
+          <li><a href="/tournament/order-of-merit/">📊 PDC Order of Merit Rankings</a></li>
+          <li><a href="/tournament/pdc-womens-series/">👩 PDC Women's Series Guide</a></li>
+          <li><a href="/tournament/modus-super-series/">📺 MODUS Super Series System</a></li>
+          <li><a href="/tickets/">🎟️ Official Tickets & Ballot Guide</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="cal-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Calendar Verification</h3>
+        <p>All dates aligned with official PDC scheduling frameworks and subject to standard broadcast fixture confirmation.</p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .calendar-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .calendar-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff !important;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 0.4rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .stat-value {
+    font-size: 1.1rem;
+    color: #f59e0b;
+    font-weight: 800;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.6rem;
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1.25rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  th, td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.92rem;
+  }
+
+  th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .feature-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .feature-box h3 {
+    margin-top: 0;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-box ul {
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .feature-box li {
+    font-size: 0.92rem;
+    color: #334155;
+    margin-bottom: 0.4rem;
+  }
+
+  .two-col-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .detail-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .detail-card h4 {
+    margin-top: 0;
+    color: #0f172a;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .detail-card p {
+    font-size: 0.9rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .faq-box {
+    padding: 1.25rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .widget-list a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .two-col-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

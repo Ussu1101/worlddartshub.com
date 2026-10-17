@@ -1,0 +1,513 @@
+---
+// src/pages/venue/great-hall-move.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Ally Pally Great Hall Move (2026/27): What Attending Fans Must Know";
+const pageDescription = "Everything changing as the World Darts Championship moves from West Hall to the Great Hall in 2026/27. Capacity surge to 5,000+, seating, sightlines, and bars.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/venue/great-hall-move/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Venue Guide', url: '/venue/' },
+  { name: 'Great Hall Move Explainer', url: '/venue/great-hall-move/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-17T00:00:00+00:00",
+      "dateModified": "2026-10-17T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Venue Guide",
+          "item": `${siteUrl}/venue/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Great Hall Move Explainer",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is the World Darts Championship moving to the Great Hall?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tournament is moving from Alexandra Palace's West Hall to the Great Hall due to unprecedented global ticket demand. The Great Hall increases per-session capacity from approximately 3,200 to over 5,000 spectators, lifting total tournament attendance past 180,000 across the three-week event."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long will the darts remain in the Great Hall at Alexandra Palace?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Professional Darts Corporation (PDC) and Alexandra Palace signed an exclusive five-year agreement securing the Great Hall as the host venue of the World Darts Championship through to at least 2031."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the move make it easier to see the dartboard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The physical dartboard remains regulation size (45 cm), but the Great Hall installation features an expanded matrix of ultra-high-definition ceiling-hung and stage-side LED screens, ensuring all 5,000 spectators have direct, unobstructed digital sightlines of every thrown dart."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Great Hall move mean more table tickets or tiered tickets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both ticket categories increase in volume, but the largest proportion of new capacity comes via expanded, steeper raked tiered grandstands flanking the hall, giving more fans clear sightlines above floor table level."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the atmosphere change in the larger 5,000-capacity hall?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Acoustic modeling confirms the cavernous Victorian Great Hall retains reverberation exceptionally well. With over 5,000 fans singing and chanting, the arena volume and collective roar are noticeably louder and more intense than the previous 3,200 West Hall setup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do spectators enter the Great Hall on tournament days?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Spectators enter through the main Palm Court Entrance of Alexandra Palace. Security arches, bag inspection lanes (maximum 30cm x 20cm x 10cm), and See Tickets digital barcode scanners remain centered in Palm Court before fans enter the Great Hall arena."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">VENUE EXPANSION</span>
+        <span class="badge">HISTORIC 2026/27 MOVE</span>
+      </div>
+      <h1>Ally Pally Great Hall Move (2026/27): What Attending Fans Must Know</h1>
+      <p class="lead-text">
+        After nearly two decades in the historic West Hall, the PDC World Darts Championship makes its monumental transition into Alexandra Palace’s cavernous Great Hall. From expanded 5,000+ session capacities to upgraded big-screen arrays, wider bars, and a deal securing the venue to 2031, here is everything attending fans need to know.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="Alexandra Palace Great Hall Move, Venue Partnership to 2031 & Operational Specifications" />
+
+      <!-- The Big Announcement Section -->
+      <section class="content-card">
+        <h2>The Landmark Shift: West Hall to Great Hall (2026/27–2031)</h2>
+        <p>
+          Since relocating from the Circus Tavern in Purfleet at the end of 2007, the PDC World Darts Championship called Alexandra Palace’s West Hall its home. The West Hall earned legendary status as the loudest and most atmospheric auditorium in global sports entertainment, seating approximately 3,200 fans per session.
+        </p>
+        <p>
+          However, ticket demand exploded following record broadcast viewership and global phenomena like Luke Littler and Luke Humphries. With over 300,000 fans routinely registering for ballot tickets, the PDC and Alexandra Palace negotiated a historic <strong>five-year contract extension</strong>, securing Ally Pally as the spiritual home of the World Darts Championship through to at least <strong>2031</strong> and facilitating the permanent move into the colossal <strong>Great Hall</strong> starting with the 2026/27 tournament.
+        </p>
+      </section>
+
+      <!-- Key Numbers Section -->
+      <section class="content-card">
+        <h2>The Numbers That Matter: Capacity &amp; Scope</h2>
+        <p>
+          The move represents the single largest expansion in the history of televised darts:
+        </p>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <div class="comparison-header">
+              <span class="badge">HISTORIC WEST HALL (2007–2025/26)</span>
+              <h3>Previous Arena</h3>
+            </div>
+            <ul>
+              <li><strong>Session Capacity:</strong> ~3,200 spectators</li>
+              <li><strong>Total Tournament Tickets:</strong> ~90,000 fans across 28 sessions</li>
+              <li><strong>Floor Footprint:</strong> Approximately 2,500 square meters</li>
+              <li><strong>Ticket Ballot Success Rate:</strong> Less than 25% of applications</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card highlight-card">
+            <div class="comparison-header">
+              <span class="badge badge-accent">EXPANDED GREAT HALL (2026/27 ONWARDS)</span>
+              <h3>New 5,000+ Crucible</h3>
+            </div>
+            <ul>
+              <li><strong>Session Capacity:</strong> Over <strong>5,000 spectators</strong> per session</li>
+              <li><strong>Total Tournament Tickets:</strong> Over <strong>180,000 fans</strong> across the championship</li>
+              <li><strong>Floor Footprint:</strong> Expansive 4,000+ square meter Victorian hall</li>
+              <li><strong>Contract Security:</strong> Guaranteed at Ally Pally through 2031</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- West Hall vs Great Hall Detailed Matrix -->
+      <section class="content-card">
+        <h2>West Hall vs Great Hall: What Changes for Attending Fans?</h2>
+        <p>
+          Moving from a 3,200-seater hall to a 5,000+ auditorium changes virtually every aspect of the in-venue experience:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Operational Aspect</th>
+                <th>West Hall (Previous Era)</th>
+                <th>Great Hall (2026/27 Onwards)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Auditorium Size</strong></td>
+                <td>Compact, intimate Victorian exhibition hall (~2,500 m²)</td>
+                <td>Colossal hall spanning over 4,000 m² with soaring barrel-vaulted ceiling</td>
+              </tr>
+              <tr>
+                <td><strong>Tiered Grandstand Rake</strong></td>
+                <td>Flatter bleachers with restricted rear elevation</td>
+                <td>Steeper, purpose-built raked stadium stands with superior sightlines</td>
+              </tr>
+              <tr>
+                <td><strong>Table Configuration</strong></td>
+                <td>Crowded floor rows with narrow gangways</td>
+                <td>Spaced floor zones (Zone A &amp; Zone B) with wider service walkways</td>
+              </tr>
+              <tr>
+                <td><strong>Digital Big-Screen Matrix</strong></td>
+                <td>2 primary stage-side screens and 2 mid-hall displays</td>
+                <td>Multi-tiered ultra-HD ceiling-hung arrays and high-lumen stage towers</td>
+              </tr>
+              <tr>
+                <td><strong>Acoustic Dynamics</strong></td>
+                <td>Punchy, immediate echo in a closed box</td>
+                <td>Massive natural resonance that magnifies 5,000 voices during chants</td>
+              </tr>
+              <tr>
+                <td><strong>Bar &amp; Concourse Flow</strong></td>
+                <td>High congestion around flank bars between sets</td>
+                <td>Dual-flank full-length service counters and wider circulation paths</td>
+              </tr>
+              <tr>
+                <td><strong>Climate &amp; Ventilation</strong></td>
+                <td>Tended to become very warm and humid during evening sessions</td>
+                <td>Modern industrial cooling units and vast air volume overhead</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Sightlines and Video Screens -->
+      <section class="content-card">
+        <h2>Sightlines, Acoustics &amp; Giant Screen Engineering</h2>
+        <p>
+          The most common question from regular attendees is: <em>"Will the dartboard feel too far away in a 5,000-seat hall?"</em>
+        </p>
+        <p>
+          In reality, darts has long been an arena screen-viewing sport. Because a regulation board is only 45 cm in diameter, naked-eye visibility of individual trebles disappears beyond the third row of tables regardless of hall size. To ensure the Great Hall delivers crystal-clear viewing for all 5,000 spectators, the PDC and technical broadcast partners implemented several critical upgrades:
+        </p>
+        <div class="feature-box">
+          <h3>Screen &amp; Sound Enhancements</h3>
+          <ul>
+            <li><strong>Central Overhead LED Cubes:</strong> Suspended from the historic iron roof arches, high-resolution multi-sided LED cubes display real-time dart-by-dart telemetry directly above the tiered grandstands.</li>
+            <li><strong>Stage Towers:</strong> Flanking the raised oche, colossal 4K digital video walls provide life-sized close-ups of player release mechanics, double attempts, and emotional celebrations.</li>
+            <li><strong>Acoustic Resonance:</strong> The Great Hall's Victorian brickwork and grand arches retain sound exceptionally well. Chants like <em>"Stand up if you love the darts"</em> produce an earth-shaking wall of sound that dwarfs any previous darts experience.</li>
+          </ul>
+        </div>
+        <p>
+          For a full breakdown of choosing between floor tables and elevated grandstand seating in the new layout, read our <a href="/venue/best-seats/">Best Seats at Ally Pally: Tables vs Tiered Guide</a>.
+        </p>
+      </section>
+
+      <!-- Food, Drink and Bars -->
+      <section class="content-card">
+        <h2>Bars, Street Food &amp; Cashless Operations</h2>
+        <p>
+          Managing thirst and appetite for 5,000 fans per session requires military-grade logistics. The Great Hall layout introduces major improvements to food and drink flow:
+        </p>
+        <ul>
+          <li><strong>Extended Bar Counters:</strong> Continuous draught service bars flank both long sides of the Great Hall, drastically cutting queue times during mid-session commercial breaks.</li>
+          <li><strong>Four-Pint Pitchers:</strong> The popular reusable 4-pint group pitcher system continues, reducing individual trips to the bar for table groups.</li>
+          <li><strong>Palm Court Food Village:</strong> The historic Palm Court serves as the primary pre-session congregation zone, hosting an expanded street food market featuring gourmet burgers, wood-fired pizza, hog roasts, and vegetarian/vegan selections.</li>
+          <li><strong>100% Cashless:</strong> Every bar, food stall, and merchandise concession strictly accepts contactless and chip-and-pin card payments only (Apple Pay, Google Pay, Visa, Mastercard). No cash is accepted anywhere inside the venue.</li>
+        </ul>
+        <p>
+          Explore full drink menus, pitcher policies, and nearby pubs in our <a href="/venue/food-drink-bars/">Food, Drink &amp; Bars Guide</a>.
+        </p>
+      </section>
+
+      <!-- Ingress, Security and Transport -->
+      <section class="content-card">
+        <h2>Arrival, Ingress &amp; Transport Advice for 5,000 Fans</h2>
+        <p>
+          With 5,000 spectators arriving at the top of Alexandra Palace Hill for every session, transit planning is vital:
+        </p>
+        <div class="feature-box">
+          <h3>Arrival Checklist</h3>
+          <ul>
+            <li><strong>Primary Entrance:</strong> All ticket holders enter via the <strong>Palm Court Entrance</strong>. Doors open 90 minutes prior to match play (11:00 for 12:30 afternoon sessions; 17:30 for 19:00 evening sessions).</li>
+            <li><strong>Bag Policy (30cm x 20cm x 10cm):</strong> Security screening is rigorous. Only small handbags are permitted inside the arena. Large rucksacks, suitcases, and luggage are barred. Check our <a href="/venue/security-bag-policy/">Security &amp; Bag Policy Guide</a> for left-luggage details.</li>
+            <li><strong>Public Transit:</strong> The dedicated <strong>W3 bus</strong> operates frequent shuttles from Finsbury Park (Victoria Line / Piccadilly Line / National Rail) and Wood Green (Piccadilly Line) directly to the Palm Court gates. Alexandra Palace National Rail station is a 10-minute uphill walk.</li>
+          </ul>
+        </div>
+        <p>
+          Consult our dedicated <a href="/travel/tube-train-routes/">London Tube, Train &amp; Bus Routes Guide</a> for step-by-step itineraries from central London and major airports.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions: Great Hall Move</h2>
+        
+        <div class="faq-item">
+          <h3>Why is the World Darts Championship moving to the Great Hall?</h3>
+          <p>
+            The tournament is moving from Alexandra Palace's West Hall to the Great Hall due to unprecedented global ticket demand. The Great Hall increases per-session capacity from approximately 3,200 to over 5,000 spectators, lifting total tournament attendance past 180,000 across the three-week event.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How long will the darts remain in the Great Hall at Alexandra Palace?</h3>
+          <p>
+            The Professional Darts Corporation (PDC) and Alexandra Palace signed an exclusive five-year agreement securing the Great Hall as the host venue of the World Darts Championship through to at least 2031.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Will the move make it easier to see the dartboard?</h3>
+          <p>
+            The physical dartboard remains regulation size (45 cm), but the Great Hall installation features an expanded matrix of ultra-high-definition ceiling-hung and stage-side LED screens, ensuring all 5,000 spectators have direct, unobstructed digital sightlines of every thrown dart.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does the Great Hall move mean more table tickets or tiered tickets?</h3>
+          <p>
+            Both ticket categories increase in volume, but the largest proportion of new capacity comes via expanded, steeper raked tiered grandstands flanking the hall, giving more fans clear sightlines above floor table level.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Will the atmosphere change in the larger 5,000-capacity hall?</h3>
+          <p>
+            Acoustic modeling confirms the cavernous Victorian Great Hall retains reverberation exceptionally well. With over 5,000 fans singing and chanting, the arena volume and collective roar are noticeably louder and more intense than the previous 3,200 West Hall setup.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do spectators enter the Great Hall on tournament days?</h3>
+          <p>
+            Spectators enter through the main Palm Court Entrance of Alexandra Palace. Security arches, bag inspection lanes (maximum 30cm x 20cm x 10cm), and See Tickets digital barcode scanners remain centered in Palm Court before fans enter the Great Hall arena.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .page-header h1 {
+    color: #ffffff !important;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 850px;
+    margin: 0;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .content-card p, .content-card li {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .feature-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .comparison-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .highlight-card {
+    border: 2px solid var(--color-brand-accent, #c99700);
+    background: #fffbeb;
+  }
+  .comparison-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .comparison-header h3 {
+    margin: 0.5rem 0 0 0;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>
