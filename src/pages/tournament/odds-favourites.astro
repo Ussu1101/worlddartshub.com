@@ -234,28 +234,43 @@ const articleSchema = {
           Heading into Alexandra Palace, the tournament market typically coalesces around a compact group of elite contenders whose seasonal metrics satisfy the rigorous demands of set play:
         </p>
 
-        <div class="ascii-box">
-          <pre><code>+-------------------------------------------------------------+
-|               THE ELITE TIER OF TITLE CONTENDERS            |
-+-------------------------------------------------------------+
-|  1. Luke Humphries ("Cool Hand Luke")                       |
-|     • Defending World Champion &amp; Official World No. 1       |
-|     • Unshakeable scoring rhythm; mastered long-format sets  |
-|     • Triple Crown winner (World Champ, Matchplay, PL)      |
-+-------------------------------------------------------------+
-|  2. Luke Littler ("The Nuke")                               |
-|     • Historic 2024 finalist at 16; 2024 Premier League Champ|
-|     • Highest ceiling for 180s and 100+ match averages       |
-|     • Fearless finishing on big stage checkout targets      |
-+-------------------------------------------------------------+
-|  3. Michael van Gerwen ("Mighty Mike")                      |
-|     • Three-time World Champion; 7-time Premier League Champ|
-|     • Perennial tournament threat with unmatched stage aura |
-+-------------------------------------------------------------+
-|  4. Gerwyn Price ("The Iceman")                             |
-|     • 2021 World Champion; ferocious competitor in set play |
-|     • High scoring ceiling when crowd energy aligns         |
-+-------------------------------------------------------------+</code></pre>
+                <div class="comparison-grid" role="region" aria-label="Elite Title Contenders">
+          <div class="comparison-card">
+            <span class="badge badge-accent">Seed #1 • World Champion</span>
+            <h3>Luke Humphries ("Cool Hand")</h3>
+            <ul>
+              <li>Defending World Champion &amp; Official PDC World No. 1</li>
+              <li>Unshakeable scoring rhythm; mastered long-format set play</li>
+              <li>Historic Triple Crown holder (World Champ, World Matchplay, Premier League)</li>
+            </ul>
+          </div>
+          <div class="comparison-card">
+            <span class="badge">Premier League Champion</span>
+            <h3>Luke Littler ("The Nuke")</h3>
+            <ul>
+              <li>Historic 2024 World finalist at 16; 2024 Premier League Champion</li>
+              <li>Highest seasonal ceiling for maximum 180s and 100+ match averages</li>
+              <li>Fearless clutch double conversion on televised broadcast stages</li>
+            </ul>
+          </div>
+          <div class="comparison-card">
+            <span class="badge">Three-Time World Champion</span>
+            <h3>Michael van Gerwen ("Mighty Mike")</h3>
+            <ul>
+              <li>Three-time World Champion; 7-time Premier League Champion</li>
+              <li>Perennial title threat with unparalleled stage aura and match pacing</li>
+              <li>Ruthless 11-dart and 12-dart break-back capability under pressure</li>
+            </ul>
+          </div>
+          <div class="comparison-card">
+            <span class="badge">2021 World Champion</span>
+            <h3>Gerwyn Price ("The Iceman")</h3>
+            <ul>
+              <li>2021 World Champion; ferocious set-play competitor</li>
+              <li>Dominant power scoring with explosive 100+ match average bursts</li>
+              <li>Proven major winner across Grand Slam and World Cup stages</li>
+            </ul>
+          </div>
         </div>
 
         <h3>1. Luke Humphries: The Benchmark of Consistency</h3>
@@ -293,20 +308,23 @@ const articleSchema = {
           In outright tournament markets, spectators frequently encounter <strong>Each-Way (E/W)</strong> terms:
         </p>
 
-        <div class="ascii-box">
-          <pre><code>+-----------------------------------------------------------------+
-|                    HOW EACH-WAY DARTS WORKS                     |
-+-----------------------------------------------------------------+
-|  A £10 Each-Way Bet = £20 Total Stake:                          |
-|  • Part 1: £10 on the player to WIN the tournament             |
-|  • Part 2: £10 on the player to PLACE (Reach the Final)         |
-|                                                                 |
-|  Standard Terms: 1/2 Odds, 2 Places                             |
-|  • If your player wins the final: Both bets win.                |
-|  • If your player loses the final: The Win bet loses, but the   |
-|    Place bet wins at half the original odds.                    |
-|  • If your player loses in the semi-finals: Both bets lose.     |
-+-----------------------------------------------------------------+</code></pre>
+                <div class="factsheet-card" role="region" aria-label="Each-Way Darts Bet Structure">
+          <div class="factsheet-header">
+            <h3>Each-Way (E/W) Betting Mechanics Explained</h3>
+            <span class="badge badge-accent">Market Structure</span>
+          </div>
+          <div class="factsheet-grid">
+            <div class="factsheet-label">Stake Allocation</div>
+            <div class="factsheet-value"><strong>A £10 Each-Way Bet = £20 Total Stake:</strong> £10 on Win + £10 on Place</div>
+            <div class="factsheet-label">Standard Major Terms</div>
+            <div class="factsheet-value"><strong>1/2 Odds, 2 Places:</strong> The place portion pays at half the outright price if the player reaches the Final.</div>
+            <div class="factsheet-label">Scenario A: Player Wins Final</div>
+            <div class="factsheet-value"><strong>Full Payout:</strong> Both the Win portion and the Place portion win at full returns.</div>
+            <div class="factsheet-label">Scenario B: Player Loses Final</div>
+            <div class="factsheet-value"><strong>Place Payout:</strong> The Win bet loses, but the Place bet wins at half the original outright odds.</div>
+            <div class="factsheet-label">Scenario C: Semi-Final Exit</div>
+            <div class="factsheet-value"><strong>Total Loss:</strong> Because only 2 places pay, losing in the semi-finals results in both parts losing.</div>
+          </div>
         </div>
 
         <p>
@@ -383,6 +401,7 @@ const articleSchema = {
     color: #000;
   }
   .page-header h1 {
+    color: #ffffff;
     font-size: 2.2rem;
     font-weight: 800;
     margin: 0 0 1rem;
@@ -470,21 +489,6 @@ const articleSchema = {
   }
   .content-card a:hover {
     color: #0369a1;
-  }
-  .ascii-box {
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    overflow-x: auto;
-  }
-  .ascii-box pre {
-    margin: 0;
-    font-family: monospace;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #1e293b;
   }
   .table-responsive {
     overflow-x: auto;

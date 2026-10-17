@@ -145,36 +145,69 @@ const articleSchema = {
           The modern professional game operates on a structured pyramid overseen by the <strong>Professional Darts Corporation (PDC)</strong> and regulated by the <strong>Darts Regulation Authority (DRA)</strong>:
         </p>
 
-        <div class="ascii-box">
-          <pre><code>+-------------------------------------------------------------+
-|                     PDC ELITE TOUR                          |
-|             128 Tour Card Holders (Top 64 +                 |
-|             Two-Year Card Holders from Q-School)             |
-|        Players Championships • European Tour • Majors       |
-+-------------------------------------------------------------+
-                              ^
-                              | (Top 2 Earn Tour Cards)
-+-----------------------------+-------------------------------+
-|                 SECONDARY PROFESSIONAL TIERS                |
-|  • Winmau Challenge Tour (Q-School Non-Qualifiers)          |
-|  • Winmau Development Tour (Ages 16–23)                     |
-|  • PDC Women's Series                                       |
-+-------------------------------------------------------------+
-                              ^
-                              | (Annual Open Entry)
-+-----------------------------+-------------------------------+
-|                    PDC QUALIFYING SCHOOL                    |
-|  • UK Q-School (Milton Keynes)                              |
-|  • European Q-School (Kalkar, Germany)                      |
-|  Stage 1 (Open Amateurs) -&gt; Final Stage (Tour Cards Awarded)|
-+-------------------------------------------------------------+
-                              ^
-                              | (Grassroots Progression)
-+-----------------------------+-------------------------------+
-|                 AMATEUR &amp; FOUNDATION CIRCUIT                |
-|  • Local Pub &amp; Super Leagues • County Darts                 |
-|  • Junior Darts Corporation (JDC) • WDF Open Events         |
-+-------------------------------------------------------------+</code></pre>
+                <div class="pyramid-diagram" role="region" aria-label="Professional Darts Pathway Pyramid">
+          <!-- Apex Tier -->
+          <div class="pyramid-tier pyramid-tier-apex">
+            <span class="badge badge-accent">Apex Tier • 128 Tour Cards</span>
+            <h3>PDC Elite Tour</h3>
+            <p>128 Tour Card Holders (Top 64 Order of Merit + Two-Year Cards from Q-School &amp; Feeder Tours)</p>
+            <ul class="pyramid-list">
+              <li class="pyramid-list-item">Players Championships (ProTour)</li>
+              <li class="pyramid-list-item">European Tour Stages</li>
+              <li class="pyramid-list-item">Televised Premier Majors</li>
+            </ul>
+          </div>
+
+          <!-- Connector 1 -->
+          <div class="pyramid-connector">
+            <span class="pyramid-connector-pill">▲ Top 2 Earn Full PDC Tour Cards &amp; World Championship Spots</span>
+          </div>
+
+          <!-- Secondary Tier -->
+          <div class="pyramid-tier pyramid-tier-secondary">
+            <span class="badge">Secondary Professional Tiers</span>
+            <h3>Feeder &amp; Pathway Circuits</h3>
+            <p>Sanctioned PDC professional feeder tours with reserve ProTour call-up allocations</p>
+            <ul class="pyramid-list">
+              <li class="pyramid-list-item"><strong>Winmau Challenge Tour:</strong> Q-School Non-Qualifiers &amp; ProTour Reserves</li>
+              <li class="pyramid-list-item"><strong>Winmau Development Tour:</strong> Youth Pathway (Ages 16–23)</li>
+              <li class="pyramid-list-item"><strong>PDC Women's Series:</strong> Premier Global Female Circuit</li>
+            </ul>
+          </div>
+
+          <!-- Connector 2 -->
+          <div class="pyramid-connector">
+            <span class="pyramid-connector-pill">▲ Annual Open Entry Every January</span>
+          </div>
+
+          <!-- Gateway Tier -->
+          <div class="pyramid-tier pyramid-tier-gateway">
+            <span class="badge">The Professional Gateway</span>
+            <h3>PDC Qualifying School (Q-School)</h3>
+            <p>UK Q-School (Milton Keynes) &bull; European Q-School (Kalkar, Germany)</p>
+            <ul class="pyramid-list">
+              <li class="pyramid-list-item"><strong>Stage 1:</strong> 3-day open knockout qualifier for amateur entrants</li>
+              <li class="pyramid-list-item"><strong>Final Stage:</strong> 4-day showdown awarding official 2-year Tour Cards</li>
+            </ul>
+          </div>
+
+          <!-- Connector 3 -->
+          <div class="pyramid-connector">
+            <span class="pyramid-connector-pill">▲ Grassroots Progression &amp; Local Competition</span>
+          </div>
+
+          <!-- Foundation Base Tier -->
+          <div class="pyramid-tier pyramid-tier-base">
+            <span class="badge">Grassroots Foundation</span>
+            <h3>Amateur &amp; Foundation Circuit</h3>
+            <p>The bedrock of competitive match practice and regional development</p>
+            <ul class="pyramid-list">
+              <li class="pyramid-list-item">Local Pub &amp; Super Leagues</li>
+              <li class="pyramid-list-item">County Darts Associations</li>
+              <li class="pyramid-list-item">Junior Darts Corporation (JDC)</li>
+              <li class="pyramid-list-item">WDF Open Tournaments</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -415,6 +448,7 @@ const articleSchema = {
     color: #000;
   }
   .page-header h1 {
+    color: #ffffff;
     font-size: 2.2rem;
     font-weight: 800;
     margin: 0 0 1rem;
@@ -468,21 +502,6 @@ const articleSchema = {
   }
   .content-card a:hover {
     color: #0369a1;
-  }
-  .ascii-box {
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    overflow-x: auto;
-  }
-  .ascii-box pre {
-    margin: 0;
-    font-family: monospace;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #1e293b;
   }
   .table-responsive {
     overflow-x: auto;

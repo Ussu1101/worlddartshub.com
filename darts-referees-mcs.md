@@ -68,35 +68,11 @@ This guide profiles the active elite PDC officiating team, explains the vital te
 
 Fans often use the words "referee" and "caller" interchangeably, but in modern televised darts, stage management is divided into distinct operational roles:
 
-```
-+-----------------------------------------------------------------+
-|                       ON-STAGE OFFICIALS                        |
-+-----------------------------------------------------------------+
-|  1. THE CALLER (Active Stage Official)                          |
-|     • Stands beside the dartboard during play                   |
-|     • Verifies dart position before darts are retrieved         |
-|     • Performs instantaneous mental subtraction                 |
-|     • Announces scores aloud to the arena and television truck |
-|     • Calls "Game Shot" when a valid double finishes a leg      |
-+-----------------------------------------------------------------+
-                                |
-                                v (Real-time Cross-Check)
-+-----------------------------------------------------------------+
-|  2. THE SECOND REFEREE / SCORER (Off-Camera Desk Official)      |
-|     • Sits at the stage console with DartConnect / PDC system   |
-|     • Enters dart scores into the digital broadcast feed        |
-|     • Immediately signals the caller if a score is contested   |
-|     • Tracks mathematical setup options for broadcast graphics  |
-+-----------------------------------------------------------------+
-                                |
-                                v (Pre-Match & Presentation)
-+-----------------------------------------------------------------+
-|  3. THE MASTER OF CEREMONIES (MC)                               |
-|     • Welcomes the arena audience and television viewers        |
-|     • Delivers player walk-on introductions and career honors   |
-|     • Manages trophy presentations and post-match ceremony      |
-+-----------------------------------------------------------------+
-```
+| Official Role | Operational Location | Primary Responsibilities | Broadcast & Event Function |
+| :--- | :--- | :--- | :--- |
+| **1. The Caller** | Active Stage Floor (Beside board) | Verifies legal dart entry; mental math subtraction; score announcements | Shouts scores aloud; calls *"Game Shot"* to end leg |
+| **2. Second Referee / Scorer** | Stage Console Desk (Off-camera) | Operates DartConnect / PDC digital scoring engine; cross-checks caller | Sends real-time data to TV graphics truck; signals score disputes |
+| **3. Master of Ceremonies (MC)** | Arena Stage & Walk-On Corridor | Delivers player walk-on introductions; commands arena audience | Coordinates pre-match pageantry; hosts trophy presentations |
 
 Under **DRA Rules Section 5.1**, the referee on stage is the sole arbiter of whether a dart is legally in the board. A dart only scores if its point is embedded in or touching the scoring surface before the player touches their darts. If a dart falls out while the player walks to the board, it scores zero—and the caller must make that determination instantly.
 
@@ -131,18 +107,13 @@ The PDC currently employs an elite roster of full-time stage callers who rotate 
 
 No profile of PDC stage culture is complete without **John McDonald**, the official PDC Master of Ceremonies since 2007.
 
-```
-+-------------------------------------------------------------+
-|                     JOHN MCDONALD FACTSHEET                 |
-+-------------------------------------------------------------+
-|  Role:           Official PDC Master of Ceremonies (MC)     |
-|  Tenure:         2007 – Present (Active)                    |
-|  Military Trade: Former Royal Artillery & Parachute Regt    |
-|  Signature Call: "Ladies and gentlemen, are you ready?       |
-|                  LET'S... PLAY... DARTS!"                   |
-|  Combat Sports:  Longtime MC for Matchroom Boxing           |
-+-------------------------------------------------------------+
-```
+| Profile Metric | Verified Information |
+| :--- | :--- |
+| **Official Role** | Master of Ceremonies (MC), Professional Darts Corporation |
+| **PDC Tenure** | 2007 – Present (Active across all premier televised majors) |
+| **Military Background** | Former serviceman with the Royal Artillery & Parachute Regiment |
+| **Signature Stage Call** | *"Ladies and gentlemen, are you ready? LET'S... PLAY... DARTS!"* |
+| **Combat Sports** | Lead Ring Announcer for Matchroom Boxing world championship bouts |
 
 ### Fact Verification: Debunking Retirement Rumours
 Internet message boards and AI aggregators occasionally publish unverified claims that John McDonald has retired. **This is completely false.** McDonald remains the active, contracted Master of Ceremonies for all premier PDC televised majors, including the World Darts Championship at Alexandra Palace, the Premier League, and the World Matchplay.
@@ -168,15 +139,15 @@ While callers appear relaxed behind the microphone, stage officiating requires e
 ### Real-Time Subtraction Scenarios
 Consider an elite match where Luke Littler throws at a blistering rhythm of two seconds per visit:
 
-```
-Visit 1: Player on 342.
-Dart 1: Treble 20 (60)
-Dart 2: Treble 20 (60)
-Dart 3: Single 1 (1)
-Score Scored: 121
-Mental Calculation: 342 - 121 = 221
-Caller Announcement: "One hundred and twenty-one... you require 221."
-```
+| Stage Metric | Value / Calculation | Operational Caller Step |
+| :--- | :--- | :--- |
+| **Starting Score** | **342 Remaining** | Caller tracks target requirement |
+| **Dart 1** | **Treble 20** (60 points) | Visual confirmation in board |
+| **Dart 2** | **Treble 20** (60 points) | Grouping verification |
+| **Dart 3** | **Single 1** (1 point) | Instant visit summation |
+| **Score Scored** | **121 points** | 60 + 60 + 1 = 121 |
+| **Mental Math** | **342 − 121 = 221** | Mental subtraction in fractions of a second |
+| **Stage Announcement** | *"One hundred and twenty-one... you require 221."* | Announced aloud to arena and broadcast |
 
 If the player subsequently throws from 221:
 ```

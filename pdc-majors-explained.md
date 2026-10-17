@@ -88,21 +88,12 @@ Below is the definitive reference table of the PDC's premier televised majors:
 
 The distinction between ranking and non-ranking tournaments is fundamental to understanding professional darts:
 
-```
-+-----------------------------------------------------------------+
-|                   PREMIER RANKING MAJORS                        |
-|  • Prize money WON is added to the 2-Year PDC Order of Merit    |
-|  • Determines Official World Seedings & Tour Card Survival      |
-|  • Examples: World Championship, World Matchplay, Grand Prix    |
-+-----------------------------------------------------------------+
-                                vs
-+-----------------------------------------------------------------+
-|                 PREMIER INVITATIONAL EVENTS                     |
-|  • Players earn lucrative prize money, but £0 is added to OoM   |
-|  • Entry determined by invitation, selection, or specific criteria|
-|  • Examples: Premier League Darts, The Masters, World Cup       |
-+-----------------------------------------------------------------+
-```
+| Feature Category | Premier Ranking Majors | Premier Invitational Events |
+| :--- | :--- | :--- |
+| **Order of Merit Impact** | 100% of prize money won is added to 2-year rolling Order of Merit | **£0 added** to official Order of Merit |
+| **Tour Significance** | Directly determines World Seedings & Tour Card retention | High financial earnings, unranked prestige |
+| **Entry Qualification** | ProTour Order of Merit, Tour Card rankings, open qualifiers | Selective invitations, reigning champions, wildcard picks |
+| **Core Examples** | World Championship, World Matchplay, World Grand Prix, UK Open | Premier League Darts, The Masters, World Cup of Darts |
 
 Because the [PDC Order of Merit](/tournament/order-of-merit/) is a rolling two-year ranking ledger, prize money won in a ranking major expires after 24 months. Winning a £100,000 title provides immediate protection in the world rankings, whereas winning the £275,000 Premier League title boosts a player's bank account without moving them up the official world ranking ladder.
 
@@ -138,21 +129,14 @@ Outside of the festive World Championship at Alexandra Palace, four ranking majo
 
 Staged weekly from February to May across 16 major arenas in the UK, Ireland, Germany, and the Netherlands, **Premier League Darts** is the sport’s most commercially successful property.
 
-```
-+-------------------------------------------------------------+
-|                 PREMIER LEAGUE DARTS AT A GLANCE            |
-+-------------------------------------------------------------+
-|  Field:         8 Elite Players                             |
-|                 (Top 4 Order of Merit + 4 Wildcards)        |
-|  Format:        16 Weekly Knockout Nights (Best of 11)      |
-|  Points:        Night Winner (5 pts), Runner-Up (3 pts),    |
-|                 Semi-Finalists (2 pts each)                 |
-|  Play-Offs:     Top 4 advance to The O2, London             |
-|                 Semi-Finals & Final on one dramatic night   |
-|  Status:        NON-RANKING (Prize money does not affect    |
-|                 PDC Order of Merit)                         |
-+-------------------------------------------------------------+
-```
+| Tournament Metric | Official Specification |
+| :--- | :--- |
+| **Field Size** | 8 Elite Players (Top 4 on PDC Order of Merit + 4 Wildcard Selections) |
+| **Schedule & Duration** | 16 Weekly Knockout Nights (February to May) across UK & European arenas |
+| **Night Format** | Quarter-Finals, Semi-Finals, Final (Best of 11 legs) on every individual night |
+| **Weekly Points** | Night Winner (5 pts), Runner-Up (3 pts), Semi-Finalists (2 pts each) |
+| **Play-Off Finals** | Top 4 in league table contest Semi-Finals and Final at The O2, London |
+| **Ranking Status** | **NON-RANKING:** £275,000 champion's prize does not count towards world rankings |
 
 While the Premier League does not count towards the Order of Merit, it offers £1,000,000 in total prize money (£275,000 to the champion) and exposes players to deafening arena crowds of up to 12,000 spectators every Thursday night.
 
@@ -169,21 +153,11 @@ In snooker, the Triple Crown consists of the World Championship, UK Championship
 ### The Exclusive Triple Crown Winners Club
 Winning all three titles requires mastering both set-play stamina at Alexandra Palace, summer leg-play overtime in Blackpool, and a 16-week touring marathon. In the entire history of darts, only **three players** have achieved the Triple Crown across their careers:
 
-```
-+-----------------------------------------------------------------+
-|                   DARTS TRIPLE CROWN HOLDERS                    |
-+-----------------------------------------------------------------+
-|  1. Phil Taylor         • Won all three multiple times          |
-|                         • 16 World Titles, 16 Matchplays, 6 PLs |
-+-----------------------------------------------------------------+
-|  2. Michael van Gerwen  • 3 World Titles, 3 Matchplays, 7 PLs  |
-+-----------------------------------------------------------------+
-|  3. Luke Humphries      • Completed Triple Crown in 2024        |
-|                         • Won 2024 World Championship,          |
-|                           2024 Premier League, & 2024 Matchplay |
-|                           within a single calendar year!        |
-+-----------------------------------------------------------------+
-```
+| Champion | Triple Crown Achievements | Career Milestone Context |
+| :--- | :--- | :--- |
+| **1. Phil Taylor** | 16 World Titles, 16 World Matchplays, 6 Premier Leagues | Completed all three tournaments multiple times throughout historic career |
+| **2. Michael van Gerwen** | 3 World Titles, 3 World Matchplays, record 7 Premier Leagues | Dominant modern multi-major champion |
+| **3. Luke Humphries** | 2024 World Title, 2024 Premier League, 2024 World Matchplay | Won all three Triple Crown majors in a **single calendar year (2024)** |
 
 ---
 

@@ -257,20 +257,26 @@ const articleSchema = {
           The distinction between ranking and non-ranking tournaments is fundamental to understanding professional darts:
         </p>
 
-        <div class="ascii-box">
-          <pre><code>+-----------------------------------------------------------------+
-|                   PREMIER RANKING MAJORS                        |
-|  • Prize money WON is added to the 2-Year PDC Order of Merit    |
-|  • Determines Official World Seedings &amp; Tour Card Survival      |
-|  • Examples: World Championship, World Matchplay, Grand Prix    |
-+-----------------------------------------------------------------+
-                                vs
-+-----------------------------------------------------------------+
-|                 PREMIER INVITATIONAL EVENTS                     |
-|  • Players earn lucrative prize money, but £0 is added to OoM   |
-|  • Entry determined by invitation, selection, or specific criteria|
-|  • Examples: Premier League Darts, The Masters, World Cup       |
-+-----------------------------------------------------------------+</code></pre>
+                <div class="comparison-grid" role="region" aria-label="Ranking Majors vs Invitational Events">
+          <div class="comparison-card" style="border-left: 4px solid var(--color-dart-green);">
+            <span class="badge" style="background: #d1fae5; color: #065f46;">Official World Rankings</span>
+            <h3>Premier Ranking Majors</h3>
+            <ul>
+              <li><strong>Order of Merit Impact:</strong> 100% of prize money won is added to the official 2-year rolling PDC Order of Merit</li>
+              <li><strong>Tour Consequence:</strong> Determines official world rankings, tournament seedings, and Tour Card survival</li>
+              <li><strong>Pillar Tournaments:</strong> World Darts Championship, World Matchplay, World Grand Prix, UK Open, Grand Slam of Darts</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card" style="border-left: 4px solid #2563eb;">
+            <span class="badge" style="background: #dbeafe; color: #1e40af;">Televised Invitationals</span>
+            <h3>Premier Invitational Events</h3>
+            <ul>
+              <li><strong>Order of Merit Impact:</strong> Players earn substantial prize money, but <strong>£0 is added</strong> to the world rankings</li>
+              <li><strong>Qualification:</strong> Entry determined by invitation, reigning champion status, or regional qualification criteria</li>
+              <li><strong>Pillar Tournaments:</strong> Premier League Darts, The Masters, World Series of Darts Finals, World Cup of Darts</li>
+            </ul>
+          </div>
         </div>
 
         <p>
@@ -311,20 +317,23 @@ const articleSchema = {
           Staged weekly from February to May across 16 major arenas in the UK, Ireland, Germany, and the Netherlands, Premier League Darts is the sport’s most commercially successful property.
         </p>
 
-        <div class="ascii-box">
-          <pre><code>+-------------------------------------------------------------+
-|                 PREMIER LEAGUE DARTS AT A GLANCE            |
-+-------------------------------------------------------------+
-|  Field:         8 Elite Players                             |
-|                 (Top 4 Order of Merit + 4 Wildcards)        |
-|  Format:        16 Weekly Knockout Nights (Best of 11)      |
-|  Points:        Night Winner (5 pts), Runner-Up (3 pts),    |
-|                 Semi-Finalists (2 pts each)                 |
-|  Play-Offs:     Top 4 advance to The O2, London             |
-|                 Semi-Finals &amp; Final on one dramatic night   |
-|  Status:        NON-RANKING (Prize money does not affect    |
-|                 PDC Order of Merit)                         |
-+-------------------------------------------------------------+</code></pre>
+                <div class="factsheet-card" role="region" aria-label="Premier League Darts Profile">
+          <div class="factsheet-header">
+            <h3>Premier League Darts: Fast Facts</h3>
+            <span class="badge badge-accent">Arena Roadshow</span>
+          </div>
+          <div class="factsheet-grid">
+            <div class="factsheet-label">Competitor Field</div>
+            <div class="factsheet-value">8 Elite Players (Top 4 on PDC Order of Merit + 4 PDC/Sky Sports Wildcards)</div>
+            <div class="factsheet-label">Tournament Format</div>
+            <div class="factsheet-value">16 Weekly Knockout Nights (Best of 11 legs) staged across UK, Ireland &amp; European arenas</div>
+            <div class="factsheet-label">Weekly Points System</div>
+            <div class="factsheet-value">Night Winner: <strong>5 pts</strong> &bull; Runner-Up: <strong>3 pts</strong> &bull; Semi-Finalists: <strong>2 pts each</strong></div>
+            <div class="factsheet-label">Play-Off Finals</div>
+            <div class="factsheet-value">Top 4 in league standings contest Semi-Finals and Final on one dramatic night at The O2, London</div>
+            <div class="factsheet-label">Ranking Status</div>
+            <div class="factsheet-value"><strong>NON-RANKING:</strong> Prize money (£275,000 to champion) does not count towards the PDC Order of Merit</div>
+          </div>
         </div>
       </section>
 
@@ -343,20 +352,42 @@ const articleSchema = {
           Winning all three titles requires mastering set-play stamina at Alexandra Palace, summer leg-play overtime in Blackpool, and a 16-week touring marathon. In darts history, only <strong>three players</strong> have achieved the Triple Crown across their careers:
         </p>
 
-        <div class="ascii-box">
-          <pre><code>+-----------------------------------------------------------------+
-|                   DARTS TRIPLE CROWN HOLDERS                    |
-+-----------------------------------------------------------------+
-|  1. Phil Taylor         • Won all three multiple times          |
-|                         • 16 World Titles, 16 Matchplays, 6 PLs |
-+-----------------------------------------------------------------+
-|  2. Michael van Gerwen  • 3 World Titles, 3 Matchplays, 7 PLs  |
-+-----------------------------------------------------------------+
-|  3. Luke Humphries      • Completed Triple Crown in 2024        |
-|                         • Won 2024 World Championship,          |
-|                           2024 Premier League, &amp; 2024 Matchplay |
-|                           within a single calendar year!        |
-+-----------------------------------------------------------------+</code></pre>
+                <div class="comparison-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));" role="region" aria-label="Darts Triple Crown Winners">
+          <div class="comparison-card" style="border-top: 4px solid var(--color-accent);">
+            <span class="badge badge-accent">16x World Champion</span>
+            <h3>1. Phil Taylor</h3>
+            <p><strong>"The Power"</strong></p>
+            <ul>
+              <li>Won all three Triple Crown majors multiple times</li>
+              <li>16 World Championships</li>
+              <li>16 World Matchplay titles</li>
+              <li>6 Premier League titles</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card" style="border-top: 4px solid var(--color-dart-green);">
+            <span class="badge" style="background: #d1fae5; color: #065f46;">3x World Champion</span>
+            <h3>2. Michael van Gerwen</h3>
+            <p><strong>"Mighty Mike"</strong></p>
+            <ul>
+              <li>Dominant modern multi-major champion</li>
+              <li>3 World Championships</li>
+              <li>3 World Matchplay titles</li>
+              <li>Record 7 Premier League titles</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card" style="border-top: 4px solid #2563eb;">
+            <span class="badge" style="background: #dbeafe; color: #1e40af;">2024 Calendar Slam</span>
+            <h3>3. Luke Humphries</h3>
+            <p><strong>"Cool Hand"</strong></p>
+            <ul>
+              <li>Completed the Triple Crown in a single calendar year</li>
+              <li>2024 World Championship (Ally Pally)</li>
+              <li>2024 Premier League (The O2)</li>
+              <li>2024 World Matchplay (Blackpool)</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -429,6 +460,7 @@ const articleSchema = {
     color: #000;
   }
   .page-header h1 {
+    color: #ffffff;
     font-size: 2.2rem;
     font-weight: 800;
     margin: 0 0 1rem;
@@ -482,21 +514,6 @@ const articleSchema = {
   }
   .content-card a:hover {
     color: #0369a1;
-  }
-  .ascii-box {
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    overflow-x: auto;
-  }
-  .ascii-box pre {
-    margin: 0;
-    font-family: monospace;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #1e293b;
   }
   .table-responsive {
     overflow-x: auto;

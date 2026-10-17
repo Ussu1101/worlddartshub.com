@@ -109,29 +109,12 @@ The table below illustrates what common darts outright prices imply about a play
 
 Heading into Alexandra Palace, the tournament market typically coalesces around a compact group of elite contenders whose seasonal metrics satisfy the rigorous demands of set play:
 
-```
-+-------------------------------------------------------------+
-|               THE ELITE TIER OF TITLE CONTENDERS            |
-+-------------------------------------------------------------+
-|  1. Luke Humphries ("Cool Hand Luke")                       |
-|     • Defending World Champion & Official World No. 1       |
-|     • Unshakeable scoring rhythm; mastered long-format sets  |
-|     • Triple Crown winner (World Champ, Matchplay, PL)      |
-+-------------------------------------------------------------+
-|  2. Luke Littler ("The Nuke")                               |
-|     • Historic 2024 finalist at 16; 2024 Premier League Champ|
-|     • Highest ceiling for 180s and 100+ match averages       |
-|     • Fearless finishing on big stage checkout targets      |
-+-------------------------------------------------------------+
-|  3. Michael van Gerwen ("Mighty Mike")                      |
-|     • Three-time World Champion; 7-time Premier League Champ|
-|     • Perennial tournament threat with unmatched stage aura |
-+-------------------------------------------------------------+
-|  4. Gerwyn Price ("The Iceman")                             |
-|     • 2021 World Champion; ferocious competitor in set play |
-|     • High scoring ceiling when crowd energy aligns         |
-+-------------------------------------------------------------+
-```
+| Contender | Title Accolades & Seed | Key Statistical Strengths | Set-Play Analytical Profile |
+| :--- | :--- | :--- | :--- |
+| **Luke Humphries** | Defending World Champion (Seed #1) | Triple Crown winner; relentless scoring tempo | Exceptional long-format endurance; avoids deep scoring dips |
+| **Luke Littler** | 2024 Finalist & 2024 Premier League Champ | Highest seasonal ceiling for 180s & 100+ avgs | Explosive First-9 scoring (110+); clutch TV checkout conversion |
+| **Michael van Gerwen** | 3-Time World Champion | Unrivalled stage aura; rapid 11/12-dart rhythm | Perennial major threat; ruthless break-back capability |
+| **Gerwyn Price** | 2021 World Champion | Heavy scoring power; intense stage competitiveness | High scoring bursts when crowd conditions align |
 
 ### 1. Luke Humphries: The Benchmark of Consistency
 Humphries has established himself as the premier set-play competitor of his generation. His strength lies in his mental endurance: across best-of-7, best-of-9, and best-of-13 set matches, Humphries rarely experiences the deep scoring slumps that derail less composed competitors.
@@ -172,21 +155,14 @@ Historically, several top seeds struggle with the mental and physical restart af
 
 In outright tournament markets, many spectators encounter **Each-Way (E/W)** terms.
 
-```
-+-----------------------------------------------------------------+
-|                    HOW EACH-WAY DARTS WORKS                     |
-+-----------------------------------------------------------------+
-|  A £10 Each-Way Bet = £20 Total Stake:                          |
-|  • Part 1: £10 on the player to WIN the tournament             |
-|  • Part 2: £10 on the player to PLACE (Reach the Final)         |
-|                                                                 |
-|  Standard Terms: 1/2 Odds, 2 Places                             |
-|  • If your player wins the final: Both bets win.                |
-|  • If your player loses the final: The Win bet loses, but the   |
-|    Place bet wins at half the original odds.                    |
-|  • If your player loses in the semi-finals: Both bets lose.     |
-+-----------------------------------------------------------------+
-```
+| Each-Way Component | Allocation & Mechanics | Winning Condition | Losing Condition |
+| :--- | :--- | :--- | :--- |
+| **Total Stake** | **£10 Each-Way = £20 Total** | N/A | Total capital risked |
+| **Win Portion (£10)** | £10 staked on player to win Final | Player lifts Sid Waddell Trophy | Player loses before or in Final |
+| **Place Portion (£10)** | £10 staked on player to reach Final (1/2 odds, 2 places) | Player reaches the Final (wins or runner-up) | Player eliminated in semi-finals or earlier |
+| **Scenario 1: Final Winner** | Both Win and Place bets win | Full returns on Win + Place | None |
+| **Scenario 2: Runner-Up** | Win bet loses; Place bet wins | Returns paid at half original odds | Win stake lost (£10 deducted) |
+| **Scenario 3: Semi-Finalist** | Both Win and Place bets lose | None | Full £20 stake lost |
 
 ### Worked Each-Way Example
 Suppose a bettor places a £10 Each-Way bet (£20 total) on an outside contender at **16/1 (17.00)** with 1/2 odds for 2 places:

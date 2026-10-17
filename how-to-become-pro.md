@@ -70,37 +70,15 @@ This guide outlines the exact, step-by-step pathway from grassroots leagues to t
 
 The modern professional game operates on a structured pyramid overseen by the **Professional Darts Corporation (PDC)** and regulated by the **Darts Regulation Authority (DRA)**:
 
-```
-+-------------------------------------------------------------+
-|                     PDC ELITE TOUR                          |
-|             128 Tour Card Holders (Top 64 +                 |
-|             Two-Year Card Holders from Q-School)             |
-|        Players Championships • European Tour • Majors       |
-+-------------------------------------------------------------+
-                              ^
-                              | (Top 2 Earn Tour Cards)
-+-----------------------------+-------------------------------+
-|                 SECONDARY PROFESSIONAL TIERS                |
-|  • Winmau Challenge Tour (Q-School Non-Qualifiers)          |
-|  • Winmau Development Tour (Ages 16–23)                     |
-|  • PDC Women's Series                                       |
-+-------------------------------------------------------------+
-                              ^
-                              | (Annual Open Entry)
-+-----------------------------+-------------------------------+
-|                    PDC QUALIFYING SCHOOL                    |
-|  • UK Q-School (Milton Keynes)                              |
-|  • European Q-School (Kalkar, Germany)                      |
-|  Stage 1 (Open Amateurs) -> Final Stage (Tour Cards Awarded)|
-+-------------------------------------------------------------+
-                              ^
-                              | (Grassroots Progression)
-+-----------------------------+-------------------------------+
-|                 AMATEUR & FOUNDATION CIRCUIT                |
-|  • Local Pub & Super Leagues • County Darts                 |
-|  • Junior Darts Corporation (JDC) • WDF Open Events         |
-+-------------------------------------------------------------+
-```
+| Tier Level | Circuit / Phase | Eligibility & Structure | Primary Tour Opportunities |
+| :--- | :--- | :--- | :--- |
+| **Tier 1 (Apex)** | **PDC Elite Tour** | 128 Tour Card Holders (Top 64 Order of Merit + 2-year cards) | Players Championships (ProTour), European Tour, Televised Majors |
+| *Feeder Route* | *Top 2 Earn Tour Cards* | *Challenge Tour & Development Tour Order of Merit Leaders* | *Automatic 2-Year PDC Tour Cards + Alexandra Palace Spots* |
+| **Tier 2 (Feeder)** | **Secondary Professional Tiers** | Winmau Challenge Tour, Winmau Development Tour (16–23), Women's Series | ProTour reserve call-ups, major event qualifying spots |
+| *Gateway Route* | *Annual Open Entry* | *Open to all players aged 16+ (held every January)* | *Top 25–30 earn full Tour Cards via Stage 1 & Final Stage* |
+| **Tier 3 (Gateway)** | **PDC Qualifying School (Q-School)** | UK Q-School (Milton Keynes) & European Q-School (Kalkar, Germany) | Stage 1 (Open Knockout) ➔ Final Stage (Tour Cards Awarded) |
+| *Grassroots Base* | *Progression Route* | *Local and county amateur competition* | *Development of scoring pace, grouping, and clutch nerve* |
+| **Tier 4 (Foundation)** | **Amateur & Foundation Circuit** | Local Pub & Super Leagues, County Darts, JDC, WDF Opens | Foundation match endurance, competitive etiquette |
 
 ---
 

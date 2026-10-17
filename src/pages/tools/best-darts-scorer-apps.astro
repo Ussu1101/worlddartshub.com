@@ -211,15 +211,21 @@ const articleSchema = {
 
       <section class="content-card">
         <h2>1. DartConnect: The Professional Gold Standard</h2>
-        <div class="ascii-box">
-          <pre><code>+-------------------------------------------------------------+
-|                     DARTCONNECT SNAPSHOT                    |
-+-------------------------------------------------------------+
-|  Platform:    Web App (Runs on any iPad, Tablet, or PC)     |
-|  Official:    Official Scoring Engine of the PDC ProTour    |
-|  Strengths:   Professional legitimacy, DCTV live score feeds|
-|  Best For:    Organised leagues, tournaments, super leagues |
-+-------------------------------------------------------------+</code></pre>
+                <div class="factsheet-card" role="region" aria-label="DartConnect Snapshot">
+          <div class="factsheet-header">
+            <h3>DartConnect: Technical &amp; Operational Snapshot</h3>
+            <span class="badge badge-accent">PDC Official Engine</span>
+          </div>
+          <div class="factsheet-grid">
+            <div class="factsheet-label">Platform Compatibility</div>
+            <div class="factsheet-value">Cross-Platform Web App (Optimised for iPad, Android tablets, laptops, and mobile browsers)</div>
+            <div class="factsheet-label">Official Status</div>
+            <div class="factsheet-value">Exclusive Official Scoring Engine of the PDC ProTour, Challenge Tour &amp; European Tour</div>
+            <div class="factsheet-label">Key Strengths</div>
+            <div class="factsheet-value">Dart-by-dart telemetry, automated tournament brackets, DCTV live broadcast score feeds</div>
+            <div class="factsheet-label">Best Suited For</div>
+            <div class="factsheet-value">Competitive tournament players, pub and super leagues, organised events, and serious stats tracking</div>
+          </div>
         </div>
 
         <h3>Why It Leads the Field</h3>
@@ -253,16 +259,27 @@ const articleSchema = {
           Created by developer Markus Fisch, <strong>My Dart Training</strong> is revered among competitive amateur dart players as the absolute benchmark for deliberate, structured skill building.
         </p>
 
-        <div class="ascii-box">
-          <pre><code>+-----------------------------------------------------------------+
-|               FEATURED DRILLS IN MY DART TRAINING               |
-+-----------------------------------------------------------------+
-|  • Bob's 27:        Classic double-accuracy survival test       |
-|  • Catch 40:        Pressure outshot routine from 61 to 100     |
-|  • 121:             Three-visit finishing simulation            |
-|  • Around the Clock: Singles, doubles, and trebles navigation   |
-|  • Halve-It:        Target precision under penalty deduction    |
-+-----------------------------------------------------------------+</code></pre>
+                <div class="comparison-grid" role="region" aria-label="Featured Training Drills">
+          <div class="comparison-card">
+            <span class="badge badge-accent">Pressure Double Drill</span>
+            <h3>Bob's 27</h3>
+            <p>The definitive double-accuracy survival test created by Bob Anderson. Navigate D1 to Bullseye starting on 27 points, deducting points for misses.</p>
+          </div>
+          <div class="comparison-card">
+            <span class="badge">Finishing Routine</span>
+            <h3>Catch 40</h3>
+            <p>Score-building outshot pressure drill navigating all two-dart and three-dart checkouts from 61 to 100 within a strict dart budget.</p>
+          </div>
+          <div class="comparison-card">
+            <span class="badge">Finishing Simulation</span>
+            <h3>121 Checkouts</h3>
+            <p>Master multi-visit finishing under tournament pressure. You have 9 darts (3 visits) to check out 121; succeed and the target steps up.</p>
+          </div>
+          <div class="comparison-card">
+            <span class="badge">Target Accuracy</span>
+            <h3>Around the Clock &amp; Halve-It</h3>
+            <p>Sequential singles, doubles, and trebles practice combined with punitive target navigation to hone grouping and clutch nerve.</p>
+          </div>
         </div>
 
         <p>
@@ -353,6 +370,7 @@ const articleSchema = {
     color: #000;
   }
   .page-header h1 {
+    color: #ffffff;
     font-size: 2.2rem;
     font-weight: 800;
     margin: 0 0 1rem;
@@ -406,21 +424,6 @@ const articleSchema = {
   }
   .content-card a:hover {
     color: #0369a1;
-  }
-  .ascii-box {
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    overflow-x: auto;
-  }
-  .ascii-box pre {
-    margin: 0;
-    font-family: monospace;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #1e293b;
   }
   .table-responsive {
     overflow-x: auto;

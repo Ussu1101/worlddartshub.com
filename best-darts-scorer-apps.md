@@ -80,16 +80,12 @@ To help you choose the right companion for your tablet or phone, we tested the f
 
 ## 1. DartConnect: The Professional Gold Standard
 
-```
-+-------------------------------------------------------------+
-|                     DARTCONNECT SNAPSHOT                    |
-+-------------------------------------------------------------+
-|  Platform:    Web App (Runs on any iPad, Tablet, or PC)     |
-|  Official:    Official Scoring Engine of the PDC ProTour    |
-|  Strengths:   Professional legitimacy, DCTV live score feeds|
-|  Best For:    Organised leagues, tournaments, super leagues |
-+-------------------------------------------------------------+
-```
+| Feature Dimension | Specification & Evaluation |
+| :--- | :--- |
+| **Platform Compatibility** | Cross-platform web application (runs smoothly on iPad, Android tablets, laptops, phones) |
+| **Official Endorsement** | Exclusive Official Scoring Engine of the PDC ProTour, Challenge Tour & European Tour |
+| **Core Strengths** | Dart-by-dart telemetry, automated tournament brackets, DCTV live broadcast scoring |
+| **Best Suited For** | Competitive league matches, organized tournaments, pub super leagues, serious analytics |
 
 ### Why It Leads the Field
 DartConnect is the undisputed heavyweight of professional darts scoring. It is the official scoring system commissioned by the **Professional Darts Corporation (PDC)** to power every Players Championship floor event, the Winmau Challenge Tour, and the European Tour. 
@@ -124,17 +120,13 @@ Casual players and competitive amateurs who cannot attend local leagues but want
 
 Created by developer Markus Fisch, **My Dart Training** is revered among competitive amateur dart players as the absolute benchmark for deliberate, structured skill building.
 
-```
-+-----------------------------------------------------------------+
-|               FEATURED DRILLS IN MY DART TRAINING               |
-+-----------------------------------------------------------------+
-|  • Bob's 27:        Classic double-accuracy survival test       |
-|  • Catch 40:        Pressure outshot routine from 61 to 100     |
-|  • 121:             Three-visit finishing simulation            |
-|  • Around the Clock: Singles, doubles, and trebles navigation   |
-|  • Halve-It:        Target precision under penalty deduction    |
-+-----------------------------------------------------------------+
-```
+| Training Drill | Drill Focus | Format & Rules | Skill Building Benefit |
+| :--- | :--- | :--- | :--- |
+| **Bob's 27** | Double Accuracy | Start on 27 pts; throw 3 darts at D1–Bull; deduct score for misses | High-pressure double conversion under penalty conditions |
+| **Catch 40** | Finishing Paths | 2-dart & 3-dart checkouts from 61 to 100 within dart budget | Outshot decision making and setup mastery |
+| **121 Checkouts** | Multi-Visit Finishes | 9 darts (3 visits) to check out 121; target steps up upon success | Matchplay checkout stamina and rhythm |
+| **Around the Clock** | Board Navigation | Sequential singles, doubles, and trebles navigation across 1–20 | Precision grouping and segment familiarity |
+| **Halve-It** | Target Pressure | Hit designated scoring targets; score halves if target is missed | Elimination of stray dart errors under penalty |
 
 ### Why Practice Purists Love It
 While other apps focus on playing 501 against friends, My Dart Training is built for the solo grinder. It incorporates every established [darts practice routine](/darts/practice-routines/) into automated, tracked routines:

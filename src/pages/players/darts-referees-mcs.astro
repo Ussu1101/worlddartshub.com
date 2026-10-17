@@ -145,34 +145,55 @@ const articleSchema = {
           Fans often use the words "referee" and "caller" interchangeably, but in modern televised darts, stage management is divided into distinct operational roles:
         </p>
 
-        <div class="ascii-box">
-          <pre><code>+-----------------------------------------------------------------+
-|                       ON-STAGE OFFICIALS                        |
-+-----------------------------------------------------------------+
-|  1. THE CALLER (Active Stage Official)                          |
-|     • Stands beside the dartboard during play                   |
-|     • Verifies dart position before darts are retrieved         |
-|     • Performs instantaneous mental subtraction                 |
-|     • Announces scores aloud to the arena and television truck |
-|     • Calls "Game Shot" when a valid double finishes a leg      |
-+-----------------------------------------------------------------+
-                                |
-                                v (Real-time Cross-Check)
-+-----------------------------------------------------------------+
-|  2. THE SECOND REFEREE / SCORER (Off-Camera Desk Official)      |
-|     • Sits at the stage console with DartConnect / PDC system   |
-|     • Enters dart scores into the digital broadcast feed        |
-|     • Immediately signals the caller if a score is contested   |
-|     • Tracks mathematical setup options for broadcast graphics  |
-+-----------------------------------------------------------------+
-                                |
-                                v (Pre-Match &amp; Presentation)
-+-----------------------------------------------------------------+
-|  3. THE MASTER OF CEREMONIES (MC)                               |
-|     • Welcomes the arena audience and television viewers        |
-|     • Delivers player walk-on introductions and career honors   |
-|     • Manages trophy presentations and post-match ceremony      |
-+-----------------------------------------------------------------+</code></pre>
+                <div class="pipeline-flow" role="region" aria-label="On-Stage Officiating Team Hierarchy">
+          <div class="pipeline-card">
+            <div class="pipeline-card-header">
+              <span class="pipeline-number">1</span>
+              <div>
+                <span class="badge badge-accent">Stage Floor</span>
+                <h3>The Caller</h3>
+              </div>
+            </div>
+            <ul>
+              <li>Stands directly beside the dartboard during active play</li>
+              <li>Visually verifies dart position before player retrieves darts</li>
+              <li>Performs instantaneous mental subtraction under broadcast pressure</li>
+              <li>Announces scores aloud to arena audience and television broadcast</li>
+              <li>Calls <em>"Game Shot"</em> when a valid double finishes a leg</li>
+            </ul>
+          </div>
+
+          <div class="pipeline-card">
+            <div class="pipeline-card-header">
+              <span class="pipeline-number">2</span>
+              <div>
+                <span class="badge">Desk Console</span>
+                <h3>Second Referee / Scorer</h3>
+              </div>
+            </div>
+            <ul>
+              <li>Sits at the stage console operating DartConnect / official PDC scoring</li>
+              <li>Enters exact dart-by-dart scores into the digital broadcast feed</li>
+              <li>Instantly cross-checks the caller and signals if a score is contested</li>
+              <li>Tracks mathematical setup options and remaining routes for TV graphics</li>
+            </ul>
+          </div>
+
+          <div class="pipeline-card">
+            <div class="pipeline-card-header">
+              <span class="pipeline-number">3</span>
+              <div>
+                <span class="badge">Arena Stage</span>
+                <h3>Master of Ceremonies (MC)</h3>
+              </div>
+            </div>
+            <ul>
+              <li>Welcomes the arena crowd and global television audience</li>
+              <li>Delivers iconic player walk-on announcements and career honors</li>
+              <li>Maintains arena energy and coordinates stage entrances</li>
+              <li>Conducts post-match trophy presentations and ceremonial honors</li>
+            </ul>
+          </div>
         </div>
 
         <p>
@@ -213,17 +234,23 @@ const articleSchema = {
           No profile of PDC stage culture is complete without <strong>John McDonald</strong>, the official PDC Master of Ceremonies since 2007.
         </p>
 
-        <div class="ascii-box">
-          <pre><code>+-------------------------------------------------------------+
-|                     JOHN MCDONALD FACTSHEET                 |
-+-------------------------------------------------------------+
-|  Role:           Official PDC Master of Ceremonies (MC)     |
-|  Tenure:         2007 – Present (Active)                    |
-|  Military Trade: Former Royal Artillery &amp; Parachute Regt    |
-|  Signature Call: "Ladies and gentlemen, are you ready?       |
-|                  LET'S... PLAY... DARTS!"                   |
-|  Combat Sports:  Longtime MC for Matchroom Boxing           |
-+-------------------------------------------------------------+</code></pre>
+                <div class="factsheet-card" role="region" aria-label="John McDonald Factsheet">
+          <div class="factsheet-header">
+            <h3>John McDonald: Career &amp; Stage Profile</h3>
+            <span class="badge badge-accent">Active PDC MC</span>
+          </div>
+          <div class="factsheet-grid">
+            <div class="factsheet-label">Role</div>
+            <div class="factsheet-value"><strong>Official PDC Master of Ceremonies (MC)</strong></div>
+            <div class="factsheet-label">Tenure</div>
+            <div class="factsheet-value">2007 &ndash; Present (Active across all premier televised majors)</div>
+            <div class="factsheet-label">Military Background</div>
+            <div class="factsheet-value">Former Royal Artillery &amp; Parachute Regiment serviceman</div>
+            <div class="factsheet-label">Signature Stage Call</div>
+            <div class="factsheet-value"><em>&ldquo;Ladies and gentlemen, are you ready? LET'S... PLAY... DARTS!&rdquo;</em></div>
+            <div class="factsheet-label">Combat Sports</div>
+            <div class="factsheet-value">Official Ring Announcer for premier Matchroom Boxing title fights</div>
+          </div>
         </div>
 
         <h3>Fact Verification: Debunking Retirement Rumours</h3>
@@ -250,14 +277,22 @@ const articleSchema = {
           While callers appear relaxed behind the microphone, stage officiating requires extraordinary mental calculation under severe pressure:
         </p>
 
-        <div class="ascii-box">
-          <pre><code>Visit 1: Player on 342.
-Dart 1: Treble 20 (60)
-Dart 2: Treble 20 (60)
-Dart 3: Single 1 (1)
-Score Scored: 121
-Mental Calculation: 342 - 121 = 221
-Caller Announcement: "One hundred and twenty-one... you require 221."</code></pre>
+                <div class="math-walkthrough" role="region" aria-label="Mental Arithmetic Walkthrough">
+          <div class="math-walkthrough-header">
+            <strong>Stage Math Simulation: Visit 1</strong>
+            <span class="badge">Starting Score: 342 Remaining</span>
+          </div>
+          <div class="darts-thrown-row">
+            <div class="dart-pill">Dart 1: <strong>Treble 20</strong> (60)</div>
+            <div class="dart-pill">Dart 2: <strong>Treble 20</strong> (60)</div>
+            <div class="dart-pill">Dart 3: <strong>Single 1</strong> (1)</div>
+          </div>
+          <div class="math-summary-box">
+            <strong>Score Scored: 121</strong> &bull; Mental Calculation: 342 &minus; 121 = <strong>221 Remaining</strong>
+          </div>
+          <div class="caller-speech-bubble">
+            <span>📢 Stage Call:</span> &ldquo;One hundred and twenty-one... you require 221.&rdquo;
+          </div>
         </div>
 
         <h3>Navigating Awkward Finishes and Busts</h3>
@@ -340,6 +375,7 @@ Caller Announcement: "One hundred and twenty-one... you require 221."</code></pr
     color: #000;
   }
   .page-header h1 {
+    color: #ffffff;
     font-size: 2.2rem;
     font-weight: 800;
     margin: 0 0 1rem;
@@ -393,21 +429,6 @@ Caller Announcement: "One hundred and twenty-one... you require 221."</code></pr
   }
   .content-card a:hover {
     color: #0369a1;
-  }
-  .ascii-box {
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    overflow-x: auto;
-  }
-  .ascii-box pre {
-    margin: 0;
-    font-family: monospace;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #1e293b;
   }
   .faq-section .faq-item {
     border-bottom: 1px solid #e2e8f0;
