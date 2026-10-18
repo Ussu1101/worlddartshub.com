@@ -20,7 +20,7 @@ const { player } = Astro.props;
 const cleanWeight = player.equipment.barrel_weight_grams ? player.equipment.barrel_weight_grams.split(' ')[0] : '23g';
 const songTitle = player.walk_on_song ? player.walk_on_song.split(' by ')[0] : 'Walk-On Music';
 const pageTitle = `${player.name}: Darts Specs & Career Stats`;
-const pageDescription = `Player dossier for ${player.name}: verified ${cleanWeight} ${player.equipment.manufacturer} darts setup, walk-on anthem "${songTitle}", career earnings, and tournament records.`;
+const pageDescription = `Player dossier for ${player.name}: ${cleanWeight} ${player.equipment.manufacturer} darts, walk-on anthem "${songTitle}", career earnings and records.`;
 
 const breadcrumbItems = [
   { name: 'Players', url: '/players/' },
