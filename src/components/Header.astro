@@ -1,5 +1,6 @@
 ---
 // src/components/Header.astro
+import SearchBar from './SearchBar.astro';
 const primaryNav = [
   { href: '/live/', label: 'Match Center' },
   { href: '/watch/', label: 'Watch & Stream' },
@@ -103,6 +104,9 @@ const isSecondaryActive = secondaryNav.some(
         </ul>
       </nav>
 
+      <!-- Site Search (Desktop) -->
+      <SearchBar id="search-desktop" extraClass="search-in-header" />
+
       <!-- Mobile Hamburger Toggle Button (44x44px minimum touch target) -->
       <button
         type="button"
@@ -146,6 +150,9 @@ const isSecondaryActive = secondaryNav.some(
         <span class="close-icon" aria-hidden="true">✕</span>
       </button>
     </div>
+
+    <!-- Site Search (Mobile Drawer) -->
+    <SearchBar id="search-drawer" extraClass="search-in-drawer" />
 
     <!-- Quick-Access Priority Buttons (Schedule, Watch, Tickets) -->
     <div class="drawer-quick-actions" aria-label="Quick Access Tournament Essentials">

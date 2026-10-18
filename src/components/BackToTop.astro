@@ -1,0 +1,78 @@
+---
+// src/components/BackToTop.astro
+// Additive floating back-to-top button: appears after scrolling, smooth-scrolls to top.
+---
+<button
+  type="button"
+  id="wdh-back-to-top"
+  class="back-to-top"
+  aria-label="Back to top"
+  title="Back to top"
+>
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+<script>
+  (function initBackToTop() {
+    var btn = document.getElementById('wdh-back-to-top');
+    if (!btn || btn.dataset.init === '1') return;
+    btn.dataset.init = '1';
+    var SHOW_AFTER = 600;
+
+    function onScroll() {
+      if (window.scrollY > SHOW_AFTER) btn.classList.add('is-visible');
+      else btn.classList.remove('is-visible');
+    }
+
+    btn.addEventListener('click', function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+    });
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
+<style>
+  .back-to-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 40;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: var(--color-accent, #f59e0b);
+    color: #0f172a;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.15s ease;
+  }
+  .back-to-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .back-to-top:hover {
+    background: var(--color-accent-hover, #d97706);
+  }
+  .back-to-top:focus-visible {
+    outline: 2px solid #f8fafc;
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .back-to-top {
+      transition: none;
+    }
+  }
+</style>
