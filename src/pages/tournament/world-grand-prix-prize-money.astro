@@ -1,0 +1,436 @@
+---
+// src/pages/tournament/world-grand-prix-prize-money.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Grand Prix Prize Money 2026: Full £750K Breakdown";
+const pageDescription = "Complete 2026 World Grand Prix prize money breakdown: £750k total fund, £150k champion share, round-by-round payouts, and double-in double-out rules.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/world-grand-prix-prize-money/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'World Grand Prix Prize Money', url: '/tournament/world-grand-prix-prize-money/' }
+];
+
+const faqItems = [
+  {
+    q: "How much does the World Grand Prix winner get?",
+    a: "The 2026 World Grand Prix champion receives £150,000 from the total £750,000 prize fund, reflecting the tournament's expanded prize structure."
+  },
+  {
+    q: "What is double in double out?",
+    a: "Double in double out is a format where a player must hit a double or the bullseye to begin scoring in a leg, and must also finish the leg on a double or the bullseye."
+  },
+  {
+    q: "Where is the World Grand Prix held?",
+    a: "The World Grand Prix is held at the Mattioli Arena in Leicester, England, which has hosted the tournament since 2021."
+  },
+  {
+    q: "Who won the 2026 World Grand Prix?",
+    a: "Luke Humphries won the 2026 World Grand Prix, defeating Gerwyn Price 6–4 in sets in the final after recovering from a 0–3 deficit."
+  },
+  {
+    q: "Does World Grand Prix prize money count towards the PDC Order of Merit?",
+    a: "Yes. All prize money earned in the World Grand Prix counts directly towards the official two-year rolling PDC Order of Merit world rankings."
+  },
+  {
+    q: "What was Gerwyn Price's record average at the 2026 World Grand Prix?",
+    a: "Gerwyn Price averaged 132.62 in the opening set of the 2026 final, setting the all-time record for the highest individual set average in World Grand Prix history."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": "World Grand Prix Prize Money 2026: Complete Breakdown",
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-18T00:00:00+00:00",
+      "dateModified": "2026-10-18T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tournament",
+          "item": `${siteUrl}/tournament/world-darts-championship/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "World Grand Prix Prize Money",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC RANKED MAJOR</span>
+        <span class="badge">LEICESTER 2026</span>
+      </div>
+      <h1>World Grand Prix Prize Money 2026: Complete Breakdown</h1>
+      <p class="lead-text">
+        The BoyleSports World Grand Prix stands as the PDC calendar's most demanding test of nerve and precision. Here is the verified round-by-round prize money breakdown for the 2026 championship, featuring a £750,000 purse, tournament rules, and key storylines.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC BoyleSports World Grand Prix Prize Fund & Match Results" />
+
+      <!-- Section 1: 2026 Result in Brief -->
+      <section class="content-card">
+        <h2>2026 Result in Brief</h2>
+        <p>
+          World number one <a href="/players/luke-humphries/">Luke Humphries</a> captured his second World Grand Prix title on Sunday, 4 October 2026, mounting an extraordinary comeback to defeat Gerwyn Price 6–4 in sets in the final at Leicester's Mattioli Arena.
+        </p>
+        <p>
+          Humphries trailed 0–3 in sets after Price opened the contest with an unplayable blitz. Refusing to yield, Humphries regrouped to claim six of the following seven sets, pocketing the £150,000 champion's cheque.
+        </p>
+        <p>
+          The victory marked Humphries' second World Grand Prix crown following his maiden triumph in 2023, while continuing his remarkable consistency by reaching his fourth consecutive major ranking final on the professional circuit.
+        </p>
+      </section>
+
+      <!-- Section 2: Full Prize Money Breakdown -->
+      <section class="content-card">
+        <h2>Full Prize Money Breakdown</h2>
+        <p>
+          The total prize fund for the 2026 BoyleSports World Grand Prix expanded to £750,000, representing a significant boost across all tournament stages compared to the previous £600,000 allocation.
+        </p>
+        <p>
+          Because the World Grand Prix is a premier ranked major sanctioned by the <a href="https://www.pdc.tv/" target="_blank" rel="noopener noreferrer">Professional Darts Corporation</a>, every pound won counts directly towards the two-year rolling PDC Order of Merit.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Finishing Position</th>
+                <th>Prize Money (Per Player)</th>
+                <th>Total Players</th>
+                <th>Total Stage Payout</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Winner (Champion)</strong></td>
+                <td><strong>£150,000</strong></td>
+                <td>1</td>
+                <td>£150,000</td>
+              </tr>
+              <tr>
+                <td><strong>Runner-up</strong></td>
+                <td><strong>£80,000</strong></td>
+                <td>1</td>
+                <td>£80,000</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-finalists</strong></td>
+                <td><strong>£50,000</strong></td>
+                <td>2</td>
+                <td>£100,000</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-finalists</strong></td>
+                <td><strong>£35,000</strong></td>
+                <td>4</td>
+                <td>£140,000</td>
+              </tr>
+              <tr>
+                <td><strong>Second Round (Last 16)</strong></td>
+                <td><strong>£20,000</strong></td>
+                <td>8</td>
+                <td>£160,000</td>
+              </tr>
+              <tr>
+                <td><strong>First Round (Last 32)</strong></td>
+                <td><strong>£7,500</strong></td>
+                <td>16</td>
+                <td>£120,000</td>
+              </tr>
+              <tr class="table-total">
+                <td><strong>Total Tournament Purse</strong></td>
+                <td>—</td>
+                <td><strong>32</strong></td>
+                <td><strong>£750,000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          To compare this purse with other televised PDC championships, explore our complete guide to <a href="/tournament/prize-money/">PDC major prize money</a>.
+        </p>
+      </section>
+
+      <!-- Section 3: The Double-In Double-Out Format -->
+      <section class="content-card">
+        <h2>The Double-In Double-Out Format</h2>
+        <p>
+          The World Grand Prix is famous as the only televised PDC tournament contested entirely under <a href="/darts/double-in-double-out/">double-in double-out</a> rules.
+        </p>
+        <p>
+          In standard 501 darts, players can score with any sector on their opening throw. At the World Grand Prix, scoring does not commence until a player lands a dart in a double ring (or the central 50-point bullseye). Any dart landing in a single or treble bed prior to hitting a double scores zero.
+        </p>
+        <p>
+          To conclude the leg, players must finish on a double or bullseye, exactly as in standard play. This requirement creates severe psychological pressure, as a dry spell at the start of a leg can leave a competitor trailing before their scoring tally has even opened.
+        </p>
+
+        <h3>Tournament Sets Structure</h3>
+        <p>
+          Matches at the World Grand Prix are contested in sets, where each set is played as the best of five legs (first to three legs wins the set):
+        </p>
+        <ul>
+          <li><strong>Round One (Last 32):</strong> Best of 3 sets (first to 2)</li>
+          <li><strong>Round Two (Last 16):</strong> Best of 5 sets (first to 3)</li>
+          <li><strong>Quarter-Finals:</strong> Best of 5 sets (first to 3)</li>
+          <li><strong>Semi-Finals:</strong> Best of 7 sets (first to 4)</li>
+          <li><strong>Final:</strong> Best of 9 sets (first to 5)</li>
+        </ul>
+      </section>
+
+      <!-- Section 4: 2026 Storylines -->
+      <section class="content-card">
+        <h2>2026 Storylines</h2>
+        <p>
+          The 2026 tournament produced some of the most sensational drama in the event's 29-year history:
+        </p>
+
+        <h3>Luke Littler's Shock Opening Round Exit</h3>
+        <p>
+          The headline shock of the tournament arrived on opening night when defending champion <a href="/players/luke-littler/">Luke Littler</a> was eliminated in the first round.
+        </p>
+        <p>
+          Littler, who claimed the Grand Prix title in 2025, struggled with his starting doubles against a resilient Luke Woodhouse. Woodhouse punished Littler's missed starting opportunities to seal a 2–1 set victory, producing one of the biggest opening-round upsets of the darts season.
+        </p>
+
+        <h3>Gerwyn Price Sets All-Time Set Average Record</h3>
+        <p>
+          While Gerwyn Price suffered heartbreak in the final, his performance in the opening set established a historic milestone.
+        </p>
+        <p>
+          Price produced legs of 12, 10, and 12 darts to sweep the opening set in just 34 total darts, registering a staggering <strong>132.62 set average</strong>. This shattered the previous record for the highest individual set average recorded in the history of double-start darts.
+        </p>
+      </section>
+
+      <!-- Section 5: Tournament Basics -->
+      <section class="content-card">
+        <h2>Tournament Basics</h2>
+        <p>
+          The 2026 championship was the 29th staging of the World Grand Prix since its inception in 1998:
+        </p>
+        <ul>
+          <li><strong>Host Venue:</strong> Mattioli Arena in Leicester, England, which has served as the tournament's home venue since 2021.</li>
+          <li><strong>Title Sponsor:</strong> BoyleSports, continuing their longstanding commercial partnership with the PDC.</li>
+          <li><strong>Tournament Field:</strong> Exactly 32 competitors. The top 16 players on the main PDC Order of Merit receive automatic qualification, alongside the top 16 non-qualified players from the ProTour Order of Merit.</li>
+          <li><strong>Player Governance:</strong> Regulated by the Darts Regulation Authority (DRA) in partnership with the <a href="https://pdpa.co.uk/" target="_blank" rel="noopener noreferrer">Professional Darts Players Association</a> (PDPA).</li>
+        </ul>
+        <p>
+          For full dates and scheduling across the professional calendar, visit our <a href="/schedule/">PDC tournament schedule</a>.
+        </p>
+      </section>
+
+      <!-- Section 6: Frequently Asked Questions -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card ul, .content-card ol {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-total {
+    background: #f1f5f9;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

@@ -1,0 +1,314 @@
+---
+// src/pages/darts/madhouse-in-darts.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Madhouse in Darts: Why Double 1 Has That Name";
+const pageDescription = "Why is Double 1 called the Madhouse in darts? Discover the origins of the infamous nickname, the brutal math behind it, and how to escape without busting.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/darts/madhouse-in-darts/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Darts Guide', url: '/darts/glossary/' },
+  { name: 'Madhouse in Darts', url: '/darts/madhouse-in-darts/' }
+];
+
+const faqItems = [
+  {
+    q: "What is the madhouse in darts?",
+    a: "In darts, the madhouse refers to Double 1 (D1), which is the required finishing target when a player has exactly 2 points remaining in a 501 leg."
+  },
+  {
+    q: "Why is double 1 called the madhouse?",
+    a: "Double 1 is nicknamed the madhouse because missing inside into the Single 1 segment leaves a score of 1, which busts the turn and resets the player back to 2 points. Getting trapped in this cycle under competitive pressure can drive players \"mad.\""
+  },
+  {
+    q: "Can you win a game on double 1?",
+    a: "Yes. Any legal double or the 50-point bullseye can win a leg or match in 501 darts, meaning hitting Double 1 when you have 2 points remaining seals the victory."
+  },
+  {
+    q: "Is double 1 smaller than other doubles?",
+    a: "No. Double 1 is the exact same size as every other double bed on a standard dartboard, measuring approximately 8 millimetres wide along the outer ring."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": "What Is the Madhouse in Darts?",
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-18T00:00:00+00:00",
+      "dateModified": "2026-10-18T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Darts Guide",
+          "item": `${siteUrl}/darts/glossary/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Madhouse in Darts",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">DARTS SLANG</span>
+        <span class="badge">FINISHING PRESSURE</span>
+      </div>
+      <h1>What Is the Madhouse in Darts?</h1>
+      <p class="lead-text">
+        In the rich vernacular of the oche, few terms strike as much dread into the heart of a player as "The Madhouse." Discover why Double 1 earned this notorious title, the geometry that makes it treacherous, and how to escape without busting.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="Darts Terminology & Rules of 501 Checkouts" />
+
+      <!-- Section 1: What Is the Madhouse? -->
+      <section class="content-card">
+        <h2>What Is the Madhouse?</h2>
+        <p>
+          In standard 501 darts, a player must finish the leg on a double. When a competitor reduces their score to <strong>2 points remaining</strong>, the only valid winning target on the entire board is Double 1.
+        </p>
+        <p>
+          The term "madhouse" was born out of pure frustration: attempting to hit Double 1 under pressure has driven countless throwers around the bend.
+        </p>
+        <p>
+          The nightmare begins with a stray dart inside the wire. If a player aiming at Double 1 lands inside the narrow double bed into the <strong>Single 1 segment</strong>, their remaining score is reduced from 2 to 1. Because you cannot checkout on a double from an odd score of 1, the turn is instantly ruled a <strong>bust</strong>.
+        </p>
+        <p>
+          The thrower's visit terminates immediately, their score resets to 2, and they must stand at the back of the oche while their opponent steps up with three clear darts to steal the leg. This cyclical trap—miss inside, bust, reset to 2, repeat—is why players describe being "locked in the madhouse."
+        </p>
+        <p>
+          To explore other classic darts expressions, read our comprehensive <a href="/darts/glossary/">darts glossary</a>.
+        </p>
+      </section>
+
+      <!-- Section 2: Why Is It So Hard? -->
+      <section class="content-card">
+        <h2>Why Is It So Hard?</h2>
+        <p>
+          A common myth among casual pub throwers is that Double 1 has a smaller surface area than other doubles. In reality, under official <a href="https://www.pdc.tv/" target="_blank" rel="noopener noreferrer">Professional Darts Corporation</a> equipment specifications, every outer double segment has the exact same dimensions: approximately 8mm in radial width along the outer wire ring.
+        </p>
+        <p>
+          What makes Double 1 uniquely unforgiving is the mathematical margin of error:
+        </p>
+        <ul>
+          <li><strong>No Forgiving Spillover:</strong> When targeting large doubles like Double 20 (tops) or Double 16, a stray dart inside lands into Single 20 or Single 16, leaving an even number (Double 10 or Double 8) for the next dart in hand. On Double 1, there is no playable inside buffer—any inside dart produces an instant bust.</li>
+          <li><strong>Missing High vs Missing Low:</strong> A dart that misses high (outside the outer wire) scores zero, allowing the player to adjust and use their remaining darts on D1. But the fear of floating outside often tempts players to pull their aim inward, directly into the fatal Single 1 trap.</li>
+          <li><strong>The 3-Point Dilemma:</strong> Being left on 3 points is equally hazardous. A player must deliberately aim at Single 1 to leave Double 1, or attempt an awkward inside wire gamble. To understand why awkward checkout remnants are so dangerous, see our guide to <a href="/darts/bogey-numbers-in-darts/">bogey numbers in darts</a>.</li>
+        </ul>
+        <p>
+          Unlike specialized formats like <a href="/darts/double-in-double-out/">double-in double-out</a> where players must also start on a double, standard 501 play only forces you onto doubles at the conclusion—making the madhouse an unavoidable psychological crucible.
+        </p>
+      </section>
+
+      <!-- Section 3: Famous Madhouse Moments -->
+      <section class="content-card">
+        <h2>Famous Madhouse Moments</h2>
+        <p>
+          Even the greatest players in darts history have suffered agonizing visits to the madhouse on the sport's biggest stages:
+        </p>
+        <ul>
+          <li><strong>Peter Wright vs Michael Smith (2022 World Championship Final):</strong> During their tense world title clash at Alexandra Palace, both competitors endured a heart-stopping leg where missed doubles dragged the score down to Double 1. With the crowd roaring on every throw, multiple darts drifted agonizingly into the single bed before Smith finally pinned the outer wire to break the deadlock.</li>
+          <li><strong>Classic World Matchplay Deciders:</strong> Television archives frequently feature agonizing multi-visit sequences at the Winter Gardens in Blackpool, where elite professionals required six, eight, or even ten match darts at Double 1 as tension tightened throws and caused dartitis-like hesitation on release.</li>
+        </ul>
+      </section>
+
+      <!-- Section 4: How to Practice D1 -->
+      <section class="content-card">
+        <h2>How to Practice D1</h2>
+        <p>
+          Because you will inevitably land on Double 1 in competition, mastering the target is essential:
+        </p>
+        <ol>
+          <li><strong>Aim for the Outer High Wire:</strong> When practicing Double 1, consciously aim at the top outer wire. A high dart scores zero points and keeps you alive on 2 with your remaining darts in hand. An inside dart immediately busts your turn.</li>
+          <li><strong>The "Escape the Asylum" Drill:</strong> Start each practice leg on 10 points. If you hit D5, move on. If you slip into S5 leaving 5 points, hit S1 to leave D2. If you slip into S1 again and land on D1, you cannot leave the board until you hit Double 1 cleanly with an outside miss allowance.</li>
+          <li><strong>Focus on Vertical Alignment:</strong> Double 1 sits directly to the right of the top-centre 20 segment. Keep your elbow tucked and your follow-through perfectly vertical to prevent lateral drift into the Single 1 bed.</li>
+        </ol>
+        <p>
+          Professional standards are regulated by the Darts Regulation Authority alongside the <a href="https://pdpa.co.uk/" target="_blank" rel="noopener noreferrer">Professional Darts Players Association</a>.
+        </p>
+      </section>
+
+      <!-- Section 5: Frequently Asked Questions -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card ul, .content-card ol {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

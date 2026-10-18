@@ -1,0 +1,618 @@
+---
+// src/pages/tournament/world-cup-of-darts.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Cup of Darts: Format, Prize Money & Past Winners";
+const pageDescription = "Comprehensive guide to the PDC World Cup of Darts: 40-nation pairs format, £500,000 prize fund breakdown, Frankfurt venue details, and full winners archive.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/world-cup-of-darts/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'World Cup of Darts', url: '/tournament/world-cup-of-darts/' }
+];
+
+const faqItems = [
+  {
+    q: "How does the World Cup of Darts work?",
+    a: "The World Cup of Darts is a 40-nation pairs tournament where each country is represented by two players. The top four seeded nations receive a bye into the Last 16, while the remaining 36 teams compete across 12 round-robin groups of three. Group winners join the top four seeds in a straight knockout bracket, with all matches contested as doubles leg play."
+  },
+  {
+    q: "How many teams play in the World Cup of Darts?",
+    a: "Exactly 40 national teams compete in the modern PDC World Cup of Darts, featuring 80 players from across Europe, the Americas, Asia, Africa, and Oceania."
+  },
+  {
+    q: "Who won the 2026 World Cup of Darts?",
+    a: "England won the 2026 World Cup of Darts, represented by Luke Littler and Luke Humphries, defeating the Netherlands (Michael van Gerwen and Gian van Veen) 10–5 in the final on 14 June 2026."
+  },
+  {
+    q: "Where is the World Cup of Darts held?",
+    a: "The World Cup of Darts is staged at the Eissporthalle in Frankfurt, Germany, which has served as the tournament's permanent venue since 2022."
+  },
+  {
+    q: "Does World Cup of Darts prize money count towards the Order of Merit?",
+    a: "No. Because the World Cup of Darts is an invitational team event rather than an individual ranking major, prize money won does not count towards the two-year rolling PDC Order of Merit."
+  },
+  {
+    q: "Which country has won the most World Cup of Darts titles?",
+    a: "England holds the record for the most World Cup of Darts titles, having won the tournament six times (2012, 2013, 2015, 2016, 2024, and 2026)."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": "World Cup of Darts: The PDC's Pairs Championship Explained",
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-18T00:00:00+00:00",
+      "dateModified": "2026-10-18T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tournament",
+          "item": `${siteUrl}/tournament/world-darts-championship/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "World Cup of Darts",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC MAJOR</span>
+        <span class="badge">PAIRS CHAMPIONSHIP</span>
+      </div>
+      <h1>World Cup of Darts: The PDC's Pairs Championship Explained</h1>
+      <p class="lead-text">
+        The PDC World Cup of Darts provides one of the most electric spectacles in world sport. As the only pairs tournament on the professional circuit, it strips away the solitary nature of championship darts and places national pride on the line in an intense team environment.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC World Cup of Darts Rules, Purse & Finals History" />
+
+      <!-- Section 1: What Is the World Cup of Darts? -->
+      <section class="content-card">
+        <h2>What Is the World Cup of Darts?</h2>
+        <p>
+          The World Cup of Darts is an annual international tournament staged by the <a href="https://www.pdc.tv/" target="_blank" rel="noopener noreferrer">Professional Darts Corporation</a>. First introduced in 2010, the competition brings together two-player national teams representing nations across Europe, the Americas, Asia, Oceania, and Africa.
+        </p>
+        <p>
+          Unlike standard ranking tournaments where competitors play exclusively as solo competitors, the World Cup is built entirely around doubles play. Teammates share visits to the board, throwing alternate visits of three darts while coordinating setup shots, checkouts, and board management.
+        </p>
+        <p>
+          This cooperative format generates unique psychological drama. Elite players accustomed to controlling their own rhythm must trust their partner's throwing cadence and adapt when an off-target dart disrupts a planned checkout sequence.
+        </p>
+      </section>
+
+      <!-- Section 2: 2026 Result in Brief -->
+      <section class="content-card">
+        <h2>2026 Result in Brief</h2>
+        <p>
+          England captured their record-extending sixth World Cup of Darts crown on Sunday, 14 June 2026, defeating fierce rivals the Netherlands 10–5 in the final at Frankfurt's Eissporthalle.
+        </p>
+        <p>
+          The English pairing of world champion <a href="/players/luke-littler/">Luke Littler</a> and world number one <a href="/players/luke-humphries/">Luke Humphries</a> produced a dominant campaign throughout the weekend. After navigating tense knockout matches on Saturday and Sunday afternoon, the English duo fired a combined match average exceeding 102 to overpower the Dutch tandem of Michael van Gerwen and Gian van Veen in the decider.
+        </p>
+        <p>
+          Defending champions Northern Ireland, represented by Josh Rock and Daryl Gurney following their maiden triumph in 2025, bowed out at the semi-final stage after suffering a narrow 8–7 defeat to the Netherlands in a deciding leg.
+        </p>
+        <p>
+          The triumph cemented England's status as the most successful nation in World Cup history, breaking their tie of five titles with the Netherlands.
+        </p>
+      </section>
+
+      <!-- Section 3: Format Explained -->
+      <section class="content-card">
+        <h2>Format Explained</h2>
+        <p>
+          The World Cup underwent an extensive format overhaul in 2023, expanding the field to 40 nations and transitioning the entire event into a pure doubles tournament with no individual singles matches.
+        </p>
+
+        <h3>The Seedings and Group Phase</h3>
+        <ul>
+          <li><strong>Top Four Seeded Nations:</strong> The four highest-ranked countries—determined by the combined world ranking of their two selected players on the two-year rolling PDC Order of Merit—receive automatic qualification directly into the Second Round (Last 16).</li>
+          <li><strong>The 36 Unseeded Nations:</strong> The remaining 36 teams are drawn into 12 round-robin groups of three teams each (Groups A through L).</li>
+          <li><strong>Group Play:</strong> Each nation plays the other two teams in their group across the opening two days. Matches are contested as best-of-seven legs.</li>
+          <li><strong>Advancement:</strong> Only the team finishing top of each group qualifies for the knockout phase, joining the four seeded nations in the Last 16.</li>
+        </ul>
+
+        <h3>The Knockout Phase</h3>
+        <p>
+          From the Last 16 onward, the tournament operates as a straight single-elimination bracket:
+        </p>
+        <ul>
+          <li><strong>Second Round (Last 16):</strong> Best of 15 legs (first to 8)</li>
+          <li><strong>Quarter-Finals:</strong> Best of 15 legs (first to 8)</li>
+          <li><strong>Semi-Finals:</strong> Best of 15 legs (first to 8)</li>
+          <li><strong>Final:</strong> Best of 19 legs (first to 10)</li>
+        </ul>
+        <p>
+          Because every single match is played in alternate-visit doubles, teammates cannot rely on individual singles rubbers to bail them out. Chemistry, tempo alignment, and mutual encouragement are vital attributes for any partnership aiming to lift the trophy.
+        </p>
+      </section>
+
+      <!-- Section 4: Prize Money Breakdown -->
+      <section class="content-card">
+        <h2>Prize Money Breakdown</h2>
+        <p>
+          The World Cup of Darts features an overall purse of £500,000. Prize money is awarded per two-player team and split equally between both competitors (£50,000 each for the champions).
+        </p>
+        <p>
+          Importantly, because the World Cup is an invitational national event and does not feature an open tour qualifying system, prize money won does not count towards the individual PDC Order of Merit world rankings.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Finishing Stage</th>
+                <th>Prize Money (Per Team)</th>
+                <th>Payout Per Player</th>
+                <th>Total Teams</th>
+                <th>Total Stage Payout</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Winners (Champions)</strong></td>
+                <td><strong>£100,000</strong></td>
+                <td>£50,000</td>
+                <td>1</td>
+                <td>£100,000</td>
+              </tr>
+              <tr>
+                <td><strong>Runners-up</strong></td>
+                <td><strong>£48,000</strong></td>
+                <td>£24,000</td>
+                <td>1</td>
+                <td>£48,000</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-finalists</strong></td>
+                <td><strong>£30,000</strong></td>
+                <td>£15,000</td>
+                <td>2</td>
+                <td>£60,000</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-finalists</strong></td>
+                <td><strong>£20,000</strong></td>
+                <td>£10,000</td>
+                <td>4</td>
+                <td>£80,000</td>
+              </tr>
+              <tr>
+                <td><strong>Second Round (Last 16)</strong></td>
+                <td><strong>£10,000</strong></td>
+                <td>£5,000</td>
+                <td>8</td>
+                <td>£80,000</td>
+              </tr>
+              <tr>
+                <td><strong>Group Stage Runners-up (2nd)</strong></td>
+                <td><strong>£6,000</strong></td>
+                <td>£3,000</td>
+                <td>12</td>
+                <td>£72,000</td>
+              </tr>
+              <tr>
+                <td><strong>Group Stage Third Place (3rd)</strong></td>
+                <td><strong>£5,000</strong></td>
+                <td>£2,500</td>
+                <td>12</td>
+                <td>£60,000</td>
+              </tr>
+              <tr class="table-total">
+                <td><strong>Total Tournament Purse</strong></td>
+                <td>—</td>
+                <td>—</td>
+                <td><strong>40</strong></td>
+                <td><strong>£500,000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          To see how this £500,000 purse compares with solo ranking majors like the World Championship and World Matchplay, explore our comprehensive guide to <a href="/tournament/prize-money/">PDC tournament prize money</a>.
+        </p>
+      </section>
+
+      <!-- Section 5: Venue -->
+      <section class="content-card">
+        <h2>Venue: Eissporthalle, Frankfurt</h2>
+        <p>
+          Since 2022, the World Cup of Darts has established a permanent home at the <strong>Eissporthalle in Frankfurt, Germany</strong>.
+        </p>
+        <p>
+          Known for its lively arena atmosphere and cavernous seating bowl, the Eissporthalle regularly welcomes thousands of passionate European darts supporters across four days of summer action. The 2026 championship took place from 11 to 14 June 2026, generating packed sessions and deafening support for home and visiting nations alike.
+        </p>
+        <p>
+          The German venue has proven an ideal European hub for international supporters, providing convenient rail and air connections for fans travelling from across the UK, Netherlands, Belgium, and Scandinavia.
+        </p>
+      </section>
+
+      <!-- Section 6: How to Watch -->
+      <section class="content-card">
+        <h2>How to Watch the World Cup of Darts</h2>
+        <p>
+          The World Cup is broadcast live across global television networks and digital streaming platforms:
+        </p>
+        <ul>
+          <li><strong>United Kingdom &amp; Ireland:</strong> Broadcast live on Sky Sports Arena and Sky Sports Main Event, with streaming available via the Sky Go and NOW apps.</li>
+          <li><strong>Germany, Austria &amp; Switzerland:</strong> Streamed live and on-demand through DAZN.</li>
+          <li><strong>Netherlands:</strong> Broadcast live on Viaplay.</li>
+          <li><strong>Rest of the World:</strong> Streamed internationally through PDCTV for subscribers outside the UK, Germany, and the Netherlands.</li>
+        </ul>
+        <p>
+          For complete broadcast schedules, country-by-country channel listings, and streaming tips, visit our comprehensive <a href="/watch/">where to watch darts</a> broadcasting directory.
+        </p>
+      </section>
+
+      <!-- Section 7: Past Champions -->
+      <section class="content-card">
+        <h2>Past Champions (2010–2026)</h2>
+        <p>
+          The World Cup has produced iconic rivalries and historic breakthroughs since its inauguration in 2010:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Winning Nation</th>
+                <th>Champions</th>
+                <th>Runners-up</th>
+                <th>Final Score</th>
+                <th>Host City</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>2010</strong></td>
+                <td>Netherlands</td>
+                <td>Raymond van Barneveld &amp; Co Stompé</td>
+                <td>Wales (Mark Webster &amp; Barrie Bates)</td>
+                <td>4–2 (matches)</td>
+                <td>Doncaster</td>
+              </tr>
+              <tr>
+                <td><strong>2012</strong></td>
+                <td>England</td>
+                <td>Phil Taylor &amp; Adrian Lewis</td>
+                <td>Australia (Simon Whitlock &amp; Paul Nicholson)</td>
+                <td>3–3 (decider)</td>
+                <td>Hamburg</td>
+              </tr>
+              <tr>
+                <td><strong>2013</strong></td>
+                <td>England</td>
+                <td>Phil Taylor &amp; Adrian Lewis</td>
+                <td>Belgium (Kim Huybrechts &amp; Ronny Huybrechts)</td>
+                <td>3–1 (matches)</td>
+                <td>Hamburg</td>
+              </tr>
+              <tr>
+                <td><strong>2014</strong></td>
+                <td>Netherlands</td>
+                <td>Michael van Gerwen &amp; Raymond van Barneveld</td>
+                <td>England (Phil Taylor &amp; Adrian Lewis)</td>
+                <td>3–0 (matches)</td>
+                <td>Hamburg</td>
+              </tr>
+              <tr>
+                <td><strong>2015</strong></td>
+                <td>England</td>
+                <td>Phil Taylor &amp; Adrian Lewis</td>
+                <td>Scotland (Gary Anderson &amp; Peter Wright)</td>
+                <td>3–2 (matches)</td>
+                <td>Frankfurt</td>
+              </tr>
+              <tr>
+                <td><strong>2016</strong></td>
+                <td>England</td>
+                <td>Phil Taylor &amp; Adrian Lewis</td>
+                <td>Netherlands (M. van Gerwen &amp; R. van Barneveld)</td>
+                <td>3–2 (matches)</td>
+                <td>Frankfurt</td>
+              </tr>
+              <tr>
+                <td><strong>2017</strong></td>
+                <td>Netherlands</td>
+                <td>Michael van Gerwen &amp; Raymond van Barneveld</td>
+                <td>Wales (Gerwyn Price &amp; Mark Webster)</td>
+                <td>3–1 (matches)</td>
+                <td>Frankfurt</td>
+              </tr>
+              <tr>
+                <td><strong>2018</strong></td>
+                <td>Netherlands</td>
+                <td>Michael van Gerwen &amp; Raymond van Barneveld</td>
+                <td>Scotland (Gary Anderson &amp; Peter Wright)</td>
+                <td>3–1 (matches)</td>
+                <td>Frankfurt</td>
+              </tr>
+              <tr>
+                <td><strong>2019</strong></td>
+                <td>Scotland</td>
+                <td>Gary Anderson &amp; Peter Wright</td>
+                <td>Rep. of Ireland (W. O'Connor &amp; S. Lennon)</td>
+                <td>3–1 (matches)</td>
+                <td>Hamburg</td>
+              </tr>
+              <tr>
+                <td><strong>2020</strong></td>
+                <td>Wales</td>
+                <td>Gerwyn Price &amp; Jonny Clayton</td>
+                <td>England (Michael Smith &amp; Rob Cross)</td>
+                <td>3–0 (matches)</td>
+                <td>Salzburg</td>
+              </tr>
+              <tr>
+                <td><strong>2021</strong></td>
+                <td>Scotland</td>
+                <td>Peter Wright &amp; John Henderson</td>
+                <td>Austria (M. Suljović &amp; R. Rodriguez)</td>
+                <td>3–1 (matches)</td>
+                <td>Jena</td>
+              </tr>
+              <tr>
+                <td><strong>2022</strong></td>
+                <td>Australia</td>
+                <td>Damon Heta &amp; Simon Whitlock</td>
+                <td>Wales (Gerwyn Price &amp; Jonny Clayton)</td>
+                <td>3–1 (matches)</td>
+                <td>Frankfurt</td>
+              </tr>
+              <tr>
+                <td><strong>2023</strong></td>
+                <td>Wales</td>
+                <td>Gerwyn Price &amp; Jonny Clayton</td>
+                <td>Scotland (Peter Wright &amp; Gary Anderson)</td>
+                <td>10–2 (legs)</td>
+                <td>Frankfurt</td>
+              </tr>
+              <tr>
+                <td><strong>2024</strong></td>
+                <td>England</td>
+                <td>Luke Humphries &amp; Michael Smith</td>
+                <td>Austria (R. Rodriguez &amp; M. Suljović)</td>
+                <td>10–6 (legs)</td>
+                <td>Frankfurt</td>
+              </tr>
+              <tr>
+                <td><strong>2025</strong></td>
+                <td>Northern Ireland</td>
+                <td>Josh Rock &amp; Daryl Gurney</td>
+                <td>Wales (Gerwyn Price &amp; Jonny Clayton)</td>
+                <td>10–8 (legs)</td>
+                <td>Frankfurt</td>
+              </tr>
+              <tr>
+                <td><strong>2026</strong></td>
+                <td>England</td>
+                <td>Luke Littler &amp; Luke Humphries</td>
+                <td>Netherlands (M. van Gerwen &amp; G. van Veen)</td>
+                <td>10–5 (legs)</td>
+                <td>Frankfurt</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Player welfare and tournament governance are coordinated alongside the <a href="https://pdpa.co.uk/" target="_blank" rel="noopener noreferrer">Professional Darts Players Association</a>.
+        </p>
+      </section>
+
+      <!-- Section 8: Frequently Asked Questions -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card ul, .content-card ol {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-total {
+    background: #f1f5f9;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>
