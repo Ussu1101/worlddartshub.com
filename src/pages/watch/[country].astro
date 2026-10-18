@@ -31,7 +31,7 @@ const { broadcaster } = Astro.props;
 
 const countryDisplayName = broadcaster.country === 'International / Rest of World' ? 'Rest of World' : broadcaster.country;
 const cleanBroadcasterName = broadcaster.broadcaster_name.replace(/ \(.*?\)/, '');
-const pageTitle = `Watch PDC World Darts 2026/27 in ${countryDisplayName}: TV & Streams`;
+const pageTitle = `Watch PDC Darts 2026/27 in ${countryDisplayName}: TV & Streams`;
 const pageDescription = `Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in ${countryDisplayName}. Watch live via ${cleanBroadcasterName}.`;
 
 const breadcrumbItems = [
