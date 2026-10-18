@@ -17,20 +17,53 @@ const breadcrumbItems = [
 
 const rollOfHonourSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": pageTitle,
-  "description": pageDescription,
-  "url": `${siteUrl}/history/roll-of-honour/`,
-  "mainEntity": {
-    "@type": "ItemList",
-    "name": "PDC World Darts Championship Winners",
-    "numberOfItems": finalsData.pdc_finals.length,
-    "itemListElement": finalsData.pdc_finals.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": `${item.year} World Champion: ${item.winner} (Runner-up: ${item.runner_up}, Score: ${item.score})`
-    }))
-  }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": pageTitle,
+      "description": pageDescription,
+      "url": `${siteUrl}/history/roll-of-honour/`,
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "PDC World Darts Championship Winners",
+        "numberOfItems": finalsData.pdc_finals.length,
+        "itemListElement": finalsData.pdc_finals.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": `${item.year} World Champion: ${item.winner} (Runner-up: ${item.runner_up}, Score: ${item.score})`
+        }))
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many World Championships did Phil Taylor win in his career?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Phil Taylor won a record 16 World Championships across his career: 2 with the BDO (1990, 1992) and 14 with the PDC (1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2004, 2005, 2006, 2009, 2010, 2013)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who was the first non-UK winner of the PDC World Darts Championship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Canada's John Part was the first non-UK player to win the PDC World Championship, triumphing 7–6 over Phil Taylor at the Circus Tavern in 2003, before winning again at Alexandra Palace in 2008."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Has anyone ever won the World Championship on their tournament debut?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Dennis Priestley won the inaugural 1994 event on debut, Christian Kist won the 2012 BDO event on debut, and Rob Cross famously won the 2018 PDC World Championship on his debut, defeating Phil Taylor 7–2 in the final."
+          }
+        }
+      ]
+    }
+  ]
 };
 ---
 
@@ -66,7 +99,26 @@ const rollOfHonourSchema = {
         </p>
       </section>
 
+      <!-- Roll of Honour vs Finals Archive distinction -->
+      <div class="diff-box">
+        <p><strong>Roll of Honour vs Finals Archive:</strong> this page is the definitive winners' list — every world champion, every year, across the PDC and BDO eras. For full final scores, winning averages, venue history and the stories behind the most iconic finals, see our <a href="/history/world-championship-finals/">World Championship Finals Archive</a>.</p>
+      </div>
+
       <AdSlot id="roll-top-ad" label="Championship Heritage & Books" />
+
+      <!-- Championship Eras -->
+      <section class="content-card era-section">
+        <h2>Eras of the World Championship</h2>
+        <p>
+          <strong>The Taylor Era (1995–2013).</strong> No roll of honour discussion starts anywhere but Phil Taylor. After losing the inaugural 1994 final to Dennis Priestley, Taylor captured 14 PDC world titles — including eight in succession from 1995 to 2002, a run of dominance no other world championship in any sport has matched. His 2003 final defeat to John Part, 7–6 in a sudden-death leg at the Circus Tavern, remains the most famous upset in darts history. Taylor's final title in 2013, aged 52, made him the oldest PDC world champion ever.
+        </p>
+        <p>
+          <strong>The Transition (2014–2019).</strong> As Taylor faded, Michael van Gerwen claimed three titles (2014, 2017, 2019) and Gary Anderson went back-to-back (2015, 2016), while Adrian Lewis had already defended his crown in 2011–2012. The era closed symbolically in 2018: Rob Cross, on his tournament debut, defeated Taylor 7–2 in the great man's farewell final.
+        </p>
+        <p>
+          <strong>The New Generation (2020–present).</strong> Five different champions across six editions — Peter Wright (2020, 2022), Gerwyn Price (2021), Michael Smith (2023) and Luke Humphries (2024) — before Luke Littler's 2025 triumph at just 17 years old made him the youngest world champion in darts history and signalled a full generational shift at the top of the sport.
+        </p>
+      </section>
 
       <!-- PDC Roll of Honour Table -->
       <section class="content-card table-section">
@@ -158,6 +210,20 @@ const rollOfHonourSchema = {
       </section>
 
       <!-- FAQ Section -->
+      <section class="content-card records-section">
+        <h2>Roll of Honour Records &amp; Milestones</h2>
+        <ul class="records-list">
+          <li><strong>Most world titles (all organisations):</strong> Phil Taylor — 16 (2 BDO, 14 PDC).</li>
+          <li><strong>Most consecutive PDC titles:</strong> Phil Taylor — 8 in a row, 1995–2002.</li>
+          <li><strong>Youngest world champion:</strong> Luke Littler — 17 years old (2025).</li>
+          <li><strong>Oldest PDC world champion:</strong> Phil Taylor — 52 years old (2013).</li>
+          <li><strong>Back-to-back PDC champions:</strong> Phil Taylor (1995–2002 run, 2004–2006, 2008–2010), Adrian Lewis (2011–2012), Gary Anderson (2015–2016).</li>
+          <li><strong>The five-time champions club:</strong> Phil Taylor (16), Eric Bristow (5 BDO), Raymond van Barneveld (5 — 4 BDO, 1 PDC).</li>
+          <li><strong>First non-UK PDC champion:</strong> John Part of Canada (2003).</li>
+          <li><strong>Debut winners:</strong> Dennis Priestley (1994), Christian Kist (BDO 2012), Rob Cross (2018).</li>
+        </ul>
+      </section>
+
       <section class="content-card faq-section">
         <h2>Roll of Honour FAQ</h2>
         <div class="faq-accordion">
@@ -434,5 +500,60 @@ const rollOfHonourSchema = {
   }
   .highlight-sidebar {
     border-color: #f59e0b;
+  }
+  .diff-box {
+    background: #0f172a;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .diff-box p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .diff-box strong {
+    color: #f8fafc;
+  }
+  .diff-box a {
+    color: #38bdf8;
+  }
+  .era-section h2,
+  .records-section h2 {
+    color: #f8fafc;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+  .era-section p {
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .era-section p:last-child {
+    margin-bottom: 0;
+  }
+  .era-section p strong {
+    color: #f8fafc;
+  }
+  .records-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+  }
+  .records-list li {
+    color: #cbd5e1;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #334155;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .records-list li:last-child {
+    border-bottom: none;
+  }
+  .records-list li strong {
+    color: #f8fafc;
   }
 </style>
