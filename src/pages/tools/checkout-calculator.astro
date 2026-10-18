@@ -709,6 +709,14 @@ const faqSchema = {
         e.preventDefault();
         const score = parseInt(input.value.trim(), 10);
         updateCalculator(score);
+        // GA4: explicit calculate action (not live-typing, not pills)
+        const gtagFn = (window as any).gtag;
+        if (typeof gtagFn === 'function' && !isNaN(score)) {
+          gtagFn('event', 'calculator_use', {
+            score: score,
+            result_type: BOGEYS.indexOf(score) !== -1 ? 'bogey_number' : (score >= 2 && score <= 170 ? 'checkout_found' : 'invalid')
+          });
+        }
       });
 
       input.addEventListener('input', () => {

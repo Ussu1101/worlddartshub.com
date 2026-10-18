@@ -72,6 +72,16 @@ const resultsId = `${id}-results`;
         currentItems = [];
       }
 
+      function trackSearch(term, url) {
+        var gtagFn = window.gtag;
+        if (typeof gtagFn === 'function' && term) {
+          gtagFn('event', 'site_search', {
+            search_term: term.slice(0, 100),
+            result_url: url || ''
+          });
+        }
+      }
+
       function render(matches) {
         results.innerHTML = '';
         activeIndex = -1;
@@ -142,12 +152,18 @@ const resultsId = `${id}-results`;
         else if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(activeIndex + 1, items.length - 1)); }
         else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(activeIndex - 1, -1)); }
         else if (e.key === 'Enter' && activeIndex >= 0 && currentItems[activeIndex]) {
+          trackSearch(input.value.trim(), currentItems[activeIndex].url);
           window.location.href = currentItems[activeIndex].url;
         }
       });
 
       input.addEventListener('focus', function () { loadIndex(); });
 
+      results.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a || !root.contains(a)) return;
+        trackSearch(input.value.trim(), a.getAttribute('href'));
+      });
       document.addEventListener('click', function (e) {
         if (!root.contains(e.target)) closeResults();
       });

@@ -152,5 +152,35 @@ const baseWebsiteSchema = {
     </main>
     <Footer />
     <BackToTop />
+    <script is:inline>
+      // GA4: ticket_click — delegated tracking for outbound ticket-vendor links.
+      // Add new vendors inside classifyTicketVendor() as links are added.
+      (function () {
+        function classifyTicketVendor(hostname, pathname) {
+          var host = hostname.replace(/^www\./, '');
+          if (host === 'seetickets.com') return 'see_tickets';
+          if (host === 'pdc.tv' && pathname.indexOf('ticket') !== -1) return 'pdc';
+          return null;
+        }
+        document.addEventListener('click', function (e) {
+          var el = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+          if (!el) return;
+          var href = el.getAttribute('href') || '';
+          if (href.charAt(0) !== 'h') return;
+          var url;
+          try { url = new URL(href, window.location.origin); } catch (err) { return; }
+          if (url.origin === window.location.origin) return;
+          var vendor = classifyTicketVendor(url.hostname, url.pathname);
+          if (!vendor) return;
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'ticket_click', {
+              vendor: vendor,
+              link_url: url.href,
+              page_path: window.location.pathname
+            });
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
