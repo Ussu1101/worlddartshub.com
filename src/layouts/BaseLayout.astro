@@ -3,6 +3,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BackToTop from '../components/BackToTop.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -58,6 +59,15 @@ const baseWebsiteSchema = {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
+      // Google Consent Mode v2: deny non-essential storage by default (UK GDPR/PECR).
+      // The cookie banner updates these to 'granted' when the visitor accepts.
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
 
       gtag('config', 'G-80LM7CCQNR');
     </script>
@@ -159,6 +169,7 @@ const baseWebsiteSchema = {
     </main>
     <Footer />
     <BackToTop />
+    <CookieBanner />
     <script is:inline>
       // GA4: ticket_click — delegated tracking for outbound ticket-vendor links.
       // Add new vendors inside classifyTicketVendor() as links are added.

@@ -1,0 +1,134 @@
+---
+// src/components/CookieBanner.astro
+// GDPR/PECR cookie consent banner with Google Consent Mode v2 support.
+---
+
+<div id="wdh-cookie-banner" class="cookie-banner" hidden>
+  <div class="cookie-banner-inner">
+    <p class="cookie-text">
+      🍪 We use cookies to improve your experience, analyse traffic, and support advertising.
+      See our <a href="/cookie-policy/">Cookie Policy</a>.
+    </p>
+    <div class="cookie-actions">
+      <button type="button" id="wdh-cookie-reject" class="cookie-btn cookie-btn-reject">Reject</button>
+      <button type="button" id="wdh-cookie-accept" class="cookie-btn cookie-btn-accept">Accept all</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 1rem;
+    pointer-events: none;
+  }
+  .cookie-banner-inner {
+    pointer-events: auto;
+    max-width: 720px;
+    margin: 0 auto;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .cookie-text {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex: 1 1 280px;
+  }
+  .cookie-text a {
+    color: #38bdf8;
+    text-decoration: underline;
+  }
+  .cookie-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+  .cookie-btn {
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: opacity 0.15s;
+  }
+  .cookie-btn:hover {
+    opacity: 0.9;
+  }
+  .cookie-btn-accept {
+    background: #f59e0b;
+    color: #0f172a;
+  }
+  .cookie-btn-reject {
+    background: transparent;
+    color: #cbd5e1;
+    border-color: #475569;
+  }
+  @media (max-width: 560px) {
+    .cookie-banner-inner {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .cookie-actions {
+      justify-content: stretch;
+    }
+    .cookie-btn {
+      flex: 1;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var KEY = 'wdh-cookie-consent';
+    var banner = document.getElementById('wdh-cookie-banner');
+    if (!banner) return;
+
+    function updateGtag(state) {
+      var g = window.gtag;
+      if (typeof g !== 'function') return;
+      if (state === 'granted') {
+        g('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+      // 'denied' is already the default — nothing to update.
+    }
+
+    function save(state) {
+      try { localStorage.setItem(KEY, state); } catch (e) {}
+      updateGtag(state);
+      banner.hidden = true;
+    }
+
+    // Apply stored choice (if any) without showing the banner.
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    if (stored === 'granted' || stored === 'denied') {
+      updateGtag(stored);
+      return;
+    }
+
+    // No choice yet — show the banner.
+    banner.hidden = false;
+    document.getElementById('wdh-cookie-accept').addEventListener('click', function () { save('granted'); });
+    document.getElementById('wdh-cookie-reject').addEventListener('click', function () { save('denied'); });
+  })();
+</script>
