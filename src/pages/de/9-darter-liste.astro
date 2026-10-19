@@ -1,0 +1,130 @@
+// src/pages/de/9-darter-liste.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "9-Darter Liste: Alle TV Neun-Darter im Darts";
+const pageDescription = "Was ist ein 9-Darter? Die Liste der legendären TV-Neun-Darter: Taylor, van Gerwen, Littler und Co. – alle perfekten Legs im Überblick.";
+const siteUrl = "https://worlddartshub.com";
+
+const alternates = [
+  { hreflang: "de", href: `${siteUrl}/de/9-darter-liste/` },
+  { hreflang: "en", href: `${siteUrl}/players/180-records/` },
+  { hreflang: "x-default", href: `${siteUrl}/players/180-records/` }
+];
+
+const neundarterSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist ein 9-Darter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ein 9-Darter ist das perfekte Leg im Darts: 501 Punkte werden mit nur neun Darts gecheckt – das Minimum, das möglich ist. Die klassische Route: zweimal 180, dann 141 über Triple 20, Triple 19 und Doppel 12."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wer hat den ersten TV-9-Darter geworfen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Phil Taylor warf 2002 den ersten im Fernsehen übertragenen 9-Darter. Seitdem haben ihn Stars wie Michael van Gerwen, Adrian Lewis, Gary Anderson und Luke Littler wiederholt geschafft."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es Preisgeld für einen 9-Darter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Bei der Darts-WM 2026/27 gibt es einen Bonus von 60.000 Pfund für einen TV-9-Darter. Auch bei anderen Majors loben Sponsoren regelmäßig Prämien für das perfekte Leg aus."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  lang="de"
+  title={pageTitle}
+  description={pageDescription}
+  alternates={alternates}
+  schema={neundarterSchema}
+>
+  <section>
+    <h1>9-Darter Liste: Das perfekte Leg im Darts</h1>
+    <p>
+      Der <strong>9-Darter</strong> – im Deutschen auch <strong>Neun-Darter</strong> genannt –
+      ist das perfekte Leg im Darts: <strong>501 Punkte mit nur neun Darts</strong>.
+      Weniger geht nicht, mehr braucht niemand. Wenn im Ally Pally die Rufe
+      <em>One hundred and eighty!</em> zweimal hintereinander ertönen und dann das Doppel
+      zum 141er-Checkout fällt, steht die Halle Kopf.
+    </p>
+  </section>
+
+  <section>
+    <h2>Die klassische 9-Darter-Route</h2>
+    <p>
+      Der Standardweg zum perfekten Leg:
+    </p>
+    <ul>
+      <li><strong>Darts 1–3:</strong> 180 (dreimal Triple 20)</li>
+      <li><strong>Darts 4–6:</strong> 180 (dreimal Triple 20)</li>
+      <li><strong>Darts 7–9:</strong> 141 (Triple 20, Triple 19, Doppel 12)</li>
+    </ul>
+    <p>
+      Es gibt weitere Routen – etwa über 167 oder mit Bull-Finish –, doch die
+      180-180-141-Kombination bleibt der Klassiker. Entscheidend ist immer:
+      Neun Darts, null Fehler.
+    </p>
+  </section>
+
+  <section>
+    <h2>Die legendärsten TV-9-Darter der Geschichte</h2>
+    <p>
+      <strong>Phil Taylor</strong> schrieb 2002 Geschichte mit dem ersten im Fernsehen
+      übertragenen 9-Darter – der Startschuss für eine neue Ära. <strong>Michael van Gerwen</strong>
+      perfektionierte die Kunst und hält den Rekord für die meisten TV-Neun-Darter.
+      <strong>Adrian Lewis</strong> gelang das Kunststück sogar zweimal in einem einzigen
+      WM-Finale (2011). Auch <strong>Gary Anderson</strong>, <strong>James Wade</strong> und
+      <strong>Luke Littler</strong> haben sich in die <strong>9-Darter-Liste</strong> eingetragen.
+    </p>
+    <p>
+      Besonders elektrisierend: Ein 9-Darter auf der WM-Bühne im Ally Pally – vor über
+      3.000 tobenden Fans und Millionen Zuschauern an den Bildschirmen. Wer dabei sein will,
+      findet alle Infos in unserem <a href="/de/darts-wm-tickets/">Ticket-Guide</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Preisgeld für das perfekte Leg</h2>
+    <p>
+      Ein 9-Darter ist nicht nur Ruhm, sondern auch bares Geld wert. Bei der
+      <strong>Darts-WM 2026/27</strong> gibt es einen Bonus von
+      <strong>60.000 Pfund</strong> für einen im TV übertragenen Neun-Darter.
+      Auch bei anderen Majors loben Sponsoren regelmäßig Prämien aus –
+      alle Summen im Überblick auf unserer <a href="/de/preisgeld/">Preisgeld-Seite</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Häufige Fragen zum 9-Darter</h2>
+    <h3>Was ist ein 9-Darter?</h3>
+    <p>
+      Das perfekte Leg: 501 Punkte mit nur neun Darts – meist über 180, 180 und
+      141 Checkout.
+    </p>
+    <h3>Wer hat den ersten TV-9-Darter geworfen?</h3>
+    <p>
+      Phil Taylor im Jahr 2002. Michael van Gerwen hält den Rekord für die meisten
+      im Fernsehen übertragenen Neun-Darter.
+    </p>
+    <h3>Gibt es Preisgeld für einen 9-Darter?</h3>
+    <p>
+      Ja – bei der Darts-WM 2026/27 winken 60.000 Pfund Bonus für einen TV-9-Darter.
+    </p>
+    <p>
+      <a href="/de/">← Zurück zur deutschen Fan-Zentrale</a>
+    </p>
+  </section>
+</BaseLayout>

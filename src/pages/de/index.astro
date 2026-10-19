@@ -1,0 +1,148 @@
+// src/pages/de/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Darts WM 2026/27: Deutsche Fan-Zentrale | World Darts Hub";
+const pageDescription = "Alles zur Darts-WM 2026/27 auf Deutsch: Rangliste, 9-Darter-Liste, Dartkalender, Preisgeld, Tickets und TV-Übertragung. Der deutsche Guide zum Ally Pally.";
+const siteUrl = "https://worlddartshub.com";
+
+const alternates = [
+  { hreflang: "de", href: `${siteUrl}/de/` },
+  { hreflang: "en", href: `${siteUrl}/` },
+  { hreflang: "x-default", href: `${siteUrl}/` }
+];
+
+const deHubSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wann findet die Darts-WM 2026/27 statt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die PDC Darts-WM 2026/27 beginnt Mitte Dezember 2026 im Alexandra Palace in London. Nach der Weihnachtspause geht es am 27. Dezember 2026 mit der dritten Runde weiter, das Finale steigt Anfang Januar 2027."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wo kann man in Deutschland Darts schauen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Deutschland zeigen Sport1 im Free-TV sowie DAZN und PDC TV im Stream die großen Darts-Turniere live, darunter die komplette Darts-WM aus dem Ally Pally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie funktioniert die Darts-Rangliste?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die PDC Order of Merit ist eine Zwei-Jahres-Rangliste nach erspieltem Preisgeld. Wer in zwei Jahren das meiste Preisgeld bei Ranglistenturnieren gewinnt, führt die Weltrangliste an und wird bei Majors an Position eins gesetzt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viel Preisgeld gibt es bei der Darts-WM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bei der Darts-WM 2026/27 werden insgesamt 5.000.000 Pfund ausgeschüttet. Der Weltmeister erhält 1.000.000 Pfund plus die Sid Waddell Trophy."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  lang="de"
+  title={pageTitle}
+  description={pageDescription}
+  alternates={alternates}
+  schema={deHubSchema}
+>
+  <section>
+    <h1>Darts-WM 2026/27: Der deutsche Fan-Guide</h1>
+    <p>
+      Willkommen in der deutschen Zentrale von World Darts Hub. Hier finden Sie alles zur
+      <strong>PDC Darts-Weltmeisterschaft 2026/27</strong> im Alexandra Palace in London –
+      komplett auf Deutsch: von der <a href="/de/darts-rangliste/">Darts-Rangliste</a> über den
+      <a href="/de/dartkalender/">Dartkalender</a> bis zu <a href="/de/darts-wm-tickets/">Tickets</a>
+      und <a href="/de/darts-schauen/">TV-Übertragung in Deutschland</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Deutsche Darts-Themen im Überblick</h2>
+    <ul>
+      <li>
+        <strong><a href="/de/darts-rangliste/">Darts-Rangliste (PDC Order of Merit)</a></strong><br />
+        So funktioniert das Zwei-Jahres-System nach Preisgeld – mit provisorischer Top 8.
+      </li>
+      <li>
+        <strong><a href="/de/9-darter-liste/">9-Darter-Liste</a></strong><br />
+        Was ist ein Neun-Darter? Die legendärsten perfekten Legs der TV-Geschichte.
+      </li>
+      <li>
+        <strong><a href="/de/dartkalender/">Dartkalender 2026/27</a></strong><br />
+        Alle Major-Termine: Darts-WM, Premier League, World Matchplay und mehr.
+      </li>
+      <li>
+        <strong><a href="/de/preisgeld/">Preisgeld</a></strong><br />
+        5 Millionen Pfund bei der WM – alle Prämien und Major-Preisgelder im Überblick.
+      </li>
+      <li>
+        <strong><a href="/de/darts-wm-tickets/">Darts-WM Tickets</a></strong><br />
+        So kommen Sie an Karten für den Ally Pally: Vorverkauf, Preise und Ticketbörse.
+      </li>
+      <li>
+        <strong><a href="/de/darts-schauen/">Darts schauen in Deutschland</a></strong><br />
+        Sport1, DAZN und PDC TV: Wo läuft Darts im deutschen Fernsehen und Stream?
+      </li>
+      <li>
+        <strong><a href="/de/double-in-double-out-regel/">Double-In Double-Out Regel</a></strong><br />
+        Die besondere Regel des World Grand Prix – einfach erklärt.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Darts in Deutschland: Die Stars zum Anfeuern</h2>
+    <p>
+      Deutsche Fans haben bei der WM gleich mehrere eigene Helden zum Anfeuern.
+      <strong>Martin Schindler</strong>, langjährige deutsche Nummer eins, <strong>Gabriel Clemens</strong>,
+      der 2023 als erster Deutscher ein WM-Halbfinale erreichte, <strong>Ricardo Pietreczko</strong>
+      mit seinem Kult-Spitzamen Pikachu sowie das Nachwuchstalent <strong>Niko Springer</strong>
+      tragen die deutschen Hoffnungen im Ally Pally.
+    </p>
+    <p>
+      Die deutschen Übertragungen auf <strong>Sport1</strong> und <strong>DAZN</strong> haben Darts hierzulande
+      zum TV-Event gemacht – mit stetig wachsenden Zuschauerzahlen und einer lebendigen Fan-Szene.
+      Wer die Atmosphäre einmal live erleben will, findet in unserem
+      <a href="/de/darts-wm-tickets/">Ticket-Guide</a> alle Infos zur Anreise nach London.
+    </p>
+  </section>
+
+  <section>
+    <h2>Häufige Fragen zur Darts-WM</h2>
+    <h3>Wann findet die Darts-WM 2026/27 statt?</h3>
+    <p>
+      Die PDC Darts-WM 2026/27 beginnt Mitte Dezember 2026 im Alexandra Palace in London.
+      Nach der Weihnachtspause geht es am 27. Dezember 2026 mit der dritten Runde weiter,
+      das Finale steigt Anfang Januar 2027.
+    </p>
+    <h3>Wo kann man in Deutschland Darts schauen?</h3>
+    <p>
+      In Deutschland zeigen Sport1 im Free-TV sowie DAZN und PDC TV im Stream die großen
+      Darts-Turniere live, darunter die komplette Darts-WM aus dem Ally Pally.
+    </p>
+    <h3>Wie funktioniert die Darts-Rangliste?</h3>
+    <p>
+      Die PDC Order of Merit ist eine Zwei-Jahres-Rangliste nach erspieltem Preisgeld.
+      Details finden Sie auf unserer Seite zur <a href="/de/darts-rangliste/">Darts-Rangliste</a>.
+    </p>
+    <h3>Wie viel Preisgeld gibt es bei der Darts-WM?</h3>
+    <p>
+      Insgesamt 5.000.000 Pfund – der Weltmeister erhält 1.000.000 Pfund plus die
+      Sid Waddell Trophy. Alle Details auf der <a href="/de/preisgeld/">Preisgeld-Seite</a>.
+    </p>
+  </section>
+</BaseLayout>

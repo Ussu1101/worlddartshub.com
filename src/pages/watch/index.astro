@@ -40,6 +40,11 @@ const countrySlugMap: Record<string, string> = {
 <BaseLayout 
   title={pageTitle} 
   description={pageDescription}
+  alternates={[
+    { hreflang: "de", href: "https://worlddartshub.com/de/darts-schauen/" },
+    { hreflang: "en", href: "https://worlddartshub.com/watch/" },
+    { hreflang: "x-default", href: "https://worlddartshub.com/watch/" }
+  ]}
   schema={watchSchema}
 >
   <Breadcrumbs items={breadcrumbItems} />

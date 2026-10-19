@@ -1,0 +1,130 @@
+// src/pages/de/dartkalender.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Dartkalender 2026/27: Alle Darts-Termine im Überblick";
+const pageDescription = "Der Dartkalender 2026/27: Alle PDC Major-Termine – Darts-WM, Premier League, World Matchplay und mehr. Alle Termine auf einen Blick.";
+const siteUrl = "https://worlddartshub.com";
+
+const alternates = [
+  { hreflang: "de", href: `${siteUrl}/de/dartkalender/` },
+  { hreflang: "en", href: `${siteUrl}/schedule/` },
+  { hreflang: "x-default", href: `${siteUrl}/schedule/` }
+];
+
+const kalenderSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wann ist die Darts-WM 2026/27?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Darts-WM 2026/27 beginnt Mitte Dezember 2026 im Alexandra Palace in London. Nach der Weihnachtspause wird ab dem 27. Dezember 2026 weitergespielt, das Finale findet Anfang Januar 2027 statt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Darts-Turniere gibt es 2026/27?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die wichtigsten PDC Majors der Saison: Darts-WM (Dezember/Januar), Premier League (Februar bis Mai), World Matchplay (Juli), World Grand Prix (Oktober), Grand Slam of Darts (November) und die Players Championship Finals."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  lang="de"
+  title={pageTitle}
+  description={pageDescription}
+  alternates={alternates}
+  schema={kalenderSchema}
+>
+  <section>
+    <h1>Dartkalender 2026/27: Alle Termine im Überblick</h1>
+    <p>
+      Der <strong>Dartkalender 2026/27</strong> im Überblick: Alle wichtigen
+      <strong>PDC Major-Turniere</strong> der Saison – von der Darts-WM im Ally Pally
+      bis zum World Matchplay in Blackpool. So verpassen Sie keinen wichtigen
+      <strong>Darts-Termin</strong>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Die Major-Termine der Saison 2026/27</h2>
+    <table>
+      <thead>
+        <tr><th>Turnier</th><th>Zeitraum</th><th>Ort</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>World Grand Prix</td><td>Oktober 2026</td><td>Leicester</td></tr>
+        <tr><td>Grand Slam of Darts</td><td>November 2026</td><td>Wolverhampton</td></tr>
+        <tr><td>Players Championship Finals</td><td>November 2026</td><td>Minehead</td></tr>
+        <tr><td><strong>Darts-WM 2026/27</strong></td><td><strong>Dezember 2026 – Januar 2027</strong></td><td><strong>London (Ally Pally)</strong></td></tr>
+        <tr><td>Premier League</td><td>Februar – Mai 2027</td><td>diverse Arenen</td></tr>
+        <tr><td>World Matchplay</td><td>Juli 2027</td><td>Blackpool</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Darts-WM 2026/27: Der Höhepunkt des Dartkalenders</h2>
+    <p>
+      Das größte Turnier des Jahres beginnt <strong>Mitte Dezember 2026</strong> im
+      <strong>Alexandra Palace in London</strong>. Nach der Weihnachtspause geht es am
+      <strong>27. Dezember 2026</strong> mit der dritten Runde weiter –
+      das Finale steigt <strong>Anfang Januar 2027</strong>.
+    </p>
+    <p>
+      128 Spieler kämpfen um <strong>5.000.000 Pfund Preisgeld</strong>, der Weltmeister
+      erhält 1.000.000 Pfund. Alle Details zu Prämien auf unserer
+      <a href="/de/preisgeld/">Preisgeld-Seite</a> und zu Karten in unserem
+      <a href="/de/darts-wm-tickets/">Ticket-Guide</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Die weiteren Majors im Dartkalender</h2>
+    <ul>
+      <li>
+        <strong>Premier League (Februar – Mai):</strong> Die acht besten Spieler der Welt
+        touren donnerstags durch Großbritannien, die Niederlande und Deutschland –
+        ein Einladungsturnier, das nicht zur <a href="/de/darts-rangliste/">Rangliste</a> zählt,
+        aber riesige TV-Quoten bringt.
+      </li>
+      <li>
+        <strong>World Matchplay (Juli):</strong> Das Sommer-Major in den Winter Gardens
+        von Blackpool – das prestigeträchtigste Turnier nach der WM.
+      </li>
+      <li>
+        <strong>World Grand Prix (Oktober):</strong> Das einzige Major im Modus
+        <a href="/de/double-in-double-out-regel/">Double-In Double-Out</a> – jedes Leg
+        muss mit einem Doppel begonnen werden.
+      </li>
+      <li>
+        <strong>Grand Slam (November):</strong> PDC gegen BDO-Welt – das einzige Turnier,
+        bei dem Spieler beider Verbände aufeinandertreffen.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Häufige Fragen zum Dartkalender</h2>
+    <h3>Wann ist die Darts-WM 2026/27?</h3>
+    <p>
+      Mitte Dezember 2026 bis Anfang Januar 2027 im Alexandra Palace, London.
+      Ab 27. Dezember 2026 läuft die dritte Runde.
+    </p>
+    <h3>Welche Darts-Turniere gibt es 2026/27?</h3>
+    <p>
+      Darts-WM, Premier League, World Matchplay, World Grand Prix, Grand Slam of Darts
+      und Players Championship Finals – siehe Tabelle oben.
+    </p>
+    <p>
+      <a href="/de/">← Zurück zur deutschen Fan-Zentrale</a>
+    </p>
+  </section>
+</BaseLayout>

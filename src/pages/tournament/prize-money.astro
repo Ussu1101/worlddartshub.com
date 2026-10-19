@@ -37,6 +37,11 @@ const prizeMoneySchema = {
 <BaseLayout 
   title={pageTitle} 
   description={pageDescription}
+  alternates={[
+    { hreflang: "de", href: "https://worlddartshub.com/de/preisgeld/" },
+    { hreflang: "en", href: "https://worlddartshub.com/tournament/prize-money/" },
+    { hreflang: "x-default", href: "https://worlddartshub.com/tournament/prize-money/" }
+  ]}
   schema={prizeMoneySchema}
 >
   <Breadcrumbs items={breadcrumbItems} />

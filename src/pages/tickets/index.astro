@@ -63,6 +63,11 @@ const ticketFaqSchema = {
 <BaseLayout 
   title={pageTitle} 
   description={pageDescription}
+  alternates={[
+    { hreflang: "de", href: "https://worlddartshub.com/de/darts-wm-tickets/" },
+    { hreflang: "en", href: "https://worlddartshub.com/tickets/" },
+    { hreflang: "x-default", href: "https://worlddartshub.com/tickets/" }
+  ]}
   schema={ticketFaqSchema}
 >
   <Breadcrumbs items={breadcrumbItems} />

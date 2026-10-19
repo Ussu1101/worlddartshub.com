@@ -1,0 +1,137 @@
+// src/pages/de/double-in-double-out-regel.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Double-In Double-Out: Darts-Regel einfach erklärt";
+const pageDescription = "Double-In Double-Out einfach erklärt: Die besondere Darts-Regel des World Grand Prix – so funktioniert das An- und Auswerfen mit einem Doppel.";
+const siteUrl = "https://worlddartshub.com";
+
+const alternates = [
+  { hreflang: "de", href: `${siteUrl}/de/double-in-double-out-regel/` },
+  { hreflang: "en", href: `${siteUrl}/darts/double-in-double-out/` },
+  { hreflang: "x-default", href: `${siteUrl}/darts/double-in-double-out/` }
+];
+
+const didoSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was bedeutet Double-In Double-Out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Double-In Double-Out bedeutet: Ein Leg muss mit einem Doppel begonnen (Double-In) und mit einem Doppel beendet (Double-Out) werden. Treffer außerhalb eines Doppels zählen beim Anwerfen nicht – erst das erste Doppel startet das Scoring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bei welchem Turnier gilt Double-In Double-Out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der World Grand Prix ist das einzige PDC Major-Turnier, das im Modus Double-In Double-Out gespielt wird. Das macht ihn zum taktisch anspruchsvollsten Turnier des Kalenders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum ist Double-In so schwierig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil jeder Wurf vor dem ersten Doppel wertlos ist. Ein Spieler kann mehrere Aufnahmen brauchen, nur um ins Leg zu starten – während der Gegner bereits punktet. Das bestraft ungenaue Starter doppelt."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  lang="de"
+  title={pageTitle}
+  description={pageDescription}
+  alternates={alternates}
+  schema={didoSchema}
+>
+  <section>
+    <h1>Double-In Double-Out: Die Darts-Regel einfach erklärt</h1>
+    <p>
+      <strong>Double-In Double-Out</strong> ist die anspruchsvollste Startregel im Darts:
+      Jedes Leg muss mit einem <strong>Doppel begonnen</strong> (Double-In) und mit einem
+      <strong>Doppel beendet</strong> (Double-Out) werden. Der <strong>World Grand Prix</strong>
+      ist das einzige Major-Turnier, das in diesem Modus gespielt wird – und genau das
+      macht ihn so unberechenbar.
+    </p>
+  </section>
+
+  <section>
+    <h2>Double-In: So startet das Leg</h2>
+    <p>
+      Beim <strong>Double-In</strong> zählen alle Würfe erst, sobald das erste
+      <strong>Doppel</strong> getroffen wurde. Wer dreimal die Triple 20 trifft, aber kein
+      Doppel dabei hat, steht weiterhin bei 501 – die Punkte verfallen. Erst mit dem
+      ersten Doppel beginnt das eigentliche Scoring.
+    </p>
+    <p>
+      Das klingt einfach, ist aber brutal: Unter Druck brauchen selbst Weltklassespieler
+      mehrere Aufnahmen, nur um ins Leg zu starten – während der Gegner schon fleißig
+      Punkte sammelt. Ein verpatzter Start kann das Leg kosten, bevor es begonnen hat.
+    </p>
+  </section>
+
+  <section>
+    <h2>Double-Out: Das bekannte Finish</h2>
+    <p>
+      Das <strong>Double-Out</strong> kennen alle Darts-Fans: Jedes Leg muss mit einem
+      Doppel exakt auf null beendet werden – so wie bei jedem Standardspiel. Die
+      klassischen Checkouts (32 über Doppel 16, 40 über Doppel 20, 170 über
+      Triple 20, Triple 20, Bull) gelten hier genauso.
+    </p>
+    <p>
+      Die Kombination macht den Reiz: Wer zum Anwerfen schon Nerven aus Stahl braucht
+      und zum Auswerfen trotzdem cool bleiben muss, gewinnt in Leicester den
+      World Grand Prix.
+    </p>
+  </section>
+
+  <section>
+    <h2>Strategie: Warum der World Grand Prix so besonders ist</h2>
+    <ul>
+      <li>
+        <strong>Sichere Doppel zum Start:</strong> Viele Profis beginnen bewusst mit
+        Doppel 16 oder Doppel 20 – große, verzeihende Ziele statt riskanter Triple.
+      </li>
+      <li>
+        <strong>Kein 9-Darter möglich:</strong> Durch das Double-In ist das perfekte
+        Leg hier deutlich länger – ein TV-9-Darter wie bei anderen Majors ist
+        ausgeschlossen.
+      </li>
+      <li>
+        <strong>Mentale Stärke:</strong> Wer nach sechs vergeblichen Startdarts noch
+        ruhig bleibt, hat den eigentlichen Test schon bestanden.
+      </li>
+    </ul>
+    <p>
+      Der World Grand Prix findet jeden Oktober in Leicester statt – alle Termine im
+      <a href="/de/dartkalender/">Dartkalender 2026/27</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Häufige Fragen zu Double-In Double-Out</h2>
+    <h3>Was bedeutet Double-In Double-Out?</h3>
+    <p>
+      Jedes Leg muss mit einem Doppel begonnen und mit einem Doppel beendet werden.
+    </p>
+    <h3>Bei welchem Turnier gilt Double-In Double-Out?</h3>
+    <p>
+      Beim World Grand Prix – dem einzigen PDC Major in diesem Modus.
+    </p>
+    <h3>Warum ist Double-In so schwierig?</h3>
+    <p>
+      Alle Würfe vor dem ersten Doppel sind wertlos – ein schlechter Start kostet
+      das ganze Leg.
+    </p>
+    <p>
+      <a href="/de/">← Zurück zur deutschen Fan-Zentrale</a>
+    </p>
+  </section>
+</BaseLayout>

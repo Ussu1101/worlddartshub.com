@@ -48,6 +48,11 @@ const scheduleFaqSchema = {
 <BaseLayout 
   title={pageTitle} 
   description={pageDescription}
+  alternates={[
+    { hreflang: "de", href: "https://worlddartshub.com/de/dartkalender/" },
+    { hreflang: "en", href: "https://worlddartshub.com/schedule/" },
+    { hreflang: "x-default", href: "https://worlddartshub.com/schedule/" }
+  ]}
   schema={scheduleFaqSchema}
 >
   <Breadcrumbs items={breadcrumbItems} />

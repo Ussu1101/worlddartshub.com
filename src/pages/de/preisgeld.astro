@@ -1,0 +1,130 @@
+// src/pages/de/preisgeld.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Darts WM Preisgeld 2026/27: 5 Millionen Pfund";
+const pageDescription = "Das Darts-WM Preisgeld 2026/27: 5.000.000 Pfund Gesamt, 1.000.000 Pfund für den Weltmeister. Alle Runden-Prämien und Major-Preisgelder im Überblick.";
+const siteUrl = "https://worlddartshub.com";
+
+const alternates = [
+  { hreflang: "de", href: `${siteUrl}/de/preisgeld/` },
+  { hreflang: "en", href: `${siteUrl}/tournament/prize-money/` },
+  { hreflang: "x-default", href: `${siteUrl}/tournament/prize-money/` }
+];
+
+const preisgeldSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie viel Preisgeld gibt es bei der Darts-WM 2026/27?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bei der Darts-WM 2026/27 werden insgesamt 5.000.000 Pfund ausgeschüttet – das höchste Preisgeld der Darts-Geschichte. Der Weltmeister erhält 1.000.000 Pfund plus die Sid Waddell Trophy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bekommt der Darts-Weltmeister?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Weltmeister 2026/27 erhält 1.000.000 Pfund – doppelt so viel wie noch beim vorherigen Top-Preis von 500.000 Pfund. Dazu kommt die Sid Waddell Trophy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zählt das WM-Preisgeld für die Rangliste?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Das komplette bei der WM erspielte Preisgeld fließt in die PDC Order of Merit ein, die Zwei-Jahres-Rangliste nach Preisgeld. Ein tiefer WM-Lauf kann die Rangliste daher stark verändern."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  lang="de"
+  title={pageTitle}
+  description={pageDescription}
+  alternates={alternates}
+  schema={preisgeldSchema}
+>
+  <section>
+    <h1>Darts-WM Preisgeld 2026/27: 5 Millionen Pfund</h1>
+    <p>
+      Das <strong>Preisgeld der Darts-WM 2026/27</strong> setzt neue Maßstäbe:
+      <strong>5.000.000 Pfund</strong> werden im Alexandra Palace ausgeschüttet –
+      das höchste Preisgeld der Darts-Geschichte. Der Weg zum Titel lohnt sich wie nie.
+    </p>
+  </section>
+
+  <section>
+    <h2>Die wichtigsten Prämien im Überblick</h2>
+    <table>
+      <thead>
+        <tr><th>Platzierung</th><th>Preisgeld</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Weltmeister</strong></td><td><strong>£1.000.000</strong></td></tr>
+        <tr><td>Finalist</td><td>£500.000</td></tr>
+        <tr><td>Halbfinale</td><td>£200.000</td></tr>
+        <tr><td>1. Runde (128er-Feld)</td><td>£15.000</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Der Siegerscheck hat sich verdoppelt: Statt der bisherigen 500.000 Pfund
+      erhält der Weltmeister nun <strong>eine Million Pfund</strong> plus die
+      legendäre <strong>Sid Waddell Trophy</strong>. Selbst wer in der ersten Runde
+      ausscheidet, nimmt 15.000 Pfund mit nach Hause.
+    </p>
+  </section>
+
+  <section>
+    <h2>Bonus für den 9-Darter</h2>
+    <p>
+      Für das perfekte Leg gibt es extra: Ein im Fernsehen übertragener
+      <strong>9-Darter</strong> wird bei der WM 2026/27 mit
+      <strong>60.000 Pfund Bonus</strong> belohnt. Alles zum perfekten Leg auf unserer
+      <a href="/de/9-darter-liste/">9-Darter-Liste</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Preisgeld und Rangliste: Warum jeder Pfund zählt</h2>
+    <p>
+      Jeder bei der WM erspielte Pfund fließt in die
+      <a href="/de/darts-rangliste/">PDC Order of Merit</a> ein – die Zwei-Jahres-Rangliste
+      nach Preisgeld. Weil die WM das mit Abstand höchstdotierte Turnier ist, kann ein
+      einziger tiefer Lauf im Ally Pally die Karriere eines Spielers verändern:
+      Setzlistenplätze, Tour Card und Einladungen zu weiteren Majors hängen direkt
+      am erspielten Preisgeld.
+    </p>
+    <p>
+      Zum Vergleich: Auch die anderen Majors sind stark dotiert, doch keines reicht an
+      die WM heran. Die genauen Summen aller Turniere finden Sie im
+      <a href="/de/dartkalender/">Dartkalender 2026/27</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Häufige Fragen zum Preisgeld</h2>
+    <h3>Wie viel Preisgeld gibt es bei der Darts-WM 2026/27?</h3>
+    <p>
+      Insgesamt 5.000.000 Pfund – Rekord in der Darts-Geschichte.
+    </p>
+    <h3>Was bekommt der Darts-Weltmeister?</h3>
+    <p>
+      1.000.000 Pfund plus die Sid Waddell Trophy – doppelt so viel wie zuvor.
+    </p>
+    <h3>Zählt das WM-Preisgeld für die Rangliste?</h3>
+    <p>
+      Ja, jeder Pfund fließt in die Order of Merit ein. Details auf der
+      <a href="/de/darts-rangliste/">Ranglisten-Seite</a>.
+    </p>
+    <p>
+      <a href="/de/">← Zurück zur deutschen Fan-Zentrale</a>
+    </p>
+  </section>
+</BaseLayout>

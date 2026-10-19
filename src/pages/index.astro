@@ -66,6 +66,11 @@ const featuredPlayers = playersData.slice(0, 4);
 <BaseLayout 
   title={pageTitle} 
   description={pageDescription}
+  alternates={[
+    { hreflang: "de", href: "https://worlddartshub.com/de/" },
+    { hreflang: "en", href: "https://worlddartshub.com/" },
+    { hreflang: "x-default", href: "https://worlddartshub.com/" }
+  ]}
   schema={homepageFaqSchema}
 >
   <!-- Hero Section / Broadcast Command Center -->

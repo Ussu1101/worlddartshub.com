@@ -1,0 +1,136 @@
+// src/pages/de/darts-wm-tickets.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Darts WM Tickets 2026/27: Kaufen und Preise";
+const pageDescription = "Darts-WM Tickets 2026/27: So kommen Sie an Karten für den Ally Pally – Vorverkauf, Preise, Hospitality und Ticketbörse. Der deutsche Guide.";
+const siteUrl = "https://worlddartshub.com";
+
+const alternates = [
+  { hreflang: "de", href: `${siteUrl}/de/darts-wm-tickets/` },
+  { hreflang: "en", href: `${siteUrl}/tickets/` },
+  { hreflang: "x-default", href: `${siteUrl}/tickets/` }
+];
+
+const ticketSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie kommt man an Darts-WM Tickets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der offizielle Weg führt über den Vorverkauf: Zuerst startet der Ballot (Losverfahren), dann der allgemeine Vorverkauf beim offiziellen Ticketpartner. Beliebte Sessions sind in Minuten ausverkauft – frühe Registrierung ist entscheidend."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kosten Darts-WM Tickets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Preise hängen von Session und Kategorie ab. Nachmittags-Sessions in der ersten Woche sind am günstigsten, Abendsessions und die Finalwoche am teuersten. Hospitality-Pakete mit Essen und besten Plätzen kosten deutlich mehr."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es eine offizielle Ticketbörse für die Darts-WM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, über die offizielle Fan-zu-Fan-Ticketbörse können Fans Karten zum Originalpreis weiterverkaufen. Kaufen Sie niemals über inoffizielle Kanäle – gefälschte Tickets bedeuten Einlassverweigerung am Ally Pally."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  lang="de"
+  title={pageTitle}
+  description={pageDescription}
+  alternates={alternates}
+  schema={ticketSchema}
+>
+  <section>
+    <h1>Darts-WM Tickets 2026/27: So sind Sie im Ally Pally dabei</h1>
+    <p>
+      Die <strong>Darts-WM im Alexandra Palace</strong> ist das stimmungsvollste
+      Sportevent der Welt – und die <strong>Tickets</strong> sind entsprechend begehrt.
+      Dieser deutsche Guide zeigt Ihnen, wie Sie an Karten für die
+      <strong>Darts-WM 2026/27</strong> kommen: vom Losverfahren bis zur
+      offiziellen Ticketbörse.
+    </p>
+  </section>
+
+  <section>
+    <h2>Der Weg zum Ticket: Ballot, Vorverkauf, Ticketbörse</h2>
+    <ul>
+      <li>
+        <strong>1. Ballot (Losverfahren):</strong> Zuerst startet das Losverfahren.
+        Registrieren Sie sich früh beim offiziellen Ticketpartner – wer gezogen wird,
+        darf zuerst kaufen. Die Nachfrage übersteigt das Angebot um ein Vielfaches.
+      </li>
+      <li>
+        <strong>2. Allgemeiner Vorverkauf:</strong> Restkarten gehen in den freien Verkauf.
+        Beliebte Sessions – Eröffnungsabend, Abendsessions, Halbfinale und Finale –
+        sind oft in Minuten vergriffen.
+      </li>
+      <li>
+        <strong>3. Fan-zu-Fan-Ticketbörse:</strong> Über die offizielle Ticketbörse
+        verkaufen Fans Karten zum Originalpreis weiter. Der einzige sichere
+        Zweitmarkt – Finger weg von inoffiziellen Anbietern.
+      </li>
+      <li>
+        <strong>4. Hospitality-Pakete:</strong> Premium-Erlebnis mit besten Plätzen,
+        Essen und Getränken – deutlich teurer, aber inklusive Garantie auf Top-Sessions.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Welche Session lohnt sich?</h2>
+    <p>
+      <strong>Erste Woche, Nachmittag:</strong> Die günstigsten Karten – ideal, um die
+      Ally-Pally-Atmosphäre erstmals zu erleben. <strong>Abendsessions:</strong> Die
+      legendäre Stimmung mit Kostümen und Gesängen erreicht nachts ihren Höhepunkt.
+      <strong>Finalwoche:</strong> Die teuersten und begehrtesten Tickets des Turniers.
+    </p>
+    <p>
+      Tipp für die Anreise aus Deutschland: Der Alexandra Palace liegt im Norden Londons
+      und ist mit der Bahn gut erreichbar. Planen Sie bei Abendsessions die späte
+      Rückfahrt ein – die Sessions dauern oft bis nach Mitternacht.
+    </p>
+  </section>
+
+  <section>
+    <h2>Wichtige Regeln für Ticketkäufer</h2>
+    <ul>
+      <li>Kaufen Sie <strong>nur</strong> beim offiziellen Ticketpartner oder der offiziellen Ticketbörse.</li>
+      <li>Gefälschte oder überteuerte Tickets führen zur <strong>Einlassverweigerung</strong>.</li>
+      <li>Beachten Sie die <strong>Taschenregelung</strong> des Ally Pally: nur kleine Taschen erlaubt.</li>
+      <li>Kostüme sind erwünscht – aber bitte ohne die Security zu behindern.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Häufige Fragen zu Darts-WM Tickets</h2>
+    <h3>Wie kommt man an Darts-WM Tickets?</h3>
+    <p>
+      Über Ballot, allgemeinen Vorverkauf beim offiziellen Partner oder die
+      offizielle Fan-zu-Fan-Ticketbörse.
+    </p>
+    <h3>Was kosten Darts-WM Tickets?</h3>
+    <p>
+      Je nach Session und Kategorie – Nachmittag in Woche eins am günstigsten,
+      Finalwoche am teuersten. Hospitality kostet deutlich mehr.
+    </p>
+    <h3>Gibt es eine offizielle Ticketbörse?</h3>
+    <p>
+      Ja – die Fan-zu-Fan-Börse zum Originalpreis. Meiden Sie inoffizielle Kanäle.
+    </p>
+    <p>
+      <a href="/de/">← Zurück zur deutschen Fan-Zentrale</a> ·
+      <a href="/de/dartkalender/">Dartkalender 2026/27</a>
+    </p>
+  </section>
+</BaseLayout>

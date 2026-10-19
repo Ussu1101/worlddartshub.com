@@ -1,0 +1,142 @@
+// src/pages/de/darts-schauen.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Darts schauen in Deutschland: TV und Stream (2026)";
+const pageDescription = "Darts im deutschen TV und Stream: Sport1, DAZN und PDC TV zeigen die Darts-WM 2026/27 live. Alle Sender, Termine und Kosten im Überblick.";
+const siteUrl = "https://worlddartshub.com";
+
+const alternates = [
+  { hreflang: "de", href: `${siteUrl}/de/darts-schauen/` },
+  { hreflang: "en", href: `${siteUrl}/watch/` },
+  { hreflang: "x-default", href: `${siteUrl}/watch/` }
+];
+
+const schauenSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wo läuft die Darts-WM 2026/27 im deutschen TV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sport1 zeigt die Darts-WM 2026/27 im Free-TV. Zusätzlich übertragen DAZN und PDC TV alle Sessions live im Stream – inklusive Vorberichten und Analysen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann man Darts in Deutschland kostenlos schauen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Sport1 überträgt die großen Turniere wie die Darts-WM kostenlos im Free-TV. Für das komplette Programm aller Sessions brauchen Sie DAZN oder PDC TV im Abo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche deutschen Spieler sind bei der WM dabei?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zu den deutschen Hoffnungen zählen Martin Schindler, Gabriel Clemens – 2023 erster deutscher WM-Halbfinalist –, Ricardo Pietreczko und Nachwuchstalent Niko Springer."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  lang="de"
+  title={pageTitle}
+  description={pageDescription}
+  alternates={alternates}
+  schema={schauenSchema}
+>
+  <section>
+    <h1>Darts schauen in Deutschland: TV und Stream</h1>
+    <p>
+      <strong>Darts schauen in Deutschland</strong> war noch nie so einfach:
+      <strong>Sport1</strong> im Free-TV sowie <strong>DAZN</strong> und
+      <strong>PDC TV</strong> im Stream übertragen die <strong>Darts-WM 2026/27</strong>
+      live aus dem Alexandra Palace. Hier finden Sie alle Sender, Termine und Kosten.
+    </p>
+  </section>
+
+  <section>
+    <h2>Alle Übertragungsoptionen im Überblick</h2>
+    <table>
+      <thead>
+        <tr><th>Anbieter</th><th>Art</th><th>Umfang</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Sport1</strong></td><td>Free-TV</td><td>Alle Top-Sessions der Darts-WM live und kostenlos</td></tr>
+        <tr><td><strong>DAZN</strong></td><td>Stream (Abo)</td><td>Komplettes Turnier, alle Sessions, mit deutschem Kommentar</td></tr>
+        <tr><td><strong>PDC TV</strong></td><td>Stream (Abo)</td><td>Alle PDC-Turniere weltweit, englischer Kommentar</td></tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>Empfehlung:</strong> Für Gelegenheitszuschauer reicht Sport1 völlig aus –
+      die wichtigsten Sessions laufen live im Free-TV. Wer keine Session verpassen will,
+      ist mit DAZN am besten bedient.
+    </p>
+  </section>
+
+  <section>
+    <h2>Die deutschen Spieler bei der WM 2026/27</h2>
+    <p>
+      Gleich vier deutsche Profis sorgen für heimische Spannung im Ally Pally:
+    </p>
+    <ul>
+      <li>
+        <strong>Martin Schindler</strong> – langjährige deutsche Nummer eins und
+        gesetzter Spieler mit echten Ambitionen auf einen tiefen Lauf.
+      </li>
+      <li>
+        <strong>Gabriel Clemens</strong> – schrieb 2023 Geschichte als erster Deutscher
+        im WM-Halbfinale. Der German Giant bleibt ein Publikumsliebling.
+      </li>
+      <li>
+        <strong>Ricardo Pietreczko</strong> – Kultfigur mit dem Spitznamen Pikachu,
+        bekannt für Emotionen und große Auftritte auf der großen Bühne.
+      </li>
+      <li>
+        <strong>Niko Springer</strong> – das deutsche Nachwuchstalent, das sich über
+        die Profitour nach oben spielt.
+      </li>
+    </ul>
+    <p>
+      Wie sich deutsche Spieler für Majors qualifizieren und was die
+      <a href="/de/darts-rangliste/">Rangliste</a> damit zu tun hat, erklären wir
+      in unserem Ranglisten-Guide.
+    </p>
+  </section>
+
+  <section>
+    <h2>Sendezeiten: Wann läuft Darts?</h2>
+    <p>
+      Die WM-Sessions starten typischerweise <strong>nachmittags und abends</strong>
+      deutscher Zeit – der Zeitunterschied zu London beträgt nur eine Stunde.
+      Abendsessions mit den Top-Spielern laufen zur besten Sendezeit ab etwa
+      20 Uhr. Alle Termine im <a href="/de/dartkalender/">Dartkalender 2026/27</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Häufige Fragen zum Darts-Schauen</h2>
+    <h3>Wo läuft die Darts-WM 2026/27 im deutschen TV?</h3>
+    <p>
+      Auf Sport1 im Free-TV sowie bei DAZN und PDC TV im Stream.
+    </p>
+    <h3>Kann man Darts in Deutschland kostenlos schauen?</h3>
+    <p>
+      Ja – Sport1 zeigt die Top-Sessions kostenlos. Das Komplettprogramm gibt es
+      bei DAZN oder PDC TV.
+    </p>
+    <h3>Welche deutschen Spieler sind bei der WM dabei?</h3>
+    <p>
+      Martin Schindler, Gabriel Clemens, Ricardo Pietreczko und Niko Springer.
+    </p>
+    <p>
+      <a href="/de/">← Zurück zur deutschen Fan-Zentrale</a>
+    </p>
+  </section>
+</BaseLayout>

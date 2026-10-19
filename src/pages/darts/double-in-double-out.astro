@@ -83,6 +83,11 @@ const faqSchema = {
 <BaseLayout
   title={pageTitle}
   description={pageDescription}
+  alternates={[
+    { hreflang: "de", href: "https://worlddartshub.com/de/double-in-double-out-regel/" },
+    { hreflang: "en", href: "https://worlddartshub.com/darts/double-in-double-out/" },
+    { hreflang: "x-default", href: "https://worlddartshub.com/darts/double-in-double-out/" }
+  ]}
   canonicalUrl={canonicalUrl}
 >
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

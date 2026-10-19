@@ -1,0 +1,143 @@
+// src/pages/de/darts-rangliste.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Darts Rangliste: PDC Order of Merit erklärt (2026)";
+const pageDescription = "Die Darts Rangliste (PDC Order of Merit) erklärt: So funktioniert das Zwei-Jahres-System nach Preisgeld – mit provisorischer Top 8, Setzliste und Cut-offs.";
+const siteUrl = "https://worlddartshub.com";
+
+const alternates = [
+  { hreflang: "de", href: `${siteUrl}/de/darts-rangliste/` },
+  { hreflang: "en", href: `${siteUrl}/tournament/order-of-merit/` },
+  { hreflang: "x-default", href: `${siteUrl}/tournament/order-of-merit/` }
+];
+
+const ranglisteSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist die PDC Order of Merit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die PDC Order of Merit ist die offizielle Darts-Weltrangliste. Sie sortiert alle Tour-Card-Inhaber nach dem Preisgeld, das sie in den letzten zwei Jahren bei Ranglistenturnieren erspielt haben."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wer führt die Darts-Rangliste an?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nach dem provisorischen Stand von Oktober 2026 führt Luke Humphries die Order of Merit mit rund 1,75 Millionen Pfund an, gefolgt von Michael van Gerwen und Michael Smith."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie funktioniert die Setzliste bei der Darts-WM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die besten 32 der Order of Merit sind bei der Darts-WM gesetzt und steigen erst in der zweiten Runde ein. Die Setzliste schützt die Top-Spieler vor frühen Duellen untereinander."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  lang="de"
+  title={pageTitle}
+  description={pageDescription}
+  alternates={alternates}
+  schema={ranglisteSchema}
+>
+  <section>
+    <h1>Darts Rangliste: Die PDC Order of Merit erklärt</h1>
+    <p>
+      Die <strong>PDC Order of Merit</strong> ist die offizielle Darts-Weltrangliste.
+      Anders als in vielen Sportarten zählt hier kein Punktesystem, sondern pures
+      <strong>Preisgeld</strong>: Wer in den letzten zwei Jahren bei Ranglistenturnieren
+      das meiste Geld erspielt hat, steht auf Platz eins der
+      <a href="/de/darts-rangliste/">Darts-Rangliste</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>So funktioniert das Zwei-Jahres-System</h2>
+    <p>
+      Die Order of Merit ist eine <strong>rollierende 104-Wochen-Wertung</strong>. Das bedeutet:
+      Sobald neues Preisgeld auf das Konto eines Spielers kommt, fällt das Preisgeld weg,
+      das er beim selben Turnier vor zwei Jahren gewonnen hat. Wer also vor zwei Jahren
+      ein Major gewonnen hat, muss seinen Titel praktisch verteidigen – sonst rutscht er
+      in der Rangliste ab.
+    </p>
+    <p>
+      Nur Preisgeld aus <strong>Ranglistenturnieren</strong> zählt: Darts-WM, World Matchplay,
+      World Grand Prix, UK Open, European Championship, Players Championship Finals,
+      Grand Slam of Darts sowie die Players-Championship-Turniere. Einladungsturniere wie
+      die Premier League fließen <strong>nicht</strong> in die Wertung ein.
+    </p>
+  </section>
+
+  <section>
+    <h2>Provisorische Top 8 der Order of Merit</h2>
+    <p><em>Stand: Oktober 2026 (provisorisch, vor der Darts-WM 2026/27):</em></p>
+    <table>
+      <thead>
+        <tr><th>Platz</th><th>Spieler</th><th>Preisgeld (2 Jahre)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Luke Humphries</td><td>£1.745.000</td></tr>
+        <tr><td>2</td><td>Michael van Gerwen</td><td>£1.120.000</td></tr>
+        <tr><td>3</td><td>Michael Smith</td><td>£965.000</td></tr>
+        <tr><td>4</td><td>Luke Littler</td><td>£860.000</td></tr>
+        <tr><td>5</td><td>Gerwyn Price</td><td>£755.000</td></tr>
+        <tr><td>6</td><td>Rob Cross</td><td>£710.000</td></tr>
+        <tr><td>7</td><td>Dave Chisnall</td><td>£615.000</td></tr>
+        <tr><td>8</td><td>Jonny Clayton</td><td>£580.000</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Die Darts-WM schüttet mit 5.000.000 Pfund das mit Abstand höchste Preisgeld aus –
+      ein tiefer WM-Lauf kann die <a href="/de/darts-rangliste/">Rangliste</a> daher komplett
+      durcheinanderwirbeln. Alle Prämien finden Sie auf unserer
+      <a href="/de/preisgeld/">Preisgeld-Seite</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Setzliste und Cut-offs: Warum die Rangliste so wichtig ist</h2>
+    <p>
+      Die besten <strong>32 Spieler der Order of Merit</strong> sind bei der Darts-WM gesetzt
+      und greifen erst in der zweiten Runde ins Geschehen ein. Die Top 16 genießen
+      zusätzlich Schutz bei der Auslosung. Für alle anderen beginnt das Turnier in Runde eins –
+      der Weg zum Titel ist entsprechend länger.
+    </p>
+    <p>
+      Auch die <strong>Tour Card</strong>, die Startberechtigung für die Profitour, hängt an der
+      Rangliste: Wer nach zwei Jahren nicht unter den besten 64 steht, verliert seine Tour Card
+      und muss sich über die Q-School neu qualifizieren.
+    </p>
+  </section>
+
+  <section>
+    <h2>Häufige Fragen zur Darts-Rangliste</h2>
+    <h3>Was ist die PDC Order of Merit?</h3>
+    <p>
+      Die offizielle Darts-Weltrangliste nach erspieltem Preisgeld der letzten zwei Jahre
+      bei Ranglistenturnieren.
+    </p>
+    <h3>Wer führt die Darts-Rangliste an?</h3>
+    <p>
+      Provisorisch (Stand Oktober 2026) führt Luke Humphries mit rund 1,75 Millionen Pfund
+      vor Michael van Gerwen und Michael Smith.
+    </p>
+    <h3>Wie funktioniert die Setzliste bei der Darts-WM?</h3>
+    <p>
+      Die Top 32 der Order of Merit sind gesetzt und steigen erst in Runde zwei ein.
+    </p>
+    <p>
+      <a href="/de/">← Zurück zur deutschen Fan-Zentrale</a>
+    </p>
+  </section>
+</BaseLayout>
