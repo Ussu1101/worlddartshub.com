@@ -526,8 +526,13 @@
   },
   {
     "url": "/venue/best-seats/",
-    "title": "Ally Pally Best Seats: Tiered vs Tables Seating",
+    "title": "Best Seats at Alexandra Palace for Darts",
     "description": "Floor tables or tiered grandstand at Alexandra Palace? Compare sightlines, atmosphere, ticket prices and session advice for 2026/27."
+  },
+  {
+    "url": "/venue/first-time-visitor-checklist/",
+    "title": "First-Time Visitor Checklist: Darts at Ally Pally",
+    "description": "Essential matchday checklist for your first visit to Alexandra Palace darts: bag size rules, arrival timings, cashless bars, and transport advice."
   },
   {
     "url": "/venue/food-drink-bars/",
@@ -543,6 +548,11 @@
     "url": "/venue/great-hall-seating-plan/",
     "title": "Alexandra Palace Darts Seating Plan: Tables vs Tiered Seats",
     "description": "Great Hall seating plan guide for the PDC World Darts Championship. Compare floor tables vs tiered grandstands, screen sightlines, and best seat locations."
+  },
+  {
+    "url": "/venue/great-hall-sections-explained/",
+    "title": "Alexandra Palace Great Hall Sections Explained",
+    "description": "Understand Alexandra Palace Great Hall seating sections: floor blocks, tiered grandstands, walk-on catwalk sightlines, and ticket demand tips."
   },
   {
     "url": "/venue/security-bag-policy/",

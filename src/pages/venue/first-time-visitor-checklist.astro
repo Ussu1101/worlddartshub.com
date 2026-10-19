@@ -1,0 +1,421 @@
+---
+// src/pages/venue/first-time-visitor-checklist.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "First-Time Visitor Checklist: Darts at Ally Pally";
+const pageDescription = "Essential matchday checklist for your first visit to Alexandra Palace darts: bag size rules, arrival timings, cashless bars, and transport advice.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/venue/first-time-visitor-checklist/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Venue Guide', url: '/venue/' },
+  { name: 'First-Time Visitor Checklist', url: '/venue/first-time-visitor-checklist/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-19T00:00:00+00:00",
+      "dateModified": "2026-10-19T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Venue Guide",
+          "item": `${siteUrl}/venue/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "First-Time Visitor Checklist",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What time do doors open for Alexandra Palace darts sessions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Doors open approximately two hours before match play commences: 10:30 GMT for afternoon sessions (12:30 start) and 17:30 GMT for evening sessions (19:00 start). Arriving at door opening avoids peak security queues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I bring a bag into Alexandra Palace for the darts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only small bags no larger than A4 paper size (approximately 30cm x 20cm x 10cm) are permitted inside Alexandra Palace. Large rucksacks, suitcases, and holdalls are strictly refused, and on-site cloakroom capacity is extremely limited."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are bars at Alexandra Palace cash or card only?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Alexandra Palace operates as an entirely cashless venue. All bars, food concessions, and merchandise outlets accept only debit cards, credit cards, Apple Pay, and Google Pay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get home from Alexandra Palace after an evening session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evening sessions typically conclude around 23:00 GMT. Spectators can walk 15 minutes downhill or catch the W3 bus to Wood Green tube station on the Piccadilly Line, or walk down to Alexandra Palace rail station for Great Northern trains toward Moorgate and Finsbury Park."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">MATCHDAY LOGISTICS</span>
+        <span class="badge">VENUE CHECKLIST</span>
+      </div>
+      <h1>First-Time Visitor Checklist: Darts at Ally Pally</h1>
+      <p class="lead-text">
+        Attending your first PDC World Darts Championship at Alexandra Palace is an unforgettable live sporting experience. Avoid gate delays, rejected bags, and transport headaches with this operational, step-by-step venue logistics checklist.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="Alexandra Palace Event Security, Licensing & Matchday Operations" />
+
+      <!-- Culture vs Logistics Callout -->
+      <aside class="note-box">
+        <p>
+          <strong>Looking for costumes, songs, and etiquette?</strong> This guide focuses strictly on venue operations, bag rules, arrival timings, and egress logistics. For party culture, costume inspiration, and crowd traditions, read our companion <a href="/fan-culture/first-timer-guide/">Ally Pally First-Timer Fan Culture Guide</a>.
+        </p>
+      </aside>
+
+      <!-- Checklist Section 1: Before You Leave Home -->
+      <section class="content-card">
+        <h2>Phase 1: Before Leaving Home</h2>
+        <p>
+          Thorough preparation before heading toward North London guarantees a smooth entry at the turnstiles:
+        </p>
+        <ul class="checklist-items">
+          <li>
+            <strong>Digital Tickets Downloaded:</strong> Ensure your tickets are loaded onto your smartphone via the official See Tickets Wallet app. Mobile signal on the Alexandra Palace hilltop can become congested as thousands of fans arrive simultaneously; having your barcodes saved offline or added to Apple/Google Wallet prevents delays at the turnstiles.
+          </li>
+          <li>
+            <strong>Bag Size Verification:</strong> Alexandra Palace enforces a strict maximum bag dimension policy of A4 size (maximum 30cm x 20cm x 10cm). Do not bring backpacks, laptop bags, or gym holdalls. Double-check all measurements before leaving by consulting our dedicated <a href="/venue/security-bag-policy/">Alexandra Palace security and bag policy</a> guide.
+          </li>
+          <li>
+            <strong>Card and Contactless Payments:</strong> Alexandra Palace is an entirely cashless stadium. Physical cash is not accepted at any bar, food village stall, or merchandise shop. Verify that your debit/credit card or contactless device is active and charged.
+          </li>
+          <li>
+            <strong>Travel Route Planning:</strong> The venue sits atop a prominent hill in North London. Choose your arrival route in advance—either the Piccadilly Line tube to Wood Green followed by the W3 bus, or National Rail services directly to Alexandra Palace station. Review specific stations and frequencies in our guide to <a href="/travel/tube-train-routes/">Ally Pally tube and train routes</a>.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Checklist Section 2: Gate Arrival & Security -->
+      <section class="content-card">
+        <h2>Phase 2: Gate Arrival &amp; Security Screening</h2>
+        <p>
+          PDC World Darts Championship sessions operate on tight schedules. Arriving at the correct time ensures you clear security without missing player walk-ons:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Session Type</th>
+                <th>Doors Open</th>
+                <th>First Match Thrown</th>
+                <th>Estimated Finish</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Afternoon Session</strong></td>
+                <td>10:30 GMT</td>
+                <td>12:30 GMT</td>
+                <td>16:30 GMT</td>
+              </tr>
+              <tr>
+                <td><strong>Evening Session</strong></td>
+                <td>17:30 GMT</td>
+                <td>19:00 GMT</td>
+                <td>23:00 GMT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Security Ingress Protocols</h3>
+        <p>
+          Upon reaching the Palm Court entrance, all spectators must undergo airport-style security screenings:
+        </p>
+        <ul>
+          <li><strong>Bag Search &amp; Metal Detectors:</strong> Security staff search all permitted small bags and scan attendees with handheld metal detectors or walk-through arches.</li>
+          <li><strong>Prohibited Items:</strong> External food and alcohol are strictly prohibited and confiscated at the search lanes. No glass containers, cans, or metal cutlery are permitted.</li>
+          <li><strong>Fancy Dress Prop Rules:</strong> Inflatable props and fancy dress accessories are permitted, but mock weapons, sharp objects, replica darts, and real darts are strictly banned under the venue's <a href="/venue/security-bag-policy/">security and bag policy</a>.</li>
+        </ul>
+      </section>
+
+      <!-- Checklist Section 3: Inside the Arena -->
+      <section class="content-card">
+        <h2>Phase 3: Inside the Great Hall &amp; Fan Village</h2>
+        <p>
+          Once through the Palm Court entrance, you enter the pre-match Fan Village before heading into the main 5,000-seat Great Hall arena:
+        </p>
+
+        <div class="feature-box">
+          <h3>Essential In-Venue Logistics</h3>
+          <ul>
+            <li><strong>Collect Your 180 Placard:</strong> Free official 180 placards and marker pens are distributed at tables just inside Palm Court. Grab yours early before session start.</li>
+            <li><strong>Eco-Cup Deposit Scheme:</strong> Alexandra Palace operates a reusable pint cup deposit system. You pay a £1–£2 refundable deposit on your first drink purchase. Keep your cup throughout the session and return it to designated cup-return stations before leaving to reclaim your deposit.</li>
+            <li><strong>Bars &amp; Concessions Strategy:</strong> With over 5,000 fans in attendance, bar queues peak 20 minutes before the opening match and during the short intervals between matches. Explore the varied options in our guide to <a href="/venue/food-drink-bars/">Alexandra Palace food, drinks and bars</a>.</li>
+            <li><strong>Locate Your Block Early:</strong> Whether you have floor tables or tiered grandstand tickets, locate your entrance vomitory and seat block before purchasing pints. Floor table access aisles become heavily congested once match walk-ons start.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Checklist Section 4: Post-Match Egress -->
+      <section class="content-card">
+        <h2>Phase 4: Getting Home Safely</h2>
+        <p>
+          Leaving a sold-out session requires patience as thousands of supporters exit down the park grounds simultaneously:
+        </p>
+        <ul class="egress-list">
+          <li><strong>Downhill Walk to Wood Green:</strong> Walking from the venue downhill to Wood Green tube station (Piccadilly Line) takes 15 to 20 minutes. It is often faster than waiting in long queues for the W3 bus on frosty winter nights.</li>
+          <li><strong>Alexandra Palace Rail Station:</strong> If traveling toward Central London via Finsbury Park, Highbury &amp; Islington, or Moorgate, the 10-minute walk down to the eastern park gate leads directly to the rail platforms.</li>
+          <li><strong>Rideshare &amp; Taxis:</strong> Road traffic on Alexandra Palace Way is heavily restricted during egress. Rideshare apps (Uber, Bolt) face surge pricing and long pickup delays. Walking down to Wood Green High Road before requesting a ride is significantly more reliable.</li>
+        </ul>
+      </section>
+
+      <!-- Checklist Section 5: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions: First-Time Visitors</h2>
+
+        <div class="faq-item">
+          <h3>What time do doors open for Alexandra Palace darts sessions?</h3>
+          <p>
+            Doors open approximately two hours before match play commences: 10:30 GMT for afternoon sessions (12:30 start) and 17:30 GMT for evening sessions (19:00 start). Arriving at door opening avoids peak security queues.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I bring a bag into Alexandra Palace for the darts?</h3>
+          <p>
+            Only small bags no larger than A4 paper size (approximately 30cm x 20cm x 10cm) are permitted inside Alexandra Palace. Large rucksacks, suitcases, and holdalls are strictly refused, and on-site cloakroom capacity is extremely limited.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Are bars at Alexandra Palace cash or card only?</h3>
+          <p>
+            Alexandra Palace operates as an entirely cashless venue. All bars, food concessions, and merchandise outlets accept only debit cards, credit cards, Apple Pay, and Google Pay.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I get home from Alexandra Palace after an evening session?</h3>
+          <p>
+            Evening sessions typically conclude around 23:00 GMT. Spectators can walk 15 minutes downhill or catch the W3 bus to Wood Green tube station on the Piccadilly Line, or walk down to Alexandra Palace rail station for Great Northern trains toward Moorgate and Finsbury Park.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .page-header h1 {
+    color: #ffffff !important;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 850px;
+    margin: 0;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .content-card p, .content-card li {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .note-box {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 2rem;
+  }
+  .note-box p {
+    margin: 0;
+    color: #166534;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  .feature-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .checklist-items, .egress-list {
+    padding-left: 1.25rem;
+  }
+  .checklist-items li, .egress-list li {
+    margin-bottom: 1rem;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

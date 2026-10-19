@@ -1,0 +1,457 @@
+---
+// src/pages/venue/great-hall-sections-explained.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Alexandra Palace Great Hall Sections Explained";
+const pageDescription = "Understand Alexandra Palace Great Hall seating sections: floor blocks, tiered grandstands, walk-on catwalk sightlines, and ticket demand tips.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/venue/great-hall-sections-explained/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Venue Guide', url: '/venue/' },
+  { name: 'Great Hall Sections Explained', url: '/venue/great-hall-sections-explained/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-19T00:00:00+00:00",
+      "dateModified": "2026-10-19T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Venue Guide",
+          "item": `${siteUrl}/venue/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Great Hall Sections Explained",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which seating section in the Great Hall sells out first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Floor tables in the front blocks immediately adjacent to the player walk-on catwalk sell out fastest, typically within seconds of the PDCTV Annual Members priority window opening. Front rows of central tiered grandstands sell out shortly afterward."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you see the stage from the rear tiered grandstand sections?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, rear tiered sections provide an unobstructed, elevated view over the entire 5,000-capacity arena. While the physical players appear small at 50 to 60 meters, multiple ceiling-hung ultra-HD LED video screens provide clear match visibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are floor tables divided into numbered individual seats?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Floor tables are long trestle banquet tables seating six patrons per table. Your ticket assigns you to a specific table number and letter block, but seating along that specific table is open among the six ticket holders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a dedicated family section in the Great Hall?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the PDC and Alexandra Palace allocate a designated family seating area in the tiered grandstands. Bookings in this block require at least one under-18 attendee per group and enforce strict behavior standards to ensure a welcoming experience."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">VENUE ARCHITECTURE</span>
+        <span class="badge">GREAT HALL GUIDE</span>
+      </div>
+      <h1>Alexandra Palace Great Hall Sections Explained</h1>
+      <p class="lead-text">
+        Navigating ticket options for the PDC World Darts Championship requires understanding how Alexandra Palace configures its cavernous Great Hall. From lively floor table rows to elevated tiered grandstands, here is an objective breakdown of every seating block, sightline trade-off, and booking pattern.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="Alexandra Palace Great Hall Arena Configuration & PDC Ticketing Protocols" />
+
+      <!-- Section 1: Overview of Great Hall Move -->
+      <section class="content-card">
+        <h2>The Great Hall Arena Configuration</h2>
+        <p>
+          Following the historic expansion of the PDC World Darts Championship into Alexandra Palace's Great Hall, total arena capacity increased from 3,200 spectators in the former West Hall to over 5,000 fans per session. The Great Hall covers over 4,000 square meters beneath majestic Victorian wrought-iron roof arches, demanding a sophisticated seating and audiovisual configuration.
+        </p>
+        <p>
+          Spectators choosing tickets face a fundamental choice between two distinct physical structures: flat arena floor tables and raked temporary grandstands. To visualize where each zone sits within the broader arena footprint, review our full <a href="/venue/great-hall-seating-plan/">Great Hall seating plan</a>. Understanding how these sections operate ensures you select tickets that match your party's expectations for atmosphere, viewing comfort, and accessibility.
+        </p>
+      </section>
+
+      <!-- Section 2: Detailed Section Breakdown -->
+      <section class="content-card">
+        <h2>Breakdown of Great Hall Seating Zones</h2>
+        <p>
+          The arena is partitioned into distinct ticketing blocks, each delivering a noticeably different matchday experience:
+        </p>
+
+        <div class="section-block">
+          <h3>1. Front Floor Table Blocks (Catwalk &amp; Oche Zone)</h3>
+          <p>
+            Positioned directly in front of the main broadcast stage and flanking the raised walk-on ramp, these tables represent the iconic visual centrepiece of Sky Sports broadcasts. 
+          </p>
+          <ul>
+            <li><strong>Layout:</strong> Six-person wooden banquet trestle tables arranged in lettered grid blocks.</li>
+            <li><strong>Sightlines:</strong> Unrivalled physical closeness to the players and referees. However, because the floor is unraked, visibility of the actual board requires looking upward toward stage-flanking screens when spectators ahead jump up in celebration.</li>
+            <li><strong>Atmosphere:</strong> Maximum decibel levels, intense chanting, and non-stop fan interaction.</li>
+          </ul>
+        </div>
+
+        <div class="section-block">
+          <h3>2. Mid &amp; Rear Floor Tables</h3>
+          <p>
+            Extending from behind the front tables back toward the rear sound desk, these rows maintain the shared bench table format at a lower ticket price point.
+          </p>
+          <ul>
+            <li><strong>Layout:</strong> Continuation of the 6-seater trestle table grid across the wide floor hall.</li>
+            <li><strong>Sightlines:</strong> At 25 to 45 meters from the oche, tracking the physical dart flight with the naked eye is impossible. Spectators rely almost exclusively on ceiling-hung repeater LED screens.</li>
+            <li><strong>Atmosphere:</strong> Energetic party environment with extensive fancy dress groups and active singing.</li>
+          </ul>
+        </div>
+
+        <div class="section-block">
+          <h3>3. Side Tiered Grandstands (East &amp; West Wings)</h3>
+          <p>
+            Flanking the floor on both sides of the Great Hall, these elevated grandstands provide raked stadium seating looking diagonally across the arena toward the stage.
+          </p>
+          <ul>
+            <li><strong>Layout:</strong> Tip-up stadium seats arranged in steeply stepped rows with dedicated stairwells.</li>
+            <li><strong>Sightlines:</strong> Excellent diagonal sightlines over the standing floor crowd, positioned directly opposite major stage LED screens. Ideal for tracking match mathematics without obstruction.</li>
+            <li><strong>Atmosphere:</strong> Dedicated darts enthusiasts focused on legs, sets, and checkout routes, balancing vibrant support with unobstructed viewing.</li>
+          </ul>
+        </div>
+
+        <div class="section-block">
+          <h3>4. Rear Tiered Grandstand (North Hall)</h3>
+          <p>
+            Constructed across the back wall of the arena opposite the main stage, the rear grandstand provides maximum elevation and a commanding panoramic view.
+          </p>
+          <ul>
+            <li><strong>Layout:</strong> High-capacity raked bleacher stands with central aisle access.</li>
+            <li><strong>Sightlines:</strong> Clear head-on view of the full arena spectacle, with ceiling-hung LED arrays directly aligned with spectator sightlines.</li>
+            <li><strong>Atmosphere:</strong> Boisterous and vocal, offering full perspective on crowd waves, walk-ons, and stage pyrotechnics.</li>
+          </ul>
+        </div>
+
+        <div class="section-block">
+          <h3>5. Dedicated Family Grandstand Block</h3>
+          <p>
+            Traditionally designated within a specific lower tiered grandstand wing, the family block is an alcohol-restricted zone tailored for younger darts fans and parents.
+          </p>
+          <ul>
+            <li><strong>Access Requirement:</strong> Every group must include at least one junior ticket holder (under 18).</li>
+            <li><strong>Environment:</strong> Welcoming, safe, and family-oriented, completely separated from heavy beer-concourse queues.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 3: Verified Sightlines vs Atmosphere -->
+      <section class="content-card">
+        <h2>Sightlines vs Atmosphere: Objective Realities</h2>
+        <p>
+          A common beginner error when purchasing darts tickets is assuming proximity equals visibility. Comparing floor tables and tiered stands requires balancing two conflicting factors:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Seating Section</th>
+                <th>Physical Stage View</th>
+                <th>Board Visibility</th>
+                <th>Comfort &amp; Concourse Flow</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Front Tables</strong></td>
+                <td>Immediate (5–15m from players)</td>
+                <td>Screen-dependent during standing celebrations</td>
+                <td>Tight bench spacing; busy gangways</td>
+              </tr>
+              <tr>
+                <td><strong>Rear Tables</strong></td>
+                <td>Distanced (30–50m from stage)</td>
+                <td>100% LED screen reliance</td>
+                <td>Longer walks to concourse bars</td>
+              </tr>
+              <tr>
+                <td><strong>Side Tiered Stands</strong></td>
+                <td>Elevated diagonal vantage</td>
+                <td>Clear direct screen line-of-sight</td>
+                <td>Individual seats; fast stair access</td>
+              </tr>
+              <tr>
+                <td><strong>Rear Tiered Stands</strong></td>
+                <td>Panoramic arena overview</td>
+                <td>Overhead repeater screen alignment</td>
+                <td>Generous legroom; rapid exit flow</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          For a detailed head-to-head comparison between floor benches and grandstand seats, consult our comprehensive guide on the <a href="/venue/best-seats/">best seats at Alexandra Palace</a>.
+        </p>
+      </section>
+
+      <!-- Section 4: Which Sections Sell Out First -->
+      <section class="content-card">
+        <h2>Which Sections Sell Out First?</h2>
+        <p>
+          With over 300,000 ticket applications competing for approximately 180,000 tournament admissions, ticket demand varies dramatically by section:
+        </p>
+        <ol class="demand-list">
+          <li>
+            <strong>Front Table Catwalk Blocks:</strong> Floor tables situated in the front three rows flanking the walk-on walkway sell out in under 60 seconds during the PDCTV Annual Members priority window.
+          </li>
+          <li>
+            <strong>Friday &amp; Saturday Evening Floor Tables:</strong> Weekend evening table sessions are the second fastest tier to disappear, claimed almost entirely by priority presale subscribers.
+          </li>
+          <li>
+            <strong>Mid-Row Side Tiered Stands:</strong> Offering the optimal compromise between match sightlines and comfort, mid-row tiered seats sell rapidly during early general sale phases.
+          </li>
+          <li>
+            <strong>Weekday Afternoon Tiered Stands:</strong> Opening-round afternoon sessions (starting at 12:30 GMT) in tiered blocks represent the most accessible entry point for casual fans and ballot entrants.
+          </li>
+        </ol>
+        <p>
+          To ensure you do not miss official release dates and priority registration deadlines, read our complete <a href="/tickets/ballot-presale-guide/">Ticket Ballot and Presale Guide</a>. For structural dimensions and block letters across the arena, refer back to the <a href="/venue/great-hall-seating-plan/">Great Hall seating plan</a>.
+        </p>
+      </section>
+
+      <!-- Section 5: FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions: Great Hall Sections</h2>
+
+        <div class="faq-item">
+          <h3>Which seating section in the Great Hall sells out first?</h3>
+          <p>
+            Floor tables in the front blocks immediately adjacent to the player walk-on catwalk sell out fastest, typically within seconds of the PDCTV Annual Members priority window opening. Front rows of central tiered grandstands sell out shortly afterward.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can you see the stage from the rear tiered grandstand sections?</h3>
+          <p>
+            Yes, rear tiered sections provide an unobstructed, elevated view over the entire 5,000-capacity arena. While the physical players appear small at 50 to 60 meters, multiple ceiling-hung ultra-HD LED video screens provide clear match visibility.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Are floor tables divided into numbered individual seats?</h3>
+          <p>
+            Floor tables are long trestle banquet tables seating six patrons per table. Your ticket assigns you to a specific table number and letter block, but seating along that specific table is open among the six ticket holders.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is there a dedicated family section in the Great Hall?</h3>
+          <p>
+            Yes, the PDC and Alexandra Palace allocate a designated family seating area in the tiered grandstands. Bookings in this block require at least one under-18 attendee per group and enforce strict behavior standards to ensure a welcoming experience.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #000;
+  }
+  .page-header h1 {
+    color: #ffffff !important;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 850px;
+    margin: 0;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+  .content-card p, .content-card li {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .section-block {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+  }
+  .section-block h3 {
+    margin-top: 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .demand-list {
+    padding-left: 1.25rem;
+  }
+  .demand-list li {
+    margin-bottom: 0.75rem;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>
