@@ -87,3 +87,23 @@ auditArticle('src/pages/venue/first-time-visitor-checklist.astro', {
     '/fan-culture/first-timer-guide/': 1
   }
 });
+
+auditArticle('src/pages/history/youngest-world-champions.astro', {
+  minWords: 800,
+  maxWords: 1500,
+  links: {
+    '/history/roll-of-honour/': 2,
+    '/history/bdo-world-champions/': 1,
+    '/players/luke-littler/': 1
+  }
+});
+
+auditArticle('src/pages/history/most-world-titles.astro', {
+  minWords: 800,
+  maxWords: 1500,
+  links: {
+    '/history/roll-of-honour/': 2,
+    '/history/bdo-world-champions/': 1,
+    '/history/world-championship-finals/': 1
+  }
+});

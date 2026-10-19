@@ -160,6 +160,11 @@
     "description": "Complete archive of every BDO World Darts Champion from 1978 to 2020: all 43 finals, most titles leaderboard, the 1993 PDC split, and the BDO"
   },
   {
+    "url": "/history/most-world-titles/",
+    "title": "Most World Darts Championship Titles",
+    "description": "Who has won the most World Darts Championship titles? From Phil Taylor"
+  },
+  {
     "url": "/history/nine-darters/",
     "title": "PDC World Championship Nine-Darters: All 16 Perfect Legs",
     "description": "Complete history of nine-dart finishes at the World Darts Championship. From Paul Lim in 1990 to Michael Smith in 2023 and all 16 Ally Pally feats."
@@ -173,6 +178,11 @@
     "url": "/history/world-championship-finals/",
     "title": "PDC World Championship Finals: All-Time Scores &amp; Averages",
     "description": "Complete match archive of every PDC World Darts Championship final. Winning scores, match averages, runner-up records, and legendary deciders."
+  },
+  {
+    "url": "/history/youngest-world-champions/",
+    "title": "Youngest World Darts Champions Ever",
+    "description": "Who are the youngest world darts champions in history? From Luke Littler"
   },
   {
     "url": "/hotels/",
