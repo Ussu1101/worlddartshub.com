@@ -1,0 +1,337 @@
+---
+// src/pages/nl/prijzengeld.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Prijzengeld Darts WK 2026/27: £5 Miljoen Fonds";
+const pageDescription = "Prijzengeld WK darts 2026/27: £5 miljoen totaal, £1 miljoen voor de winnaar — volledige verdeling per ronde in Alexandra Palace.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/nl/prijzengeld/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/nl/' },
+  { name: 'Prijzengeld WK Darts', url: '/nl/prijzengeld/' }
+];
+
+const alternates = [
+  { hreflang: "nl", href: canonicalUrl },
+  { hreflang: "en", href: `${siteUrl}/tournament/prize-money/` },
+  { hreflang: "de", href: `${siteUrl}/de/preisgeld/` },
+  { hreflang: "x-default", href: `${siteUrl}/tournament/prize-money/` }
+];
+
+const faqItems = [
+  {
+    q: "Hoeveel prijzengeld is er op het PDC WK Darts 2026/27?",
+    a: "Het totale prijzengeld voor het PDC World Darts Championship 2026/27 bedraagt een recordbedrag van £5.000.000 (vijf miljoen pond sterling), het hoogste bedrag ooit in de geschiedenis van het darts."
+  },
+  {
+    q: "Hoeveel wint de wereldkampioen darts in 2026/27?",
+    a: "De winnaar van het WK Darts 2026/27 ontvangt een historische hoofdprijs van £1.000.000 (één miljoen pond), een verdubbeling ten opzichte van de eerdere hoofdprijs van £500.000."
+  },
+  {
+    q: "Telt het prijzengeld van het WK mee voor de Order of Merit?",
+    a: "Ja. Al het prijzengeld dat spelers winnen op het PDC WK telt voor de volle honderd procent mee voor de officiële PDC Order of Merit wereldranglijst."
+  },
+  {
+    q: "Hoeveel prijzengeld krijgt een speler die in de eerste ronde verliest?",
+    a: "Spelers die in de eerste ronde (laatste 128) van het toernooi worden uitgeschakeld, ontvangen gegarandeerd een startpremie van £17.500."
+  }
+];
+
+const prijzenSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "nl",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<BaseLayout
+  lang="nl"
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  alternates={alternates}
+  schema={prijzenSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">RECORD PRIJZENPOT</span>
+        <span class="badge">£5.000.000 TOTAAL</span>
+      </div>
+      <h1>Prijzengeld Darts WK 2026/27: Volledig Overzicht</h1>
+      <p class="lead-text">
+        Het PDC World Darts Championship 2026/27 schrijft geschiedenis met een totale prijzenpot van vijf miljoen pond sterling. Bekijk de exacte verdeling per ronde, de miljoenencheque voor de wereldkampioen en de vergelijking met voorgaande jaren.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <!-- Introductie -->
+      <section class="content-card">
+        <h2>Een Historische Mijlpaal in het Professionele Darts</h2>
+        <p>
+          De editie van 2026/27 markeert een nieuw tijdperk in de dartswereld. Met de uitbreiding van het deelnemersveld naar 128 spelers en de verhuizing naar de imposante Great Hall in Alexandra Palace heeft de PDC het totale prijzengeld verdubbeld naar maar liefst <strong>£5.000.000</strong>.
+        </p>
+        <p>
+          De uiteindelijke winnaar mag op zondag 3 januari 2027 niet alleen de iconische Sid Waddell Trophy omhoog houden, maar strijkt tevens een astronomische hoofdprijs van <strong>£1.000.000</strong> op. Dit maakt de wereldkampioen in één klap miljonair en garandeert een topklassering op de <a href="/nl/darts-ranglijst/">PDC Order of Merit</a>.
+        </p>
+      </section>
+
+      <!-- Verdelingstabel -->
+      <section class="content-card">
+        <h2>Verdeling Prijzengeld per Ronde (2026/27)</h2>
+        <p>
+          Onderstaand schema toont het officiële prijzengeld per speler en het totale uitkeringsbedrag per toernooifase:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Toernooifase / Ronde</th>
+                <th>Prijzengeld per Speler</th>
+                <th>Aantal Spelers</th>
+                <th>Totaal Uitgekeerd</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-winner">
+                <td><strong>Winnaar (Wereldkampioen)</strong></td>
+                <td><strong>£1.000.000</strong></td>
+                <td>1</td>
+                <td>£1.000.000</td>
+              </tr>
+              <tr>
+                <td><strong>Runner-up (Verliezend Finalist)</strong></td>
+                <td><strong>£400.000</strong></td>
+                <td>1</td>
+                <td>£400.000</td>
+              </tr>
+              <tr>
+                <td><strong>Halve Finalisten</strong></td>
+                <td><strong>£200.000</strong></td>
+                <td>2</td>
+                <td>£400.000</td>
+              </tr>
+              <tr>
+                <td><strong>Kwartfinalisten</strong></td>
+                <td><strong>£100.000</strong></td>
+                <td>4</td>
+                <td>£400.000</td>
+              </tr>
+              <tr>
+                <td><strong>Vierde Ronde (Laatste 16)</strong></td>
+                <td><strong>£60.000</strong></td>
+                <td>8</td>
+                <td>£480.000</td>
+              </tr>
+              <tr>
+                <td><strong>Derde Ronde (Laatste 32)</strong></td>
+                <td><strong>£35.000</strong></td>
+                <td>16</td>
+                <td>£560.000</td>
+              </tr>
+              <tr>
+                <td><strong>Tweede Ronde (Laatste 64)</strong></td>
+                <td><strong>£20.000</strong></td>
+                <td>32</td>
+                <td>£640.000</td>
+              </tr>
+              <tr>
+                <td><strong>Eerste Ronde (Laatste 128)</strong></td>
+                <td><strong>£17.500</strong></td>
+                <td>64</td>
+                <td>£1.120.000</td>
+              </tr>
+              <tr class="table-total">
+                <td><strong>Totaal Prijzengeld Toernooi</strong></td>
+                <td>—</td>
+                <td><strong>128</strong></td>
+                <td><strong>£5.000.000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Vergelijking Vorige Jaren -->
+      <section class="content-card">
+        <h2>Vergelijking met Vorige Jaren: De Financiële Explosie</h2>
+        <p>
+          De stijging van het prijzengeld illustreert de gigantische commerciële groei van het internationale darts:
+        </p>
+        <ul>
+          <li><strong>1994 (Inaugurele PDC WK):</strong> Totale prijzenpot van £64.000, waarvan winnaar Dennis Priestley £16.000 ontving.</li>
+          <li><strong>2007 (Barney's historische titel):</strong> Prijzenpot van £500.000, met £100.000 voor Raymond van Barneveld na zijn legendarische overwinning op Phil Taylor.</li>
+          <li><strong>2014 (Van Gerwen's eerste titel):</strong> Totale pot van £1.050.000, waarbij Michael van Gerwen £250.000 incasseerde.</li>
+          <li><strong>2019–2025:</strong> Jarenlang stond het prijzengeld op £2.500.000 met £500.000 voor de kampioen.</li>
+          <li><strong>2026/27 (Nieuwe standaard):</strong> Verdubbeling naar £5.000.000 totaal en £1.000.000 voor de winnaar.</li>
+        </ul>
+        <p>
+          Zelfs een nederlaag in de openingsronde levert tegenwoordig £17.500 op — meer dan de volledige hoofdprijs van het inaugurele WK in 1994. Wil je weten wanneer de wedstrijden worden gespeeld? Bekijk dan onze <a href="/nl/dartskalender/">dartskalender 2026/27</a> of lees hoe je <a href="/nl/darts-wk-tickets/">tickets voor Alexandra Palace</a> kunt bemachtigen.
+        </p>
+      </section>
+
+      <!-- Veelgestelde vragen -->
+      <section class="content-card faq-section">
+        <h2>Veelgestelde Vragen over het Prijzengeld</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+        <p style="margin-top: 1.5rem;">
+          <a href="/nl/">← Terug naar de Nederlandse gids</a>
+        </p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-winner {
+    background: #fefce8;
+    font-weight: 700;
+  }
+  .table-total {
+    background: #f1f5f9;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+  a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    color: #0369a1;
+  }
+</style>

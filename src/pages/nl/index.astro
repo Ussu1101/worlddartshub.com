@@ -1,0 +1,306 @@
+---
+// src/pages/nl/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Darts WK 2026/27: Gids, Tickets & Schema | World Darts Hub";
+const pageDescription = "Dé Nederlandse gids voor het PDC WK Darts 2026/27 in Alexandra Palace: tickets, speelschema, prijzengeld, ranglijst en live kijken.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/nl/`;
+
+const alternates = [
+  { hreflang: "nl", href: canonicalUrl },
+  { hreflang: "en", href: `${siteUrl}/` },
+  { hreflang: "de", href: `${siteUrl}/de/` },
+  { hreflang: "x-default", href: `${siteUrl}/` }
+];
+
+const nlHubSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "nl",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wanneer vindt het PDC WK Darts 2026/27 plaats?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het PDC World Darts Championship 2026/27 begint op vrijdag 11 december 2026 en eindigt met de finale op zondag 3 januari 2027 in Alexandra Palace te Londen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waar kan ik in Nederland het WK Darts live kijken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Nederland worden alle sessies van het PDC WK Darts live uitgezonden via streamingdienst Viaplay, met Nederlands commentaar en analyses vanuit de studio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe kom ik aan tickets voor het WK Darts in Alexandra Palace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Officiële tickets worden verkocht via See Tickets na een voorverkoop voor PDCTV-abonnees en een publieke ballot (loting). Resterende kaarten gaan in de algemene verkoop."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  lang="nl"
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  alternates={alternates}
+  schema={nlHubSchema}
+>
+  <header class="hub-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">NEDERLANDSE GIDS</span>
+        <span class="badge">ALEXANDRA PALACE 2026/27</span>
+      </div>
+      <h1>Darts WK 2026/27: Dé Complete Nederlandse Gids</h1>
+      <p class="lead-text">
+        Welkom op het Nederlandse kenniscentrum van World Darts Hub. Hier vind je alle geverifieerde informatie over het <strong>PDC World Darts Championship 2026/27</strong> in Alexandra Palace te Londen: van actuele ranglijsten en speelschema's tot prijzengeld, ticketverkoop en live uitzendingen.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <!-- Introductie -->
+      <section class="content-card">
+        <h2>Het Grootste Dartstoernooi ter Wereld</h2>
+        <p>
+          Ieder jaar in december en januari staat de sportwereld in het teken van Alexandra Palace — in de volksmond liefkozend <em>Ally Pally</em> genoemd. Het PDC WK Darts brengt de beste 128 darters ter wereld samen voor drie weken topsport, feest en ongekende spanning.
+        </p>
+        <p>
+          Voor Nederlandse dartfans kent het toernooi een rijke geschiedenis. Sinds Raymond van Barneveld in 2007 zijn historische wereldtitel pakte bij de PDC en Michael van Gerwen driemaal de Sid Waddell Trophy omhoog hield, is Nederland een van de meest toonaangevende dartlanden ter wereld. Ook tijdens de editie van 2026/27 strijden de Nederlandse toppers mee om het recordprijzengeld van £5.000.000.
+        </p>
+      </section>
+
+      <!-- Hub Cards Grid -->
+      <section class="content-card">
+        <h2>Nederlandse Darts Gidsen & Onderwerpen</h2>
+        <p>
+          Kies hieronder een categorie voor diepgaande informatie, actuele statistieken en praktische tips:
+        </p>
+
+        <div class="hub-grid">
+          <div class="hub-item">
+            <h3><a href="/nl/darts-ranglijst/">PDC Darts Ranglijst</a></h3>
+            <p>
+              Hoe werkt de PDC Order of Merit? Bekijk de actuele tweejarige prijzengeld-ranking, de geplaatste spelers en de strijd om de mondiale nummer 1-positie tussen Luke Humphries, Luke Littler en Michael van Gerwen.
+            </p>
+            <a class="hub-link" href="/nl/darts-ranglijst/">Bekijk ranglijst →</a>
+          </div>
+
+          <div class="hub-item">
+            <h3><a href="/nl/9-darter-lijst/">9-Darter Lijst</a></h3>
+            <p>
+              De complete kroniek van de perfecte leg in 9 pijlen. Van de historische worp van John Lowe en de magistrale legs van Van Barneveld tot alle 16 perfecte finishes op het WK in Ally Pally.
+            </p>
+            <a class="hub-link" href="/nl/9-darter-lijst/">Bekijk 9-darters →</a>
+          </div>
+
+          <div class="hub-item">
+            <h3><a href="/nl/dartskalender/">Dartskalender 2026/27</a></h3>
+            <p>
+              Alle toernooien en data van het PDC-seizoen op een rij: de Premier League Darts (inclusief speelronde in Rotterdam Ahoy), World Matchplay, World Grand Prix en het WK.
+            </p>
+            <a class="hub-link" href="/nl/dartskalender/">Bekijk kalender →</a>
+          </div>
+
+          <div class="hub-item">
+            <h3><a href="/nl/prijzengeld/">Prijzengeld WK Darts</a></h3>
+            <p>
+              Volledige verdeling van het recordbedrag van £5.000.000. Bekijk hoeveel de wereldkampioen (£1.000.000) en de darters in eerdere rondes verdienen aan prijzengeld.
+            </p>
+            <a class="hub-link" href="/nl/prijzengeld/">Bekijk prijzengeld →</a>
+          </div>
+
+          <div class="hub-item">
+            <h3><a href="/nl/darts-wk-tickets/">Darts WK Tickets Kopen</a></h3>
+            <p>
+              Stappenplan voor het bemachtigen van kaarten voor Alexandra Palace: ballot-inschrijving, PDCTV-voorverkoop, officiële prijzen en de See Tickets Fan-to-Fan ticketbeurs.
+            </p>
+            <a class="hub-link" href="/nl/darts-wk-tickets/">Lees ticketgids →</a>
+          </div>
+
+          <div class="hub-item">
+            <h3><a href="/nl/darts-kijken/">Darts Kijken in Nederland</a></h3>
+            <p>
+              Waar kun je live darts kijken? Alles over Viaplay-uitzendingen, Nederlands commentaar van Jacques Nieuwlaat, PDC TV-livestreams en het exacte uitzendschema per ronde.
+            </p>
+            <a class="hub-link" href="/nl/darts-kijken/">Bekijk kijkgids →</a>
+          </div>
+
+          <div class="hub-item">
+            <h3><a href="/nl/darters-bijnamen/">Bijnamen van Darters</a></h3>
+            <p>
+              Van Mighty Mike en Barney tot The Power en The Nuke. Ontdek de top 15 beroemdste dartersbijnamen en de opmerkelijke verhalen achter de opkomstmuziek en imago's.
+            </p>
+            <a class="hub-link" href="/nl/darters-bijnamen/">Ontdek bijnamen →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Veelgestelde vragen -->
+      <section class="content-card faq-section">
+        <h2>Veelgestelde Vragen over het WK Darts</h2>
+        <div class="faq-item">
+          <h3>Wanneer vindt het PDC WK Darts 2026/27 plaats?</h3>
+          <p>
+            Het PDC World Darts Championship 2026/27 begint op vrijdag 11 december 2026 en eindigt met de finale op zondag 3 januari 2027 in Alexandra Palace te Londen.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Waar kan ik in Nederland het WK Darts live kijken?</h3>
+          <p>
+            In Nederland worden alle sessies van het PDC WK Darts live uitgezonden via streamingdienst Viaplay, met Nederlands commentaar en analyses vanuit de studio.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Hoe kom ik aan tickets voor het WK Darts in Alexandra Palace?</h3>
+          <p>
+            Officiële tickets worden verkocht via See Tickets na een voorverkoop voor PDCTV-abonnees en een publieke ballot (loting). Resterende kaarten gaan in de algemene verkoop.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .hub-hero {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .hub-hero h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .hub-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hub-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: #0f172a;
+  }
+  .hub-item h3 a {
+    color: #0284c7;
+    text-decoration: none;
+  }
+  .hub-item h3 a:hover {
+    text-decoration: underline;
+  }
+  .hub-item p {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+  .hub-link {
+    color: #0284c7;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+  .hub-link:hover {
+    text-decoration: underline;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

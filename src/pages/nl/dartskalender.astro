@@ -1,0 +1,354 @@
+---
+// src/pages/nl/dartskalender.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Dartskalender 2026/27: Alle PDC Toernooien";
+const pageDescription = "Dartskalender 2026/27: alle PDC majors, Premier League, World Grand Prix en het WK darts — data, locaties en waar te kijken.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/nl/dartskalender/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/nl/' },
+  { name: 'Dartskalender', url: '/nl/dartskalender/' }
+];
+
+const alternates = [
+  { hreflang: "nl", href: canonicalUrl },
+  { hreflang: "en", href: `${siteUrl}/schedule/` },
+  { hreflang: "de", href: `${siteUrl}/de/dartkalender/` },
+  { hreflang: "x-default", href: `${siteUrl}/schedule/` }
+];
+
+const faqItems = [
+  {
+    q: "Wanneer begint het nieuwe PDC-dartsseizoen?",
+    a: "Het professionele dartseizoen start traditioneel in januari met de PDC Qualifying School (Q-School), gevolgd door The Masters begin februari en de start van de Premier League Darts."
+  },
+  {
+    q: "Komt de Premier League Darts naar Nederland in 2026/27?",
+    a: "Ja. Rotterdam Ahoy is een vaste speelstad op de kalender van de Premier League Darts. Tijdens 'Oranje Donderdag' kleurt de arena volledig oranje voor duizenden uitzinnige fans."
+  },
+  {
+    q: "Wanneer begint het WK Darts 2026/27 in Alexandra Palace?",
+    a: "Het PDC World Darts Championship 2026/27 begint op vrijdag 11 december 2026 en loopt door tot en met de finale op zondag 3 januari 2027 in Alexandra Palace te Londen."
+  },
+  {
+    q: "Waar zijn alle toernooien op de dartskalender live te zien?",
+    a: "In Nederland worden alle grote PDC-toernooien live uitgezonden op Viaplay. Voor toernooien op de ProTour en vloerwedstrijden biedt de officiële streamingdienst PDCTV uitkomst."
+  }
+];
+
+const kalenderSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "nl",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<BaseLayout
+  lang="nl"
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  alternates={alternates}
+  schema={kalenderSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC TOUR KALENDER</span>
+        <span class="badge">SEIZOEN 2026/27</span>
+      </div>
+      <h1>Dartskalender 2026/27: Alle PDC Toernooien op een Rij</h1>
+      <p class="lead-text">
+        Het professionele dartsseizoen telt tientallen toernooien verspreid over de hele wereld. Bekijk hier het complete overzicht van alle PDC majors, de Premier League, European Tour en het WK Darts in Alexandra Palace.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <!-- Seizoensoverzicht -->
+      <section class="content-card">
+        <h2>Hoe het PDC-Dartsseizoen Is Opgebouwd</h2>
+        <p>
+          De professionele dartskalender van de PDC loopt non-stop van januari tot begin januari van het volgende jaar. Het seizoen is grofweg verdeeld in vier hoofdonderdelen:
+        </p>
+        <ol>
+          <li>
+            <strong>De Televisie Majors:</strong> De prestigieuze televisietoernooien met grote prijzenpotten, waaronder het World Matchplay, World Grand Prix, UK Open en als grandioos slotstuk het <a href="/nl/prijzengeld/">PDC WK Darts</a>.
+          </li>
+          <li>
+            <strong>De Premier League Darts:</strong> Een wekelijkse competitie van februari tot eind mei waarin acht van 's werelds beste darters elkaar ontmoeten in grote arena's door het VK, Ierland, Duitsland en Nederland.
+          </li>
+          <li>
+            <strong>De European Tour:</strong> Twaalf tot veertien weekendtoernooien in onder meer Duitsland, Nederland, België, Oostenrijk en Tsjechië voor volle zalen.
+          </li>
+          <li>
+            <strong>De Players Championships (Vloertoernooien):</strong> Dertig toernooien zonder publiek waarin Tour Card-houders strijden om kwalificatie voor de majors en punten voor de <a href="/nl/darts-ranglijst/">PDC Order of Merit</a>.
+          </li>
+        </ol>
+      </section>
+
+      <!-- Majors Tabel -->
+      <section class="content-card">
+        <h2>Belangrijkste PDC Toernooien 2026/27</h2>
+        <p>
+          Hieronder vind je de belangrijkste toernooien van het seizoen, inclusief locaties, indicatief prijzengeld en bevestigde periodes:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Toernooi</th>
+                <th>Periode / Datum</th>
+                <th>Locatie</th>
+                <th>Prijzengeld</th>
+                <th>Uitzending NL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>The Masters</strong></td>
+                <td>Begin februari 2026</td>
+                <td>Marshall Arena, Milton Keynes</td>
+                <td>£275.000</td>
+                <td>Viaplay</td>
+              </tr>
+              <tr>
+                <td><strong>Premier League Darts</strong></td>
+                <td>Februari – Mei 2026</td>
+                <td>16 Speelsteden (o.a. Rotterdam)</td>
+                <td>£1.000.000</td>
+                <td>Viaplay</td>
+              </tr>
+              <tr>
+                <td><strong>UK Open</strong></td>
+                <td>Maart 2026</td>
+                <td>Butlin's Resort, Minehead</td>
+                <td>£600.000</td>
+                <td>Viaplay</td>
+              </tr>
+              <tr>
+                <td><strong>World Cup of Darts</strong></td>
+                <td>11–14 juni 2026</td>
+                <td>Eissporthalle, Frankfurt</td>
+                <td>£500.000</td>
+                <td>Viaplay</td>
+              </tr>
+              <tr>
+                <td><strong>World Matchplay</strong></td>
+                <td>Juli 2026</td>
+                <td>Winter Gardens, Blackpool</td>
+                <td>£800.000</td>
+                <td>Viaplay</td>
+              </tr>
+              <tr>
+                <td><strong>World Grand Prix</strong></td>
+                <td>Oktober 2026</td>
+                <td>Mattioli Arena, Leicester</td>
+                <td>£750.000</td>
+                <td>Viaplay</td>
+              </tr>
+              <tr>
+                <td><strong>European Championship</strong></td>
+                <td>Eind oktober 2026</td>
+                <td>Westfalenhalle, Dortmund</td>
+                <td>£600.000</td>
+                <td>Viaplay</td>
+              </tr>
+              <tr>
+                <td><strong>Grand Slam of Darts</strong></td>
+                <td>November 2026</td>
+                <td>WV Active Aldersley, Wolverhampton</td>
+                <td>£650.000</td>
+                <td>Viaplay</td>
+              </tr>
+              <tr>
+                <td><strong>Players Championship Finals</strong></td>
+                <td>Eind november 2026</td>
+                <td>Butlin's Resort, Minehead</td>
+                <td>£600.000</td>
+                <td>Viaplay</td>
+              </tr>
+              <tr class="table-highlight">
+                <td><strong>PDC WK Darts 2026/27</strong></td>
+                <td>11 dec 2026 – 3 jan 2027</td>
+                <td>Alexandra Palace, Londen</td>
+                <td>£5.000.000</td>
+                <td>Viaplay</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Rotterdam Ahoy Focus -->
+      <section class="content-card">
+        <h2>Premier League Darts in Rotterdam Ahoy</h2>
+        <p>
+          Voor Nederlandse dartfans is de jaarlijkse speelronde in <strong>Rotterdam Ahoy</strong> het absolute hoogtepunt op eigen bodem. Tienduizend in oranje gehulde supporters zorgen voor een van de meest luidruchtige en sfeervolle avonden van het hele dartseizoen.
+        </p>
+        <p>
+          Wanneer Nederlandse boegbeelden zoals Michael van Gerwen het podium betreden, ontploft Ahoy in een oranje zee van gezang. Wil je live darts kijken vanuit je eigen huiskamer? Bekijk dan onze <a href="/nl/darts-kijken/">gids voor darts kijken op tv en stream</a>.
+        </p>
+      </section>
+
+      <!-- Veelgestelde vragen -->
+      <section class="content-card faq-section">
+        <h2>Veelgestelde Vragen over de Dartskalender</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+        <p style="margin-top: 1.5rem;">
+          <a href="/nl/">← Terug naar de Nederlandse gids</a>
+        </p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card ol {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card li {
+    margin-bottom: 0.75rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-highlight {
+    background: #fefce8;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+  a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    color: #0369a1;
+  }
+</style>

@@ -1,0 +1,280 @@
+---
+// src/pages/nl/darts-wk-tickets.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Darts WK Tickets 2026/27: Koopgids Alexandra Palace";
+const pageDescription = "Darts WK tickets 2026/27 kopen: ballot, presale, algemene verkoop en hospitality in Alexandra Palace — complete Nederlandse koopgids.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/nl/darts-wk-tickets/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/nl/' },
+  { name: 'Darts WK Tickets', url: '/nl/darts-wk-tickets/' }
+];
+
+const alternates = [
+  { hreflang: "nl", href: canonicalUrl },
+  { hreflang: "en", href: `${siteUrl}/tickets/` },
+  { hreflang: "de", href: `${siteUrl}/de/darts-wm-tickets/` },
+  { hreflang: "x-default", href: `${siteUrl}/tickets/` }
+];
+
+const faqItems = [
+  {
+    q: "Wanneer start de kaartverkoop voor het WK Darts 2026/27?",
+    a: "De kaartverkoop start doorgaans in de zomer (juli/augustus). Eerst krijgen jaarabonnees van PDCTV toegang tot de exclusieve presale, gevolgd door geregistreerden van de ballot en tot slot de openbare algemene verkoop."
+  },
+  {
+    q: "Wat kosten tickets voor het WK Darts in Alexandra Palace?",
+    a: "Standaard tribunekaarten (Tiered Seating) kosten indicatief tussen de £45 en £95 per sessie. Zaaltafels (Table Seats) variëren van £55 tot circa £115 per stoel, afhankelijk van de toernooironde en sessie."
+  },
+  {
+    q: "Waar kan ik veilig tweedehands kaarten voor het WK Darts kopen?",
+    a: "Uitsluitend via de officiële See Tickets Fan-to-Fan Marketplace. Kaarten worden hier tegen de originele nominale prijs doorverkocht. Koop nooit via onofficiële wederverkopers zoals Viagogo of sociale media, omdat deze tickets bij de entree ongeldig worden verklaard."
+  },
+  {
+    q: "Hoeveel kaarten mag je maximaal kopen per persoon?",
+    a: "Voor tafelplaatsen geldt meestal een strikte limiet van maximaal 6 kaarten per sessie per account. Voor tribunekaarten geldt een maximum van 10 tickets per sessie."
+  }
+];
+
+const ticketSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "nl",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<BaseLayout
+  lang="nl"
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  alternates={alternates}
+  schema={ticketSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">TICKET KOOPGIDS</span>
+        <span class="badge">ALEXANDRA PALACE 2026/27</span>
+      </div>
+      <h1>Darts WK Tickets 2026/27: Koopgids voor Alexandra Palace</h1>
+      <p class="lead-text">
+        Een bezoek aan het PDC WK Darts in Alexandra Palace is een droom voor iedere Nederlandse dartsliefhebber. Ontdek hoe het officiële verkoopproces werkt, wat de kaarten kosten en hoe je oplichting voorkomt.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <!-- Verkoopfases -->
+      <section class="content-card">
+        <h2>De Drie Officiële Verkoopfases</h2>
+        <p>
+          De vraag naar kaarten voor <em>Ally Pally</em> overtreft het aanbod elk jaar vele malen. Populaire avondsessies en het finaleweekend zijn traditiegetrouw binnen enkele minuten uitverkocht. De PDC hanteert daarom drie opeenvolgende verkoopfases via haar officiële ticketpartner <strong>See Tickets</strong>:
+        </p>
+        <ol>
+          <li>
+            <strong>Fase 1: PDCTV Priority Presale:</strong> Dartfans die vóór de vastgestelde deadline een actief jaarabonnement hebben op PDCTV krijgen als allereerste toegang tot het reserveringssysteem. Dit is met afstand de beste kans om gewilde tafelplaatsen te bemachtigen.
+          </li>
+          <li>
+            <strong>Fase 2: Gratis Ballot (Loting):</strong> Fans die zich gratis hebben aangemeld voor de officiële PDC-voorverkoopregistratie ontvangen toegang tot de tweede tranche kaarten.
+          </li>
+          <li>
+            <strong>Fase 3: Algemene Openbare Verkoop (General Sale):</strong> Resterende tickets worden openbaar aangeboden op See Tickets. Omdat veel sessies in de eerdere fasen al zijn volgeboekt, is de keuze in deze fase doorgaans beperkt.
+          </li>
+        </ol>
+        <p>
+          Bekijk voor diepgaande instructies over accountregistratie en timing onze uitgebreide Engelstalige <a href="/tickets/">complete tickets guide</a> en de <a href="/tickets/ballot-presale-guide/">ballot & presale handleiding</a>.
+        </p>
+      </section>
+
+      <!-- Prijzen en categorieën -->
+      <section class="content-card">
+        <h2>Prijzen en Tribune-indeling</h2>
+        <p>
+          In Alexandra Palace zijn grofweg twee soorten zitplaatsen beschikbaar:
+        </p>
+        <ul>
+          <li>
+            <strong>Tafels op de Zaalvloer (Table Seats):</strong> Lange biertafels voor maximaal 10 personen midden in het feestgedruis. Dit is waar de befaamde Ally Pally-sfeer ontstaat. Prijzen variëren indicatief van £55 (eerste week middagsessies) tot £115 (finale).
+          </li>
+          <li>
+            <strong>Verhoogde Tribunes (Tiered Grandstand Seating):</strong> Vaste stoelen op de oplopende tribunes langs de zijkanten en achterkant van de zaal. Deze plekken bieden vaak een beter en overzichtelijker zicht op het bord en de grote schermen. Prijzen liggen indicatief tussen de £45 en £95 per sessie.
+          </li>
+        </ul>
+        <p>
+          Middagsessies (start om 12:30 uur lokale tijd) zijn over het algemeen aanzienlijk makkelijker te bemachtigen en vriendelijker geprijsd dan de luidruchtigere avondsessies (start 19:00 uur).
+        </p>
+      </section>
+
+      <!-- Hospitality Arrangementen -->
+      <section class="content-card">
+        <h2>Hospitality & VIP Arrangementen</h2>
+        <p>
+          Grijp je mis tijdens de reguliere kaartverkoop of wil je de ultieme luxe dartservaring beleven? Dan biedt de PDC officiële <strong>Hospitality Packages</strong> aan.
+        </p>
+        <p>
+          Deze arrangementen omvatten gereserveerde premium zitplaatsen op de beste rijen voor het podium, toegang tot een exclusieve VIP-lounge, een gastronomisch meergangenbuffet of diner, inclusief bier, wijn en frisdrank, en meet-and-greets met dartslegendes. Hospitality tickets zijn aanzienlijk duurder (£300 tot £600+ per persoon), maar blijven vaak langer beschikbaar.
+        </p>
+      </section>
+
+      <!-- Veilige Doorverkoop -->
+      <section class="content-card">
+        <h2>Officiële Herverkoop & Voorkom Oplichting</h2>
+        <p>
+          Kun je onverhoopt niet gaan, of zoek je op het laatste moment nog kaarten? Maak dan <em>uitsluitend</em> gebruik van het officiële <strong>See Tickets Fan-to-Fan Marketplace</strong>.
+        </p>
+        <p>
+          Op dit officiële platform mogen geregistreerde ticketkopers hun kaarten alleen doorverkopen tegen de originele nominale prijs (face value) plus eventuele administratiekosten. Zodra een ticket wordt verkocht, wordt de originele barcode geannuleerd en ontvangt de koper een gloednieuw, gegarandeerd geldig ticket.
+        </p>
+        <div class="warning-box">
+          <strong>Waarschuwing tegen zwarte handel:</strong><br />
+          Koop nooit kaarten via websites als Viagogo, StubHub, Marktplaats of sociale media. De PDC controleert streng aan de ingang van Alexandra Palace. Tickets die via ongeautoriseerde secundaire kanalen zijn doorverkocht tegen woekerprijzen worden geblokkeerd, wat leidt tot onverbiddelijke weigering bij de deur.
+        </div>
+      </section>
+
+      <!-- Veelgestelde vragen -->
+      <section class="content-card faq-section">
+        <h2>Veelgestelde Vragen over WK Darts Tickets</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+        <p style="margin-top: 1.5rem;">
+          <a href="/nl/">← Terug naar de Nederlandse gids</a>
+        </p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card ol, .content-card ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card li {
+    margin-bottom: 0.75rem;
+  }
+  .warning-box {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    color: #92400e;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+  a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    color: #0369a1;
+  }
+</style>

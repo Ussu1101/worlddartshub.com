@@ -1,0 +1,338 @@
+---
+// src/pages/nl/darters-bijnamen.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Darters Bijnamen: Van The Power tot The Nuke";
+const pageDescription = "Alle darters bijnamen op een rij: The Power (Taylor), Mighty Mike (Van Gerwen), The Nuke (Littler) — herkomst en verhalen achter de namen.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/nl/darters-bijnamen/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/nl/' },
+  { name: 'Darters Bijnamen', url: '/nl/darters-bijnamen/' }
+];
+
+const alternates = [
+  { hreflang: "nl", href: canonicalUrl },
+  { hreflang: "en", href: `${siteUrl}/players/nicknames/` },
+  { hreflang: "x-default", href: `${siteUrl}/players/nicknames/` }
+];
+
+const faqItems = [
+  {
+    q: "Waarom hebben professionele darters bijna altijd een bijnaam?",
+    a: "Bijnamen maken integraal deel uit van de show en entertainmentwaarde van het darts. Ze versterken het imago van de speler, passen bij hun opkomstmuziek (walk-on song) en zorgen voor een sterke band met de supporters in de zaal."
+  },
+  {
+    q: "Wat is de bijnaam van Michael van Gerwen?",
+    a: "Michael van Gerwen draagt de wereldberoemde bijnaam 'Mighty Mike', een allitererende verwijzing naar zijn initialen MVG en zijn ongekende scoringskracht op het podium."
+  },
+  {
+    q: "Waar komt de bijnaam van Phil Taylor ('The Power') vandaan?",
+    a: "Phil Taylor kreeg de bijnaam 'The Power' begin jaren negentig van Sky Sports-productiemanager Peter Judge, nadat Judge in de kleedkamer per ongeluk op een cassettebandje van het nummer 'The Power' van de band Snap! ging staan."
+  },
+  {
+    q: "Waarom wordt Luke Littler 'The Nuke' genoemd?",
+    a: "Luke Littler kreeg de bijnaam 'The Nuke' al op jonge leeftijd in de jeugdcompetities van St Helens, als metafoor voor zijn explosieve en vernietigende scorend vermogen op het dartbord."
+  }
+];
+
+const bijnamenSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "nl",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<BaseLayout
+  lang="nl"
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  alternates={alternates}
+  schema={bijnamenSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">DARTS CULTUUR</span>
+        <span class="badge">BIJNAMEN & WAL-ONS</span>
+      </div>
+      <h1>Darters Bijnamen: Van The Power tot The Nuke</h1>
+      <p class="lead-text">
+        In geen enkele andere sport spelen bijnamen zo'n gigantische rol als in het professionele darts. Ontdek de top 15 beroemdste dartersbijnamen, de historische verhalen achter de opkomstmuziek en het ontstaan van de legendarische Barney Army.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <!-- Waarom bijnamen? -->
+      <section class="content-card">
+        <h2>De Magie van de Bijnaam in het Darts</h2>
+        <p>
+          Zodra de lichten in de arena doven en de herkenbare bastonen van een opkomstnummer door de luidsprekers knallen, kondigt de mastercaller de spelers aan met hun officiële alias. Een sterke bijnaam is in het moderne darts goud waard: het transformeert een gewone speler in een herkenbaar personage waar fans shirts van kopen en spreekkoren voor bedenken.
+        </p>
+        <p>
+          Sommige bijnamen ontstaan door een toevallige anekdote in de pub of kleedkamer, terwijl andere verwijzen naar het vroegere beroep van de speler, een woordspeling op hun achternaam of hun specifieke speelstijl.
+        </p>
+      </section>
+
+      <!-- Top 15 Tabel -->
+      <section class="content-card">
+        <h2>Top 15 Beroemdste Darters Bijnamen & Herkomst</h2>
+        <p>
+          Hieronder vind je de vijftien meest iconische bijnamen van de internationale dartstop, inclusief hun geverifieerde oorsprong:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Speler</th>
+                <th>Bijnaam</th>
+                <th>Herkomst &amp; Betekenis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Phil Taylor</strong></td>
+                <td><em>The Power</em></td>
+                <td>Bedacht in de vroege jaren 90 door Sky Sports-manager Peter Judge, nadat hij in de kleedkamer op een cassettebandje van Snap! ('The Power') ging staan.</td>
+              </tr>
+              <tr>
+                <td><strong>Michael van Gerwen</strong></td>
+                <td><em>Mighty Mike</em></td>
+                <td>Alliteratie op zijn initialen MVG; symboliseert zijn superieure en intimiderende kracht op het podium.</td>
+              </tr>
+              <tr>
+                <td><strong>Luke Littler</strong></td>
+                <td><em>The Nuke</em></td>
+                <td>Verzonnen in zijn jeugdjaren in St Helens vanwege zijn explosieve scoringsvermogen dat tegenstanders 'wegvaagde'.</td>
+              </tr>
+              <tr>
+                <td><strong>Luke Humphries</strong></td>
+                <td><em>Cool Hand Luke</em></td>
+                <td>Vernoemd naar de klassieke Paul Newman-film uit 1967, gekozen wegens zijn ijzige kalmte in beslissende legs.</td>
+              </tr>
+              <tr>
+                <td><strong>Raymond van Barneveld</strong></td>
+                <td><em>Barney</em></td>
+                <td>Liefkozende afkorting van zijn achternaam die uitgroeide tot het wereldberoemde supporterslegioen 'The Barney Army'.</td>
+              </tr>
+              <tr>
+                <td><strong>Gerwyn Price</strong></td>
+                <td><em>The Iceman</em></td>
+                <td>Verwijst naar zijn stalen zenuwen onder druk en zijn vroegere carrière als professioneel rugbyspeler.</td>
+              </tr>
+              <tr>
+                <td><strong>Peter Wright</strong></td>
+                <td><em>Snakebite</em></td>
+                <td>Vernoemd naar zijn favoriete drankje (bier gemengd met cider en zwarte bessensap) en de opvallende geschilderde slang op zijn hoofd.</td>
+              </tr>
+              <tr>
+                <td><strong>Gary Anderson</strong></td>
+                <td><em>The Flying Scotsman</em></td>
+                <td>Vernoemd naar de legendarische Schotse stoomlocomotief uit de vroege twintigste eeuw.</td>
+              </tr>
+              <tr>
+                <td><strong>Michael Smith</strong></td>
+                <td><em>Bully Boy</em></td>
+                <td>Ontstaan tijdens zijn jeugd op een boerderij, waar hij hielp met het vangen en brandmerken van jonge stieren (bullies).</td>
+              </tr>
+              <tr>
+                <td><strong>Nathan Aspinall</strong></td>
+                <td><em>The Asp</em></td>
+                <td>Verkorting van zijn achternaam en verwijzing naar de dodelijke adder (asp) die bliksemsnel toeslaat.</td>
+              </tr>
+              <tr>
+                <td><strong>Rob Cross</strong></td>
+                <td><em>Voltage</em></td>
+                <td>Een directe knipoog naar zijn vroegere beroep als gediplomeerd elektricien voordat hij fulltime profdarter werd.</td>
+              </tr>
+              <tr>
+                <td><strong>Stephen Bunting</strong></td>
+                <td><em>The Bullet</em></td>
+                <td>Vernoemd naar zijn razendsnelle werpritme en zijn grappige uiterlijke gelijkenis met Peter Griffin uit Family Guy.</td>
+              </tr>
+              <tr>
+                <td><strong>Dirk van Duijvenbode</strong></td>
+                <td><em>A Titan</em></td>
+                <td>Oorspronkelijk 'De Auberginekweker' vanwege zijn werk op een groentekwekerij, nu bekend om zijn energieke hardcore techno walk-on.</td>
+              </tr>
+              <tr>
+                <td><strong>Danny Noppert</strong></td>
+                <td><em>The Freeze</em></td>
+                <td>Gekozen vanwege zijn stoïcijnse, ijskoude blik en totale gebrek aan zichtbare emotie tijdens wedstrijden.</td>
+              </tr>
+              <tr>
+                <td><strong>Vincent van der Voort</strong></td>
+                <td><em>The Dutch Destroyer</em></td>
+                <td>Verdiend dankzij zijn status als een van de allersnelste darters in de geschiedenis van de PDC.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Nederlandse Darters & Barney Army Context -->
+      <section class="content-card">
+        <h2>Nederlandse Darters en de 'Barney Army'</h2>
+        <p>
+          Voor de Nederlandse fans heeft één bijnaam een mythische status: <strong>Barney</strong>. Toen Raymond van Barneveld in de jaren negentig de BDO-wereldtitels op Lakeside aaneenreeg, ontstond de kreet <em>"Barney Army!"</em>. 
+        </p>
+        <p>
+          Dit fenomeen waaide over naar de PDC en groeide uit tot een wereldwijd begrip. Tot op de dag van vandaag zingt het publiek in Alexandra Palace massaal voor Van Barneveld zodra hij het podium betreedt.
+        </p>
+        <p>
+          Naast Barney hebben ook andere Nederlanders opvallende bijnamen gecultiveerd. Zo verruilde Dirk van Duijvenbode zijn cultnaam als auberginekweker voor <em>The Titan</em>, waarmee hij op pompende hardstylebeats het publiek opzweept. 
+        </p>
+        <p>
+          Wil je alle historische dartersbijnamen en internationale records ontdekken? Bekijk dan ons complete Engelstalige <a href="/players/nicknames/">PDC player nicknames archive</a>.
+        </p>
+      </section>
+
+      <!-- Veelgestelde vragen -->
+      <section class="content-card faq-section">
+        <h2>Veelgestelde Vragen over Darters Bijnamen</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+        <p style="margin-top: 1.5rem;">
+          <a href="/nl/">← Terug naar de Nederlandse gids</a>
+        </p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+  a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    color: #0369a1;
+  }
+</style>

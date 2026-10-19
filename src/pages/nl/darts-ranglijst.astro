@@ -1,0 +1,364 @@
+---
+// src/pages/nl/darts-ranglijst.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "PDC Darts Ranglijst 2026: Order of Merit Live";
+const pageDescription = "De actuele PDC Order of Merit darts ranglijst 2026/27: prijzengeld-ranking, uitleg systeem en de strijd om de nummer 1-positie.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/nl/darts-ranglijst/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/nl/' },
+  { name: 'PDC Darts Ranglijst', url: '/nl/darts-ranglijst/' }
+];
+
+const alternates = [
+  { hreflang: "nl", href: canonicalUrl },
+  { hreflang: "en", href: `${siteUrl}/players/rankings/` },
+  { hreflang: "de", href: `${siteUrl}/de/darts-rangliste/` },
+  { hreflang: "x-default", href: `${siteUrl}/players/rankings/` }
+];
+
+const faqItems = [
+  {
+    q: "Wat is de PDC Order of Merit?",
+    a: "De PDC Order of Merit is de officiële wereldranglijst in het professionele darts. De ranglijst is gebaseerd op het totale prijzengeld dat spelers in de afgelopen twee jaar hebben gewonnen tijdens officiële ranking-toernooien."
+  },
+  {
+    q: "Wie is de nummer 1 van de wereld in het darts?",
+    a: "Op de actuele PDC Order of Merit voert wereldkampioen Luke Humphries de wereldranglijst aan met meer dan 1,7 miljoen pond aan gewonnen prijzengeld, nauw gevolgd door Luke Littler en Michael van Gerwen."
+  },
+  {
+    q: "Telt al het gewonnen prijzengeld mee voor de PDC-wereldranglijst?",
+    a: "Nee. Alleen prijzengeld gewonnen op officiële PDC ranking-toernooien (zoals het WK, World Matchplay, World Grand Prix, UK Open en Players Championships) telt mee. Uitnodigingstoernooien zoals de Premier League en World Cup of Darts tellen niet mee voor de Order of Merit."
+  },
+  {
+    q: "Hoeveel spelers zijn geplaatst op het PDC WK Darts?",
+    a: "De beste 32 spelers van de PDC Order of Merit zijn automatisch geplaatst voor het WK Darts. Zij slaan de eerste ronde over en stromen direct in de tweede ronde van het toernooi in."
+  }
+];
+
+const ranglijstSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "nl",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<BaseLayout
+  lang="nl"
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  alternates={alternates}
+  schema={ranglijstSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC WERELDRANGLIJST</span>
+        <span class="badge">ORDER OF MERIT 2026/27</span>
+      </div>
+      <h1>PDC Darts Ranglijst: De Order of Merit Uitgelegd</h1>
+      <p class="lead-text">
+        De PDC Order of Merit is het kloppend hart van het professionele darts. Ontdek hoe het tweejarige prijzengeldsysteem werkt, wie de huidige mondiale ranglijst aanvoert en hoe spelers zich plaatsen voor het WK in Alexandra Palace.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <!-- Wat is de Order of Merit? -->
+      <section class="content-card">
+        <h2>Wat Is de PDC Order of Merit?</h2>
+        <p>
+          In tegenstelling tot sporten zoals tennis of golf, waar spelers punten verzamelen voor een wereldranglijst, hanteert de Professional Darts Corporation (PDC) een puur financieel systeem: de <strong>PDC Order of Merit</strong>.
+        </p>
+        <p>
+          Iedere pond sterling (£) die een professionele darter verdient tijdens een officieel ranking-toernooi telt exact als één ranking-punt. De wereldranglijst toont het gecumuleerde prijzengeld over een rollende periode van precies <strong>twee jaar (24 kalendermaanden)</strong>.
+        </p>
+        <p>
+          Dit betekent dat prijzengeld dat een speler precies twee jaar geleden heeft behaald op een toernooi, weer van het puntentotaal verdwijnt zodra datzelfde toernooi in het huidige seizoen opnieuw wordt gespeeld. Dit zogeheten 'verdedigen van prijzengeld' zorgt voor dynamische verschuivingen aan de top van de wereldtop.
+        </p>
+      </section>
+
+      <!-- Hoe werkt het systeem? -->
+      <section class="content-card">
+        <h2>Hoe het Tweejarige Ranglijstsysteem Werkt</h2>
+        <p>
+          Niet elk toernooi op de dartskalender telt mee voor de Order of Merit. De PDC maakt een strikt onderscheid tussen twee categorieën toernooien:
+        </p>
+        <ul>
+          <li>
+            <strong>Ranking-toernooien (tellen wel mee):</strong> Het PDC World Darts Championship, World Matchplay, World Grand Prix, UK Open, European Championship, Players Championship Finals, Grand Slam of Darts (mits gekwalificeerd via ranking) en alle ProTour vloertoernooien (Players Championships en European Tour events).
+          </li>
+          <li>
+            <strong>Invitational toernooien (tellen niet mee):</strong> De Premier League Darts, World Cup of Darts, The Masters en de World Series of Darts toernooien. Het prijzengeld op deze toernooien is aanzienlijk, maar levert geen ponden op voor de officiële wereldranglijst.
+          </li>
+        </ul>
+        <p>
+          Omdat het prijzengeld op het WK in Alexandra Palace met <a href="/nl/prijzengeld/">£5.000.000 aan totaal prijzengeld</a> verreweg het hoogste is van alle toernooien, heeft het WK de grootste impact op de ranglijst. Een speler die diep doordringt op het WK kan in één klap tientallen plekken stijgen op de Order of Merit.
+        </p>
+      </section>
+
+      <!-- De Strijd om Nummer 1: Top-16 Context -->
+      <section class="content-card">
+        <h2>De Strijd om de Nummer 1-Positie</h2>
+        <p>
+          Aan de top van het mondiale darts heerst een felle concurrentiestrijd. <strong>Luke Humphries</strong> veroverde de nummer 1-positie na zijn overwinningen op het WK 2024, de World Matchplay en de World Grand Prix. Hij heeft een aanzienlijke voorsprong opgebouwd dankzij zijn consistente optredens in televisiefinales.
+        </p>
+        <p>
+          Tegelijkertijd heeft de ongekende opmars van tienerster <strong>Luke Littler</strong> de ranglijst flink door elkaar geschud. Na zijn sensationele WK-debuut en titels op de World Series en European Tour stijgt Littler met reuzensprongen richting de absolute top 3 van de wereld.
+        </p>
+        <p>
+          Voor Nederland blijft <strong>Michael van Gerwen</strong> de onbetwiste leider van het contingent. Met tientallen majortitels achter zijn naam verdedigt Van Gerwen zijn vaste plek in de top van de wereld. Daarnaast strijden Nederlandse darters zoals Danny Noppert, Dirk van Duijvenbode en Raymond van Barneveld om een vaste positie in de felbegeerde top 16 en top 32.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Positie</th>
+                <th>Speler</th>
+                <th>Nationaliteit</th>
+                <th>Prijzengeld (indicatief)</th>
+                <th>Status WK-Plaatsing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1</strong></td>
+                <td>Luke Humphries</td>
+                <td>Engeland</td>
+                <td>£1.750.000+</td>
+                <td>Geplaatste speler (Top 4)</td>
+              </tr>
+              <tr>
+                <td><strong>2</strong></td>
+                <td>Michael van Gerwen</td>
+                <td>Nederland</td>
+                <td>£1.100.000+</td>
+                <td>Geplaatste speler (Top 4)</td>
+              </tr>
+              <tr>
+                <td><strong>3</strong></td>
+                <td>Michael Smith</td>
+                <td>Engeland</td>
+                <td>£950.000+</td>
+                <td>Geplaatste speler (Top 4)</td>
+              </tr>
+              <tr>
+                <td><strong>4</strong></td>
+                <td>Luke Littler</td>
+                <td>Engeland</td>
+                <td>£900.000+</td>
+                <td>Geplaatste speler (Top 4)</td>
+              </tr>
+              <tr>
+                <td><strong>5</strong></td>
+                <td>Gerwyn Price</td>
+                <td>Wales</td>
+                <td>£700.000+</td>
+                <td>Geplaatste speler (Top 8)</td>
+              </tr>
+              <tr>
+                <td><strong>6</strong></td>
+                <td>Rob Cross</td>
+                <td>Engeland</td>
+                <td>£650.000+</td>
+                <td>Geplaatste speler (Top 8)</td>
+              </tr>
+              <tr>
+                <td><strong>7</strong></td>
+                <td>Peter Wright</td>
+                <td>Schotland</td>
+                <td>£550.000+</td>
+                <td>Geplaatste speler (Top 8)</td>
+              </tr>
+              <tr>
+                <td><strong>8</strong></td>
+                <td>Jonny Clayton</td>
+                <td>Wales</td>
+                <td>£500.000+</td>
+                <td>Geplaatste speler (Top 8)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Belang voor WK Darts Plaatsing -->
+      <section class="content-card">
+        <h2>Waarom de Plek op de Ranglijst Cruciaal Is</h2>
+        <p>
+          De stand op de PDC Order of Merit na afloop van de Players Championship Finals eind november bepaalt de plaatsingslijst voor het WK Darts in Alexandra Palace:
+        </p>
+        <ol>
+          <li>
+            <strong>Top 32 Geplaatst:</strong> De 32 hoogst geklasseerde spelers van de Order of Merit genieten bescherming bij de loting. Zij hebben een beschermde status en zijn vrijgeloot in ronde 1; zij beginnen hun toernooi pas in ronde 2.
+          </li>
+          <li>
+            <strong>Top 16 Bescherming:</strong> De nummers 1 tot en met 16 kunnen elkaar pas ten vroegste in de achtste finales (vierde ronde) tegenkomen.
+          </li>
+          <li>
+            <strong>Tour Card Behoud:</strong> Naast de WK-kwalificatie bepaalt de Order of Merit wie zijn profstatus behoudt. Spelers die na hun tweejarige Tour Card buiten de mondiale top 64 vallen, verliezen hun startbewijs voor de PDC ProTour en moeten terug naar de Q-School.
+          </li>
+        </ol>
+        <p>
+          Bekijk het volledige wedstrijdschema en toernooioverzicht op onze <a href="/nl/dartskalender/">PDC dartskalender</a>.
+        </p>
+      </section>
+
+      <!-- Veelgestelde vragen -->
+      <section class="content-card faq-section">
+        <h2>Veelgestelde Vragen over de PDC Darts Ranglijst</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+        <p style="margin-top: 1.5rem;">
+          <a href="/nl/">← Terug naar de Nederlandse gids</a>
+        </p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card ul, .content-card ol {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+  a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    color: #0369a1;
+  }
+</style>

@@ -1,0 +1,313 @@
+---
+// src/pages/nl/darts-kijken.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const pageTitle = "Darts Kijken: Viaplay, Videoland & Live Streams";
+const pageDescription = "Darts kijken in Nederland: Viaplay, Videoland en PDC TV — waar je het WK darts 2026/27 live kunt volgen, legaal en compleet.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/nl/darts-kijken/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/nl/' },
+  { name: 'Darts Kijken in Nederland', url: '/nl/darts-kijken/' }
+];
+
+const alternates = [
+  { hreflang: "nl", href: canonicalUrl },
+  { hreflang: "en", href: `${siteUrl}/watch/` },
+  { hreflang: "de", href: `${siteUrl}/de/darts-schauen/` },
+  { hreflang: "x-default", href: `${siteUrl}/watch/` }
+];
+
+const faqItems = [
+  {
+    q: "Waar kan ik in Nederland live darts kijken?",
+    a: "In Nederland heeft streamingdienst Viaplay de exclusieve live-uitzendrechten voor alle PDC-toernooien, inclusief het complete WK Darts, de Premier League en de World Matchplay."
+  },
+  {
+    q: "Kun je live darts kijken op Videoland?",
+    a: "Nee. Videoland heeft geen live-uitzendrechten voor PDC-dartswedstrijden. Op Videoland zijn uitsluitend achtergronddocumentaires en portretten over darters te zien, maar geen live toernooien."
+  },
+  {
+    q: "Is het WK Darts gratis te zien op de Nederlandse openbare televisie?",
+    a: "Nee. Er is in Nederland momenteel geen gratis live-uitzending op het open net (zoals vroeger op RTL 7). Een actief abonnement op Viaplay is vereist om de wedstrijden live te bekijken."
+  },
+  {
+    q: "Hoe laat beginnen de sessies op het WK Darts?",
+    a: "Middagsessies beginnen doorgaans om 13:30 uur Nederlandse tijd (12:30 uur in Londen). Avondsessies starten om 20:00 uur Nederlandse tijd (19:00 uur in Londen)."
+  }
+];
+
+const kijkSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "nl",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<BaseLayout
+  lang="nl"
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  alternates={alternates}
+  schema={kijkSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">TV & STREAMING GIDS</span>
+        <span class="badge">NEDERLANDSE UITZENDRECHTEN</span>
+      </div>
+      <h1>Darts Kijken: Viaplay, Videoland & Live Streams in Nederland</h1>
+      <p class="lead-text">
+        Wil je geen enkele pijl missen van het PDC WK Darts 2026/27? Hier vind je het complete en legale overzicht van alle uitzendrechten, zenders, streamingopties en sessietijden in Nederland.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <!-- Viaplay Rechtenhouder -->
+      <section class="content-card">
+        <h2>Viaplay: De Exclusieve Thuisbasis van Live Darts</h2>
+        <p>
+          In Nederland liggen de exclusieve live-uitzendrechten van de Professional Darts Corporation (PDC) bij streamingdienst <strong>Viaplay</strong>.
+        </p>
+        <p>
+          Viaplay zendt werkelijk alle sessies van het PDC World Darts Championship integraal en live uit. Vanaf de openingswedstrijd op vrijdag 11 december 2026 tot en met de grote finale op zondag 3 januari 2027 kun je via de Viaplay-app op smart tv, tablet, smartphone of laptop live meekijken in haarscherpe HD-kwaliteit.
+        </p>
+        <p>
+          De uitzendingen worden verzorgd met deskundig Nederlands commentaar en studio-analyses. Vaste commentatoren zoals <strong>Jacques Nieuwlaat</strong> (<em>The Mastercaller</em>) en <strong>Frank Vischschraper</strong> leiden de wedstrijden, bijgestaan door ervaren oud-darters en analisten zoals Vincent van der Voort en Co Stompé.
+        </p>
+      </section>
+
+      <!-- Videoland Verduidelijking -->
+      <section class="content-card">
+        <h2>Hoe Zit het met Videoland en Darts?</h2>
+        <p>
+          Er bestaat onder Nederlandse sportliefhebbers regelmatig verwarring over de rol van streamingdienst <strong>Videoland</strong> bij het darts.
+        </p>
+        <div class="info-box">
+          <strong>Belangrijke verduidelijking:</strong><br />
+          Videoland bezit <em>geen</em> live-uitzendrechten voor de toernooien van de PDC. Je kunt op Videoland dus <strong>geen live WK Darts, Premier League of andere toernooien</strong> bekijken. Wel produceert RTL/Videoland af en toe documentaireseries en persoonlijke portretten over Nederlandse darters (zoals over Michael van Gerwen). Voor live wedstrijden heb je te allen tijde een Viaplay-abonnement nodig.
+        </div>
+      </section>
+
+      <!-- PDC TV Optie -->
+      <section class="content-card">
+        <h2>PDC TV: De Officiële Internationale Optie</h2>
+        <p>
+          De PDC exploiteert haar eigen officiële streamingplatform: <strong>PDCTV</strong>. 
+        </p>
+        <p>
+          Voor abonnees in Nederland geldt dat grote televisietoernooien (zoals het WK en World Matchplay) vanwege de exclusieve rechten van Viaplay via PDCTV doorgaans zijn voorzien van geoblocking voor live videobeelden. Wel biedt PDCTV live audiocommentaar in het Engels, samenvattingen, persconferenties en toegang tot de livestreams van alle ProTour vloertoernooien (Players Championships) die niet op tv worden uitgezonden.
+        </p>
+        <p>
+          Bovendien geeft een jaarabonnement op PDCTV voorrang bij de <a href="/nl/darts-wk-tickets/">kaartverkoop voor Alexandra Palace</a> via de exclusieve Priority Presale.
+        </p>
+      </section>
+
+      <!-- Uitzendschema en Sessietijden -->
+      <section class="content-card">
+        <h2>Sessietijden en Uitzendschema WK Darts (CET)</h2>
+        <p>
+          Doordat Londen in de Britse tijdzone (GMT) ligt en Nederland in de Midden-Europese Tijdzone (CET), is het in Nederland <strong>één uur later</strong> dan in Alexandra Palace:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Sessie</th>
+                <th>Tijd in Londen (GMT)</th>
+                <th>Nederlandse Tijd (CET)</th>
+                <th>Typisch Programma</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Middagsessie</strong></td>
+                <td>12:30 uur</td>
+                <td><strong>13:30 uur</strong></td>
+                <td>4 wedstrijden (Ronde 1 en 2)</td>
+              </tr>
+              <tr>
+                <td><strong>Avondsessie</strong></td>
+                <td>19:00 uur</td>
+                <td><strong>20:00 uur</strong></td>
+                <td>4 wedstrijden (Ronde 1 t/m Kwartfinales)</td>
+              </tr>
+              <tr>
+                <td><strong>Halve Finales</strong></td>
+                <td>19:30 uur</td>
+                <td><strong>20:30 uur</strong></td>
+                <td>2 wedstrijden (Best of 11 sets)</td>
+              </tr>
+              <tr>
+                <td><strong>WK Finale</strong></td>
+                <td>20:00 uur</td>
+                <td><strong>21:00 uur</strong></td>
+                <td>1 wedstrijd (Best of 13 sets)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Benieuwd naar het volledige internationale tv-overzicht voor andere landen zoals het VK, Duitsland of de VS? Bekijk dan onze Engelstalige <a href="/watch/">global TV & live stream directory</a>.
+        </p>
+      </section>
+
+      <!-- Veelgestelde vragen -->
+      <section class="content-card faq-section">
+        <h2>Veelgestelde Vragen over Darts Kijken</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+        <p style="margin-top: 1.5rem;">
+          <a href="/nl/">← Terug naar de Nederlandse gids</a>
+        </p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .info-box {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    color: #1e40af;
+    font-size: 0.95rem;
+    margin: 1rem 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+  a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    color: #0369a1;
+  }
+</style>

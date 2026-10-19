@@ -40,6 +40,12 @@ const nineDarterSchema = {
 <BaseLayout 
   title={pageTitle} 
   description={pageDescription}
+  alternates={[
+    { hreflang: "de", href: "https://worlddartshub.com/de/9-darter-liste/" },
+    { hreflang: "nl", href: "https://worlddartshub.com/nl/9-darter-lijst/" },
+    { hreflang: "en", href: "https://worlddartshub.com/players/9-darters/" },
+    { hreflang: "x-default", href: "https://worlddartshub.com/players/9-darters/" }
+  ]}
   schema={nineDarterSchema}
 >
   <Breadcrumbs items={breadcrumbItems} />

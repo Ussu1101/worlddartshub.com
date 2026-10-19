@@ -40,6 +40,12 @@ const rankingsSchema = {
 <BaseLayout 
   title={pageTitle} 
   description={pageDescription}
+  alternates={[
+    { hreflang: "de", href: "https://worlddartshub.com/de/darts-rangliste/" },
+    { hreflang: "nl", href: "https://worlddartshub.com/nl/darts-ranglijst/" },
+    { hreflang: "en", href: "https://worlddartshub.com/players/rankings/" },
+    { hreflang: "x-default", href: "https://worlddartshub.com/players/rankings/" }
+  ]}
   schema={rankingsSchema}
 >
   <Breadcrumbs items={breadcrumbItems} />
