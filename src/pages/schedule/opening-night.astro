@@ -1,0 +1,317 @@
+---
+// src/pages/schedule/opening-night.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Championship Opening Night 2026: 11 Dec Guide";
+const pageDescription = "World Darts Championship opening night 2026: Friday 11 December at Alexandra Palace — the 4 first-round matches, session times, tickets and format.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/schedule/opening-night/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Schedule', url: '/schedule/' },
+  { name: 'Opening Night 2026', url: '/schedule/opening-night/' }
+];
+
+const faqItems = [
+  {
+    q: "When is the opening night of the 2026/27 World Darts Championship?",
+    a: "Opening night takes place on Friday 11 December 2026 at Alexandra Palace's Great Hall in London, featuring a single evening session commencing at 19:00 GMT."
+  },
+  {
+    q: "What time do doors open for opening night at Alexandra Palace?",
+    a: "Doors open at 17:30 GMT for the evening session, allowing spectators ninety minutes to access the Fan Village, bars, and seating blocks before the 19:00 walk-ons."
+  },
+  {
+    q: "Does defending champion Luke Littler play on opening night?",
+    a: "The defending world champion traditionally headlines the opening night schedule. Luke Littler's exact match slot will be officially confirmed following the bracket draw in late November 2026."
+  },
+  {
+    q: "What is the match format on opening night?",
+    a: "All four opening-night matches are contested in Round One under a best-of-five sets format (first to three sets), with each set decided by the first player to win three legs."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">TOURNAMENT LAUNCH</span>
+        <span class="badge">FRIDAY 11 DECEMBER 2026</span>
+      </div>
+      <h1>World Championship Opening Night 2026: 11 Dec Guide</h1>
+      <p class="lead-text">
+        The festive sporting calendar sparks to life on Friday 11 December 2026 as Alexandra Palace's Great Hall hosts Opening Night of the Paddy Power World Darts Championship. Here is the complete session guide, featuring match times, tournament format, and ticketing advice.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC World Darts Championship Opening Night Schedule & Framework" />
+
+      <!-- Section 1: Opening Night Overview -->
+      <section class="content-card">
+        <h2>Opening Night at Alexandra Palace's Great Hall</h2>
+        <p>
+          Opening night represents one of the most electric evenings in global sports. Staged on <strong>Friday 11 December 2026</strong>, the opening session inaugurates an expanded 128-player championship competing for a monumental <strong>£5,000,000</strong> prize purse, with £1,000,000 reserved for the ultimate champion on Sunday 3 January 2027.
+        </p>
+        <p>
+          Under the championship's expanded framework, all 128 contenders begin their campaign in Round One, eliminating the second-round byes of previous editions. To review ticket availability and pricing for this session, consult our <a href="/tickets/price-guide/">World Championship ticket prices guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 2: Session Timetable & Match Format -->
+      <section class="content-card">
+        <h2>Session Timetable &amp; Round One Format</h2>
+        <p>
+          Opening night operates as a standalone evening session, welcoming over 5,000 fans to North London:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Event Milestone</th>
+                <th>Time (GMT)</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Doors Open</strong></td>
+                <td>17:30 GMT</td>
+                <td>Palm Court Fan Village, merchandise stalls, and food villages open</td>
+              </tr>
+              <tr>
+                <td><strong>Arena Ingress</strong></td>
+                <td>18:15 GMT</td>
+                <td>Great Hall floor tables and tiered grandstand seating open</td>
+              </tr>
+              <tr>
+                <td><strong>First Match Thrown</strong></td>
+                <td>19:00 GMT</td>
+                <td>Opening match of Round One commences</td>
+              </tr>
+              <tr>
+                <td><strong>Estimated Session Finish</strong></td>
+                <td>23:00 GMT</td>
+                <td>Conclusion of all four scheduled first-round encounters</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Match Format &amp; Set Play</h3>
+        <p>
+          All four opening-night contests are played under standard Round One rules: <strong>best of 5 sets (first to 3 sets)</strong>. In each set, the first player to win three legs secures the set. There is no tie-break in Round One; if a deciding fifth set reaches 2–2 in legs, the fifth leg is a sudden-death decider.
+        </p>
+      </section>
+
+      <!-- Section 3: Defending Champion Spotlight & Draw -->
+      <section class="content-card">
+        <h2>Defending Champion Headliner &amp; Bracket Draw</h2>
+        <p>
+          Tournament tradition dictates that the reigning world champion headlines opening night. Two-time defending champion Luke Littler is anticipated to top Friday evening's bill. However, his official scheduled opponent and board position will be finalised following the bracket draw.
+        </p>
+        <p>
+          <em>Editorial Note: Littler's specific match slot will be confirmed once the official bracket is conducted in late November.</em> As soon as pairings are confirmed, track the complete bracket matchups on our live <a href="/draw/2026-27/">World Darts Championship draw guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 4: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

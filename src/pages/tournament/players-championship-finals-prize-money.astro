@@ -1,0 +1,356 @@
+---
+// src/pages/tournament/players-championship-finals-prize-money.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Players Championship Finals Prize Money 2026: £750K";
+const pageDescription = "Complete 2026 Players Championship Finals prize money breakdown: £750k total fund, £130k champion share, round-by-round payouts from Minehead.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/players-championship-finals-prize-money/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Prize Money Hub', url: '/tournament/prize-money/' },
+  { name: 'Players Championship Finals Prize Money', url: '/tournament/players-championship-finals-prize-money/' }
+];
+
+const faqItems = [
+  {
+    q: "How much does the Players Championship Finals winner get in 2026?",
+    a: "The 2026 Players Championship Finals winner receives £130,000 from the total £750,000 prize fund, with the runner-up taking home £70,000."
+  },
+  {
+    q: "When and where are the 2026 Players Championship Finals held?",
+    a: "The tournament takes place from 27 to 29 November 2026 at Butlin's Minehead Resort in Somerset, England."
+  },
+  {
+    q: "How do players qualify for the Players Championship Finals?",
+    a: "Qualification is determined strictly by the Players Championship Order of Merit, with the top 64 players from the 34 floor tournaments qualifying directly for Minehead."
+  },
+  {
+    q: "Does prize money from the Players Championship Finals count towards the World Championship cut-off?",
+    a: "Yes. The Players Championship Finals represents the final ranking event before the PDC Order of Merit cut-off, directly determining the top 32 seeds for Alexandra Palace."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC RANKED MAJOR</span>
+        <span class="badge">MINEHEAD 2026</span>
+      </div>
+      <h1>Players Championship Finals Prize Money 2026: £750K</h1>
+      <p class="lead-text">
+        Staged at Butlin's Minehead Resort, the Ladbrokes Players Championship Finals rewards floor-circuit consistency across a gruelling 34-event season. Here is the verified round-by-round prize money breakdown for the 2026 tournament, featuring a £750,000 purse and decisive World Championship cut-off stakes.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Players Championship Finals Prize Fund & Calendar Dates" />
+
+      <!-- Section 1: Tournament Overview -->
+      <section class="content-card">
+        <h2>Tournament Overview &amp; Qualifying Structure</h2>
+        <p>
+          Taking place from Friday 27 November to Sunday 29 November 2026 at Butlin's Minehead Resort, the Players Championship Finals brings together the top 64 players from the 34-event Players Championship floor season. With no automatic qualification based on world ranking, only current-season ProTour prize money secures a spot in the field.
+        </p>
+        <p>
+          The total prize fund for the 2026 staging stands at <strong>£750,000</strong>, with the winner pocketing a lucrative <strong>£130,000</strong> first prize. To compare this fund against other PDC majors, visit our <a href="/tournament/prize-money/">PDC prize money hub</a> and inspect the comprehensive guide to <a href="/players/earnings/">professional darts player earnings</a>.
+        </p>
+      </section>
+
+      <!-- Section 2: Full Prize Money Breakdown Table -->
+      <section class="content-card">
+        <h2>Full Round-by-Round Prize Money Breakdown</h2>
+        <p>
+          Every player qualifying for the 64-player field at Minehead is guaranteed at least £4,000 in ranking prize money, with rewards escalating swiftly as competitors progress through the bracket:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Round</th>
+                <th>Prize Money (Per Player)</th>
+                <th>Field Size</th>
+                <th>Total Stage Payout</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Winner (Champion)</strong></td>
+                <td><strong>£130,000</strong></td>
+                <td>1</td>
+                <td>£130,000</td>
+              </tr>
+              <tr>
+                <td><strong>Runner-up</strong></td>
+                <td><strong>£70,000</strong></td>
+                <td>1</td>
+                <td>£70,000</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-finalists</strong></td>
+                <td><strong>£40,000</strong></td>
+                <td>2</td>
+                <td>£80,000</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-finalists</strong></td>
+                <td><strong>£27,500</strong></td>
+                <td>4</td>
+                <td>£110,000</td>
+              </tr>
+              <tr>
+                <td><strong>Third Round (Last 16)</strong></td>
+                <td><strong>£15,000</strong></td>
+                <td>8</td>
+                <td>£120,000</td>
+              </tr>
+              <tr>
+                <td><strong>Second Round (Last 32)</strong></td>
+                <td><strong>£7,000</strong></td>
+                <td>16</td>
+                <td>£112,000</td>
+              </tr>
+              <tr>
+                <td><strong>First Round (Last 64)</strong></td>
+                <td><strong>£4,000</strong></td>
+                <td>32</td>
+                <td>£128,000</td>
+              </tr>
+              <tr class="table-total">
+                <td><strong>Total Prize Fund</strong></td>
+                <td><strong>£750,000</strong></td>
+                <td><strong>64</strong></td>
+                <td><strong>£750,000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: The Ultimate World Championship Cut-Off -->
+      <section class="content-card">
+        <h2>The Final World Championship Ranking Cut-Off</h2>
+        <p>
+          The Players Championship Finals holds an elevated position in the professional darts hierarchy because it serves as the definitive closing tournament before the PDC World Darts Championship cut-off. At the conclusion of Sunday's final in Minehead, the top 32 on the PDC Order of Merit are officially confirmed as protected seeds for Alexandra Palace.
+        </p>
+        <p>
+          Simultaneously, the non-qualified spots on the ProTour Order of Merit lock into place, confirming which 40 tour professionals secure invitations to the 128-player field at Ally Pally. A single victory in Minehead—advancing from the Last 64 to the Last 32—can be worth £3,000 in additional ranking cash, frequently deciding who qualifies for the biggest tournament in world darts and who misses out entirely.
+        </p>
+      </section>
+
+      <!-- Section 4: Floor Consistency vs Main Stage Television Pressure -->
+      <section class="content-card">
+        <h2>Floor Consistency vs Main Stage Television Pressure</h2>
+        <p>
+          The road to the Players Championship Finals spans 34 non-televised ranking events contested in cavernous sports arenas across Barnsley, Leicester, Hildesheim, and Milton Keynes. Known on the circuit as "the floor", these tournaments strip away the walk-on music, crowd chanting, and television cameras, testing pure throwing consistency over hundreds of daily legs.
+        </p>
+        <p>
+          Minehead represents the ultimate proving ground where floor excellence must survive television lighting and a raucous 4,000-strong arena crowd. Previous champions including Michael van Gerwen, Peter Wright, and Luke Humphries have used success in the Players Championship Finals as the immediate springboard to lifting the World Championship trophy at Alexandra Palace just five weeks later.
+        </p>
+      </section>
+
+      <!-- Section 5: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-total {
+    background: #f1f5f9;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

@@ -1,0 +1,315 @@
+---
+// src/pages/schedule/quarter-finals.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Championship Quarter-Finals 2027: 1 Jan Guide";
+const pageDescription = "World Darts Championship quarter-finals: Friday 1 January 2027 at Alexandra Palace — both sessions, the 4 matches, best-of-9-sets format and tickets.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/schedule/quarter-finals/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Schedule', url: '/schedule/' },
+  { name: 'Quarter-Finals 2027', url: '/schedule/quarter-finals/' }
+];
+
+const faqItems = [
+  {
+    q: "When are the 2027 World Darts Championship quarter-finals?",
+    a: "All four quarter-finals take place on New Year's Day, Friday 1 January 2027, split across an afternoon session (12:30 GMT) and an evening session (19:00 GMT)."
+  },
+  {
+    q: "What is the match format for the quarter-finals?",
+    a: "The quarter-finals are contested under a best-of-nine sets format (first to five sets), with each set decided by the first player to win three legs."
+  },
+  {
+    q: "How many matches are played in each quarter-final session?",
+    a: "Two quarter-final matches are staged in the afternoon session from 12:30 GMT, and the remaining two quarter-final matches take place in the evening session from 19:00 GMT."
+  },
+  {
+    q: "Where can I find the complete Finals Weekend schedule?",
+    a: "Full details for the semi-finals on Saturday 2 January and the final on Sunday 3 January are documented in our dedicated Finals Weekend guide."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">FINALS WEEKEND</span>
+        <span class="badge">FRIDAY 1 JANUARY 2027</span>
+      </div>
+      <h1>World Championship Quarter-Finals 2027: 1 Jan Guide</h1>
+      <p class="lead-text">
+        New Year's Day at Alexandra Palace delivers one of the most intense days in professional sport. All four quarter-final ties are contested back-to-back across two blockbuster sessions in the Great Hall. Here is the complete session schedule, match format, and spectator guide.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC World Darts Championship Quarter-Finals Schedule & Format" />
+
+      <!-- Section 1: New Year's Day Overview -->
+      <section class="content-card">
+        <h2>New Year's Day at the Great Hall</h2>
+        <p>
+          On <strong>Friday 1 January 2027</strong>, the field of 128 is whittled down to the final eight tungsten gladiators competing for the Sid Waddell Trophy. Alexandra Palace's Great Hall hosts over 10,000 supporters across two distinct sessions on New Year's Day.
+        </p>
+        <p>
+          The quarter-finals mark the official commencement of Finals Weekend, bridging the post-Christmas rounds into the crowning stages of the championship. For the complete three-day schedule spanning semi-finals and the grand final, explore our <a href="/schedule/finals-weekend/">Finals Weekend guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 2: Session Timetables -->
+      <section class="content-card">
+        <h2>Session Timetables &amp; Running Order</h2>
+        <p>
+          All four quarter-final matches are staged on Friday 1 January, divided equally between the afternoon and evening crowds:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Doors Open</th>
+                <th>First Match (GMT)</th>
+                <th>Scheduled Matches</th>
+                <th>Match Format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Afternoon Session</strong></td>
+                <td>10:30 GMT</td>
+                <td>12:30 GMT</td>
+                <td>2x Quarter-Finals</td>
+                <td>Best of 9 Sets (First to 5)</td>
+              </tr>
+              <tr>
+                <td><strong>Evening Session</strong></td>
+                <td>17:30 GMT</td>
+                <td>19:00 GMT</td>
+                <td>2x Quarter-Finals</td>
+                <td>Best of 9 Sets (First to 5)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>The Best-of-Nine Sets Format</h3>
+        <p>
+          The quarter-finals introduce a critical endurance test as the format expands to <strong>best of 9 sets (first to 5 sets)</strong>. Each set requires three winning legs. In the event of a deciding ninth set reaching 2–2 in legs, the match must be won by two clear legs up to a maximum of 5–5, after which a sudden-death eleventh leg determines the victor.
+        </p>
+      </section>
+
+      <!-- Section 3: Prize Money Stakes -->
+      <section class="content-card">
+        <h2>What Is at Stake on New Year's Day?</h2>
+        <p>
+          Winning a quarter-final tie on New Year's Day represents a massive leap in prize money and Order of Merit status:
+        </p>
+        <ul>
+          <li><strong>Quarter-Finalists:</strong> Earn a guaranteed £60,000 for reaching the last eight.</li>
+          <li><strong>Semi-Finalists:</strong> Advance to Saturday's semi-finals and double their guaranteed payout to £120,000.</li>
+          <li><strong>Grand Prize:</strong> Keeps the dream alive of reaching Sunday's final to contest the £1,000,000 champion's prize from the record £5,000,000 total purse.</li>
+        </ul>
+      </section>
+
+      <!-- Section 4: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

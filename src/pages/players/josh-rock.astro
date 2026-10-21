@@ -1,0 +1,456 @@
+---
+// src/pages/players/josh-rock.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Josh Rock: Darts Specs & Career Stats";
+const pageDescription = "Player dossier for Josh Rock: 24g Target darts, walk-on anthem 'Welcome To The Party', World Cup title, career earnings and records.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/josh-rock/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Josh Rock' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does Josh Rock use?",
+    a: "Josh Rock throws 24g 90% tungsten darts manufactured by Target Darts, featuring a streamlined ring-grip barrel fitted with Target Pro Grip shafts and signature flights."
+  },
+  {
+    q: "What is Josh Rock's walk-on song and nickname?",
+    a: "Josh Rock is nicknamed 'Rocky'. His high-energy walk-on anthem is 'Welcome To The Party' by DJ Krissy."
+  },
+  {
+    q: "When did Josh Rock win the World Cup of Darts?",
+    a: "Josh Rock partnered Daryl Gurney to capture Northern Ireland's historic first-ever World Cup of Darts title in June 2025, defeating Wales 10–9 in a dramatic doubles final."
+  },
+  {
+    q: "When did Josh Rock hit a televised nine-dart finish?",
+    a: "Josh Rock struck an iconic televised nine-darter against Michael van Gerwen in the second round of the 2022 Grand Slam of Darts in Wolverhampton."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "Josh Rock",
+      "alternateName": "Rocky",
+      "nationality": "Northern Ireland",
+      "birthDate": "2001-04-13",
+      "birthPlace": "Broughshane, Northern Ireland",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">NORTHERN IRISH TALENT</span>
+        <span class="badge">WORLD CUP CHAMPION</span>
+      </div>
+      <h1>Josh Rock: "Rocky"</h1>
+      <p class="hero-lead">
+        From a record-shattering World Youth Championship and an electrifying Grand Slam nine-darter to Northern Ireland's historic World Cup triumph, here is the complete player dossier on Josh Rock.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & Target Darts Specs" 
+          lastVerified="October 2026" 
+          source="PDC Order of Merit & Player Records" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Nation</span>
+          <span class="stat-value">Northern Ireland</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">Rocky</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">24g Target</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Major Title</span>
+          <span class="stat-value">World Cup of Darts (2025)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: The Rise of Rocky</h2>
+        <p>
+          Born on 13 April 2001 in Broughshane, County Antrim, Northern Ireland, <strong>Josh Rock</strong> has established himself as one of the most explosive natural scorers in modern professional darts. Known to darts fans worldwide as <em>"Rocky"</em>, the right-handed powerhouse took the professional circuit by storm immediately upon winning his two-year PDC Tour Card at European Qualifying School in January 2022.
+        </p>
+        <p>
+          In his rookie 2022 season, Rock claimed his maiden senior ranking title at <strong>Players Championship 28</strong>, averaging an astounding 108 in an 8–5 victory over Luke Humphries in the final. Later that autumn, he captured the <strong>2022 PDC World Youth Championship</strong> with an all-time tournament record average of 104.13 in the final, alongside striking a sensational televised nine-dart finish against Michael van Gerwen at the Grand Slam of Darts in Wolverhampton.
+        </p>
+      </section>
+
+      <!-- Verified Equipment Specifications Table -->
+      <section class="content-section">
+        <h2>Verified Darts Equipment Specifications</h2>
+        <p>
+          Rock throws a signature high-density tungsten barrel engineered in collaboration with <strong>Target Darts</strong>:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Specification</th>
+                <th>Performance Characteristics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Manufacturer</strong></td>
+                <td><strong>Target Darts</strong></td>
+                <td>Official technical sponsor & equipment manufacturer</td>
+              </tr>
+              <tr>
+                <td><strong>Barrel Weight</strong></td>
+                <td><strong>24 Grams</strong></td>
+                <td>Front-weighted barrel delivering penetrating trajectory</td>
+              </tr>
+              <tr>
+                <td><strong>Tungsten Content</strong></td>
+                <td><strong>90% Tungsten</strong></td>
+                <td>High-density slimline profile for maximum treble-bed grouping</td>
+              </tr>
+              <tr>
+                <td><strong>Grip Profile</strong></td>
+                <td><strong>Radial Grooves & Milled Rings</strong></td>
+                <td>Consistent tactile feedback along the central balance point</td>
+              </tr>
+              <tr>
+                <td><strong>Shafts / Stems</strong></td>
+                <td><strong>Target Pro Grip Intermediate</strong></td>
+                <td>Durable polycarbonate stems with secure flight lock rings</td>
+              </tr>
+              <tr>
+                <td><strong>Flights</strong></td>
+                <td><strong>Target Josh Rock Signature No.2</strong></td>
+                <td>100-micron standard shape with signature Rocky logo</td>
+              </tr>
+              <tr>
+                <td><strong>Throwing Hand</strong></td>
+                <td><strong>Right-Handed</strong></td>
+                <td>Upright stance with rapid, rhythmic release</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Major Milestone: 2025 World Cup Glory -->
+      <section class="content-section">
+        <h2>Historic Triumph: 2025 World Cup of Darts Champion</h2>
+        <div class="feature-box">
+          <h3>Northern Ireland's First-Ever World Cup Crown</h3>
+          <p>
+            In June 2025 in Frankfurt, Germany, Rock wrote his name permanently into darts folklore alongside veteran compatriot Daryl Gurney:
+          </p>
+          <ul>
+            <li><strong>Sensational Run:</strong> Overcame Germany and England during the knockout rounds behind relentless 100+ team averages.</li>
+            <li><strong>Clutch Final:</strong> Faced Wales (Gerwyn Price and Jonny Clayton) in a breathless doubles final, triumphing 10–9 in a thrilling sudden-death leg to secure Northern Ireland's maiden World Cup of Darts title.</li>
+            <li><strong>Major Breakthrough:</strong> Marked Rock's first senior televised PDC major title, propelling him into the world's top ten ranked professionals.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Elite Major Progression -->
+      <section class="content-section">
+        <h2>Major Career Milestones &amp; Premier League Debut</h2>
+        <p>
+          Rock's ascent through the PDC ranks has been marked by consistent deep runs across the sport's biggest stages:
+        </p>
+        <ul>
+          <li><strong>European Tour Titles:</strong> Captured his maiden European Tour crown at the 2024 Dutch Darts Championship, before adding the 2026 Austrian Darts Open to his growing collection of silverware.</li>
+          <li><strong>Major Semi-Finals:</strong> Reached the semi-finals of both the 2025 UK Open in Minehead and the prestigious 2025 World Matchplay at Blackpool's Winter Gardens.</li>
+          <li><strong>Premier League Selection:</strong> Rewarded for his top-ten world ranking with a debut invitation to the elite eight-player 2026 Premier League Darts roadshow.</li>
+          <li><strong>Matchplay Quarter-Finalist 2026:</strong> Reached the quarter-finals at the 2026 World Matchplay, proving his perennial threat across longer format summer majors.</li>
+        </ul>
+        <p>
+          To track Rock's standing among the world's elite prize-money earners, inspect our guide to <a href="/players/earnings/">professional darts player earnings</a> and explore our player directory in the <a href="/players/">World Darts Hub players hub</a>.
+        </p>
+      </section>
+
+      <!-- Walk-on Music & Anthems -->
+      <section class="content-section">
+        <h2>Walk-On Anthem: "Welcome To The Party"</h2>
+        <p>
+          Whenever Josh Rock strides to the oche, arena speakers pump out <strong>"Welcome To The Party" by DJ Krissy</strong>. The pounding dance beat electrifies crowds from Alexandra Palace to Frankfurt, perfectly mirroring his explosive, fast-paced throwing style. Check where Rock's song ranks among the circuit's top tunes in our guide to <a href="/players/walk-on-songs/">darts walk-on songs</a>.
+        </p>
+      </section>
+
+      <!-- Career Titles & Honours List -->
+      <section class="content-section">
+        <h2>Career Honours &amp; Title Summary</h2>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Tournament</th>
+                <th>Category</th>
+                <th>Runner-up / Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>2025</strong></td>
+                <td>PDC World Cup of Darts</td>
+                <td>Televised Major</td>
+                <td>Beat Wales 10–9 (with Daryl Gurney)</td>
+              </tr>
+              <tr>
+                <td><strong>2026</strong></td>
+                <td>Austrian Darts Open</td>
+                <td>European Tour</td>
+                <td>Champion</td>
+              </tr>
+              <tr>
+                <td><strong>2024</strong></td>
+                <td>Dutch Darts Championship</td>
+                <td>European Tour</td>
+                <td>Champion</td>
+              </tr>
+              <tr>
+                <td><strong>2022</strong></td>
+                <td>PDC World Youth Championship</td>
+                <td>Youth Major</td>
+                <td>Beat Nathan Girvan 6–1 (104.13 avg)</td>
+              </tr>
+              <tr>
+                <td><strong>2022</strong></td>
+                <td>Players Championship 28</td>
+                <td>ProTour Floor</td>
+                <td>Beat Luke Humphries 8–5 (108.0 avg)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .player-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .hero-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 0 1.5rem;
+  }
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .stat-value {
+    font-size: 0.95rem;
+    color: #fff;
+    font-weight: 700;
+  }
+  .page-layout {
+    margin-bottom: 4rem;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-section {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-section h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-section a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-section a:hover {
+    color: #0369a1;
+  }
+  .feature-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

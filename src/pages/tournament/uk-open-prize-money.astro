@@ -1,0 +1,374 @@
+---
+// src/pages/tournament/uk-open-prize-money.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "UK Open Prize Money 2026: Full £750K Breakdown";
+const pageDescription = "Complete 2026 UK Open prize money breakdown: £750k total fund, £120k champion share, round-by-round payouts from the FA Cup of Darts at Minehead.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/uk-open-prize-money/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Prize Money Hub', url: '/tournament/prize-money/' },
+  { name: 'UK Open Prize Money', url: '/tournament/uk-open-prize-money/' }
+];
+
+const faqItems = [
+  {
+    q: "How much does the UK Open darts winner get in 2026?",
+    a: "The 2026 UK Open champion collects £120,000 from the expanded £750,000 total prize purse, with the runner-up receiving £60,000."
+  },
+  {
+    q: "Where is the UK Open held?",
+    a: "The UK Open is hosted at Butlin's Minehead Resort in Somerset, England, featuring a multi-board arena setup across eight stages."
+  },
+  {
+    q: "Who won the 2026 UK Open?",
+    a: "Luke Littler won the 2026 UK Open, defeating former champion James Wade 11–7 in the final to retain his title."
+  },
+  {
+    q: "Why is the UK Open called the FA Cup of Darts?",
+    a: "It is known as the FA Cup of Darts because it features an unseeded, open draw after each round from Round Four onwards, allowing amateur qualifiers to draw world champions without protection."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC RANKED MAJOR</span>
+        <span class="badge">MINEHEAD 2026</span>
+      </div>
+      <h1>UK Open Prize Money 2026: Full £750K Breakdown</h1>
+      <p class="lead-text">
+        Affectionately celebrated as the "FA Cup of Darts", the Ladbrokes UK Open tests endurance across eight simultaneous stages at Butlin's Minehead. Here is the verified round-by-round prize money breakdown for the 2026 tournament, featuring an expanded £750,000 purse.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC UK Open Prize Fund & Tournament Results" />
+
+      <!-- Section 1: Tournament Overview -->
+      <section class="content-card">
+        <h2>2026 Result in Brief: Littler Retains in Minehead</h2>
+        <p>
+          The 2026 UK Open took place from 6 to 8 March 2026 at Butlin's Minehead Resort in Somerset. In a gripping final, <a href="/players/luke-littler/">Luke Littler</a> defended his UK Open title by overcoming three-time champion James Wade 11–7, scooping the £120,000 top prize.
+        </p>
+        <p>
+          The 2026 championship also produced memorable drama on the outer boards, including a stunning nine-dart finish from Dutch star Danny Noppert in the fifth round. To compare major tournament funds across the professional circuit, visit our <a href="/tournament/prize-money/">PDC prize money hub</a> and inspect the latest <a href="/players/earnings/">professional darts player earnings</a> leaderboard.
+        </p>
+      </section>
+
+      <!-- Section 2: Full Prize Money Breakdown Table -->
+      <section class="content-card">
+        <h2>Full Round-by-Round Prize Money Breakdown</h2>
+        <p>
+          The 2026 UK Open total prize fund increased to <strong>£750,000</strong>, up from £600,000 in 2025. With a vast field of approximately 160 participants—spanning PDC Tour Card holders, Challenge Tour qualifiers, Development Tour qualifiers, and Riley's amateur pub qualifiers—prize money is awarded down to the Last 128:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Round</th>
+                <th>Prize Money (Per Player)</th>
+                <th>Stage Field</th>
+                <th>Total Stage Payout</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Winner (Champion)</strong></td>
+                <td><strong>£120,000</strong></td>
+                <td>1</td>
+                <td>£120,000</td>
+              </tr>
+              <tr>
+                <td><strong>Runner-up</strong></td>
+                <td><strong>£60,000</strong></td>
+                <td>1</td>
+                <td>£60,000</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-finalists</strong></td>
+                <td><strong>£35,000</strong></td>
+                <td>2</td>
+                <td>£70,000</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-finalists</strong></td>
+                <td><strong>£20,000</strong></td>
+                <td>4</td>
+                <td>£80,000</td>
+              </tr>
+              <tr>
+                <td><strong>Last 16 (Fifth Round)</strong></td>
+                <td><strong>£12,500</strong></td>
+                <td>8</td>
+                <td>£100,000</td>
+              </tr>
+              <tr>
+                <td><strong>Last 32 (Fourth Round)</strong></td>
+                <td><strong>£7,500</strong></td>
+                <td>16</td>
+                <td>£120,000</td>
+              </tr>
+              <tr>
+                <td><strong>Last 64 (Third Round)</strong></td>
+                <td><strong>£3,000</strong></td>
+                <td>32</td>
+                <td>£96,000</td>
+              </tr>
+              <tr>
+                <td><strong>Last 96 (Second Round)</strong></td>
+                <td><strong>£2,000</strong></td>
+                <td>32</td>
+                <td>£64,000</td>
+              </tr>
+              <tr>
+                <td><strong>Last 128 (First Round Winners)</strong></td>
+                <td><strong>£1,250</strong></td>
+                <td>32</td>
+                <td>£40,000</td>
+              </tr>
+              <tr>
+                <td><strong>First Round Losers</strong></td>
+                <td><strong>£0</strong></td>
+                <td>32</td>
+                <td>£0</td>
+              </tr>
+              <tr class="table-total">
+                <td><strong>Total Prize Fund</strong></td>
+                <td><strong>£750,000</strong></td>
+                <td><strong>~160</strong></td>
+                <td><strong>£750,000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Open Draw Format & Career Breakthroughs -->
+      <section class="content-card">
+        <h2>The Open Draw Format &amp; Career Transformations</h2>
+        <p>
+          The defining feature of the UK Open is its no-seed policy. From Round Four onward, every round is drawn completely open without seed protection. A world number one can face a world number two on Stage Two on a Saturday afternoon, while an unheralded amateur can advance deep into the bracket.
+        </p>
+        <p>
+          Because all UK Open prize money counts towards the PDC Order of Merit, a deep run at Minehead is frequently life-changing for lower-ranked Tour Card holders. Reaching the quarter-finals (£20,000) or semi-finals (£35,000) often preserves a player's professional Tour Card for another season or catapults them into contention for the World Matchplay.
+        </p>
+      </section>
+
+      <!-- Section 4: Multi-Board Stage Dynamics & Cinderella Runs -->
+      <section class="content-card">
+        <h2>Multi-Board Atmosphere &amp; Historic Cinderella Runs</h2>
+        <p>
+          Unlike arena tournaments where action focuses on a single elevated stage, the UK Open features eight simultaneous stages active across Butlin's Skyline Pavilion and Centre Stage during Friday's opening rounds. Fans walk freely between stages, standing inches from top-tier professionals and observing the raw intensity of tour dart play up close.
+        </p>
+        <p>
+          This egalitarian format has birthed some of the most romantic upsets in the history of the sport. Unseeded outsiders, amateur qualifiers from local pub leagues, and Challenge Tour standouts regularly defeat elite world champions on the outer boards. While big names relish the main broadcast stage, navigating the noisy, fast-paced environment of Stages Two through Eight requires exceptional concentration, making UK Open prize money among the hardest-earned cash on the PDC calendar.
+        </p>
+      </section>
+
+      <!-- Section 5: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-total {
+    background: #f1f5f9;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

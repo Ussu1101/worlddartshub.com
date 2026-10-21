@@ -1,0 +1,350 @@
+---
+// src/pages/tournament/european-championship-prize-money.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "European Championship Prize Money 2026: £750K Guide";
+const pageDescription = "Complete 2026 European Championship prize money breakdown: £750k total fund, £150k champion share, round-by-round payouts from Dortmund.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/european-championship-prize-money/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Prize Money Hub', url: '/tournament/prize-money/' },
+  { name: 'European Championship Prize Money', url: '/tournament/european-championship-prize-money/' }
+];
+
+const faqItems = [
+  {
+    q: "How much does the European Championship darts winner receive?",
+    a: "The 2026 European Championship winner receives £150,000 from the total £750,000 prize fund, with the runner-up collecting £80,000."
+  },
+  {
+    q: "Where is the 2026 European Championship held?",
+    a: "The 2026 European Championship takes place at the Westfalenhallen in Dortmund, Germany, running from 22 to 25 October 2026."
+  },
+  {
+    q: "Does European Championship prize money count towards the PDC Order of Merit?",
+    a: "Yes. All prize money earned at the European Championship is fully ranked and counts directly towards the main two-year rolling PDC Order of Merit."
+  },
+  {
+    q: "Who is the defending European Champion in 2026?",
+    a: "Dutch star Gian van Veen is the defending champion, having won his maiden senior major title at the 2025 European Championship by defeating Luke Humphries 11–10 in a dramatic last-leg decider."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC RANKED MAJOR</span>
+        <span class="badge">DORTMUND 2026</span>
+      </div>
+      <h1>European Championship Prize Money 2026: £750K Guide</h1>
+      <p class="lead-text">
+        The Machineseeker European Championship brings together the continent's top 32 ProTour performers at Dortmund's iconic Westfalenhallen. Here is the verified round-by-round prize money breakdown for the 2026 tournament, featuring a record £750,000 fund and qualification dynamics.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC European Championship Prize Fund & Order of Merit Allocations" />
+
+      <!-- Section 1: Tournament Overview -->
+      <section class="content-card">
+        <h2>2026 Tournament Overview</h2>
+        <p>
+          Staged from Thursday 22 October to Sunday 25 October 2026 at the Westfalenhallen in Dortmund, Germany, the European Championship represents the pinnacle of the continental darts season. The four-day televised major features the top 32 players from the European Tour Order of Merit, rewarded for their consistency across the 15 European Tour events held throughout the year.
+        </p>
+        <p>
+          The 2026 prize purse has expanded to an impressive <strong>£750,000</strong>, up from £600,000 in 2025. The champion walks away with a life-changing <strong>£150,000</strong> first prize, which contributes substantially to the player's official PDC world ranking. To compare tournament purses across the calendar, visit our master <a href="/tournament/prize-money/">PDC prize money hub</a> and inspect our comprehensive guide to <a href="/players/earnings/">professional darts player earnings</a>.
+        </p>
+      </section>
+
+      <!-- Section 2: Prize Money Breakdown Table -->
+      <section class="content-card">
+        <h2>Full Round-by-Round Prize Money Breakdown</h2>
+        <p>
+          Every competitor qualifying for Dortmund is guaranteed at least £7,500 simply for reaching the opening round. Payouts escalate rapidly through each knockout round:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Round</th>
+                <th>Prize Money (Per Player)</th>
+                <th>Field Size</th>
+                <th>Total Round Payout</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Winner (Champion)</strong></td>
+                <td><strong>£150,000</strong></td>
+                <td>1</td>
+                <td>£150,000</td>
+              </tr>
+              <tr>
+                <td><strong>Runner-up</strong></td>
+                <td><strong>£80,000</strong></td>
+                <td>1</td>
+                <td>£80,000</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-finalists</strong></td>
+                <td><strong>£50,000</strong></td>
+                <td>2</td>
+                <td>£100,000</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-finalists</strong></td>
+                <td><strong>£35,000</strong></td>
+                <td>4</td>
+                <td>£140,000</td>
+              </tr>
+              <tr>
+                <td><strong>Second Round (Last 16)</strong></td>
+                <td><strong>£20,000</strong></td>
+                <td>8</td>
+                <td>£160,000</td>
+              </tr>
+              <tr>
+                <td><strong>First Round (Last 32)</strong></td>
+                <td><strong>£7,500</strong></td>
+                <td>16</td>
+                <td>£120,000</td>
+              </tr>
+              <tr class="table-total">
+                <td><strong>Total Prize Fund</strong></td>
+                <td><strong>£750,000</strong></td>
+                <td><strong>32</strong></td>
+                <td><strong>£750,000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Defending Champion -->
+      <section class="content-card">
+        <h2>Defending Champion: Gian van Veen's Historic Reign</h2>
+        <p>
+          The 2026 European Championship carries immense intrigue as Dutch sensation <a href="/players/gian-van-veen/">Gian van Veen</a> defends the crown he famously captured in 2025. Van Veen claimed his maiden senior televised major title in unforgettable fashion, defeating then-world number one Luke Humphries 11–10 in a breathless last-leg decider.
+        </p>
+        <p>
+          At just 23 years of age, Van Veen became the youngest winner in European Championship history. His title defence in Dortmund kicks off as one of the headline narratives of the weekend, with top seeds eyeing his trophy amidst fierce European competition.
+        </p>
+      </section>
+
+      <!-- Section 4: PDC Order of Merit Impact -->
+      <section class="content-card">
+        <h2>PDC Order of Merit &amp; World Championship Implications</h2>
+        <p>
+          Because the European Championship is an unbracketed, open-qualifying major on the PDC calendar, every pound earned directly shifts the two-year rolling PDC Order of Merit. With the World Darts Championship cut-off looming in late November, performances in Dortmund can cement seeded positions at Alexandra Palace or secure vital qualification spots for players hovering around the world top 32.
+        </p>
+        <p>
+          A run to the semi-finals guarantees £50,000 in ranking credit, capable of lifting an emerging contender into the world top 16, while the £150,000 winner's cheque provides immediate momentum heading into the winter major season.
+        </p>
+      </section>
+
+      <!-- Section 5: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-total {
+    background: #f1f5f9;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

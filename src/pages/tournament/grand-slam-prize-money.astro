@@ -1,0 +1,356 @@
+---
+// src/pages/tournament/grand-slam-prize-money.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Grand Slam Prize Money 2026: Full £1M Breakdown";
+const pageDescription = "Complete 2026 Grand Slam of Darts prize money breakdown: £1m total fund, £200k champion share, group-stage and knockout round-by-round payouts.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/grand-slam-prize-money/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Prize Money Hub', url: '/tournament/prize-money/' },
+  { name: 'Grand Slam Prize Money', url: '/tournament/grand-slam-prize-money/' }
+];
+
+const faqItems = [
+  {
+    q: "How much does the Grand Slam of Darts winner get in 2026?",
+    a: "The 2026 Grand Slam of Darts champion receives £200,000 from the newly expanded £1,000,000 total prize fund, alongside lifting the Eric Bristow Trophy."
+  },
+  {
+    q: "Where is the 2026 Grand Slam of Darts held?",
+    a: "The tournament takes place at WV Active Aldersley in Wolverhampton, England, scheduled to run from 14 to 22 November 2026."
+  },
+  {
+    q: "How did the Grand Slam of Darts format change in 2026?",
+    a: "For the first time in tournament history, the field expanded from 32 to 48 players, structured into 16 groups of three players rather than eight groups of four."
+  },
+  {
+    q: "Who is the defending Grand Slam champion?",
+    a: "Luke Littler is the two-time defending champion, having captured back-to-back Grand Slam of Darts titles in 2024 and 2025."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC RANKED MAJOR</span>
+        <span class="badge">WOLVERHAMPTON 2026</span>
+      </div>
+      <h1>Grand Slam Prize Money 2026: Full £1M Breakdown</h1>
+      <p class="lead-text">
+        Staged at WV Active Aldersley in Wolverhampton, the Mr Vegas Grand Slam of Darts brings together major champions and international qualifiers. Here is the verified round-by-round prize money breakdown for the upcoming 2026 tournament, featuring a landmark £1,000,000 purse and an expanded 48-player format.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Grand Slam of Darts Prize Fund & Expanded Structure" />
+
+      <!-- Section 1: Tournament Preview & Expansion -->
+      <section class="content-card">
+        <h2>2026 Expansion: The £1,000,000 Seven-Figure Milestone</h2>
+        <p>
+          The 2026 Grand Slam of Darts takes place from 14 to 22 November 2026 at WV Active Aldersley in Wolverhampton. In a major evolutionary step for the tournament, the PDC has expanded the total prize fund to <strong>£1,000,000</strong>, up significantly from £650,000 in 2025.
+        </p>
+        <p>
+          Alongside the financial boost, the 2026 championship introduces the first field-size expansion in tournament history. The roster increases from 32 to <strong>48 players</strong>, configured into 16 groups of three players. Defending champion <a href="/players/luke-littler/">Luke Littler</a> enters as the headliner chasing a historic third consecutive Grand Slam crown, having triumphed in both 2024 and 2025. To view where the Grand Slam sits across the PDC calendar, inspect our <a href="/tournament/prize-money/">PDC prize money hub</a> and our review of <a href="/players/earnings/">professional player earnings</a>.
+        </p>
+      </section>
+
+      <!-- Section 2: Full Prize Money Breakdown Table -->
+      <section class="content-card">
+        <h2>Full Round-by-Round Prize Money Breakdown</h2>
+        <p>
+          Under the new 48-player framework, every qualified player is guaranteed at least £5,000, even if they finish bottom of their round-robin group. Payouts double for those reaching the knockout stages:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Stage</th>
+                <th>Prize Money (Per Player)</th>
+                <th>Stage Field</th>
+                <th>Total Stage Payout</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Winner (Champion)</strong></td>
+                <td><strong>£200,000</strong></td>
+                <td>1</td>
+                <td>£200,000</td>
+              </tr>
+              <tr>
+                <td><strong>Runner-up</strong></td>
+                <td><strong>£100,000</strong></td>
+                <td>1</td>
+                <td>£100,000</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-finalists</strong></td>
+                <td><strong>£60,000</strong></td>
+                <td>2</td>
+                <td>£120,000</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-finalists</strong></td>
+                <td><strong>£35,000</strong></td>
+                <td>4</td>
+                <td>£140,000</td>
+              </tr>
+              <tr>
+                <td><strong>Second Round (Last 16)</strong></td>
+                <td><strong>£20,000</strong></td>
+                <td>8</td>
+                <td>£160,000</td>
+              </tr>
+              <tr>
+                <td><strong>Group Stage Second Place (Last 32)</strong></td>
+                <td><strong>£12,500</strong></td>
+                <td>16</td>
+                <td>£200,000</td>
+              </tr>
+              <tr>
+                <td><strong>Group Stage Third Place (Eliminated)</strong></td>
+                <td><strong>£5,000</strong></td>
+                <td>16</td>
+                <td>£80,000</td>
+              </tr>
+              <tr class="table-total">
+                <td><strong>Total Prize Fund</strong></td>
+                <td><strong>£1,000,000</strong></td>
+                <td><strong>48</strong></td>
+                <td><strong>£1,000,000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Group Stage Dynamics & Order of Merit -->
+      <section class="content-card">
+        <h2>Group-Stage Intensity &amp; Order of Merit Stakes</h2>
+        <p>
+          The Grand Slam is unique among PDC ranking majors in beginning with round-robin group matches. With groups reduced to three players in 2026, every individual leg carries immense weight. The top player from each group progresses directly to the knockout rounds, while second-place finishers battle in crossover preliminary playoffs.
+        </p>
+        <p>
+          Because the Grand Slam is fully ranked, prize money earned in Wolverhampton directly alters the PDC Order of Merit. As the penultimate ranking major before the World Darts Championship cut-off, a run to the quarter-finals (£35,000) or semi-finals (£60,000) offers an unmissable opportunity for players to secure seeded status at Alexandra Palace.
+        </p>
+      </section>
+
+      <!-- Section 4: Cross-Code Heritage & The Eric Bristow Trophy -->
+      <section class="content-card">
+        <h2>Cross-Code Heritage &amp; The Eric Bristow Trophy</h2>
+        <p>
+          Founded in 2007 at the Wolverhampton Civic Hall, the Grand Slam was conceived to bridge the historic divide in world darts by pitting PDC stars against invited champions and finalists from the British Darts Organisation (BDO). Following the passing of darts icon Eric Bristow in 2018, the PDC officially renamed the championship trophy the <strong>Eric Bristow Trophy</strong> in honour of the five-time world champion.
+        </p>
+        <p>
+          The tournament's move to WV Active Aldersley has only intensified its festive atmosphere. Across its history, the Grand Slam has produced legendary clashes, including Phil Taylor's six tournament victories and Michael van Gerwen's title hat-trick between 2015 and 2017. As the final multi-day televised test before the World Darts Championship, winning the Grand Slam or reaching the semi-finals in Wolverhampton is universally viewed as the definitive indicator of world championship form.
+        </p>
+      </section>
+
+      <!-- Section 5: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-total {
+    background: #f1f5f9;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

@@ -1,0 +1,324 @@
+---
+// src/pages/schedule/semi-finals.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Championship Semi-Finals 2027: 2 January Guide";
+const pageDescription = "World Darts Championship semi-finals: Saturday 2 January 2027 at Alexandra Palace — both semi-finals in one evening session, format, times and tickets.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/schedule/semi-finals/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Schedule', url: '/schedule/' },
+  { name: 'Semi-Finals 2027', url: '/schedule/semi-finals/' }
+];
+
+const faqItems = [
+  {
+    q: "When are the 2027 World Darts Championship semi-finals played?",
+    a: "Both semi-finals take place on Saturday 2 January 2027 in a single blockbuster evening session commencing at 19:30 GMT at Alexandra Palace."
+  },
+  {
+    q: "What is the match format for the semi-finals?",
+    a: "The semi-finals are played under a best-of-eleven sets format (first to six sets), requiring players to maintain elite scoring and finishing over an extended duration."
+  },
+  {
+    q: "Are the semi-finals played back-to-back in the same session?",
+    a: "Yes. Both semi-finals are staged sequentially in the Saturday evening session, with approximately twenty minutes between the conclusion of the first match and the walk-on of the second."
+  },
+  {
+    q: "When does the 2027 World Championship Final take place?",
+    a: "The two semi-final winners advance to the World Championship Final on Sunday 3 January 2027 at 19:30 GMT to contest the £1,000,000 champion's cheque."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">FINALS WEEKEND</span>
+        <span class="badge">SATURDAY 2 JANUARY 2027</span>
+      </div>
+      <h1>World Championship Semi-Finals 2027: 2 January Guide</h1>
+      <p class="lead-text">
+        Saturday night at Alexandra Palace delivers the drama of the final four. Both semi-finals are contested back-to-back in a marathon evening session beneath the Great Hall arches. Here is the verified timetable, best-of-11 sets format, and session guide.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC World Darts Championship Semi-Finals Schedule & Format" />
+
+      <!-- Section 1: Semi-Finals Overview -->
+      <section class="content-card">
+        <h2>The Penultimate Night at the Great Hall</h2>
+        <p>
+          On <strong>Saturday 2 January 2027</strong>, the final four players take the stage in front of over 5,000 passionate spectators at Alexandra Palace. With a spot in Sunday's grand final on the line, semi-finals night has historically produced some of the greatest encounters in darts history.
+        </p>
+        <p>
+          Both semi-finals take place across a single evening session. The two winners advance directly to Sunday's climactic showdown for the Sid Waddell Trophy and the record £1,000,000 winner's purse. For complete details across the entire three-day climax, see our master <a href="/schedule/finals-weekend/">Finals Weekend guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 2: Session Timetable & Format -->
+      <section class="content-card">
+        <h2>Session Timetable &amp; Best-of-11 Sets Format</h2>
+        <p>
+          Semi-finals night operates on a structured prime-time schedule:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Event Milestone</th>
+                <th>Time (GMT)</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Doors Open</strong></td>
+                <td>17:30 GMT</td>
+                <td>Palm Court Fan Village, merchandise stalls, and food villages open</td>
+              </tr>
+              <tr>
+                <td><strong>Arena Ingress</strong></td>
+                <td>18:30 GMT</td>
+                <td>Great Hall floor tables and tiered seating open</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-Final 1</strong></td>
+                <td>19:40 GMT</td>
+                <td>First semi-final match thrown (Best of 11 sets)</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-Final 2</strong></td>
+                <td>Approx. 21:15 GMT</td>
+                <td>Second semi-final match thrown (Best of 11 sets)</td>
+              </tr>
+              <tr>
+                <td><strong>Session Concludes</strong></td>
+                <td>Approx. 23:00 GMT</td>
+                <td>Both 2027 finalists confirmed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>The Best-of-Eleven Sets Distance</h3>
+        <p>
+          The semi-finals push player endurance to the extreme with the <strong>best of 11 sets (first to 6 sets)</strong> distance. To win, a player must secure six individual sets, each decided by first-to-three legs. If a deciding eleventh set is required, it must be won by two clear legs up to 5–5, where a sudden-death eleventh leg determines who advances to Sunday's final.
+        </p>
+      </section>
+
+      <!-- Section 3: Financial & Ranking Stakes -->
+      <section class="content-card">
+        <h2>Financial Rewards: The £200,000 Swing</h2>
+        <p>
+          The semi-finals represent one of the most lucrative single-match hurdles in global sport:
+        </p>
+        <ul>
+          <li><strong>Semi-Final Losers:</strong> Receive £120,000 in official ranking prize money.</li>
+          <li><strong>Finalists:</strong> Secure at least £250,000 as runner-up, with the opportunity to claim the £1,000,000 champion's prize on Sunday.</li>
+          <li><strong>Order of Merit Impact:</strong> A £130,000 difference separates semi-final elimination from reaching the final, dramatically shaping the top five of the world rankings.</li>
+        </ul>
+      </section>
+
+      <!-- Section 4: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

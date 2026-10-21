@@ -1,0 +1,350 @@
+---
+// src/pages/tournament/world-matchplay-prize-money.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Matchplay Prize Money 2026: Full £1M Breakdown";
+const pageDescription = "Complete 2026 World Matchplay prize money breakdown: £1m total fund, £225k champion share, round-by-round payouts from Blackpool's Winter Gardens.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/world-matchplay-prize-money/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Prize Money Hub', url: '/tournament/prize-money/' },
+  { name: 'World Matchplay Prize Money', url: '/tournament/world-matchplay-prize-money/' }
+];
+
+const faqItems = [
+  {
+    q: "How much does the World Matchplay winner receive?",
+    a: "The 2026 World Matchplay champion receives £225,000 from the landmark £1,000,000 total prize fund, alongside lifting the Phil Taylor Trophy."
+  },
+  {
+    q: "Where is the World Matchplay held?",
+    a: "The World Matchplay is staged annually at the historic Empress Ballroom in the Winter Gardens, Blackpool, running in July as darts' marquee summer major."
+  },
+  {
+    q: "Who won the 2026 World Matchplay?",
+    a: "Luke Littler won the 2026 World Matchplay, defeating Gerwyn Price 18–9 in the final to successfully defend his Blackpool title."
+  },
+  {
+    q: "Does World Matchplay prize money count towards the PDC Order of Merit?",
+    a: "Yes. All prize money earned in the World Matchplay is fully ranked and forms the second-largest individual ranking contribution on the two-year rolling PDC Order of Merit."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC RANKED MAJOR</span>
+        <span class="badge">BLACKPOOL 2026</span>
+      </div>
+      <h1>World Matchplay Prize Money 2026: Full £1M Breakdown</h1>
+      <p class="lead-text">
+        Staged inside the iconic Empress Ballroom at the Winter Gardens, the Betfred World Matchplay is the summer centrepiece of professional darts. Here is the verified round-by-round prize money breakdown for the 2026 championship, featuring a historic seven-figure £1,000,000 purse.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC World Matchplay Prize Fund & Match Results" />
+
+      <!-- Section 1: Tournament Overview -->
+      <section class="content-card">
+        <h2>2026 Result in Brief: Littler Retains the Phil Taylor Trophy</h2>
+        <p>
+          The 2026 Betfred World Matchplay took place from 18 to 26 July 2026 at the Winter Gardens in Blackpool. In a sensational final, teenage sensation <a href="/players/luke-littler/">Luke Littler</a> defeated 2021 world champion Gerwyn Price 18–9 to successfully defend his World Matchplay title, collecting the £225,000 winner's cheque and lifting the prestigious Phil Taylor Trophy.
+        </p>
+        <p>
+          Littler's victory followed an imperious week of tungsten excellence by the seaside, cementing his dominance over the summer major season. For comparative figures across all PDC premier events, explore our central <a href="/tournament/prize-money/">PDC prize money hub</a> and inspect the full breakdown of <a href="/players/earnings/">professional darts player earnings</a>.
+        </p>
+      </section>
+
+      <!-- Section 2: Full Prize Money Breakdown -->
+      <section class="content-card">
+        <h2>Full Prize Money Breakdown</h2>
+        <p>
+          The 2026 World Matchplay marked a historic commercial milestone as the total tournament prize fund expanded to <strong>£1,000,000</strong>, rising from £800,000 in 2025. Payouts rose substantially across all 32 qualifying places, ensuring that every player who graced the Empress Ballroom stage earned five figures:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Round</th>
+                <th>Prize Money (Per Player)</th>
+                <th>Field Size</th>
+                <th>Total Round Payout</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Winner (Champion)</strong></td>
+                <td><strong>£225,000</strong></td>
+                <td>1</td>
+                <td>£225,000</td>
+              </tr>
+              <tr>
+                <td><strong>Runner-up</strong></td>
+                <td><strong>£125,000</strong></td>
+                <td>1</td>
+                <td>£125,000</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-finalists</strong></td>
+                <td><strong>£65,000</strong></td>
+                <td>2</td>
+                <td>£130,000</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-finalists</strong></td>
+                <td><strong>£35,000</strong></td>
+                <td>4</td>
+                <td>£140,000</td>
+              </tr>
+              <tr>
+                <td><strong>Second Round (Last 16)</strong></td>
+                <td><strong>£22,500</strong></td>
+                <td>8</td>
+                <td>£180,000</td>
+              </tr>
+              <tr>
+                <td><strong>First Round (Last 32)</strong></td>
+                <td><strong>£12,500</strong></td>
+                <td>16</td>
+                <td>£200,000</td>
+              </tr>
+              <tr class="table-total">
+                <td><strong>Total Prize Fund</strong></td>
+                <td><strong>£1,000,000</strong></td>
+                <td><strong>32</strong></td>
+                <td><strong>£1,000,000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Legs-Only Format & Merit Impact -->
+      <section class="content-card">
+        <h2>The Legs-Only Format &amp; Order of Merit Significance</h2>
+        <p>
+          Unlike the set-play format of the World Darts Championship, the World Matchplay is contested entirely under a strict legs-only structure where players must win by two clear legs. This relentless format demands unwavering focus from opening dart to final double.
+        </p>
+        <p>
+          With £225,000 awarded to the winner and £125,000 to the runner-up, the World Matchplay delivers the second-largest ranking reward on the entire professional circuit. Because PDC rankings are calculated over a two-year rolling cycle, defending large sums from previous Blackpool stagings creates dramatic shifts at the top of the Order of Merit.
+        </p>
+      </section>
+
+      <!-- Section 4: Winter Gardens Heritage & Trophy History -->
+      <section class="content-card">
+        <h2>Winter Gardens Heritage &amp; The Phil Taylor Trophy</h2>
+        <p>
+          Inaugurated in 1994, the World Matchplay is the second-longest running tournament in professional darts, trailing only the World Championship. Played inside the Victorian splendour of the Empress Ballroom at Blackpool's Winter Gardens, the venue is famed for its sweltering summer temperatures, passionate balcony crowds, and unparalleled acoustic resonance.
+        </p>
+        <p>
+          In 2018, the PDC officially renamed the winner's silverware the <strong>Phil Taylor Trophy</strong> in honour of the 16-time Blackpool champion who dominated the event across three decades. Taylor compiled an extraordinary 99–8 match record at the Winter Gardens, including a 38-match winning streak between 2008 and 2015. Modern winners like Luke Littler and Michael van Gerwen continue that legacy, delivering three-dart averages consistently above the 100 mark across extended leg formats.
+        </p>
+      </section>
+
+      <!-- Section 5: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-total {
+    background: #f1f5f9;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

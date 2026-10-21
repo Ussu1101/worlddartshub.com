@@ -196,6 +196,30 @@
       "status": "current_known_walk_on",
       "crowd_reaction": "Thunderous collective stadium singalong where the entire Alexandra Palace crowd belts out the extended 'Na-na-na-na' outro in unison.",
       "walk_on_history": "Introduced as his headline walk-on anthem leading into the 2024 season, replacing his long-time cult hit 'Let's Get Ready to Rhumble'."
+    },
+    {
+      "player_id": "josh-rock",
+      "player_name": "Josh Rock",
+      "nickname": "Rocky",
+      "song_title": "Welcome To The Party",
+      "artist": "DJ Krissy",
+      "genre": "Dance / Club",
+      "release_year": "2020",
+      "status": "current_known_walk_on",
+      "crowd_reaction": "Explosive bass beats sparking synchronized clapping, jumping, and party atmosphere across the arena.",
+      "walk_on_history": "Adopted by Rock to channel high energy and celebrate his rapid rise to the PDC top 10 and 2025 World Cup glory."
+    },
+    {
+      "player_id": "gian-van-veen",
+      "player_name": "Gian van Veen",
+      "nickname": "The Giant",
+      "song_title": "Astronomia",
+      "artist": "Tony Igy & Vicetone",
+      "genre": "Electronic Dance Music",
+      "release_year": "2014",
+      "status": "current_known_walk_on",
+      "crowd_reaction": "Bouncing synth drops drawing enthusiastic rhythm chanting and waving from Dutch and international supporters.",
+      "walk_on_history": "Signature electronic anthem selected for its unmistakable drop and festival energy as he claimed the 2025 European Championship."
     }
   ]
 }

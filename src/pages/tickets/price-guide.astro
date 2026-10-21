@@ -1,0 +1,386 @@
+---
+// src/pages/tickets/price-guide.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Darts Championship Ticket Prices 2026/27 Guide";
+const pageDescription = "World Darts Championship ticket prices 2026/27: tiered seats from £55, table seats from £75, final prices and 501 Club hospitality — the full guide.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tickets/price-guide/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tickets', url: '/tickets/' },
+  { name: 'Ticket Prices Guide', url: '/tickets/price-guide/' }
+];
+
+const faqItems = [
+  {
+    q: "How much do World Darts Championship tickets cost at face value?",
+    a: "Official 2026/27 face-value prices start at £55 for tiered grandstand seats and £75 for floor table seats during early rounds, rising to £95 (tiered) and £110 (table) for the World Championship Final on Sunday 3 January 2027."
+  },
+  {
+    q: "What is included in 501 Club hospitality tickets?",
+    a: "501 Club hospitality starts from £399 per person for early sessions (rising to £599 for the final), including premium tiered seating, access to a private lounge, complimentary pre-session food and drinks, and fast-track entry."
+  },
+  {
+    q: "Are secondary resale tickets safe to buy for Alexandra Palace?",
+    a: "Only tickets purchased through the official See Tickets Fan-to-Fan Marketplace at face value are guaranteed valid. Unauthorized secondary sites list tickets starting around £146 and mid-tournament tables at £300+, but these risk cancellation at the turnstiles."
+  },
+  {
+    q: "How many tickets could fans apply for in the official ballot?",
+    a: "The official PDC ticket ballot ran from 8 to 14 September 2026 via the PDC Ticket Portal, permitting applicants to request a maximum of six tickets per session across up to two sessions."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">TICKETING & PRICING</span>
+        <span class="badge">ALLY PALLY 2026/27</span>
+      </div>
+      <h1>World Darts Championship Ticket Prices 2026/27 Guide</h1>
+      <p class="lead-text">
+        Planning your pilgrimage to Alexandra Palace? Here is the complete official price breakdown for the 2026/27 PDC World Darts Championship, spanning face-value tiered seats, floor tables, VIP hospitality, and secondary resale realities.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC World Championship Official Ticket Pricing & Allocation Tiers" />
+
+      <!-- Section 1: Pricing Framework Overview -->
+      <section class="content-card">
+        <h2>Official 2026/27 Face-Value Ticket Pricing</h2>
+        <p>
+          Following the historic move of the World Darts Championship into Alexandra Palace's Great Hall, capacity has surged to over 5,000 spectators per session, generating a record allocation of approximately 180,000 tickets across the festive tournament.
+        </p>
+        <p>
+          Official ticket prices operate on a tiered scale: opening rounds feature the most accessible pricing, with rates steadily increasing as the tournament advances through post-Christmas knockout rounds to Finals Weekend. Standard tiered grandstand seating starts at <strong>£55</strong>, while floor table seating begins at <strong>£75</strong>. For the grand finale on Sunday 3 January 2027, tiered tickets are priced from <strong>£95</strong> and floor tables from <strong>£110</strong>.
+        </p>
+      </section>
+
+      <!-- Section 2: Comprehensive Price Table by Tournament Stage -->
+      <section class="content-card">
+        <h2>Ticket Price Matrix by Tournament Stage</h2>
+        <p>
+          The table below displays the official face-value ticket prices across all stages of the 2026/27 championship (subject to standard booking fees):
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Phase</th>
+                <th>Dates &amp; Sessions</th>
+                <th>Tiered Seats</th>
+                <th>Floor Table Seats</th>
+                <th>501 Club Hospitality</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>First &amp; Second Rounds (Opening Week)</strong></td>
+                <td>11–18 Dec (Afternoon &amp; Evening)</td>
+                <td>£55</td>
+                <td>£75</td>
+                <td>From £399</td>
+              </tr>
+              <tr>
+                <td><strong>Pre-Christmas Weekend Sessions</strong></td>
+                <td>19–23 Dec (Peak Weekend)</td>
+                <td>£65</td>
+                <td>£85</td>
+                <td>From £449</td>
+              </tr>
+              <tr>
+                <td><strong>Third &amp; Fourth Rounds (Post-Christmas)</strong></td>
+                <td>27–30 Dec (Afternoon &amp; Evening)</td>
+                <td>£75</td>
+                <td>£95</td>
+                <td>From £499</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-Finals (New Year's Day)</strong></td>
+                <td>1 Jan 2027 (Both Sessions)</td>
+                <td>£85</td>
+                <td>£100</td>
+                <td>From £549</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-Finals</strong></td>
+                <td>2 Jan 2027 (Evening)</td>
+                <td>£90</td>
+                <td>£105</td>
+                <td>From £549</td>
+              </tr>
+              <tr class="table-highlight">
+                <td><strong>The Final</strong></td>
+                <td>3 Jan 2027 (Evening)</td>
+                <td>£95</td>
+                <td>£110</td>
+                <td>From £599</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Tiered vs Table Seats -->
+      <section class="content-card">
+        <h2>Tiered Seating vs Floor Tables: Which Offers Better Value?</h2>
+        <p>
+          Choosing between tiered bleachers and arena floor tables is the single most critical decision when purchasing Ally Pally tickets:
+        </p>
+        <ul>
+          <li><strong>Tiered Grandstand Seating:</strong> Raked stadium seating that offers elevated, unobstructed sightlines over the standing crowd directly toward the big screens. Tiered seats provide individual back support and faster access to concourses, making them ideal for families and darts purists.</li>
+          <li><strong>Floor Table Seating:</strong> Six-person trestle banquet tables situated right at ground level adjacent to the walk-on catwalk. While delivering the iconic fancy dress party atmosphere and player proximity, tracking darts on the physical board requires looking at repeater screens when spectators ahead stand.</li>
+        </ul>
+        <p>
+          For a comprehensive sightline and acoustic comparison, consult our detailed analysis of the <a href="/venue/best-seats/">best seats at Alexandra Palace</a>.
+        </p>
+      </section>
+
+      <!-- Section 4: 501 Club & Official Travel Packages -->
+      <section class="content-card">
+        <h2>501 Club Hospitality &amp; Hotel Packages</h2>
+        <p>
+          Fans looking for a guaranteed, premium matchday experience can opt for official hospitality. The <strong>501 Club</strong> package starts at £399 per person for early rounds, rising to £599 for the final. It includes prime tiered grandstand seats, access to a dedicated hospitality lounge, complimentary grazing food, inclusive beer, wine, and soft drinks, plus souvenir programmes and fast-track entry. Review all package inclusions in our guide to <a href="/tickets/hospitality-packages/">Alexandra Palace hospitality packages</a>.
+        </p>
+        <p>
+          Additionally, official travel partner SportsBreaks offers combined ticket-and-hotel packages starting from <strong>£159 per person</strong>, providing an excellent alternative for overseas supporters and regional fans needing London accommodation.
+        </p>
+      </section>
+
+      <!-- Section 5: How the Ballot Worked & Resale Reality -->
+      <section class="content-card">
+        <h2>How the Ballot Worked &amp; Secondary Resale Realities</h2>
+        <p>
+          General ticket allocation took place via the official PDC ticket ballot between 8 and 14 September 2026. Applicants were permitted to apply for up to six tickets per session across a maximum of two sessions through the PDC Ticket Portal, following priority access for PDCTV Annual Members. Understand the full presale calendar in our <a href="/tickets/ballot-presale-guide/">ballot and presale guide</a>.
+        </p>
+        <div class="warning-box">
+          <h3>Secondary Market Warning</h3>
+          <p>
+            With over 300,000 applications competing for 180,000 admissions, unofficial secondary ticketing sites list tickets starting around <strong>£146</strong>, with mid-tournament floor tables frequently advertised at <strong>£300+</strong>. The PDC strictly cancels tickets resold on unauthorized platforms (Viagogo, StubHub, Gigsberg).
+          </p>
+          <p>
+            The only safe, authorized secondary route is the official <strong>See Tickets Fan-to-Fan Marketplace</strong>, where genuine fans resell tickets strictly at face value. Learn how to securely buy and sell returned tickets in our guide to <a href="/tickets/resale-returns/">ticket resale and returns</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 6: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .warning-box {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 1.5rem;
+  }
+  .warning-box h3 {
+    color: #92400e;
+    margin-top: 0;
+  }
+  .warning-box p {
+    color: #78350f;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .table-highlight {
+    background: #fefce8;
+    font-weight: 700;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>

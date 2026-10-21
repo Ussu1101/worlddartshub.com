@@ -260,6 +260,11 @@
     "description": "Player dossier for Gerwyn Price: 24g Red Dragon Darts darts, walk-on anthem &quot;Ice Ice Baby&quot;, career earnings and records."
   },
   {
+    "url": "/players/gian-van-veen/",
+    "title": "Gian van Veen: Darts Specs &amp; Career Stats",
+    "description": "Player dossier for Gian van Veen: 21g Red Dragon darts, walk-on anthem"
+  },
+  {
     "url": "/players/how-to-become-pro/",
     "title": "How to Become a Pro Darts Player: PDC Tour Card Guide",
     "description": "Complete guide to becoming a professional darts player: PDC Q-School pathways, Tour Card economics, Challenge and Development Tours, and ranking systems."
@@ -268,6 +273,11 @@
     "url": "/players/jonny-clayton/",
     "title": "Jonny Clayton: Darts Specs &amp; Career Stats",
     "description": "Player dossier for Jonny Clayton: 22g Red Dragon Darts darts, walk-on anthem &quot;Johnny B. Goode&quot;, career earnings and records."
+  },
+  {
+    "url": "/players/josh-rock/",
+    "title": "Josh Rock: Darts Specs &amp; Career Stats",
+    "description": "Player dossier for Josh Rock: 24g Target darts, walk-on anthem"
   },
   {
     "url": "/players/karel-sedlacek/",
@@ -380,9 +390,24 @@
     "description": "Schedule and session times for the 2026/27 PDC World Darts Championship Finals Weekend: Quarter-Finals (Jan 1), Semi-Finals (Jan 2), Final (Jan 3)."
   },
   {
+    "url": "/schedule/opening-night/",
+    "title": "World Championship Opening Night 2026: 11 Dec Guide",
+    "description": "World Darts Championship opening night 2026: Friday 11 December at Alexandra Palace — the 4 first-round matches, session times, tickets and format."
+  },
+  {
     "url": "/schedule/pdc-calendar-2027/",
     "title": "PDC Darts Calendar 2027: Schedule &amp; Major Dates",
     "description": "Provisional 2027 PDC darts season schedule: projected dates, venues and formats for the Premier League, World Matchplay and majors."
+  },
+  {
+    "url": "/schedule/quarter-finals/",
+    "title": "World Championship Quarter-Finals 2027: 1 Jan Guide",
+    "description": "World Darts Championship quarter-finals: Friday 1 January 2027 at Alexandra Palace — both sessions, the 4 matches, best-of-9-sets format and tickets."
+  },
+  {
+    "url": "/schedule/semi-finals/",
+    "title": "World Championship Semi-Finals 2027: 2 January Guide",
+    "description": "World Darts Championship semi-finals: Saturday 2 January 2027 at Alexandra Palace — both semi-finals in one evening session, format, times and tickets."
   },
   {
     "url": "/terms/",
@@ -410,6 +435,11 @@
     "description": "Official hospitality and VIP packages for the PDC World Darts Championship at Alexandra Palace. Matchroom fine dining, complimentary bar, and prime tables."
   },
   {
+    "url": "/tickets/price-guide/",
+    "title": "World Darts Championship Ticket Prices 2026/27 Guide",
+    "description": "World Darts Championship ticket prices 2026/27: tiered seats from £55, table seats from £75, final prices and 501 Club hospitality — the full guide."
+  },
+  {
     "url": "/tickets/resale-returns/",
     "title": "PDC Darts Ticket Resale Guide: See Tickets Fan-to-Fan Rules",
     "description": "Authoritative guide to official See Tickets Fan-to-Fan resale, barcode security, face-value rules, production returns, and avoiding ticket tout scams."
@@ -428,6 +458,16 @@
     "url": "/tools/checkout-calculator/",
     "title": "501 Darts Checkout Calculator: Find Optimal Out Combinations",
     "description": "Interactive 501 darts checkout calculator: enter any score from 2 to 170 for 1-dart, 2-dart and 3-dart finishes, bogey numbers and out routes."
+  },
+  {
+    "url": "/tournament/european-championship-prize-money/",
+    "title": "European Championship Prize Money 2026: £750K Guide",
+    "description": "Complete 2026 European Championship prize money breakdown: £750k total fund, £150k champion share, round-by-round payouts from Dortmund."
+  },
+  {
+    "url": "/tournament/grand-slam-prize-money/",
+    "title": "Grand Slam Prize Money 2026: Full £1M Breakdown",
+    "description": "Complete 2026 Grand Slam of Darts prize money breakdown: £1m total fund, £200k champion share, group-stage and knockout round-by-round payouts."
   },
   {
     "url": "/tournament/modus-super-series/",
@@ -460,6 +500,11 @@
     "description": "PDC Women"
   },
   {
+    "url": "/tournament/players-championship-finals-prize-money/",
+    "title": "Players Championship Finals Prize Money 2026: £750K",
+    "description": "Complete 2026 Players Championship Finals prize money breakdown: £750k total fund, £130k champion share, round-by-round payouts from Minehead."
+  },
+  {
     "url": "/tournament/premier-league-prize-money/",
     "title": "Premier League Darts Prize Money: Full Breakdown",
     "description": "Premier League Darts prize money breakdown: £350,000 champion prize, £10,000 nightly bonuses and PDC Order of Merit rules."
@@ -480,6 +525,11 @@
     "description": "PDC Tour Card system explained: how 128 pro licenses are allocated, the two-year rules, how cards are won and lost, and what cardholders actually get."
   },
   {
+    "url": "/tournament/uk-open-prize-money/",
+    "title": "UK Open Prize Money 2026: Full £750K Breakdown",
+    "description": "Complete 2026 UK Open prize money breakdown: £750k total fund, £120k champion share, round-by-round payouts from the FA Cup of Darts at Minehead."
+  },
+  {
     "url": "/tournament/world-cup-of-darts/",
     "title": "World Cup of Darts: Format, Prize Money &amp; Past Winners",
     "description": "Comprehensive guide to the PDC World Cup of Darts: 40-nation pairs format, £500,000 prize fund breakdown, Frankfurt venue details, and full winners archive."
@@ -493,6 +543,11 @@
     "url": "/tournament/world-grand-prix-prize-money/",
     "title": "World Grand Prix Prize Money 2026: Full £750K Breakdown",
     "description": "Complete 2026 World Grand Prix prize money breakdown: £750k total fund, £150k champion share, round-by-round payouts, and double-in double-out rules."
+  },
+  {
+    "url": "/tournament/world-matchplay-prize-money/",
+    "title": "World Matchplay Prize Money 2026: Full £1M Breakdown",
+    "description": "Complete 2026 World Matchplay prize money breakdown: £1m total fund, £225k champion share, round-by-round payouts from Blackpool"
   },
   {
     "url": "/travel/",

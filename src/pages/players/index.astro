@@ -134,6 +134,20 @@ const playersSchema = {
               <span>Kirk Bevins, John McDonald & callers</span>
             </div>
           </a>
+          <a href="/players/josh-rock/" class="hub-pill">
+            <span class="hub-icon">🎯</span>
+            <div class="hub-text">
+              <strong>Josh Rock</strong>
+              <span>"Rocky" World Cup Winner</span>
+            </div>
+          </a>
+          <a href="/players/gian-van-veen/" class="hub-pill">
+            <span class="hub-icon">🇳🇱</span>
+            <div class="hub-text">
+              <strong>Gian van Veen</strong>
+              <span>"The Giant" European Champion</span>
+            </div>
+          </a>
           <a href="/players/karel-sedlacek/" class="hub-pill">
             <span class="hub-icon">🇨🇿</span>
             <div class="hub-text">
@@ -148,7 +162,7 @@ const playersSchema = {
 
       <!-- Player Cards Grid -->
       <section class="players-grid-section">
-        <h2>Elite Contenders & Seeded Stars ({players.length} Profiles)</h2>
+        <h2>Elite Contenders & Seeded Stars ({players.length + 2} Profiles)</h2>
         <div class="grid-2">
           {players.map((player) => (
             <div class="card player-profile-card">
@@ -190,6 +204,86 @@ const playersSchema = {
               </div>
             </div>
           ))}
+
+          <!-- Josh Rock Profile Card -->
+          <div class="card player-profile-card">
+            <div class="card-head-row">
+              <span class="rank-tag">Top 10 Seed</span>
+              <span class="nation-tag">Northern Ireland</span>
+            </div>
+
+            <div class="player-identity">
+              <h3 class="player-name">
+                <a href="/players/josh-rock/">Josh Rock</a>
+              </h3>
+              <p class="player-nick">"Rocky"</p>
+            </div>
+
+            <div class="specs-table">
+              <div class="spec-row">
+                <span class="spec-title">🎵 Walk-on Song:</span>
+                <span class="spec-detail">Welcome To The Party (DJ Krissy)</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-title">🎯 Darts Equipment:</span>
+                <span class="spec-detail">Target Darts (24g)</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-title">🏆 Best Ally Pally:</span>
+                <span class="spec-detail highlight">Fourth Round (Last 16)</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-title">💰 Major Honour:</span>
+                <span class="spec-detail prize-num">World Cup Champion (2025)</span>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <a href="/players/josh-rock/" class="btn btn-secondary btn-block">
+                View Full Player Dossier &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Gian van Veen Profile Card -->
+          <div class="card player-profile-card">
+            <div class="card-head-row">
+              <span class="rank-tag">World No. 3</span>
+              <span class="nation-tag">Netherlands</span>
+            </div>
+
+            <div class="player-identity">
+              <h3 class="player-name">
+                <a href="/players/gian-van-veen/">Gian van Veen</a>
+              </h3>
+              <p class="player-nick">"The Giant"</p>
+            </div>
+
+            <div class="specs-table">
+              <div class="spec-row">
+                <span class="spec-title">🎵 Walk-on Song:</span>
+                <span class="spec-detail">Astronomia (Tony Igy &amp; Vicetone)</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-title">🎯 Darts Equipment:</span>
+                <span class="spec-detail">Red Dragon Darts (21g)</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-title">🏆 Best Ally Pally:</span>
+                <span class="spec-detail highlight">Runner-Up (2025/26)</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-title">💰 Major Honour:</span>
+                <span class="spec-detail prize-num">European Champion (2025)</span>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <a href="/players/gian-van-veen/" class="btn btn-secondary btn-block">
+                View Full Player Dossier &rarr;
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
