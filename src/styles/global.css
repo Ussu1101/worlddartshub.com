@@ -45,6 +45,9 @@ html {
   background-color: var(--color-bg-page);
   color: var(--color-text-main);
   line-height: 1.6;
+  /* Reserve the scrollbar gutter so the whole page never reflows horizontally
+     when the vertical scrollbar appears during load (desktop body-level CLS). */
+  scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
 }

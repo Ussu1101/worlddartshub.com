@@ -53,8 +53,21 @@ const baseWebsiteSchema = {
 <!doctype html>
 <html lang={lang}>
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-80LM7CCQNR"></script>
+    <!-- Google tag (gtag.js) — external library deferred to window load so its 177 KiB
+         never competes with first paint. The stub below queues every gtag() call in
+         dataLayer, so no analytics event is lost while the library is still loading. -->
+    <script is:inline>
+      (function () {
+        function loadGtag() {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-80LM7CCQNR';
+          document.head.appendChild(s);
+        }
+        if (document.readyState === 'complete') loadGtag();
+        else window.addEventListener('load', loadGtag);
+      })();
+    </script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -108,9 +121,8 @@ const baseWebsiteSchema = {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={resolvedOgImage} />
 
-    <!-- Preconnect / Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <!-- No font preconnect: the site uses a system font stack only (see global.css),
+         so the previous fonts.googleapis.com preconnect opened a useless connection. -->
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -128,37 +140,16 @@ const baseWebsiteSchema = {
       )
     )}
 
-    <!-- Suppress Netlify HUD & Floating Badge Overlays -->
+    <!-- Suppress Netlify HUD & Floating Badge Overlays.
+         The localStorage flags tell Netlify not to inject the HUD, and global.css
+         already hides any overlay with display:none !important. The previous
+         MutationObserver scanned the whole document on every DOM mutation during
+         load (a forced-reflow / main-thread cost), so it was removed. -->
     <script is:inline>
       try {
         localStorage.setItem('nl-hud:public:v1', 'hidden');
         localStorage.setItem('nl-hud:owner-private:v1', 'hidden');
       } catch (e) {}
-
-      if (typeof MutationObserver !== 'undefined') {
-        const removeNetlifyOverlays = () => {
-          const selectors = [
-            '#nl-badge-frame',
-            '#nl-hud-frame',
-            'iframe[id^="nl-"]',
-            'script[src*="/.netlify/scripts/hud"]',
-            'script[data-nf-variant]',
-            '.nl-badge',
-            '#nl-badge',
-            '#nl-card'
-          ];
-          for (const s of selectors) {
-            document.querySelectorAll(s).forEach((el) => el.remove());
-          }
-        };
-
-        const observer = new MutationObserver(removeNetlifyOverlays);
-        if (document.documentElement) {
-          observer.observe(document.documentElement, { childList: true, subtree: true });
-        }
-        document.addEventListener('DOMContentLoaded', removeNetlifyOverlays);
-        window.addEventListener('load', removeNetlifyOverlays);
-      }
     </script>
   </head>
   <body>
