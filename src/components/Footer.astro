@@ -114,6 +114,9 @@ const currentYear = new Date().getFullYear();
     <!-- Bottom Copyright -->
     <div class="footer-bottom">
       <p>&copy; {currentYear} World Darts Hub (worlddartshub.com). All rights reserved.</p>
+      <p class="footer-social">
+        Follow us on <a href="https://mastodon.social/@worlddartshub" rel="me">Mastodon</a>
+      </p>
       <p class="footer-micro">
         Event Dates: 11 December 2026 – 3 January 2027 • Venue: Alexandra Palace Great Hall, London N22 7AY.
       </p>
@@ -278,6 +281,21 @@ const currentYear = new Date().getFullYear();
   .footer-micro {
     margin-bottom: 0;
     font-size: 0.75rem;
+  }
+
+  .footer-social {
+    margin-bottom: 0;
+    font-size: 0.75rem;
+  }
+
+  .footer-social a {
+    color: #cbd5e1;
+    text-decoration: none;
+  }
+
+  .footer-social a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
   }
 
   @media (max-width: 1200px) {
