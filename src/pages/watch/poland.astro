@@ -1,0 +1,650 @@
+---
+// src/pages/watch/poland.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Watch PDC Darts in Poland: TV & Streaming Guide";
+const pageDescription = "How to watch the 2026/27 World Darts Championship in Poland: official PDCTV live streams, CET session schedule, Polish player coverage and rights.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/watch/poland/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Watch & Stream', url: '/watch/' },
+  { name: 'Poland', url: '/watch/poland/' }
+];
+
+const polandFaqSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": pageTitle,
+      "description": pageDescription,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which TV channel broadcasts the PDC World Darts Championship in Poland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Following Viaplay's market withdrawal from Poland in 2025, no domestic Polish linear television network holds confirmed broadcast rights for the 2026/27 World Darts Championship. Live tournament coverage is officially provided directly through PDCTV (video.pdc.tv)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I stream the World Darts Championship live in Poland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Polish fans can stream every match live via PDCTV (video.pdc.tv), the official direct-to-consumer streaming service of the Professional Darts Corporation. PDCTV offers event passes, monthly passes, and annual subscriptions with uninterrupted 1080p HD feeds and full session archives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does PDCTV offer Polish language commentary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDCTV provides the official English-language broadcast with stage commentary from the PDC's expert commentary team, including Dan Dawson, Wayne Mardle, Mark Webster, and John Part."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What time do World Darts Championship matches start in Poland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Poland operates on Central European Time (CET, UTC+1), which is one hour ahead of London (GMT). Alexandra Palace afternoon sessions begin at 13:30 CET (12:30 London), and evening sessions begin at 20:00 CET (19:00 London)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free live stream of the World Darts Championship in Poland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No authorized free live stream is available in Poland. Access requires an official subscription or tournament pass via PDCTV. Viewers should avoid illegal streaming websites due to aggressive malware risks, intrusive ads, and unreliable feeds during critical moments."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={polandFaqSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="country-hero">
+    <div class="container">
+      <div class="hero-badge-group">
+        <span class="badge badge-accent">TERRITORY VIEWING GUIDE</span>
+        <span class="badge">POLAND (POLSKA)</span>
+      </div>
+      <h1>How to Watch PDC World Darts in Poland</h1>
+      <p class="country-lead">
+        Official live coverage guide for Polish darts fans. Follow Krzysztof Ratajski and the world's elite live from Alexandra Palace between 11 December 2026 and 3 January 2027 in Central European Time (CET).
+      </p>
+    </div>
+  </header>
+
+  <div class="container country-layout">
+    <main class="country-main-content">
+      <VerificationBadge 
+        verifiedDate="October 2026" 
+        topic="Poland Broadcast Rights Status & Official PDCTV Streaming" 
+      />
+
+      <!-- Quick Summary Card -->
+      <section class="summary-box">
+        <h2>At A Glance: Poland Viewing Details</h2>
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="detail-label">Official Live Service</span>
+            <span class="detail-value"><strong>PDCTV (video.pdc.tv)</strong></span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Domestic Linear TV Rights</span>
+            <span class="detail-value">No Domestic Linear Rights Confirmed (Post-Viaplay Exit)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Available Broadcast Feed</span>
+            <span class="detail-value">PDCTV 1080p HD Official International Stage Feed</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Commentary Language</span>
+            <span class="detail-value">Official English Stage Commentary</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Access Model</span>
+            <span class="detail-value">Paid Direct-to-Consumer Pass (Event, Monthly, or Annual)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Free Viewing Availability</span>
+            <span class="detail-value">❌ Paid Subscription Only (No Free-to-Air License)</span>
+          </div>
+        </div>
+
+        <div class="cta-action-area">
+          <a 
+            href="https://video.pdc.tv/subscribe" 
+            target="_blank" 
+            rel="noopener noreferrer nofollow" 
+            class="btn btn-primary"
+          >
+            Go to Official PDCTV Subscription Portal &rarr;
+          </a>
+          <span class="micro-note">Redirects to official Professional Darts Corporation streaming portal.</span>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="poland-watch-top-ad" />
+
+      <!-- In-Depth Viewing Guide -->
+      <section class="editorial-guide-section">
+        <h2>Broadcast Rights Landscape in Poland: 2026/27 Status</h2>
+        <p>
+          Interest in darts across Poland has reached unprecedented heights in recent years, sparked by the sustained international success of <a href="/players/nicknames/">Krzysztof Ratajski ("The Polish Eagle")</a>, high-octane editions of the Poland Darts Masters in Warsaw, and historic World Cup of Darts runs.
+        </p>
+
+        <h3>1. The Television Rights Picture: Post-Viaplay Era</h3>
+        <p>
+          Historically, PDC tournaments in Poland were carried by Nordic streaming giant Viaplay. However, across 2024 and 2025, Viaplay Group undertook a strategic restructuring and formally executed its planned market exit from Poland. As of October 2026, the PDC has not confirmed any domestic sub-licensing agreement with Polish linear sport networks such as TVP Sport, Canal+ Sport, or Polsat Sport for the 2026/27 World Championship.
+        </p>
+        <p>
+          In accordance with strict editorial verification standards, World Darts Hub does not publish speculative channel listings. Unless an official agreement is ratified by the PDC, the verified, legitimate broadcast platform for Polish supporters is <strong>PDCTV</strong>.
+        </p>
+
+        <h3>2. PDCTV: The Official Direct-to-Consumer Solution</h3>
+        <p>
+          <strong>PDCTV</strong> (<a href="https://video.pdc.tv/subscribe" target="_blank" rel="noopener noreferrer nofollow">video.pdc.tv</a>) serves as the PDC's global subscription streaming platform for territories without exclusive local domestic television partners. For Polish subscribers, PDCTV provides:
+        </p>
+        <ul>
+          <li><strong>Complete Tournament Live Coverage:</strong> All 28 sessions and 95 matches from Alexandra Palace streamed without regional restrictions.</li>
+          <li><strong>Crystal-Clear HD Quality:</strong> Full 1080p high-definition video feeds with professional stereo audio mixing.</li>
+          <li><strong>Full Session On-Demand Archives:</strong> Immediate access to full replays, mini-matches, and highlight clips if you miss daytime sessions.</li>
+          <li><strong>Flexible Subscription Passes:</strong> Event passes, monthly rolling subscriptions, or annual packages available for purchase in EUR or local currency.</li>
+        </ul>
+
+        <h3>Supported Streaming Devices for Polish Viewers</h3>
+        <p>PDCTV streams can be accessed smoothly on your preferred screens and setups:</p>
+        <ul class="device-pill-list">
+          <li>🖥️ Web Browsers (Chrome, Firefox, Edge, Safari)</li>
+          <li>📱 PDCTV Official iOS App (iPhone &amp; iPad)</li>
+          <li>📱 PDCTV Official Android App (Phones &amp; Tablets)</li>
+          <li>📺 Smart TV Casting via Google Chromecast</li>
+          <li>📺 Apple TV Streaming via AirPlay</li>
+          <li>💻 Laptop to TV HDMI Connection</li>
+        </ul>
+      </section>
+
+      <!-- Match Start Times Section -->
+      <section class="editorial-guide-section">
+        <h2>Polish Match Start Times: Central European Time (CET)</h2>
+        <p>
+          Poland is located in the <strong>Central European Time zone (CET, UTC+1)</strong>, which is <strong>one hour ahead of London time (GMT)</strong>. Polish fans can follow the tournament comfortably during standard European afternoon and prime-time evening hours.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Session Type</th>
+                <th>London Time (GMT)</th>
+                <th>Polish Time (CET)</th>
+                <th>Session Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Afternoon Session</strong></td>
+                <td>12:30 GMT</td>
+                <td><strong>13:30 CET</strong></td>
+                <td>Four first- and second-round matches; afternoon action</td>
+              </tr>
+              <tr>
+                <td><strong>Evening Session</strong></td>
+                <td>19:00 GMT</td>
+                <td><strong>20:00 CET</strong></td>
+                <td>Marquee evening fixtures; runs from 20:00 until ~00:00 CET</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-Finals (2 Jan)</strong></td>
+                <td>19:30 GMT</td>
+                <td><strong>20:30 CET</strong></td>
+                <td>Both semi-final clashes back-to-back</td>
+              </tr>
+              <tr>
+                <td><strong>World Championship Final (3 Jan)</strong></td>
+                <td>20:00 GMT</td>
+                <td><strong>21:00 CET</strong></td>
+                <td>Best-of-13-sets world championship decider</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          For the complete day-by-day timetable, check out our master <a href="/schedule/">2026/27 PDC Schedule</a> and plan ahead with our <a href="/schedule/finals-weekend/">Finals Weekend session timetable</a>.
+        </p>
+      </section>
+
+      <!-- Polish Players Spotlight -->
+      <section class="editorial-guide-section">
+        <h2>Polish Darts Stars at Alexandra Palace</h2>
+        <p>
+          Polish darts has firmly established itself on the premier professional circuit. Key Polish contenders to follow include:
+        </p>
+        <ul>
+          <li>
+            <strong>Krzysztof Ratajski ("The Polish Eagle"):</strong> A multi-time PDC ranking title winner, former World Matchplay semi-finalist, and Poland's trailblazing top-32 stalwart. Check out Ratajski's entrance anthem on our <a href="/players/walk-on-songs/">PDC walk-on songs directory</a>.
+          </li>
+          <li>
+            <strong>Radek Szagański:</strong> Players Championship winner who made history as the second Polish player to lift a senior PDC ProTour title.
+          </li>
+          <li>
+            <strong>Sebastian Białecki:</strong> Former UK Open quarter-finalist and Challenge Tour standout showcasing the depth of emerging Polish talent.
+          </li>
+        </ul>
+        <p>
+          Track how Polish players influence global standings on our <a href="/tournament/order-of-merit/">PDC Order of Merit analysis</a> and explore their historic World Cup milestones in our <a href="/tournament/world-cup-of-darts/">PDC World Cup of Darts guide</a>.
+        </p>
+      </section>
+
+      <!-- Anti-Piracy Warning -->
+      <div class="callout warning-box">
+        <h3>⚠️ Notice: Avoid Unofficial &amp; Pirate Streams</h3>
+        <p>
+          Streaming through unofficial "darmowe transmisje" links or unauthorized IPTV restreamers poses significant risks: invasive pop-up adware, phishing vulnerabilities, and frequent stream failures during the final doubles of a deciding set. To guarantee uninterrupted high-definition viewing and maintain complete cybersecurity, rely exclusively on official <a href="https://video.pdc.tv" target="_blank" rel="noopener noreferrer">PDCTV</a> feeds.
+        </p>
+      </div>
+
+      <AdSlot slotType="in-feed" id="poland-watch-mid-ad" />
+
+      <!-- Frequently Asked Questions -->
+      <section class="country-faq-section">
+        <h2>Frequently Asked Questions: Watching Darts in Poland</h2>
+        <div class="faq-accordion">
+          <div class="faq-box">
+            <h4>Which TV channel broadcasts the PDC World Darts Championship in Poland?</h4>
+            <p>Following Viaplay's market withdrawal from Poland in 2025, no domestic Polish linear television network holds confirmed broadcast rights for the 2026/27 World Darts Championship. Live tournament coverage is officially provided directly through PDCTV (video.pdc.tv).</p>
+          </div>
+          <div class="faq-box">
+            <h4>How can I stream the World Darts Championship live in Poland?</h4>
+            <p>Polish fans can stream every match live via PDCTV (video.pdc.tv), the official direct-to-consumer streaming service of the Professional Darts Corporation. PDCTV offers event passes, monthly passes, and annual subscriptions with uninterrupted 1080p HD feeds and full session archives.</p>
+          </div>
+          <div class="faq-box">
+            <h4>Does PDCTV offer Polish language commentary?</h4>
+            <p>PDCTV provides the official English-language broadcast with stage commentary from the PDC's expert commentary team, including Dan Dawson, Wayne Mardle, Mark Webster, and John Part.</p>
+          </div>
+          <div class="faq-box">
+            <h4>What time do World Darts Championship matches start in Poland?</h4>
+            <p>Poland operates on Central European Time (CET, UTC+1), which is one hour ahead of London (GMT). Alexandra Palace afternoon sessions begin at 13:30 CET (12:30 London), and evening sessions begin at 20:00 CET (19:00 London).</p>
+          </div>
+          <div class="faq-box">
+            <h4>Is there a free live stream of the World Darts Championship in Poland?</h4>
+            <p>No authorized free live stream is available in Poland. Access requires an official subscription or tournament pass via PDCTV. Viewers should avoid illegal streaming websites due to aggressive malware risks, intrusive ads, and unreliable feeds during critical moments.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="country-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Nearby European Guides</h3>
+        <ul class="widget-list">
+          <li><a href="/watch/czechia/">🇨🇿 Czechia (Nova Sport &amp; Voyo)</a></li>
+          <li><a href="/watch/germany/">🇩🇪 Germany (DAZN &amp; Sport1)</a></li>
+          <li><a href="/watch/austria-switzerland/">🇦🇹/🇨🇭 Austria &amp; Switzerland</a></li>
+          <li><a href="/watch/belgium/">🇧🇪 Belgium (VTM 2 &amp; VTM GO)</a></li>
+          <li><a href="/watch/netherlands/">🇳🇱 Netherlands (Viaplay)</a></li>
+          <li><a href="/watch/nordics/">🇸🇪/🇳🇴/🇩🇰 Nordic Region</a></li>
+          <li><a href="/watch/uk/">🇬🇧 United Kingdom (Sky Sports)</a></li>
+          <li><a href="/watch/international/">🌍 Rest of World (PDCTV)</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="poland-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tournament Quick Links</h3>
+        <ul class="widget-list">
+          <li><a href="/live/">🎯 Match Center &amp; Live Scores</a></li>
+          <li><a href="/schedule/">🗓️ Complete Match Schedule</a></li>
+          <li><a href="/tournament/prize-money/">💰 £5M Prize Money Breakdown</a></li>
+          <li><a href="/tournament/order-of-merit/">📊 PDC Order of Merit</a></li>
+          <li><a href="/tournament/world-cup-of-darts/">🏆 World Cup of Darts Guide</a></li>
+          <li><a href="/venue/">🏛️ Alexandra Palace Spectator Guide</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .country-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #3b82f6;
+  }
+
+  .hero-badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .country-hero h1 {
+    font-size: 2.35rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .country-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .country-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .summary-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .summary-box h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.9rem;
+  }
+
+  .detail-label {
+    color: #64748b;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .detail-value {
+    color: #0f172a;
+  }
+
+  .cta-action-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.25rem;
+  }
+
+  .micro-note {
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+
+  .editorial-guide-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .editorial-guide-section h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+
+  .editorial-guide-section h3 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .editorial-guide-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+  }
+
+  .editorial-guide-section ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+  }
+
+  .editorial-guide-section a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .editorial-guide-section a:hover {
+    color: #0369a1;
+  }
+
+  .device-pill-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .device-pill-list li {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    color: #334155;
+    margin: 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    text-align: left;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+
+  .warning-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 2rem 0;
+  }
+
+  .warning-box h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #92400e;
+  }
+
+  .warning-box p {
+    color: #78350f;
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .country-faq-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-top: 2rem;
+  }
+
+  .country-faq-section h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+    color: #0f172a;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.6;
+  }
+
+  .country-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .widget-list a:hover {
+    color: #0284c7;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .country-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .details-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,670 @@
+---
+// src/pages/watch/czechia.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Watch PDC Darts in Czechia: TV & Streaming Guide";
+const pageDescription = "How to watch the 2026/27 World Darts Championship in Czechia: Nova Sport TV channels, Voyo live streaming, CET session schedule and PDCTV access.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/watch/czechia/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Watch & Stream', url: '/watch/' },
+  { name: 'Czechia', url: '/watch/czechia/' }
+];
+
+const czechiaFaqSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": pageTitle,
+      "description": pageDescription,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which TV channel broadcasts the PDC World Darts Championship in Czechia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the Czech Republic, live television rights for the PDC World Darts Championship are held by Nova Sport, operated by CME/TV Nova. Matches are broadcast primarily on Nova Sport 2, with selected marquee sessions also televised on Nova Sport 1."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I stream World Darts live online in the Czech Republic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Czech darts supporters can stream every session live and on demand via Voyo (voyo.nova.cz), the official digital subscription streaming service of TV Nova. Voyo provides full HD live coverage with Czech commentary, compatible with Smart TVs, web browsers, iOS, and Android devices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I watch PDC darts in Czechia on PDCTV?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Viewers in Czechia can access the official international English-language broadcast directly through PDCTV (video.pdc.tv). A tournament pass or annual subscription provides uninterrupted stage feeds with the PDC's UK commentary team."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What time do World Darts matches start in Czechia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Czechia observes Central European Time (CET, UTC+1), which is exactly one hour ahead of London time (GMT). Alexandra Palace afternoon sessions start at 13:30 CET (12:30 London), while evening sessions begin at 20:00 CET (19:00 London)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who provides Czech commentary for darts on Nova Sport?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nova Sport features a veteran Czech commentary lineup led by Pavel Korda, Petr Hornych, and specialist Czech darts analysts, providing comprehensive frame-by-frame commentary in Czech throughout the tournament."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free live stream of the World Darts Championship in Czechia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No legitimate free live stream is available in the Czech Republic. Nova Sport channels and Voyo streaming require an active pay-TV or digital subscription. Viewers should avoid unauthorized pirate streaming websites due to malware, phishing risks, and frequent connection drops."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={czechiaFaqSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="country-hero">
+    <div class="container">
+      <div class="hero-badge-group">
+        <span class="badge badge-accent">TERRITORY VIEWING GUIDE</span>
+        <span class="badge">CZECHIA (ČESKÁ REPUBLIKA)</span>
+      </div>
+      <h1>How to Watch PDC World Darts in Czechia</h1>
+      <p class="country-lead">
+        Official broadcast partners: <strong>Nova Sport 2 &amp; Voyo</strong>. Catch every leg live from Alexandra Palace between 11 December 2026 and 3 January 2027 in Central European Time (CET).
+      </p>
+    </div>
+  </header>
+
+  <div class="container country-layout">
+    <main class="country-main-content">
+      <VerificationBadge 
+        verifiedDate="October 2026" 
+        topic="Czech Republic Broadcast Rights (Nova Sport & Voyo)" 
+      />
+
+      <!-- Quick Summary Card -->
+      <section class="summary-box">
+        <h2>At A Glance: Czechia Viewing Details</h2>
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="detail-label">Official TV Rights Holder</span>
+            <span class="detail-value"><strong>Nova Sport (Nova Sport 2 &amp; 1)</strong></span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Parent Media Network</span>
+            <span class="detail-value">Central European Media Enterprises (CME) / TV Nova</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Linear Television Channels</span>
+            <span class="detail-value">Nova Sport 2 (Primary Darts Channel), Nova Sport 1</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Official Live Streaming App</span>
+            <span class="detail-value">Voyo (voyo.nova.cz) &amp; PDCTV (video.pdc.tv)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Access Model</span>
+            <span class="detail-value">Paid Subscription (Pay-TV Package or Voyo OTT Pass)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Free Viewing Availability</span>
+            <span class="detail-value">❌ Paid Subscription Only (No Free-to-Air License)</span>
+          </div>
+        </div>
+
+        <div class="cta-action-area">
+          <a 
+            href="https://voyo.nova.cz/sport" 
+            target="_blank" 
+            rel="noopener noreferrer nofollow" 
+            class="btn btn-primary"
+          >
+            Go to Official Voyo Darts Portal &rarr;
+          </a>
+          <span class="micro-note">Redirects to official TV Nova streaming platform.</span>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="czechia-watch-top-ad" />
+
+      <!-- In-Depth Viewing Guide -->
+      <section class="editorial-guide-section">
+        <h2>Complete Viewing Guide for Czech Darts Supporters</h2>
+        <p>
+          The popularity of professional darts has surged across the Czech Republic over the past decade, fueled by landmark performances from Czech Tour Card holders and packed crowds at the European Tour's Czech Darts Open in Prague. For the 2026/27 PDC World Darts Championship at London's Alexandra Palace, Czech fans have comprehensive live access across television and digital streaming platforms.
+        </p>
+
+        <h3>1. Linear Television: Nova Sport 2</h3>
+        <p>
+          <strong>Nova Sport 2</strong> remains the dedicated televised home of professional darts in the Czech Republic and Slovakia. The channel carries live, wall-to-wall coverage of all 28 championship sessions, featuring authentic Czech commentary from seasoned commentators Pavel Korda and Petr Hornych alongside guest Czech professionals.
+        </p>
+        <p>
+          Nova Sport 2 is carried as a standard premium sports channel across all leading Czech television providers:
+        </p>
+        <ul>
+          <li><strong>Skylink:</strong> Available on satellite and internet TV within the Multi, Kombi+, and CANAL+ packages.</li>
+          <li><strong>O2 TV:</strong> Included in O2 TV Sport Plus and O2 TV Zlatá tiers with full catch-up functionality.</li>
+          <li><strong>T-Mobile Magenta TV:</strong> Available in the M, L, and XL television tiers.</li>
+          <li><strong>Vodafone TV:</strong> Included in the Vodafone Sport package.</li>
+        </ul>
+
+        <h3>2. Online Live Streaming: Voyo</h3>
+        <p>
+          For supporters without a traditional cable or satellite TV box, <strong>Voyo</strong> (<a href="https://voyo.nova.cz/sport" target="_blank" rel="noopener noreferrer nofollow">voyo.nova.cz</a>) provides complete, flexible live streaming of Nova Sport's darts broadcasts. Subscriptions operate without long-term binding contracts, allowing fans to access the entire December-to-January championship on a monthly basis.
+        </p>
+        <p>
+          Voyo supports 1080p Full HD live video, restart-from-beginning functionality, and full on-demand replays of finished sessions.
+        </p>
+
+        <h3>3. English Stage Commentary: PDCTV</h3>
+        <p>
+          Czech supporters who prefer original English stage commentary from Dan Dawson, Wayne Mardle, Mark Webster, and John Part can subscribe to <strong>PDCTV</strong> at <a href="https://video.pdc.tv" target="_blank" rel="noopener noreferrer">video.pdc.tv</a>. PDCTV offers live high-definition streams, multi-camera board options, and access to the official PDC archive.
+        </p>
+
+        <h3>Supported Streaming Devices in Czechia</h3>
+        <p>You can stream Nova Sport 2 coverage via Voyo or PDCTV across the following supported devices:</p>
+        <ul class="device-pill-list">
+          <li>📱 Voyo Android &amp; iOS Apps</li>
+          <li>🖥️ Web Browsers (Chrome, Firefox, Safari, Edge)</li>
+          <li>📺 Smart TVs (Samsung Tizen, LG webOS, Sony Android TV, Philips)</li>
+          <li>📡 Google Chromecast &amp; Apple TV (AirPlay)</li>
+          <li>🎮 PlayStation &amp; Xbox Consoles (via Voyo App)</li>
+          <li>📱 PDCTV International Mobile Apps</li>
+        </ul>
+      </section>
+
+      <!-- Session Start Times Table -->
+      <section class="editorial-guide-section">
+        <h2>Czech Match Start Times: Central European Time (CET)</h2>
+        <p>
+          Because the Czech Republic operates on <strong>Central European Time (CET, UTC+1)</strong>, all London match times (GMT) are exactly <strong>one hour later</strong> in Prague, Brno, and across Czechia.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Session</th>
+                <th>London Time (GMT)</th>
+                <th>Czech Time (CET)</th>
+                <th>Viewing Context in Czechia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Afternoon Session</strong></td>
+                <td>12:30 GMT</td>
+                <td><strong>13:30 CET</strong></td>
+                <td>Prime daytime darts; ideal for weekend and holiday viewing</td>
+              </tr>
+              <tr>
+                <td><strong>Evening Session</strong></td>
+                <td>19:00 GMT</td>
+                <td><strong>20:00 CET</strong></td>
+                <td>Prime-time evening television; matches conclude around 00:00 CET</td>
+              </tr>
+              <tr>
+                <td><strong>World Championship Final</strong></td>
+                <td>20:00 GMT</td>
+                <td><strong>21:00 CET</strong></td>
+                <td>Sunday 3 January 2027 marquee broadcast</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Consult the complete session breakdown and fixture dates on our <a href="/schedule/">2026/27 World Championship Schedule</a> and check <a href="/schedule/finals-weekend/">Finals Weekend start times</a>.
+        </p>
+      </section>
+
+      <!-- Czech Players Spotlight -->
+      <section class="editorial-guide-section">
+        <h2>Czech Darts on the World Stage</h2>
+        <p>
+          Czech darts fans have dedicated national stars to rally behind on the professional circuit. Leading the charge is Czech darting pioneer <a href="/players/karel-sedlacek/"><strong>Karel Sedláček</strong> ("Evil Charlie")</a>, the first Czech player to earn a PDC Tour Card and a regular competitor across the European Tour and Players Championship events.
+        </p>
+        <p>
+          Alongside Sedláček, young talent Adam Gawlas has demonstrated world-class pedigree by reaching the final of the PDC World Youth Championship and the semi-finals of the UK Open. Discover how Czech players stack up on the international stage by inspecting the <a href="/tournament/order-of-merit/">official PDC Order of Merit</a>.
+        </p>
+      </section>
+
+      <!-- Anti-Piracy Warning -->
+      <div class="callout warning-box">
+        <h3>⚠️ Notice: Avoid Unauthorized Czech Streams</h3>
+        <p>
+          Searching online for free darts streams or illicit IPTV links exposes users to aggressive malware popups, credential theft, and sudden stream blackouts during critical match darts. Support the sport and enjoy flawless HD playback by using verified legal rightsholders: <strong>Nova Sport 2</strong>, <strong>Voyo</strong>, or <strong>PDCTV</strong>.
+        </p>
+      </div>
+
+      <AdSlot slotType="in-feed" id="czechia-watch-mid-ad" />
+
+      <!-- Frequently Asked Questions -->
+      <section class="country-faq-section">
+        <h2>Frequently Asked Questions: Watching Darts in Czechia</h2>
+        <div class="faq-accordion">
+          <div class="faq-box">
+            <h4>Which TV channel broadcasts the PDC World Darts Championship in Czechia?</h4>
+            <p>In the Czech Republic, live television rights for the PDC World Darts Championship are held by Nova Sport, operated by CME/TV Nova. Matches are broadcast primarily on Nova Sport 2, with selected marquee sessions also televised on Nova Sport 1.</p>
+          </div>
+          <div class="faq-box">
+            <h4>How can I stream World Darts live online in the Czech Republic?</h4>
+            <p>Czech darts supporters can stream every session live and on demand via Voyo (voyo.nova.cz), the official digital subscription streaming service of TV Nova. Voyo provides full HD live coverage with Czech commentary, compatible with Smart TVs, web browsers, iOS, and Android devices.</p>
+          </div>
+          <div class="faq-box">
+            <h4>Can I watch PDC darts in Czechia on PDCTV?</h4>
+            <p>Yes. Viewers in Czechia can access the official international English-language broadcast directly through PDCTV (video.pdc.tv). A tournament pass or annual subscription provides uninterrupted stage feeds with the PDC's UK commentary team.</p>
+          </div>
+          <div class="faq-box">
+            <h4>What time do World Darts matches start in Czechia?</h4>
+            <p>Czechia observes Central European Time (CET, UTC+1), which is exactly one hour ahead of London time (GMT). Alexandra Palace afternoon sessions start at 13:30 CET (12:30 London), while evening sessions begin at 20:00 CET (19:00 London).</p>
+          </div>
+          <div class="faq-box">
+            <h4>Who provides Czech commentary for darts on Nova Sport?</h4>
+            <p>Nova Sport features a veteran Czech commentary lineup led by Pavel Korda, Petr Hornych, and specialist Czech darts analysts, providing comprehensive frame-by-frame commentary in Czech throughout the tournament.</p>
+          </div>
+          <div class="faq-box">
+            <h4>Is there a free live stream of the World Darts Championship in Czechia?</h4>
+            <p>No legitimate free live stream is available in the Czech Republic. Nova Sport channels and Voyo streaming require an active pay-TV or digital subscription. Viewers should avoid unauthorized pirate streaming websites due to malware, phishing risks, and frequent connection drops.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="country-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Player Dossiers</h3>
+        <p class="sidebar-micro">
+          Follow the Czech Republic's premier professional darts player:
+        </p>
+        <ul class="widget-list">
+          <li><a href="/players/karel-sedlacek/">🎯 Karel Sedláček ("Evil Charlie") Dossier &rarr;</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Other Country Guides</h3>
+        <ul class="widget-list">
+          <li><a href="/watch/germany/">🇩🇪 Germany (DAZN &amp; Sport1)</a></li>
+          <li><a href="/watch/austria-switzerland/">🇦🇹/🇨🇭 Austria &amp; Switzerland</a></li>
+          <li><a href="/watch/poland/">🇵🇱 Poland (PDCTV)</a></li>
+          <li><a href="/watch/belgium/">🇧🇪 Belgium (VTM 2 &amp; VTM GO)</a></li>
+          <li><a href="/watch/netherlands/">🇳🇱 Netherlands (Viaplay)</a></li>
+          <li><a href="/watch/uk/">🇬🇧 United Kingdom (Sky Sports)</a></li>
+          <li><a href="/watch/nordics/">🇸🇪/🇳🇴/🇩🇰 Nordic Region</a></li>
+          <li><a href="/watch/international/">🌍 Rest of World (PDCTV)</a></li>
+          <li><a href="/watch/free-streams/">🆓 Legal Free Streams Guide</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="czechia-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tournament Quick Links</h3>
+        <ul class="widget-list">
+          <li><a href="/live/">🎯 Match Center &amp; Live Scores</a></li>
+          <li><a href="/schedule/">🗓️ Complete Match Schedule</a></li>
+          <li><a href="/tournament/prize-money/">💰 £5M Prize Money Breakdown</a></li>
+          <li><a href="/tournament/order-of-merit/">📊 PDC Order of Merit</a></li>
+          <li><a href="/venue/">🏛️ Alexandra Palace Spectator Guide</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .country-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #3b82f6;
+  }
+
+  .hero-badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .country-hero h1 {
+    font-size: 2.35rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .country-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .country-layout {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .summary-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .summary-box h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.9rem;
+  }
+
+  .detail-label {
+    color: #64748b;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .detail-value {
+    color: #0f172a;
+  }
+
+  .cta-action-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.25rem;
+  }
+
+  .micro-note {
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+
+  .editorial-guide-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .editorial-guide-section h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+
+  .editorial-guide-section h3 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .editorial-guide-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+  }
+
+  .editorial-guide-section ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+  }
+
+  .editorial-guide-section a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .editorial-guide-section a:hover {
+    color: #0369a1;
+  }
+
+  .device-pill-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .device-pill-list li {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    color: #334155;
+    margin: 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    text-align: left;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+
+  .warning-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 2rem 0;
+  }
+
+  .warning-box h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #92400e;
+  }
+
+  .warning-box p {
+    color: #78350f;
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .country-faq-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-top: 2rem;
+  }
+
+  .country-faq-section h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+    color: #0f172a;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+  }
+
+  .faq-box p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.6;
+  }
+
+  .country-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .sidebar-micro {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .widget-list a:hover {
+    color: #0284c7;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .country-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .details-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
