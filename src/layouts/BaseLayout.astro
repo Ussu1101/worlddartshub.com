@@ -191,5 +191,8 @@ const baseWebsiteSchema = {
         });
       })();
     </script>
+    <!-- Netlify HUD guard: these pre-existing marker elements make hud.js return early
+         (its dedup check) instead of injecting the badge iframe. Inert: display:none, aria-hidden. -->
+    <div id="nl-badge-frame" style="display:none!important" aria-hidden="true"></div><div id="nl-hud-frame" style="display:none!important" aria-hidden="true"></div>
   </body>
 </html>
