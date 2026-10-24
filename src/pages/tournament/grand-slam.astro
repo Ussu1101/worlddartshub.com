@@ -1,0 +1,543 @@
+---
+// src/pages/tournament/grand-slam.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import AdSlot from '../../components/AdSlot.astro';
+
+const pageTitle = "Grand Slam of Darts 2026: Dates, Players & How to Watch";
+const pageDescription = "Grand Slam of Darts 2026, 14–22 Nov at WV Active Aldersley: 48-player format, 16 groups, qualified players, session times, prize money and how to watch.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/grand-slam/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournaments', url: '/tournament/pdc-majors-explained/' },
+  { name: 'Grand Slam of Darts', url: '/tournament/grand-slam/' }
+];
+
+const faqItems = [
+  {
+    q: "When is the Grand Slam of Darts 2026?",
+    a: "The 2026 Grand Slam of Darts takes place from Saturday 14 November to Sunday 22 November 2026 at WV Active Aldersley in Wolverhampton, England."
+  },
+  {
+    q: "What is the new Grand Slam format for 2026?",
+    a: "The 2026 tournament features an expanded 48-player field divided into 16 groups of three players. Matches in the group phase are best-of-9 legs, and only the group winner advances to the Last 16 knockout stage."
+  },
+  {
+    q: "Who is the defending champion?",
+    a: "Luke Littler is the two-time defending champion, having won consecutive Grand Slam of Darts titles in 2024 and 2025, defeating Luke Humphries 16–11 in the 2025 final."
+  },
+  {
+    q: "How do players qualify for the Grand Slam?",
+    a: "Players qualify through four main avenues: winning or reaching finals of televised PDC majors, European Tour and Players Championship winners, secondary tour exemptions, and the final eight spots decided at the Tour Card Holder Qualifier on 6 November 2026."
+  },
+  {
+    q: "How much is the Grand Slam prize money?",
+    a: "The total prize fund is £1,000,000, with the champion collecting £200,000 and every qualified player guaranteed a minimum payout of £5,000."
+  },
+  {
+    q: "How can I watch the Grand Slam live?",
+    a: "In the UK, live coverage is broadcast exclusively on Sky Sports and streamed via NOW. International viewers can watch via PDCTV, or through regional rightsholders including DAZN and Viaplay."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-24T00:00:00+00:00",
+      "dateModified": "2026-10-24T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC RANKED MAJOR</span>
+        <span class="badge">WOLVERHAMPTON 2026</span>
+        <span class="badge badge-outline">NEW 48-PLAYER FORMAT</span>
+      </div>
+      <h1>Grand Slam of Darts 2026: Dates, Players &amp; How to Watch</h1>
+      <p class="lead-text">
+        The 2026 Grand Slam of Darts returns to Wolverhampton's WV Active Aldersley from 14 to 22 November 2026, marking the 20th staging of the iconic cross-code major. Defending champion Luke Littler aims for a historic third consecutive crown amid the most radical format transformation in the tournament's history.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="October 2026" topic="PDC Grand Slam of Darts Tournament Specifications & Regulations" />
+
+      <!-- Section 1: Intro -->
+      <section class="content-card">
+        <h2>Tournament Overview &amp; The 20th Anniversary</h2>
+        <p>
+          Staged from <strong>Saturday 14 November to Sunday 22 November 2026</strong> at the WV Active Aldersley venue in Wolverhampton, the Grand Slam of Darts stands as one of the crown jewels of the autumn darts calendar. Since its inauguration in 2007, the tournament has captured the imagination of darting enthusiasts by pitting major winners and continental qualifiers together in a unique group-to-knockout structure.
+        </p>
+        <p>
+          The 2026 edition introduces the biggest structural overhaul in the event's 20-year history. A significantly expanded field, higher stakes in every group fixture, and a record £1,000,000 prize purse ensure that Wolverhampton will serve as the pivotal battleground ahead of the World Darts Championship at Alexandra Palace.
+        </p>
+      </section>
+
+      <!-- Section 2: The New 48-Player Format Explained -->
+      <section class="content-card">
+        <h2>The New 48-Player Format, Explained</h2>
+        <p>
+          For nineteen editions, the Grand Slam adhered to a 32-player format with eight groups of four, where the top two players from each pool advanced. In 2026, the PDC officially expanded the field to <strong>48 players</strong>, reorganised into <strong>16 groups of three</strong> (Groups A to P).
+        </p>
+        <p>
+          Under the new regulations, group-stage matches remain the traditional <strong>best of 9 legs</strong> (first to 5). Crucially, <strong>only the group winner advances to the Last 16</strong>. The second-place safety net has been eliminated completely.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Metric</th>
+                <th>Traditional Format (2007–2025)</th>
+                <th>New 2026 Format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Total Field Size</strong></td>
+                <td>32 Players</td>
+                <td><strong>48 Players</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Group Stage Pools</strong></td>
+                <td>8 Groups of 4 Players</td>
+                <td><strong>16 Groups of 3 Players</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Knockout Qualifiers</strong></td>
+                <td>Top 2 from each group (16 players)</td>
+                <td><strong>Group Winner Only (16 players)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Matches Per Player in Groups</strong></td>
+                <td>3 Round-Robin Matches</td>
+                <td><strong>2 Round-Robin Matches</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Knockout Bracket Stage</strong></td>
+                <td>Last 16 (Knockout)</td>
+                <td><strong>Last 16 (Knockout)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Seeding &amp; Draw Mechanics</h3>
+        <p>
+          The top 16 players on the two-year rolling <a href="/tournament/order-of-merit/">PDC Order of Merit</a> are seeded into positions 1 through 16, with one seed heading each of the 16 groups (Group A through Group P). The remaining 32 competitors are drawn into groups from Pot 2 (ranked 17–32) and Pot 3 (ranked 33–48 and qualifiers).
+        </p>
+        <p>
+          The tactical reality is unforgiving: with no runner-up qualification slot, a seeded heavyweight plays exactly two short best-of-9 matches. A single slow start or deciding-leg defeat can eliminate a title contender before the knockout phase even begins.
+        </p>
+      </section>
+
+      <!-- Section 3: How Players Qualify -->
+      <section class="content-card">
+        <h2>How Players Qualify for the Grand Slam</h2>
+        <p>
+          Qualification for the 48-player field follows four clearly defined hierarchical criteria established in the PDC Rulebook:
+        </p>
+        <ol>
+          <li>
+            <strong>PDC Televised Major Winners &amp; Finalists:</strong> Champions and runners-up from the World Championship, World Matchplay, World Grand Prix, UK Open, European Championship, Premier League, Players Championship Finals, Masters, and World Cup of Darts champions.
+          </li>
+          <li>
+            <strong>PDC European Tour &amp; ProTour Winners:</strong> Winners of 2026 European Tour events and Players Championship tournaments, ranked in Order of Merit priority to fill available automatic berths.
+          </li>
+          <li>
+            <strong>Secondary Tour &amp; Invitational Exemptions:</strong> Order of Merit leaders from the Challenge Tour, Development Tour, PDC Women's Series, and the World Youth Championship finalists.
+          </li>
+          <li>
+            <strong>Tour Card Holder Qualifier:</strong> The final eight places in the 48-man field are decided in a dedicated sudden-death qualifying tournament for all remaining Tour Card holders.
+          </li>
+        </ol>
+
+        <div class="callout warning-box">
+          <h3>⚠️ Qualification Status Notice</h3>
+          <p>
+            Entries for the 2026 Tour Card Holder Qualifier close on <strong>Friday 6 November 2026</strong>. The complete 48-player field will be finalized on the evening of 6 November, with the official group-stage draw scheduled immediately following the conclusion of the qualifier.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4: Confirmed Field -->
+      <section class="content-card">
+        <h2>Confirmed Field &amp; Seeded Contenders</h2>
+        <p>
+          The 2026 field features a stellar roster of world champions and major titleholders who have locked in their automatic qualification for Wolverhampton:
+        </p>
+        <ul>
+          <li><strong>Seeded Heavyweights:</strong> Luke Littler, Luke Humphries, Michael van Gerwen, Stephen Bunting, Damon Heta, Gian van Veen, Gerwyn Price, Michael Smith, Rob Cross, Jonny Clayton, Chris Dobey, Nathan Aspinall, Gary Anderson, Ross Smith, Ryan Searle, James Wade.</li>
+          <li><strong>ProTour &amp; Major Qualifiers:</strong> Martin Schindler, Josh Rock, Raymond van Barneveld, Cameron Menzies, Jermaine Wattimena, Krzysztof Ratajski, Dirk van Duijvenbode, Mike De Decker, Danny Noppert, Wessel Nijman.</li>
+          <li><strong>Tour Exemptions:</strong> Representatives from the PDC Women's Series and World Youth Championship.</li>
+        </ul>
+        <p class="field-note">
+          <em>The field completes after the Tour Card Holder Qualifier on 6 November — this list is updated as the PDC confirms places.</em>
+        </p>
+      </section>
+
+      <!-- Section 5: Session Schedule -->
+      <section class="content-card">
+        <h2>2026 Session Schedule (14–22 November)</h2>
+        <p>
+          The Grand Slam spans nine days of competition. The opening weekend and finals day feature two sessions daily, while midweek sessions take place exclusively in the evening:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Session &amp; Time (GMT)</th>
+                <th>Tournament Phase</th>
+                <th>Matches</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sat 14 Nov</strong></td>
+                <td>Afternoon (13:00) &amp; Evening (19:00)</td>
+                <td>Group Matches 1 (Groups A–P)</td>
+                <td>16 Matches (8 per session)</td>
+              </tr>
+              <tr>
+                <td><strong>Sun 15 Nov</strong></td>
+                <td>Afternoon (13:00) &amp; Evening (19:00)</td>
+                <td>Group Matches 2 (Groups A–P)</td>
+                <td>16 Matches (8 per session)</td>
+              </tr>
+              <tr>
+                <td><strong>Mon 16 Nov</strong></td>
+                <td>Evening (19:00)</td>
+                <td>Deciding Group Matches (Groups A–H)</td>
+                <td>8 Matches</td>
+              </tr>
+              <tr>
+                <td><strong>Tue 17 Nov</strong></td>
+                <td>Evening (19:00)</td>
+                <td>Deciding Group Matches (Groups I–P)</td>
+                <td>8 Matches</td>
+              </tr>
+              <tr>
+                <td><strong>Wed 18 Nov</strong></td>
+                <td>Evening (19:00)</td>
+                <td>Second Round (Last 16)</td>
+                <td>4 Matches</td>
+              </tr>
+              <tr>
+                <td><strong>Thu 19 Nov</strong></td>
+                <td>Evening (19:00)</td>
+                <td>Second Round (Last 16)</td>
+                <td>4 Matches</td>
+              </tr>
+              <tr>
+                <td><strong>Fri 20 Nov</strong></td>
+                <td>Evening (19:00)</td>
+                <td>Quarter-Finals (Top Half)</td>
+                <td>2 Matches</td>
+              </tr>
+              <tr>
+                <td><strong>Sat 21 Nov</strong></td>
+                <td>Evening (19:00)</td>
+                <td>Quarter-Finals (Bottom Half)</td>
+                <td>2 Matches</td>
+              </tr>
+              <tr>
+                <td><strong>Sun 22 Nov</strong></td>
+                <td>Afternoon (13:00)</td>
+                <td>Semi-Finals</td>
+                <td>2 Matches</td>
+              </tr>
+              <tr>
+                <td><strong>Sun 22 Nov</strong></td>
+                <td>Evening (19:00)</td>
+                <td>Grand Slam Final</td>
+                <td>1 Match</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <em>Note on knockout match length: Knockout-round leg formats are to be officially published by the PDC prior to event week. Track all major tournament timings on our master <a href="/schedule/">PDC Darts Schedule</a>.</em>
+        </p>
+      </section>
+
+      <!-- Section 6: Defending Champion -->
+      <section class="content-card">
+        <h2>Defending Champion: Luke Littler's Pursuit of History</h2>
+        <p>
+          Teenage phenom <a href="/players/luke-littler/">Luke Littler</a> enters Wolverhampton as the two-time defending champion, having lifted the Eric Bristow Trophy in both 2024 and 2025. In the 2025 final, Littler produced a masterful display of power scoring to defeat Luke Humphries 16–11.
+        </p>
+        <p>
+          Littler arrives in Wolverhampton seeking a rare three-peat. In the 20-year history of the Grand Slam, only Phil Taylor has won three consecutive titles (Taylor won the first three editions from 2007 to 2009, eventually claiming a record six titles). Securing a third title would elevate Littler into historic company at just 19 years of age.
+        </p>
+      </section>
+
+      <!-- Section 7: Prize Money Summary -->
+      <section class="content-card">
+        <h2>Prize Money Breakdown Summary</h2>
+        <p>
+          The 2026 Grand Slam of Darts features a record <strong>£1,000,000</strong> prize purse. The champion collects a life-changing <strong>£200,000</strong> winner's cheque, while every player participating in the 48-man group stage is guaranteed at least <strong>£5,000</strong>.
+        </p>
+        <p>
+          All earnings count directly toward the two-year rolling PDC Order of Merit. For the complete round-by-round payout table, group-stage finishing earnings, and comparison to other majors, inspect our dedicated <a href="/tournament/grand-slam-prize-money/">Grand Slam Prize Money Breakdown</a>.
+        </p>
+      </section>
+
+      <!-- Section 8: How to Watch Summary -->
+      <section class="content-card">
+        <h2>How to Watch Live on Television &amp; Online</h2>
+        <p>
+          Live coverage of the 2026 Grand Slam of Darts is televised domestically in the United Kingdom on <strong>Sky Sports</strong> and streamed contract-free on <strong>NOW</strong>.
+        </p>
+        <p>
+          International supporters outside the UK can stream every session live via the official <strong>PDCTV</strong> platform, with regional linear coverage carried by <strong>DAZN</strong> across Germany, Austria, and Switzerland, and <strong>Viaplay</strong> in the Netherlands and Nordics.
+        </p>
+        <p>
+          For full channel numbers, international streaming providers, and session starting times across timezones, read our complete guide on <a href="/tournament/grand-slam-how-to-watch/">How to Watch the Grand Slam of Darts 2026</a>.
+        </p>
+      </section>
+
+      <!-- Section 9: Reserved Monetization Slot -->
+      <div class="monetization-slot-container" id="grand-slam-hub-cta-slot">
+        <!-- Monetization Slot: Grand Slam Hub (Reserved - Ships Empty) -->
+      </div>
+
+      <AdSlot slotType="leaderboard" id="grand-slam-hub-bottom-ad" />
+
+      <!-- Section 10: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions: Grand Slam of Darts 2026</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .badge-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin: 0;
+  }
+  .content-layout {
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+  }
+  .content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .content-card p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .content-card ol, .content-card ul {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+  }
+  .content-card li {
+    margin-bottom: 0.5rem;
+  }
+  .content-card a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .content-card a:hover {
+    color: #0369a1;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .warning-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .warning-box h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #92400e;
+  }
+  .warning-box p {
+    color: #78350f;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .field-note {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+  .monetization-slot-container {
+    min-height: 0;
+  }
+  .faq-section .faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem 0;
+  }
+  .faq-section .faq-item:last-child {
+    border-bottom: none;
+  }
+  .faq-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+  }
+  .faq-section p {
+    margin: 0;
+    color: #475569;
+  }
+</style>
