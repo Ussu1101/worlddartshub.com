@@ -126,14 +126,14 @@ const oomSchema = {
 
       <AdSlot slotType="banner" id="oom-mid-ad" />
 
-      <!-- Provisional Top 32 Rankings Table -->
+      <!-- Provisional Top 16 Rankings Table -->
       <section class="content-section">
-        <h2>Provisional Top 32 Order of Merit Snapshot</h2>
+        <h2>Provisional Top 16 Seeds &amp; Ranking Snapshot</h2>
         
         <div class="callout notice-callout">
-          <h4>⚠️ Provisional Ranking Snapshot (Not Confirmed 2026/27 Seeds)</h4>
+          <h4>⚠️ Provisional Ranking Snapshot (Top 16 Spotlight)</h4>
           <p>
-            The table below is an active <strong>Provisional Snapshot as of October 2026</strong>. It is <strong>NOT</strong> the confirmed final field or seed list for the 2026/27 World Darts Championship.
+            The table below highlights the <strong>Top 16 seeds as of October 2026</strong>. Final seedings (Positions 1 through 32) will be locked only after the qualifying cutoff in late November 2026.
           </p>
           <div class="notice-meta-grid">
             <div><strong>Snapshot Date:</strong> October 2026</div>
@@ -142,7 +142,7 @@ const oomSchema = {
             <div><strong>Qualifying Cutoff:</strong> Players Championship Finals (Late November 2026)</div>
           </div>
           <p class="notice-sub">
-            Rankings remain live and will fluctuate with every remaining Players Championship and European Tour tournament. Final tournament seedings (Positions 1 through 32) are confirmed only after the qualifying cutoff.
+            Rankings fluctuate weekly with every European Tour and Players Championship event. Defending prize money won 24 months ago drops off each player's rolling tally.
           </p>
         </div>
 
@@ -158,8 +158,8 @@ const oomSchema = {
               </tr>
             </thead>
             <tbody>
-              {oomData.provisional_rankings.map((p) => (
-                <tr class={p.rank <= 4 ? "top-tier-row" : p.rank <= 16 ? "mid-tier-row" : ""}>
+              {oomData.provisional_rankings.slice(0, 16).map((p) => (
+                <tr class={p.rank <= 4 ? "top-tier-row" : "mid-tier-row"}>
                   <td class="rank-col"><strong>#{p.rank}</strong></td>
                   <td><strong>{p.player}</strong></td>
                   <td>{p.nationality}</td>
@@ -169,6 +169,16 @@ const oomSchema = {
               ))}
             </tbody>
           </table>
+        </div>
+
+        <div class="full-rankings-cta card" style="margin-top: 1.5rem; text-align: center; background: #f8fafc; padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 8px;">
+          <h3 style="margin-top: 0; color: #0f172a;">Looking for Ranks 17–32 and the Full Professional Field?</h3>
+          <p style="color: #475569; margin-bottom: 1rem;">
+            Explore the complete 32 seeded players and track tournament qualification bubble battles on our dedicated live rankings page:
+          </p>
+          <a href="/players/rankings/" class="btn btn-primary" style="display: inline-block; background: #d97706; color: #fff; padding: 0.75rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 700;">
+            View Complete PDC World Rankings &amp; Top 32 Seeds ↗
+          </a>
         </div>
       </section>
 

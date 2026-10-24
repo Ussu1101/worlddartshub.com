@@ -58,7 +58,33 @@
     "playing_style": "Exceptionally rapid, intuitive throwing rhythm with relentless treble-20 power scoring and confident, fearless combination checkouts on double-10 and double-20.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "When Pitbull's 'Greenlight' blares across Alexandra Palace, 3,000 supporters bounce in unison, echoing the youthful electricity that propelled Littler into a global sporting sensation.",
+    "financial_context": "Littler's rapid prize money surge reflects back-to-back premier victories including the 2024 Premier League and Grand Slam, establishing him among the fastest-earning breakout talents in PDC history.",
+    "key_rivals": [
+      "luke-humphries",
+      "michael-van-gerwen",
+      "rob-cross",
+      "nathan-aspinall"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "How old was Luke Littler during his historic 2024 World Championship run?",
+        "a": "Luke Littler was just 16 years old when he stormed to the 2024 PDC World Darts Championship final on debut, defeating former world champions Raymond van Barneveld and Rob Cross before finishing runner-up to Luke Humphries."
+      },
+      {
+        "q": "What darts barrel weight and flights does Luke Littler use?",
+        "a": "Littler throws 23-gram Target Generation 1 darts constructed with 90% tungsten, paired with Target K-Flex integrated flight and shaft systems."
+      },
+      {
+        "q": "Which major PDC titles did Luke Littler win in his debut senior season?",
+        "a": "In his sensational 2024 debut season, Littler captured the Premier League Darts title at London's O2 Arena, the Grand Slam of Darts in Wolverhampton, and the World Series of Darts Finals in Amsterdam."
+      },
+      {
+        "q": "Has Luke Littler hit a televised nine-dart finish?",
+        "a": "Yes. Littler has achieved multiple televised nine-darters, including a historic perfect leg against Nathan Aspinall at the 2024 Bahrain Darts Masters and another in the 2024 Premier League Play-Off final against Luke Humphries."
+      }
+    ]
   },
   {
     "player_id": "luke-humphries",
@@ -121,7 +147,33 @@
     "playing_style": "Measured, silky release with a low arc and impeccable rhythm. Exceptional stamina in multi-set championship formats with 100+ average consistency.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "Kaiser Chiefs' 'I Predict a Riot' detonates arena-wide chorus chants, establishing 'Cool Hand's' commanding stage presence as reigning world champion.",
+    "financial_context": "As world number one, Humphries' earnings foundation rests upon premier titles across the World Championship (£500,000), World Matchplay (£200,000), World Grand Prix, and Players Championship Finals.",
+    "key_rivals": [
+      "luke-littler",
+      "michael-smith",
+      "michael-van-gerwen",
+      "gerwyn-price"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "When did Luke Humphries win the PDC World Darts Championship?",
+        "a": "Luke Humphries won the World Darts Championship on 3 January 2024, defeating Luke Littler 7–4 in a record-breaking final with a 103.67 tournament-winning three-dart average."
+      },
+      {
+        "q": "What darts does world number one Luke Humphries throw?",
+        "a": "Humphries throws 22-gram Red Dragon TX1 original darts crafted from 90% tungsten, engineered with a torpedo ring grip profile and custom Nitrotech stems."
+      },
+      {
+        "q": "How many major ranking titles did Luke Humphries capture during his breakthrough year?",
+        "a": "Between October 2023 and July 2024, Humphries won four consecutive premier ranking majors: the World Grand Prix, Grand Slam of Darts, Players Championship Finals, and World Championship, followed by the 2024 World Matchplay."
+      },
+      {
+        "q": "Why is Luke Humphries nicknamed 'Cool Hand Luke'?",
+        "a": "His moniker 'Cool Hand Luke' derives from his icy composure under high-pressure checkout scenarios and is also a tribute to his father's love for Leeds United (spelling out LUKE: Leeds United Kings of Europe)."
+      }
+    ]
   },
   {
     "player_id": "michael-van-gerwen",
@@ -186,7 +238,33 @@
     "playing_style": "Ferocious attacking power scoring, rapid cadence, aggressive forward posture, and unrivaled capability to hit big checkouts under intense match pressure.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "The iconic White Stripes bass riff of 'Seven Nation Army' sparks deafening roars of 'Ooh, Michael van Gerwen!', a signature psychological overture for the three-time world champion.",
+    "financial_context": "With over £8.5 million in official tournament payouts, Van Gerwen represents the second-highest earner in darts history behind Phil Taylor, fueled by three world titles and dozens of major ranking triumphs.",
+    "key_rivals": [
+      "luke-humphries",
+      "luke-littler",
+      "gerwyn-price",
+      "gary-anderson"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "How many PDC World Championship titles has Michael van Gerwen won?",
+        "a": "Michael van Gerwen has won three PDC World Darts Championships, lifting the Sid Waddell Trophy in 2014, 2017, and 2019."
+      },
+      {
+        "q": "What is Michael van Gerwen's record televised three-dart average?",
+        "a": "MVG holds the world record for the highest televised three-dart average in darts history, posting an astonishing 123.40 against Michael Smith in the 2016 Premier League in Aberdeen."
+      },
+      {
+        "q": "What darts equipment setup does Michael van Gerwen use?",
+        "a": "Van Gerwen plays with signature 21.5-gram Winmau Michael van Gerwen Exact 90% tungsten darts, fitted with nylon shafts and standard shape Winmau Prism flights."
+      },
+      {
+        "q": "How many career televised nine-darters has Van Gerwen landed?",
+        "a": "Van Gerwen has recorded eight televised nine-dart finishes, including a famous perfect leg at the 2013 World Championship where he missed double 12 for back-to-back nine-darters."
+      }
+    ]
   },
   {
     "player_id": "gerwyn-price",
@@ -247,7 +325,33 @@
     "playing_style": "Athletic, intense, explosive throw with high chest release and roaring vocal celebrations that intimidate opponents.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "Vanilla Ice's 'Ice Ice Baby' generates an intense, electrifying amphitheater clash of cheers and theatrical pantomime boos that 'The Iceman' channels into ferocious scoring bursts.",
+    "financial_context": "Price's tournament earnings mirror his perennial presence in major finals, anchored by his £500,000 World Championship title in 2021 and three Grand Slam of Darts victories.",
+    "key_rivals": [
+      "jonny-clayton",
+      "michael-van-gerwen",
+      "luke-humphries",
+      "gary-anderson"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "What sport did Gerwyn Price play before becoming a professional darts champion?",
+        "a": "Gerwyn Price played professional rugby union as a hooker for Neath and Cross Keys, and rugby league for South Wales Scorpions, before successfully transitioning to professional darts via PDC Q-School in 2014."
+      },
+      {
+        "q": "When did Gerwyn Price win the PDC World Championship?",
+        "a": "Price won the PDC World Darts Championship in January 2021, defeating Gary Anderson 7–3 in the final to become the first Welsh player to capture the world title and claim world number one."
+      },
+      {
+        "q": "What darts setup does Gerwyn Price throw in competition?",
+        "a": "Price uses 24-gram Red Dragon 'Iceman' signature darts featuring razor-edge and wave grip zones machined from 90% tungsten."
+      },
+      {
+        "q": "How many Grand Slam of Darts titles has Gerwyn Price won?",
+        "a": "Price has won the prestigious Grand Slam of Darts three times (2018, 2019, and 2021), earning the nickname 'King of Aldersley' for his dominance in Wolverhampton."
+      }
+    ]
   },
   {
     "player_id": "michael-smith",
@@ -307,7 +411,33 @@
     "playing_style": "Fluid, natural, fast-flowing rhythm. Tremendous 180-scoring capacity when locked into his stride.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "Walk The Moon's 'Shut Up and Dance' fills the arena with joyful swaying, celebrating 'Bully Boy's' hard-won transition from heartbreak finalist to world champion.",
+    "financial_context": "Smith's financial ledger is headlined by his £500,000 Ally Pally triumph in 2023 and Grand Slam victory, backed by consistent deep runs across the ProTour calendar.",
+    "key_rivals": [
+      "luke-humphries",
+      "michael-van-gerwen",
+      "peter-wright",
+      "nathan-aspinall"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "What happened in Michael Smith's famous nine-darter in the 2023 World Championship final?",
+        "a": "In what commentator Wayne Mardle called 'the greatest leg of darts in history', Michael van Gerwen missed double 12 for a nine-darter before Michael Smith immediately stepped up to complete a sensational nine-dart finish in the very same leg."
+      },
+      {
+        "q": "How many major finals did Michael Smith lose before winning a televised PDC major?",
+        "a": "Smith lost eight major televised finals across the World Championship, Premier League, World Matchplay, World Grand Prix, and European Championship before finally breaking his duck at the 2022 Grand Slam of Darts."
+      },
+      {
+        "q": "What darts barrel weight and manufacturer does Michael Smith use?",
+        "a": "Michael Smith throws 24-gram Shot! Darts engineered with 90% tungsten, featuring a precision-ringed center balance and custom Michael Smith 'Bully Boy' signature flights."
+      },
+      {
+        "q": "When did Michael Smith become world number one?",
+        "a": "Smith attained the PDC world number one ranking immediately after defeating Michael van Gerwen 7–4 to win the 2023 PDC World Darts Championship on 3 January 2023."
+      }
+    ]
   },
   {
     "player_id": "peter-wright",
@@ -369,7 +499,33 @@
     "playing_style": "High-draw, upright throw with clinical cover-shooting on treble-19 and double-20. Renowned for in-match technical adaptations.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "Pitbull's 'Don't Stop the Party' signals 'Snakebite's' trademark side-to-side stage dance, dazzling spectators with vibrant hair art and colorful stage attire.",
+    "financial_context": "Two World Championship victories (£1,000,000 combined) and World Matchplay success form the bedrock of Wright's long-standing multi-million-pound Order of Merit standing.",
+    "key_rivals": [
+      "michael-van-gerwen",
+      "gary-anderson",
+      "michael-smith",
+      "gerwyn-price"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "Which years did Peter Wright win the PDC World Darts Championship?",
+        "a": "Peter Wright won the World Championship twice: first in 2020 by defeating Michael van Gerwen 7–3, and again in 2022 by overcoming Michael Smith 7–5."
+      },
+      {
+        "q": "Why does Peter Wright frequently change his darts during tournaments?",
+        "a": "Wright is renowned for constantly experimenting with barrel shapes, weights, coatings, and stems, adjusting his hardware mid-tournament based on venue humidity, airflow, and his release feel."
+      },
+      {
+        "q": "What is the story behind Peter Wright's 'Snakebite' hairstyle and flamboyant outfits?",
+        "a": "His iconic look is styled by his wife Joanne, a professional hairdresser, who spends up to two hours before each televised match crafting his colorful mohawk and hand-painted snake head art."
+      },
+      {
+        "q": "What major titles has Peter Wright won outside the World Championship?",
+        "a": "Wright's major cabinet includes the 2021 World Matchplay (lifting the Phil Taylor Trophy), the 2020 Masters, the 2021 Players Championship Finals, and two European Championships (2020, 2023)."
+      }
+    ]
   },
   {
     "player_id": "gary-anderson",
@@ -434,7 +590,33 @@
     "playing_style": "Textbook rhythmic release with perfect balance, zero wasted motion, and relentless heavy 180-scoring into treble-20.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "House of Pain's 'Jump Around' transforms arenas into bouncing tartan celebrations, rallying generations of darts purists behind the legendary 'Flying Scotsman'.",
+    "financial_context": "Anderson's career winnings reflect two decades of elite dominance, highlighted by back-to-back World Championship crowns (£550,000) and major UK Open and World Matchplay trophies.",
+    "key_rivals": [
+      "peter-wright",
+      "michael-van-gerwen",
+      "gerwyn-price",
+      "raymond-van-barneveld"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "How many consecutive World Championships did Gary Anderson win?",
+        "a": "Gary Anderson achieved back-to-back PDC World Darts Championships, defeating Phil Taylor 7–6 in a legendary 2015 final and retaining his crown against Adrian Lewis 7–5 in 2016."
+      },
+      {
+        "q": "What makes Gary Anderson's throwing action so distinctive?",
+        "a": "The 'Flying Scotsman' possesses what commentators widely regard as the smoothest, most natural throwing mechanics in darts history, characterized by an effortless fluid drawback and pinpoint follow-through."
+      },
+      {
+        "q": "What darts setup does Gary Anderson throw?",
+        "a": "Anderson throws 23-gram Target Gary Anderson Phase 6 darts made from 90% tungsten, featuring a slim straight barrel with dual ring grip zones."
+      },
+      {
+        "q": "Has Gary Anderson hit a nine-darter at the World Darts Championship?",
+        "a": "Yes. Anderson struck a memorable televised nine-darter during his 2016 World Championship semi-final clash against Jelle Klaasen en route to winning his second world title."
+      }
+    ]
   },
   {
     "player_id": "stephen-bunting",
@@ -493,7 +675,33 @@
     "playing_style": "Fast, feather-light dart release requiring exquisite touch and finger sensitivity, producing laser-tight grouping when on form.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "David Guetta & Sia's 'Titanium' accompanies the rousing 'Let's Go Bunting Mental' anthem, reflecting 'The Bullet's' inspiring renaissance into a premier title contender.",
+    "financial_context": "Bunting's career accumulation experienced a major renaissance following his 2024 Masters triumph (£65,000) and consistent multi-stage ProTour semi-final appearances.",
+    "key_rivals": [
+      "luke-humphries",
+      "michael-smith",
+      "nathan-aspinall",
+      "chris-dobey"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "How did Stephen Bunting resurrect his career to win the 2024 Masters?",
+        "a": "After a decade without a televised PDC major, Bunting adopted sports psychology, adjusted his barrel grip, and produced a masterclass at the 2024 Masters, defeating Michael van Gerwen 11–7 in the final to lift the trophy."
+      },
+      {
+        "q": "Why are Stephen Bunting's darts unusually lightweight?",
+        "a": "Bunting throws ultra-light 12-gram (or 18-gram in modern competition) Target Stephen Bunting Generation 4 darts. The lighter weight requires exceptional arm acceleration and precise release timing."
+      },
+      {
+        "q": "What is the origin of the 'Let's Go Bunting Mental' crowd chant?",
+        "a": "The viral chant originated during his 2014 debut season when fans celebrated his resemblance to family sitcom character Peter Griffin and embraced his friendly, self-deprecating humor."
+      },
+      {
+        "q": "What is Stephen Bunting's best run at the PDC World Championship?",
+        "a": "Bunting reached the semi-finals of the 2021 PDC World Darts Championship, where he pushed eventual champion Gerwyn Price in a thrilling 6–4 contest."
+      }
+    ]
   },
   {
     "player_id": "nathan-aspinall",
@@ -552,7 +760,33 @@
     "playing_style": "Determined, heavy-set throw with a high release and relentless tenacity in deciding legs.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "The Killers' 'Mr. Brightside' produces arguably the loudest crowd chorus in professional darts, igniting 'The Asp' for trademark gutsy comeback battles.",
+    "financial_context": "Aspinall's earnings portfolio is highlighted by marquee £100k+ victories at the UK Open (£100,000) and World Matchplay (£200,000), alongside consistent Premier League participation.",
+    "key_rivals": [
+      "chris-dobey",
+      "michael-smith",
+      "stephen-bunting",
+      "rob-cross"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "What are Nathan Aspinall's biggest major PDC tournament victories?",
+        "a": "Aspinall won the 2019 UK Open as a 125/1 outsider by defeating Rob Cross 11–5 with a stunning 170 checkout, and captured the prestigious 2023 World Matchplay in Blackpool by defeating Jonny Clayton 18–6."
+      },
+      {
+        "q": "What darts equipment setup does Nathan Aspinall use?",
+        "a": "Aspinall throws 26-gram Target Nathan Aspinall Black Generation 2 darts made with 90% tungsten, featuring a front-weighted profile and CNC radial grooves."
+      },
+      {
+        "q": "Why did Nathan Aspinall almost retire from professional darts?",
+        "a": "In 2018, down to his last £20 in his bank account, Aspinall considered returning to his previous trade as an accountant before qualifying for the 2019 World Championship, where he reached the semi-finals and earned £100,000."
+      },
+      {
+        "q": "What is the story behind Nathan Aspinall's walk-on song 'Mr. Brightside'?",
+        "a": "Aspinall selected The Killers' British indie classic 'Mr. Brightside' to energize arenas, creating one of the most euphoric, whole-venue singalongs in modern sports entertainment."
+      }
+    ]
   },
   {
     "player_id": "rob-cross",
@@ -611,7 +845,33 @@
     "playing_style": "Deliberate, rhythmic pendulum release with exceptional mental fortitude in nerve-wracking fifth-set deciders.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "Arrow's 'Hot Hot Hot' sets an upbeat, carnival tone on stage, honoring 'Voltage's' fairy tale 2018 debut triumph and calm tactical rhythm.",
+    "financial_context": "Cross transformed his financial life in his 2018 debut season with a £400,000 World Championship windfall, supplemented by £150,000 at the World Matchplay and consecutive European titles.",
+    "key_rivals": [
+      "luke-humphries",
+      "luke-littler",
+      "michael-smith",
+      "raymond-van-barneveld"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "How did Rob Cross win the World Championship in his debut professional year?",
+        "a": "Having worked as an electrician just 16 months prior, Cross qualified for the 2018 World Championship in his debut PDC season, survived match darts against Michael van Gerwen in a sudden-death semi-final, and defeated Phil Taylor 7–2 in Taylor's final professional match."
+      },
+      {
+        "q": "What was Rob Cross's occupation before becoming a professional darts player?",
+        "a": "Cross worked full-time as an industrial electrician in Hastings, East Sussex, which inspired his stage moniker 'Voltage'."
+      },
+      {
+        "q": "What darts barrel weight does Rob Cross throw?",
+        "a": "Rob Cross plays with 21-gram Target Rob Cross Generation 2 darts constructed from 90% tungsten, designed with radial grooves along a straight barrel profile."
+      },
+      {
+        "q": "What other major PDC titles has Rob Cross won since 2018?",
+        "a": "Beyond the World Championship, Cross captured the 2019 World Matchplay in Blackpool and is a two-time European Champion (2019, 2021)."
+      }
+    ]
   },
   {
     "player_id": "raymond-van-barneveld",
@@ -674,7 +934,33 @@
     "playing_style": "Classic rhythmic Dutch release, deliberate pacing, and clinical double-16 finishing mastery.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "'Eye of the Tiger' awakens the passionate 'Barney Army', paying homage to the five-time world champion who pioneered Dutch modern darts.",
+    "financial_context": "Barney's multi-decade earnings cross both BDO and PDC eras, featuring the £100,000 PDC World Championship victory in 2007, Premier League glory, and over 15 major world titles.",
+    "key_rivals": [
+      "michael-van-gerwen",
+      "gary-anderson",
+      "rob-cross",
+      "peter-wright"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "How many World Championship titles has Raymond van Barneveld won in total?",
+        "a": "Raymond van Barneveld is a five-time World Darts Champion, winning four BDO World Championships (1998, 1999, 2003, 2005) and the 2007 PDC World Championship."
+      },
+      {
+        "q": "Why is the 2007 PDC World Championship final between Van Barneveld and Phil Taylor so famous?",
+        "a": "Regarded as one of darts' all-time classics, the 2007 final went to a sudden-death deciding leg at the Circus Tavern, where Van Barneveld edged Phil Taylor 7–6 in sets to win the PDC crown on debut."
+      },
+      {
+        "q": "What darts setup does Raymond van Barneveld throw?",
+        "a": "Barney plays with signature 25-gram Target RVB 95 Generation 4 darts constructed with 95% tungsten, utilizing Swiss Point technology and RVB Pro Grip shafts."
+      },
+      {
+        "q": "How many televised nine-darters has Raymond van Barneveld hit?",
+        "a": "Van Barneveld has recorded five televised nine-dart finishes, including two at the PDC World Championship (2009 against Jelle Klaasen and 2010 against Brendan Dolan)."
+      }
+    ]
   },
   {
     "player_id": "fallon-sherrock",
@@ -732,7 +1018,33 @@
     "playing_style": "Smooth, upright stance with high accuracy on treble-19 and supreme composure under intense global media spotlight.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "Katy Perry's 'Last Friday Night' heralds the 'Queen of the Palace', whose historic 2019 Ally Pally heroics shattered the sport's gender ceiling.",
+    "financial_context": "Sherrock's career prize total is augmented by groundbreaking Women's World Matchplay titles and historic televised wins at the Grand Slam and World Championship.",
+    "key_rivals": [
+      "beau-greaves",
+      "luke-littler",
+      "martin-schindler",
+      "raymond-van-barneveld"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "What historic milestone did Fallon Sherrock achieve at the 2020 World Championship?",
+        "a": "In December 2019, Fallon Sherrock became the first woman in history to win a match at the PDC World Darts Championship by defeating Ted Evetts 3–2, before following it up with a 3–1 triumph over world number 11 Mensur Suljovic."
+      },
+      {
+        "q": "What major titles and honors has Fallon Sherrock earned in darts?",
+        "a": "Sherrock won the inaugural 2022 Women's World Matchplay in Blackpool, reached the televised final of the 2021 Nordic Darts Masters, and was awarded an MBE in the 2023 King's Birthday Honours for services to darts."
+      },
+      {
+        "q": "What darts barrel weight does Fallon Sherrock use?",
+        "a": "Sherrock throws 24-gram Dynasty Fallon Sherrock signature tungsten darts, fitted with L-Style shafts and L-Flight Fantom flights."
+      },
+      {
+        "q": "Has Fallon Sherrock hit a televised nine-darter?",
+        "a": "Sherrock made history in March 2023 by hitting a nine-dart finish at the Challenge Tour in Hildesheim, becoming the first woman to strike a nine-darter in a PDC-sanctioned event."
+      }
+    ]
   },
   {
     "player_id": "beau-greaves",
@@ -790,7 +1102,33 @@
     "playing_style": "Effortless, poetry-in-motion throwing action with seamless release and extraordinary grouping capability.",
     "tier": "A",
     "last_verified": "2026-10-03",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "Bruce Springsteen's 'Born to Run' echoes the generational precision and relentless standard-setting of the women's game's dominant force.",
+    "financial_context": "Greaves has dominated the PDC Women's Series with dozens of £2,000 title payouts alongside two WDF World Championship winner's shares at Lakeside.",
+    "key_rivals": [
+      "fallon-sherrock",
+      "luke-littler",
+      "luke-humphries",
+      "martin-schindler"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "How many consecutive PDC Women's Series titles has Beau Greaves won?",
+        "a": "Beau Greaves produced a record-breaking streak in 2022 and 2023 by winning 15 consecutive PDC Women's Series events she entered, recording an unprecedented 70-match winning streak."
+      },
+      {
+        "q": "Why has Beau Greaves previously declined PDC World Championship invitations?",
+        "a": "Greaves opted to compete at the WDF Lakeside World Championship rather than Alexandra Palace due to WDF eligibility regulations preventing players from playing in both world championships in the same season."
+      },
+      {
+        "q": "What darts setup does Beau Greaves throw?",
+        "a": "Greaves throws 21-gram One80 Beau Greaves signature darts crafted from 90% tungsten, featuring a front ring grip and tailored micro-grooves."
+      },
+      {
+        "q": "How young was Beau Greaves when she won her first World Championship?",
+        "a": "Greaves was just 18 years old when she won the 2022 WDF World Darts Championship at Lakeside, dropping only one set throughout the entire tournament."
+      }
+    ]
   },
   {
     "player_id": "martin-schindler",
@@ -850,7 +1188,33 @@
     "playing_style": "Compact, repeatable throwing mechanics with deliberate pre-shot rhythm, aggressive Treble-20 scoring, and reliable finishes on Double 16 and Double 8.",
     "tier": "A",
     "last_verified": "2026-10-04",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "Pink Floyd's 'Another Brick in the Wall' provides a steady, disciplined tempo as Germany's number one star marches to the oche.",
+    "financial_context": "Schindler's earnings curve has risen sharply through breakthrough European Tour victories in Germany, providing consistent six-figure Order of Merit stability.",
+    "key_rivals": [
+      "raymond-van-barneveld",
+      "luke-humphries",
+      "chris-dobey",
+      "jonny-clayton"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "What are Martin Schindler's breakthrough European Tour tournament titles?",
+        "a": "Schindler won his first European Tour title at the 2024 International Darts Open in Riesa, defeating Gerwyn Price 8–5 in the final, before capturing the 2024 Swiss Darts Trophy in Basel."
+      },
+      {
+        "q": "When did Martin Schindler become the German number one darts player?",
+        "a": "Schindler overtook Gabriel Clemens to become Germany's highest-ranked player on the PDC Order of Merit in April 2024 following his European Tour title in Riesa."
+      },
+      {
+        "q": "What darts equipment specifications does Martin Schindler use?",
+        "a": "Schindler throws 23-gram Bull's Martin Schindler 'The Wall' 90% tungsten darts, customized with brick-pattern engraved grip zones."
+      },
+      {
+        "q": "What is Martin Schindler's best finish at the PDC World Championship?",
+        "a": "Schindler reached the third round of the 2023 PDC World Darts Championship, where he pushed eventual world champion Michael Smith to a deciding seventh set in a high-quality thriller."
+      }
+    ]
   },
   {
     "player_id": "jonny-clayton",
@@ -912,7 +1276,33 @@
     "playing_style": "Smooth, rhythmic, and relaxed throwing action with exceptional composure under pressure and deadly accuracy on Double 16 and Double 8.",
     "tier": "A",
     "last_verified": "2026-10-04",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "Chuck Berry's 'Johnny B. Goode' creates an affectionate party atmosphere for 'The Ferret', one of the circuit's most naturally gifted and well-liked champions.",
+    "financial_context": "Clayton's sensational 2021 haul included the Premier League (£250,000), World Grand Prix (£110,000), and Masters (£60,000), cementing his elite financial status.",
+    "key_rivals": [
+      "gerwyn-price",
+      "luke-humphries",
+      "peter-wright",
+      "michael-smith"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "Which four major PDC titles did Jonny Clayton capture in his miraculous 2021 season?",
+        "a": "In 2021, Jonny Clayton won The Masters, the Premier League Darts title on debut, the World Grand Prix (double-in, double-out), and the World Series of Darts Finals."
+      },
+      {
+        "q": "Did Jonny Clayton keep his full-time job while winning major darts championships?",
+        "a": "Yes. Clayton famously remained employed as a full-time plasterer for Carmarthenshire County Council throughout his four-major title sweep in 2021, only later transitioning to a flexible schedule."
+      },
+      {
+        "q": "What darts setup does Jonny Clayton throw?",
+        "a": "Clayton plays with 22-gram Red Dragon Jonny Clayton signature 90% tungsten darts, featuring a dual-ringed straight barrel and standard Red Dragon flights."
+      },
+      {
+        "q": "How many World Cup of Darts titles has Jonny Clayton won for Wales?",
+        "a": "Clayton has won the PDC World Cup of Darts twice representing Wales alongside Gerwyn Price, lifting the trophy in 2020 (Salzburg) and 2023 (Frankfurt)."
+      }
+    ]
   },
   {
     "player_id": "chris-dobey",
@@ -972,7 +1362,33 @@
     "playing_style": "Upright, balanced stance with a fluid high-elbow draw back, relentless treble-20 grouping power, and high-percentage finishing on Double 20 and Double 10.",
     "tier": "A",
     "last_verified": "2026-10-04",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "PJ & Duncan's 'Let's Get Ready to Rhumble' brings North East pride and buoyant crowd interaction as 'Hollywood' sets up his scoring assault.",
+    "financial_context": "Dobey's breakthrough Masters victory (£65,000) and consistent quarter-final appearances across ranking majors maintain his secure place in the world's top 16.",
+    "key_rivals": [
+      "nathan-aspinall",
+      "stephen-bunting",
+      "michael-smith",
+      "luke-humphries"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "When did Chris Dobey win his first major televised PDC title?",
+        "a": "Chris Dobey won his maiden televised PDC major title at the 2023 Masters in Milton Keynes, defeating world champions Michael van Gerwen and Rob Cross before overcoming Rob Cross 11–7 in the final."
+      },
+      {
+        "q": "What darts equipment setup does Chris Dobey throw?",
+        "a": "Dobey throws 23-gram Target Chris Dobey Generation 1 darts crafted with 90% tungsten, featuring a precision radial grip along an elongated straight barrel."
+      },
+      {
+        "q": "What is Chris Dobey's best performance at Alexandra Palace?",
+        "a": "Dobey reached the quarter-finals of the PDC World Darts Championship in back-to-back years (2023 and 2024), defeating Gary Anderson and former champion Rob Cross in deep tournament runs."
+      },
+      {
+        "q": "Why is Chris Dobey's walk-on song 'Let's Get Ready to Rhumble' so popular?",
+        "a": "Hailing from Bedlington near Newcastle, Dobey chose the classic 1994 track by Geordie icons PJ & Duncan (Ant & Dec), sparking high-spirited singalongs and dance moves across arenas."
+      }
+    ]
   },
   {
     "player_id": "karel-sedlacek",
@@ -1029,6 +1445,32 @@
     "playing_style": "Deliberate, rhythmic setup with high front-finger tactile grip and exceptional clutch doubling on Double 20 and Double 16.",
     "tier": "B",
     "last_verified": "2026-10-17",
-    "status": "verified"
+    "status": "verified",
+    "walk_on_stage_note": "A bespoke rock entrance track signals the arrival of 'Evil Charlie', the trailblazing Czech Tour Card holder rallying Central European fans.",
+    "financial_context": "Sedláček's prize tally reflects grit across the demanding PDC ProTour circuit, Challenge Tour events, and European Tour qualifications.",
+    "key_rivals": [
+      "martin-schindler",
+      "jonny-clayton",
+      "stephen-bunting",
+      "rob-cross"
+    ],
+    "bespoke_faqs": [
+      {
+        "q": "What is Karel Sedláček's nickname in professional darts?",
+        "a": "Karel Sedláček is known on the professional circuit as 'Evil Charlie', an affectionate moniker popular among Central European darts enthusiasts."
+      },
+      {
+        "q": "How did Karel Sedláček become the first Czech player to earn a PDC Tour Card?",
+        "a": "Sedláček made Czech sporting history in January 2020 by winning a PDC Tour Card outright at European Q-School in Hildesheim, Germany."
+      },
+      {
+        "q": "What darts setup does Karel Sedláček use?",
+        "a": "Sedláček plays with custom 24-gram Red Dragon darts engineered with 90% tungsten, tailored with a dual ring grip zone."
+      },
+      {
+        "q": "What is Karel Sedláček's record at the PDC World Championship?",
+        "a": "Sedláček has qualified for multiple PDC World Darts Championships, notably pushing Ryan Joyce to a sudden-death last-leg decider in the 2021 edition."
+      }
+    ]
   }
 ]

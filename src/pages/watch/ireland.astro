@@ -1,0 +1,556 @@
+---
+// src/pages/watch/ireland.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Watch PDC Darts in Ireland: Sky Sports, NOW TV & Streams";
+const pageDescription = "Complete guide to watching the 2026/27 World Darts Championship live across Ireland: Sky Sports Ireland channels, NOW Sports Extra, GMT start times and Irish players.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/watch/ireland/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Watch & Stream', url: '/watch/' },
+  { name: 'Ireland', url: '/watch/ireland/' }
+];
+
+const faqItems = [
+  {
+    q: "What channel is showing the World Darts Championship in Ireland?",
+    a: "In the Republic of Ireland and Northern Ireland, every session of the 2026/27 PDC World Darts Championship is broadcast live exclusively on Sky Sports Darts and Sky Sports Main Event. On Sky Ireland satellite and glass boxes, Sky Sports Darts airs on Channel 408 (HD). Virgin Media Ireland customers can tune in on Channel 402, and Eir TV customers on Channel 411."
+  },
+  {
+    q: "Can I stream PDC World Darts live online in Ireland without a satellite contract?",
+    a: "Yes. Irish fans can stream every match live through NOW Ireland (nowtv.com/ie) using the NOW Sports Membership. Passes are available on a Day Membership (€14.99) or Month Membership (typically €38.99/month, frequently discounted to €20-€25/month on promotional offers), allowing instant streaming on Smart TVs, smartphones, Apple TV, Chromecast, and gaming consoles."
+  },
+  {
+    q: "Are session start times different between Ireland and London?",
+    a: "No. Ireland observes Greenwich Mean Time (GMT, UTC+0) throughout the winter months, identical to London time. Afternoon sessions commence promptly at 12:30 GMT and evening sessions begin at 19:00 GMT, meaning Irish viewers have zero timezone conversion to calculate."
+  },
+  {
+    q: "Which Irish players are competing at the 2026/27 World Championship?",
+    a: "Ireland is represented at Alexandra Palace by an outstanding contingent of tour professionals, headlined by former World Youth Champion Josh Rock (County Antrim), Keane Barry (County Meath), William O'Connor (County Limerick), veteran major finalist Brendan Dolan (County Fermanagh), and rising talent Dylan Slevin (County Tipperary)."
+  },
+  {
+    q: "Can Irish darts fans watch on PDCTV?",
+    a: "Due to Sky Sports holding exclusive broadcast rights in the UK and Ireland, live video feeds on PDCTV are geo-blocked for domestic viewers in the Republic of Ireland and Northern Ireland. However, PDCTV provides official live audio commentary, real-time board graphics, and full match archive replays for registered Irish subscribers."
+  }
+];
+
+const irelandSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": pageTitle,
+      "description": pageDescription,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={irelandSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="country-hero">
+    <div class="container">
+      <div class="hero-badge-group">
+        <span class="badge badge-accent">IRISH BROADCAST GUIDE</span>
+        <span class="badge">REPUBLIC OF IRELAND &amp; NORTHERN IRELAND</span>
+      </div>
+      <h1>How to Watch PDC World Darts in Ireland</h1>
+      <p class="country-lead">
+        Official live broadcast options for Irish darts supporters: Sky Sports Ireland TV channels, contract-free NOW Sports passes, zero timezone offset, and local player schedules for Alexandra Palace.
+      </p>
+    </div>
+  </header>
+
+  <div class="container country-layout">
+    <article class="country-main-content">
+      <VerificationBadge 
+        verifiedDate="October 2026" 
+        topic="Irish Broadcast Rights (Sky Sports &amp; NOW Ireland)" 
+      />
+
+      <!-- Quick Summary Card -->
+      <section class="summary-box">
+        <h2>At A Glance: Ireland Viewing Details</h2>
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="detail-label">Official Rights Holder</span>
+            <span class="detail-value"><strong>Sky Sports Ireland</strong></span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Online Streaming App</span>
+            <span class="detail-value"><a href="https://www.nowtv.com/ie" target="_blank" rel="noopener noreferrer">NOW Ireland (OTT)</a></span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Dedicated TV Channel</span>
+            <span class="detail-value">Sky Sports Darts (Ch 408)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Timezone Offset</span>
+            <span class="detail-value">GMT (0 hours vs London)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">NOW Day Pass Pricing</span>
+            <span class="detail-value prize-highlight">€14.99 (Day) / €38.99 (Month)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Domestic Rights Window</span>
+            <span class="detail-value">Confirmed Through 2030</span>
+          </div>
+        </div>
+
+        <div class="cta-action-area">
+          <a 
+            href="https://www.skysports.com/darts" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary"
+          >
+            Visit Official Sky Sports Darts Hub &rarr;
+          </a>
+          <span class="micro-note">Official external broadcaster portal. Verified for 2026/27.</span>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="watch-ireland-top-ad" />
+
+      <!-- Platform-by-Platform Breakdown -->
+      <section class="editorial-guide-section">
+        <h2>Broadcaster Breakdown: Sky Sports &amp; NOW Ireland</h2>
+        <p>
+          Darts enjoys an immense cultural following across the island of Ireland, fueled by legendary pub traditions and world-class tour talent. Coverage of the <a href="/tournament/world-darts-championship/">PDC World Darts Championship</a> in Ireland is unified with the Sky UK broadcast package, meaning Irish viewers receive the full 28-session slate in crystal-clear high definition without tape delays or session blackouts.
+        </p>
+
+        <h3>1. Sky Ireland Satellite &amp; Sky Glass</h3>
+        <p>
+          Existing Sky Ireland subscribers with a Sports Pack subscription receive automatic access to <strong>Sky Sports Darts</strong> (channel 408) throughout December and January. Coverage includes multi-camera angles, studio analysis from former world champions, and on-demand replay libraries. If you are away from your living room, the <strong>Sky Go</strong> app allows streaming at no extra cost on iOS, Android, and PC.
+        </p>
+
+        <h3>2. NOW Ireland (No Contract Required)</h3>
+        <p>
+          For cord-cutters, <a href="https://www.nowtv.com/ie" target="_blank" rel="noopener noreferrer">NOW Ireland</a> is the primary legal streaming gateway. You do not need a satellite dish or long-term contract. The <strong>NOW Sports Month Membership</strong> provides access to all 11 Sky Sports channels. While the standard rolling rate is €38.99 per month, NOW Ireland frequently runs promotional winter offers (€20/month for six months), providing the most economical route for covering the full tournament through the final on 3 January 2027.
+        </p>
+
+        <h3>3. Virgin Media Ireland &amp; Eir TV</h3>
+        <p>
+          Customers on Virgin Media Ireland cable can subscribe to the Sky Sports add-on tier (channel 402/408). Eir TV subscribers can access coverage via the Sports Extra package (channel 411).
+        </p>
+      </section>
+
+      <!-- Irish Player Spotlight -->
+      <section class="editorial-guide-section">
+        <h2>Irish Stars to Follow at Alexandra Palace</h2>
+        <p>
+          Irish darts is experiencing its golden era. Multiple tour card holders from both the Republic and Northern Ireland enter the 2026/27 World Championship with seeded status or serious dark-horse credentials:
+        </p>
+        <div class="player-spotlight-cards">
+          <div class="spotlight-card">
+            <h3>🎯 Josh Rock (County Antrim)</h3>
+            <p>
+              The 2022 World Youth Champion has established himself inside the world's top 16. Armed with blistering 105+ scoring averages and a lethal maximum rhythm, Rock represents Ireland's prime hope for lifting the Sid Waddell Trophy.
+            </p>
+            <a href="/players/josh-rock/" class="spotlight-link">View Josh Rock Profile &amp; Stats &rarr;</a>
+          </div>
+          <div class="spotlight-card">
+            <h3>🎯 Keane Barry (County Meath)</h3>
+            <p>
+              "Dynamite" from Duleek continues to climb the PDC Order of Merit. His fast, rhythmic delivery makes him a crowd favorite and an exceptionally dangerous draw for top seeds.
+            </p>
+          </div>
+          <div class="spotlight-card">
+            <h3>🎯 William O'Connor (County Limerick)</h3>
+            <p>
+              "The Magpie" brings relentless grit and years of major experience. Renowned for his devastating finishing on Double 16, O'Connor has produced some of Ally Pally's most memorable upsets.
+            </p>
+          </div>
+          <div class="spotlight-card">
+            <h3>🎯 Brendan Dolan (County Fermanagh)</h3>
+            <p>
+              "The History Maker" remains a tactical master. His World Cup of Darts final appearances and historic double-in 9-darter in Dublin cement his status as an all-time great of Irish sport.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timezone & Session Times -->
+      <section class="editorial-guide-section">
+        <h2>Session Schedule in Irish Standard Time (GMT)</h2>
+        <p>
+          Because Ireland shares the Greenwich Mean Time zone with Great Britain throughout December and January, fans enjoy prime afternoon and evening viewing slots:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Doors Open (Ally Pally)</th>
+                <th>Irish Broadcast Commences</th>
+                <th>Estimated Session Finish</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Afternoon Session</strong></td>
+                <td>11:00 GMT</td>
+                <td>12:30 GMT</td>
+                <td>16:30 GMT</td>
+              </tr>
+              <tr>
+                <td><strong>Evening Session</strong></td>
+                <td>17:30 GMT</td>
+                <td>19:00 GMT</td>
+                <td>23:00 GMT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="micro-note">
+          Check the official <a href="/schedule/">2026/27 Schedule Directory</a> for daily session orders of play and fixture confirmations.
+        </p>
+      </section>
+
+      <AdSlot slotType="in-feed" id="watch-ireland-mid-ad" />
+
+      <!-- Frequently Asked Questions -->
+      <section class="country-faq-section">
+        <h2>Frequently Asked Questions: Watching in Ireland</h2>
+        <div class="faq-accordion">
+          {faqItems.map((item) => (
+            <div class="faq-box">
+              <h4>{item.q}</h4>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="country-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Other Country Guides</h3>
+        <ul class="widget-list">
+          <li><a href="/watch/uk/">🇬🇧 United Kingdom</a></li>
+          <li><a href="/watch/germany/">🇩🇪 Germany</a></li>
+          <li><a href="/watch/netherlands/">🇳🇱 Netherlands</a></li>
+          <li><a href="/watch/czechia/">🇨🇿 Czechia</a></li>
+          <li><a href="/watch/poland/">🇵🇱 Poland</a></li>
+          <li><a href="/watch/belgium/">🇧🇪 Belgium</a></li>
+          <li><a href="/watch/usa/">🇺🇸 United States</a></li>
+          <li><a href="/watch/australia/">🇦🇺 Australia</a></li>
+          <li><a href="/watch/canada/">🇨🇦 Canada</a></li>
+          <li><a href="/watch/international/">🌍 Rest of World / PDCTV</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Where to Watch Out in London</h3>
+        <p style="font-size: 0.88rem; color: #475569; margin-bottom: 0.75rem;">
+          Heading over from Dublin, Belfast, or Shannon to London without a hall ticket?
+        </p>
+        <ul class="widget-list">
+          <li><a href="/travel/best-pubs-watch-darts-london/">🍻 Best London Sports Pubs for Darts &rarr;</a></li>
+          <li><a href="/travel/">✈️ London Airport Transfers (Heathrow/Stansted/Gatwick) &rarr;</a></li>
+        </ul>
+      </div>
+
+      <AdSlot slotType="rectangle" id="watch-ireland-sidebar-ad" />
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tournament Quick Links</h3>
+        <ul class="widget-list">
+          <li><a href="/live/">🎯 Match Center &amp; Daily Order of Play</a></li>
+          <li><a href="/schedule/">🗓️ Complete Match Schedule</a></li>
+          <li><a href="/players/josh-rock/">🎯 Josh Rock Player Dossier</a></li>
+          <li><a href="/tournament/prize-money/">💰 £5,000,000 Prize Fund Breakdown</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .country-hero {
+    background: linear-gradient(135deg, #090d16 0%, #064e3b 50%, #0f172a 100%);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 2px solid #10b981;
+  }
+  .hero-badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+  }
+  .country-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+  .country-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+  .country-layout {
+    display: grid;
+    grid-template-columns: 2.8fr 1.2fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  .country-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .summary-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .summary-box h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .detail-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    font-weight: 700;
+  }
+  .detail-value {
+    font-size: 1rem;
+    color: #0f172a;
+  }
+  .prize-highlight {
+    color: #059669;
+    font-weight: 700;
+  }
+  .cta-action-area {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .micro-note {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+  .editorial-guide-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .editorial-guide-section h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+  .editorial-guide-section h3 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .editorial-guide-section p {
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .player-spotlight-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .spotlight-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .spotlight-card h3 {
+    margin-top: 0;
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 0.4rem;
+  }
+  .spotlight-card p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+  .spotlight-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #0284c7;
+    text-decoration: underline;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background-color: #0f172a;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .data-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  .country-faq-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+  }
+  .country-faq-section h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #0f172a;
+    margin-bottom: 1.25rem;
+  }
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .faq-box {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    background: #f8fafc;
+  }
+  .faq-box h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #0f172a;
+  }
+  .faq-box p {
+    margin: 0;
+    color: #334155;
+    line-height: 1.5;
+    font-size: 0.92rem;
+  }
+  .country-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  .sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .widget-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+  }
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .widget-list a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .widget-list a:hover {
+    color: #059669;
+    text-decoration: underline;
+  }
+  @media (max-width: 900px) {
+    .country-layout {
+      grid-template-columns: 1fr;
+    }
+    .details-grid {
+      grid-template-columns: 1fr;
+    }
+    .player-spotlight-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -9,7 +9,6 @@ import broadcasters from '../../data/broadcasters.json';
 export async function getStaticPaths() {
   const countrySlugMap: Record<string, string> = {
     "uk-sky-sports": "uk",
-    "ireland-sky-sports": "ireland",
     "germany-dazn-prosieben": "germany",
     "usa-espn-peacock-pdctv": "usa",
     "canada-pdctv": "canada",
@@ -29,47 +28,195 @@ export async function getStaticPaths() {
 const { country } = Astro.params;
 const { broadcaster } = Astro.props;
 
+// Territory-specific bespoke profiles
+const territoryData: Record<string, {
+  headline: string;
+  subhead: string;
+  localTimezone: string;
+  afternoonTime: string;
+  eveningTime: string;
+  narrative: string[];
+  localStars: { name: string; note: string; link?: string }[];
+  faqs: { q: string; a: string }[];
+}> = {
+  uk: {
+    headline: "Sky Sports Darts & NOW TV UK Viewing Guide",
+    subhead: "Complete domestic viewing instructions for Great Britain: satellite channels, contract-free NOW streaming, and session schedules.",
+    localTimezone: "GMT (Greenwich Mean Time, UTC+0)",
+    afternoonTime: "12:30 GMT",
+    eveningTime: "19:00 GMT",
+    narrative: [
+      "As the home territory of the PDC World Darts Championship, UK viewers receive non-stop 24-hour programming across December and January via the dedicated Sky Sports Darts pop-up channel (Sky 408 / Virgin 508). Every dart from the opening session on 11 December to the final on 3 January 2027 is broadcast live in full HD, supported by Sky's flagship commentary and analysis panel.",
+      "For spectators without a traditional multi-room satellite dish, NOW TV UK provides flexible access through the NOW Sports Membership (£34.99/month, or £14.99 Day Pass). Mobile streaming is supported through Sky Go and the NOW app on iOS, Android, Amazon Fire TV Stick, Apple TV, and major Smart TV operating systems."
+    ],
+    localStars: [
+      { name: "Luke Littler", note: "The Warrington sensation and 2024 finalist enters as world number two and pre-tournament favorite.", link: "/players/luke-littler/" },
+      { name: "Luke Humphries", note: "The reigning World Champion and world number one defending his Sid Waddell Trophy title.", link: "/players/luke-humphries/" },
+      { name: "Michael Smith", note: "The 2023 World Champion from St Helens renowned for his rapid-fire maximums.", link: "/players/michael-smith/" },
+      { name: "Nathan Aspinall", note: "Former World Matchplay champion and Stockport warrior with immense stage fighting spirit.", link: "/players/nathan-aspinall/" }
+    ],
+    faqs: [
+      { q: "What Sky Sports channel is darts on in the UK?", a: "PDC World Championship darts airs on the dedicated pop-up channel Sky Sports Darts (Sky channel 408, Virgin Media 508), with prime-time sessions simulcast on Sky Sports Main Event (Sky 401)." },
+      { q: "Can I watch World Darts free in the UK?", a: "No. Full live coverage is exclusive to Sky Sports and NOW TV. However, Sky Sports Darts broadcasts daily free highlights on YouTube, and BBC Radio 5 Live provides commentary for key matches." },
+      { q: "How much does a NOW Sports pass cost for the darts in the UK?", a: "A standard NOW Sports Month Membership costs £34.99 per month with no contract. A 24-hour Day Membership costs £14.99." }
+    ]
+  },
+  germany: {
+    headline: "DAZN & Free-to-Air Darts Streaming in Germany",
+    subhead: "Live stream directory for German darts supporters: DAZN packages, television sub-licensing, CET start times, and German tour contenders.",
+    localTimezone: "CET (Central European Time, UTC+1)",
+    afternoonTime: "13:30 CET",
+    eveningTime: "20:00 CET",
+    narrative: [
+      "Germany represents the PDC's fastest-expanding television audience. Over 2.5 million German viewers regularly tune into Alexandra Palace action. DAZN holds primary live streaming rights in Germany, delivering every session with native German commentary led by Elmar Paulke and expert guest analysts.",
+      "Traditional linear television coverage is complemented by free-to-air sub-licensing (Sport1 and ProSiebenSat.1), broadcasting selected sessions, key weekend games, and the semi-finals and final without subscription fees. Subscribers can also tune into the original English commentary track on DAZN."
+    ],
+    localStars: [
+      { name: "Martin Schindler", note: "\"The Wall\" is Germany's highest-ranked professional and a two-time PDC ranking title winner.", link: "/players/martin-schindler/" },
+      { name: "Gabriel Clemens", note: "\"The German Giant\" made history as the first German World Championship semi-finalist in 2023." },
+      { name: "Ricardo Pietreczko", note: "\"Pikachu\" burst onto the major stage winning the German Darts Championship with clinical finishing." }
+    ],
+    faqs: [
+      { q: "Wo kann man die Darts-WM in Deutschland live schauen?", a: "In Deutschland überträgt DAZN alle Sessions der Darts-WM 2026/27 live und in voller Länge im Stream. Ausgewählte Spiele und die Finalphase laufen zudem im Free-TV auf Sport1 bzw. ProSieben." },
+      { q: "Um wie viel Uhr starten die Darts-Sessions in Deutschland?", a: "Da Deutschland in der mitteleuropäischen Zeitzone (MEZ/CET) liegt, beginnen die Nachmittagssessions um 13:30 Uhr und die Abendsessions um 20:00 Uhr deutscher Zeit." },
+      { q: "Welches DAZN-Paket brauche ich für Darts?", a: "Darts ist in den DAZN-Paketen 'DAZN World' und 'DAZN Super Sports' ab rund 9,99 € bzw. 19,99 € monatlich enthalten." }
+    ]
+  },
+  usa: {
+    headline: "How to Watch PDC World Darts in the United States",
+    subhead: "Streaming access for US darts fans: ESPN+, Peacock, PDCTV international passes, North American broadcast times and US qualifiers.",
+    localTimezone: "EST (UTC-5) / PST (UTC-8)",
+    afternoonTime: "07:30 EST / 04:30 PST",
+    eveningTime: "14:00 EST / 11:00 PST",
+    narrative: [
+      "Viewing the World Darts Championship in North America has transformed over recent seasons. Live tournament feeds are carried digitally through ESPN+ and Peacock TV, while dedicated darts enthusiasts can subscribe directly to PDCTV for an unrestricted live stream featuring UK broadcast commentary.",
+      "Because London is five hours ahead of Eastern Standard Time (EST) and eight hours ahead of Pacific Standard Time (PST), afternoon sessions at Alexandra Palace provide breakfast viewing in the US (07:30 EST), while evening sessions begin in the early afternoon (14:00 EST)."
+    ],
+    localStars: [
+      { name: "Jules van Dongen", note: "The Dutch-American Tour Card holder and CDC Continental Cup competitor representing the United States." },
+      { name: "Leonard Gates", note: "\"Soulger\" is a multi-time World Seniors champion and fan favorite on both sides of the Atlantic." },
+      { name: "Danny Lauby", note: "Terre Haute native who earned his professional Tour Card through UK Q-School." }
+    ],
+    faqs: [
+      { q: "Where can I stream World Darts in the USA?", a: "In the United States, official streaming is available through ESPN+, Peacock TV, and directly via PDCTV (video.pdc.tv) with an international tournament pass." },
+      { q: "What time do Ally Pally darts matches air in the US?", a: "Afternoon sessions air at 7:30 AM Eastern / 4:30 AM Pacific. Evening sessions air at 2:00 PM Eastern / 11:00 AM Pacific." },
+      { q: "Is PDCTV available in the United States without blackouts?", a: "Yes. Because there is no exclusive linear cable blackout for the full World Championship in the US, PDCTV's international streaming pass operates without regional blackouts." }
+    ]
+  },
+  canada: {
+    headline: "Watch PDC World Darts in Canada: PDCTV & Streaming Guide",
+    subhead: "Official Canadian viewing options for Alexandra Palace: PDCTV live feeds, Canadian player schedules, and timezone air times from Newfoundland to British Columbia.",
+    localTimezone: "EST (UTC-5) to PST (UTC-8)",
+    afternoonTime: "07:30 EST (Toronto/Montreal)",
+    eveningTime: "14:00 EST (Toronto/Montreal)",
+    narrative: [
+      "Canadian darts enthusiasts stream the World Darts Championship live via the official PDCTV (video.pdc.tv) platform, receiving pristine high-definition coverage of all 28 sessions directly from Alexandra Palace without domestic television ad breaks.",
+      "Canada boasts a distinguished darts legacy anchored by Oshawa's John Part—a three-time World Champion (1994 BDO, 2003 & 2008 PDC) and the first non-UK player to capture the PDC World Championship. Today, Part serves as a lead analyst on Sky Sports UK broadcasts.",
+      "The grassroots Canadian pathway is coordinated through the Championship Darts Corporation (CDC), the official North American affiliate of the PDC. The CDC circuit stages premier events across Ontario, New Brunswick, and Alberta, rewarding the top-ranked Canadian player with an automatic qualifying spot at Alexandra Palace.",
+      "Because Canada spans six distinct time zones, morning sessions begin at breakfast time on the Atlantic coast and pre-dawn in British Columbia, while evening sessions air during prime afternoon work hours across Eastern and Central Canada."
+    ],
+    localStars: [
+      { name: "Matt Campbell", note: "\"The Ginga Ninja\" from Hamilton, Ontario is Canada's premier PDC Tour Card holder, celebrated for electric scoring and deep runs at Ally Pally." },
+      { name: "David Cameron", note: "\"Excalibur\" from New Brunswick brings decades of international poise and clinical combination finishing." },
+      { name: "Jim Long", note: "The veteran London, Ontario thrower who captured the CDC Continental Cup to represent Canada on the global stage." },
+      { name: "John Part", note: "Canada's darting icon, three-time World Champion and member of the PDC Hall of Fame, analyzing major matches from the commentary box." }
+    ],
+    faqs: [
+      { q: "Is the World Darts Championship broadcast on TSN or Sportsnet in Canada?", a: "While TSN occasionally carries condensed highlight packages or World Cup matches, live flag-to-flag broadcast rights for the World Darts Championship in Canada belong exclusively to the official PDC streaming service, PDCTV." },
+      { q: "How much does a PDCTV subscription cost in Canadian Dollars (CAD)?", a: "PDCTV prices in British Pounds (£) but converts seamlessly at checkout: an Event Pass costs £12 (~$21 CAD), a rolling Monthly Subscription is £9.99 (~$17.50 CAD), and an Annual Pass is £59.99 (~$105 CAD)." },
+      { q: "What time do Ally Pally sessions start across Canadian timezones?", a: "Afternoon sessions (12:30 GMT) air at 09:00 NST (Newfoundland), 08:30 AST (Halifax), 07:30 EST (Toronto/Montreal), 06:30 CST (Winnipeg), 05:30 MST (Calgary), and 04:30 PST (Vancouver). Evening sessions (19:00 GMT) air at 15:30 NST, 15:00 AST, 14:00 EST, 13:00 CST, 12:00 MST, and 11:00 PST." },
+      { q: "Can Canadian fans watch on mobile devices and Smart TVs?", a: "Yes. PDCTV is accessible via web browsers, dedicated iOS and Android apps, and can be cast via Apple AirPlay or Google Chromecast directly to Smart TVs." }
+    ]
+  },
+  australia: {
+    headline: "Fox Sports & Kayo Sports Darts Guide for Australia",
+    subhead: "Aussie viewing guide for Alexandra Palace: Kayo Sports subscription, Foxtel channels, AEDT late-night/breakfast schedules, and Aussie qualifiers.",
+    localTimezone: "AEDT (UTC+11) / AWST (UTC+8)",
+    afternoonTime: "23:30 AEDT (Late Night)",
+    eveningTime: "06:00 AEDT (+1 Day Breakfast)",
+    narrative: [
+      "Darts has a dedicated following across Australia, with coverage broadcast live on Foxtel and streamed online via Kayo Sports. Every match from Alexandra Palace is covered live with Fox Sports studio analysis and the international Sky feed.",
+      "Australian viewers face a unique viewing schedule: London afternoon sessions air late at night in Sydney and Melbourne (23:30 AEDT), while London evening sessions air in the early morning (06:00 AEDT the following day), creating an iconic Aussie summer breakfast viewing ritual."
+    ],
+    localStars: [
+      { name: "Damon Heta", note: "\"The Heat\" from Perth is an established top-10 force in world darts and World Cup of Darts champion." },
+      { name: "Simon Whitlock", note: "\"The Wizard\" is an Australian darts legend, 2010 World Championship finalist, and global icon." }
+    ],
+    faqs: [
+      { q: "Where can I watch PDC World Darts in Australia?", a: "In Australia, live broadcasts are available on Foxtel (Fox Sports channels) and streaming via Kayo Sports (kayosports.com.au) with subscriptions starting from $25 AUD/month." },
+      { q: "What time does the World Darts air in Australia?", a: "In AEDT (Sydney/Melbourne), London afternoon sessions air at 11:30 PM AEDT, while London evening sessions air at 6:00 AM AEDT the following morning." },
+      { q: "Does Kayo Sports offer on-demand replays for darts?", a: "Yes. Kayo provides full event replays and Kayo Mini highlights for every session so Aussie fans do not have to stay up all night." }
+    ]
+  },
+  netherlands: {
+    headline: "Viaplay Darts Live Stream & TV Guide: Netherlands",
+    subhead: "Official Dutch viewing guide for the 2026/27 World Championship: Viaplay packages, CET session times, and Dutch stars Van Gerwen & Van Veen.",
+    localTimezone: "CET (Midden-Europese Tijd, UTC+1)",
+    afternoonTime: "13:30 CET",
+    eveningTime: "20:00 CET",
+    narrative: [
+      "Darts is one of the premier televised spectator sports in the Netherlands, driven by decades of major triumphs from Raymond van Barneveld and Michael van Gerwen. Viaplay Netherlands holds exclusive live streaming rights, delivering Dutch commentary from Jacques Nieuwlaat and Koert Westerman.",
+      "Sessions take place at 13:30 CET and 20:00 CET, making prime-time evening matches ideal for Dutch supporters gathering at sports bars or watching at home."
+    ],
+    localStars: [
+      { name: "Michael van Gerwen", note: "Three-time World Champion and 2026 World Matchplay champion from Boxtel.", link: "/players/michael-van-gerwen/" },
+      { name: "Gian van Veen", note: "The young Dutch prodigy from Poederoijen climbing rapidly into the world's top 16.", link: "/players/gian-van-veen/" },
+      { name: "Raymond van Barneveld", note: "The five-time World Champion from Den Haag who popularized the sport across the Low Countries.", link: "/players/raymond-van-barneveld/" },
+      { name: "Danny Noppert", note: "\"The Freeze\" from Joure, former UK Open champion and steady top-10 contender." }
+    ],
+    faqs: [
+      { q: "Op welke zender is het WK Darts te zien in Nederland?", a: "Het PDC WK Darts 2026/27 is in Nederland exclusief live te zien via de streamingdienst Viaplay (viaplay.com/nl-nl)." },
+      { q: "Hoe laat begint het darten in Nederland?", a: "De middagsessies beginnen om 13:30 uur Nederlandse tijd (CET) en de avondsessies om 20:00 uur CET." },
+      { q: "Wat kost Viaplay voor het WK Darts?", a: "Een Viaplay-abonnement in Nederland kost circa €17,99 per maand en geeft toegang tot alle 28 sessies met Nederlands commentaar." }
+    ]
+  },
+  international: {
+    headline: "PDCTV Global Live Streaming: 100+ International Territories",
+    subhead: "Comprehensive worldwide streaming guide for international darts supporters in unrestricted global broadcast territories.",
+    localTimezone: "UTC / GMT (Convertible to Any Local Timezone)",
+    afternoonTime: "12:30 GMT / 13:30 CET / 21:30 JST",
+    eveningTime: "19:00 GMT / 20:00 CET / 04:00+1 JST",
+    narrative: [
+      "For darts supporters outside territories with exclusive linear television deals, the Professional Darts Corporation operates PDCTV (video.pdc.tv), providing direct, authentic coverage from London's Alexandra Palace.",
+      "Subscribing to a PDCTV Rest of World package unlocks continuous 1080p high-definition video with stage audio mixing and commentary from Sky Sports and PDC broadcast teams, completely free of regional commercial blackouts.",
+      "International subscribers can access live video across Windows, Mac, iOS, Android, and web-connected smart displays. Real-time match data, leg-by-leg averages, and checkout charts are synchronized alongside the primary stream.",
+      "The tournament showcases global qualifiers from over 30 countries, earning entry via regional affiliations including the Asian Tour, African Qualifier, DPA Australian Tour, CDH South American Tour, and European Host Nation qualifiers."
+    ],
+    localStars: [
+      { name: "Asian Tour Representatives", note: "Trailblazing players from Japan, the Philippines, Singapore, and Hong Kong who earn entry via the competitive PDC Asian Tour." },
+      { name: "African & Oceanian Qualifiers", note: "Continental champions from South Africa, Australia, and New Zealand testing their skill on the sport's biggest stage." },
+      { name: "Latin American Pioneers", note: "Rising talents from Brazil, Argentina, and Guyana breaking new ground for darts in the Americas." }
+    ],
+    faqs: [
+      { q: "What payment methods are accepted for international PDCTV subscriptions?", a: "PDCTV accepts all major international credit and debit cards (Visa, Mastercard, American Express) along with PayPal, automatically handling currency conversion from British Pounds (GBP)." },
+      { q: "Which countries fall under the PDCTV Rest of World category?", a: "Any territory without an exclusive domestic rights contract—including France, Spain, Portugal, Italy, Japan, South Africa, Brazil, and over 80 other nations—receives full direct coverage via PDCTV." },
+      { q: "Are on-demand replays included for fans in distant time zones?", a: "Yes. Full uninterrupted session replays and condensed highlight reels are archived within the PDCTV video library within 2 to 4 hours of session completion, enabling fans in Asia-Pacific and the Americas to watch at convenient local hours." },
+      { q: "Does PDCTV offer English audio commentary?", a: "Yes. All international streams feature official English commentary provided by experienced professional broadcasters and former world champions." }
+    ]
+  }
+};
+
+const profile = territoryData[country] || territoryData['international'];
 const countryDisplayName = broadcaster.country === 'International / Rest of World' ? 'Rest of World' : broadcaster.country;
-const cleanBroadcasterName = broadcaster.broadcaster_name.replace(/ \(.*?\)/, '');
 const pageTitle = `Watch PDC Darts 2026/27 in ${countryDisplayName}: TV & Streams`;
-const pageDescription = `Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in ${countryDisplayName}. Watch live via ${cleanBroadcasterName}.`;
+const pageDescription = `Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in ${countryDisplayName}. ${profile.subhead}`;
 
 const breadcrumbItems = [
   { name: 'Watch & Stream', url: '/watch/' },
-  { name: broadcaster.country }
+  { name: countryDisplayName }
 ];
 
 const countryFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": `What channel is showing the PDC World Darts in ${broadcaster.country}?`,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": `In ${broadcaster.country}, official live broadcast rights belong to ${broadcaster.broadcaster_name} (${broadcaster.parent_network}). Matches are available via ${broadcaster.linear_channels}.`
-      }
-    },
-    {
-      "@type": "Question",
-      "name": `Can I stream the World Darts Championship live online in ${broadcaster.country}?`,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": `Yes, authorized live streaming is accessible via ${broadcaster.platform_types.join(', ')} with an active ${broadcaster.access_model.toLowerCase()}.`
-      }
-    },
-    {
-      "@type": "Question",
-      "name": `Is there a free live stream of the World Darts Championship in ${broadcaster.country}?`,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": broadcaster.free_or_paid === 'free_tier_available'
-          ? `Yes, free-to-air broadcast coverage is available on selected sessions via ${broadcaster.broadcaster_name}.`
-          : `No authorized free live stream exists in ${broadcaster.country}. Access requires a subscription or day pass with ${broadcaster.broadcaster_name}. Avoid illegal pirated streams due to severe security and reliability risks.`
-      }
+  "mainEntity": profile.faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
     }
-  ]
+  }))
 };
 ---
 
@@ -86,15 +233,15 @@ const countryFaqSchema = {
         <span class="badge badge-accent">TERRITORY VIEWING GUIDE</span>
         <span class="badge">{broadcaster.country.toUpperCase()}</span>
       </div>
-      <h1>How to Watch PDC World Darts in {broadcaster.country}</h1>
+      <h1>{profile.headline}</h1>
       <p class="country-lead">
-        Official broadcast partner: <strong>{broadcaster.broadcaster_name}</strong>. Access every session live from Alexandra Palace between 11 December 2026 and 3 January 2027.
+        {profile.subhead}
       </p>
     </div>
   </header>
 
   <div class="container country-layout">
-    <div class="country-main-content">
+    <article class="country-main-content">
       <VerificationBadge 
         verifiedDate="October 2026" 
         topic={`${broadcaster.country} Broadcast Rights (${broadcaster.broadcaster_name})`} 
@@ -121,8 +268,8 @@ const countryFaqSchema = {
             <span class="detail-value">{broadcaster.access_model}</span>
           </div>
           <div class="detail-item">
-            <span class="detail-label">Pricing / Pass Cost</span>
-            <span class="detail-value prize-highlight">{broadcaster.price_info}</span>
+            <span class="detail-label">Local Timezone</span>
+            <span class="detail-value prize-highlight">{profile.localTimezone}</span>
           </div>
           <div class="detail-item">
             <span class="detail-label">Free Option Status</span>
@@ -139,9 +286,9 @@ const countryFaqSchema = {
             rel="noopener noreferrer nofollow" 
             class="btn btn-primary"
           >
-            Go to Official {broadcaster.broadcaster_name} Live Feed &rarr;
+            Go to Official {broadcaster.broadcaster_name} Portal &rarr;
           </a>
-          <span class="micro-note">Redirects to official verified rights holder portal.</span>
+          <span class="micro-note">Verified official rights holder destination.</span>
         </div>
       </section>
 
@@ -149,36 +296,72 @@ const countryFaqSchema = {
 
       <!-- In-Depth Viewing Guide -->
       <section class="editorial-guide-section">
-        <h2>Detailed Viewing Guide for {broadcaster.country} Fans</h2>
-        <p>
-          {broadcaster.editorial_notes}
-        </p>
+        <h2>Broadcast Coverage &amp; Platform Access: {broadcaster.country}</h2>
+        {profile.narrative.map((p) => (
+          <p>{p}</p>
+        ))}
 
-        <h3>Supported Streaming Devices & Platforms</h3>
-        <p>You can stream {broadcaster.broadcaster_name} across the following validated platforms:</p>
+        <h3>Supported Streaming Devices &amp; Apps</h3>
+        <p>Authorized {broadcaster.broadcaster_name} live feeds can be accessed across:</p>
         <ul class="device-pill-list">
           {broadcaster.platform_types.map((type: string) => (
             <li>📱 {type}</li>
           ))}
-          <li>Smart TVs (Samsung, LG, Sony Android TV)</li>
-          <li>Apple TV, Amazon Fire TV Stick & Roku</li>
+          <li>Smart TVs (Samsung Tizen, LG webOS, Google TV)</li>
+          <li>Apple TV, Amazon Fire TV Stick, Roku &amp; Chromecast</li>
           <li>Desktop Browsers (Chrome, Safari, Edge, Firefox)</li>
-          <li>iOS & Android Smartphones & Tablets</li>
+          <li>iOS &amp; Android Tablets and Smartphones</li>
         </ul>
-
-        <h3>Typical Session Air Times in Your Region</h3>
-        <p>
-          Ally Pally sessions begin at <strong>12:30 GMT</strong> (Afternoon) and <strong>19:00 GMT</strong> (Evening). Depending on your local timezone, expect broadcasts to air in your morning, evening, or overnight hours.
-        </p>
       </section>
 
-      <!-- Warning Against Illegal Streams -->
-      <div class="callout warning-box">
-        <h3>⚠️ Notice: Avoid Unauthorized Streams</h3>
-        <p>
-          Searching for free live streams of the PDC World Darts Championship often directs viewers to dubious websites featuring aggressive ad popups, crypto-mining scripts, and intrusive redirects. Furthermore, illegal streams frequently crash during deciding sets. We strongly encourage accessing coverage exclusively via <strong>{broadcaster.broadcaster_name}</strong> or official <strong>PDCTV</strong>.
+      <!-- Local Stars Section -->
+      {profile.localStars && profile.localStars.length > 0 && (
+        <section class="editorial-guide-section">
+          <h2>Local Contenders &amp; Fan Favorites</h2>
+          <div class="player-spotlight-cards">
+            {profile.localStars.map((star) => (
+              <div class="spotlight-card">
+                <h3>🎯 {star.name}</h3>
+                <p>{star.note}</p>
+                {star.link && (
+                  <a href={star.link} class="spotlight-link">View {star.name} Dossier &rarr;</a>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Session Schedule in Local Time -->
+      <section class="editorial-guide-section">
+        <h2>Local Session Start Times</h2>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>London Time (GMT)</th>
+                <th>Local Air Time ({countryDisplayName})</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Afternoon Session</strong></td>
+                <td>12:30 GMT</td>
+                <td><strong>{profile.afternoonTime}</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Evening Session</strong></td>
+                <td>19:00 GMT</td>
+                <td><strong>{profile.eveningTime}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="micro-note">
+          Consult the official <a href="/schedule/">2026/27 Match Schedule</a> for daily match orders.
         </p>
-      </div>
+      </section>
 
       <AdSlot slotType="in-feed" id={`country-${country}-mid-ad`} />
 
@@ -186,15 +369,15 @@ const countryFaqSchema = {
       <section class="country-faq-section">
         <h2>Frequently Asked Questions ({broadcaster.country})</h2>
         <div class="faq-accordion">
-          {countryFaqSchema.mainEntity.map((item) => (
+          {profile.faqs.map((item) => (
             <div class="faq-box">
-              <h4>{item.name}</h4>
-              <p>{item.acceptedAnswer.text}</p>
+              <h4>{item.q}</h4>
+              <p>{item.a}</p>
             </div>
           ))}
         </div>
       </section>
-    </div>
+    </article>
 
     <!-- Sidebar -->
     <aside class="country-sidebar">
@@ -202,37 +385,27 @@ const countryFaqSchema = {
         <h3 class="widget-title">Other Country Guides</h3>
         <ul class="widget-list">
           <li><a href="/watch/uk/">🇬🇧 United Kingdom</a></li>
+          <li><a href="/watch/ireland/">🇮🇪 Ireland</a></li>
           <li><a href="/watch/germany/">🇩🇪 Germany</a></li>
-          <li><a href="/watch/nordics/">🇸🇪/🇳🇴/🇩🇰 Nordic Region (Viaplay)</a></li>
-          <li><a href="/watch/usa/">🇺🇸 United States</a></li>
           <li><a href="/watch/netherlands/">🇳🇱 Netherlands</a></li>
+          <li><a href="/watch/czechia/">🇨🇿 Czechia</a></li>
+          <li><a href="/watch/poland/">🇵🇱 Poland</a></li>
+          <li><a href="/watch/belgium/">🇧🇪 Belgium</a></li>
+          <li><a href="/watch/usa/">🇺🇸 United States</a></li>
           <li><a href="/watch/australia/">🇦🇺 Australia</a></li>
           <li><a href="/watch/canada/">🇨🇦 Canada</a></li>
-          <li><a href="/watch/ireland/">🇮🇪 Ireland</a></li>
-          <li><a href="/watch/international/">🌍 International / PDCTV</a></li>
+          <li><a href="/watch/international/">🌍 Rest of World / PDCTV</a></li>
         </ul>
       </div>
-
-      {country === 'germany' && (
-        <div class="sidebar-widget">
-          <h3 class="widget-title">German Stars at Ally Pally</h3>
-          <p style="font-size: 0.88rem; color: #475569; margin-bottom: 0.75rem;">
-            Follow Germany's top-ranked professional competing at Alexandra Palace:
-          </p>
-          <ul class="widget-list">
-            <li><a href="/players/martin-schindler/">🎯 Martin Schindler ("The Wall") Dossier &rarr;</a></li>
-          </ul>
-        </div>
-      )}
 
       <AdSlot slotType="rectangle" id={`country-${country}-sidebar-ad`} />
 
       <div class="sidebar-widget">
         <h3 class="widget-title">Tournament Quick Links</h3>
         <ul class="widget-list">
-          <li><a href="/live/">🎯 Match Center & Daily Order of Play</a></li>
+          <li><a href="/live/">🎯 Match Center &amp; Daily Order of Play</a></li>
           <li><a href="/schedule/">🗓️ Complete Match Schedule</a></li>
-          <li><a href="/players/">🎯 Player Profiles & Walk-ons</a></li>
+          <li><a href="/players/">🎯 Player Profiles &amp; Walk-ons</a></li>
           <li><a href="/venue/">🏛️ Alexandra Palace Spectator Guide</a></li>
         </ul>
       </div>
@@ -247,160 +420,224 @@ const countryFaqSchema = {
     padding: 3rem 0;
     border-bottom: 2px solid #3b82f6;
   }
-
   .hero-badge-group {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 0.85rem;
+    flex-wrap: wrap;
   }
-
   .country-hero h1 {
-    font-size: 2.35rem;
+    font-size: 2.25rem;
     color: #ffffff;
     margin-bottom: 0.75rem;
   }
-
   .country-lead {
     font-size: 1.15rem;
     color: #cbd5e1;
     max-width: 800px;
-    margin-bottom: 0;
     line-height: 1.6;
   }
-
   .country-layout {
     display: grid;
-    grid-template-columns: 2.7fr 1fr;
+    grid-template-columns: 2.8fr 1.2fr;
     gap: 2.5rem;
     margin-top: 2rem;
     margin-bottom: 4rem;
   }
-
+  .country-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
   .summary-box {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
-    padding: 1.75rem;
-    margin-bottom: 2.5rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
-
   .summary-box h2 {
     margin-top: 0;
     font-size: 1.4rem;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
     margin-bottom: 1.25rem;
   }
-
   .details-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 1.25rem;
   }
-
   .detail-item {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
-    font-size: 0.9rem;
+    gap: 0.25rem;
   }
-
   .detail-label {
-    color: #64748b;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    color: #64748b;
+    font-weight: 700;
   }
-
   .detail-value {
+    font-size: 1rem;
     color: #0f172a;
   }
-
   .prize-highlight {
     color: #059669;
     font-weight: 700;
   }
-
   .cta-action-area {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    border-top: 1px solid #f1f5f9;
+    margin-top: 1.5rem;
     padding-top: 1.25rem;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
   }
-
   .micro-note {
     font-size: 0.75rem;
-    color: #94a3b8;
+    color: #64748b;
   }
-
   .editorial-guide-section {
-    margin-bottom: 2.5rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
-
+  .editorial-guide-section h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+  .editorial-guide-section h3 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .editorial-guide-section p {
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
   .device-pill-list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 1.75rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
   }
-
   .device-pill-list li {
     background: #f1f5f9;
-    border: 1px solid #e2e8f0;
-    padding: 0.4rem 0.85rem;
-    border-radius: 9999px;
-    font-size: 0.82rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
     color: #334155;
-    margin: 0;
+    font-weight: 500;
   }
-
+  .player-spotlight-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .spotlight-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .spotlight-card h3 {
+    margin-top: 0;
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 0.4rem;
+  }
+  .spotlight-card p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+  .spotlight-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #0284c7;
+    text-decoration: underline;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background-color: #0f172a;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .data-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
   .country-faq-section {
-    margin-top: 3rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
   }
-
+  .country-faq-section h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #0f172a;
+    margin-bottom: 1.25rem;
+  }
   .faq-accordion {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 1rem;
   }
-
   .faq-box {
-    background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    padding: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: #f8fafc;
   }
-
   .faq-box h4 {
-    margin-top: 0;
-    margin-bottom: 0.4rem;
-    font-size: 1.05rem;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #0f172a;
   }
-
   .faq-box p {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    color: #475569;
+    margin: 0;
+    color: #334155;
+    line-height: 1.5;
+    font-size: 0.92rem;
   }
-
   .country-sidebar {
     display: flex;
     flex-direction: column;
     gap: 1.75rem;
   }
-
   .sidebar-widget {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
     padding: 1.25rem;
   }
-
   .widget-title {
     font-size: 1rem;
     margin-top: 0;
@@ -408,19 +645,15 @@ const countryFaqSchema = {
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #f1f5f9;
     color: #0f172a;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
   }
-
   .widget-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.5rem;
   }
-
   .widget-list a {
     color: #1e293b;
     text-decoration: none;
@@ -428,18 +661,17 @@ const countryFaqSchema = {
     font-weight: 500;
   }
   .widget-list a:hover {
-    color: #f59e0b;
+    color: #059669;
     text-decoration: underline;
   }
-
-  @media (max-width: 1024px) {
+  @media (max-width: 900px) {
     .country-layout {
       grid-template-columns: 1fr;
     }
-  }
-
-  @media (max-width: 640px) {
     .details-grid {
+      grid-template-columns: 1fr;
+    }
+    .player-spotlight-cards {
       grid-template-columns: 1fr;
     }
   }
