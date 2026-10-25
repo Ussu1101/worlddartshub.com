@@ -253,6 +253,12 @@ const countryFaqSchema = {
         topic={`${broadcaster.country} Broadcast Rights (${broadcaster.broadcaster_name})`} 
       />
 
+      {country === 'netherlands' && (
+        <p class="micro-note">
+          Nederlandse bezoeker? Bekijk ook onze <a href="/nl/">Nederlandse darts-gids</a> en de <a href="/nl/darts-wk-tickets/">Nederlandse WK-ticketgids</a>.
+        </p>
+      )}
+
       <!-- Quick Summary Card -->
       <section class="summary-box">
         <h2>At A Glance: {broadcaster.country} Viewing Details</h2>
