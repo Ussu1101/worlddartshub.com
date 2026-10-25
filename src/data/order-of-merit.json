@@ -2,9 +2,9 @@
   "title": "PDC Order of Merit (World Rankings)",
   "tournament_year": "2026/27",
   "status": "provisional_ranking",
-  "status_badge": "Provisional Snapshot — Cutoff Late Nov 2026",
+  "status_badge": "Interim Snapshot — Post-European Championship (26 Oct 2026)",
   "cutoff_event": "Players Championship Finals (Late November 2026)",
-  "cutoff_description": "The Top 32 players on the official PDC Order of Merit at the conclusion of the Players Championship Finals will be awarded seeded status for the 2026/27 World Darts Championship.",
+  "cutoff_description": "The Top 32 players on the official PDC Order of Merit at the conclusion of the Players Championship Finals will be awarded seeded status for the 2026/27 World Darts Championship. This interim snapshot reflects official rolling 2-year prize money following Ross Smith's victory at the 2026 European Championship in Dortmund.",
   "system_rules": [
     {
       "rule": "2-Year Rolling Calculation",
@@ -24,40 +24,232 @@
     }
   ],
   "provisional_rankings": [
-    { "rank": 1, "player": "Luke Humphries", "nationality": "England", "prize_money": "£1,745,000", "notes": "Reigning World Champion; defending major winner" },
-    { "rank": 2, "player": "Michael van Gerwen", "nationality": "Netherlands", "prize_money": "£1,120,000", "notes": "3x World Champion; perennial world #1 challenger" },
-    { "rank": 3, "player": "Michael Smith", "nationality": "England", "prize_money": "£965,000", "notes": "2023 World Champion" },
-    { "rank": 4, "player": "Luke Littler", "nationality": "England", "prize_money": "£860,000", "notes": "2024 World Finalist; rapid ascension into top 4" },
-    { "rank": 5, "player": "Gerwyn Price", "nationality": "Wales", "prize_money": "£755,000", "notes": "2021 World Champion" },
-    { "rank": 6, "player": "Rob Cross", "nationality": "England", "prize_money": "£710,000", "notes": "2018 World Champion" },
-    { "rank": 7, "player": "Dave Chisnall", "nationality": "England", "prize_money": "£615,000", "notes": "Consistent European Tour title winner" },
-    { "rank": 8, "player": "Jonny Clayton", "nationality": "Wales", "prize_money": "£580,000", "notes": "Premier League & World Grand Prix champion" },
-    { "rank": 9, "player": "Peter Wright", "nationality": "Scotland", "prize_money": "£525,000", "notes": "2x World Champion (2020, 2022)" },
-    { "rank": 10, "player": "Damon Heta", "nationality": "Australia", "prize_money": "£505,000", "notes": "Highest-ranked Oceanic player" },
-    { "rank": 11, "player": "Dimitri Van den Bergh", "nationality": "Belgium", "prize_money": "£485,000", "notes": "UK Open & World Matchplay champion" },
-    { "rank": 12, "player": "Danny Noppert", "nationality": "Netherlands", "prize_money": "£465,000", "notes": "Former UK Open champion" },
-    { "rank": 13, "player": "Chris Dobey", "nationality": "England", "prize_money": "£450,000", "notes": "Masters champion & major contender" },
-    { "rank": 14, "player": "Nathan Aspinall", "nationality": "England", "prize_money": "£440,000", "notes": "World Matchplay champion" },
-    { "rank": 15, "player": "Ross Smith", "nationality": "England", "prize_money": "£425,000", "notes": "European Champion & prolific 180 scorer" },
-    { "rank": 16, "player": "Stephen Bunting", "nationality": "England", "prize_money": "£410,000", "notes": "2024 Masters champion" },
-    { "rank": 17, "player": "Josh Rock", "nationality": "Northern Ireland", "prize_money": "£385,000", "notes": "World Youth Champion" },
-    { "rank": 18, "player": "Gary Anderson", "nationality": "Scotland", "prize_money": "£375,000", "notes": "2x World Champion (2015, 2016)" },
-    { "rank": 19, "player": "Ryan Searle", "nationality": "England", "prize_money": "£355,000", "notes": "Heavy-dart specialist" },
-    { "rank": 20, "player": "Andrew Gilding", "nationality": "England", "prize_money": "£345,000", "notes": "UK Open champion" },
-    { "rank": 21, "player": "Dirk van Duijvenbode", "nationality": "Netherlands", "prize_money": "£330,000", "notes": "High-scoring Dutch star" },
-    { "rank": 22, "player": "Martin Schindler", "nationality": "Germany", "prize_money": "£325,000", "notes": "Highest-ranked German player" },
-    { "rank": 23, "player": "Gabriel Clemens", "nationality": "Germany", "prize_money": "£305,000", "notes": "Historic 2023 World Semi-Finalist" },
-    { "rank": 24, "player": "Joe Cullen", "nationality": "England", "prize_money": "£295,000", "notes": "The Rockstar; major finalist" },
-    { "rank": 25, "player": "Raymond van Barneveld", "nationality": "Netherlands", "prize_money": "£285,000", "notes": "5x World Champion; legendary veteran" },
-    { "rank": 26, "player": "Daryl Gurney", "nationality": "Northern Ireland", "prize_money": "£275,000", "notes": "2x Major champion" },
-    { "rank": 27, "player": "Gian van Veen", "nationality": "Netherlands", "prize_money": "£270,000", "notes": "Elite young Dutch contender" },
-    { "rank": 28, "player": "Brendan Dolan", "nationality": "Northern Ireland", "prize_money": "£260,000", "notes": "History Maker; multi-quarterfinalist" },
-    { "rank": 29, "player": "Ritchie Edhouse", "nationality": "England", "prize_money": "£250,000", "notes": "European Tour title contender" },
-    { "rank": 30, "player": "Krzysztof Ratajski", "nationality": "Poland", "prize_money": "£245,000", "notes": "The Polish Eagle" },
-    { "rank": 31, "player": "Mike De Decker", "nationality": "Belgium", "prize_money": "£235,000", "notes": "Major title contender" },
-    { "rank": 32, "player": "Ricardo Pietreczko", "nationality": "Germany", "prize_money": "£230,000", "notes": "Pikachu; European Tour winner" }
+    {
+      "rank": 1,
+      "player": "Luke Littler",
+      "nationality": "England",
+      "prize_money": "£3,141,000",
+      "notes": "Reigning World Champion; dominant world #1"
+    },
+    {
+      "rank": 2,
+      "player": "Gian van Veen",
+      "nationality": "Netherlands",
+      "prize_money": "£1,058,250",
+      "notes": "2025 European Champion & World Finalist; highest-ranked Dutchman"
+    },
+    {
+      "rank": 3,
+      "player": "Luke Humphries",
+      "nationality": "England",
+      "prize_money": "£1,037,500",
+      "notes": "2024 World Champion & multi-major winner"
+    },
+    {
+      "rank": 4,
+      "player": "Gerwyn Price",
+      "nationality": "Wales",
+      "prize_money": "£829,500",
+      "notes": "2021 World Champion"
+    },
+    {
+      "rank": 5,
+      "player": "Jonny Clayton",
+      "nationality": "Wales",
+      "prize_money": "£726,000",
+      "notes": "European Championship semi-finalist"
+    },
+    {
+      "rank": 6,
+      "player": "Ross Smith",
+      "nationality": "England",
+      "prize_money": "£714,750",
+      "notes": "2026 European Champion (+£150,000 in Dortmund)"
+    },
+    {
+      "rank": 7,
+      "player": "James Wade",
+      "nationality": "England",
+      "prize_money": "£673,750",
+      "notes": "Multi-major champion"
+    },
+    {
+      "rank": 8,
+      "player": "Josh Rock",
+      "nationality": "Northern Ireland",
+      "prize_money": "£619,000",
+      "notes": "World Youth Champion & European Tour winner"
+    },
+    {
+      "rank": 9,
+      "player": "Stephen Bunting",
+      "nationality": "England",
+      "prize_money": "£603,750",
+      "notes": "European Championship semi-finalist; Masters champion"
+    },
+    {
+      "rank": 10,
+      "player": "Nathan Aspinall",
+      "nationality": "England",
+      "prize_money": "£597,000",
+      "notes": "World Matchplay champion"
+    },
+    {
+      "rank": 11,
+      "player": "Danny Noppert",
+      "nationality": "Netherlands",
+      "prize_money": "£591,000",
+      "notes": "Former UK Open champion"
+    },
+    {
+      "rank": 12,
+      "player": "Wessel Nijman",
+      "nationality": "Netherlands",
+      "prize_money": "£585,000",
+      "notes": "Rapidly rising Dutch contender"
+    },
+    {
+      "rank": 13,
+      "player": "Michael van Gerwen",
+      "nationality": "Netherlands",
+      "prize_money": "£580,000",
+      "notes": "3x World Champion; legendary major winner"
+    },
+    {
+      "rank": 14,
+      "player": "Gary Anderson",
+      "nationality": "Scotland",
+      "prize_money": "£566,750",
+      "notes": "2x World Champion (2015, 2016)"
+    },
+    {
+      "rank": 15,
+      "player": "Ryan Searle",
+      "nationality": "England",
+      "prize_money": "£562,750",
+      "notes": "Prolific ProTour title winner"
+    },
+    {
+      "rank": 16,
+      "player": "Chris Dobey",
+      "nationality": "England",
+      "prize_money": "£534,750",
+      "notes": "Masters champion & major contender"
+    },
+    {
+      "rank": 17,
+      "player": "Damon Heta",
+      "nationality": "Australia",
+      "prize_money": "£528,250",
+      "notes": "Highest-ranked Oceanic player"
+    },
+    {
+      "rank": 18,
+      "player": "Rob Cross",
+      "nationality": "England",
+      "prize_money": "£506,000",
+      "notes": "2018 World Champion"
+    },
+    {
+      "rank": 19,
+      "player": "Michael Smith",
+      "nationality": "England",
+      "prize_money": "£478,500",
+      "notes": "2023 World Champion"
+    },
+    {
+      "rank": 20,
+      "player": "Martin Schindler",
+      "nationality": "Germany",
+      "prize_money": "£463,750",
+      "notes": "2026 European Championship runner-up (+£80,000); German #1"
+    },
+    {
+      "rank": 21,
+      "player": "Peter Wright",
+      "nationality": "Scotland",
+      "prize_money": "£452,000",
+      "notes": "2x World Champion (2020, 2022)"
+    },
+    {
+      "rank": 22,
+      "player": "Dave Chisnall",
+      "nationality": "England",
+      "prize_money": "£438,500",
+      "notes": "Consistent European Tour title winner"
+    },
+    {
+      "rank": 23,
+      "player": "Andrew Gilding",
+      "nationality": "England",
+      "prize_money": "£415,000",
+      "notes": "2023 UK Open champion"
+    },
+    {
+      "rank": 24,
+      "player": "Dirk van Duijvenbode",
+      "nationality": "Netherlands",
+      "prize_money": "£398,000",
+      "notes": "High-scoring Dutch star"
+    },
+    {
+      "rank": 25,
+      "player": "Daryl Gurney",
+      "nationality": "Northern Ireland",
+      "prize_money": "£382,500",
+      "notes": "2x Major champion"
+    },
+    {
+      "rank": 26,
+      "player": "Gabriel Clemens",
+      "nationality": "Germany",
+      "prize_money": "£365,000",
+      "notes": "Historic 2023 World Semi-Finalist"
+    },
+    {
+      "rank": 27,
+      "player": "Raymond van Barneveld",
+      "nationality": "Netherlands",
+      "prize_money": "£355,000",
+      "notes": "5x World Champion; legendary veteran"
+    },
+    {
+      "rank": 28,
+      "player": "Krzysztof Ratajski",
+      "nationality": "Poland",
+      "prize_money": "£342,000",
+      "notes": "The Polish Eagle"
+    },
+    {
+      "rank": 29,
+      "player": "Mike De Decker",
+      "nationality": "Belgium",
+      "prize_money": "£335,000",
+      "notes": "2024 World Grand Prix champion"
+    },
+    {
+      "rank": 30,
+      "player": "Brendan Dolan",
+      "nationality": "Northern Ireland",
+      "prize_money": "£318,000",
+      "notes": "History Maker; multi-quarterfinalist"
+    },
+    {
+      "rank": 31,
+      "player": "Ritchie Edhouse",
+      "nationality": "England",
+      "prize_money": "£305,000",
+      "notes": "European Tour title winner"
+    },
+    {
+      "rank": 32,
+      "player": "Ricardo Pietreczko",
+      "nationality": "Germany",
+      "prize_money": "£295,000",
+      "notes": "Pikachu; European Tour winner"
+    }
   ],
-  "last_verified": "2026-10-03",
-  "source": "Official Professional Darts Corporation Order of Merit",
+  "last_verified": "2026-10-26",
+  "source": "Official Professional Darts Corporation Order of Merit (Post-European Championship)",
   "source_url": "https://www.pdc.tv/order-of-merit"
 }

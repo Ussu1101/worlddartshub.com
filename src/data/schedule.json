@@ -30,11 +30,11 @@
       "description": "The final 32 players compete in high-stakes double sessions."
     },
     {
-      "phase_name": "New Year's Eve Special Session",
+      "phase_name": "New Year's Eve (Projected Rest Day)",
       "date_range": "31 December 2026",
-      "format": "Best of 7 Sets (Quarter-Final Prelude)",
-      "sessions_count": 1,
-      "description": "Traditional afternoon session; no evening darts on New Year's Eve."
+      "format": "No Matches",
+      "sessions_count": 0,
+      "description": "Projected rest day ahead of New Year's Day Quarter-Finals; official calendar reports no play on New Year's Eve."
     },
     {
       "phase_name": "Quarter-Finals",
@@ -94,10 +94,10 @@
       "day_of_week": "Thursday",
       "sessions": [
         {
-          "session_type": "Afternoon Session Only",
-          "start_time_gmt": "12:30",
-          "round": "Round 4",
-          "featured": "Final 16 matches before New Year's celebrations"
+          "session_type": "No Play (Projected Rest Day)",
+          "start_time_gmt": "—",
+          "round": "Tournament Hiatus",
+          "featured": "Scheduled rest day ahead of New Year's Day Quarter-Finals (no matches scheduled)"
         }
       ]
     },
@@ -144,6 +144,6 @@
       ]
     }
   ],
-  "last_verified": "2026-10-03",
+  "last_verified": "2026-10-26",
   "status": "verified"
 }

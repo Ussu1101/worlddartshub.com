@@ -13,6 +13,26 @@
   },
   "historical_recent_finals": [
     {
+      "year": "2026",
+      "date": "3 January 2026",
+      "winner": "Luke Littler (England)",
+      "runner_up": "Gian van Veen (Netherlands)",
+      "score": "7 - 1",
+      "winner_average": 104.45,
+      "runner_up_average": 96.88,
+      "notable_moment": "Littler retained the Sid Waddell Trophy in breathtaking style, firing sixteen 180s in a dominant 7–1 triumph over Gian van Veen."
+    },
+    {
+      "year": "2025",
+      "date": "3 January 2025",
+      "winner": "Luke Littler (England)",
+      "runner_up": "Michael van Gerwen (Netherlands)",
+      "score": "7 - 3",
+      "winner_average": 102.82,
+      "runner_up_average": 100.15,
+      "notable_moment": "Littler claimed his historic maiden world title at age 17, defeating three-time champion Van Gerwen with a 102.82 average."
+    },
+    {
       "year": "2024",
       "date": "3 January 2024",
       "winner": "Luke Humphries (England)",
@@ -88,9 +108,9 @@
     "highest_tournament_average": "Michael van Gerwen (114.05 in 2017 Semi-Final)",
     "highest_final_average": "Phil Taylor (110.94 vs Raymond van Barneveld in 2009 Final)",
     "most_180s_in_single_tournament": "Michael Smith (83 in 2022)",
-    "nine_darters_hit_in_history": 14
+    "nine_darters_hit_in_history": 16
   },
-  "last_verified": "2026-10-03",
+  "last_verified": "2026-10-26",
   "source": "Professional Darts Corporation Official Match Records",
   "source_url": "https://www.pdc.tv"
 }
