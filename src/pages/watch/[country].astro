@@ -198,8 +198,14 @@ const territoryData: Record<string, {
 
 const profile = territoryData[country] || territoryData['international'];
 const countryDisplayName = broadcaster.country === 'International / Rest of World' ? 'Rest of World' : broadcaster.country;
-const pageTitle = `Watch PDC Darts 2026/27 in ${countryDisplayName}: TV & Streams`;
-const pageDescription = `Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in ${countryDisplayName}. ${profile.subhead}`;
+const seoOverrides: Record<string, { title: string; description: string }> = {
+  canada: {
+    title: "Watch Darts in Canada: PDCTV, Start Times & Players",
+    description: "Official ways to watch PDC darts in Canada: PDCTV live feeds, devices and apps, local start times from Newfoundland to BC — plus Campbell, Cameron, Long, Part.",
+  },
+};
+const pageTitle = seoOverrides[country]?.title ?? `Watch PDC Darts 2026/27 in ${countryDisplayName}: TV & Streams`;
+const pageDescription = seoOverrides[country]?.description ?? `Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in ${countryDisplayName}. ${profile.subhead}`;
 
 const breadcrumbItems = [
   { name: 'Watch & Stream', url: '/watch/' },
