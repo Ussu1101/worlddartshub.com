@@ -1,0 +1,698 @@
+---
+// src/pages/tournament/world-darts-championship-qualifiers.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+import AdSlot from '../../components/AdSlot.astro';
+
+const pageTitle = "Who Qualified for the 2026/27 World Darts Championship?";
+const pageDescription = "Complete list of confirmed qualifiers for the 2026/27 PDC World Darts Championship at Alexandra Palace: 48 international spots, confirmed players, and TBC routes.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/world-darts-championship-qualifiers/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournaments', url: '/tournament/pdc-majors-explained/' },
+  { name: 'PDC World Darts Championship', url: '/tournament/world-darts-championship/' },
+  { name: 'Qualifiers List' }
+];
+
+const faqItems = [
+  {
+    q: "How many players qualify for the 2026/27 World Darts Championship?",
+    a: "A total of 128 players qualify for the tournament at Alexandra Palace: the top 40 from the two-year PDC Order of Merit, the top 40 non-qualified players from the one-year ProTour Order of Merit, and 48 international and secondary circuit qualifiers."
+  },
+  {
+    q: "When is the final qualification cut-off for the World Darts Championship?",
+    a: "The final ranking cut-off takes place at the conclusion of the Players Championship Finals in Minehead (27–29 November 2026). The final qualifying spots are settled on 30 November at the PDPA Tour Card Holder Qualifier in Leicester."
+  },
+  {
+    q: "Which women have qualified for the 2026/27 World Darts Championship?",
+    a: "Beau Greaves, Fallon Sherrock, Lisa Ashton, Gemma Hayter, and Vicky Pruim have secured qualification via the Betfred Women's World Matchplay and the PDC Women's Series Order of Merit."
+  },
+  {
+    q: "How many African players qualify for Alexandra Palace in 2026/27?",
+    a: "For the first time in tournament history, Africa receives two guaranteed spots at the World Darts Championship, organized by the African Darts Group (ADG): one for Northern/East Africa (won by Kenya's David Munyua) and one for Southern Africa."
+  },
+  {
+    q: "When is the official World Darts Championship draw announced?",
+    a: "The official first-round draw takes place in early December 2026, shortly after the PDPA Tour Card Holder Qualifier concludes in Leicester."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-27T00:00:00+00:00",
+      "dateModified": "2026-10-27T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PDC WORLD CHAMPIONSHIP</span>
+        <span class="badge">ALEXANDRA PALACE 2026/27</span>
+        <span class="badge badge-outline">128-PLAYER FIELD</span>
+      </div>
+      <h1>Who Qualified for the 2026/27 World Darts Championship?</h1>
+      <p class="lead-text">
+        The 2026/27 PDC World Darts Championship brings together 128 elite competitors inside the historic Great Hall at Alexandra Palace from 11 December 2026 to 3 January 2027. Here is the verified list of confirmed international qualifiers, regional champions, and upcoming playoff dates across all 48 non-ranking berths.
+      </p>
+      <div class="update-stamp">
+        <strong>Last verified:</strong> 27 October 2026 &bull; Main Tour Ranking Cut-Off: 29 November 2026
+      </div>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="27 October 2026" topic="PDC World Darts Championship 2026/27 Confirmed Qualifiers & Route Allocations" />
+
+      <!-- Section 1: Overview -->
+      <section class="content-card">
+        <h2>128-Player Field Architecture &amp; Selection Criteria</h2>
+        <p>
+          The expanded 128-player World Darts Championship field is populated through three distinct qualification pillars established by the Professional Darts Corporation (PDC) and the Professional Dart Players Association (PDPA):
+        </p>
+        <ol>
+          <li>
+            <strong>PDC Order of Merit (Top 40):</strong> The top 40 players from the two-year rolling world rankings. The top 32 receive protected seeded positions in the draw.
+          </li>
+          <li>
+            <strong>PDC ProTour Order of Merit (Next 40):</strong> The top 40 non-qualified players based on floor performance across the single-season Players Championship and European Tour events.
+          </li>
+          <li>
+            <strong>International &amp; Secondary Pathways (48 Places):</strong> A global network of 48 berths comprising secondary developmental tours, women's professional pathways, regional continental affiliate circuits, and final Tour Card holder knockouts.
+          </li>
+        </ol>
+        <p>
+          While the top 40 Order of Merit and ProTour places remain fluid until the ranking cut-off at the <strong>Players Championship Finals in Minehead (27–29 November 2026)</strong>, international affiliate tournaments and secondary tours conclude throughout autumn. For detailed mathematical rules on how seeds and roll-downs operate, read our complete <a href="/tournament/qualification-explained/">World Championship Qualification Guide</a> and check real-time rankings on our <a href="/tournament/order-of-merit/">PDC Order of Merit Guide</a>.
+        </p>
+      </section>
+
+      <!-- Section 2: Complete 48-Slot Table -->
+      <section class="content-card">
+        <h2>The 48 International &amp; Secondary Qualifiers Ledger</h2>
+        <p>
+          Below is the complete 48-slot ledger of international qualifying places. In accordance with editorial standards, players are named <strong>only when confirmed by 2+ independent authoritative sources</strong>. Unconfirmed slots remain designated as <strong>TBC</strong> with the qualifying tournament and schedule noted:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table qualifiers-table">
+            <thead>
+              <tr>
+                <th style="width: 80px;">Slot(s)</th>
+                <th>Qualifying Pathway</th>
+                <th>Region / Circuit</th>
+                <th>Player</th>
+                <th>Key Context &amp; Significance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Slots 1: Youth -->
+              <tr>
+                <td><strong>1</strong></td>
+                <td>PDC World Youth Championship</td>
+                <td>Global / Youth</td>
+                <td><strong>TBC</strong></td>
+                <td>Final staged in Minehead during Players Championship Finals weekend.</td>
+              </tr>
+              <!-- Slots 2-4: Development Tour -->
+              <tr>
+                <td><strong>2–4</strong></td>
+                <td>Winmau Development Tour (Top 3)</td>
+                <td>Global / Youth (16–23)</td>
+                <td><strong>TBC</strong></td>
+                <td>Season concluded in Wigan; allocations subject to main tour roll-downs.</td>
+              </tr>
+              <!-- Slots 5-7: Challenge Tour -->
+              <tr>
+                <td><strong>5–7</strong></td>
+                <td>Winmau Challenge Tour (Top 3)</td>
+                <td>Secondary Pro Circuit</td>
+                <td><strong>TBC</strong></td>
+                <td>Top non-Tour Card players; allocations finalize post-ProTour cut-off.</td>
+              </tr>
+              <!-- Slot 8: Women's World Matchplay -->
+              <tr class="confirmed-row">
+                <td><strong>8</strong></td>
+                <td>Betfred Women's World Matchplay</td>
+                <td>Women's Professional</td>
+                <td><a href="/players/beau-greaves/"><strong>Beau Greaves</strong></a></td>
+                <td>Reigning Women's World Matchplay champion and dominant Women's Series leader.</td>
+              </tr>
+              <!-- Slots 9-11: Women's Series -->
+              <tr class="confirmed-row">
+                <td><strong>9</strong></td>
+                <td>PDC Women's Series (Place 1)</td>
+                <td>Women's Professional</td>
+                <td><a href="/players/fallon-sherrock/"><strong>Fallon Sherrock</strong></a></td>
+                <td>'The History Maker' returns to Alexandra Palace via Women's Series rankings.</td>
+              </tr>
+              <tr class="confirmed-row">
+                <td><strong>10</strong></td>
+                <td>PDC Women's Series (Place 2)</td>
+                <td>Women's Professional</td>
+                <td><strong>Lisa Ashton</strong></td>
+                <td>Four-time World Champion veteran secures another Alexandra Palace appearance.</td>
+              </tr>
+              <tr class="confirmed-row">
+                <td><strong>11</strong></td>
+                <td>PDC Women's Series (Place 3)</td>
+                <td>Women's Professional</td>
+                <td><strong>Gemma Hayter</strong></td>
+                <td>Breakout multi-title winner on the 2026 Women's Series earns her Ally Pally debut.</td>
+              </tr>
+              <!-- Women's Series Extension -->
+              <tr class="confirmed-row">
+                <td><strong>11B</strong></td>
+                <td>Women's Series Extended Allocation</td>
+                <td>Sweden / Scandinavia</td>
+                <td><strong>Vicky Pruim</strong></td>
+                <td>Event 12 champion in Leicester; secured spot following PDPA season conclusion in Wigan.</td>
+              </tr>
+              <!-- Slot 12: Japan -->
+              <tr>
+                <td><strong>12</strong></td>
+                <td>Japanese Championship Qualifier</td>
+                <td>Japan</td>
+                <td><strong>TBC</strong></td>
+                <td>PDC Asian affiliate knockout event.</td>
+              </tr>
+              <!-- Slot 13: China -->
+              <tr>
+                <td><strong>13</strong></td>
+                <td>PDC China Championship</td>
+                <td>China</td>
+                <td><strong>TBC</strong></td>
+                <td>Continental championship winner.</td>
+              </tr>
+              <!-- Slot 14: India -->
+              <tr>
+                <td><strong>14</strong></td>
+                <td>Indian National Qualifier</td>
+                <td>India</td>
+                <td><strong>TBC</strong></td>
+                <td>Annual national championship playoff.</td>
+              </tr>
+              <!-- Slots 15-16: Asian Championship -->
+              <tr class="confirmed-row">
+                <td><strong>15</strong></td>
+                <td>PDC Asian Championship (Winner)</td>
+                <td>Philippines / Asia</td>
+                <td><strong>Lourence Ilagan</strong></td>
+                <td>Filipino veteran claims continental title to seal another World Championship return.</td>
+              </tr>
+              <tr class="confirmed-row">
+                <td><strong>16</strong></td>
+                <td>PDC Asian Championship (Runner-Up)</td>
+                <td>Macau / Asia</td>
+                <td><strong>Kam Weng Cheng</strong></td>
+                <td><strong>Historic first:</strong> Cheng becomes the first-ever darts player from Macau to reach Alexandra Palace.</td>
+              </tr>
+              <!-- Slots 17-21: Asian Tour Order of Merit -->
+              <tr>
+                <td><strong>17–21</strong></td>
+                <td>PDC Asian Tour Order of Merit (Top 5)</td>
+                <td>Asia</td>
+                <td><strong>TBC</strong> (5 Places)</td>
+                <td>Final seasonal rankings across the 24-event Asian Tour circuit.</td>
+              </tr>
+              <!-- European Regional Knockouts: Slots 22-26 -->
+              <tr>
+                <td><strong>22</strong></td>
+                <td>PDCE Benelux Qualifier</td>
+                <td>Netherlands &amp; Belgium</td>
+                <td><strong>TBC</strong></td>
+                <td>PDC Europe regional knockout for non-Tour Card holders.</td>
+              </tr>
+              <tr>
+                <td><strong>23</strong></td>
+                <td>PDCE Mediterranean Qualifier</td>
+                <td>Southern Europe</td>
+                <td><strong>TBC</strong></td>
+                <td>PDC Europe regional qualifying tournament.</td>
+              </tr>
+              <tr>
+                <td><strong>24</strong></td>
+                <td>PDCE South-East Europe Qualifier</td>
+                <td>Balkans / SE Europe</td>
+                <td><strong>TBC</strong></td>
+                <td>Regional knockout covering south-eastern Europe.</td>
+              </tr>
+              <tr>
+                <td><strong>25</strong></td>
+                <td>PDCE Czechia Qualifier</td>
+                <td>Czech Republic</td>
+                <td><strong>TBC</strong></td>
+                <td>Domestic non-Tour Card championship.</td>
+              </tr>
+              <tr>
+                <td><strong>26</strong></td>
+                <td>Polska Darts Organisation Qualifier</td>
+                <td>Poland</td>
+                <td><strong>TBC</strong></td>
+                <td>National Polish championship knockout.</td>
+              </tr>
+              <!-- European Super Leagues: Slots 27-28 -->
+              <tr>
+                <td><strong>27</strong></td>
+                <td>PDCE DACH Super League</td>
+                <td>Germany, Austria, Switzerland</td>
+                <td><strong>TBC</strong></td>
+                <td>Televised multi-day German-speaking league champion.</td>
+              </tr>
+              <tr>
+                <td><strong>28</strong></td>
+                <td>Hungarian Super League</td>
+                <td>Hungary</td>
+                <td><strong>TBC</strong></td>
+                <td>Hungarian Darts Federation / PDCE league champion.</td>
+              </tr>
+              <!-- UK & Ireland Associate: Slot 29 -->
+              <tr>
+                <td><strong>29</strong></td>
+                <td>PDPA UK &amp; Ireland Qualifier</td>
+                <td>United Kingdom &amp; Ireland</td>
+                <td><strong>TBC</strong></td>
+                <td>PDPA associate member domestic playoff.</td>
+              </tr>
+              <!-- North America: Slots 30-34 -->
+              <tr>
+                <td><strong>30</strong></td>
+                <td>CDC Continental Cup</td>
+                <td>North America</td>
+                <td><strong>TBC</strong></td>
+                <td>Championship Darts Corporation seasonal cup winner.</td>
+              </tr>
+              <tr>
+                <td><strong>31</strong></td>
+                <td>CDC Cross-Border Challenge</td>
+                <td>USA &amp; Canada</td>
+                <td><strong>TBC</strong></td>
+                <td>Bi-national CDC staged major champion.</td>
+              </tr>
+              <tr>
+                <td><strong>32</strong></td>
+                <td>PDC North American Championship</td>
+                <td>North America</td>
+                <td><strong>TBC</strong></td>
+                <td>Staged in New York during the US Darts Masters weekend.</td>
+              </tr>
+              <tr class="confirmed-row">
+                <td><strong>33</strong></td>
+                <td>CDC North American Tour (Top US)</td>
+                <td>United States</td>
+                <td><strong>Fred Krueger</strong></td>
+                <td>Finished #2 overall on the 2026 CDC Tour to secure the leading American qualification berth.</td>
+              </tr>
+              <tr class="confirmed-row">
+                <td><strong>34</strong></td>
+                <td>CDC North American Tour (Top Canadian)</td>
+                <td>Canada</td>
+                <td><strong>Brayden Hall</strong></td>
+                <td>Leading Canadian performer on the 2026 CDC Continental Tour.</td>
+              </tr>
+              <!-- Latin America: Slot 35 -->
+              <tr>
+                <td><strong>35</strong></td>
+                <td>CDLC Tour Qualifier</td>
+                <td>Latin America &amp; Caribbean</td>
+                <td><strong>TBC</strong></td>
+                <td>Championship Darts Latin America &amp; Caribbean tour champion.</td>
+              </tr>
+              <!-- Nordic & Baltic: Slots 36-38 -->
+              <tr>
+                <td><strong>36</strong></td>
+                <td>PDC Nordic &amp; Baltic Championship</td>
+                <td>Nordics &amp; Baltics</td>
+                <td><strong>TBC</strong></td>
+                <td>Winner of the Jann Hoffmann Trophy.</td>
+              </tr>
+              <tr>
+                <td><strong>37–38</strong></td>
+                <td>PDCNB ProTour Order of Merit (Top 2)</td>
+                <td>Nordics &amp; Baltics</td>
+                <td><strong>TBC</strong> (2 Places)</td>
+                <td>Top two non-qualified players on final Nordic &amp; Baltic rankings.</td>
+              </tr>
+              <!-- Oceania: Slots 39-42 -->
+              <tr>
+                <td><strong>39</strong></td>
+                <td>ANZ Premier League</td>
+                <td>Australia &amp; New Zealand</td>
+                <td><strong>TBC</strong></td>
+                <td>Oceanian affiliate championship winner.</td>
+              </tr>
+              <tr>
+                <td><strong>40</strong></td>
+                <td>Australian Darts Association (ADA) Tour</td>
+                <td>Australia</td>
+                <td><strong>TBC</strong></td>
+                <td>ADA domestic ranking tour champion.</td>
+              </tr>
+              <tr>
+                <td><strong>41</strong></td>
+                <td>DPNZ ProTour Order of Merit</td>
+                <td>New Zealand</td>
+                <td><strong>TBC</strong></td>
+                <td>DartPlayers New Zealand seasonal ranking winner.</td>
+              </tr>
+              <tr>
+                <td><strong>42</strong></td>
+                <td>Oceania Playoff Qualifier</td>
+                <td>Australasia</td>
+                <td><strong>TBC</strong></td>
+                <td>Trans-Tasman qualifying event.</td>
+              </tr>
+              <!-- Africa: Slots 43-44 -->
+              <tr class="confirmed-row">
+                <td><strong>43</strong></td>
+                <td>ADG Northern Africa Qualifier</td>
+                <td>Northern &amp; East Africa</td>
+                <td><strong>David Munyua</strong> (Kenya)</td>
+                <td>Kenyan champion claimed back-to-back Ally Pally spots with an 8–7 deciding-leg win in Nairobi.</td>
+              </tr>
+              <tr>
+                <td><strong>44</strong></td>
+                <td>ADG Southern Africa Qualifier</td>
+                <td>Southern Africa</td>
+                <td><strong>TBC</strong></td>
+                <td>African Darts Group dedicated playoff staged in Cape Town.</td>
+              </tr>
+              <!-- Tour Card Holder Qualifier: Slots 45-46 -->
+              <tr>
+                <td><strong>45–46</strong></td>
+                <td>PDPA Tour Card Holder Qualifier</td>
+                <td>Professional Circuit</td>
+                <td><strong>TBC</strong> (2 Places + Reallocations)</td>
+                <td>High-stakes knockout for non-qualified Tour Card holders at Mattioli Arena, Leicester (30 Nov).</td>
+              </tr>
+              <!-- Additional Berths: Slots 47-48 -->
+              <tr>
+                <td><strong>47–48</strong></td>
+                <td>Additional PDC Allocations</td>
+                <td>Global</td>
+                <td><strong>TBC</strong> (2 Places)</td>
+                <td>Final international reserve berths to be confirmed by the PDC.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <AdSlot slotType="leaderboard" id="qualifiers-mid-ad" />
+
+      <!-- Section 3: Breakthroughs -->
+      <section class="content-card">
+        <h2>Regional Breakthroughs &amp; Historic Firsts</h2>
+        
+        <h3>🌍 Africa's Historic Two-Spot Era</h3>
+        <p>
+          Following landmark performances by African competitors at Alexandra Palace, the PDC and the <strong>African Darts Group (ADG)</strong> have expanded the continent's representation to <strong>two guaranteed berths</strong> for the first time. The dedicated regional split ensures permanent geographic representation: Kenya's <strong>David Munyua</strong> secured the Northern Africa spot in Nairobi, while the Southern Africa qualifier takes place in Cape Town.
+        </p>
+
+        <h3>🇲🇴 Macau's Historic Ally Pally Debut</h3>
+        <p>
+          The 2026/27 World Championship marks the tournament debut of Macau. <strong>Kam Weng Cheng</strong> made history by storming into the final of the PDC Asian Championship, earning his place on darts' grandest stage and becoming the first darts player from Macau ever to compete at Alexandra Palace.
+        </p>
+
+        <h3>🎯 Women's Professional Representation</h3>
+        <p>
+          Women's professional darts continues its rapid ascendancy with five female competitors confirmed for Alexandra Palace. Led by reigning Women's World Matchplay champion <a href="/players/beau-greaves/">Beau Greaves</a>, the contingent features global icon <a href="/players/fallon-sherrock/">Fallon Sherrock</a>, four-time World Champion Lisa Ashton, multi-title winner Gemma Hayter, and Sweden's Vicky Pruim. Read our comprehensive analysis of the <a href="/tournament/pdc-womens-series/">PDC Women's Series</a> for seasonal tour details.
+        </p>
+      </section>
+
+      <!-- Section 4: Road Ahead -->
+      <section class="content-card">
+        <h2>Timeline to Alexandra Palace &amp; The Official Draw</h2>
+        <p>
+          The final field of 128 players will crystallize over the coming weeks through key tournament milestones:
+        </p>
+        <ul>
+          <li><strong>27–29 November 2026:</strong> The <strong>Players Championship Finals</strong> in Minehead locks the final top 40 on the PDC Order of Merit and confirms the 40 ProTour qualifiers.</li>
+          <li><strong>30 November 2026:</strong> The <strong>PDPA Tour Card Holder Qualifier</strong> at the Mattioli Arena in Leicester awards the final remaining places.</li>
+          <li><strong>Early December 2026:</strong> The official live tournament draw sets the 64 first-round ties. Follow our dedicated <a href="/draw/">World Darts Championship Draw Guide</a> for bracket updates.</li>
+          <li><strong>11 December 2026:</strong> Opening night inside the Great Hall at Alexandra Palace.</li>
+        </ul>
+      </section>
+
+      <!-- Section 5: Authority Links -->
+      <section class="content-card">
+        <h2>Explore World Darts Championship Coverage</h2>
+        <div class="link-grid">
+          <a href="/tournament/world-darts-championship/" class="hub-link-card">
+            <h4>🎯 World Championship Tournament Hub</h4>
+            <p>Master guide to dates, Great Hall venue details, £5M prize money, and tournament history.</p>
+          </a>
+          <a href="/tournament/qualification-explained/" class="hub-link-card">
+            <h4>🗺️ Qualification System Explained</h4>
+            <p>In-depth breakdown of the 40+40+48 mathematical structure and roll-down regulations.</p>
+          </a>
+          <a href="/tournament/order-of-merit/" class="hub-link-card">
+            <h4>📊 PDC Order of Merit Rankings</h4>
+            <p>Live two-year world ranking table and seeding projections for Alexandra Palace.</p>
+          </a>
+          <a href="/draw/" class="hub-link-card">
+            <h4>📋 Tournament Bracket &amp; Draw</h4>
+            <p>Comprehensive first-round pairings, set play format, and route to the Sid Waddell Trophy.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 6: FAQs -->
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions: World Championship Qualifiers</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .badge-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+  }
+  .page-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 820px;
+    margin-bottom: 1rem;
+  }
+  .update-stamp {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    background: rgba(15, 23, 42, 0.6);
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .main-column {
+    min-width: 0;
+  }
+  .content-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f1f5f9;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .qualifiers-table td:first-child {
+    text-align: center;
+  }
+  .confirmed-row {
+    background: #f0fdf4;
+  }
+  .confirmed-row td strong {
+    color: #15803d;
+  }
+
+  .link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .hub-link-card {
+    display: block;
+    padding: 1.25rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .hub-link-card:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+  }
+  .hub-link-card h4 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1rem;
+    color: #0f172a;
+  }
+  .hub-link-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.4;
+  }
+
+  .faq-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 1.25rem;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  .faq-item p {
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>
