@@ -1,8 +1,8 @@
 [
   {
     "url": "/",
-    "title": "PDC World Darts 2026/27: Live Stream, TV &amp; Fan Hub",
-    "description": "Independent guide to the 2026/27 PDC World Darts Championship at Alexandra Palace. Find legal TV streams, schedule times, tickets, and results."
+    "title": "World Darts Championship 2026/27: Live, Schedule, Results &amp; How to Watch",
+    "description": "World Darts Championship 2026/27 at Alexandra Palace, 11 December to 3 January: live order of play, schedule, results and legal TV and streaming options by country."
   },
   {
     "url": "/about/",
@@ -196,8 +196,8 @@
   },
   {
     "url": "/live/",
-    "title": "Darts Tonight &amp; Fixtures: PDC Live Match Center 2026/27",
-    "description": "Darts tonight: session start times, board order and fixtures for the 2026/27 PDC World Darts Championship at Alexandra Palace."
+    "title": "World Darts Tonight: Live Order of Play, Results &amp; TV Times",
+    "description": "Tonight"
   },
   {
     "url": "/players/",
@@ -228,6 +228,11 @@
     "url": "/players/chris-dobey/",
     "title": "Chris Dobey: Darts Specs &amp; Career Stats",
     "description": "Player dossier for Chris Dobey: 23g Target Darts darts, walk-on anthem &quot;Hey Jude&quot;, career earnings and records."
+  },
+  {
+    "url": "/players/danny-noppert/",
+    "title": "Danny Noppert: Darts Specs, Career Stats &amp; UK Open Title",
+    "description": "Player dossier for Danny Noppert: 24g Winmau signature darts, walk-on anthem"
   },
   {
     "url": "/players/darts-equipment-specs/",
@@ -268,6 +273,11 @@
     "url": "/players/how-to-become-pro/",
     "title": "How to Become a Pro Darts Player: PDC Tour Card Guide",
     "description": "Complete guide to becoming a professional darts player: PDC Q-School pathways, Tour Card economics, Challenge and Development Tours, and ranking systems."
+  },
+  {
+    "url": "/players/james-wade/",
+    "title": "James Wade: Darts Specs, Career Stats &amp; Titles",
+    "description": "Player dossier for James Wade: 20g Unicorn signature darts, walk-on anthem"
   },
   {
     "url": "/players/jonny-clayton/",
@@ -350,6 +360,16 @@
     "description": "Player dossier for Rob Cross: 21g Target Darts darts, walk-on anthem &quot;Hot Hot Hot&quot;, career earnings and records."
   },
   {
+    "url": "/players/ross-smith/",
+    "title": "Ross Smith: Darts Specs, Career Stats &amp; European Titles",
+    "description": "Player dossier for Ross Smith: 22g Unicorn signature darts, walk-on anthem"
+  },
+  {
+    "url": "/players/ryan-searle/",
+    "title": "Ryan Searle: Darts Specs, 32g Setup &amp; Career Stats",
+    "description": "Player dossier for Ryan Searle: famous 32g Loxley signature heavy darts, walk-on anthem"
+  },
+  {
     "url": "/players/stats/",
     "title": "PDC Darts Player Stats &amp; 3-Dart Averages (2026/27 Season)",
     "description": "Comprehensive statistical analysis of top PDC darts players. Compare 3-dart scoring averages, checkout percentages, 180 rates, and tournament form."
@@ -363,6 +383,11 @@
     "url": "/players/walk-on-songs/",
     "title": "PDC Darts Walk-On Songs 2026/27: Playlist &amp; Origins",
     "description": "Guide to PDC World Darts Championship walk-on music: every player entrance song, crowd chant, artist background and Ally Pally anthems."
+  },
+  {
+    "url": "/players/wessel-nijman/",
+    "title": "Wessel Nijman: Darts Specs, Career Stats &amp; Breakout Rise",
+    "description": "Player dossier for Wessel Nijman: 23g Winmau signature darts, walk-on anthem"
   },
   {
     "url": "/players/world-championship-records/",
@@ -381,8 +406,8 @@
   },
   {
     "url": "/schedule/",
-    "title": "PDC World Darts Schedule 2026/27: Dates, Sessions &amp; Finals",
-    "description": "Full tournament schedule for the 2026/27 PDC World Darts Championship. 28 sessions from 11 Dec 2026 to 3 Jan 2027, Christmas break, and session times."
+    "title": "World Darts Championship Schedule 2026/27: Dates, Sessions &amp; Final",
+    "description": "Full World Darts Championship schedule 2026/27 at Alexandra Palace: 11 December to 3 January, session times, Christmas break, quarter-finals 1 January, semi-finals 2 January and the final 3 January."
   },
   {
     "url": "/schedule/finals-weekend/",

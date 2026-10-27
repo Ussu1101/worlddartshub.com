@@ -9,8 +9,8 @@ import VerificationBadge from '../../components/VerificationBadge.astro';
 import liveData from '../../data/live.json';
 import scheduleData from '../../data/schedule.json';
 
-const pageTitle = "Darts Tonight & Fixtures: PDC Live Match Center 2026/27";
-const pageDescription = "Darts tonight: session start times, board order and fixtures for the 2026/27 PDC World Darts Championship at Alexandra Palace.";
+const pageTitle = "World Darts Tonight: Live Order of Play, Results & TV Times";
+const pageDescription = "Tonight's World Darts Championship order of play, results and TV times at Alexandra Palace — afternoon 12:30 GMT and evening 19:00 GMT sessions, updated daily through the 3 January final.";
 
 const breadcrumbItems = [
   { name: 'Match Center' }
@@ -55,7 +55,7 @@ const liveSchema = {
       <div class="pre-tournament-banner">
         <div class="banner-icon">ℹ️</div>
         <div class="banner-text">
-          <strong>Pre-Tournament Status Notice:</strong> Live match tracking and score updates are currently inactive. Professional darts play at Alexandra Palace begins on <strong>11 December 2026</strong>. This page currently serves as the verified session timing, format, and board order reference guide.
+          <strong>Pre-Tournament Status Notice:</strong> Live match tracking and score updates are currently inactive. Professional darts play at Alexandra Palace begins on <strong>11 December 2026</strong>. Review the <a href="/schedule/">full tournament schedule</a> or see <a href="/tournament/world-darts-championship-qualifiers/">who qualified for the World Championship</a> across all 48 international pathways. This page currently serves as the verified session timing, format, and board order reference guide.
         </div>
       </div>
 
@@ -67,6 +67,7 @@ const liveSchema = {
           <h2>🎯 Opening Fixtures &amp; Scheduled Sessions</h2>
           <span class="live-clock-pill">Provisional 2026/27 Schedule • Times GMT</span>
         </div>
+        <p class="fixtures-notice" style="margin: 0.5rem 0 1rem; color: #64748b; font-size: 0.95rem;">Draw and daily order of play are added here as soon as PDC confirms them — no match is listed before it is confirmed.</p>
 
         <div class="matches-list-grid">
           {(liveData.todays_matches?.length ? liveData.todays_matches : liveData.current_confirmed_fixtures).map((match: any) => (
@@ -91,8 +92,7 @@ const liveSchema = {
               <span class="session-time">12:30 GMT</span>
             </div>
             <p><strong>Standard Format:</strong> 4 Matches (Usually 3x First Round, 1x Second Round in early stages).</p>
-            <p><strong>Doors Open:</strong> 11:00 GMT via Palm Court entrance.</p>
-            <p><strong>Approximate Conclusion:</strong> 16:30 – 17:00 GMT.</p>
+                        <p><strong>Approximate Conclusion:</strong> 16:30 – 17:00 GMT.</p>
           </div>
 
           <div class="card session-card">
@@ -101,8 +101,7 @@ const liveSchema = {
               <span class="session-time">19:00 GMT</span>
             </div>
             <p><strong>Standard Format:</strong> 4 Matches (Prime-time seed matches and high-profile clashes).</p>
-            <p><strong>Doors Open:</strong> 17:30 GMT via Palm Court entrance.</p>
-            <p><strong>Approximate Conclusion:</strong> 23:00 GMT.</p>
+                        <p><strong>Approximate Conclusion:</strong> 23:00 GMT.</p>
           </div>
         </div>
 
@@ -114,6 +113,9 @@ const liveSchema = {
       <!-- Key Dates & Break Days -->
       <section class="live-section">
         <h2>Upcoming Tournament Stages & Schedule</h2>
+        <div class="callout" style="margin-bottom: 1rem;">
+          <p><strong>Scheduled Hiatuses:</strong> No matches — Christmas break, 24–26 December. Play resumes 27 December. No matches — projected rest day, 31 December. Quarter-finals resume 1 January.</p>
+        </div>
         <div class="table-responsive">
           <table>
             <thead>

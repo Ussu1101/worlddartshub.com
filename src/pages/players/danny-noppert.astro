@@ -1,0 +1,425 @@
+---
+// src/pages/players/danny-noppert.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Danny Noppert: Darts Specs, Career Stats & UK Open Title";
+const pageDescription = "Player dossier for Danny Noppert: 24g Winmau signature darts, walk-on anthem 'High Hopes', 2022 UK Open major champion, career earnings and records.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/danny-noppert/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Danny Noppert' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does Danny Noppert use?",
+    a: "Danny Noppert throws signature 24g 90% tungsten darts manufactured by Winmau Darts, engineered with a parallel barrel and aggressive dual-ringed grip zones."
+  },
+  {
+    q: "What is Danny Noppert's nickname and walk-on song?",
+    a: "Danny Noppert is nicknamed 'The Freeze' due to his ice-cool temperament on stage. His walk-on music is 'High Hopes' by Panic! At The Disco."
+  },
+  {
+    q: "When did Danny Noppert win the UK Open?",
+    a: "Danny Noppert won the prestigious televised UK Open in March 2022 at Butlin's Minehead, defeating Michael Smith 11–10 in a nerve-shredding deciding leg."
+  },
+  {
+    q: "What is Danny Noppert's current world ranking?",
+    a: "Following the October 2026 European Championship, Danny Noppert is ranked World No. 11 on the official two-year rolling PDC Order of Merit with £591,000 in prize money (interim baseline prior to the late-November seed lock)."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "Danny Noppert",
+      "alternateName": "The Freeze",
+      "nationality": "Netherlands",
+      "birthDate": "1990-12-31",
+      "birthPlace": "Joure, Friesland, Netherlands",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">UK OPEN CHAMPION</span>
+        <span class="badge">DUTCH NO. 2</span>
+        <span class="badge badge-outline">WORLD NO. 11</span>
+      </div>
+      <h1>Danny Noppert: "The Freeze"</h1>
+      <p class="hero-lead">
+        Major televised UK Open champion, perennial European Tour contender, and bedrock of Dutch darting excellence: here is the complete player profile on Danny Noppert.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & Winmau Darts Specs" 
+          lastVerified="27 October 2026" 
+          source="PDC Order of Merit & Player Records" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Nation</span>
+          <span class="stat-value">Netherlands</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">The Freeze</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">24g Winmau</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Order of Merit</span>
+          <span class="stat-value">World No. 11 (£591,000)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: The Ice-Cool Dutch Finisher</h2>
+        <p>
+          Born on New Year's Eve in 1990 in Joure, Friesland, <strong>Danny Noppert</strong> has developed into one of the most reliable and formidable performers on the global darts circuit. Known affectionately by fans as <em>"The Freeze"</em>, Noppert earned his moniker through an unflappable stage presence, maintaining an icy composure under intense televised pressure.
+        </p>
+        <p>
+          After a standout early career in the BDO—culminating in a Lakeside World Championship final appearance in 2017—Noppert transitioned to the Professional Darts Corporation in 2018. He swiftly won his tour card and collected multiple ranking titles, establishing himself as a fixture in the world's elite top 16.
+        </p>
+        <div class="callout ranking-notice">
+          <strong>Current Ranking Status (Interim):</strong> Following the conclusion of the 2026 European Championship in Dortmund, Noppert occupies <strong>World No. 11</strong> on the official <a href="/tournament/order-of-merit/">PDC Order of Merit</a> with £591,000 in two-year prize money. <em>Last updated: 27 October 2026. This baseline reflects post-EC prize funds; final top-32 seed allocations lock after the Players Championship Finals in late November.</em>
+        </div>
+      </section>
+
+      <!-- Verified Equipment Specifications Table -->
+      <section class="content-section">
+        <h2>Verified Darts Equipment Specifications</h2>
+        <p>
+          Noppert competes using custom match equipment manufactured by British darting powerhouse <strong>Winmau Darts</strong>:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Specification</th>
+                <th>Performance Characteristics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Manufacturer</strong></td>
+                <td><strong>Winmau Darts</strong></td>
+                <td>Official technical sponsor & equipment manufacturer</td>
+              </tr>
+              <tr>
+                <td><strong>Barrel Weight</strong></td>
+                <td><strong>24 Grams</strong></td>
+                <td>Evenly balanced weight offering high trajectory control</td>
+              </tr>
+              <tr>
+                <td><strong>Tungsten Content</strong></td>
+                <td><strong>90% Tungsten</strong></td>
+                <td>Slim profile allowing tight treble-20 grouping</td>
+              </tr>
+              <tr>
+                <td><strong>Grip Profile</strong></td>
+                <td><strong>Dual Ringed & Pixel Micro-Grip</strong></td>
+                <td>Precise tactile reference zones along front and rear sections</td>
+              </tr>
+              <tr>
+                <td><strong>Shafts / Stems</strong></td>
+                <td><strong>Winmau Vecta Short</strong></td>
+                <td>Aluminium-tipped polycarbonate stems ensuring rigid flight hold</td>
+              </tr>
+              <tr>
+                <td><strong>Flights</strong></td>
+                <td><strong>Winmau Prism Alpha Standard</strong></td>
+                <td>100-micron extra thick flights with signature 'The Freeze' artwork</td>
+              </tr>
+              <tr>
+                <td><strong>Throwing Hand</strong></td>
+                <td><strong>Right-Handed</strong></td>
+                <td>Compact, steady stance with rhythmic drawback and pinpoint release</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Inspect how Noppert's 24g setup compares to other world champions in our comprehensive guide to <a href="/players/darts-equipment-specs/">professional darts equipment specifications</a>.
+        </p>
+      </section>
+
+      <!-- Career Crowning Moment: 2022 UK Open Champion -->
+      <section class="content-section">
+        <h2>Career Crowning Glory: 2022 UK Open Champion</h2>
+        <div class="feature-box">
+          <h3>Triumph at the 'FA Cup of Darts'</h3>
+          <p>
+            In March 2022 in Minehead, Danny Noppert etched his name into major championship history:
+          </p>
+          <ul>
+            <li><strong>The Gauntlet:</strong> Navigated through the multi-board Minehead field, taking down Ryan Meikle, Devon Petersen, Dirk van Duijvenbode, Damon Heta, and William O'Connor.</li>
+            <li><strong>Dramatic Final:</strong> Faced Michael Smith in an electrifying final. With the score locked at 10–10, Noppert held his nerve in the sudden-death deciding leg, taking out double 10 to claim the £100,000 top prize and the James Wade Trophy.</li>
+            <li><strong>Elite Status:</strong> The victory confirmed Noppert as only the fourth Dutch player in PDC history to win a televised premier ranking major.</li>
+          </ul>
+        </div>
+        <p>
+          To view Noppert's position on the global prize-money rankings, examine our complete <a href="/players/earnings/">professional darts earnings directory</a> and consult our <a href="/players/rankings/">PDC Order of Merit tracker</a>.
+        </p>
+      </section>
+
+      <!-- Consistent Major Presence -->
+      <section class="content-section">
+        <h2>Consistent ProTour Silverware &amp; Major Form</h2>
+        <p>
+          Beyond his UK Open glory, Noppert has remained an enduring force on the PDC ProTour and European Tour stages:
+        </p>
+        <ul>
+          <li><strong>ProTour Titles:</strong> Multiple Players Championship floor victories across the 2022, 2023, and 2024 seasons.</li>
+          <li><strong>World Grand Prix Semi-Finalist:</strong> Showcased his clinical double-in ability by reaching the final four in Leicester.</li>
+          <li><strong>European Tour Form:</strong> Regular finalist and semi-finalist across European Tour weekend roadshows in Germany and the Netherlands.</li>
+        </ul>
+        <p>
+          Explore Noppert's complete statistical pedigree on our <a href="/players/stats/">PDC performance statistics page</a>, and discover his peers in the <a href="/players/">World Darts Hub players directory</a>.
+        </p>
+      </section>
+
+      <!-- Walk-on Music & Anthems -->
+      <section class="content-section">
+        <h2>Walk-On Anthem: "High Hopes"</h2>
+        <p>
+          Whenever Danny Noppert steps out into arena spotlight, fans are treated to <strong>"High Hopes" by Panic! At The Disco</strong>. The brass-heavy, upbeat track provides an energetic contrast to his cool, methodical oche demeanour. Find out where his anthem ranks among player entrances in our <a href="/players/walk-on-songs/">PDC walk-on songs directory</a>.
+        </p>
+      </section>
+
+      <!-- FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Danny Noppert</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .badge-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+  }
+  .player-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .hero-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 0 1.5rem;
+  }
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+  .stat-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .content-section {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .callout {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.25rem 0;
+    font-size: 0.95rem;
+    color: #1e293b;
+  }
+  .feature-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+    color: #1e40af;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+  .feature-box ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #1e40af;
+    line-height: 1.6;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .faq-item {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+</style>

@@ -1,0 +1,427 @@
+---
+// src/pages/players/james-wade.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "James Wade: Darts Specs, Career Stats & Titles";
+const pageDescription = "Player dossier for James Wade: 20g Unicorn signature darts, walk-on anthem 'The One and Only', 11 PDC major titles, career earnings and records.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/james-wade/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'James Wade' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does James Wade use?",
+    a: "James Wade throws signature 20g 90% tungsten darts manufactured by Unicorn Darts, distinguished by their relatively light weight, classic ringed grip, and slimline barrel profile."
+  },
+  {
+    q: "What is James Wade's walk-on song and nickname?",
+    a: "James Wade is universally nicknamed 'The Machine' for his clinical finishing precision. His signature walk-on anthem is 'The One and Only' by Chesney Hawkes."
+  },
+  {
+    q: "How many PDC major titles has James Wade won?",
+    a: "James Wade has captured 11 televised PDC premier titles, placing him third on the all-time list behind only Phil Taylor and Michael van Gerwen. His major haul includes three UK Opens, two World Grand Prix crowns, the World Matchplay, and the Premier League."
+  },
+  {
+    q: "What is James Wade's current world ranking?",
+    a: "Following the October 2026 European Championship, James Wade sits at World No. 7 on the official two-year rolling PDC Order of Merit with £673,750 in prize money (interim ranking prior to the late-November seed lock)."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "James Wade",
+      "alternateName": "The Machine",
+      "nationality": "England",
+      "birthDate": "1983-04-06",
+      "birthPlace": "Aldershot, Hampshire, England",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">11-TIME MAJOR CHAMPION</span>
+        <span class="badge">WORLD NO. 7</span>
+        <span class="badge badge-outline">PDC ORDER OF MERIT</span>
+      </div>
+      <h1>James Wade: "The Machine"</h1>
+      <p class="hero-lead">
+        Eleven televised PDC major titles, legendary combination checkout mastery, and two decades of unbroken world-class consistency: here is the verified player dossier on England's James Wade.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & Unicorn Darts Specs" 
+          lastVerified="27 October 2026" 
+          source="PDC Order of Merit & DRA Player Records" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Nation</span>
+          <span class="stat-value">England</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">The Machine</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">20g Unicorn</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Order of Merit</span>
+          <span class="stat-value">World No. 7 (£673,750)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: Two Decades at the Elite Summit</h2>
+        <p>
+          Born on 6 April 1983 in Aldershot, Hampshire, <strong>James Martin Wade</strong> stands as one of the most decorated competitors in the history of professional darts. Renowned across the globe as <em>"The Machine"</em>, the left-handed maestro earned his nickname through an uncanny, almost mechanical ability to pin high-pressure outer-ring finishes and combination checkouts at vital junctures of major contests.
+        </p>
+        <p>
+          Wade broke into the upper echelons of the Professional Darts Corporation during the mid-2000s, claiming his first major crown at the 2007 World Matchplay in Blackpool at just 24 years old. Across the subsequent two decades, he has amassed <strong>11 individual televised PDC premier titles</strong>, a monumental tally eclipsed only by Phil Taylor and Michael van Gerwen in the sport's modern era.
+        </p>
+        <div class="callout ranking-notice">
+          <strong>Current Ranking Status (Interim):</strong> Following the conclusion of the 2026 European Championship in Dortmund, Wade holds <strong>World No. 7</strong> on the official <a href="/tournament/order-of-merit/">PDC Order of Merit</a> with £673,750 in ranking prize earnings. <em>Last updated: 27 October 2026. This is an interim post-EC ranking baseline; final tournament seed positions lock in following the Players Championship Finals in late November.</em>
+        </div>
+      </section>
+
+      <!-- Verified Equipment Specifications Table -->
+      <section class="content-section">
+        <h2>Verified Darts Equipment Specifications</h2>
+        <p>
+          Unlike modern peers who gravitate toward heavier darts, Wade remains celebrated for throwing exceptionally lightweight match barrels engineered in long-term partnership with <strong>Unicorn Darts</strong>:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Specification</th>
+                <th>Performance Characteristics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Manufacturer</strong></td>
+                <td><strong>Unicorn Darts</strong></td>
+                <td>Longstanding technical partner & signature equipment manufacturer</td>
+              </tr>
+              <tr>
+                <td><strong>Barrel Weight</strong></td>
+                <td><strong>20 Grams</strong></td>
+                <td>Lightweight setup requiring featherlight release & pristine rhythm</td>
+              </tr>
+              <tr>
+                <td><strong>Tungsten Content</strong></td>
+                <td><strong>90% Tungsten</strong></td>
+                <td>Dense, parallel-profile barrel allowing tight groupings in the treble bed</td>
+              </tr>
+              <tr>
+                <td><strong>Grip Profile</strong></td>
+                <td><strong>Traditional Ring Grip</strong></td>
+                <td>Subtle, evenly spaced radial grooves suited to a relaxed fingers-forward hold</td>
+              </tr>
+              <tr>
+                <td><strong>Shafts / Stems</strong></td>
+                <td><strong>Unicorn Gripper Medium</strong></td>
+                <td>Polycarbonate medium shafts providing aerodynamic stability</td>
+              </tr>
+              <tr>
+                <td><strong>Flights</strong></td>
+                <td><strong>Unicorn James Wade Signature Plus</strong></td>
+                <td>Standard No.2 aerodynamic profile displaying signature Machine branding</td>
+              </tr>
+              <tr>
+                <td><strong>Throwing Hand</strong></td>
+                <td><strong>Left-Handed</strong></td>
+                <td>Fluid, upright stance with deliberate backswing and smooth release</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Compare Wade's setup to circuit rivals in our complete directory of <a href="/players/darts-equipment-specs/">professional darts equipment specifications</a>.
+        </p>
+      </section>
+
+      <!-- Major Championship Pedigree -->
+      <section class="content-section">
+        <h2>Major Championship Pedigree: 11 PDC Premier Crowns</h2>
+        <div class="feature-box">
+          <h3>The Complete Major Trophy Collection</h3>
+          <p>
+            James Wade is one of only a handful of darting icons to have won nearly every historic televised major on the PDC calendar:
+          </p>
+          <ul>
+            <li><strong>World Matchplay (2007):</strong> Lifted the Phil Taylor Trophy in Blackpool with an 18–7 victory over Terry Jenkins.</li>
+            <li><strong>World Grand Prix (2007, 2010):</strong> Mastered the double-in double-out format twice in Dublin, including striking a televised nine-darter at the event in 2014.</li>
+            <li><strong>UK Open (2008, 2011, 2021):</strong> A three-time 'FA Cup of Darts' champion in Bolton and Minehead, demonstrating supreme endurance across open multi-board formats.</li>
+            <li><strong>Premier League Darts (2009):</strong> Defeated Mervyn King 13–8 in the play-off final to lift the prestigious weekly roadshow trophy.</li>
+            <li><strong>European Championship &amp; Masters:</strong> Captured the European Championship in 2018 in Dortmund and the Masters in 2014.</li>
+          </ul>
+        </div>
+        <p>
+          Track Wade's standing among the sport's all-time financial earners on our comprehensive leaderboard of <a href="/players/earnings/">professional darts career earnings</a>, or study the latest global ladder in our <a href="/players/rankings/">PDC Order of Merit analysis</a>.
+        </p>
+      </section>
+
+      <!-- Alexandra Palace World Championship Record -->
+      <section class="content-section">
+        <h2>Alexandra Palace Record &amp; World Championship History</h2>
+        <p>
+          The Sid Waddell Trophy remains the ultimate unconquered peak of Wade's illustrious career. A permanent fixture at Alexandra Palace since the tournament moved to north London in 2007/08, Wade has reached the <strong>semi-finals of the World Championship on three occasions</strong>:
+        </p>
+        <ul>
+          <li><strong>2009:</strong> Reached his maiden semi-final, falling to Raymond van Barneveld.</li>
+          <li><strong>2012:</strong> Battled through to the final four before losing 6–5 in a legendary deciding set against Adrian Lewis.</li>
+          <li><strong>2022:</strong> Produced a clinic of matchplay precision to reach the semi-finals again, bowed out to eventual world champion Peter Wright.</li>
+        </ul>
+        <p>
+          To explore where Wade ranks among Alexandra Palace legends, inspect our complete archive of <a href="/history/roll-of-honour/">World Darts Championship roll of honour</a> and explore our full player directory in the <a href="/players/">World Darts Hub players hub</a>.
+        </p>
+      </section>
+
+      <!-- Walk-on Music & Anthems -->
+      <section class="content-section">
+        <h2>Walk-On Anthem: "The One and Only"</h2>
+        <p>
+          For over fifteen years, Wade has taken to the arena stage to the uplifting pop-rock strains of <strong>"The One and Only" by Chesney Hawkes</strong>. The 1991 chart-topper generates universal singalongs across European arenas, serving as one of the most recognizable entrance rituals in sports entertainment. Discover where his anthem sits among crowd favorites in our definitive guide to <a href="/players/walk-on-songs/">darts walk-on songs</a>.
+        </p>
+      </section>
+
+      <!-- FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: James Wade</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .badge-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+  }
+  .player-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .hero-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 0 1.5rem;
+  }
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+  .stat-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .content-section {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .callout {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.25rem 0;
+    font-size: 0.95rem;
+    color: #1e293b;
+  }
+  .feature-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+    color: #166534;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+  .feature-box ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #166534;
+    line-height: 1.6;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .faq-item {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+</style>

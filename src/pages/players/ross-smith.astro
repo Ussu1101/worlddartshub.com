@@ -1,0 +1,424 @@
+---
+// src/pages/players/ross-smith.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Ross Smith: Darts Specs, Career Stats & European Titles";
+const pageDescription = "Player dossier for Ross Smith: 22g Unicorn signature darts, walk-on anthem 'Tubthumping', two-time European Champion, career earnings and records.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/ross-smith/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Ross Smith' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does Ross Smith use?",
+    a: "Ross Smith throws signature 22g 90% tungsten darts manufactured by Unicorn Darts, designed with an aerodynamic ringed barrel engineered specifically for maximum 180 grouping."
+  },
+  {
+    q: "What is Ross Smith's nickname and walk-on song?",
+    a: "Ross Smith is known by his darts nickname 'Smudger'. His famous crowd-pleasing walk-on anthem is 'Tubthumping' by Chumbawamba."
+  },
+  {
+    q: "How many European Championship titles has Ross Smith won?",
+    a: "Ross Smith is a two-time European Champion. He first lifted the title in October 2022 by defeating Michael Smith 11–8 in Dortmund, and captured his second European crown on 25 October 2026 by overcoming Martin Schindler 11–8 in the final."
+  },
+  {
+    q: "What is Ross Smith's current world ranking?",
+    a: "Following his 2026 European Championship triumph, Ross Smith soared eight places to World No. 6 on the official two-year rolling PDC Order of Merit with £714,750 in prize money (interim baseline prior to the late-November seed lock)."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "Ross Smith",
+      "alternateName": "Smudger",
+      "nationality": "England",
+      "birthDate": "1989-01-12",
+      "birthPlace": "Dover, Kent, England",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">TWO-TIME EUROPEAN CHAMPION</span>
+        <span class="badge">WORLD NO. 6 (+8 PLACES)</span>
+        <span class="badge badge-outline">180 MAXIMUM MACHINE</span>
+      </div>
+      <h1>Ross Smith: "Smudger"</h1>
+      <p class="hero-lead">
+        Two-time European Championship major winner, one of the most prolific 180 maximum hitters in darting history, and newly crowned World No. 6: here is the complete player dossier on Ross Smith.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & Unicorn Darts Specs" 
+          lastVerified="27 October 2026" 
+          source="PDC Order of Merit & Player Records" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Nation</span>
+          <span class="stat-value">England</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">Smudger</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">22g Unicorn</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Order of Merit</span>
+          <span class="stat-value">World No. 6 (£714,750)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: The Kent Scoring Sensation</h2>
+        <p>
+          Born on 12 January 1989 in Dover, Kent, <strong>Ross Smith</strong> has established himself as one of the most devastating scoring forces in modern darts. Celebrated throughout the sport as <em>"Smudger"</em>, the right-handed powerhouse combines an explosive three-dart tempo with an unparalleled appetite for maximum 180s.
+        </p>
+        <p>
+          Smith's career breakthrough arrived in spectacular style at the 2022 European Championship in Dortmund, where he defeated Peter Wright and Michael Smith on the way to lifting his maiden televised major title. Four years later, he cemented his status as a permanent darts heavyweight by repeating the feat on the very same stage.
+        </p>
+        <div class="callout ranking-notice">
+          <strong>Current Ranking Status (Interim):</strong> Following his glorious victory at the 2026 European Championship, Smith climbed an astonishing eight places to <strong>World No. 6</strong> on the official <a href="/tournament/order-of-merit/">PDC Order of Merit</a> with £714,750 in prize money. <em>Last updated: 27 October 2026. This ranking baseline incorporates his £120,000 Dortmund winner's cheque; final top-32 seeded positions lock in following the Players Championship Finals in late November.</em>
+        </div>
+      </section>
+
+      <!-- Verified Equipment Specifications Table -->
+      <section class="content-section">
+        <h2>Verified Darts Equipment Specifications</h2>
+        <p>
+          Smith throws custom-designed tungsten match equipment manufactured by technical partner <strong>Unicorn Darts</strong>:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Specification</th>
+                <th>Performance Characteristics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Manufacturer</strong></td>
+                <td><strong>Unicorn Darts</strong></td>
+                <td>Official technical sponsor & equipment manufacturer</td>
+              </tr>
+              <tr>
+                <td><strong>Barrel Weight</strong></td>
+                <td><strong>22 Grams</strong></td>
+                <td>Medium-light match weight engineered for ultra-fast arm speed</td>
+              </tr>
+              <tr>
+                <td><strong>Tungsten Content</strong></td>
+                <td><strong>90% Tungsten</strong></td>
+                <td>High-density compact barrel optimizing bed grouping</td>
+              </tr>
+              <tr>
+                <td><strong>Grip Profile</strong></td>
+                <td><strong>Continuous Precision Ringed Grip</strong></td>
+                <td>Full-length radial grooves providing uniform release control</td>
+              </tr>
+              <tr>
+                <td><strong>Shafts / Stems</strong></td>
+                <td><strong>Unicorn Gripper Short/Medium</strong></td>
+                <td>Polycarbonate stems fitted with flight security springs</td>
+              </tr>
+              <tr>
+                <td><strong>Flights</strong></td>
+                <td><strong>Unicorn Ross Smith Signature UltraFly</strong></td>
+                <td>Standard No.2 aerodynamic profile with distinctive Smudger graphics</td>
+              </tr>
+              <tr>
+                <td><strong>Throwing Hand</strong></td>
+                <td><strong>Right-Handed</strong></td>
+                <td>High release point, aggressive follow-through, rapid pace</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Study how Smith's 22g setup compares to rivals in our <a href="/players/darts-equipment-specs/">PDC equipment specifications directory</a>.
+        </p>
+      </section>
+
+      <!-- Two-Time European Champion -->
+      <section class="content-section">
+        <h2>Major Championship Glory: Two-Time European Champion</h2>
+        <div class="feature-box">
+          <h3>Dominance at Westfalenhalle, Dortmund</h3>
+          <p>
+            Dortmund's Westfalenhalle has served as the scene of Smith's greatest career triumphs:
+          </p>
+          <ul>
+            <li><strong>2022 European Championship:</strong> Captured his maiden televised crown with an astonishing performance, firing eight 180s and averaging 101.32 to defeat Michael Smith 11–8 in the final.</li>
+            <li><strong>2026 European Championship:</strong> Reclaimed the title on 25 October 2026, defeating Germany's Martin Schindler 11–8 in an electrifying final to collect the £120,000 top prize and leap eight places in the global rankings.</li>
+            <li><strong>Double Major Winner:</strong> Joined an exclusive list of multiple European Championship winners alongside Phil Taylor and Michael van Gerwen.</li>
+          </ul>
+        </div>
+        <p>
+          To analyze Smith's earnings breakdown and seasonal prize growth, visit our guide to <a href="/players/earnings/">professional darts earnings</a> and explore our <a href="/players/rankings/">PDC Order of Merit analysis</a>.
+        </p>
+      </section>
+
+      <!-- 180 Maximum Machine -->
+      <section class="content-section">
+        <h2>Scoring Firepower &amp; 180 Maximum Records</h2>
+        <p>
+          Smith is widely acknowledged by fellow professionals as one of the purest natural 180 hitters in the sport:
+        </p>
+        <ul>
+          <li><strong>ProTour Maximum Records:</strong> Frequently leads seasonal ProTour metrics in 180s per leg, often exceeding 0.40 maximums per leg across tournament play.</li>
+          <li><strong>World Championship Threat:</strong> Regularly posted multiple 100+ averages at Alexandra Palace, reaching the third round and establishing himself as a fearsome top-eight seed.</li>
+        </ul>
+        <p>
+          Discover where Smith stands among history's greatest maximum hitters on our <a href="/players/180-records/">180 maximum records leaderboard</a>, and browse our complete roster in the <a href="/players/">World Darts Hub players hub</a>.
+        </p>
+      </section>
+
+      <!-- Walk-on Music & Anthems -->
+      <section class="content-section">
+        <h2>Walk-On Anthem: "Tubthumping"</h2>
+        <p>
+          Smith's arena entrance is accompanied by the classic 1997 party anthem <strong>"Tubthumping (I Get Knocked Down)" by Chumbawamba</strong>. The chorus echoes through arenas as thousands of supporters chant along, creating an infectious party atmosphere before the first dart is thrown. Explore our comprehensive guide to <a href="/players/walk-on-songs/">darts walk-on songs</a> for track stories and fan traditions.
+        </p>
+      </section>
+
+      <!-- FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Ross Smith</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .badge-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+  }
+  .player-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .hero-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 0 1.5rem;
+  }
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+  .stat-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .content-section {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .callout {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.25rem 0;
+    font-size: 0.95rem;
+    color: #1e293b;
+  }
+  .feature-box {
+    background: #fefce8;
+    border: 1px solid #fde047;
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+    color: #854d0e;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+  .feature-box ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #854d0e;
+    line-height: 1.6;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .faq-item {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+</style>
