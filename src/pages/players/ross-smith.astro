@@ -5,7 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import VerificationBadge from '../../components/VerificationBadge.astro';
 
 const pageTitle = "Ross Smith: Darts Specs, Career Stats & European Titles";
-const pageDescription = "Player dossier for Ross Smith: 22g Unicorn signature darts, walk-on music 'Red Light Spells Danger' by Billy Ocean, two-time European Champion, career earnings and records.";
+const pageDescription = "Player dossier for Ross Smith: 22g Unicorn signature darts, walk-on music 'Red Light Spells Danger' by Billy Ocean, two-time European Champion.";
 const siteUrl = "https://worlddartshub.com";
 const canonicalUrl = `${siteUrl}/players/ross-smith/`;
 
@@ -42,7 +42,7 @@ const personSchema = {
       "@id": `${canonicalUrl}#person`,
       "name": "Ross Smith",
       "alternateName": "Smudger",
-      "nationality": "England",
+      "nationality": { "@type": "Country", "name": "England" },
       "birthDate": "1989-01-12",
       "birthPlace": "Dover, Kent, England",
       "jobTitle": "Professional Darts Player",

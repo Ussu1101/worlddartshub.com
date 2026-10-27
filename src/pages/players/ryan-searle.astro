@@ -5,7 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import VerificationBadge from '../../components/VerificationBadge.astro';
 
 const pageTitle = "Ryan Searle: Darts Specs, 32g Setup & Career Stats";
-const pageDescription = "Player dossier for Ryan Searle: famous 32g Harrows Signature heavy darts, walk-on music 'Paranoid' by Black Sabbath, Players Championship glory, career earnings and records.";
+const pageDescription = "Player dossier for Ryan Searle: 32g Harrows Signature heavy darts, walk-on music 'Paranoid' by Black Sabbath, Players Championship glory.";
 const siteUrl = "https://worlddartshub.com";
 const canonicalUrl = `${siteUrl}/players/ryan-searle/`;
 
@@ -42,7 +42,7 @@ const personSchema = {
       "@id": `${canonicalUrl}#person`,
       "name": "Ryan Searle",
       "alternateName": "Heavy Metal",
-      "nationality": "England",
+      "nationality": { "@type": "Country", "name": "England" },
       "birthDate": "1987-10-21",
       "birthPlace": "Wellington, Somerset, England",
       "jobTitle": "Professional Darts Player",

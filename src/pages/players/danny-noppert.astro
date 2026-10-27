@@ -5,7 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import VerificationBadge from '../../components/VerificationBadge.astro';
 
 const pageTitle = "Danny Noppert: Darts Specs, Career Stats & UK Open Title";
-const pageDescription = "Player dossier for Danny Noppert: 23g Winmau Signature darts, walk-on music 'High Hopes' by Panic! at the Disco, 2022 UK Open major champion, career earnings and records.";
+const pageDescription = "Player dossier for Danny Noppert: 23g Winmau Signature darts, walk-on music 'High Hopes' by Panic! at the Disco, 2022 UK Open major champion.";
 const siteUrl = "https://worlddartshub.com";
 const canonicalUrl = `${siteUrl}/players/danny-noppert/`;
 
@@ -42,7 +42,7 @@ const personSchema = {
       "@id": `${canonicalUrl}#person`,
       "name": "Danny Noppert",
       "alternateName": "The Freeze",
-      "nationality": "Netherlands",
+      "nationality": { "@type": "Country", "name": "Netherlands" },
       "birthDate": "1990-12-31",
       "birthPlace": "Joure, Friesland, Netherlands",
       "jobTitle": "Professional Darts Player",

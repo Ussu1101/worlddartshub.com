@@ -205,7 +205,7 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
   },
 };
 const pageTitle = seoOverrides[country]?.title ?? `Watch PDC Darts 2026/27 in ${countryDisplayName}: TV & Streams`;
-const pageDescription = seoOverrides[country]?.description ?? `Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in ${countryDisplayName}. ${profile.subhead}`;
+const pageDescription = seoOverrides[country]?.description ?? `Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in ${countryDisplayName}.`;
 
 const breadcrumbItems = [
   { name: 'Watch & Stream', url: '/watch/' },
@@ -256,6 +256,12 @@ const countryFaqSchema = {
       {country === 'netherlands' && (
         <p class="micro-note">
           Nederlandse bezoeker? Bekijk ook onze <a href="/nl/">Nederlandse darts-gids</a> en de <a href="/nl/darts-wk-tickets/">Nederlandse WK-ticketgids</a>.
+        </p>
+      )}
+
+      {country === 'uk' && (
+        <p class="micro-note">
+          Meet the voices behind the coverage: our <a href="/watch/commentators-presenters/">TV commentators and presenters guide</a> covers the Sky Sports, ITV and BBC teams.
         </p>
       )}
 

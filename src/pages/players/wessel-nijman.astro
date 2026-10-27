@@ -5,7 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import VerificationBadge from '../../components/VerificationBadge.astro';
 
 const pageTitle = "Wessel Nijman: Darts Specs, Career Stats & Breakout Rise";
-const pageDescription = "Player dossier for Wessel Nijman: 22g Mission Signature darts, walk-on music 'Summer of 69' by Bryan Adams, Players Championship title, career earnings and records.";
+const pageDescription = "Player dossier for Wessel Nijman: 22g Mission Signature darts, walk-on music 'Summer of 69' by Bryan Adams, Players Championship title.";
 const siteUrl = "https://worlddartshub.com";
 const canonicalUrl = `${siteUrl}/players/wessel-nijman/`;
 
@@ -41,7 +41,7 @@ const personSchema = {
       "@type": "Person",
       "@id": `${canonicalUrl}#person`,
       "name": "Wessel Nijman",
-      "nationality": "Netherlands",
+      "nationality": { "@type": "Country", "name": "Netherlands" },
       "birthDate": "2000-06-26",
       "birthPlace": "Uitgeest, North Holland, Netherlands",
       "jobTitle": "Professional Darts Player",

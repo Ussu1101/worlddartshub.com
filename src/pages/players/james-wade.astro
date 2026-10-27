@@ -5,7 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import VerificationBadge from '../../components/VerificationBadge.astro';
 
 const pageTitle = "James Wade: Darts Specs, Career Stats & Titles";
-const pageDescription = "Player dossier for James Wade: 20g Unicorn signature darts, walk-on music 'I\\'m Still Standing' by Elton John, 10-time PDC major winner, career earnings and records.";
+const pageDescription = "Player dossier for James Wade: 20g Unicorn signature darts, walk-on music 'I\\'m Still Standing' by Elton John, 10-time PDC major winner.";
 const siteUrl = "https://worlddartshub.com";
 const canonicalUrl = `${siteUrl}/players/james-wade/`;
 
@@ -42,7 +42,7 @@ const personSchema = {
       "@id": `${canonicalUrl}#person`,
       "name": "James Wade",
       "alternateName": "The Machine",
-      "nationality": "England",
+      "nationality": { "@type": "Country", "name": "England" },
       "birthDate": "1983-04-06",
       "birthPlace": "Aldershot, Hampshire, England",
       "jobTitle": "Professional Darts Player",

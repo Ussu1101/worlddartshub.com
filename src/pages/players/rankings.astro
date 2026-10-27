@@ -7,7 +7,14 @@ import VerificationBadge from '../../components/VerificationBadge.astro';
 import oomData from '../../data/order-of-merit.json';
 import players from '../../data/players.json';
 
-const playerSlugMap = Object.fromEntries(players.map((p) => [p.name, p.slug]));
+const playerSlugMap = {
+  ...Object.fromEntries(players.map((p) => [p.name, p.slug])),
+  'James Wade': 'james-wade',
+  'Danny Noppert': 'danny-noppert',
+  'Wessel Nijman': 'wessel-nijman',
+  'Ross Smith': 'ross-smith',
+  'Ryan Searle': 'ryan-searle',
+};
 
 const pageTitle = "PDC Darts Rankings 2026/27: Order of Merit & Seeds";
 const pageDescription = "PDC Order of Merit rankings 2026/27: provisional seeds, the 2-year rolling system, cut-off rules and the race for Ally Pally.";
@@ -41,10 +48,9 @@ const rankingsSchema = {
   title={pageTitle} 
   description={pageDescription}
   alternates={[
-    { hreflang: "de", href: "https://worlddartshub.com/de/darts-rangliste/" },
     { hreflang: "nl", href: "https://worlddartshub.com/nl/darts-ranglijst/" },
     { hreflang: "en", href: "https://worlddartshub.com/players/rankings/" },
-    { hreflang: "x-default", href: "https://worlddartshub.com/players/rankings/" }
+    { hreflang: "x-default", href: "https://worlddartshub.com/players/rankings/" },
   ]}
   schema={rankingsSchema}
 >

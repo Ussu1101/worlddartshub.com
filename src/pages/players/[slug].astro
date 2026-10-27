@@ -32,7 +32,7 @@ const personSchema = {
   "@type": "Person",
   "name": player.name,
   "alternateName": player.nickname,
-  "nationality": player.nationality,
+  "nationality": { "@type": "Country", "name": player.nationality },
   "birthDate": player.date_of_birth,
   "jobTitle": "Professional Darts Player",
   "affiliation": {

@@ -47,7 +47,7 @@ const personSchema = {
       "@id": `${canonicalUrl}#person`,
       "name": "Karel Sedláček",
       "alternateName": ["Evil Charlie", "Zlý Kája"],
-      "nationality": "Czech Republic",
+      "nationality": { "@type": "Country", "name": "Czech Republic" },
       "birthDate": "1979-02-17",
       "birthPlace": "Náchod, Czech Republic",
       "jobTitle": "Professional Darts Player",

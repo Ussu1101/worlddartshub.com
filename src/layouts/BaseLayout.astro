@@ -34,6 +34,52 @@ const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https:/
 const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).toString();
 const resolvedOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
+// Auto Article schema (Ahrefs Fix 4, 2026-10-27): editorial guide pages that
+// already carry structured data but no Article type get a minimal, accurate
+// Article block derived from the page's own title/description/canonical.
+// Excluded: pages that already have Article, player dossiers (Person),
+// the Worlds event page (SportsEvent), tools/calculators (WebApplication),
+// the homepage, and noindex pages. No layout or content change.
+const schemaList = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+// Types include @graph members: several pages pass a single @graph object
+// (e.g. Article + BreadcrumbList), so a top-level @type check alone misses
+// their Article and would duplicate it.
+const schemaTypes = schemaList.flatMap((s: any) => {
+  if (!s) return [];
+  const types: string[] = [];
+  if (s['@type']) types.push(s['@type']);
+  if (Array.isArray(s['@graph'])) {
+    for (const g of s['@graph']) if (g && g['@type']) types.push(g['@type']);
+  }
+  return types;
+}).filter(Boolean);
+const autoArticleSchema = (
+  schema &&
+  !noindex &&
+  Astro.url.pathname !== '/' &&
+  !Astro.url.pathname.startsWith('/tools/') &&
+  !schemaTypes.includes('Article') &&
+  !schemaTypes.includes('Person') &&
+  !schemaTypes.includes('SportsEvent') &&
+  !schemaTypes.includes('WebApplication')
+) ? {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "url": resolvedCanonical,
+  "inLanguage": lang === 'de' ? 'de' : lang === 'nl' ? 'nl' : 'en-GB',
+  "author": {
+    "@type": "Organization",
+    "name": "World Darts Hub Editorial Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Darts Hub",
+    "url": siteUrl
+  }
+} : null;
+
 // Base Schema: WebSite & Organization
 const baseWebsiteSchema = {
   "@context": "https://schema.org",
@@ -130,6 +176,9 @@ const baseWebsiteSchema = {
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json" set:html={JSON.stringify(baseWebsiteSchema)} />
+    {autoArticleSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(autoArticleSchema)} />
+    )}
     {schema && (
       Array.isArray(schema) ? (
         schema.map((s) => (
