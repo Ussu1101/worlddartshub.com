@@ -6,7 +6,6 @@ import MatchCard from '../components/MatchCard.astro';
 import BroadcasterCard from '../components/BroadcasterCard.astro';
 import PlayerCard from '../components/PlayerCard.astro';
 import VerificationBadge from '../components/VerificationBadge.astro';
-import CtaBox from '../components/CtaBox.astro';
 
 import tournamentData from '../data/tournament.json';
 import broadcastersData from '../data/broadcasters.json';
@@ -198,18 +197,6 @@ const featuredPlayers = playersData.slice(0, 4);
           <strong>⚠️ Anti-Piracy Notice:</strong> World Darts Hub exclusively lists verified, legal rights-holding broadcasters. We never host, link to, or promote illicit stream websites or unauthorized re-broadcasts. Unauthorized streams expose visitors to malware, aggressive adware, and sudden mid-match blackouts.
         </div>
       </section>
-
-      <!-- Sponsored Offer CTA Box -->
-      <CtaBox
-        title="Take the Quiz — Get Your Full Report"
-        body="Complete the quiz and get your full report."
-        terms="Available in the UK, US, Canada, Australia and New Zealand · Full report details on the offer page — a purchase may be required (to be confirmed before live)."
-        link="https://www.cdnnd.com/view.php?id=5547210&pub=3221849"
-        linkLabel="Take the Quiz"
-        disclosure="Sponsored — we earn a commission if you complete this offer."
-        image="/cta/quiz-report.webp"
-        imageAlt="Questionnaire assessment report"
-      />
 
       <!-- In-Feed Ad Unit -->
       <AdSlot slotType="in-feed" id="home-mid-infeed" />
