@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import MatchCard from '../../components/MatchCard.astro';
 import VerificationBadge from '../../components/VerificationBadge.astro';
+import CtaBox from '../../components/CtaBox.astro';
 
 import liveData from '../../data/live.json';
 import scheduleData from '../../data/schedule.json';
@@ -139,6 +140,18 @@ const liveSchema = {
           </table>
         </div>
       </section>
+
+      <!-- Sponsored Offer CTA Box -->
+      <CtaBox
+        title="Relationship Style Quiz — 7 Questions, Free Preview"
+        body="Answer 7 quick questions about your relationship style and get a free preview of your results."
+        terms="Available in the UK, US, Canada, Australia and New Zealand · Full results may require a purchase."
+        link="https://www.cdnnd.com/view.php?id=5547158&pub=3221849"
+        linkLabel="Take the Relationship Quiz"
+        disclosure="Sponsored — we earn a commission if you complete this offer."
+        image="/cta/relationship-quiz.webp"
+        imageAlt="Relationship style assessment quiz"
+      />
 
       <AdSlot slotType="in-feed" id="live-mid-infeed" />
     </div>
