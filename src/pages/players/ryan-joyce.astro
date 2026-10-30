@@ -1,0 +1,425 @@
+---
+// src/pages/players/ryan-joyce.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Ryan Joyce: Darts Specs, Career Stats & Ally Pally Runs";
+const pageDescription = "Player dossier for Ryan Joyce: 21g Mission signature darts, 'Tetris' walk-on song, 2024 World Grand Prix semi-finalist and Ally Pally quarter-finalist.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/ryan-joyce/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Ryan Joyce' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does Ryan Joyce throw?",
+    a: "Ryan Joyce throws signature 21-gram 95% tungsten match darts manufactured by Mission Darts, featuring a slim, parallel profile finished in a distinctive coral PVD coating with radial micro-groove grip."
+  },
+  {
+    q: "What is Ryan Joyce's walk-on song and nickname?",
+    a: "Ryan Joyce is nicknamed 'Relentless' for his unyielding rhythm and clutch double-hitting. His walk-on music is the techno dance version of 'Tetris' by Doctor Spin."
+  },
+  {
+    q: "What is Ryan Joyce's current PDC world ranking?",
+    a: "Following Players Championship 32 in late October 2026, Ryan Joyce sits at World No. 25 on the official two-year rolling PDC Order of Merit with £395,500 in prize earnings (interim post-PC32 baseline)."
+  },
+  {
+    q: "What are Ryan Joyce's finest major tournament achievements?",
+    a: "Joyce famously reached the quarter-finals of the PDC World Darts Championship on debut in 2019 at Alexandra Palace. In October 2024, he advanced to the semi-finals of the televised World Grand Prix in Leicester, defeating world champion Luke Humphries along the way."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "Ryan Joyce",
+      "alternateName": "Relentless",
+      "nationality": { "@type": "Country", "name": "England" },
+      "birthDate": "1985-09-20",
+      "birthPlace": "Newcastle upon Tyne, Tyne and Wear, England",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">MAJOR SEMI-FINALIST</span>
+        <span class="badge">TYNESIDE TITAN</span>
+        <span class="badge badge-outline">WORLD NO. 25</span>
+      </div>
+      <h1>Ryan Joyce: "Relentless"</h1>
+      <p class="hero-lead">
+        Geordie composure, deadly outer-ring precision, and a storied history of televised giant-killings: here is the complete player profile on Newcastle's Ryan Joyce.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & Mission Darts Specs" 
+          lastVerified="30 October 2026" 
+          source="PDC Order of Merit & Player Records" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Nation</span>
+          <span class="stat-value">England</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">Relentless</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">21g Mission Signature</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Order of Merit</span>
+          <span class="stat-value">World No. 25 (£395,500)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: Tyneside Grit and Clutch Precision</h2>
+        <p>
+          Born on 20 September 1985 in Newcastle upon Tyne, <strong>Ryan Joyce</strong> has epitomized calm professionalism and dogged determination throughout his rise up the Professional Darts Corporation ladder. Sporting the moniker <em>"Relentless"</em>, the former clothing retail manager has proven time and again that quiet composure and ruthless double finishing can topple the most explosive power scorers in the world.
+        </p>
+        <p>
+          Joyce announced his arrival on the international stage during a sensational 2018/19 rookie season, storming through to the quarter-finals of the PDC World Darts Championship on his Alexandra Palace debut. Backing up his stage breakthroughs with relentless consistency on the ProTour—including claiming his maiden senior title at Players Championship 26 in 2020—Joyce reinforced his elite status in late 2024 by reaching the semi-finals of the prestigious televised World Grand Prix in Leicester.
+        </p>
+        <div class="callout ranking-notice">
+          <strong>Current Ranking Status (Interim):</strong> Following the conclusion of Players Championship 32 in Den Bosch, Joyce occupies <strong>World No. 25</strong> on the official <a href="/tournament/order-of-merit/">PDC Order of Merit</a> with £395,500 in two-year rolling prize money. <em>Last updated: 30 October 2026, interim post-PC32 baseline; final top-32 seeded positions lock in following the Players Championship Finals in late November.</em>
+        </div>
+      </section>
+
+      <!-- Verified Equipment Specifications Table -->
+      <section class="content-section">
+        <h2>Verified Darts Equipment Specifications</h2>
+        <p>
+          Joyce throws finely balanced 21-gram signature barrels manufactured by British brand <strong>Mission Darts</strong>:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Specification</th>
+                <th>Performance Characteristics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Manufacturer</strong></td>
+                <td><strong>Mission Darts</strong></td>
+                <td>Official equipment sponsor and signature barrel manufacturer</td>
+              </tr>
+              <tr>
+                <td><strong>Barrel Weight</strong></td>
+                <td><strong>21 Grams</strong></td>
+                <td>Lighter match setup promoting a relaxed, repeatable wrist flick and smooth release</td>
+              </tr>
+              <tr>
+                <td><strong>Tungsten Content</strong></td>
+                <td><strong>95% Tungsten</strong></td>
+                <td>Ultra-dense metallic alloy engineered into an exceptionally slender parallel barrel</td>
+              </tr>
+              <tr>
+                <td><strong>Grip Profile</strong></td>
+                <td><strong>Coral PVD Micro-Grooves</strong></td>
+                <td>Milled radial bands coated with coral PVD for enhanced grip without excessive bite</td>
+              </tr>
+              <tr>
+                <td><strong>Shafts / Stems</strong></td>
+                <td><strong>Mission Sabre Medium</strong></td>
+                <td>Aluminium-polycarbonate hybrid stems delivering rigidity and aerodynamic stability</td>
+              </tr>
+              <tr>
+                <td><strong>Flights</strong></td>
+                <td><strong>Mission Ryan Joyce Signature 100 Micron</strong></td>
+                <td>Standard No.2 aerodynamic flights designed for dependable drag and consistent angle</td>
+              </tr>
+              <tr>
+                <td><strong>Throwing Hand</strong></td>
+                <td><strong>Right-Handed</strong></td>
+                <td>Deliberate backswing with a textbook elbow hinge and clinical finger release</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Compare Joyce's high-density equipment setup with other tour professionals in our directory of <a href="/players/darts-equipment-specs/">professional darts equipment specifications</a>.
+        </p>
+      </section>
+
+      <!-- Major Championship Pedigree -->
+      <section class="content-section">
+        <h2>Major Championship Pedigree: World Grand Prix Semi-Final &amp; ProTour Gold</h2>
+        <div class="feature-box">
+          <h3>Televised Scalps &amp; Major Breakthroughs</h3>
+          <p>
+            Joyce has repeatedly demonstrated that his clinical style thrives under the highest televised pressure:
+          </p>
+          <ul>
+            <li><strong>World Grand Prix Semi-Finalist (2024):</strong> Staged an extraordinary run in Leicester, knocking out reigning world champion Luke Humphries in straight sets, followed by Nathan Aspinall and Rob Cross.</li>
+            <li><strong>Players Championship Winner (2020):</strong> Captured his first PDC ProTour title at PC26, defeating Dave Chisnall in an 8-7 thriller in the final.</li>
+            <li><strong>Consistent Major Qualifier:</strong> Regular qualifier for the UK Open, Players Championship Finals, and European Tour stages across Germany, Austria, and Belgium.</li>
+          </ul>
+        </div>
+        <p>
+          Evaluate where Joyce sits among the sport's global earners in our guide to <a href="/players/earnings/">professional darts career earnings</a>, or analyze the current ranking picture in our <a href="/players/rankings/">PDC Order of Merit analysis</a>.
+        </p>
+      </section>
+
+      <!-- Alexandra Palace World Championship Record -->
+      <section class="content-section">
+        <h2>Alexandra Palace Record &amp; World Championship History</h2>
+        <p>
+          Alexandra Palace will forever hold a treasured place in Ryan Joyce's career. Under the 128-player World Championship format, all 128 contenders begin their campaign in Round One with zero byes:
+        </p>
+        <ul>
+          <li><strong>2019 Fairy-Tale Debut:</strong> Produced one of the most memorable debut runs in modern tournament history, sweeping Anastasia Dobromyslova, stunning Simon Whitlock, beating Alan Norris, and defeating James Wade 4-3 to reach the quarter-finals.</li>
+          <li><strong>Quarter-Final Encounter:</strong> Bowled out in the last eight against eventual world champion Michael van Gerwen, earning universal respect from the capacity London crowd.</li>
+          <li><strong>Seeded Status:</strong> Regularly enters the World Championship among the protected top-32 bracket, dreaded by qualifiers as one of the tour's toughest match-play opponents.</li>
+        </ul>
+        <p>
+          Trace the champions of Alexandra Palace through our complete archive of the <a href="/history/roll-of-honour/">World Darts Championship roll of honour</a> and browse the complete player list via our <a href="/players/">World Darts Hub players directory</a>.
+        </p>
+      </section>
+
+      <!-- Walk-on Music & Anthems -->
+      <section class="content-section">
+        <h2>Walk-On Music: "Tetris" (Doctor Spin)</h2>
+        <p>
+          Joyce delights Alexandra Palace and European crowds with one of the most uniquely nostalgic walk-on themes in sports: the high-tempo techno rave version of <strong>"Tetris" by Doctor Spin</strong>. The infectious arcade melody prompts synchronized clapping and chanting across arena halls, setting a lively tone for his ice-cool performances. Discover how his entrance ranks in our guide to <a href="/players/walk-on-songs/">darts walk-on songs</a>.
+        </p>
+      </section>
+
+      <!-- FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Ryan Joyce</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .badge-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+  }
+  .player-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .hero-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 0 1.5rem;
+  }
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+  .stat-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .content-section {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .callout {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.25rem 0;
+    font-size: 0.95rem;
+    color: #1e293b;
+  }
+  .feature-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+    color: #166534;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+  .feature-box ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #166534;
+    line-height: 1.6;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .faq-item {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+</style>

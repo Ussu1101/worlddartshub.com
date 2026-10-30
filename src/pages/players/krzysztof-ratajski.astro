@@ -1,0 +1,426 @@
+---
+// src/pages/players/krzysztof-ratajski.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Krzysztof Ratajski: Darts Specs, Career Stats & Titles";
+const pageDescription = "Player dossier for Krzysztof Ratajski: 24g signature darts, 'Whatever You Want' walk-on song, World Championship quarter-finalist and Polish pioneer.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/krzysztof-ratajski/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Krzysztof Ratajski' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does Krzysztof Ratajski use?",
+    a: "Krzysztof Ratajski throws signature 24-gram 90% tungsten match darts manufactured by BEAZD (formerly endorsed by Bull's Darts), featuring an elongated torpedo profile with precision micro-groove radial rings."
+  },
+  {
+    q: "What is Krzysztof Ratajski's walk-on anthem and nickname?",
+    a: "Krzysztof Ratajski is revered as 'The Polish Eagle', honoring Poland's national emblem. His classic rock walk-on track is 'Whatever You Want' by Status Quo."
+  },
+  {
+    q: "What is Krzysztof Ratajski's current world ranking?",
+    a: "Following Players Championship 32 in late October 2026, Ratajski is ranked World No. 19 on the official two-year rolling PDC Order of Merit with £492,750 in prize earnings (interim post-PC32 baseline)."
+  },
+  {
+    q: "What is Krzysztof Ratajski's record at Alexandra Palace?",
+    a: "Ratajski made Polish sporting history at the 2021 World Championship by becoming the first player from Poland to reach the quarter-finals at Alexandra Palace, defeating Ryan Joyce and Simon Whitlock along the way."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "Krzysztof Ratajski",
+      "alternateName": "The Polish Eagle",
+      "nationality": { "@type": "Country", "name": "Poland" },
+      "birthDate": "1977-01-01",
+      "birthPlace": "Skarżysko-Kamienna, Poland",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">10-TIME PROTOUR WINNER</span>
+        <span class="badge">POLISH NO. 1</span>
+        <span class="badge badge-outline">WORLD NO. 19</span>
+      </div>
+      <h1>Krzysztof Ratajski: "The Polish Eagle"</h1>
+      <p class="hero-lead">
+        Poland's trailblazing darting pioneer, 10-time PDC ranking champion, and former Alexandra Palace quarter-finalist: here is the complete professional dossier on Krzysztof Ratajski.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & BEAZD Darts Specs" 
+          lastVerified="30 October 2026" 
+          source="PDC Order of Merit & Player Records" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Nation</span>
+          <span class="stat-value">Poland</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">The Polish Eagle</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">24g BEAZD Signature</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Order of Merit</span>
+          <span class="stat-value">World No. 19 (£492,750)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: The Pioneer of Eastern European Darts</h2>
+        <p>
+          Born on New Year's Day 1977 in Skarżysko-Kamienna, <strong>Krzysztof Ratajski</strong> single-handedly transformed the profile of professional darts across Poland and Eastern Europe. Best known by his proud sporting moniker <em>"The Polish Eagle"</em>, Ratajski has combined laser-like treble accuracy with ironclad mental focus to become one of the most respected and clinical operators on the PDC circuit.
+        </p>
+        <p>
+          After winning the prestigious World Masters in the BDO in 2017, Ratajski joined the PDC tour and made immediate waves by winning UK Open qualifiers and ProTour titles even before securing a full Tour Card. He became a serial winner on the floor, amassing a remarkable haul of <strong>10 individual PDC ProTour crowns</strong>, proving that his methodical, unflinching throwing style could conquer the most ferocious fields in world darts.
+        </p>
+        <div class="callout ranking-notice">
+          <strong>Current Ranking Status (Interim):</strong> Following the conclusion of Players Championship 32 in Den Bosch, Ratajski commands <strong>World No. 19</strong> on the official <a href="/tournament/order-of-merit/">PDC Order of Merit</a> with £492,750 in two-year rolling prize money. <em>Last updated: 30 October 2026, interim post-PC32 baseline; final top-32 seeded positions lock in following the Players Championship Finals in late November.</em>
+        </div>
+      </section>
+
+      <!-- Verified Equipment Specifications Table -->
+      <section class="content-section">
+        <h2>Verified Darts Equipment Specifications</h2>
+        <p>
+          Ratajski utilizes custom-weighted 24-gram match darts produced in partnership with <strong>BEAZD Darts</strong>, engineered for steady front-to-mid balance:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Specification</th>
+                <th>Performance Characteristics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Manufacturer</strong></td>
+                <td><strong>BEAZD Darts</strong></td>
+                <td>Official equipment manufacturer and signature range designer</td>
+              </tr>
+              <tr>
+                <td><strong>Barrel Weight</strong></td>
+                <td><strong>24 Grams</strong></td>
+                <td>Heavier match barrel offering substantial momentum through air resistance</td>
+              </tr>
+              <tr>
+                <td><strong>Tungsten Content</strong></td>
+                <td><strong>90% Tungsten</strong></td>
+                <td>Premium metallic construction providing slim, parallel flight paths</td>
+              </tr>
+              <tr>
+                <td><strong>Grip Profile</strong></td>
+                <td><strong>Micro-Groove Radial Rings</strong></td>
+                <td>Evenly spaced shallow ring cuts ensuring clean release without snagging</td>
+              </tr>
+              <tr>
+                <td><strong>Shafts / Stems</strong></td>
+                <td><strong>Nylon Medium Stems</strong></td>
+                <td>Flexible polymer shafts providing vibration damping upon board entry</td>
+              </tr>
+              <tr>
+                <td><strong>Flights</strong></td>
+                <td><strong>Polish Eagle Standard No.2</strong></td>
+                <td>Full-surface aerodynamic flights displaying Polish national eagle insignia</td>
+              </tr>
+              <tr>
+                <td><strong>Throwing Hand</strong></td>
+                <td><strong>Right-Handed</strong></td>
+                <td>Deliberate, rhythmic draw with a steady elbow hinge and high follow-through</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Compare Ratajski's barrel specifications with tour colleagues across our directory of <a href="/players/darts-equipment-specs/">professional darts equipment specifications</a>.
+        </p>
+      </section>
+
+      <!-- Major Championship Pedigree -->
+      <section class="content-section">
+        <h2>Major Championship Pedigree: 10 ProTour Titles &amp; Matchplay Semi-Final</h2>
+        <div class="feature-box">
+          <h3>The Silverware Collection &amp; Major Milestones</h3>
+          <p>
+            Ratajski's trophy cabinet stands among the most impressive outside the UK and Netherlands:
+          </p>
+          <ul>
+            <li><strong>World Matchplay Semi-Finalist (2021):</strong> Stormed into the final four at the Winter Gardens in Blackpool, defeating Brendan Dolan, Luke Humphries, and Callan Rydz.</li>
+            <li><strong>European Tour Champion (2023):</strong> Lifted the German Darts Open title in Jena, defeating Stephen Bunting 8-3 in an unforgettable final display.</li>
+            <li><strong>9 Players Championship Titles:</strong> One of the ProTour's most successful champions, winning floor events in Wigan, Barnsley, and Hildesheim.</li>
+            <li><strong>UK Open &amp; World Series:</strong> Multiple quarter-final appearances on televised stages, consistently averaging near the century mark.</li>
+          </ul>
+        </div>
+        <p>
+          Discover where Ratajski features among the sport's all-time financial earners in our guide to <a href="/players/earnings/">professional darts career earnings</a>, or analyze the overall ranking ladder in our <a href="/players/rankings/">PDC Order of Merit analysis</a>.
+        </p>
+      </section>
+
+      <!-- Alexandra Palace World Championship Record -->
+      <section class="content-section">
+        <h2>Alexandra Palace Record &amp; World Championship History</h2>
+        <p>
+          Ratajski has achieved several historic landmarks on the stage of Alexandra Palace. Under the tournament's 128-player format, all 128 competitors start in Round One without byes, creating intense opening drama:
+        </p>
+        <ul>
+          <li><strong>2021 Quarter-Final Odyssey:</strong> Produced his greatest Alexandra Palace campaign, stringing together clinical victories over Joyce, Whitlock, and Gabriel Clemens to reach the quarter-finals.</li>
+          <li><strong>Pioneering Polish Breakthrough:</strong> His 2021 last-eight run was the first time in PDC history that a Polish player featured in a World Darts Championship quarter-final.</li>
+          <li><strong>Consistent Seeded Runs:</strong> Maintained his status as a dreaded seeded opponent across consecutive winter campaigns in North London.</li>
+        </ul>
+        <p>
+          Check the historic tournament roll in our comprehensive record of the <a href="/history/roll-of-honour/">World Darts Championship roll of honour</a> and explore the full player ecosystem in our <a href="/players/">World Darts Hub players index</a>.
+        </p>
+      </section>
+
+      <!-- Walk-on Music & Anthems -->
+      <section class="content-section">
+        <h2>Walk-On Music: "Whatever You Want"</h2>
+        <p>
+          Ratajski steps onto the tournament stage to the roaring guitar chords of <strong>"Whatever You Want" by Status Quo</strong>. The evergreen British rock classic has become a staple of PDC arenas, warmly embraced by travelling Polish supporters and global darts crowds alike. Inspect where his entrance sits among fan anthems in our directory of <a href="/players/walk-on-songs/">darts walk-on songs</a>.
+        </p>
+      </section>
+
+      <!-- FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Krzysztof Ratajski</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .badge-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+  }
+  .player-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .hero-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 0 1.5rem;
+  }
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+  .stat-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .content-section {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .callout {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.25rem 0;
+    font-size: 0.95rem;
+    color: #1e293b;
+  }
+  .feature-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+    color: #166534;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+  .feature-box ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #166534;
+    line-height: 1.6;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .faq-item {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+</style>

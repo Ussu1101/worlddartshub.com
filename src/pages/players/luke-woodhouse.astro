@@ -1,0 +1,427 @@
+---
+// src/pages/players/luke-woodhouse.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Luke Woodhouse: Darts Specs, Career Stats & Records";
+const pageDescription = "Player dossier for Luke Woodhouse: 21g Harrows signature darts, walk-on anthem 'C\\'est la Vie', World Championship record and career prize earnings.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/luke-woodhouse/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Luke Woodhouse' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does Luke Woodhouse use?",
+    a: "Luke Woodhouse throws official signature 21g 90% tungsten match darts manufactured by Harrows Darts, featuring a parallel barrel profile with precision mid-scallop ring grip zones."
+  },
+  {
+    q: "What is Luke Woodhouse's walk-on song and nickname?",
+    a: "Luke Woodhouse is nicknamed 'Woody'. His walk-on music is 'C'est la Vie' by the Stereophonics, having formerly used 'Country House' by Blur."
+  },
+  {
+    q: "What is Luke Woodhouse's current PDC world ranking?",
+    a: "Following Players Championship 32 in late October 2026, Luke Woodhouse holds World No. 17 on the official two-year rolling PDC Order of Merit with £506,000 in ranking prize earnings (interim post-PC32 baseline)."
+  },
+  {
+    q: "What is Luke Woodhouse's best result at the World Darts Championship?",
+    a: "Woodhouse reached the fourth round (last 16) at Alexandra Palace in 2026, after previously making the third round in 2020 (when he famously defeated Michael Smith 3-1 on debut), 2023, and 2025."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "Luke Woodhouse",
+      "alternateName": "Woody",
+      "nationality": { "@type": "Country", "name": "England" },
+      "birthDate": "1988-10-13",
+      "birthPlace": "Bewdley, Worcestershire, England",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">PDC TOP 20 PRODIGY</span>
+        <span class="badge">WORLD NO. 17</span>
+        <span class="badge badge-outline">PDC ORDER OF MERIT</span>
+      </div>
+      <h1>Luke Woodhouse: "Woody"</h1>
+      <p class="hero-lead">
+        Worcestershire's clinical tactician, celebrated for high-scoring rhythm, Alexandra Palace giant-killings, and a sustained climb into the world's top 20: here is the comprehensive player dossier on Luke Woodhouse.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & Harrows Darts Specs" 
+          lastVerified="30 October 2026" 
+          source="PDC Order of Merit & Player Records" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Nation</span>
+          <span class="stat-value">England</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">Woody</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">21g Harrows</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Order of Merit</span>
+          <span class="stat-value">World No. 17 (£506,000)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: Consistent Excellence and Major Ascension</h2>
+        <p>
+          Hailing from Bewdley in Worcestershire, <strong>Luke Woodhouse</strong> (born 13 October 1988) has established a reputation as one of the most mechanically sound and composed competitors in professional darts. Nicknamed <em>"Woody"</em>, his methodical stance and fluid, upright release have propelled him from regional open circuit standout to permanent top-20 presence on the elite Professional Darts Corporation tour.
+        </p>
+        <p>
+          Woodhouse secured his PDC Tour Card at UK Q-School in January 2018. Rather than flashing fleeting fireworks, Woodhouse methodically refined his tournament game across European Tour qualifiers and floor ProTour weekends. His breakthrough moments arrived under the televised cameras, repeatedly taking down higher-seeded opponents with ruthless out-finishing and calm treble-bed navigation.
+        </p>
+        <div class="callout ranking-notice">
+          <strong>Current Ranking Status (Interim):</strong> Following the conclusion of Players Championship 32 in Den Bosch, Woodhouse sits at <strong>World No. 17</strong> on the official <a href="/tournament/order-of-merit/">PDC Order of Merit</a> with £506,000 in two-year rolling prize money. <em>Last updated: 30 October 2026, interim post-PC32 baseline; final top-32 seeded positions lock in following the Players Championship Finals in late November.</em>
+        </div>
+      </section>
+
+      <!-- Verified Equipment Specifications Table -->
+      <section class="content-section">
+        <h2>Verified Darts Equipment Specifications</h2>
+        <p>
+          Woodhouse collaborates closely with British darts innovator <strong>Harrows Darts</strong> to engineer match-grade equipment aligned with his direct, forward-leaning release:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Specification</th>
+                <th>Performance Characteristics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Manufacturer</strong></td>
+                <td><strong>Harrows Darts</strong></td>
+                <td>Official technical sponsor and signature equipment manufacturer</td>
+              </tr>
+              <tr>
+                <td><strong>Barrel Weight</strong></td>
+                <td><strong>21 Grams</strong></td>
+                <td>Balanced medium-light barrel facilitating rapid release and effortless arm extension</td>
+              </tr>
+              <tr>
+                <td><strong>Tungsten Content</strong></td>
+                <td><strong>90% Tungsten</strong></td>
+                <td>High-density metallic alloy providing a slim silhouette for tight bed stacking</td>
+              </tr>
+              <tr>
+                <td><strong>Grip Profile</strong></td>
+                <td><strong>Scalloped Ring Grip</strong></td>
+                <td>Dual-zone radial micro-cuts with subtle mid-barrel contour for finger placement consistency</td>
+              </tr>
+              <tr>
+                <td><strong>Shafts / Stems</strong></td>
+                <td><strong>Harrows Carbon / Supergrip Medium</strong></td>
+                <td>Rigid composite shafts maintaining optimal flight alignment in flight</td>
+              </tr>
+              <tr>
+                <td><strong>Flights</strong></td>
+                <td><strong>Harrows Prime Woody Signature</strong></td>
+                <td>Standard No.2 aerodynamic profile delivering steady trajectory control</td>
+              </tr>
+              <tr>
+                <td><strong>Throwing Hand</strong></td>
+                <td><strong>Right-Handed</strong></td>
+                <td>Smooth upright arm action with a distinctive high eye-level sightline</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Examine how Woodhouse's configuration compares with tour rivals in our complete directory of <a href="/players/darts-equipment-specs/">professional darts equipment specifications</a>.
+        </p>
+      </section>
+
+      <!-- Major Championship Pedigree -->
+      <section class="content-section">
+        <h2>Major Championship Pedigree: European Tour and Floor Consistency</h2>
+        <div class="feature-box">
+          <h3>Televised Benchmarks &amp; Elite Runs</h3>
+          <p>
+            Woodhouse's sustained rise into the top 20 reflects consistent scoring across premier stages:
+          </p>
+          <ul>
+            <li><strong>European Championship (2024):</strong> Reached his maiden televised major quarter-final in Dortmund, dispatching established world champions along the journey.</li>
+            <li><strong>PDC Players Championship Circuit:</strong> Multi-time floor finalist and consistent deep-run performer with routine three-figure tournament averages.</li>
+            <li><strong>UK Open ('FA Cup of Darts'):</strong> Multiple appearances in the last 16 and last 32 across the multi-board Minehead marathon.</li>
+            <li><strong>International Remote Darts League:</strong> Hit a historic live-streamed nine-dart finish from his home kitchen during the 2020 sporting lockdown.</li>
+          </ul>
+        </div>
+        <p>
+          Track Woodhouse's standing among the sport's global earners in our guide to <a href="/players/earnings/">professional darts career earnings</a>, or analyze the overall ranking race in our <a href="/players/rankings/">PDC Order of Merit hub</a>.
+        </p>
+      </section>
+
+      <!-- Alexandra Palace World Championship Record -->
+      <section class="content-section">
+        <h2>Alexandra Palace Record &amp; World Championship History</h2>
+        <p>
+          Alexandra Palace has been the stage for several of Woodhouse's finest career highlights. Notably, under the 128-player World Championship format, all 128 tour contenders enter directly in Round One without byes, creating relentless tension from the opening weekend:
+        </p>
+        <ul>
+          <li><strong>2020 Debut:</strong> Stunned the darts world in North London by sweeping Singapore legend Paul Lim in Round One, followed by an electrifying 3-1 upset over then-World No. 4 Michael Smith.</li>
+          <li><strong>2023 Campaign:</strong> Navigated through the opening stages with clean double finishes to secure a place in the third round.</li>
+          <li><strong>2025 Clash:</strong> Reached Round Three in a breathless encounter against Australia's Damon Heta, recovering from 3-1 down in a sudden-death contest.</li>
+          <li><strong>2026 Last 16:</strong> Advanced to the fourth round at Alexandra Palace with a clinical 4-1 victory over Andrew Gilding, achieving his best career World Championship placement.</li>
+        </ul>
+        <p>
+          Explore historic championship records in our complete archive of the <a href="/history/roll-of-honour/">World Darts Championship roll of honour</a> and browse the complete player list via the <a href="/players/">World Darts Hub player index</a>.
+        </p>
+      </section>
+
+      <!-- Walk-on Music & Anthems -->
+      <section class="content-section">
+        <h2>Walk-On Music: "C'est la Vie"</h2>
+        <p>
+          Woodhouse strides onto stage to the bouncy indie-rock rhythm of <strong>"C'est la Vie" by Stereophonics</strong>, an infectious track that sparks immediate crowd engagement across arenas. Previously, the Bewdley ace entered to Blur's Britpop classic "Country House". Check where his walk-on ranks among fan favorites in our directory of <a href="/players/walk-on-songs/">darts walk-on songs</a>.
+        </p>
+      </section>
+
+      <!-- FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Luke Woodhouse</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #0c1a2c 0%, #1e293b 100%);
+    color: #fff;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-brand-accent, #c99700);
+  }
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-accent {
+    background: var(--color-brand-accent, #c99700);
+    color: #0c1a2c;
+  }
+  .badge-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+  }
+  .player-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .hero-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 0 1.5rem;
+  }
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .stat-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+  .stat-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .content-section {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .content-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  .content-section p {
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .callout {
+    background: #f8fafc;
+    border-left: 4px solid var(--color-brand-accent, #c99700);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.25rem 0;
+    font-size: 0.95rem;
+    color: #1e293b;
+  }
+  .feature-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+  }
+  .feature-box h3 {
+    margin-top: 0;
+    color: #166534;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+  .feature-box ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #166534;
+    line-height: 1.6;
+  }
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .faq-item {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+</style>

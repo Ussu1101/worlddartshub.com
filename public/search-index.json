@@ -2,7 +2,7 @@
   {
     "url": "/",
     "title": "World Darts Championship 2026/27: Live, Schedule, Results &amp; How to Watch",
-    "description": "World Darts Championship 2026/27 at Alexandra Palace, 11 December to 3 January: live order of play, schedule, results and legal TV and streaming options by country."
+    "description": "World Darts Championship 2026/27 at Alexandra Palace, 11 December to 3 January: order of play, schedule, results and legal TV and streaming options by country."
   },
   {
     "url": "/about/",
@@ -206,8 +206,8 @@
   },
   {
     "url": "/players/180-records/",
-    "title": "Most 180s in Darts: Wright&#39;s 24, Smith&#39;s 83 — Records Explained",
-    "description": "The greatest maximum-scoring feats in darts: most 180s in one match, most in one tournament, and the story behind"
+    "title": "Who Has the Most 180s in Darts History? Records Explained",
+    "description": "Who has the most 180s in darts history? Peter Wright"
   },
   {
     "url": "/players/9-darters/",
@@ -230,9 +230,14 @@
     "description": "Player dossier for Chris Dobey: 23g Target Darts darts, walk-on anthem &quot;Hey Jude&quot;, career earnings and records."
   },
   {
+    "url": "/players/damon-heta/",
+    "title": "Damon Heta: Darts Specs, Career Stats &amp; World Cup Win",
+    "description": "Player dossier for Damon Heta: 23g Harrows signature darts,"
+  },
+  {
     "url": "/players/danny-noppert/",
     "title": "Danny Noppert: Darts Specs, Career Stats &amp; UK Open Title",
-    "description": "Player dossier for Danny Noppert: 24g Winmau signature darts, walk-on anthem"
+    "description": "Player dossier for Danny Noppert: 23g Winmau Signature darts, walk-on music"
   },
   {
     "url": "/players/darts-equipment-specs/",
@@ -243,6 +248,11 @@
     "url": "/players/darts-referees-mcs/",
     "title": "Who Shouts &#39;180!&#39;? Meet PDC&#39;s Referees, Callers &amp; MCs",
     "description": "Meet the voices behind the oche: Kirk Bevins,"
+  },
+  {
+    "url": "/players/dirk-van-duijvenbode/",
+    "title": "Dirk van Duijvenbode: Darts Specs, Career Stats &amp; Titles",
+    "description": "Player dossier for Dirk van Duijvenbode: 23g Bull"
   },
   {
     "url": "/players/earnings/",
@@ -277,7 +287,12 @@
   {
     "url": "/players/james-wade/",
     "title": "James Wade: Darts Specs, Career Stats &amp; Titles",
-    "description": "Player dossier for James Wade: 20g Unicorn signature darts, walk-on anthem"
+    "description": "Player dossier for James Wade: 20g Unicorn signature darts, walk-on music"
+  },
+  {
+    "url": "/players/jermaine-wattimena/",
+    "title": "Jermaine Wattimena: Darts Specs, Career Stats &amp; Records",
+    "description": "Player dossier for Jermaine Wattimena: 22g Winmau signature darts,"
   },
   {
     "url": "/players/jonny-clayton/",
@@ -295,6 +310,11 @@
     "description": "Karel Sedláček (&quot;Evil Charlie&quot;) dossier: verified 23g Bull"
   },
   {
+    "url": "/players/krzysztof-ratajski/",
+    "title": "Krzysztof Ratajski: Darts Specs, Career Stats &amp; Titles",
+    "description": "Player dossier for Krzysztof Ratajski: 24g signature darts,"
+  },
+  {
     "url": "/players/luke-humphries/",
     "title": "Luke Humphries: Darts Specs &amp; Career Stats",
     "description": "Player dossier for Luke Humphries: 22g Red Dragon Darts darts, walk-on anthem &quot;I Predict a Riot&quot;, career earnings and records."
@@ -303,6 +323,11 @@
     "url": "/players/luke-littler/",
     "title": "Luke Littler: Darts Specs &amp; Career Stats",
     "description": "Player dossier for Luke Littler: 23g Target Darts darts, walk-on anthem &quot;Greenlight&quot;, career earnings and records."
+  },
+  {
+    "url": "/players/luke-woodhouse/",
+    "title": "Luke Woodhouse: Darts Specs, Career Stats &amp; Records",
+    "description": "Player dossier for Luke Woodhouse: 21g Harrows signature darts, walk-on anthem"
   },
   {
     "url": "/players/martin-schindler/",
@@ -362,12 +387,17 @@
   {
     "url": "/players/ross-smith/",
     "title": "Ross Smith: Darts Specs, Career Stats &amp; European Titles",
-    "description": "Player dossier for Ross Smith: 22g Unicorn signature darts, walk-on anthem"
+    "description": "Player dossier for Ross Smith: 22g Unicorn signature darts, walk-on music"
+  },
+  {
+    "url": "/players/ryan-joyce/",
+    "title": "Ryan Joyce: Darts Specs, Career Stats &amp; Ally Pally Runs",
+    "description": "Player dossier for Ryan Joyce: 21g Mission signature darts,"
   },
   {
     "url": "/players/ryan-searle/",
     "title": "Ryan Searle: Darts Specs, 32g Setup &amp; Career Stats",
-    "description": "Player dossier for Ryan Searle: famous 32g Loxley signature heavy darts, walk-on anthem"
+    "description": "Player dossier for Ryan Searle: 32g Harrows Signature heavy darts, walk-on music"
   },
   {
     "url": "/players/stats/",
@@ -387,7 +417,7 @@
   {
     "url": "/players/wessel-nijman/",
     "title": "Wessel Nijman: Darts Specs, Career Stats &amp; Breakout Rise",
-    "description": "Player dossier for Wessel Nijman: 23g Winmau signature darts, walk-on anthem"
+    "description": "Player dossier for Wessel Nijman: 22g Mission Signature darts, walk-on music"
   },
   {
     "url": "/players/world-championship-records/",
@@ -406,13 +436,13 @@
   },
   {
     "url": "/schedule/",
-    "title": "World Darts Championship Schedule 2026/27: Dates, Sessions &amp; Final",
-    "description": "Full World Darts Championship schedule 2026/27 at Alexandra Palace: 11 December to 3 January, session times, Christmas break, quarter-finals 1 January, semi-finals 2 January and the final 3 January."
+    "title": "When Does the Darts Start? World Darts Championship Schedule 2026/27",
+    "description": "The World Darts Championship starts 11 December 2026 at Alexandra Palace. Session times, Christmas break, QF 1 Jan, SF 2 Jan, final 3 Jan."
   },
   {
     "url": "/schedule/finals-weekend/",
-    "title": "World Darts Championship Finals Weekend 2027 Guide",
-    "description": "Schedule and session times for the 2026/27 PDC World Darts Championship Finals Weekend: Quarter-Finals (Jan 1), Semi-Finals (Jan 2), Final (Jan 3)."
+    "title": "What Time Is the Darts Final? World Championship Final, Sunday 3 January 2027, 19:30 GMT",
+    "description": "What time is the darts final? The World Darts Championship final is on Sunday 3 January 2027, starting at 19:30 GMT. Full Finals Weekend schedule: QF 1 Jan, SF 2 Jan, final 3 Jan."
   },
   {
     "url": "/schedule/opening-night/",
@@ -485,9 +515,14 @@
     "description": "Interactive 501 darts checkout calculator: enter any score from 2 to 170 for 1-dart, 2-dart and 3-dart finishes, bogey numbers and out routes."
   },
   {
+    "url": "/tournament/charlie-manby-wins-players-championship-31/",
+    "title": "Charlie Manby Wins Maiden PDC Title at Players Championship 31, Confirms Grand Slam Place",
+    "description": "Charlie Manby beat Maik Kuivenhoven 8-2 to win Players Championship 31 at Maassport Den Bosch on 28 October 2026, confirming his Grand Slam of Darts place. Henry Coates also secured a Grand Slam debut."
+  },
+  {
     "url": "/tournament/european-championship-prize-money/",
-    "title": "European Championship Prize Money 2026: £150K Winner, Every Round",
-    "description": "See exactly what every player earns at Dortmund: £750K fund, £150K champion"
+    "title": "European Championship Prize Money 2026: Winner Gets £150,000, Every Round",
+    "description": "European Championship prize money 2026: the winner receives £150,000 from a £750,000 fund. Full round-by-round payouts from Dortmund."
   },
   {
     "url": "/tournament/grand-slam-how-to-watch/",
@@ -526,8 +561,8 @@
   },
   {
     "url": "/tournament/pdc-majors-explained/",
-    "title": "PDC Major Tournaments Explained: Full List &amp; Formats",
-    "description": "Guide to every PDC major tournament: World Championship, World Matchplay, World Grand Prix, Premier League, Grand Slam, formats, and Order of Merit status."
+    "title": "What Are the Darts Majors? PDC Major Tournaments Explained",
+    "description": "Every PDC major tournament explained: the full list, formats, and which events count, including the World Series and the Masters."
   },
   {
     "url": "/tournament/pdc-womens-series/",
@@ -577,7 +612,7 @@
   {
     "url": "/tournament/world-darts-championship-qualifiers/",
     "title": "Who Qualified for the 2026/27 World Darts Championship?",
-    "description": "Complete 48-slot list of qualifiers for the 2026/27 PDC World Darts Championship at Alexandra Palace: 31 confirmed players, 17 TBC routes, and international debuts."
+    "description": "48-slot list of qualifiers for the 2026/27 PDC World Darts Championship at Alexandra Palace: 31 confirmed players, 17 TBC routes, and international debuts."
   },
   {
     "url": "/tournament/world-darts-championship/",
@@ -677,12 +712,12 @@
   {
     "url": "/watch/australia/",
     "title": "Watch PDC Darts 2026/27 in Australia: TV &amp; Streams",
-    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in Australia. Aussie viewing guide for Alexandra Palace: Kayo Sports subscription, Foxtel channels, AEDT late-night/breakfast schedules, and Aussie qualifiers."
+    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in Australia."
   },
   {
     "url": "/watch/austria-switzerland/",
-    "title": "Watch PDC World Darts in Austria &amp; Switzerland: DAZN Guide",
-    "description": "Official broadcast guide for Austria and Switzerland: DAZN live streaming through 2031, independent free-to-air rights status, and CET session times."
+    "title": "How to Watch PDC Darts on DAZN in Austria: World Cup &amp; World Championship Guide",
+    "description": "How to watch PDC darts on DAZN in Austria: live streams, German commentary, CET session times. Switzerland coverage included."
   },
   {
     "url": "/watch/belgium/",
@@ -717,22 +752,22 @@
   {
     "url": "/watch/germany/",
     "title": "Watch PDC Darts 2026/27 in Germany: TV &amp; Streams",
-    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in Germany. Live stream directory for German darts supporters: DAZN packages, television sub-licensing, CET start times, and German tour contenders."
+    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in Germany."
   },
   {
     "url": "/watch/international/",
     "title": "Watch PDC Darts 2026/27 in Rest of World: TV &amp; Streams",
-    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in Rest of World. Comprehensive worldwide streaming guide for international darts supporters in unrestricted global broadcast territories."
+    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in Rest of World."
   },
   {
     "url": "/watch/ireland/",
     "title": "Watch PDC Darts in Ireland: Sky Sports, NOW TV &amp; Streams",
-    "description": "Complete guide to watching the 2026/27 World Darts Championship live across Ireland: Sky Sports Ireland channels, NOW Sports Extra, GMT start times and Irish players."
+    "description": "Guide to watching the 2026/27 World Darts Championship live in Ireland: Sky Sports Ireland, NOW Sports Extra, GMT start times and Irish players."
   },
   {
     "url": "/watch/netherlands/",
     "title": "Watch PDC Darts 2026/27 in Netherlands: TV &amp; Streams",
-    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in Netherlands. Official Dutch viewing guide for the 2026/27 World Championship: Viaplay packages, CET session times, and Dutch stars Van Gerwen &amp; Van Veen."
+    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in Netherlands."
   },
   {
     "url": "/watch/new-zealand/",
@@ -752,11 +787,11 @@
   {
     "url": "/watch/uk/",
     "title": "Watch PDC Darts 2026/27 in United Kingdom: TV &amp; Streams",
-    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in United Kingdom. Complete domestic viewing instructions for Great Britain: satellite channels, contract-free NOW streaming, and session schedules."
+    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in United Kingdom."
   },
   {
     "url": "/watch/usa/",
     "title": "Watch PDC Darts 2026/27 in United States: TV &amp; Streams",
-    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in United States. Streaming access for US darts fans: ESPN+, Peacock, PDCTV international passes, North American broadcast times and US qualifiers."
+    "description": "Official TV channels, live streams, and broadcast schedule for the 2026/27 PDC World Darts in United States."
   }
 ]

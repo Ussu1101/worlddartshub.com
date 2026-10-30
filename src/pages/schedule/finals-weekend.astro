@@ -6,8 +6,8 @@ import AdSlot from '../../components/AdSlot.astro';
 import VerificationBadge from '../../components/VerificationBadge.astro';
 import scheduleData from '../../data/schedule.json';
 
-const pageTitle = "World Darts Championship Finals Weekend 2027 Guide";
-const pageDescription = "Schedule and session times for the 2026/27 PDC World Darts Championship Finals Weekend: Quarter-Finals (Jan 1), Semi-Finals (Jan 2), Final (Jan 3).";
+const pageTitle = "What Time Is the Darts Final? World Championship Final, Sunday 3 January 2027, 19:30 GMT";
+const pageDescription = "What time is the darts final? The World Darts Championship final is on Sunday 3 January 2027, starting at 19:30 GMT. Full Finals Weekend schedule: QF 1 Jan, SF 2 Jan, final 3 Jan.";
 const siteUrl = "https://worlddartshub.com";
 
 const breadcrumbItems = [
@@ -17,32 +17,51 @@ const breadcrumbItems = [
 
 const finalsWeekendSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": pageTitle,
-  "description": pageDescription,
-  "url": `${siteUrl}/schedule/finals-weekend/`,
-  "mainEntity": {
-    "@type": "ItemList",
-    "name": "2027 PDC World Darts Championship Finals Weekend Sessions",
-    "numberOfItems": 3,
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "New Year's Day Quarter-Finals (1 January 2027) — Afternoon 12:30 GMT & Evening 19:00 GMT"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "World Championship Semi-Finals (2 January 2027) — Evening 19:30 GMT"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "The World Championship Final (3 January 2027) — Evening 19:30 GMT"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/schedule/finals-weekend/#webpage`,
+      "url": `${siteUrl}/schedule/finals-weekend/`,
+      "name": pageTitle,
+      "description": pageDescription,
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "2027 PDC World Darts Championship Finals Weekend Sessions",
+        "numberOfItems": 3,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "New Year's Day Quarter-Finals (1 January 2027) — Afternoon 12:30 GMT & Evening 19:00 GMT"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "World Championship Semi-Finals (2 January 2027) — Evening 19:30 GMT"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "The World Championship Final (3 January 2027) — Evening 19:30 GMT"
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/schedule/finals-weekend/#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What time is the darts final?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The World Darts Championship final is scheduled for Sunday 3 January 2027 at 19:30 GMT at Alexandra Palace, London. This is the scheduled evening session start; final timings remain subject to host broadcaster confirmation."
+          }
+        }
+      ]
+    }
+  ]
 };
 
 const finalsDates = scheduleData.verified_dates.filter(d => 
@@ -65,7 +84,7 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
       </div>
       <h1>PDC World Darts Championship Finals Weekend Schedule</h1>
       <p class="hero-lead">
-        The culmination of 96 matches across 28 sessions. Full guide to session start times, doors opening hours, broadcast timings, and match formats for the 2027 Quarter-Finals, Semi-Finals, and Final at Alexandra Palace's Great Hall.
+        The World Darts Championship final takes place on Sunday 3 January 2027 at Alexandra Palace, London, starting at 19:30 GMT. Full guide to session start times, doors opening hours, broadcast timings, and match formats for the 2027 Quarter-Finals, Semi-Finals, and Final.
       </p>
 
       <div class="hero-meta-bar">
@@ -291,6 +310,15 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
         </div>
       </section>
 
+      <!-- Frequently Asked Questions -->
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-box">
+          <h4>What time is the darts final?</h4>
+          <p>The World Darts Championship final is scheduled for Sunday 3 January 2027 at 19:30 GMT at Alexandra Palace, London. This is the scheduled evening session start; final timings remain subject to host broadcaster confirmation.</p>
+        </div>
+      </section>
+
       <!-- Internal Navigation Clusters -->
       <section class="content-section internal-hub-cluster">
         <h2>Explore The Tournament Ecosystem</h2>
@@ -412,6 +440,26 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
     gap: 2.5rem;
     margin-top: 2.5rem;
     margin-bottom: 4rem;
+  }
+
+  .faq-box {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    background: #f8fafc;
+  }
+
+  .faq-box h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: #0f172a;
+  }
+
+  .faq-box p {
+    margin: 0;
+    color: #334155;
+    line-height: 1.6;
+    font-size: 0.95rem;
   }
 
   .content-section {
