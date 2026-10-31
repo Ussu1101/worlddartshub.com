@@ -215,9 +215,19 @@
     "description": "Complete record of all 16 nine-darters hit at the PDC World Darts Championship. Checkout routes, opponents, dates, and iconic video moments."
   },
   {
+    "url": "/players/andrew-gilding/",
+    "title": "Andrew Gilding: Darts Specs, Career Stats &amp; UK Open Title",
+    "description": "Player dossier for Andrew Gilding: 25g Cosmo signature darts,"
+  },
+  {
     "url": "/players/beau-greaves/",
     "title": "Beau Greaves: Darts Specs &amp; Career Stats",
     "description": "Player dossier for Beau Greaves: 21g One80 Darts darts, walk-on anthem &quot;Yes Sir, I Can Boogie&quot;, career earnings and records."
+  },
+  {
+    "url": "/players/cameron-menzies/",
+    "title": "Cameron Menzies: Darts Specs, Career Stats &amp; Ally Pally Runs",
+    "description": "Player dossier for Cameron Menzies: 24g Unicorn signature darts,"
   },
   {
     "url": "/players/checkout-percentage-explained/",
@@ -248,6 +258,16 @@
     "url": "/players/darts-referees-mcs/",
     "title": "Who Shouts &#39;180!&#39;? Meet PDC&#39;s Referees, Callers &amp; MCs",
     "description": "Meet the voices behind the oche: Kirk Bevins,"
+  },
+  {
+    "url": "/players/daryl-gurney/",
+    "title": "Daryl Gurney: Darts Specs, Career Stats &amp; Ally Pally Runs",
+    "description": "Player dossier for Daryl Gurney: 23g Winmau signature darts,"
+  },
+  {
+    "url": "/players/dave-chisnall/",
+    "title": "Dave Chisnall: Darts Specs, Career Stats &amp; Ally Pally Runs",
+    "description": "Player dossier for Dave Chisnall: 22g Harrows signature darts,"
   },
   {
     "url": "/players/dirk-van-duijvenbode/",
@@ -295,6 +315,11 @@
     "description": "Player dossier for Jermaine Wattimena: 22g Winmau signature darts,"
   },
   {
+    "url": "/players/joe-cullen/",
+    "title": "Joe Cullen: Darts Specs, Career Stats &amp; Ally Pally Runs",
+    "description": "Player dossier for Joe Cullen: 21g Winmau signature darts,"
+  },
+  {
     "url": "/players/jonny-clayton/",
     "title": "Jonny Clayton: Darts Specs &amp; Career Stats",
     "description": "Player dossier for Jonny Clayton: 22g Red Dragon Darts darts, walk-on anthem &quot;Johnny B. Goode&quot;, career earnings and records."
@@ -308,6 +333,11 @@
     "url": "/players/karel-sedlacek/",
     "title": "Karel Sedláček &quot;Evil Charlie&quot;: Darts Specs &amp; Stats",
     "description": "Karel Sedláček (&quot;Evil Charlie&quot;) dossier: verified 23g Bull"
+  },
+  {
+    "url": "/players/kevin-doets/",
+    "title": "Kevin Doets: Darts Specs, Career Stats &amp; Ally Pally Runs",
+    "description": "Player dossier for Kevin Doets: 21g Target signature darts,"
   },
   {
     "url": "/players/krzysztof-ratajski/",
@@ -353,6 +383,11 @@
     "url": "/players/nicknames/",
     "title": "Darts Player Nicknames: A-Z Guide &amp; Origins",
     "description": "From"
+  },
+  {
+    "url": "/players/niels-zonneveld/",
+    "title": "Niels Zonneveld: Darts Specs, Career Stats &amp; Ally Pally Runs",
+    "description": "Player dossier for Niels Zonneveld: 23g Shot signature darts,"
   },
   {
     "url": "/players/peter-wright/",
@@ -418,6 +453,11 @@
     "url": "/players/wessel-nijman/",
     "title": "Wessel Nijman: Darts Specs, Career Stats &amp; Breakout Rise",
     "description": "Player dossier for Wessel Nijman: 22g Mission Signature darts, walk-on music"
+  },
+  {
+    "url": "/players/william-oconnor/",
+    "title": "William O&#39;Connor: Darts Specs, Career Stats &amp; Ally Pally Runs",
+    "description": "Player dossier for William O"
   },
   {
     "url": "/players/world-championship-records/",
@@ -488,6 +528,11 @@
     "url": "/tickets/hospitality-packages/",
     "title": "PDC World Darts Hospitality Packages: VIP Tickets &amp; Dining",
     "description": "Official hospitality and VIP packages for the PDC World Darts Championship at Alexandra Palace. Matchroom fine dining, complimentary bar, and prime tables."
+  },
+  {
+    "url": "/tickets/next-championship-tickets/",
+    "title": "World Darts Championship 2027/28 Tickets: Ballot Status &amp; How to Prepare",
+    "description": "Tickets for the next World Darts Championship: ballot status, how the ballot works, and what to do while you wait."
   },
   {
     "url": "/tickets/price-guide/",
@@ -600,9 +645,19 @@
     "description": "Complete 2026 UK Open prize money breakdown: £750k total fund, £120k champion share, round-by-round payouts from the FA Cup of Darts at Minehead."
   },
   {
+    "url": "/tournament/women-at-the-worlds/",
+    "title": "Women at the World Darts Championship 2026/27: Players &amp; Qualification Routes",
+    "description": "The women at the 2026/27 World Darts Championship: who qualified, how they got there, and what to watch at Alexandra Palace."
+  },
+  {
     "url": "/tournament/world-cup-of-darts/",
     "title": "World Cup of Darts: Format, Prize Money &amp; Past Winners",
     "description": "Comprehensive guide to the PDC World Cup of Darts: 40-nation pairs format, £500,000 prize fund breakdown, Frankfurt venue details, and full winners archive."
+  },
+  {
+    "url": "/tournament/world-darts-championship-guide/",
+    "title": "World Darts Championship Guide for First-Time Fans: Dates, Format &amp; How to Watch",
+    "description": "New to the World Darts Championship? Dates, format, tickets and how to watch for 11 December 2026–3 January 2027 at Alexandra Palace."
   },
   {
     "url": "/tournament/world-darts-championship-how-to-watch/",
@@ -613,6 +668,11 @@
     "url": "/tournament/world-darts-championship-qualifiers/",
     "title": "Who Qualified for the 2026/27 World Darts Championship?",
     "description": "48-slot list of qualifiers for the 2026/27 PDC World Darts Championship at Alexandra Palace: 31 confirmed players, 17 TBC routes, and international debuts."
+  },
+  {
+    "url": "/tournament/world-darts-championship-trophy/",
+    "title": "World Darts Championship Trophy &amp; Luke Littler Darts: A Fan Buying Guide",
+    "description": "The World Darts Championship trophy and Luke Littler darts: what fans buy, what to check before you buy, and where to buy from verified sellers."
   },
   {
     "url": "/tournament/world-darts-championship/",

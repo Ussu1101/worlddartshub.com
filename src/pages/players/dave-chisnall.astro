@@ -1,0 +1,567 @@
+---
+// src/pages/players/dave-chisnall.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Dave Chisnall: Darts Specs, Career Stats & Ally Pally Runs";
+const pageDescription = "Player dossier for Dave Chisnall: 22g Harrows signature darts, 'Chizzy' nickname, 2021 World semi-finalist, and prolific 180-hitter.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/dave-chisnall/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Dave Chisnall' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does Dave Chisnall throw?",
+    a: "Dave Chisnall throws signature 22-gram 90% tungsten match darts manufactured by Harrows Darts, featuring a parallel barrel profile finished in gold titanium nitride coating with deep double-cut ring grip."
+  },
+  {
+    q: "What is Dave Chisnall's nickname and walk-on song?",
+    a: "Dave Chisnall is universally known as 'Chizzy'. His energetic walk-on anthem is 'Dizzy' by Vic Reeves and The Wonder Stuff, complete with his trademark bright yellow stage shirt."
+  },
+  {
+    q: "What is Dave Chisnall's greatest World Darts Championship victory?",
+    a: "Chisnall produced one of the most stunning performances in Alexandra Palace history in the 2021 quarter-finals, whitewashing three-time world champion Michael van Gerwen 5-0 with a blistering 107.34 match average."
+  },
+  {
+    q: "What is Dave Chisnall's current PDC Order of Merit ranking?",
+    a: "Following Players Championship 32 in late October 2026, Dave Chisnall occupies World No. 29 on the two-year rolling PDC Order of Merit with £287,750 in ranking prize earnings (interim post-PC32 baseline)."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "Dave Chisnall",
+      "alternateName": "Chizzy",
+      "nationality": { "@type": "Country", "name": "England" },
+      "birthDate": "1980-09-12",
+      "birthPlace": "St Helens, Merseyside, England",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">180 POWERHOUSE</span>
+        <span class="badge">CHIZZY</span>
+        <span class="badge badge-outline">WORLD NO. 29</span>
+      </div>
+      <h1>Dave Chisnall: "Chizzy"</h1>
+      <p class="hero-lead">
+        Relentless maximum scoring, trademark yellow stage style, and one of the purest throwing actions in modern darts: the complete profile on St Helens' Dave Chisnall.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & Harrows Darts Specs" 
+          lastVerified="31 October 2026" 
+          source="PDC Order of Merit & Player Records" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Nation</span>
+          <span class="stat-value">England</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">Chizzy</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">22g Harrows Signature</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Order of Merit</span>
+          <span class="stat-value">World No. 29 (£287,750)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: St Helens' Master of Maximums</h2>
+        <p>
+          Born on 12 September 1980 in St Helens, Merseyside, <strong>Dave Chisnall</strong> has stood as one of the most explosive and respected scoring talents in professional darts for over fifteen years. Sporting his trademark canary-yellow shirts and competing under the beloved moniker <em>"Chizzy"</em>, Chisnall is revered as one of the most prolific 180-hitters in darting history.
+        </p>
+        <p>
+          A former BDO World Championship finalist, Chisnall transferred to the PDC in 2011, winning PDC ProTour Player of the Year in his rookie season and defeating Phil Taylor at the 2012 World Championship. Chisnall has reached the finals of multiple televised premier majors—including the World Grand Prix, Grand Slam of Darts, and Masters—while capturing more than fifteen senior ranking titles across the European Tour and Players Championship circuits. His crowning Alexandra Palace masterclass arrived on New Year's Day 2021, when he stunned the sports world by whitewashing Michael van Gerwen 5-0 with a breathtaking 107.34 average.
+        </p>
+        <div class="callout ranking-notice">
+          <strong>Current Ranking Status (Interim):</strong> Following Players Championship 32 in late October 2026, Chisnall occupies <strong>World No. 29</strong> on the official <a href="/tournament/order-of-merit/">PDC Order of Merit</a> with £287,750 in two-year rolling prize money. <em>Last updated: 31 October 2026, interim post-PC32 baseline; final top-32 seeded positions lock in following the Players Championship Finals in late November.</em>
+        </div>
+      </section>
+
+      <!-- Equipment & Throw Analysis -->
+      <section class="content-section">
+        <h2>Darts Specifications & Throw Mechanics</h2>
+        <p>
+          Chisnall's match setup is engineered by Harrows Darts, reflecting his preference for crisp tactile grip and balanced weight distribution:
+        </p>
+        
+        <div class="specs-grid">
+          <div class="spec-card">
+            <h4>Barrel Profile</h4>
+            <p><strong>Weight:</strong> 22 Grams</p>
+            <p><strong>Tungsten:</strong> 90% Tungsten Composition</p>
+            <p><strong>Profile:</strong> Parallel barrel profile featuring deep twin-ring machining, coated in durable gold titanium nitride with natural silver highlights.</p>
+          </div>
+          <div class="spec-card">
+            <h4>Shaft & Flight Setup</h4>
+            <p><strong>Shafts:</strong> Harrows Carbon Plus short stems</p>
+            <p><strong>Flights:</strong> Harrows Chizzy signature 100-micron standard flights (Yellow / Black)</p>
+            <p><strong>Points:</strong> 32mm smooth silver steel points</p>
+          </div>
+        </div>
+
+        <p>
+          Throw mechanics: Chisnall possesses one of the smoothest, most repeatable throwing strokes in the sport. Standing at an angle to the oche, he brings the dart back close to his eye before driving straight through with an effortless follow-through. His 22g barrels travel with high velocity and enter the board with a slight tail-up angle, providing an ideal shelf for his legendary 180 clusters.
+        </p>
+      </section>
+
+      <!-- Alexandra Palace Record -->
+      <section class="content-section">
+        <h2>World Darts Championship Record</h2>
+        <p>
+          Chisnall has produced some of the most memorable moments in Alexandra Palace history across more than a decade of championship campaigns:
+        </p>
+        
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Championship</th>
+                <th>Final Stage</th>
+                <th>Key Results & Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>2012</strong></td>
+                <td>Round Three</td>
+                <td>Stunned world number one Phil Taylor 4-1 in a historic second-round upset.</td>
+              </tr>
+              <tr>
+                <td><strong>2017</strong></td>
+                <td>Quarter-Finalist</td>
+                <td>Played out a 21-maximum epic against Gary Anderson, narrowly falling 3-5 in one of the greatest matches ever staged.</td>
+              </tr>
+              <tr>
+                <td><strong>2019</strong></td>
+                <td>Quarter-Finalist</td>
+                <td>Reached the last eight before bowing out against Gary Anderson.</td>
+              </tr>
+              <tr>
+                <td><strong>2021</strong></td>
+                <td>Semi-Finalist</td>
+                <td>Historic 5-0 quarter-final whitewash of Michael van Gerwen with a 107.34 average; bowed out 3-6 to Gary Anderson in the semi-finals.</td>
+              </tr>
+              <tr>
+                <td><strong>2024</strong></td>
+                <td>Quarter-Finalist</td>
+                <td>Defeated Cameron Menzies, Gabriel Clemens, and Daryl Gurney before falling to Luke Humphries.</td>
+              </tr>
+              <tr>
+                <td><strong>2026/27</strong></td>
+                <td>Round One</td>
+                <td>Arrives seeded among the world's top 32; all 128 competitors begin in Round One with no byes.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Walk-on & Dizzy Anthem -->
+      <section class="content-section">
+        <h2>Walk-On Anthem & Arena Atmosphere</h2>
+        <p>
+          Chisnall makes his entrance to <strong>"Dizzy"</strong> by <strong>Vic Reeves & The Wonder Stuff</strong>. Dressed in his iconic bright yellow stage shirt, Chizzy walks on with a warm, relaxed smile, slapping hands with fans as the Great Hall crowd bounces to the chaotic pop-punk beat. His explosive scoring and down-to-earth demeanor ensure he remains one of the most universally popular figures on the PDC stage.
+        </p>
+      </section>
+
+      <!-- FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Dave Chisnall</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore More Player Dossiers & Rankings</h2>
+        <div class="grid-2">
+          <a href="/players/joe-cullen/" class="cluster-link-card">
+            <h3>🎯 Joe Cullen Player Dossier</h3>
+            <p>2022 Masters champion, Winmau 21g darts, and 'The Rockstar' profile.</p>
+          </a>
+          <a href="/players/cameron-menzies/" class="cluster-link-card">
+            <h3>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Cameron Menzies Player Dossier</h3>
+            <p>Unicorn 24g match darts, ProTour champion, and Scottish international.</p>
+          </a>
+          <a href="/tournament/order-of-merit/" class="cluster-link-card">
+            <h3>📊 PDC Order of Merit Guide</h3>
+            <p>Track world ranking calculations, rolling prize money, and seedings cut-offs.</p>
+          </a>
+          <a href="/tournament/prize-money/" class="cluster-link-card">
+            <h3>💰 £5M Prize Money Guide</h3>
+            <p>Round-by-round payouts, £1M champion share, and financial rankings impact.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Player Quick Facts</h3>
+        <ul class="widget-list">
+          <li><strong>Born:</strong> 12 Sept 1980 (St Helens)</li>
+          <li><strong>Nickname:</strong> Chizzy</li>
+          <li><strong>Darts:</strong> 22g Harrows (90% Tungsten)</li>
+          <li><strong>Walk-On:</strong> Vic Reeves – Dizzy</li>
+          <li><strong>Best Worlds:</strong> Semi-Finalist (2021)</li>
+          <li><strong>Rank:</strong> World No. 29 (Interim)</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Worlds Contenders</h3>
+        <ul class="widget-list">
+          <li><a href="/players/luke-littler/">Luke Littler (Reigning Champion)</a></li>
+          <li><a href="/players/james-wade/">James Wade (11x Major Winner)</a></li>
+          <li><a href="/players/daryl-gurney/">Daryl Gurney (2x Major Winner)</a></li>
+          <li><a href="/tournament/order-of-merit/">Order of Merit Hub</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #eab308;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .player-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fde047;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .callout {
+    padding: 1.25rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+  }
+
+  .ranking-notice {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-left: 4px solid #eab308;
+    color: #854d0e;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .spec-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .spec-card h4 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin: 0 0 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+
+  .spec-card p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .faq-section {
+    margin-top: 2.5rem;
+  }
+
+  .faq-item {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .internal-hub-cluster {
+    margin-top: 3rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #eab308;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  .widget-list li {
+    font-size: 0.9rem;
+    color: #334155;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .player-hero h1 {
+      font-size: 2.15rem;
+    }
+  }
+</style>

@@ -15,22 +15,62 @@ const breadcrumbItems = [
   { name: 'Order of Merit', url: '/tournament/order-of-merit/' }
 ];
 
+const faqItems = [
+  {
+    q: "What is the PDC Order of Merit?",
+    a: "The PDC Order of Merit is the official world ranking, based on prize money won in ranking events over a two-year rolling period."
+  },
+  {
+    q: "How is the Order of Merit calculated?",
+    a: "Only prize money from ranking events counts, over the last two years. Older prize money drops off as new results replace it."
+  },
+  {
+    q: "What does a top-32 seeding mean?",
+    a: "The top 32 players are the seeds and are placed apart in the draw. Every player still starts in Round One — there are no byes."
+  },
+  {
+    q: "When do the seeds lock for the World Championship?",
+    a: "The final top-32 seeded positions lock after the Players Championship Finals in late November. See the current table on this page for the latest positions."
+  },
+  {
+    q: "What happens to the rankings after the World Championship?",
+    a: "Prize money from two years ago drops off and the new results replace it, so the rankings change after the final."
+  }
+];
+
 const oomSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": pageTitle,
-  "description": pageDescription,
-  "url": `${siteUrl}/tournament/order-of-merit/`,
-  "mainEntity": {
-    "@type": "ItemList",
-    "name": "PDC Order of Merit Provisional Top Seeds Snapshot",
-    "numberOfItems": oomData.provisional_rankings.length,
-    "itemListElement": oomData.provisional_rankings.map((item) => ({
-      "@type": "ListItem",
-      "position": item.rank,
-      "name": `Rank #${item.rank}: ${item.player} (${item.prize_money})`
-    }))
-  }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/tournament/order-of-merit/#webpage`,
+      "name": pageTitle,
+      "description": pageDescription,
+      "url": `${siteUrl}/tournament/order-of-merit/`,
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "PDC Order of Merit Provisional Top Seeds Snapshot",
+        "numberOfItems": oomData.provisional_rankings.length,
+        "itemListElement": oomData.provisional_rankings.map((item) => ({
+          "@type": "ListItem",
+          "position": item.rank,
+          "name": `Rank #${item.rank}: ${item.player} (${item.prize_money})`
+        }))
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/tournament/order-of-merit/#faq`,
+      "mainEntity": faqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
 };
 ---
 
@@ -197,6 +237,19 @@ const oomSchema = {
           <p class="micro-note">
             <em>See the exact round-by-round payout amounts on our <a href="/tournament/prize-money/">£5M Prize Money Guide</a>.</em>
           </p>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: PDC Order of Merit</h2>
+        <div class="faq-list">
+          {faqItems.map((item) => (
+            <div class="faq-item">
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -575,5 +628,34 @@ const oomSchema = {
     .oom-hero h1 {
       font-size: 2.15rem;
     }
+  }
+  .faq-section {
+    margin-top: 2.5rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
   }
 </style>

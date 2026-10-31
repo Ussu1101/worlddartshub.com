@@ -1,0 +1,557 @@
+---
+// src/pages/players/cameron-menzies.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Cameron Menzies: Darts Specs, Career Stats & Ally Pally Runs";
+const pageDescription = "Player dossier for Cameron Menzies: 24g Unicorn signature darts, 'The Glen' walk-on song, Players Championship winner, and Ally Pally contender.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/cameron-menzies/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Cameron Menzies' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does Cameron Menzies throw?",
+    a: "Cameron Menzies throws official 24-gram 90% tungsten signature match darts manufactured by Unicorn Darts, featuring a parallel barrel profile with dual machined ring grip zones."
+  },
+  {
+    q: "What is Cameron Menzies' walk-on song and nickname?",
+    a: "Cameron Menzies is known to darts supporters simply as 'Cammy'. His energetic walk-on music is 'The Glen' by Scottish indie rock band Beluga Lagoon (Levi Heron remix)."
+  },
+  {
+    q: "What is Cameron Menzies' current PDC world ranking?",
+    a: "Following Players Championship 32 in late October 2026, Cameron Menzies occupies World No. 26 on the official two-year rolling PDC Order of Merit with £384,500 in ranking prize earnings (interim post-PC32 baseline)."
+  },
+  {
+    q: "Has Cameron Menzies won a senior PDC ranking title?",
+    a: "Yes. Menzies clinched his maiden senior PDC ranking title at Players Championship 29 in late 2024 in Leicester, defeating Stephen Bunting in a dramatic final."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "Cameron Menzies",
+      "alternateName": "Cammy",
+      "nationality": { "@type": "Country", "name": "Scotland" },
+      "birthDate": "1989-11-04",
+      "birthPlace": "Glasgow, Scotland",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">PROTOUR TITLE WINNER</span>
+        <span class="badge">SCOTTISH INTERNATIONAL</span>
+        <span class="badge badge-outline">WORLD NO. 26</span>
+      </div>
+      <h1>Cameron Menzies: "Cammy"</h1>
+      <p class="hero-lead">
+        Unfiltered stage charisma, devastating scoring bursts, and an infectious love for the game: the complete player profile on Glasgow's Cameron Menzies.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & Unicorn Darts Specs" 
+          lastVerified="31 October 2026" 
+          source="PDC Order of Merit & Player Records" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Nation</span>
+          <span class="stat-value">Scotland</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">Cammy</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">24g Unicorn Signature</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Order of Merit</span>
+          <span class="stat-value">World No. 26 (£384,500)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: Heart-on-Sleeve Intensity and ProTour Triumph</h2>
+        <p>
+          Born on 4 November 1989 in Glasgow, <strong>Cameron Menzies</strong> has established himself as one of the most compelling and relatable characters on the professional darts circuit. Combining an open, wear-his-heart-on-his-sleeve stage demeanor with explosive three-dart scoring power, the Scotsman has climbed steadily through the ranks of the Professional Darts Corporation while balancing his sporting career with working as a qualified plumbing and heating engineer.
+        </p>
+        <p>
+          Menzies enjoyed early prominence in the BDO, capturing the Scottish Open and reaching the semi-finals of the World Masters, before securing his PDC Tour Card at European Q-School in 2022. His watershed senior PDC breakthrough arrived at Players Championship 29 in October 2024 in Leicester, where Menzies stormed through a world-class field—averaging over 100 in multiple rounds and defeating Stephen Bunting in the final—to lift his maiden senior ranking title.
+        </p>
+        <div class="callout ranking-notice">
+          <strong>Current Ranking Status (Interim):</strong> Following Players Championship 32 in late October 2026, Menzies holds <strong>World No. 26</strong> on the two-year rolling <a href="/tournament/order-of-merit/">PDC Order of Merit</a> with £384,500 in prize earnings. <em>Last updated: 31 October 2026, interim post-PC32 baseline; final top-32 seeded positions lock in following the Players Championship Finals in late November.</em>
+        </div>
+      </section>
+
+      <!-- Equipment & Throw Analysis -->
+      <section class="content-section">
+        <h2>Darts Specifications & Throw Mechanics</h2>
+        <p>
+          Menzies throws official signature 24-gram tungsten darts engineered by Unicorn Darts. His setup is tailored to his energetic, fluid delivery:
+        </p>
+        
+        <div class="specs-grid">
+          <div class="spec-card">
+            <h4>Barrel Profile</h4>
+            <p><strong>Weight:</strong> 24 Grams</p>
+            <p><strong>Tungsten:</strong> 90% Tungsten Alloy</p>
+            <p><strong>Dimensions:</strong> Parallel cylindrical profile with dual ring grip clusters across the front and mid-barrel sections.</p>
+          </div>
+          <div class="spec-card">
+            <h4>Shaft & Flight Setup</h4>
+            <p><strong>Shafts:</strong> Unicorn Gripper intermediate polycarbonate stems</p>
+            <p><strong>Flights:</strong> Unicorn Ultrafly standard No.2 flights</p>
+            <p><strong>Points:</strong> Standard 32mm black steel points with micro-laser grip</p>
+          </div>
+        </div>
+
+        <p>
+          Mechanically, Menzies employs a dynamic, slightly animated rhythm. He addresses the oche with quick alignment, pulling back to his right cheek before releasing with high forward momentum. When his rhythm locks in, Menzies ranks among the most prolific 180-hitters on the ProTour, generating rapid flurries of maximums that keep opponents under severe scoreboard pressure.
+        </p>
+      </section>
+
+      <!-- Alexandra Palace Record -->
+      <section class="content-section">
+        <h2>World Darts Championship Record</h2>
+        <p>
+          Menzies has become a popular fixture at Alexandra Palace, where the boisterous Great Hall crowd consistently rallies around his lively, theatrical celebrations:
+        </p>
+        
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Championship</th>
+                <th>Final Stage</th>
+                <th>Key Results & Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>2023</strong></td>
+                <td>Round Two</td>
+                <td>Defeated Diogo Portela 3-1 on debut; bowed out 0-3 against Vincent van der Voort.</td>
+              </tr>
+              <tr>
+                <td><strong>2024</strong></td>
+                <td>Round Two</td>
+                <td>Clinched a gutsy 3-0 first-round victory over Rusty-Jake Rodriguez before losing to Dave Chisnall.</td>
+              </tr>
+              <tr>
+                <td><strong>2025</strong></td>
+                <td>Round Two</td>
+                <td>Secured an opening victory before falling in a tight multi-set second-round contest.</td>
+              </tr>
+              <tr>
+                <td><strong>2026/27</strong></td>
+                <td>Round One</td>
+                <td>Enters inside the top 32 seeded bracket; all 128 competitors begin in Round One with no byes.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Walk-on & Atmosphere -->
+      <section class="content-section">
+        <h2>Walk-On Anthem & Fan Following</h2>
+        <p>
+          Menzies makes his entrance to <strong>"The Glen"</strong> by indie rock group <strong>Beluga Lagoon</strong> (Levi Heron remix). The atmospheric Scottish track sets an electric mood inside the arena, with Menzies bouncing onto the stage, fist-pumping, and engaging with supporters along the barrier. His partner, darts superstar <a href="/tournament/women-at-the-worlds/">Fallon Sherrock</a>, frequently forms half of a high-profile darting power couple, drawing additional media spotlight to his matches.
+        </p>
+      </section>
+
+      <!-- FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Cameron Menzies</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore More Player Dossiers & Rankings</h2>
+        <div class="grid-2">
+          <a href="/players/dave-chisnall/" class="cluster-link-card">
+            <h3>🎯 Dave Chisnall Player Dossier</h3>
+            <p>Harrows 22g match darts, 180 scoring records, and world semi-final history.</p>
+          </a>
+          <a href="/tournament/order-of-merit/" class="cluster-link-card">
+            <h3>📊 PDC Order of Merit Guide</h3>
+            <p>Explore the official two-year rolling ranking list and provisional world seeds.</p>
+          </a>
+          <a href="/draw/" class="cluster-link-card">
+            <h3>🗺️ 128-Player Tournament Draw</h3>
+            <p>Track seeded placements and potential second-round bracket matchups.</p>
+          </a>
+          <a href="/tournament/prize-money/" class="cluster-link-card">
+            <h3>💰 £5M Prize Money Guide</h3>
+            <p>Round-by-round earnings distribution and £1M winner's share at Alexandra Palace.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Player Quick Facts</h3>
+        <ul class="widget-list">
+          <li><strong>Born:</strong> 4 Nov 1989 (Glasgow)</li>
+          <li><strong>Nickname:</strong> Cammy</li>
+          <li><strong>Darts:</strong> 24g Unicorn (90% Tungsten)</li>
+          <li><strong>Walk-On:</strong> Beluga Lagoon – The Glen (Levi Heron remix)</li>
+          <li><strong>Best Major:</strong> PC29 Title Winner (2024)</li>
+          <li><strong>Rank:</strong> World No. 26 (Interim)</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Related Profiles</h3>
+        <ul class="widget-list">
+          <li><a href="/players/luke-woodhouse/">Luke Woodhouse (World Seed)</a></li>
+          <li><a href="/players/ryan-joyce/">Ryan Joyce (World #25)</a></li>
+          <li><a href="/tournament/women-at-the-worlds/">Women at the Worlds</a></li>
+          <li><a href="/tournament/order-of-merit/">Order of Merit Hub</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #3b82f6;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .player-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #93c5fd;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .callout {
+    padding: 1.25rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+  }
+
+  .ranking-notice {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #3b82f6;
+    color: #1e40af;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .spec-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .spec-card h4 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin: 0 0 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+
+  .spec-card p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .faq-section {
+    margin-top: 2.5rem;
+  }
+
+  .faq-item {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .internal-hub-cluster {
+    margin-top: 3rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  .widget-list li {
+    font-size: 0.9rem;
+    color: #334155;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .player-hero h1 {
+      font-size: 2.15rem;
+    }
+  }
+</style>

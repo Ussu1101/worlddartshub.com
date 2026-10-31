@@ -1,0 +1,613 @@
+---
+// src/pages/tournament/world-darts-championship-trophy.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Darts Championship Trophy & Luke Littler Darts: A Fan Buying Guide";
+const pageDescription = "The World Darts Championship trophy and Luke Littler darts: what fans buy, what to check before you buy, and where to buy from verified sellers.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/world-darts-championship-trophy/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'Trophy & Littler Darts Guide' }
+];
+
+const faqItems = [
+  {
+    q: "What is the World Darts Championship trophy called?",
+    a: "The trophy is named the Sid Waddell Trophy, dedicated in memory of legendary darts commentator Sid Waddell in 2012 and first lifted by Phil Taylor in January 2013."
+  },
+  {
+    q: "Can fans buy an official Sid Waddell Trophy replica?",
+    a: "Yes. Fans and collectors can purchase officially licensed miniature desktop replicas and commemorative trophy models through the official PDC Shop and authorized darts specialist retailers."
+  },
+  {
+    q: "What darts does Luke Littler use?",
+    a: "Luke Littler throws 23-gram 90% tungsten signature match darts manufactured by Target Darts, featuring a straight barrel with dual pixel and radial grip zones, black and purple PVD coating, Target Swiss Points, and the Target K-Flex integrated flight system."
+  },
+  {
+    q: "Where can fans buy authentic Luke Littler match darts?",
+    a: "Authentic Target Luke Littler match darts can be purchased directly from Target Darts, the official PDC merchandise store, and recognized specialist retailers including Darts Corner."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": pageTitle,
+      "description": pageDescription,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": `${siteUrl}/`
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={pageSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="trophy-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">MERCHANDISE & MEMORABILIA</span>
+        <span class="badge">SID WADDELL TROPHY</span>
+        <span class="badge badge-outline">VERIFIED BUYING GUIDE</span>
+      </div>
+      <h1>World Darts Championship Trophy & Luke Littler Darts</h1>
+      <p class="hero-lead">
+        A practical, verified fan guide to authentic darts memorabilia: the history and replica buying options for the iconic Sid Waddell Trophy, alongside genuine match equipment specifications for reigning world champion Luke Littler.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Verified Product & Manufacturer Specifications" 
+          lastVerified="31 October 2026" 
+          source="Official Target Darts Catalogue & PDC Merchandise Archive" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Trophy</span>
+          <span class="stat-value">Sid Waddell Trophy</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Littler Match Weight</span>
+          <span class="stat-value">23g (90% Tungsten)</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Manufacturer</span>
+          <span class="stat-value">Target Darts (Official)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+
+      <!-- Part A: The Sid Waddell Trophy -->
+      <section class="content-section">
+        <h2>The Sid Waddell Trophy: History & Fan Replicas</h2>
+        <p>
+          The champion of the <a href="/tournament/world-darts-championship/">PDC World Darts Championship</a> lifts the most celebrated silverware in the sport: the <strong>Sid Waddell Trophy</strong>. Commissioned by the PDC in 2012 to honor the legendary "Voice of Darts" following his passing in August 2012, the trophy was first presented to Phil Taylor at Alexandra Palace in January 2013.
+        </p>
+        <p>
+          Crafted by master silversmiths in London, the full-size perpetual trophy stands over 60 centimeters tall, featuring six silver rods on a Red Eritrean Marble and Black Granite base, weighing approximately 25 kilograms.
+        </p>
+
+        <h3>What Fans and Collectors Can Buy</h3>
+        <p>
+          While the perpetual trophy remains in the custody of the PDC and the reigning champion, official fan replicas and commemorative editions are produced for supporters:
+        </p>
+        <div class="guide-cards-grid">
+          <div class="card guide-card">
+            <div class="card-tag">OFFICIAL LICENSED REPLICA</div>
+            <h4>Miniature Desktop Replicas</h4>
+            <p>
+              Scales ranging from 15cm to 20cm crafted in solid die-cast metal or weighted polyresin, finished in polished chrome with miniature engraving replicating the Ally Pally centerpiece.
+            </p>
+          </div>
+          <div class="card guide-card">
+            <div class="card-tag">MEMORABILIA COLLECTORS</div>
+            <h4>Commemorative Glass & Acrylic Awards</h4>
+            <p>
+              Laser-etched 3D crystal blocks and commemorative presentation plaques featuring the official trophy outline, tournament roll of honour, and edition numbering.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout verification-box">
+          <strong>What to Check Before Buying a Trophy Replica:</strong>
+          <ul class="bullet-list-sm">
+            <li><strong>Official Licensing:</strong> Ensure the item carries official PDC holographic branding or licensed marks.</li>
+            <li><strong>Material Construction:</strong> Genuine replicas use weighted metal alloy or solid resin; avoid unweighted, injection-moulded hollow plastic imitations sold on unverified platforms.</li>
+            <li><strong>Verified Retailers:</strong> Buy directly from the official PDC Merchandise Shop (shop.pdc.tv) or accredited specialist retailers like Darts Corner (dartscorner.co.uk).</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Part B: Luke Littler Darts Buying Guide -->
+      <section class="content-section">
+        <h2>Luke Littler Darts: The Complete Fan Buying Guide</h2>
+        <p>
+          Defending world champion Luke Littler ignited an unprecedented surge in darts interest following his historic breakthrough. For complete career background, tournament titles, and statistics, read our dedicated <a href="/players/luke-littler/">Luke Littler player profile</a>.
+        </p>
+        <p>
+          For players and fans looking to throw the exact equipment Littler uses on television, Target Darts manufactures his official signature range:
+        </p>
+
+        <div class="specs-box card">
+          <h3>🎯 Luke Littler Match Darts: Official Target Specifications</h3>
+          <table class="data-table">
+            <tbody>
+              <tr>
+                <td><strong>Manufacturer</strong></td>
+                <td>Target Darts (Official Brand Partner)</td>
+              </tr>
+              <tr>
+                <td><strong>Model Range</strong></td>
+                <td>Target Luke Littler "The Nuke" Generation 1</td>
+              </tr>
+              <tr>
+                <td><strong>Match Barrel Weight</strong></td>
+                <td>23 Grams (exact weight thrown by Littler on stage)</td>
+              </tr>
+              <tr>
+                <td><strong>Tungsten Composition</strong></td>
+                <td>90% Tungsten Alloy</td>
+              </tr>
+              <tr>
+                <td><strong>Barrel Profile & Grip</strong></td>
+                <td>Straight barrel with dual pixel-grip zones and radial micro-grooves</td>
+              </tr>
+              <tr>
+                <td><strong>Barrel Finish</strong></td>
+                <td>Black titanium nitride PVD coating with vibrant purple accents</td>
+              </tr>
+              <tr>
+                <td><strong>Shaft & Flight System</strong></td>
+                <td>Target K-Flex No.2 Integrated Flight & Shaft System (Short / Intermediate)</td>
+              </tr>
+              <tr>
+                <td><strong>Point Mechanism</strong></td>
+                <td>Target Swiss Point System (26mm Smooth Silver / Swiss DX Points)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Key Elements to Verify Before You Purchase</h3>
+        <p>
+          Due to huge demand, Target offers multiple tiers within the Luke Littler collection. When purchasing, make sure you select the configuration that matches your budget and requirements:
+        </p>
+        <ul class="bullet-list">
+          <li><strong>Match Specification (Generation 1, 90% Tungsten, 23g):</strong> This is the authentic competition dart thrown on stage. It features Target's patented Swiss Point technology, enabling points to be replaced in seconds using the included pocket tool.</li>
+          <li><strong>Loadout Range (Recreational & Brass/Tungsten Alternatives):</strong> Target also produces entry-level brass darts and intermediate tungsten editions marketed under the "Loadout" series. These are budget-friendly alternatives designed for beginners, but differ from the 90% tungsten match dart.</li>
+          <li><strong>Integrated K-Flex System:</strong> The match darts ship with Target K-Flex integrated flight-and-shaft units. They eliminate flight pop-offs and maintain a permanent 90-degree flight angle during play.</li>
+        </ul>
+
+        <div class="callout retailer-box">
+          <strong>Verified Stockists & Retailers:</strong> Authentic Target Luke Littler darts are available through the official Target Darts store (target-darts.co.uk), the official PDC Shop, Darts Corner, and recognized darts specialist retailers. Always check that the Swiss Point tool is bundled inside genuine Generation 1 retail packaging.
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Trophy & Player Equipment</h2>
+        <div class="faq-list">
+          {faqItems.map((item) => (
+            <div class="faq-item">
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore Tournament & Equipment Guides</h2>
+        <div class="grid-2">
+          <a href="/players/luke-littler/" class="cluster-link-card">
+            <h3>⚡ Luke Littler Player Dossier</h3>
+            <p>Career timeline, major titles, tournament statistics, and walk-on anthem.</p>
+          </a>
+          <a href="/players/darts-equipment-specs/" class="cluster-link-card">
+            <h3>🎯 Tour Players Darts Specs</h3>
+            <p>Barrel weights, tungsten percentages, and grip styles used across the top 32.</p>
+          </a>
+          <a href="/tournament/world-darts-championship/" class="cluster-link-card">
+            <h3>🏆 World Championship Overview</h3>
+            <p>History of the tournament, roll of honour, and prize fund growth.</p>
+          </a>
+          <a href="/history/roll-of-honour/" class="cluster-link-card">
+            <h3>📜 Champions Roll of Honour</h3>
+            <p>Every champion who has lifted the Sid Waddell Trophy since 2013.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Equipment Guides</h3>
+        <ul class="widget-list">
+          <li><a href="/players/darts-equipment-specs/">Pro Darts Specs Directory</a></li>
+          <li><a href="/players/luke-littler/">Luke Littler Profile</a></li>
+          <li><a href="/tournament/world-darts-championship/">Championship Overview</a></li>
+          <li><a href="/history/roll-of-honour/">Roll of Honour</a></li>
+          <li><a href="/tournament/prize-money/">£5M Prize Money Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Buyer Checklist</h3>
+        <ul class="widget-list">
+          <li>✔️ 90% Tungsten Match Spec: 23g</li>
+          <li>✔️ Target Swiss Point mechanism</li>
+          <li>✔️ Target K-Flex flight system</li>
+          <li>✔️ Genuine PDC hologram licensing</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .trophy-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #f59e0b;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .trophy-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fcd34d;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .content-section h3 {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+
+  .guide-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .guide-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .card-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #d97706;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-card h4 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .guide-card p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .callout {
+    padding: 1.25rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+  }
+
+  .verification-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 4px solid #f59e0b;
+    color: #92400e;
+  }
+
+  .retailer-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #3b82f6;
+    color: #1e40af;
+  }
+
+  .bullet-list-sm {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    padding-left: 1.25rem;
+  }
+
+  .bullet-list-sm li {
+    margin-bottom: 0.4rem;
+  }
+
+  .specs-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .specs-box h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .data-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .bullet-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .bullet-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-section {
+    margin-top: 2.5rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .internal-hub-cluster {
+    margin-top: 3rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #f59e0b;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  .widget-list li {
+    font-size: 0.9rem;
+    color: #334155;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .trophy-hero h1 {
+      font-size: 2.15rem;
+    }
+  }
+</style>

@@ -1,0 +1,520 @@
+---
+// src/pages/tickets/next-championship-tickets.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Darts Championship 2027/28 Tickets: Ballot Status & How to Prepare";
+const pageDescription = "Tickets for the next World Darts Championship: ballot status, how the ballot works, and what to do while you wait.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tickets/next-championship-tickets/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tickets', url: '/tickets/' },
+  { name: 'Next Championship Tickets' }
+];
+
+const faqItems = [
+  {
+    q: "When will tickets for the 2027/28 World Darts Championship go on sale?",
+    a: "Tickets and ballot dates for the 2027/28 World Darts Championship have not yet been announced by the PDC. Official dates are typically confirmed during the summer preceding the championship."
+  },
+  {
+    q: "Can I still buy tickets for the 2026/27 World Championship?",
+    a: "The 2026/27 official ballot is closed. Fans seeking tickets for the current tournament must monitor the official See Tickets resale platform and legitimate venue returns."
+  },
+  {
+    q: "How does the PDC World Championship ticket ballot work?",
+    a: "The PDC uses a registration ballot system to allocate high-demand tickets fairly. Subscribers to PDCTV Annual Memberships historically receive priority presale access before remaining allocations enter the general ballot."
+  },
+  {
+    q: "Are ticket prices for 2027/28 confirmed?",
+    a: "No ticket prices for the 2027/28 championship have been announced. Pricing details are only confirmed when the PDC officially opens the registration window."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": pageTitle,
+      "description": pageDescription,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": `${siteUrl}/`
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={pageSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="tickets-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">FUTURE CHAMPIONSHIP STATUS</span>
+        <span class="badge">BALLOT NOT ANNOUNCED YET</span>
+        <span class="badge badge-outline">FAN PLANNING GUIDE</span>
+      </div>
+      <h1>World Darts Championship 2027/28 Tickets</h1>
+      <p class="hero-lead">
+        Planning ahead for future Alexandra Palace championships: official ballot status for 2027/28, how ticketing cycles operate, and verified steps fans can take while waiting for official PDC announcements.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC Ticketing Status" 
+          lastVerified="31 October 2026" 
+          source="Professional Darts Corporation Ticketing Office" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">2027/28 Ballot</span>
+          <span class="stat-value">Not Announced Yet</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">2026/27 Ballot</span>
+          <span class="stat-value">Closed (Sept 2026)</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Current Route</span>
+          <span class="stat-value">Official Returns / Resale</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+
+      <!-- Current Status Section -->
+      <section class="content-section">
+        <h2>Current Ballot Status: 2027/28 Not Announced Yet</h2>
+        <div class="callout notice-box">
+          <strong>Official Status Notice:</strong> The Professional Darts Corporation (PDC) has <strong>not yet announced</strong> ticketing dates, registration windows, or prices for the 2027/28 World Darts Championship. Any third-party website claiming to offer guaranteed 2027/28 tickets or advance sales is unauthorized and fraudulent.
+        </div>
+        <p>
+          World Darts Championship ticketing operates on a strict annual cycle. For the current <strong>2026/27 championship</strong>, the official ticket ballot closed in September 2026 (successful applicants were notified between 21 and 25 September 2026).
+        </p>
+        <p>
+          If your goal is to attend the upcoming 2026/27 event at Alexandra Palace, do not wait for future ticket windows: monitor legitimate returns via our <a href="/tickets/resale-returns/">Official Resale & Returns Guide</a> or visit our master <a href="/tickets/">Tickets Information Hub</a>.
+        </p>
+      </section>
+
+      <!-- How the Ballot Operates -->
+      <section class="content-section">
+        <h2>How the World Championship Ballot Operates</h2>
+        <p>
+          To manage overwhelming global demand fairly, the PDC distributes Alexandra Palace session tickets through a tiered allocation system rather than an open, first-come first-served queue:
+        </p>
+        <ul class="bullet-list">
+          <li><strong>PDCTV Priority Window:</strong> Historically, active annual subscribers to PDCTV who hold valid memberships by a specified summer cutoff date receive first-priority access to purchase tickets.</li>
+          <li><strong>General Registration Ballot:</strong> Remaining allocations across table and tiered seating are distributed via a free online registration ballot, where registered fans are selected randomly.</li>
+          <li><strong>General Sale:</strong> Any remaining tickets following the priority and ballot purchase phases are released to the general public.</li>
+        </ul>
+        <p>
+          For an in-depth explanation of priority deadlines and registration mechanics from past tournaments, inspect our dedicated <a href="/tickets/ballot-presale-guide/">Ballot & Presale Guide</a>.
+        </p>
+      </section>
+
+      <!-- What to Do While Waiting -->
+      <section class="content-section">
+        <h2>What to Do While Waiting for 2027/28 Announcements</h2>
+        <p>
+          While the PDC has not announced 2027/28 dates, prospective attendees can prepare responsibly by following verified recommendations:
+        </p>
+        <div class="steps-grid">
+          <div class="card step-card">
+            <div class="step-num">1</div>
+            <h3>Follow Official PDC Communications</h3>
+            <p>
+              Register a free account on the official PDC website (pdc.tv) and subscribe to official ticketing newsletters to receive verified on-sale alerts as soon as dates are confirmed.
+            </p>
+          </div>
+          <div class="card step-card">
+            <div class="step-num">2</div>
+            <h3>Understand the Summer Timeline</h3>
+            <p>
+              Historically, the PDC announces championship ticket information and PDCTV priority cutoff dates in late spring or early summer (typically between May and July).
+            </p>
+          </div>
+          <div class="card step-card">
+            <div class="step-num">3</div>
+            <h3>Avoid Unauthorized Resale Scams</h3>
+            <p>
+              Never purchase tickets or hospitality packages from unauthorized secondary marketplaces, social media accounts, or speculative brokers claiming advance access before the PDC opens sales.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Future Championship Tickets</h2>
+        <div class="faq-list">
+          {faqItems.map((item) => (
+            <div class="faq-item">
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore Verified Ticketing & Venue Resources</h2>
+        <div class="grid-2">
+          <a href="/tickets/" class="cluster-link-card">
+            <h3>🎟️ Master Tickets Hub</h3>
+            <p>Complete overview of tickets, session categories, and official sales channels.</p>
+          </a>
+          <a href="/tickets/resale-returns/" class="cluster-link-card">
+            <h3>🔄 Official Resale & Returns</h3>
+            <p>How to legally buy and sell unwanted Alexandra Palace tickets via See Tickets.</p>
+          </a>
+          <a href="/tickets/ballot-presale-guide/" class="cluster-link-card">
+            <h3>📋 Ballot & Presale System Guide</h3>
+            <p>Learn how the PDCTV priority window and ballot allocation operate in detail.</p>
+          </a>
+          <a href="/venue/great-hall-seating-plan/" class="cluster-link-card">
+            <h3>🪑 Great Hall Seating Plan</h3>
+            <p>Detailed view of table seats, tiered stands, family sections, and disabled access.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Ticketing Guides</h3>
+        <ul class="widget-list">
+          <li><a href="/tickets/">Tickets Overview</a></li>
+          <li><a href="/tickets/resale-returns/">Resale & Returns</a></li>
+          <li><a href="/tickets/ballot-presale-guide/">Ballot & Presale Guide</a></li>
+          <li><a href="/venue/great-hall-seating-plan/">Seating Plan & Layout</a></li>
+          <li><a href="/venue/security-bag-policy/">Security & Bag Policy</a></li>
+          <li><a href="/venue/">Alexandra Palace Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Ticketing Checklist</h3>
+        <ul class="widget-list">
+          <li>✔️ 2027/28: Not announced yet</li>
+          <li>✔️ 2026/27 Ballot: Closed</li>
+          <li>✔️ Official Seller: See Tickets</li>
+          <li>❌ No secondary resale brokers</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .tickets-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #10b981;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .tickets-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #6ee7b7;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .notice-box {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-left: 4px solid #10b981;
+    padding: 1.25rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    color: #065f46;
+    line-height: 1.6;
+  }
+
+  .bullet-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .bullet-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .step-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    position: relative;
+  }
+
+  .step-num {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: #10b981;
+    color: #ffffff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-card h3 {
+    font-size: 1.15rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-card p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .faq-section {
+    margin-top: 2.5rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .internal-hub-cluster {
+    margin-top: 3rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #10b981;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  .widget-list li {
+    font-size: 0.9rem;
+    color: #334155;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .tickets-hero h1 {
+      font-size: 2.15rem;
+    }
+  }
+</style>

@@ -1,0 +1,552 @@
+---
+// src/pages/players/kevin-doets.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Kevin Doets: Darts Specs, Career Stats & Ally Pally Runs";
+const pageDescription = "Player dossier for Kevin Doets: 21g Target signature darts, 'Hawkeye' nickname, ProTour finalist, and rising Dutch world contender.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/kevin-doets/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Kevin Doets' }
+];
+
+const faqItems = [
+  {
+    q: "What darts does Kevin Doets use?",
+    a: "Kevin Doets throws signature 21-gram 90% tungsten match darts produced by Target Darts, featuring a tapered torpedo front and precision radial micro-grip zones."
+  },
+  {
+    q: "What is Kevin Doets' nickname and walk-on anthem?",
+    a: "Kevin Doets is nicknamed 'Hawkeye' for his laser-focused accuracy on the treble ring. His walk-on music is 'Can't Stop' by the Red Hot Chili Peppers (having also used 'You Give Love a Bad Name' by Bon Jovi)."
+  },
+  {
+    q: "What is Kevin Doets' current world ranking?",
+    a: "Following Players Championship 32 in late October 2026, Kevin Doets ranks at World No. 23 on the two-year rolling PDC Order of Merit with £399,750 in ranking prize earnings (interim post-PC32 baseline)."
+  },
+  {
+    q: "What is Kevin Doets' best performance at Alexandra Palace?",
+    a: "Doets achieved international acclaim at the 2024 World Darts Championship, winning his first-round tie before pushing reigning world champion Michael Smith to a thrilling full five-set sudden-death battle in Round Two."
+  }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${canonicalUrl}#person`,
+      "name": "Kevin Doets",
+      "alternateName": "Hawkeye",
+      "nationality": { "@type": "Country", "name": "Netherlands" },
+      "birthDate": "1998-06-04",
+      "birthPlace": "Almere, Netherlands",
+      "jobTitle": "Professional Darts Player",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Professional Darts Corporation"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={personSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="player-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">DUTCH TOP-25 CONTENDER</span>
+        <span class="badge">HAWKEYE</span>
+        <span class="badge badge-outline">WORLD NO. 23</span>
+      </div>
+      <h1>Kevin Doets: "Hawkeye"</h1>
+      <p class="hero-lead">
+        Laser-sharp treble targeting, tactical poise under pressure, and rapid ascent into the world's elite: the complete profile on Almere's Kevin Doets.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Official PDC & Target Darts Specs" 
+          lastVerified="31 October 2026" 
+          source="PDC Order of Merit & Player Records" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Nation</span>
+          <span class="stat-value">Netherlands</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Nickname</span>
+          <span class="stat-value">Hawkeye</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Darts Weight</span>
+          <span class="stat-value">21g Target Signature</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Order of Merit</span>
+          <span class="stat-value">World No. 23 (£399,750)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+      
+      <!-- Career Overview Callout -->
+      <section class="content-section">
+        <h2>Career Overview: Calm Precision and Breakthrough Consistency</h2>
+        <p>
+          Born on 4 June 1998 in Almere, <strong>Kevin Doets</strong> represents the vanguard of a dynamic new generation in Dutch darts. Competing under the moniker <em>"Hawkeye"</em>, Doets first caught the attention of European darts observers on the PDC Development Tour, winning multiple titles and establishing himself as an exceptionally natural, uncomplicated thrower.
+        </p>
+        <p>
+          After winning his PDC Tour Card at European Q-School in 2021, Doets maintained a steady upward trajectory across the ProTour circuit. His ability to deliver ton-plus averages against elite opponents bore fruit on the European Tour and in Players Championship events, where he consistently advanced deep into ranking weekends. His calm, methodical stage demeanor has made him a fixture inside the world's top 30.
+        </p>
+        <div class="callout ranking-notice">
+          <strong>Current Ranking Status (Interim):</strong> Following Players Championship 32 in late October 2026, Doets occupies <strong>World No. 23</strong> on the official <a href="/tournament/order-of-merit/">PDC Order of Merit</a> with £399,750 in two-year rolling prize money. <em>Last updated: 31 October 2026, interim post-PC32 baseline; final top-32 seeded positions lock in following the Players Championship Finals in late November.</em>
+        </div>
+      </section>
+
+      <!-- Equipment & Throw Analysis -->
+      <section class="content-section">
+        <h2>Darts Specifications & Throw Mechanics</h2>
+        <p>
+          Doets collaborates with Target Darts, utilizing a bespoke 21-gram setup crafted to maximize balance and finger feel:
+        </p>
+        
+        <div class="specs-grid">
+          <div class="spec-card">
+            <h4>Barrel Profile</h4>
+            <p><strong>Weight:</strong> 21 Grams</p>
+            <p><strong>Tungsten:</strong> 90% Tungsten Composition</p>
+            <p><strong>Profile:</strong> Front-tapered torpedo nose tapering smoothly into a parallel rear section with precision square-cut radial grooves.</p>
+          </div>
+          <div class="spec-card">
+            <h4>Shaft & Flight Setup</h4>
+            <p><strong>Shafts:</strong> Target Pro Grip short nylon stems</p>
+            <p><strong>Flights:</strong> Target No.6 small standard flights</p>
+            <p><strong>Points:</strong> Target Swiss Point 26mm smooth silver steel points</p>
+          </div>
+        </div>
+
+        <p>
+          Doets utilizes a high, deliberate grip with his thumb and forefinger situated comfortably in the rear groove recess. His backswing is controlled, drawing smoothly toward his chin before driving cleanly toward the board with minimal body movement. This exceptionally repeatable release minimizes dart deflection in tight treble beds.
+        </p>
+      </section>
+
+      <!-- Alexandra Palace Record -->
+      <section class="content-section">
+        <h2>World Darts Championship Record</h2>
+        <p>
+          Doets made an unforgettable impression at Alexandra Palace during his 2024 campaign, providing one of the most thrilling second-round matches in recent championship history:
+        </p>
+        
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Championship</th>
+                <th>Final Stage</th>
+                <th>Key Results & Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>2024</strong></td>
+                <td>Round Two</td>
+                <td>Defeated Stowe Buntz 3-0 on debut; pushed defending world champion Michael Smith to a sudden-death last-leg decider in a 2-3 epic.</td>
+              </tr>
+              <tr>
+                <td><strong>2025</strong></td>
+                <td>Round Two</td>
+                <td>Secured an impressive opening-round sweep before exiting against a seeded opponent.</td>
+              </tr>
+              <tr>
+                <td><strong>2026/27</strong></td>
+                <td>Round One</td>
+                <td>Arrives seeded inside the top 25; all 128 competitors begin in Round One with no byes.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Walk-on & Dutch Darts Culture -->
+      <section class="content-section">
+        <h2>Walk-On Anthem & Dutch Darts Heritage</h2>
+        <p>
+          Doets steps onto the Alexandra Palace stage to the funk-rock energy of <strong>"Can't Stop"</strong> by the <strong>Red Hot Chili Peppers</strong> (having also previously walked on to Bon Jovi's "You Give Love a Bad Name"). Supported by the vibrant Orange army of Dutch traveling fans, Doets represents an integral pillar alongside countrymen <a href="/players/danny-noppert/">Danny Noppert</a>, <a href="/players/dirk-van-duijvenbode/">Dirk van Duijvenbode</a>, and <a href="/players/gian-van-veen/">Gian van Veen</a>.
+        </p>
+      </section>
+
+      <!-- FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: Kevin Doets</h2>
+        {faqItems.map(item => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore More Player Dossiers & Rankings</h2>
+        <div class="grid-2">
+          <a href="/players/gian-van-veen/" class="cluster-link-card">
+            <h3>🇳🇱 Gian van Veen Player Dossier</h3>
+            <p>Dutch sensation, World Youth finalist, and scoring powerhouse profile.</p>
+          </a>
+          <a href="/players/danny-noppert/" class="cluster-link-card">
+            <h3>🎯 Danny Noppert Player Dossier</h3>
+            <p>UK Open champion, Winmau signature darts, and clinical checkout mastery.</p>
+          </a>
+          <a href="/tournament/order-of-merit/" class="cluster-link-card">
+            <h3>📊 PDC Order of Merit Guide</h3>
+            <p>Track world ranking calculations, rolling prize money, and seedings cut-offs.</p>
+          </a>
+          <a href="/tournament/prize-money/" class="cluster-link-card">
+            <h3>💰 £5M Prize Money Guide</h3>
+            <p>Round-by-round payouts, £1M champion share, and financial rankings impact.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Player Quick Facts</h3>
+        <ul class="widget-list">
+          <li><strong>Born:</strong> 4 June 1998 (Almere)</li>
+          <li><strong>Nickname:</strong> Hawkeye</li>
+          <li><strong>Darts:</strong> 21g Target (90% Tungsten)</li>
+          <li><strong>Walk-On:</strong> Red Hot Chili Peppers – Can't Stop</li>
+          <li><strong>Best Major:</strong> Euro Tour Semi-Finalist</li>
+          <li><strong>Rank:</strong> World No. 23 (Interim)</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Dutch Contingent</h3>
+        <ul class="widget-list">
+          <li><a href="/players/gian-van-veen/">Gian van Veen (Dutch Phenom)</a></li>
+          <li><a href="/players/danny-noppert/">Danny Noppert (Major Champion)</a></li>
+          <li><a href="/players/dirk-van-duijvenbode/">Dirk van Duijvenbode (Titan)</a></li>
+          <li><a href="/players/wessel-nijman/">Wessel Nijman (Breakout Star)</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .player-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #f97316;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .player-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fdba74;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .callout {
+    padding: 1.25rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+  }
+
+  .ranking-notice {
+    background: #fff7ed;
+    border: 1px solid #ffedd5;
+    border-left: 4px solid #f97316;
+    color: #9a3412;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .spec-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .spec-card h4 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin: 0 0 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+
+  .spec-card p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .faq-section {
+    margin-top: 2.5rem;
+  }
+
+  .faq-item {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .internal-hub-cluster {
+    margin-top: 3rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #f97316;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  .widget-list li {
+    font-size: 0.9rem;
+    color: #334155;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .player-hero h1 {
+      font-size: 2.15rem;
+    }
+  }
+</style>

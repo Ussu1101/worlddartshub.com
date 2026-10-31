@@ -1,0 +1,651 @@
+---
+// src/pages/tournament/world-darts-championship-guide.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "World Darts Championship Guide for First-Time Fans: Dates, Format & How to Watch";
+const pageDescription = "New to the World Darts Championship? Dates, format, tickets and how to watch for 11 December 2026–3 January 2027 at Alexandra Palace.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/world-darts-championship-guide/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'First-Timer Guide' }
+];
+
+const faqItems = [
+  {
+    q: "When does the World Darts Championship start?",
+    a: "The 2026/27 World Darts Championship runs from 11 December 2026 to 3 January 2027 at Alexandra Palace, London. The final is on Sunday 3 January 2027, starting at 19:30 GMT."
+  },
+  {
+    q: "How many players play in the World Darts Championship?",
+    a: "128 players. Every player starts in Round One — there are no byes."
+  },
+  {
+    q: "How does the format work?",
+    a: "Matches are played in sets. Early rounds are best of 5 sets, rising to best of 13 sets for the final."
+  },
+  {
+    q: "Can I still buy tickets for the World Darts Championship?",
+    a: "The 2026/27 ticket ballot is closed. See our tickets page and the resale and returns page for the current options."
+  },
+  {
+    q: "Where can I watch the World Darts Championship?",
+    a: "Broadcasters vary by country — see our how-to-watch hub for the per-country list."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": pageTitle,
+      "description": pageDescription,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": `${siteUrl}/`
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={pageSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="guide-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">BEGINNER'S GUIDE</span>
+        <span class="badge">ALLY PALLY 2026/27</span>
+        <span class="badge badge-outline">TOURNAMENT ESSENTIALS</span>
+      </div>
+      <h1>World Darts Championship Guide for First-Time Fans</h1>
+      <p class="hero-lead">
+        Everything you need to know about professional darts' biggest spectacle: key tournament dates, sets format, viewing options, ticket realities, and how to follow the 128-player battle at Alexandra Palace.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Verified PDC 2026/27 Tournament Specifications" 
+          lastVerified="31 October 2026" 
+          source="Official PDC Regulations & Event Schedules" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Dates</span>
+          <span class="stat-value">11 Dec 2026 – 3 Jan 2027</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Field</span>
+          <span class="stat-value">128 Players</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Prize Fund</span>
+          <span class="stat-value">£5,000,000 (£1M to Winner)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+
+      <!-- Section 1 -->
+      <section class="content-section">
+        <h2>What Is the World Darts Championship?</h2>
+        <p>
+          The <strong>PDC World Darts Championship</strong> is the undisputed pinnacle of international darts. Staged annually inside the Great Hall at Alexandra Palace in London, the tournament brings together <strong>128 players</strong> competing across 28 high-stakes sessions from <strong>11 December 2026 to 3 January 2027</strong>.
+        </p>
+        <p>
+          The reigning champion is teenage sensation <strong>Luke Littler</strong>, who captured global sports headlines during his meteoric rise. Competitors battle for the prestigious Sid Waddell Trophy and a record <strong>£5,000,000 prize fund</strong>, with an unprecedented <strong>£1,000,000</strong> awarded to the champion.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="content-section">
+        <h2>When Does It Happen?</h2>
+        <p>
+          The championship takes place from Friday 11 December 2026 through Sunday 3 January 2027, featuring daily afternoon and evening sessions:
+        </p>
+        <ul class="bullet-list">
+          <li><strong>Afternoon Sessions:</strong> Typically begin at 12:30 GMT, featuring four first-round or second-round ties.</li>
+          <li><strong>Evening Sessions:</strong> Typically commence at 19:00 GMT under the television lights.</li>
+          <li><strong>The Final:</strong> Scheduled for <strong>Sunday 3 January 2027</strong>, with live walk-ons commencing at <strong>19:30 GMT</strong>.</li>
+        </ul>
+        <p>
+          For the complete day-by-day session timetable, consult our comprehensive <a href="/schedule/">2026/27 Tournament Schedule</a>. Specific match assignments and daily running orders are updated live throughout the event on our match hub.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="content-section">
+        <h2>How Does the Format Work?</h2>
+        <p>
+          Unlike weekly league play where competitors count individual legs, the World Darts Championship is contested under the classic <strong>sets format</strong>. To win a set, a player must be the first to win three legs (501 points per leg, ending on a double). Matches expand in length as the tournament progresses:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tournament Round</th>
+                <th>Set Length</th>
+                <th>Format Rule</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Round 1 & Round 2</strong></td>
+                <td>Best of 5 Sets</td>
+                <td>First to 3 sets wins</td>
+              </tr>
+              <tr>
+                <td><strong>Round 3 & Round 4</strong></td>
+                <td>Best of 7 Sets</td>
+                <td>First to 4 sets wins</td>
+              </tr>
+              <tr>
+                <td><strong>Quarter-Finals</strong></td>
+                <td>Best of 9 Sets</td>
+                <td>First to 5 sets wins</td>
+              </tr>
+              <tr>
+                <td><strong>Semi-Finals</strong></td>
+                <td>Best of 11 Sets</td>
+                <td>First to 6 sets wins</td>
+              </tr>
+              <tr>
+                <td><strong>Championship Final</strong></td>
+                <td>Best of 13 Sets</td>
+                <td>First to 7 sets wins</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Crucially, under the 128-player championship bracket, <strong>all 128 players start in Round One — there are no byes</strong> for top seeds or seeded players. For a detailed breakdown of scoring mathematics and tiebreaks, explore our guides on <a href="/darts/legs-vs-sets/">Legs vs. Sets Explained</a> and <a href="/darts/rules/">Official 501 Darts Rules</a>.
+        </p>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="content-section">
+        <h2>Who Should I Watch?</h2>
+        <p>
+          With 128 competitors from across the globe, the field features a captivating mix of reigning world champions, seasoned veterans, and hungry qualifiers. Three standout players to follow:
+        </p>
+        <div class="player-feature-grid">
+          <div class="card player-feature-card">
+            <h3>🎯 <a href="/players/luke-littler/">Luke Littler</a></h3>
+            <p>
+              The defending champion and the biggest box-office star in the game. Known as "The Nuke", Littler's explosive scoring and fearless combination finishes make every appearance unmissable.
+            </p>
+          </div>
+          <div class="card player-feature-card">
+            <h3>🎯 <a href="/players/james-wade/">James Wade</a></h3>
+            <p>
+              "The Machine" is an eleven-time PDC major champion and one of the sport's all-time greats. Wade's deadly outer-ring precision and matchplay savvy make him a dangerous seed in any section of the draw.
+            </p>
+          </div>
+          <div class="card player-feature-card">
+            <h3>🎯 <a href="/players/luke-woodhouse/">Luke Woodhouse</a></h3>
+            <p>
+              "Woody" has solidified his status among the world's top 32 through relentless ProTour consistency, showcasing clinical mid-range checkouts and steady stage demeanor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="content-section">
+        <h2>How Can I Watch?</h2>
+        <p>
+          The PDC World Darts Championship is broadcast live across six continents. Television and streaming rights vary depending on your location:
+        </p>
+        <ul class="bullet-list">
+          <li><strong>United Kingdom:</strong> Sky Sports delivers exclusive live coverage of every single session on its dedicated Sky Sports Darts channel and streaming via NOW. See our dedicated <a href="/watch/uk/">UK TV & Sky Sports Streaming Guide</a> for channel numbers and schedules.</li>
+          <li><strong>International Viewers:</strong> Major global broadcasters include DAZN (Germany, Austria, Switzerland), Viaplay (Netherlands), Fox Sports/Kayo (Australia), and ESPN/Peacock (USA). In territories without an exclusive broadcast deal, fans can watch legally via PDCTV.</li>
+        </ul>
+        <p>
+          To find the official, verified legal broadcaster for your specific territory, visit our master <a href="/watch/">How to Watch Darts Hub</a>.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="content-section">
+        <h2>Can I Still Get Tickets?</h2>
+        <p>
+          Demand for Alexandra Palace tickets is immense, with tens of thousands of applications received each year. For the 2026/27 championship, the <strong>official ticket ballot closed in September 2026</strong> (successful applicants were notified between 21 and 25 September 2026).
+        </p>
+        <p>
+          If you missed the initial ballot window, fans looking for entry must use official, verified return pathways. <strong>Do not buy from unauthorized secondary ticketing websites or social media scalpers</strong>, as counterfeit tickets are rejected at venue turnstiles.
+        </p>
+        <p>
+          Check our master <a href="/tickets/">Tickets Hub</a> and read our comprehensive <a href="/tickets/resale-returns/">Official Resale & Returns Guide</a> for legitimate late-ticket options.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="content-section">
+        <h2>Going to Alexandra Palace?</h2>
+        <p>
+          Attending the World Darts Championship in person is one of the most vibrant experiences in live sports. Before heading to North London, prepare your visit with our dedicated venue guides:
+        </p>
+        <div class="grid-2">
+          <a href="/venue/" class="cluster-link-card">
+            <h3>🏛️ Alexandra Palace Venue Guide</h3>
+            <p>History, Great Hall layout, and general visitor orientation.</p>
+          </a>
+          <a href="/fan-culture/first-timer-guide/" class="cluster-link-card">
+            <h3>🎉 On-Site First-Timer Experience Guide</h3>
+            <p>What to expect inside the hall: atmosphere, arrival doors, security checks, bars, and leaving.</p>
+          </a>
+          <a href="/venue/great-hall-seating-plan/" class="cluster-link-card">
+            <h3>🪑 Great Hall Seating Plan</h3>
+            <p>Tables vs. tiered seating, viewing sightlines, and big screen positions.</p>
+          </a>
+          <a href="/venue/food-drink-bars/" class="cluster-link-card">
+            <h3>🍻 Food & Drink Guide</h3>
+            <p>Bars in the Great Hall and Palm Court, beer tokens, and catering options.</p>
+          </a>
+          <a href="/venue/security-bag-policy/" class="cluster-link-card">
+            <h3>🎒 Security & Bag Policy</h3>
+            <p>A4 bag size limits, prohibited items, and entry gate screening rules.</p>
+          </a>
+          <a href="/travel/tube-train-routes/" class="cluster-link-card">
+            <h3>🚇 Tube & Rail Routes</h3>
+            <p>Wood Green tube, Alexandra Palace rail station, and W3 bus connections.</p>
+          </a>
+          <a href="/hotels/budget-options/" class="cluster-link-card">
+            <h3>🏨 Budget Hotels & Stays</h3>
+            <p>Top accommodation options across Wood Green, Muswell Hill, and Kings Cross.</p>
+          </a>
+          <a href="/fancy-dress/" class="cluster-link-card">
+            <h3>🎭 Fancy Dress Rules</h3>
+            <p>Costume regulations, approved themes, and security guidelines.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 8 -->
+      <section class="content-section">
+        <h2>Where Is the Draw?</h2>
+        <p>
+          The complete 128-player tournament bracket and Round One match pairings are tracked live on our <a href="/draw/">Tournament Bracket & Draw Tracker</a>.
+        </p>
+      </section>
+
+      <!-- Section 9: Visible FAQs -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: World Darts Championship Guide</h2>
+        <div class="faq-list">
+          {faqItems.map((item) => (
+            <div class="faq-item">
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore More Championship Resources</h2>
+        <div class="grid-2">
+          <a href="/schedule/" class="cluster-link-card">
+            <h3>📅 Complete Schedule</h3>
+            <p>Session-by-session dates and start times from Round One to the Final.</p>
+          </a>
+          <a href="/watch/" class="cluster-link-card">
+            <h3>📺 TV & Streaming Hub</h3>
+            <p>Country-by-country legal broadcast listings and streaming apps.</p>
+          </a>
+          <a href="/draw/" class="cluster-link-card">
+            <h3>🗺️ Tournament Bracket</h3>
+            <p>128-player draw structure, seeded placements, and potential paths to the final.</p>
+          </a>
+          <a href="/players/" class="cluster-link-card">
+            <h3>🎯 Player Profiles Directory</h3>
+            <p>Darts specs, walk-on songs, and tournament records for the world's best.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Quick Navigation</h3>
+        <ul class="widget-list">
+          <li><a href="/schedule/">Tournament Schedule</a></li>
+          <li><a href="/watch/">How to Watch Hub</a></li>
+          <li><a href="/tickets/">Tickets Information</a></li>
+          <li><a href="/tickets/resale-returns/">Resale & Returns</a></li>
+          <li><a href="/venue/">Alexandra Palace Guide</a></li>
+          <li><a href="/fan-culture/first-timer-guide/">On-Site Fan Experience</a></li>
+          <li><a href="/draw/">Tournament Draw Tracker</a></li>
+          <li><a href="/tournament/prize-money/">£5M Prize Money Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Featured Players</h3>
+        <ul class="widget-list">
+          <li><a href="/players/luke-littler/">Luke Littler (Defending Champion)</a></li>
+          <li><a href="/players/james-wade/">James Wade (11x Major Winner)</a></li>
+          <li><a href="/players/luke-woodhouse/">Luke Woodhouse (World Seed)</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #3b82f6;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .guide-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #93c5fd;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .bullet-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .bullet-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .player-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .player-feature-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .player-feature-card h3 {
+    font-size: 1.15rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .player-feature-card h3 a {
+    color: #1e3a8a;
+    text-decoration: none;
+  }
+
+  .player-feature-card h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .player-feature-card p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .faq-section {
+    margin-top: 2.5rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .internal-hub-cluster {
+    margin-top: 3rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .cluster-link-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .guide-hero h1 {
+      font-size: 2.15rem;
+    }
+  }
+</style>
