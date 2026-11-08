@@ -1,0 +1,581 @@
+---
+// src/pages/tournament/world-youth-championship.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "PDC World Youth Darts Championship 2026: Final Date, Format & Prize Money";
+const pageDescription = "2026 PDC Winmau World Youth Championship: Cam Crabtree v Jan Schmidt final on Sunday 29 November 2026 at Butlin's Minehead, format, £15,000 top prize and recent finals.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/world-youth-championship/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Tournament', url: '/tournament/world-darts-championship/' },
+  { name: 'World Youth Championship' }
+];
+
+const faqItems = [
+  {
+    q: "When is the 2026 World Youth Championship final?",
+    a: "Sunday 29 November 2026, at Butlin's Minehead Resort. The final is played on the Players Championship Finals stage, between the semi-finals and the final of the senior event."
+  },
+  {
+    q: "Who plays in the 2026 World Youth Championship final?",
+    a: "Cam Crabtree (England) v Jan Schmidt (Germany). Crabtree beat Luke Littler 6–5 in the semi-finals; Schmidt beat Charlie Manby 6–3."
+  },
+  {
+    q: "How old do players have to be to play in the World Youth Championship?",
+    a: "Players must be aged 16 to 23. The 128-player field is made up of age-qualified PDC Tour Card holders, international representatives and qualifiers from the Development Tour Order of Merit."
+  },
+  {
+    q: "What does the World Youth Championship winner get?",
+    a: "The winner takes a £15,000 top prize and an invitation to the 2026/27 World Darts Championship at Alexandra Palace. Both finalists also receive invitations to the 2026 Grand Slam of Darts."
+  },
+  {
+    q: "Who won the World Youth Championship last year?",
+    a: "Gian van Veen won the 2025 title, beating Beau Greaves in the final. Van Veen did not defend his title in 2026, and Greaves also opted out of the Wigan event."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": pageTitle,
+      "description": pageDescription,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": `${siteUrl}/`
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={pageSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="guide-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">YOUTH WORLD TITLE</span>
+        <span class="badge">FINAL 29 NOV 2026</span>
+        <span class="badge badge-outline">MINEHEAD</span>
+      </div>
+      <h1>PDC World Youth Darts Championship 2026</h1>
+      <p class="hero-lead">
+        Darts' under-23 world title: 128 players, one Minehead final. Cam Crabtree faces Jan Schmidt on Sunday 29 November 2026 for the £15,000 top prize — and a place at Alexandra Palace.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Verified PDC 2026 World Youth Championship" 
+          lastVerified="8 November 2026" 
+          source="PDC, Sporting Life, DartsNews & Live Darts" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Final</span>
+          <span class="stat-value">29 Nov 2026</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Field</span>
+          <span class="stat-value">128 Players</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Top Prize</span>
+          <span class="stat-value">£15,000</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+
+      <!-- Section 1 -->
+      <section class="content-section">
+        <h2>What Is the World Youth Championship?</h2>
+        <p>
+          The <strong>PDC World Youth Championship</strong> is darts' world title for players aged <strong>16 to 23</strong>. The 2026 edition is the <strong>16th staging</strong> of the event, and the 128-player field is drawn from age-qualified PDC Tour Card holders, international representatives and qualifiers from the Development Tour Order of Merit.
+        </p>
+        <p>
+          The early rounds were played on Monday 5 October 2026 at the Robin Park Tennis Centre in Wigan. The two finalists then wait almost eight weeks for the showpiece: the final is held on the main stage at Butlin's Minehead during the Players Championship Finals weekend.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="content-section">
+        <h2>The 2026 Final: Crabtree v Schmidt</h2>
+        <p>
+          The 2026 final is <strong>Cam Crabtree (England) v Jan Schmidt (Germany)</strong>, played on <strong>Sunday 29 November 2026</strong> at Butlin's Minehead Resort. It is a <strong>best of 11 legs</strong> match, staged between the semi-finals and the final of the Ladbrokes Players Championship Finals.
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Finalist</th>
+                <th>Semi-Final Result</th>
+                <th>Route to Minehead</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cam Crabtree</strong> (England)</td>
+                <td>Beat Luke Littler 6–5</td>
+                <td>Last year's Development Tour champion; stunned the world No. 1 in a deciding leg in Wigan.</td>
+              </tr>
+              <tr>
+                <td><strong>Jan Schmidt</strong> (Germany)</td>
+                <td>Beat Charlie Manby 6–3</td>
+                <td>Third German to reach the final, after Max Hopp and Martin Schindler.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Both finalists are already bound for Wolverhampton first: reaching the final earned Crabtree and Schmidt invitations to the <a href="/tournament/grand-slam/">Grand Slam of Darts 2026</a> (14–22 November), played the week before the Minehead decider.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="content-section">
+        <h2>How We Got Here: Wigan, 5 October 2026</h2>
+        <p>
+          The 128 players were split into <strong>32 groups of four</strong>, with the top two from each group advancing to the knockout stage. Group matches were best of 9 legs; the knockout rounds, including the semi-finals, were best of 11 legs.
+        </p>
+        <ul class="bullet-list">
+          <li><strong>Luke Littler</strong>, the top seed and 2023 youth champion, entered chasing a unique double — the first player to hold the senior and youth world titles at the same time. He beat Archie Self 6–4 in the last 16, then lost a deciding leg to Crabtree in the semi-final.</li>
+          <li><strong>Jan Schmidt</strong> beat Sebastian Bialecki 6–2 in the last 16 and Charlie Manby 6–3 in the semi-final. He is bidding to join Max Hopp as only the second German winner.</li>
+          <li><strong>Cam Crabtree</strong> beat Joseph Simpson 6–1 in the last 16 before his semi-final win over Littler.</li>
+          <li>Defending champion <strong>Gian van Veen</strong> and 2025 runner-up <strong>Beau Greaves</strong> both opted out of the 2026 event, so a new champion will be crowned in Minehead.</li>
+        </ul>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="content-section">
+        <h2>Format &amp; Eligibility</h2>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Detail</th>
+                <th>2026 World Youth Championship</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Field</strong></td>
+                <td>128 players</td>
+              </tr>
+              <tr>
+                <td><strong>Age limit</strong></td>
+                <td>16 to 23 years old</td>
+              </tr>
+              <tr>
+                <td><strong>Seeds</strong></td>
+                <td>32 seeds, based on the PDC Order of Merit</td>
+              </tr>
+              <tr>
+                <td><strong>Group stage</strong></td>
+                <td>32 groups of four; top two advance; best of 9 legs</td>
+              </tr>
+              <tr>
+                <td><strong>Knockout stage</strong></td>
+                <td>Best of 11 legs, from the last 64 to the semi-finals</td>
+              </tr>
+              <tr>
+                <td><strong>Final</strong></td>
+                <td>Best of 11 legs — Sunday 29 November 2026, Butlin's Minehead</td>
+              </tr>
+              <tr>
+                <td><strong>Top prize</strong></td>
+                <td>£15,000 to the winner</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="content-section">
+        <h2>What's at Stake</h2>
+        <p>
+          The winner takes the <strong>£15,000 top prize</strong> and an invitation to the <strong>2026/27 World Darts Championship</strong> at Alexandra Palace — a place in the 128-player senior field. See the current list of confirmed Worlds qualifiers on our <a href="/tournament/world-darts-championship-qualifiers/">World Championship qualifiers page</a>.
+        </p>
+        <p>
+          Both finalists have already secured invitations to the <a href="/tournament/grand-slam/">Grand Slam of Darts 2026</a>, so Crabtree and Schmidt will both play at WV Active Aldersley before they meet again in Minehead.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="content-section">
+        <h2>Recent Finals</h2>
+        <p>
+          Butlin's Minehead has hosted the World Youth Championship final since 2015. Recent deciders:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Final</th>
+                <th>Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>2015</strong></td>
+                <td>Max Hopp 6–5 Nathan Aspinall</td>
+                <td>First final played at Minehead.</td>
+              </tr>
+              <tr>
+                <td><strong>2023</strong></td>
+                <td>Luke Littler (champion)</td>
+                <td>Littler lifted the youth title just before his senior breakthrough.</td>
+              </tr>
+              <tr>
+                <td><strong>2025</strong></td>
+                <td>Gian van Veen beat Beau Greaves</td>
+                <td>Greaves was the first woman to reach the final.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: World Youth Championship</h2>
+        <div class="faq-list">
+          {faqItems.map((item) => (
+            <div class="faq-item">
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore More</h2>
+        <div class="grid-2">
+          <a href="/tournament/grand-slam/" class="cluster-link-card">
+            <h3>🎯 Grand Slam of Darts 2026</h3>
+            <p>Both youth finalists play at Aldersley, 14–22 November — field, format and session times.</p>
+          </a>
+          <a href="/tournament/world-darts-championship-qualifiers/" class="cluster-link-card">
+            <h3>📋 World Championship Qualifiers</h3>
+            <p>The youth champion earns a 2026/27 Worlds spot — see the confirmed qualifiers list.</p>
+          </a>
+          <a href="/tournament/players-championship-finals-prize-money/" class="cluster-link-card">
+            <h3>💰 Players Championship Finals Prize Money</h3>
+            <p>The senior event sharing the Minehead stage with the youth final on 29 November.</p>
+          </a>
+          <a href="/players/luke-littler/" class="cluster-link-card">
+            <h3>👑 Luke Littler</h3>
+            <p>2023 youth champion and top seed in 2026 — beaten by Crabtree in the semi-final.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Quick Navigation</h3>
+        <ul class="widget-list">
+          <li><a href="/tournament/grand-slam/">Grand Slam of Darts 2026</a></li>
+          <li><a href="/tournament/world-darts-championship-qualifiers/">World Championship Qualifiers</a></li>
+          <li><a href="/tournament/players-championship-finals-prize-money/">Players Championship Finals Prize Money</a></li>
+          <li><a href="/tournament/world-darts-championship/">World Darts Championship Hub</a></li>
+          <li><a href="/tournament/world-darts-championship-how-to-watch/">How to Watch the Worlds</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Featured Players</h3>
+        <ul class="widget-list">
+          <li><a href="/players/luke-littler/">Luke Littler (2023 Youth Champion)</a></li>
+          <li><a href="/players/gian-van-veen/">Gian van Veen (2025 Youth Champion)</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #3b82f6;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .guide-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #93c5fd;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .bullet-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .bullet-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .faq-section {
+    margin-top: 2.5rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .faq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .internal-hub-cluster {
+    margin-top: 2.5rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .cluster-link-card {
+    display: block;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.12);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .guide-hero h1 {
+      font-size: 2.15rem;
+    }
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

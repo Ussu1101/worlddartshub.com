@@ -1,0 +1,502 @@
+---
+// src/pages/venue/wv-active-aldersley.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "WV Active Aldersley: Grand Slam of Darts Venue Guide — Address, Parking & Travel";
+const pageDescription = "Spectator guide to WV Active Aldersley, Wolverhampton WV6 9NW — home of the Grand Slam of Darts 2026 (14–22 Nov): address, parking, buses, trains and accessibility.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/venue/wv-active-aldersley/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Venue Guide', url: '/venue/' },
+  { name: 'WV Active Aldersley' }
+];
+
+const faqItems = [
+  {
+    q: "Where is WV Active Aldersley?",
+    a: "Aldersley Road, Wolverhampton WV6 9NW. The site is also known as Aldersley Leisure Village — both names point at the same place, which catches first-time visitors out when booking travel."
+  },
+  {
+    q: "Is there parking at WV Active Aldersley?",
+    a: "Yes — more than 300 spaces on site. Parking is free Monday to Friday; weekend events may be chargeable, and members park free at all times. The Grand Slam covers two weekends (14–15 and 21–22 November 2026), so check the charge before travelling. Disabled parking is straight ahead on entry."
+  },
+  {
+    q: "How do I get to WV Active Aldersley by public transport?",
+    a: "There is a bus stop named Aldersley Leisure Village at the entrance, served by buses 1, 6 and 6A on Aldersley Road. Wolverhampton Station (West Midlands Metro) is about a 24-minute walk (1.8 km); the mainline station is served by West Midlands Railway, Avanti West Coast, CrossCountry and Transport for Wales."
+  },
+  {
+    q: "Is WV Active Aldersley accessible?",
+    a: "Yes. There is step-free access throughout, disabled parking straight ahead on entry, accessible seating, a lift to the first floor, and a flat accessible pathway from the bus stop to the main entrance. The venue publishes its own accessibility guide."
+  },
+  {
+    q: "When is the Grand Slam of Darts at WV Active Aldersley?",
+    a: "Saturday 14 to Sunday 22 November 2026 — nine days, 48 players for the first time. Session times are on our Grand Slam hub page."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": pageTitle,
+      "description": pageDescription,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": `${siteUrl}/`
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={pageSchema}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="guide-hero">
+    <div class="container">
+      <div class="badge-group">
+        <span class="badge badge-accent">VENUE SPECTATOR GUIDE</span>
+        <span class="badge">WOLVERHAMPTON</span>
+        <span class="badge badge-outline">GRAND SLAM 2026</span>
+      </div>
+      <h1>WV Active Aldersley: Grand Slam Venue Guide</h1>
+      <p class="hero-lead">
+        Everything a spectator needs for the Grand Slam of Darts at WV Active Aldersley: the address, parking, buses and trains, what is inside the venue, and what to expect on matchday.
+      </p>
+
+      <div class="hero-meta-bar">
+        <VerificationBadge 
+          status="Verified Venue Information" 
+          lastVerified="8 November 2026" 
+          source="WV Active, Visit Birmingham, Prestige & JustPark" 
+        />
+        <div class="stat-pill">
+          <span class="stat-label">Address</span>
+          <span class="stat-value">WV6 9NW</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Parking</span>
+          <span class="stat-value">300+ Spaces</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Grand Slam</span>
+          <span class="stat-value">14–22 Nov 2026</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container page-layout">
+    <article class="main-content">
+
+      <!-- Section 1 -->
+      <section class="content-section">
+        <h2>Where Is WV Active Aldersley?</h2>
+        <p>
+          <strong>WV Active Aldersley</strong> sits on Aldersley Road in Wolverhampton, <strong>WV6 9NW</strong>. The site is also known as <strong>Aldersley Leisure Village</strong> — both names point at the same council-owned leisure and athletics site, which catches first-time visitors out when they look the place up under one name and book travel under the other.
+        </p>
+        <p>
+          The centre has hosted the PDC Grand Slam of Darts since 2018. The 2026 tournament, from Saturday 14 to Sunday 22 November, is the 20th staging of the event — and the first with a 48-player field. For the field, format and session times, see our <a href="/tournament/grand-slam/">Grand Slam of Darts 2026 hub</a>.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="content-section">
+        <h2>Getting There by Car</h2>
+        <p>
+          The venue sits just off the <strong>A449 Stafford Road</strong>, with the postcode <strong>WV6 9NW</strong> for your sat nav. The M54 links the site to the wider motorway network, and the venue is a short drive from Wolverhampton city centre.
+        </p>
+        <p>
+          Expect busier roads around Aldersley as sessions start and finish — give yourself extra time on the two tournament weekends (14–15 and 21–22 November 2026).
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="content-section">
+        <h2>Parking</h2>
+        <p>
+          There are <strong>more than 300 parking spaces on site</strong>, on both sides of the building on entry. Parking is <strong>free Monday to Friday</strong>; weekend events may be chargeable, and members park free at all times.
+        </p>
+        <ul class="bullet-list">
+          <li><strong>Weekday sessions (16–20 November):</strong> parking free.</li>
+          <li><strong>Weekend sessions (14–15 and 21–22 November):</strong> a charge may apply — check before travelling.</li>
+          <li><strong>Disabled parking:</strong> located straight ahead on entry, before the main building entrance.</li>
+          <li><strong>City-centre fallback:</strong> Wolverhampton city-centre car parks near the station are the nearest bookable alternative if the on-site car parks fill up.</li>
+        </ul>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="content-section">
+        <h2>By Bus and Train</h2>
+        <p>
+          There is a designated bus stop named <strong>Aldersley Leisure Village</strong> at the entrance. Buses <strong>1, 6 and 6A</strong> serve Aldersley Road; the Aldersley Stadium stop is a 3-minute walk away. A flat, accessible pathway leads from the bus stop to the main entrance.
+        </p>
+        <p>
+          <strong>Wolverhampton Station</strong> (West Midlands Metro) is about a 24-minute walk (1.8 km) from the venue. The mainline station is served by West Midlands Railway, Avanti West Coast, CrossCountry and Transport for Wales, so most of the country reaches Wolverhampton with one change at most.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="content-section">
+        <h2>Inside the Venue</h2>
+        <p>
+          For the rest of the year Aldersley is Wolverhampton's athletics and racket-sports centre, with an athletics track, outdoor pitches, tennis courts, a gym and a dance studio. For the darts it converts to an indoor arena with a sports bar and function room, plus food and drink kiosks and a Costa Coffee on site.
+        </p>
+        <ul class="bullet-list">
+          <li><strong>Doors:</strong> typically open 60 to 90 minutes before the scheduled session start.</li>
+          <li><strong>Accessibility:</strong> step-free access throughout, accessible seating, a lift to the first floor, and disabled parking straight ahead on entry. The venue publishes its own accessibility guide.</li>
+          <li><strong>Contact:</strong> venue telephone 01902 551010.</li>
+        </ul>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="content-section">
+        <h2>Grand Slam 2026 at Aldersley</h2>
+        <p>
+          The 2026 Grand Slam runs <strong>Saturday 14 to Sunday 22 November 2026</strong> — nine days, 48 players drawn into 16 groups of three, with only the group winner advancing to the Last 16. The opening weekend and finals day feature two sessions daily; midweek sessions take place in the evening.
+        </p>
+        <p>
+          Session times and the daily order of play are on the <a href="/tournament/grand-slam/">Grand Slam hub</a>, and general ticket information is on our <a href="/tickets/">tickets hub</a>.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="content-section faq-section">
+        <h2>Frequently Asked Questions: WV Active Aldersley</h2>
+        <div class="faq-list">
+          {faqItems.map((item) => (
+            <div class="faq-item">
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Internal Navigation Clusters -->
+      <section class="content-section internal-hub-cluster">
+        <h2>Explore More Grand Slam Resources</h2>
+        <div class="grid-2">
+          <a href="/tournament/grand-slam/" class="cluster-link-card">
+            <h3>🎯 Grand Slam of Darts 2026</h3>
+            <p>Field, format, session times and daily coverage from Aldersley, 14–22 November.</p>
+          </a>
+          <a href="/tournament/grand-slam-how-to-watch/" class="cluster-link-card">
+            <h3>📺 How to Watch the Grand Slam</h3>
+            <p>TV and live stream options if you are following from home instead of Aldersley.</p>
+          </a>
+          <a href="/tournament/grand-slam-prize-money/" class="cluster-link-card">
+            <h3>💰 Grand Slam Prize Money 2026</h3>
+            <p>Full £1M breakdown — £200,000 to the winner, £5,000 minimum per player.</p>
+          </a>
+          <a href="/tickets/" class="cluster-link-card">
+            <h3>🎟️ Tickets Hub</h3>
+            <p>Ballot, general sale, resale and returns — the current ticket picture.</p>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Quick Navigation</h3>
+        <ul class="widget-list">
+          <li><a href="/tournament/grand-slam/">Grand Slam of Darts 2026</a></li>
+          <li><a href="/tournament/grand-slam-how-to-watch/">How to Watch the Grand Slam</a></li>
+          <li><a href="/tournament/grand-slam-prize-money/">Grand Slam Prize Money 2026</a></li>
+          <li><a href="/tickets/">Tickets Hub</a></li>
+          <li><a href="/venue/">Alexandra Palace Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Grand Slam 2026</h3>
+        <ul class="widget-list">
+          <li><a href="/tournament/grand-slam/">Dates: 14–22 November 2026</a></li>
+          <li><a href="/tournament/grand-slam/">Field: 48 players, 16 groups of 3</a></li>
+          <li><a href="/tournament/grand-slam-prize-money/">Prize fund: £1,000,000</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 3px solid #3b82f6;
+  }
+
+  .badge-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .guide-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 820px;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-pill {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #93c5fd;
+  }
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+
+  .bullet-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .bullet-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-table th, .data-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .faq-section {
+    margin-top: 2.5rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .faq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .internal-hub-cluster {
+    margin-top: 2.5rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .cluster-link-card {
+    display: block;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cluster-link-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.12);
+  }
+
+  .cluster-link-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .cluster-link-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .widget-title {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .widget-list a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .widget-list a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .guide-hero h1 {
+      font-size: 2.15rem;
+    }
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
