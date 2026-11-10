@@ -1,0 +1,323 @@
+---
+ // src/pages/tournament/grand-slam-draw.astro
+ import BaseLayout from '../../layouts/BaseLayout.astro';
+ import Breadcrumbs from '../../components/Breadcrumbs.astro';
+ import VerificationBadge from '../../components/VerificationBadge.astro';
+ import AdSlot from '../../components/AdSlot.astro';
+
+ const pageTitle = "Grand Slam of Darts 2026 Draw: Groups, Schedule & Format";
+ const pageDescription = "Grand Slam of Darts 2026 draw: all 16 groups, full schedule 14–22 Nov at WV Active Aldersley, group and knockout formats, and opening-night fixtures.";
+ const siteUrl = "https://worlddartshub.com";
+ const canonicalUrl = `${siteUrl}/tournament/grand-slam-draw/`;
+
+ const breadcrumbItems = [
+   { name: 'Home', url: '/' },
+   { name: 'Tournaments', url: '/tournament/pdc-majors-explained/' },
+   { name: 'Grand Slam of Darts', url: '/tournament/grand-slam/' },
+   { name: 'Draw' }
+ ];
+
+ const faqItems = [
+   {
+     q: "When was the Grand Slam of Darts 2026 draw made?",
+     a: "The draw was made on Monday 9 November 2026 by the PDC, five days before the tournament opens at WV Active Aldersley in Wolverhampton on Saturday 14 November."
+   },
+   {
+     q: "How does the Grand Slam group stage work?",
+     a: "The 48 players are split into 16 groups of three. Each player plays the other two in their group in best-of-9-leg matches, with two points awarded for a win. Only the group winner advances to the Last 16 knockout stage."
+   },
+   {
+     q: "What happens if players are tied in a group?",
+     a: "Ties are split by total leg difference, then total legs won, then legs won against the throw, then highest total tournament average, then highest winning match average. If players still cannot be split, a nine-dart shoot-out play-off decides the group."
+   },
+   {
+     q: "When is the Grand Slam of Darts 2026 final?",
+     a: "The final takes place on Sunday 22 November 2026 in the evening session (1930 GMT) at WV Active Aldersley, after the semi-finals in the afternoon session (1300 GMT) the same day. The final is best of 31 legs."
+   },
+   {
+     q: "What are the knockout formats at the 2026 Grand Slam?",
+     a: "The Last 16 (Round Two) is best of 19 legs. The quarter-finals, semi-finals and final are all best of 31 legs."
+   },
+   {
+     q: "How can I watch the Grand Slam of Darts 2026?",
+     a: "In the UK, live coverage is broadcast on Sky Sports. International viewers can watch via PDCTV or through regional rightsholders including DAZN and Viaplay."
+   }
+ ];
+
+ const articleSchema = {
+   "@context": "https://schema.org",
+   "@graph": [
+     {
+       "@type": "Article",
+       "@id": `${canonicalUrl}#article`,
+       "isPartOf": {
+         "@type": "WebSite",
+         "@id": `${siteUrl}/#website`,
+         "name": "World Darts Hub",
+         "url": siteUrl
+       },
+       "headline": pageTitle,
+       "description": pageDescription,
+       "url": canonicalUrl,
+       "inLanguage": "en-GB",
+       "datePublished": "2026-11-10T00:00:00+00:00",
+       "dateModified": "2026-11-10T00:00:00+00:00",
+       "mainEntityOfPage": canonicalUrl,
+       "publisher": {
+         "@type": "Organization",
+         "name": "World Darts Hub",
+         "url": siteUrl
+       }
+     },
+     {
+       "@type": "BreadcrumbList",
+       "@id": `${canonicalUrl}#breadcrumb`,
+       "itemListElement": breadcrumbItems.map((item, index) => ({
+         "@type": "ListItem",
+         "position": index + 1,
+         "name": item.name,
+         "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+       }))
+     },
+     {
+       "@type": "FAQPage",
+       "@id": `${canonicalUrl}#faq`,
+       "mainEntity": faqItems.map(item => ({
+         "@type": "Question",
+         "name": item.q,
+         "acceptedAnswer": {
+           "@type": "Answer",
+           "text": item.a
+         }
+       }))
+     }
+   ]
+ };
+ ---
+
+ <BaseLayout
+   title={pageTitle}
+   description={pageDescription}
+   schema={articleSchema}
+   canonicalUrl={canonicalUrl}
+ >
+   <Breadcrumbs items={breadcrumbItems} />
+
+   <header class="page-header">
+     <div class="container">
+       <div class="badge-row">
+         <span class="badge badge-accent">PDC RANKED MAJOR</span>
+         <span class="badge">WOLVERHAMPTON 2026</span>
+         <span class="badge badge-outline">DRAW MADE 9 NOVEMBER 2026</span>
+       </div>
+       <h1>Grand Slam of Darts 2026 Draw: Groups, Schedule &amp; Format</h1>
+       <p class="lead-text">
+         The draw for the 2026 Grand Slam of Darts was made on Monday 9 November 2026. Defending champion Luke Littler opens against Beau Greaves on Saturday's opening night at <a href="/venue/wv-active-aldersley/">WV Active Aldersley</a>, and only the 16 group winners reach the knockout stage.
+       </p>
+     </div>
+   </header>
+
+   <div class="container content-layout">
+     <main class="main-column">
+       <VerificationBadge verifiedDate="10 November 2026" topic="PDC Grand Slam of Darts 2026 Draw, Groups & Schedule" />
+
+       <!-- Section 1: Draw summary -->
+       <section class="content-card">
+         <h2>Draw Summary</h2>
+         <p>
+           The expanded 48-player field is split into 16 groups of three. The top 16 qualified players from the PDC Order of Merit were seeded 1–16, one per group, with the remaining players drawn from the 17–32 and 33–48 pots. Group matches are best of 9 legs, with two points for a win and no points for a defeat. Only the group winner advances to the Last 16.
+         </p>
+         <p>
+           The tournament runs from Saturday 14 November to Sunday 22 November 2026 at WV Active Aldersley in Wolverhampton, for the Eric Bristow Trophy and a £1,000,000 prize fund, with £200,000 to the champion. Luke Littler is chasing a third consecutive Grand Slam title and is yet to taste defeat in Wolverhampton.
+         </p>
+       </section>
+
+       <!-- Section 2: Groups -->
+       <section class="content-card">
+         <h2>All 16 Groups</h2>
+         <p>
+           Seeded players are shown with their seed number. Groups A–H play their final group matches on Monday 16 November; Groups I–P finish on Tuesday 17 November.
+         </p>
+         <div class="table-responsive">
+           <table class="data-table">
+             <thead>
+               <tr>
+                 <th>Group</th>
+                 <th>Seeded player</th>
+                 <th>Player 2</th>
+                 <th>Player 3</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr><td><strong>A</strong></td><td><strong>Luke Littler (1)</strong></td><td>Niels Zonneveld</td><td>Beau Greaves</td></tr>
+               <tr><td><strong>B</strong></td><td><strong>Jermaine Wattimena (16)</strong></td><td>Alan Soutar</td><td>Lisa Ashton</td></tr>
+               <tr><td><strong>C</strong></td><td><strong>Josh Rock (8)</strong></td><td>Kevin Doets</td><td>Tommy Morris</td></tr>
+               <tr><td><strong>D</strong></td><td><strong>Stephen Bunting (9)</strong></td><td>Cameron Menzies</td><td>Raymond Smith</td></tr>
+               <tr><td><strong>E</strong></td><td><strong>Gerwyn Price (4)</strong></td><td>Sebastian Bialecki</td><td>Joe Hunt</td></tr>
+               <tr><td><strong>F</strong></td><td><strong>Ryan Searle (13)</strong></td><td>Andrew Gilding</td><td>Charlie Manby</td></tr>
+               <tr><td><strong>G</strong></td><td><strong>Jonny Clayton (5)</strong></td><td>Rob Cross</td><td>Anton Östlund</td></tr>
+               <tr><td><strong>H</strong></td><td><strong>Wessel Nijman (12)</strong></td><td>Niko Springer</td><td>Adam Sevada</td></tr>
+               <tr><td><strong>I</strong></td><td><strong>Luke Humphries (2)</strong></td><td>Joe Cullen</td><td>Paolo Nebrida</td></tr>
+               <tr><td><strong>J</strong></td><td><strong>Luke Woodhouse (15)</strong></td><td>Krzysztof Ratajski</td><td>Tom Sykes</td></tr>
+               <tr><td><strong>K</strong></td><td><strong>James Wade (7)</strong></td><td>Ricky Evans</td><td>Cam Crabtree</td></tr>
+               <tr><td><strong>L</strong></td><td><strong>Michael van Gerwen (10)</strong></td><td>Jeffrey de Graaf</td><td>Henry Coates</td></tr>
+               <tr><td><strong>M</strong></td><td><strong>Gian van Veen (3)</strong></td><td>Bradley Brooks</td><td>Carl Sneyd</td></tr>
+               <tr><td><strong>N</strong></td><td><strong>Chris Dobey (14)</strong></td><td>Martin Schindler</td><td>Jan Schmidt</td></tr>
+               <tr><td><strong>O</strong></td><td><strong>Ross Smith (6)</strong></td><td>Gabriel Clemens</td><td>Rusty-Jake Rodriguez</td></tr>
+               <tr><td><strong>P</strong></td><td><strong>Nathan Aspinall (11)</strong></td><td>Karel Sedlacek</td><td>Maik Kuivenhoven</td></tr>
+             </tbody>
+           </table>
+         </div>
+       </section>
+
+       <!-- Section 3: Schedule -->
+       <section class="content-card">
+         <h2>Schedule of Play (14–22 November 2026)</h2>
+         <p>
+           The group stage runs Saturday 14 to Tuesday 17 November. The Last 16 begins on Wednesday 18 November, with the quarter-finals on Friday 20 and Saturday 21 November, and the semi-finals and final on Sunday 22 November.
+         </p>
+         <h3>Saturday 14 November — Opening Day</h3>
+         <p><strong>Afternoon session (1300 GMT)</strong> — seeded player v Player 3:</p>
+         <ul>
+           <li>Luke Woodhouse v Tom Sykes (J)</li>
+           <li>Jermaine Wattimena v Lisa Ashton (B)</li>
+           <li>Stephen Bunting v Raymond Smith (D)</li>
+           <li>Ryan Searle v Charlie Manby (F)</li>
+           <li>Josh Rock v Tommy Morris (C)</li>
+           <li>Wessel Nijman v Adam Sevada (H)</li>
+           <li>Nathan Aspinall v Maik Kuivenhoven (P)</li>
+           <li>Jonny Clayton v Anton Östlund (G)</li>
+         </ul>
+         <p><strong>Evening session (1900 GMT)</strong> — seeded player v Player 3:</p>
+         <ul>
+           <li>Gerwyn Price v Joe Hunt (E)</li>
+           <li>James Wade v Cam Crabtree (K)</li>
+           <li>Ross Smith v Rusty-Jake Rodriguez (O)</li>
+           <li>Michael van Gerwen v Henry Coates (L)</li>
+           <li>Luke Humphries v Paolo Nebrida (I)</li>
+           <li><strong>Luke Littler v Beau Greaves (A)</strong></li>
+           <li>Gian van Veen v Carl Sneyd (M)</li>
+           <li>Chris Dobey v Jan Schmidt (N)</li>
+         </ul>
+         <h3>Sunday 15 November</h3>
+         <ul>
+           <li><strong>Afternoon (1300 GMT):</strong> 8 group matches — Player 2 v Saturday afternoon's losing player.</li>
+           <li><strong>Evening (1930 GMT):</strong> 8 group matches — Player 2 v Saturday evening's losing player.</li>
+         </ul>
+         <h3>Monday 16 November (1900 GMT)</h3>
+         <p>8 group matches (Groups A–H) — Player 2 v Saturday's winning player.</p>
+         <h3>Tuesday 17 November (1900 GMT)</h3>
+         <p>8 group matches (Groups I–P) — Player 2 v Saturday's winning player.</p>
+         <h3>Wednesday 18 November (1900 GMT) — Last 16</h3>
+         <ul>
+           <li>Winner Group A v Winner Group B</li>
+           <li>Winner Group C v Winner Group D</li>
+           <li>Winner Group E v Winner Group F</li>
+           <li>Winner Group G v Winner Group H</li>
+         </ul>
+         <h3>Thursday 19 November (1900 GMT) — Last 16</h3>
+         <ul>
+           <li>Winner Group I v Winner Group J</li>
+           <li>Winner Group K v Winner Group L</li>
+           <li>Winner Group M v Winner Group N</li>
+           <li>Winner Group O v Winner Group P</li>
+         </ul>
+         <h3>Friday 20 November (1900 GMT) — Quarter-Finals</h3>
+         <ul>
+           <li>Winner A/B v Winner C/D</li>
+           <li>Winner E/F v Winner G/H</li>
+         </ul>
+         <h3>Saturday 21 November (1900 GMT) — Quarter-Finals</h3>
+         <ul>
+           <li>Winner I/J v Winner K/L</li>
+           <li>Winner M/N v Winner O/P</li>
+         </ul>
+         <h3>Sunday 22 November — Finals Day</h3>
+         <ul>
+           <li><strong>Afternoon (1300 GMT):</strong> Semi-Finals</li>
+           <li><strong>Evening (1930 GMT):</strong> Final</li>
+         </ul>
+       </section>
+
+       <!-- Section 4: Format -->
+       <section class="content-card">
+         <h2>Format &amp; Tiebreakers</h2>
+         <ul>
+           <li><strong>Group Stage:</strong> Best of 9 legs. Two points for a win, none for a defeat.</li>
+           <li><strong>Last 16 (Round Two):</strong> Best of 19 legs.</li>
+           <li><strong>Quarter-Finals:</strong> Best of 31 legs.</li>
+           <li><strong>Semi-Finals:</strong> Best of 31 legs.</li>
+           <li><strong>Final:</strong> Best of 31 legs.</li>
+         </ul>
+         <p>
+           If three players finish tied on points in a group, they are split in this order: total leg difference, total legs won, total legs won against the throw, highest total tournament average, then highest winning match average. If they still cannot be split, a nine-dart shoot-out play-off is held at the end of the session.
+         </p>
+         <p class="field-note">
+           Knockout bracket order: Winner A v Winner B, Winner C v Winner D, Winner E v Winner F, Winner G v Winner H, Winner I v Winner J, Winner K v Winner L, Winner M v Winner N, Winner O v Winner P.
+         </p>
+       </section>
+
+       <!-- Section 5: Opening night -->
+       <section class="content-card">
+         <h2>Opening Night: Littler v Greaves</h2>
+         <p>
+           Reigning champion Luke Littler opens his bid for a third consecutive Grand Slam title against Beau Greaves in Saturday's evening session. Greaves beat Littler in last year's World Youth Championship semi-finals, and this is their first meeting on the big stage. Also on opening night: Michael van Gerwen v Henry Coates, Luke Humphries v Paolo Nebrida, Gerwyn Price v Joe Hunt, and Gian van Veen v Carl Sneyd.
+         </p>
+         <p>
+           For the full tournament picture — dates, prize money and how to watch — see the <a href="/tournament/grand-slam/">Grand Slam of Darts 2026 hub</a>, the <a href="/venue/wv-active-aldersley/">WV Active Aldersley venue guide</a>, and the <a href="/tournament/grand-slam-how-to-watch/">how to watch guide</a>.
+         </p>
+       </section>
+
+       <AdSlot slotType="leaderboard" id="grand-slam-draw-bottom-ad" />
+
+       <section class="content-card faq-section">
+         <h2>Frequently Asked Questions: Grand Slam Draw 2026</h2>
+         {faqItems.map(item => (
+           <div class="faq-item">
+             <h3>{item.q}</h3>
+             <p>{item.a}</p>
+           </div>
+         ))}
+       </section>
+     </main>
+   </div>
+ </BaseLayout>
+
+ <style>
+   .data-table {
+     width: 100%;
+     border-collapse: collapse;
+     font-size: 0.95rem;
+     text-align: left;
+   }
+   .data-table th, .data-table td {
+     padding: 0.75rem 1rem;
+     border-bottom: 1px solid #e2e8f0;
+   }
+   .data-table th {
+     background: #f8fafc;
+     color: #0f172a;
+     font-weight: 700;
+   }
+   .field-note {
+     font-size: 0.9rem;
+     color: #64748b;
+     margin-top: 0.5rem;
+   }
+   .faq-section .faq-item {
+     border-bottom: 1px solid #e2e8f0;
+     padding: 1.25rem 0;
+   }
+   .faq-section .faq-item:last-child {
+     border-bottom: none;
+   }
+   .faq-section h3 {
+     margin: 0 0 0.5rem 0;
+     font-size: 1.15rem;
+     color: #0f172a;
+   }
+   .faq-section p {
+     margin: 0;
+     color: #475569;
+   }
+ </style>
