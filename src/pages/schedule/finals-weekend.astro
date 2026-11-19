@@ -6,8 +6,8 @@ import AdSlot from '../../components/AdSlot.astro';
 import VerificationBadge from '../../components/VerificationBadge.astro';
 import scheduleData from '../../data/schedule.json';
 
-const pageTitle = "What Time Is the Darts Final? World Championship Final, Sunday 3 January 2027, 19:30 GMT";
-const pageDescription = "What time is the darts final? The World Darts Championship final is on Sunday 3 January 2027, starting at 19:30 GMT. Full Finals Weekend schedule: QF 1 Jan, SF 2 Jan, final 3 Jan.";
+const pageTitle = "What Time Is the Darts Final? World Championship Final, Sunday 3 January 2027, 20:00 GMT";
+const pageDescription = "What time is the darts final? The World Darts Championship final is on Sunday 3 January 2027, starting at 20:00 GMT. Full Finals Weekend schedule: QF 1 Jan, SF 2 Jan, final 3 Jan.";
 const siteUrl = "https://worlddartshub.com";
 
 const breadcrumbItems = [
@@ -42,7 +42,7 @@ const finalsWeekendSchema = {
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "The World Championship Final (3 January 2027) — Evening 19:30 GMT"
+            "name": "The World Championship Final (3 January 2027) — Evening 20:00 GMT"
           }
         ]
       }
@@ -56,7 +56,7 @@ const finalsWeekendSchema = {
           "name": "What time is the darts final?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The World Darts Championship final is scheduled for Sunday 3 January 2027 at 19:30 GMT at Alexandra Palace, London. This is the scheduled evening session start; final timings remain subject to host broadcaster confirmation."
+            "text": "The World Darts Championship final is scheduled for Sunday 3 January 2027 at 20:00 GMT at Alexandra Palace, London, as confirmed by Alexandra Palace on 18 November 2026."
           }
         }
       ]
@@ -84,14 +84,13 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
       </div>
       <h1>PDC World Darts Championship Finals Weekend Schedule</h1>
       <p class="hero-lead">
-        The World Darts Championship final takes place on Sunday 3 January 2027 at Alexandra Palace, London, starting at 19:30 GMT. Full guide to session start times, doors opening hours, broadcast timings, and match formats for the 2027 Quarter-Finals, Semi-Finals, and Final.
+        The World Darts Championship final takes place on Sunday 3 January 2027 at Alexandra Palace, London, starting at 20:00 GMT. Full guide to session start times, doors opening hours, broadcast timings, and match formats for the 2027 Quarter-Finals, Semi-Finals, and Final.
       </p>
 
       <div class="hero-meta-bar">
         <VerificationBadge 
-          status="verified" 
-          lastVerified={scheduleData.last_verified} 
-          source="PDC Official Tournament Schedule" 
+          verifiedDate="19 November 2026" 
+          topic="2026/27 Finals Weekend Session Times" 
         />
         <div class="stat-pill">
           <span class="stat-label">Final Date</span>
@@ -99,7 +98,7 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
         </div>
         <div class="stat-pill">
           <span class="stat-label">Final Start Time</span>
-          <span class="stat-value">19:30 GMT (Doors 18:00)</span>
+          <span class="stat-value">20:00 GMT (Doors 18:00)</span>
         </div>
         <div class="stat-pill">
           <span class="stat-label">Timezone</span>
@@ -135,7 +134,7 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
           <div class="card summary-card highlight-card">
             <span class="date-header">SUNDAY, 3 JAN 2027</span>
             <h3>The Final</h3>
-            <p class="time-callout"><strong>Evening Only:</strong> 19:30 GMT</p>
+            <p class="time-callout"><strong>Evening Only:</strong> 20:00 GMT</p>
             <p class="match-info">Sid Waddell Trophy & £1,000,000</p>
             <span class="format-badge badge-accent">Best of 13 Sets</span>
           </div>
@@ -154,7 +153,7 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
               <strong>Tournament Dates (1 – 3 January 2027): Confirmed 2026/27.</strong> Official tournament dates confirmed by the PDC and Alexandra Palace for the Quarter-Finals (1 Jan), Semi-Finals (2 Jan), and Final (3 Jan).
             </li>
             <li>
-              <strong>Scheduled Session Start Times (Subject to Host Broadcaster Confirmation):</strong> The scheduled start times (12:30 GMT afternoon, 19:00 / 19:30 GMT evening) follow established PDC World Championship scheduling standards, but remain subject to final host broadcaster confirmation closer to December.
+              <strong>Session Start Times (Confirmed by Alexandra Palace, 18 November 2026):</strong> Session start times are 12:30 GMT for afternoon sessions, 19:00 GMT for evening sessions, 19:30 GMT for the semi-finals and 20:00 GMT for the final.
             </li>
             <li>
               <strong>Doors Open (Scheduled: 18:00 GMT Evening / 11:30 GMT Afternoon):</strong> Great Hall security gates and Palm Court bars typically open 60 to 90 minutes prior to stage action. Arrive early to clear security bag checks (strictly max <strong>30cm x 20cm x 10cm</strong>). Final door opening hours will be re-confirmed in the official PDC spectator handbook.
@@ -236,8 +235,8 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
             </p>
             <div class="session-slots">
               <div class="slot-box full-width highlight-slot">
-                <h4>Evening Session (19:30 GMT Start)</h4>
-                <p>Doors open 18:00 GMT. Walk-ons from 19:45 GMT. First dart approx. 20:00 GMT. Winner crowned around 22:30 GMT.</p>
+                <h4>Evening Session (20:00 GMT Start)</h4>
+                <p>Doors open 18:00 GMT. Walk-ons from approx. 20:15 GMT. First dart approx. 20:30 GMT. Winner crowned around 23:00 GMT.</p>
               </div>
             </div>
             <div class="final-prizes-box">
@@ -272,37 +271,37 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
               <tr>
                 <td><strong>United Kingdom & Ireland</strong></td>
                 <td>GMT / UTC+0</td>
-                <td><strong>19:30 GMT</strong> (Sunday 3 Jan)</td>
+                <td><strong>20:00 GMT</strong> (Sunday 3 Jan)</td>
                 <td><a href="/watch/uk/">Sky Sports Darts & NOW</a></td>
               </tr>
               <tr>
                 <td><strong>Germany, Austria & Switzerland</strong></td>
                 <td>CET / UTC+1</td>
-                <td><strong>20:30 CET</strong> (Sunday 3 Jan)</td>
+                <td><strong>21:00 CET</strong> (Sunday 3 Jan)</td>
                 <td><a href="/watch/germany/">DAZN & Sport1</a></td>
               </tr>
               <tr>
                 <td><strong>Netherlands & Belgium</strong></td>
                 <td>CET / UTC+1</td>
-                <td><strong>20:30 CET</strong> (Sunday 3 Jan)</td>
+                <td><strong>21:00 CET</strong> (Sunday 3 Jan)</td>
                 <td><a href="/watch/netherlands/">Viaplay & VTM 2</a></td>
               </tr>
               <tr>
                 <td><strong>United States (Eastern)</strong></td>
                 <td>EST / UTC-5</td>
-                <td><strong>14:30 EST</strong> (Sunday 3 Jan)</td>
+                <td><strong>15:00 EST</strong> (Sunday 3 Jan)</td>
                 <td><a href="/watch/usa/">ESPN+ & ESPN2</a></td>
               </tr>
               <tr>
                 <td><strong>United States (Pacific)</strong></td>
                 <td>PST / UTC-8</td>
-                <td><strong>11:30 PST</strong> (Sunday 3 Jan)</td>
+                <td><strong>12:00 PST</strong> (Sunday 3 Jan)</td>
                 <td><a href="/watch/usa/">ESPN+</a></td>
               </tr>
               <tr>
                 <td><strong>Australia (Eastern)</strong></td>
                 <td>AEDT / UTC+11</td>
-                <td><strong>06:30 AEDT</strong> (Monday 4 Jan)</td>
+                <td><strong>07:00 AEDT</strong> (Monday 4 Jan)</td>
                 <td><a href="/watch/australia/">Fox Sports / Kayo</a></td>
               </tr>
             </tbody>
@@ -315,7 +314,7 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
         <h2>Frequently Asked Questions</h2>
         <div class="faq-box">
           <h4>What time is the darts final?</h4>
-          <p>The World Darts Championship final is scheduled for Sunday 3 January 2027 at 19:30 GMT at Alexandra Palace, London. This is the scheduled evening session start; final timings remain subject to host broadcaster confirmation.</p>
+          <p>The World Darts Championship final is scheduled for Sunday 3 January 2027 at 20:00 GMT at Alexandra Palace, London, as confirmed by Alexandra Palace on 18 November 2026.</p>
         </div>
       </section>
 
@@ -324,7 +323,7 @@ const finalsDates = scheduleData.verified_dates.filter(d =>
         <h2>Explore The Tournament Ecosystem</h2>
         <div class="grid-2">
           <a href="/schedule/" class="cluster-link-card">
-            <h3>🗓️ Full 28-Session Schedule</h3>
+            <h3>🗓️ Full 36-Session Schedule</h3>
             <p>Complete date-by-date calendar from opening night through the final.</p>
           </a>
           <a href="/tournament/prize-money/" class="cluster-link-card">

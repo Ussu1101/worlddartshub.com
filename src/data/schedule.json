@@ -9,11 +9,18 @@
   },
   "phases": [
     {
-      "phase_name": "First & Second Rounds",
-      "date_range": "11 December – 23 December 2026",
+      "phase_name": "First Round",
+      "date_range": "11 December – 19 December 2026",
       "format": "Best of 5 Sets",
-      "sessions_count": 15,
-      "description": "15 sessions across 13 days of opening night and double/single sessions leading to Christmas."
+      "sessions_count": 16,
+      "description": "16 sessions across 9 days — four Round 1 matches per session; opening night Friday 11 December is a single evening session."
+    },
+    {
+      "phase_name": "Second Round",
+      "date_range": "20 December – 23 December 2026",
+      "format": "Best of 5 Sets",
+      "sessions_count": 8,
+      "description": "8 sessions across 4 days — four Round 2 matches per session."
     },
     {
       "phase_name": "Christmas Holiday Break",
@@ -23,18 +30,25 @@
       "description": "Three-day tournament hiatus for Christmas Eve, Christmas Day, and Boxing Day."
     },
     {
-      "phase_name": "Third & Fourth Rounds",
-      "date_range": "27 December – 30 December 2026",
+      "phase_name": "Third Round",
+      "date_range": "27 December – 29 December 2026",
       "format": "Best of 7 Sets",
-      "sessions_count": 8,
-      "description": "The final 32 players compete in high-stakes double sessions."
+      "sessions_count": 6,
+      "description": "6 sessions across 3 days — three Round 3 matches per session; the Tuesday 29 December evening session closes Round 3 with its final match."
     },
     {
-      "phase_name": "New Year's Eve (Projected Rest Day)",
+      "phase_name": "Fourth Round",
+      "date_range": "29 December – 30 December 2026",
+      "format": "Best of 7 Sets",
+      "sessions_count": 2,
+      "description": "2 sessions on Wednesday 30 December (three matches each), plus 2 matches in the shared Tuesday 29 December evening session — 8 Round 4 matches in total."
+    },
+    {
+      "phase_name": "New Year's Eve (Rest Day)",
       "date_range": "31 December 2026",
       "format": "No Matches",
       "sessions_count": 0,
-      "description": "Projected rest day ahead of New Year's Day Quarter-Finals; official calendar reports no play on New Year's Eve."
+      "description": "Rest day ahead of New Year's Day Quarter-Finals; the confirmed schedule has no play on New Year's Eve."
     },
     {
       "phase_name": "Quarter-Finals",
@@ -55,7 +69,7 @@
       "date_range": "3 January 2027",
       "format": "Best of 13 Sets",
       "sessions_count": 1,
-      "description": "The climax of the tournament: 7:30 PM GMT start, crowning the World Champion."
+      "description": "The climax of the tournament: 8:00 PM GMT start, crowning the World Champion."
     }
   ],
   "verified_dates": [
@@ -66,7 +80,7 @@
         {
           "session_type": "Evening Session",
           "start_time_gmt": "19:00",
-          "round": "Round 1 (3 Matches) & Round 2 (1 Match)",
+          "round": "Round One (4 Matches)",
           "featured": "Opening Night: Defending Champion usually headlines Match 4"
         }
       ]
@@ -78,13 +92,13 @@
         {
           "session_type": "Afternoon Session",
           "start_time_gmt": "12:30",
-          "round": "Round 1 & Round 2",
+          "round": "Round One",
           "featured": "4 Matches"
         },
         {
           "session_type": "Evening Session",
           "start_time_gmt": "19:00",
-          "round": "Round 1 & Round 2",
+          "round": "Round One",
           "featured": "4 Matches"
         }
       ]
@@ -94,7 +108,7 @@
       "day_of_week": "Thursday",
       "sessions": [
         {
-          "session_type": "No Play (Projected Rest Day)",
+          "session_type": "No Play (Rest Day)",
           "start_time_gmt": "—",
           "round": "Tournament Hiatus",
           "featured": "Scheduled rest day ahead of New Year's Day Quarter-Finals (no matches scheduled)"
@@ -137,13 +151,13 @@
       "sessions": [
         {
           "session_type": "Evening Session",
-          "start_time_gmt": "19:30",
+          "start_time_gmt": "20:00",
           "round": "The Final",
           "featured": "Best of 13 Sets - Sid Waddell Trophy & £1,000,000 top prize"
         }
       ]
     }
   ],
-  "last_verified": "2026-10-26",
+  "last_verified": "2026-11-19",
   "status": "verified"
 }
