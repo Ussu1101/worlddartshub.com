@@ -238,12 +238,57 @@ const baseWebsiteSchema = {
         ezstandalone.showAds({});
       });
     </script>
+    <!-- Adsterra banners (owner request 20 Nov 2026): 728x90 desktop-only, 320x50 mobile-only.
+         Fixed-size iframes, so device targeting is done with media queries. -->
+    <style is:inline>
+      .adsterra-desktop { display: block; }
+      .adsterra-mobile { display: none; }
+      @media (max-width: 767px) {
+        .adsterra-desktop { display: none; }
+        .adsterra-mobile { display: block; }
+      }
+    </style>
+    <div class="adsterra-desktop">
+      <script is:inline>
+        atOptions = {
+          'key' : 'd86af8dbba237ef7e70fd7ef5a67074d',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      </script>
+      <script is:inline src="https://czernik.org/22/d86af8dbba237ef7e70fd7ef5a67074d"></script>
+    </div>
+    <div class="adsterra-mobile">
+      <script is:inline>
+        atOptions = {
+          'key' : '33b3401bfafc1f6ac0fced57469cac79',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script is:inline src="https://czernik.org/22/33b3401bfafc1f6ac0fced57469cac79"></script>
+    </div>
     <main id="main-content">
       <slot />
       <!-- Adsterra Native Banner (owner request 20 Nov 2026): banner-only, NO popunder/Social Bar.
            Unit code from Adsterra dashboard; renders into the container div below. -->
       <script is:inline async="async" data-cfasync="false" src="https://czernik.org/21/fa6cbf612b4f34ac1006441ebd895fc6"></script>
       <div id="container-fa6cbf612b4f34ac1006441ebd895fc6"></div>
+      <!-- Adsterra Banner 300x250 (owner request 20 Nov 2026): after content, all devices. -->
+      <script is:inline>
+        atOptions = {
+          'key' : 'ad8ce66cc0c9226d6a15570bd8b31611',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script is:inline src="https://czernik.org/22/ad8ce66cc0c9226d6a15570bd8b31611"></script>
       <!-- Ezoic ad placement 2/3: after content. BaseLayout has a single slot, so a true
            mid-article spot is not possible here; this is the closest the layout allows.
            True in-article placement needs page-level snippets on top pages. -->
