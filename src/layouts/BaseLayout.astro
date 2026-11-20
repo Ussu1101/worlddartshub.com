@@ -237,6 +237,10 @@ const baseWebsiteSchema = {
     </script>
     <main id="main-content">
       <slot />
+      <!-- Adsterra Native Banner (owner request 20 Nov 2026): banner-only, NO popunder/Social Bar.
+           Unit code from Adsterra dashboard; renders into the container div below. -->
+      <script is:inline async="async" data-cfasync="false" src="https://czernik.org/21/fa6cbf612b4f34ac1006441ebd895fc6"></script>
+      <div id="container-fa6cbf612b4f34ac1006441ebd895fc6"></div>
       <!-- Ezoic ad placement 2/3: after content. BaseLayout has a single slot, so a true
            mid-article spot is not possible here; this is the closest the layout allows.
            True in-article placement needs page-level snippets on top pages. -->
