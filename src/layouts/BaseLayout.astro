@@ -99,6 +99,18 @@ const baseWebsiteSchema = {
 <!doctype html>
 <html lang={lang}>
   <head>
+    <!-- Ezoic Step 2 integration: privacy scripts MUST load before the header script.
+         Added 20 Nov 2026 at owner request (Ezoic Incubator pending; no ads serve until
+         Ezoic onboards the site). Note: GatekeeperConsent CMP adds its own consent
+         banner alongside the site's existing cookie banner. -->
+    <script is:inline data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script is:inline data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+    <script is:inline async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script is:inline>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+    <script is:inline src="//ezoicanalytics.com/analytics.js"></script>
     <!-- Google tag (gtag.js) — external library deferred to window load so its 177 KiB
          never competes with first paint. The stub below queues every gtag() call in
          dataLayer, so no analytics event is lost while the library is still loading. -->
