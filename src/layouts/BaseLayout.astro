@@ -229,9 +229,29 @@ const baseWebsiteSchema = {
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header />
+    <!-- Ezoic ad placement 1/3: above content (Step 3, owner request 20 Nov 2026) -->
+    <script is:inline>
+      ezstandalone.cmd.push(function () {
+        ezstandalone.showAds({});
+      });
+    </script>
     <main id="main-content">
       <slot />
+      <!-- Ezoic ad placement 2/3: after content. BaseLayout has a single slot, so a true
+           mid-article spot is not possible here; this is the closest the layout allows.
+           True in-article placement needs page-level snippets on top pages. -->
+      <script is:inline>
+        ezstandalone.cmd.push(function () {
+          ezstandalone.showAds({});
+        });
+      </script>
     </main>
+    <!-- Ezoic ad placement 3/3: before footer -->
+    <script is:inline>
+      ezstandalone.cmd.push(function () {
+        ezstandalone.showAds({});
+      });
+    </script>
     <Footer />
     <BackToTop />
     <CookieBanner />
