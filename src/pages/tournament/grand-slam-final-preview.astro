@@ -1,0 +1,200 @@
+---
+// src/pages/tournament/grand-slam-final-preview.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Grand Slam 2026 Final Preview: Gerwyn Price vs Gian van Veen";
+const pageDescription = "Grand Slam of Darts 2026 final preview: Gerwyn Price vs Gian van Veen, Sunday 22 November, 19:30 GMT (00:30 PKT Mon 23 Nov). Semi-final results, roads to the final, head-to-head and £200,000 at stake.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/grand-slam-final-preview/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Grand Slam 2026', url: '/tournament/grand-slam/' },
+  { name: 'Final Preview', url: '/tournament/grand-slam-final-preview/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-11-22T00:00:00+00:00",
+      "dateModified": "2026-11-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grand Slam 2026",
+          "item": `${siteUrl}/tournament/grand-slam/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Final Preview",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When is the Grand Slam of Darts 2026 final?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Grand Slam of Darts 2026 final is on Sunday 22 November 2026 at 19:30 GMT (00:30 PKT on Monday 23 November), best of 31 legs, at WV Active, Aldersley, Wolverhampton. Gerwyn Price plays Gian van Veen for the £200,000 winner's prize from a £1,000,000 fund."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is in the Grand Slam 2026 final?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gerwyn Price and Gian van Veen. Price beat Kevin Doets 16-13 in the first semi-final, and Van Veen beat Michael van Gerwen 16-11 in the second semi-final, both on Sunday 22 November 2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does the Grand Slam 2026 winner get?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The winner takes £200,000 and the Eric Bristow Trophy from a £1,000,000 prize fund. The runner-up takes £100,000, and the two losing semi-finalists take £60,000 each."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">GRAND SLAM 2026</span>
+        <span class="badge">THE FINAL</span>
+      </div>
+      <h1>Grand Slam 2026 Final Preview: Gerwyn Price vs Gian van Veen</h1>
+      <p class="lead-text">
+        The three-time champion against the world No. 3 in waiting. Gerwyn Price meets Gian van Veen for the Eric Bristow Trophy tonight — £200,000 to the winner, and a first Grand Slam title on the line for the Dutchman.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="22 November 2026" topic="Grand Slam of Darts 2026 Final" />
+
+      <section class="content-card">
+        <h2>When and where</h2>
+        <p>
+          <strong>Sunday 22 November 2026, evening session, 19:30 GMT (00:30 PKT on Monday 23 November)</strong>, at WV Active, Aldersley, Wolverhampton. The final is best of 31 legs, live on Sky Sports in the UK.
+        </p>
+        <p>
+          The winner takes <strong>£200,000</strong> and the Eric Bristow Trophy from a £1,000,000 prize fund. The runner-up takes £100,000. Full results, schedule and draw on our <a href="/tournament/grand-slam/">Grand Slam 2026 hub</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Semi-final results: how the final was set</h2>
+        <p>
+          <strong>Gerwyn Price 16–13 Kevin Doets.</strong> Price took control with six legs in a row to lead 10–4, then had to hold off a Doets fightback that cut the gap to 14–12. The key moment came in leg 27, when Doets missed two chances to break throw; Price then sealed it with a 12-darter, taking out 94 after a 171 set-up. Price averaged 95.03 to Doets' 94.06.
+        </p>
+        <p>
+          <strong>Gian van Veen 16–11 Michael van Gerwen.</strong> The all-Dutch semi-final was level at 5–5 before Van Veen pulled away, going from 7–6 down to 10–7 ahead as Van Gerwen struggled on the doubles. A burst of four legs in a row, capped by a 124 checkout on the bullseye, took Van Veen to the brink, and he sealed his first Grand Slam final with a 107 finish on double 16.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Gerwyn Price: chasing a fourth Grand Slam title</h2>
+        <p>
+          <strong>Gerwyn Price (world No. 4)</strong> is aiming for a fourth Grand Slam title, adding to his triumphs in 2018, 2019 and 2021 — and he has never lost a Grand Slam final. His road to tonight: he topped Group E with wins over Joe Hunt (5–3) and Sebastian Bialecki (5–2), beat Ryan Searle 10–7 in the last 16, survived two match darts to edge Niko Springer 16–15 in a last-leg quarter-final decider, and then beat Kevin Doets 16–13 in the semi-final.
+        </p>
+        <p>
+          There is a ranking prize on the line too: if Price wins tonight, he becomes world No. 3, dropping Luke Humphries to world No. 4. Price himself says he has been the most consistent player in the majors this season — and Sky Sports' John Part now rates him the favourite for the final.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Gian van Veen: first Grand Slam final, provisional world No. 2</h2>
+        <p>
+          <strong>Gian van Veen (world No. 3)</strong>, the 24-year-old Dutchman nicknamed "The Giant", is into his first Grand Slam final and is already the provisional world No. 2. His road to tonight: he topped Group M with wins over Carl Sneyd (5–2) and Bradley Brooks (5–2), beat Martin Schindler 10–7 in the last 16, held off a Nathan Aspinall comeback to win their quarter-final 16–14 after leading 8–4, and then beat Michael van Gerwen 16–11 in the semi-final.
+        </p>
+        <p>
+          Van Veen is the reigning European champion and has been the form player of the autumn. A win tonight would give him a maiden Grand Slam title and confirm his rise to world No. 2.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Head-to-head: Price leads, but Van Veen has closed the gap</h2>
+        <p>
+          Price leads their head-to-head 13–3 and has won all four finals the pair have contested, according to dartsnews ahead of their World Matchplay meeting in July 2026. He won their first seven meetings, and Van Veen has said he felt intimidated by Price on stage in those early games.
+        </p>
+        <p>
+          But the gap has closed. Van Veen's first win over Price came in Prague in September 2025 — a 6–0 win — and he has beaten the Welshman again since, including a 6–5 Premier League semi-final win in Belfast. Price has the history in this fixture; Van Veen has the ranking, the form and the momentum.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>What is at stake</h2>
+        <p>
+          For Price, a fourth Grand Slam title, a perfect finals record in Wolverhampton kept intact, and the world No. 3 spot. For Van Veen, a maiden Grand Slam title, confirmation as world No. 2, and the biggest win of his career so far. Defending champion Luke Littler is already out, beaten 10–8 by Wattimena in the last 16, so a new name goes on the trophy tonight either way — Price's fourth, or Van Veen's first.
+        </p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>When is the Grand Slam of Darts 2026 final?</h3>
+          <p>The final is on Sunday 22 November 2026 at 19:30 GMT (00:30 PKT on Monday 23 November), best of 31 legs, at WV Active, Aldersley, Wolverhampton. Gerwyn Price plays Gian van Veen.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who is in the Grand Slam 2026 final?</h3>
+          <p>Gerwyn Price and Gian van Veen. Price beat Kevin Doets 16-13 in the first semi-final, and Van Veen beat Michael van Gerwen 16-11 in the second semi-final, both on Sunday 22 November 2026.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How much does the Grand Slam 2026 winner get?</h3>
+          <p>The winner takes £200,000 and the Eric Bristow Trophy from a £1,000,000 prize fund. The runner-up takes £100,000, and the two losing semi-finalists take £60,000 each.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
