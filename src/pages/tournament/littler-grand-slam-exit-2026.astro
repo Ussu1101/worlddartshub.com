@@ -1,0 +1,168 @@
+---
+// src/pages/tournament/littler-grand-slam-exit-2026.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Luke Littler's Grand Slam Title Defence Ends: Beaten 10-8 by Wattimena";
+const pageDescription = "Defending champion Luke Littler lost 10-8 to Jermaine Wattimena in the Grand Slam last 16 — his first-ever knockout defeat at the event. How the title defence ended, and what it means for the World Championship.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/littler-grand-slam-exit-2026/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Grand Slam 2026', url: '/tournament/grand-slam/' },
+  { name: "Littler's Title Defence Ends", url: '/tournament/littler-grand-slam-exit-2026/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-11-22T00:00:00+00:00",
+      "dateModified": "2026-11-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grand Slam 2026",
+          "item": `${siteUrl}/tournament/grand-slam/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Littler's Title Defence Ends",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who knocked Luke Littler out of the Grand Slam 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jermaine Wattimena beat Luke Littler 10-8 in the last 16 on Wednesday 18 November 2026, with a 101.70 average. It was Littler's first-ever knockout defeat at the Grand Slam."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was Littler the defending Grand Slam champion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Littler won the Grand Slam in 2024 and 2025, beating Luke Humphries 16-11 in the 2025 final. His defeat to Wattimena ended his bid for a third straight Grand Slam title."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">GRAND SLAM 2026</span>
+        <span class="badge">DEFENDING CHAMPION OUT</span>
+      </div>
+      <h1>Luke Littler's Grand Slam Title Defence Ends</h1>
+      <p class="lead-text">
+        The two-time defending champion is out. Jermaine Wattimena beat Luke Littler 10-8 in the last 16 — Littler's first-ever knockout defeat at the Grand Slam, and the end of his bid for a third straight title.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="November 2026" topic="Grand Slam of Darts 2026: Luke Littler" />
+
+      <section class="content-card">
+        <h2>How it happened</h2>
+        <p>
+          <strong>Jermaine Wattimena beat Luke Littler 10-8</strong> in the last 16 on Wednesday 18 November 2026, with a 101.70 average. Littler had won the Grand Slam in 2024 and 2025 — beating Luke Humphries 16-11 in the 2025 final — and arrived in Wolverhampton chasing a third straight title. Instead, he suffered his first-ever knockout defeat at the event.
+        </p>
+        <p>
+          Wattimena's run ended in the quarter-finals, where Kevin Doets beat him 16-7. Doets now plays Gerwyn Price in the semi-finals on Sunday — read our <a href="/tournament/grand-slam-semi-finals-preview/">semi-finals preview</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>The group stage warning signs</h2>
+        <p>
+          Littler's week had already shown cracks. He opened with a 5-2 win over Beau Greaves at a 109.97 average, but then lost 5-4 to Niels Zonneveld in his second group match — his first Grand Slam defeat. He still topped Group A on leg difference, but the defeat showed he was beatable.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>How fans reacted</h2>
+        <p>
+          The defeat split fans. Some criticised Littler for leaving the stage quickly after the loss; others defended him, pointing out that anything less than winning is unacceptable to a generational talent. Both sides agree on the facts: a quick handshake, then off without applauding the crowd.
+        </p>
+        <p>
+          Others joked that Littler had lost on purpose to free up time for the release of GTA VI. More fan reaction is on our <a href="/tournament/grand-slam/">Grand Slam hub</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>What it means for the World Championship</h2>
+        <p>
+          The Grand Slam exit does not change the biggest date in Littler's calendar: he is the defending champion at the World Darts Championship, which starts on 11 December 2026 at Alexandra Palace. The Grand Slam was a contained event; the World Championship is the main target.
+        </p>
+        <p>
+          The full World Championship schedule is on our <a href="/tournament/world-darts-championship/">World Darts Championship hub</a>.
+        </p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>Who knocked Luke Littler out of the Grand Slam 2026?</h3>
+          <p>Jermaine Wattimena beat Luke Littler 10-8 in the last 16 on Wednesday 18 November 2026, with a 101.70 average. It was Littler's first-ever knockout defeat at the Grand Slam.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Was Littler the defending Grand Slam champion?</h3>
+          <p>Yes. Littler won the Grand Slam in 2024 and 2025, beating Luke Humphries 16-11 in the 2025 final. His defeat to Wattimena ended his bid for a third straight Grand Slam title.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>

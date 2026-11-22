@@ -1,0 +1,175 @@
+---
+// src/pages/tournament/tom-sykes-grand-slam-debut.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Tom Sykes at the Grand Slam 2026: The Debutant Who Stunned Darts";
+const pageDescription = "Tom Sykes, ranked No. 81, beat Luke Humphries on his Grand Slam debut and hit a nine-darter against Michael van Gerwen. The full story of the breakout run at the 2026 Grand Slam of Darts.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/tom-sykes-grand-slam-debut/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Grand Slam 2026', url: '/tournament/grand-slam/' },
+  { name: 'Tom Sykes: Breakout Debut', url: '/tournament/tom-sykes-grand-slam-debut/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-11-22T00:00:00+00:00",
+      "dateModified": "2026-11-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grand Slam 2026",
+          "item": `${siteUrl}/tournament/grand-slam/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tom Sykes: Breakout Debut",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Tom Sykes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tom Sykes is an English darts player who earned his PDC tour card in January 2026. Ranked No. 81 in the world before the 2026 Grand Slam, he made his Grand Slam debut at the event and reached the quarter-finals, beating world No. 2 Luke Humphries on the way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Did Tom Sykes hit a nine-darter at the Grand Slam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. In his quarter-final against Michael van Gerwen on 21 November 2026, Sykes hit a nine-darter in the sixth leg — his first televised nine-darter — answering Van Gerwen's perfect leg in the opening leg. It was only the third televised match ever with two nine-darters."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">GRAND SLAM 2026</span>
+        <span class="badge">BREAKOUT STORY</span>
+      </div>
+      <h1>Tom Sykes: The Debutant Who Stunned Darts</h1>
+      <p class="lead-text">
+        Ranked No. 81. A tour card earned in January. A Grand Slam debut. Tom Sykes beat the world No. 2, hit a televised nine-darter, and took Michael van Gerwen to the limit in one of the greatest matches ever played.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="November 2026" topic="Grand Slam of Darts 2026: Tom Sykes" />
+
+      <section class="content-card">
+        <h2>Who is Tom Sykes?</h2>
+        <p>
+          Tom Sykes is an English darts player who only earned his PDC tour card in January 2026. Ranked No. 81 in the world before the event, he arrived at the Grand Slam of Darts in Wolverhampton as a debutant — and left as the breakout star of the tournament.
+        </p>
+        <p>
+          His run ended in the quarter-finals, but only after a 16-11 defeat to Michael van Gerwen in a match that will be talked about for years. Read the full story of that match on our <a href="/tournament/grand-slam-double-nine-darter/">two nine-darters page</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>The group stage: topping Group J</h2>
+        <p>
+          Sykes announced himself on day one, beating Luke Woodhouse 5-3 in his opening group match. He then beat Krzysztof Ratajski 5-1 with a 104 average to top Group J and reach the knockout stage on his debut.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>The upset: beating Humphries 10-9</h2>
+        <p>
+          In the last 16, Sykes produced the biggest upset of the tournament so far: a 10-9 win over Luke Humphries, the world No. 2, in a deciding leg. It sent Sykes into his first major quarter-final.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>The quarter-final: a nine-darter against Van Gerwen</h2>
+        <p>
+          Against Van Gerwen, Sykes refused to be overawed. After the Dutchman opened the match with a nine-darter in the first leg, Sykes answered with a perfect leg of his own in the sixth — his first televised nine-darter. He added a 170 checkout in the ninth leg to lead 5-4, and led 8-6 at the midway point.
+        </p>
+        <p>
+          Van Gerwen eventually took control, winning eight of the next nine legs, and sealed a 16-11 win on the bullseye. But Sykes finished the match with a 101.50 average and 12 maximums — numbers that belong at the very top of the sport.
+        </p>
+        <p>
+          Van Gerwen was generous afterwards: "Tom Sykes was amazing, I need to give him the credits as well."
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>What happens next</h2>
+        <p>
+          Sykes leaves Wolverhampton with his reputation transformed: a win over the world No. 2, a televised nine-darter, and a 101.50 average against a three-time Grand Slam champion. The Grand Slam semi-finals are on Sunday 22 November — read our <a href="/tournament/grand-slam-semi-finals-preview/">semi-finals preview</a> — and the full tournament story is on our <a href="/tournament/grand-slam/">Grand Slam 2026 hub</a>.
+        </p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>Who is Tom Sykes?</h3>
+          <p>Tom Sykes is an English darts player who earned his PDC tour card in January 2026. Ranked No. 81 in the world before the 2026 Grand Slam, he made his Grand Slam debut at the event and reached the quarter-finals, beating world No. 2 Luke Humphries on the way.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Did Tom Sykes hit a nine-darter at the Grand Slam?</h3>
+          <p>Yes. In his quarter-final against Michael van Gerwen on 21 November 2026, Sykes hit a nine-darter in the sixth leg — his first televised nine-darter — answering Van Gerwen's perfect leg in the opening leg. It was only the third televised match ever with two nine-darters.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>

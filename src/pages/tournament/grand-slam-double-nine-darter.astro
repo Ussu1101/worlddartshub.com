@@ -1,0 +1,249 @@
+---
+// src/pages/tournament/grand-slam-double-nine-darter.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Two Nine-Darters in One Match: Van Gerwen vs Sykes at the Grand Slam 2026";
+const pageDescription = "Michael van Gerwen and Tom Sykes both hit nine-darters in the same Grand Slam quarter-final — only the third televised match ever with two perfect legs. Full story, scores, stats and fan reaction.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/grand-slam-double-nine-darter/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Grand Slam 2026', url: '/tournament/grand-slam/' },
+  { name: 'Two Nine-Darters, One Match', url: '/tournament/grand-slam-double-nine-darter/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-11-22T00:00:00+00:00",
+      "dateModified": "2026-11-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grand Slam 2026",
+          "item": `${siteUrl}/tournament/grand-slam/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Two Nine-Darters, One Match",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who hit the two nine-darters in the Van Gerwen vs Sykes match?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Michael van Gerwen hit a nine-darter in the opening leg of their Grand Slam quarter-final on 21 November 2026, and Tom Sykes answered with one of his own in the sixth leg. Both took the same route: 180, 180, treble 20, treble 19, double 12."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Has two players hit nine-darters in the same match before?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only twice before on television: Phil Taylor vs James Wade in the 2010 Premier League, and James Wade vs Robert Thornton at the 2014 World Grand Prix. The Sykes vs Van Gerwen quarter-final at the 2026 Grand Slam is the third televised match with two nine-darters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What was the final score of Van Gerwen vs Sykes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Michael van Gerwen won 16-11. Sykes led 8-6 at one stage, but Van Gerwen won eight of the next nine legs to take control, finishing the match on the bullseye with an average of just under 106."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">GRAND SLAM 2026</span>
+        <span class="badge">NINE-DART FINISH</span>
+      </div>
+      <h1>Two Nine-Darters in One Match: Van Gerwen vs Sykes</h1>
+      <p class="lead-text">
+        The greatest quarter-final in Grand Slam history. Michael van Gerwen opened the match with a perfect leg — and six legs later, debutant Tom Sykes answered with one of his own. Only the third televised match ever to feature two nine-darters.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="November 2026" topic="Grand Slam of Darts 2026 Quarter-Final Results" />
+
+      <section class="content-card">
+        <h2>The match in brief</h2>
+        <p>
+          <strong>Michael van Gerwen beat Tom Sykes 16-11</strong> in the Grand Slam quarter-finals on Saturday 21 November 2026, in a best-of-31-legs match at WV Active, Aldersley, Wolverhampton. The scoreline alone does not tell the story: both players threw a nine-dart finish inside the first six legs, Sykes added a 170 checkout, and the debutant led 8-6 before Van Gerwen produced a vintage burst to win.
+        </p>
+        <p>
+          Van Gerwen goes on to face Gian van Veen in an all-Dutch semi-final on Sunday 22 November. Read our <a href="/tournament/grand-slam-semi-finals-preview/">Grand Slam semi-finals preview</a> and the full <a href="/tournament/grand-slam/">Grand Slam 2026 hub</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>How the two nine-darters happened</h2>
+        <p>
+          <strong>Leg 1 — Van Gerwen.</strong> Van Gerwen opened the match with two 180s, then took out 141 with treble 20, treble 19 and double 12. It was his first nine-darter on Sky Sports since December 2012 — a 14-year wait — and the 11th nine-darter of his career.
+        </p>
+        <p>
+          <strong>Leg 6 — Sykes.</strong> Five legs later, Sykes answered with a perfect leg of his own, taking the exact same route: 180, 180, treble 20, treble 19, double 12. It was the first televised nine-darter of his career — and he was playing in his first major quarter-final, on his Grand Slam debut.
+        </p>
+        <p>
+          Sky Sports commentator Rod Studd summed up the disbelief live on air: "What on earth is going on here? Tom Sykes, take a bow!"
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Then Sykes hit a 170 — and led 8-6</h2>
+        <p>
+          The fireworks did not stop at the two nine-darters. In the ninth leg, Sykes reeled in a 170 checkout — the "Big Fish" — to lead 5-4. He kept the pace up and led 8-6 at the midway point, with the Wolverhampton crowd roaring him on.
+        </p>
+        <p>
+          Van Gerwen then found a mid-match burst that proved too much. He won eight of the next nine legs to pull clear at 14-9, and after Sykes fought back to 11-15, the Dutchman sealed a 16-11 victory with an 84 finish on the bullseye.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>The numbers</h2>
+        <p>
+          <strong>Michael van Gerwen:</strong> averaged just under 106, hit 14 maximums, and finished 50% of his checkouts (16 from 32 attempts).
+        </p>
+        <p>
+          <strong>Tom Sykes:</strong> averaged 101.50, hit 12 maximums, and produced a nine-darter plus a 170 checkout in the biggest match of his life so far.
+        </p>
+        <p>
+          The two nine-darters were only the eighth and ninth perfect legs in Grand Slam history. Luke Humphries was the last player to hit one at the event, in his group-stage match against Michael Smith in 2025.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Only the third time ever</h2>
+        <p>
+          Before Wolverhampton, only two televised matches had ever featured a nine-darter from both players:
+        </p>
+        <ul>
+          <li><strong>2010 Premier League</strong> — Phil Taylor vs James Wade</li>
+          <li><strong>2014 World Grand Prix</strong> — James Wade vs Robert Thornton</li>
+          <li><strong>2026 Grand Slam</strong> — Tom Sykes vs Michael van Gerwen</li>
+        </ul>
+        <p>
+          That is the company this quarter-final now keeps.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>What Van Gerwen said</h2>
+        <p>
+          Van Gerwen was generous to his opponent afterwards: "Tom Sykes was amazing, I need to give him the credits as well." On his own perfect leg, he played it down: "It's just a leg, I know that. I've never started a game with a nine-darter in my life."
+        </p>
+        <p>
+          He also had a message for the doubters after a difficult period: "Everyone was doubting me, I'm still here, don't worry."
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>What fans said</h2>
+        <p>
+          The darting world went into raptures. The PDC's clip of the two nine-darters passed 120,000 likes on Instagram, with fans calling Van Gerwen "the GOAT" and saying "he's back" — and praising Sykes just as loudly for refusing to be overawed.
+        </p>
+        <blockquote>
+          "This Tom Sykes v MVG game is the perfect advert for darts — absolutely sensational."
+        </blockquote>
+        <p><em>— fan on social media, via SPORTbible</em></p>
+        <blockquote>
+          "This is the greatest darts match ever. You can keep your Littlers and Humphries. It's now Sykes v Van Gerwen."
+        </blockquote>
+        <p><em>— fan on social media, via SPORTbible</em></p>
+        <blockquote>
+          "MvG televised 9 darter, I can't spake."
+        </blockquote>
+        <p><em>— fan on social media, via The Sun</em></p>
+        <p>
+          More fan reaction on our <a href="/tournament/grand-slam/">Grand Slam hub</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>What happened next</h2>
+        <p>
+          Van Gerwen is through to his first major semi-final in over a year, and his first Grand Slam semi-final since 2019. The three-time Grand Slam champion, who last won the title in 2017, faces Gian van Veen on Sunday afternoon for a place in the final.
+        </p>
+        <p>
+          Sykes leaves Wolverhampton with his head held high: a debut Grand Slam that included a win over Luke Humphries, a televised nine-darter, a 170 checkout, and a 101.50 average against one of the greatest players of all time. Read the full story of his run on our <a href="/tournament/tom-sykes-grand-slam-debut/">Tom Sykes Grand Slam debut</a> page.
+        </p>
+        <p>
+          For nine-dart prize money and bonuses, read our <a href="/tournament/nine-dart-bonus/">nine-dart finish prize money guide</a>.
+        </p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>Who hit the two nine-darters in the Van Gerwen vs Sykes match?</h3>
+          <p>Michael van Gerwen hit a nine-darter in the opening leg of their Grand Slam quarter-final on 21 November 2026, and Tom Sykes answered with one of his own in the sixth leg. Both took the same route: 180, 180, treble 20, treble 19, double 12.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Has two players hit nine-darters in the same match before?</h3>
+          <p>Only twice before on television: Phil Taylor vs James Wade in the 2010 Premier League, and James Wade vs Robert Thornton at the 2014 World Grand Prix. The Sykes vs Van Gerwen quarter-final at the 2026 Grand Slam is the third televised match with two nine-darters.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What was the final score of Van Gerwen vs Sykes?</h3>
+          <p>Michael van Gerwen won 16-11. Sykes led 8-6 at one stage, but Van Gerwen won eight of the next nine legs to take control, finishing the match on the bullseye with an average of just under 106.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>

@@ -1,0 +1,177 @@
+---
+// src/pages/tournament/grand-slam-semi-finals-preview.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Grand Slam 2026 Semi-Finals Preview: Doets vs Price, Van Gerwen vs Van Veen";
+const pageDescription = "Grand Slam of Darts 2026 semi-finals preview: Kevin Doets vs Gerwyn Price and Michael van Gerwen vs Gian van Veen, Sunday 22 November, 13:00 GMT. Roads to the semi, form, and what's at stake.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/grand-slam-semi-finals-preview/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Grand Slam 2026', url: '/tournament/grand-slam/' },
+  { name: 'Semi-Finals Preview', url: '/tournament/grand-slam-semi-finals-preview/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-11-22T00:00:00+00:00",
+      "dateModified": "2026-11-22T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grand Slam 2026",
+          "item": `${siteUrl}/tournament/grand-slam/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Semi-Finals Preview",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When are the Grand Slam 2026 semi-finals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The semi-finals are on Sunday 22 November 2026, in the afternoon session starting at 13:00 GMT (18:00 PKT) at WV Active, Aldersley, Wolverhampton. Kevin Doets plays Gerwyn Price, and Michael van Gerwen plays Gian van Veen. Both matches are best of 31 legs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is the Grand Slam 2026 final?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The final is on Sunday 22 November 2026 at 19:30 GMT (00:30 PKT on Monday 23 November), best of 31 legs. The winner takes £200,000 from a £1,000,000 prize fund."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">GRAND SLAM 2026</span>
+        <span class="badge">SEMI-FINALS</span>
+      </div>
+      <h1>Grand Slam 2026 Semi-Finals Preview</h1>
+      <p class="lead-text">
+        Four players left, two semi-finals, one trophy tonight. Kevin Doets meets Gerwyn Price, and Michael van Gerwen faces Gian van Veen in an all-Dutch semi-final — with three Dutchmen in the last four.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="November 2026" topic="Grand Slam of Darts 2026 Semi-Finals" />
+
+      <section class="content-card">
+        <h2>When and where</h2>
+        <p>
+          <strong>Sunday 22 November 2026, afternoon session, 13:00 GMT (18:00 PKT)</strong>, at WV Active, Aldersley, Wolverhampton. Both semi-finals are best of 31 legs. The final follows in the evening session at <strong>19:30 GMT (00:30 PKT on Monday 23 November)</strong>, also best of 31 legs.
+        </p>
+        <p>
+          The winner takes <strong>£200,000</strong> from a £1,000,000 prize fund. Full results, schedule and draw on our <a href="/tournament/grand-slam/">Grand Slam 2026 hub</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Semi-final 1: Kevin Doets vs Gerwyn Price</h2>
+        <p>
+          <strong>Kevin Doets (world No. 23)</strong> has been one of the stories of the tournament. He topped Group C with wins over Josh Rock (5-3) and Tommy Morris (5-1), beat Cameron Menzies 10-5 in the last 16, and then produced a 102 average with eight 180s and two 170 checkouts to beat Jermaine Wattimena 16-7 in the quarter-finals — the man who had knocked out defending champion Luke Littler.
+        </p>
+        <p>
+          <strong>Gerwyn Price (world No. 4)</strong> has had the harder road. He topped Group E with wins over Owen Hunt (5-3) and Sebastian Bialecki (5-2), beat Ryan Searle 10-7 in the last 16, and survived a last-leg decider against Niko Springer in the quarter-finals, winning 16-15 after saving two match darts.
+        </p>
+        <p>
+          Doets arrives with momentum and scoring power; Price arrives battle-hardened, having already won a deciding leg to get here. The winner plays in the final tonight.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Semi-final 2: Michael van Gerwen vs Gian van Veen</h2>
+        <p>
+          The all-Dutch semi-final — and the match of the day. <strong>Michael van Gerwen (world No. 11)</strong>, the three-time Grand Slam champion who last won the title in 2017, is into his first major semi-final in over a year and his first Grand Slam semi-final since 2019. His quarter-final against Tom Sykes was one of the greatest matches ever played at this event: both men hit nine-darters, and Van Gerwen won 16-11 with an average of just under 106. Read the full story on our <a href="/tournament/grand-slam-double-nine-darter/">two nine-darters page</a>.
+        </p>
+        <p>
+          <strong>Gian van Veen (world No. 3)</strong> has been just as impressive. He topped Group M with wins over Owen Sneyd (5-2) and Bradley Brooks (5-2), beat Martin Schindler 10-7 in the last 16, and held off a Nathan Aspinall comeback in the quarter-finals, winning 16-14 after Aspinall had levelled at 14-14 from 8-4 down.
+        </p>
+        <p>
+          Van Gerwen has the history and the form of the tournament; Van Veen has the ranking and the consistency. Three Dutchmen reached the last four — only one Dutchman can reach the final from this tie.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>What is at stake</h2>
+        <p>
+          Both winners play the final tonight for £200,000. For Van Gerwen, it would be a first Grand Slam title in nine years and a full return to the top of the sport. For Van Veen, it would be a first Grand Slam final. For Doets, it would cap a breakthrough week. For Price, it would be another major final for a former world champion.
+        </p>
+        <p>
+          Defending champion Luke Littler is already out, beaten 10-8 by Wattimena in the last 16, so a new name goes on the trophy tonight.
+        </p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>When are the Grand Slam 2026 semi-finals?</h3>
+          <p>The semi-finals are on Sunday 22 November 2026, in the afternoon session starting at 13:00 GMT (18:00 PKT) at WV Active, Aldersley, Wolverhampton. Kevin Doets plays Gerwyn Price, and Michael van Gerwen plays Gian van Veen. Both matches are best of 31 legs.</p>
+        </div>
+        <div class="faq-item">
+          <h3>When is the Grand Slam 2026 final?</h3>
+          <p>The final is on Sunday 22 November 2026 at 19:30 GMT (00:30 PKT on Monday 23 November), best of 31 legs. The winner takes £200,000 from a £1,000,000 prize fund.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
