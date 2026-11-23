@@ -1,0 +1,327 @@
+---
+// src/pages/tournament/players-championship-finals.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Players Championship Finals 2026: Draw, Schedule, Format & Prize Money";
+const pageDescription = "Players Championship Finals 2026 preview: full 64-player draw, schedule, format and £750,000 prize money, 27–29 November at Butlin's Minehead. Top seed Wessel Nijman, Price v Bialecki, and a possible Grand Slam final rematch in round two.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/tournament/players-championship-finals/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players Championship Finals 2026', url: '/tournament/players-championship-finals/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "name": "World Darts Hub",
+        "url": siteUrl
+      },
+      "headline": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB",
+      "datePublished": "2026-11-23T00:00:00+00:00",
+      "dateModified": "2026-11-23T00:00:00+00:00",
+      "mainEntityOfPage": canonicalUrl,
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Darts Hub",
+        "url": siteUrl
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Players Championship Finals 2026",
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When is the Players Championship Finals 2026 and where is it played?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Players Championship Finals 2026 runs from Friday 27 to Sunday 29 November 2026 at Butlin's Minehead Resort in Somerset. Round one is on Friday 27 November, rounds two and three are on Saturday 28 November, and the quarter-finals, semi-finals and final are on Sunday 29 November."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is the top seed at the Players Championship Finals 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wessel Nijman is the top seed. He finished first on the Players Championship Order of Merit on £160,500 after winning six floor titles in 2026, and he opens against Henry Coates, who took the 64th and final qualifying place by £250."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who does Gerwyn Price play at the Players Championship Finals 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gerwyn Price, the 52nd seed, plays Sebastian Bialecki, the 13th seed, in round one on Friday 27 November. The winner meets the winner of Jeffrey de Graaf v Gian van Veen in round two, so a Grand Slam final rematch between Price and Van Veen is possible on Saturday. Price beat Van Veen 16-11 in the Grand Slam final on 22 November."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the Players Championship Finals draw decided?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no random draw. Every one of the 64 qualifiers is seeded by their final position on the Players Championship Order of Merit, which counts prize money from the 34 Players Championship floor events of the season, and the bracket pairs seed n with seed 65 minus n: 1 v 64, 2 v 63, down to 32 v 33. No player receives a bye."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Luke Littler playing the Players Championship Finals 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The defending champion played only two of the 34 floor events and finished 130th on the Players Championship Order of Merit on £10,500, so he cannot defend the title. Nathan Aspinall, Josh Rock and Peter Wright also missed the top-64 cut."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much prize money is at the Players Championship Finals 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The prize fund is £750,000, up from £600,000 in 2025. The winner takes £130,000, the runner-up £70,000, the two losing semi-finalists £40,000 each, quarter-finalists £27,500 each, last-16 losers £15,000 each, second-round losers £7,000 each and first-round losers £4,000 each."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDescription}
+  schema={articleSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">PLAYERS CHAMPIONSHIP FINALS 2026</span>
+        <span class="badge">MINEHEAD</span>
+      </div>
+      <h1>Players Championship Finals 2026: Draw, Schedule, Format &amp; Prize Money</h1>
+      <p class="lead-text">
+        The floor season ends at Minehead. Sixty-four players, one straight knockout bracket, and the last ranking event before the World Championship cut-off — with the Grand Slam champion seeded 52nd and a Grand Slam final rematch possible on Saturday.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="23 November 2026" topic="Players Championship Finals 2026" />
+
+      <section class="content-card">
+        <h2>When and where</h2>
+        <p>
+          <strong>Friday 27 to Sunday 29 November 2026</strong>, at <strong>Butlin's Minehead Resort, Somerset</strong>. Round one is played on Friday 27 November, rounds two and three across Saturday's double session on 28 November, and the quarter-finals, semi-finals and final on Sunday 29 November. The Winmau World Youth Championship final between Cam Crabtree and Jan Schmidt is also played on the Sunday.
+        </p>
+        <p>
+          The PDC has not yet published the schedule of play or the session times, so no start times are listed here yet. Coverage is on ITV4 in the UK, with DAZN, Viaplay and PDCTV carrying it elsewhere; the Stage Two matches on Friday and Saturday are on PDCTV.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>How the draw works</h2>
+        <p>
+          There is no random draw at this event. The PDC published the bracket on 5 November 2026, within hours of the last floor event of the season finishing in Leicester. Every one of the 64 qualifiers is seeded by their final position on the Players Championship Order of Merit, which counts prize money from the 34 Players Championship floor events of one season and nothing else, and the bracket pairs seed n with seed 65 minus n: 1 v 64, 2 v 63, down to 32 v 33. No player receives a bye.
+        </p>
+        <p>
+          That is why the seedings look so strange this year: a 2021 world champion is seeded 52nd, a two-time world champion 54th and a 2023 world champion 56th, and all three open against a top-13 seed. It is also the last edition in this format: from 2027 the field expands from 64 to 128 players.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>First-round draw in full</h2>
+        <p>
+          All 32 first-round ties, in the order the bracket was published. Seeds are from the Players Championship Order of Merit.
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Seed</th>
+                <th>Player</th>
+                <th>Seed</th>
+                <th>Player</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><strong>Wessel Nijman</strong></td><td>64</td><td>Henry Coates</td></tr>
+              <tr><td>32</td><td>Gabriel Clemens</td><td>33</td><td>Dave Chisnall</td></tr>
+              <tr><td>16</td><td>Charlie Manby</td><td>49</td><td>Martin Schindler</td></tr>
+              <tr><td>17</td><td>Cameron Menzies</td><td>48</td><td>Mensur Suljovic</td></tr>
+              <tr><td>8</td><td>Beau Greaves</td><td>57</td><td>Christian Kist</td></tr>
+              <tr><td>25</td><td>Tom Bissell</td><td>40</td><td>Rob Owen</td></tr>
+              <tr><td>9</td><td><strong>Ross Smith</strong></td><td>56</td><td>Michael Smith</td></tr>
+              <tr><td>24</td><td>Niels Zonneveld</td><td>41</td><td>Niko Springer</td></tr>
+              <tr><td>4</td><td>Luke Woodhouse</td><td>61</td><td>Alexander Merkx</td></tr>
+              <tr><td>29</td><td>Stephen Bunting</td><td>36</td><td>Max Hopp</td></tr>
+              <tr><td>13</td><td>Sebastian Bialecki</td><td>52</td><td><strong>Gerwyn Price</strong></td></tr>
+              <tr><td>20</td><td>Jeffrey de Graaf</td><td>45</td><td><strong>Gian van Veen</strong></td></tr>
+              <tr><td>5</td><td>Jermaine Wattimena</td><td>60</td><td>Keane Barry</td></tr>
+              <tr><td>28</td><td>Ryan Searle</td><td>37</td><td>Brendan Dolan</td></tr>
+              <tr><td>12</td><td>William O'Connor</td><td>53</td><td>James Hurrell</td></tr>
+              <tr><td>21</td><td>Tommy Morris</td><td>44</td><td>Callan Rydz</td></tr>
+              <tr><td>2</td><td><strong>Chris Dobey</strong></td><td>63</td><td>Mike De Decker</td></tr>
+              <tr><td>31</td><td>Richard Veenstra</td><td>34</td><td>Joe Cullen</td></tr>
+              <tr><td>15</td><td>Cristo Reyes</td><td>50</td><td>Darius Labanauskas</td></tr>
+              <tr><td>18</td><td>Michael van Gerwen</td><td>47</td><td>Connor Scutt</td></tr>
+              <tr><td>7</td><td>Luke Humphries</td><td>58</td><td>Darryl Pilgrim</td></tr>
+              <tr><td>26</td><td>Krzysztof Ratajski</td><td>39</td><td>Damon Heta</td></tr>
+              <tr><td>10</td><td>Danny Noppert</td><td>55</td><td>Scott Williams</td></tr>
+              <tr><td>23</td><td>Jonny Clayton</td><td>42</td><td>Tom Sykes</td></tr>
+              <tr><td>3</td><td>Kevin Doets</td><td>62</td><td>Ritchie Edhouse</td></tr>
+              <tr><td>30</td><td>James Wade</td><td>35</td><td>Justin Hood</td></tr>
+              <tr><td>14</td><td>Dirk van Duijvenbode</td><td>51</td><td>Alan Soutar</td></tr>
+              <tr><td>19</td><td>Maik Kuivenhoven</td><td>46</td><td>Daryl Gurney</td></tr>
+              <tr><td>6</td><td>Andrew Gilding</td><td>59</td><td>Bradley Brooks</td></tr>
+              <tr><td>27</td><td>Kim Huybrechts</td><td>38</td><td>Joe Hunt</td></tr>
+              <tr><td>11</td><td>Karel Sedlacek</td><td>54</td><td>Gary Anderson</td></tr>
+              <tr><td>22</td><td>Rob Cross</td><td>43</td><td>Mickey Mansell</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <h2>Format and schedule</h2>
+        <p>
+          A straight knockout with no consolation round. The distances rise round by round: round one and round two are best of 11 legs (first to 6), the last 16 and the quarter-finals are best of 19 legs (first to 10), and the semi-finals and the final are best of 21 legs (first to 11).
+        </p>
+        <p>
+          Round one is on Friday 27 November. Rounds two and three follow on Saturday 28 November across a double session, and the quarter-finals, semi-finals and final are on Sunday 29 November. The full schedule of play, with session times, has not been released by the PDC yet.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Prize money</h2>
+        <p>
+          The prize fund is <strong>£750,000</strong>, up from £600,000 in 2025, with <strong>£130,000</strong> to the champion. The runner-up takes £70,000, the two losing semi-finalists £40,000 each, quarter-finalists £27,500 each, last-16 losers £15,000 each, second-round losers £7,000 each, and every first-round loser is guaranteed £4,000. See the full round-by-round breakdown on our <a href="/tournament/players-championship-finals-prize-money/">Players Championship Finals prize money page</a>.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Ties to watch on Friday</h2>
+        <p>
+          <strong>Ross Smith v Michael Smith.</strong> The headline tie. The newly crowned European champion, seeded ninth, meets the 2023 world champion, seeded 56th, in their first televised meeting since January 2023 — and the pair are heading in opposite directions.
+        </p>
+        <p>
+          <strong>Sebastian Bialecki v Gerwyn Price, and Jeffrey de Graaf v Gian van Veen.</strong> The winners meet in round two on Saturday, so a Grand Slam final rematch is on the cards less than a week after Price beat Van Veen 16–11 in Wolverhampton. Price also beat Bialecki 5–2 in the Grand Slam group stage.
+        </p>
+        <p>
+          <strong>Wessel Nijman v Henry Coates.</strong> The season's most prolific floor player against the man who squeezed into 64th place by £250. Nijman won six Players Championship titles in 2026 and topped the table on £160,500; Coates, 20, won Event 25 on the ProTour in July.
+        </p>
+        <p>
+          <strong>Chris Dobey v Mike De Decker.</strong> The second seed, who threw a nine-darter on the final day of the series, against the 2024 World Grand Prix champion, who snatched the penultimate qualifying place.
+        </p>
+        <p>
+          <strong>Beau Greaves v Christian Kist.</strong> Greaves, the eighth seed, makes her Minehead debut. She became the first woman to win a PDC ranking title at Players Championship 11, beating Rob Cross, Gary Anderson and Michael Smith on the way.
+        </p>
+        <p>
+          <strong>Michael van Gerwen v Connor Scutt.</strong> Van Gerwen, a seven-time champion of this event, begins his bid for a record-extending eighth title. Van Gerwen and Dobey could meet in the last 16, with Luke Humphries — the 2023 and 2024 champion — on the same side of that quarter.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Littler is absent — six former world champions are not</h2>
+        <p>
+          Defending champion Luke Littler is not in the field: he played only two of the 34 floor events and finished 130th on the Players Championship Order of Merit on £10,500, so he cannot defend the title. Nathan Aspinall, Josh Rock and Peter Wright also missed the top-64 cut.
+        </p>
+        <p>
+          Six former world champions did qualify: Luke Humphries (seed 7, champion 2024), Michael van Gerwen (18; 2014, 2017, 2019), Rob Cross (22; 2018), Gerwyn Price (52; 2021), Gary Anderson (54; 2015, 2016) and Michael Smith (56; 2023). Three of them — Price, Anderson and Michael Smith — open against top-13 seeds.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>Why Minehead decides the World Championship seedings</h2>
+        <p>
+          Minehead is the last PDC event before Alexandra Palace, and the final ranking event before the cut-off. When Sunday's final ends, the top 32 on the PDC Order of Merit are confirmed as the protected seeds for the <a href="/tournament/world-darts-championship/">World Darts Championship</a>, and the 40 ProTour places in the 128-player field lock into place. A single win at Minehead — from the last 64 to the last 32 — is worth £3,000 in extra ranking money, and that is often the difference between qualifying for Ally Pally and missing out entirely. The World Championship draw follows on Monday 30 November.
+        </p>
+        <p>
+          That makes this the sharpest incentive of the season for the low seeds. A world champion seeded 52nd, with three weeks until the World Championship, has rather more riding on a best-of-11 on a Friday than the number next to his name suggests.
+        </p>
+      </section>
+
+      <section class="content-card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>When is the Players Championship Finals 2026 and where is it played?</h3>
+          <p>The tournament runs from Friday 27 to Sunday 29 November 2026 at Butlin's Minehead Resort in Somerset. Round one is on Friday, rounds two and three on Saturday, and the quarter-finals, semi-finals and final on Sunday.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who is the top seed at the Players Championship Finals 2026?</h3>
+          <p>Wessel Nijman. He finished first on the Players Championship Order of Merit on £160,500 after winning six floor titles in 2026, and he opens against Henry Coates, who took the 64th and final qualifying place by £250.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who does Gerwyn Price play at the Players Championship Finals 2026?</h3>
+          <p>Gerwyn Price, the 52nd seed, plays Sebastian Bialecki, the 13th seed, in round one on Friday 27 November. The winner meets the winner of Jeffrey de Graaf v Gian van Veen in round two, so a Grand Slam final rematch between Price and Van Veen is possible on Saturday.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How is the Players Championship Finals draw decided?</h3>
+          <p>There is no random draw. All 64 qualifiers are seeded by their final position on the Players Championship Order of Merit, and the bracket pairs seed n with seed 65 minus n: 1 v 64, 2 v 63, down to 32 v 33. No player receives a bye.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is Luke Littler playing the Players Championship Finals 2026?</h3>
+          <p>No. The defending champion played only two of the 34 floor events and finished 130th on the Players Championship Order of Merit on £10,500, so he cannot defend the title. Nathan Aspinall, Josh Rock and Peter Wright also missed the top-64 cut.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How much prize money is at the Players Championship Finals 2026?</h3>
+          <p>The prize fund is £750,000, up from £600,000 in 2025. The winner takes £130,000, the runner-up £70,000, the two losing semi-finalists £40,000 each, quarter-finalists £27,500 each, last-16 losers £15,000 each, second-round losers £7,000 each and first-round losers £4,000 each.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .data-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+  }
+</style>
