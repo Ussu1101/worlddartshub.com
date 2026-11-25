@@ -99,18 +99,6 @@ const baseWebsiteSchema = {
 <!doctype html>
 <html lang={lang}>
   <head>
-    <!-- Ezoic Step 2 integration: privacy scripts MUST load before the header script.
-         Added 20 Nov 2026 at owner request (Ezoic Incubator pending; no ads serve until
-         Ezoic onboards the site). Note: GatekeeperConsent CMP adds its own consent
-         banner alongside the site's existing cookie banner. -->
-    <script is:inline data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
-    <script is:inline data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
-    <script is:inline async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-    <script is:inline>
-        window.ezstandalone = window.ezstandalone || {};
-        ezstandalone.cmd = ezstandalone.cmd || [];
-    </script>
-    <script is:inline src="//ezoicanalytics.com/analytics.js"></script>
     <!-- Google tag (gtag.js) — external library deferred to window load so its 177 KiB
          never competes with first paint. The stub below queues every gtag() call in
          dataLayer, so no analytics event is lost while the library is still loading. -->
@@ -232,12 +220,6 @@ const baseWebsiteSchema = {
     <script is:inline data-cfasync="false" src="https://czernik.org/14/e54a996a19957ac1efa0c092165f3869"></script>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header />
-    <!-- Ezoic ad placement 1/3: above content (Step 3, owner request 20 Nov 2026) -->
-    <script is:inline>
-      ezstandalone.cmd.push(function () {
-        ezstandalone.showAds({});
-      });
-    </script>
     <!-- Adsterra banners (owner request 20 Nov 2026): 728x90 desktop-only, 320x50 mobile-only.
          Fixed-size iframes, so device targeting is done with media queries. -->
     <style is:inline>
@@ -289,21 +271,7 @@ const baseWebsiteSchema = {
         };
       </script>
       <script is:inline src="https://czernik.org/22/ad8ce66cc0c9226d6a15570bd8b31611"></script>
-      <!-- Ezoic ad placement 2/3: after content. BaseLayout has a single slot, so a true
-           mid-article spot is not possible here; this is the closest the layout allows.
-           True in-article placement needs page-level snippets on top pages. -->
-      <script is:inline>
-        ezstandalone.cmd.push(function () {
-          ezstandalone.showAds({});
-        });
-      </script>
     </main>
-    <!-- Ezoic ad placement 3/3: before footer -->
-    <script is:inline>
-      ezstandalone.cmd.push(function () {
-        ezstandalone.showAds({});
-      });
-    </script>
     <Footer />
     <BackToTop />
     <CookieBanner />
