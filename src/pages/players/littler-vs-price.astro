@@ -1,0 +1,497 @@
+---
+// src/pages/players/littler-vs-price.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Luke Littler vs Gerwyn Price Head to Head: Record, Meetings & Rivalry";
+const pageDescription = "Luke Littler leads Gerwyn Price 21–8 in 29 meetings as of 26 July 2026. Full televised meetings table, 2 major finals, last 5 meetings and the rivalry story.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/littler-vs-price/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Head-to-Head Comparisons', url: '/players/player-comparisons/' },
+  { name: 'Littler vs Price' }
+];
+
+const faqItems = [
+  {
+    q: "Who leads the head-to-head between Luke Littler and Gerwyn Price?",
+    a: "Luke Littler leads 21–8 across 29 meetings as of 26 July 2026. In televised majors the lead is 15–3 from 18 meetings."
+  },
+    {
+    q: "When did Littler and Price last play each other?",
+    a: "26 July 2026, the World Matchplay final, which Littler won 18–9. Littler has won the last 10 meetings in 2026."
+  },
+    {
+    q: "How many major finals have Littler and Price contested?",
+    a: "Two finals, 1–1: Price won the 2024 Australian Darts Masters (8–1); Littler won the 2026 World Matchplay (18–9)."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "name": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={pageSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">HEAD-TO-HEAD</span>
+        <span class="badge">29 MEETINGS</span>
+      </div>
+      <h1>Luke Littler vs Gerwyn Price Head to Head</h1>
+      <p class="lead-text">
+        The rivalry that flipped completely: Littler leads Price 21–8 in 29 meetings, with 2 finals between them — including the 2026 World Matchplay final.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="26 November 2026" topic="PDC Head-to-Head Records & Stage Finals" />
+
+      <!-- Head to Head Ledger -->
+      <section class="content-card">
+        <h2>Head-to-Head Record</h2>
+        <div class="h2h-score-banner">
+          <div class="h2h-player player-one">
+            <span class="p-name">
+              <a href="/players/luke-littler/">Luke Littler</a>
+            </span>
+            <span class="p-nick">"The Nuke"</span>
+            <span class="p-titles">2 World Titles</span>
+          </div>
+
+          <div class="h2h-vs-box">
+            <div class="vs-label">HEAD-TO-HEAD</div>
+            <div class="vs-tally">21 - 8</div>
+            <div class="vs-total">29 Meetings</div>
+            <div class="vs-meta">As of 26 July 2026</div>
+          </div>
+
+          <div class="h2h-player player-two">
+            <span class="p-name">
+              <a href="/players/gerwyn-price/">Gerwyn Price</a>
+            </span>
+            <span class="p-nick">"The Iceman"</span>
+            <span class="p-titles">1 World Title</span>
+          </div>
+        </div>
+
+        <div class="scope-banner">
+          <strong>Scope:</strong> All meetings — televised majors, World Series and Players Championship floor events. <strong>Source:</strong> DartsNews and Sporting Life previews, CSWStats televised-majors records, mastercaller.com tournament results and PDC archives.
+        </div>
+
+        <p class="ledger-note">
+          29 meetings as of 26 July 2026: Littler 21, Price 8. Televised majors on their own: 18 meetings, Littler 15–3. The full 29-meeting list is not itemised here — only 22 televised meetings are individually verified (18 majors plus 4 additional televised meetings); the remaining meetings (other World Series events and any floor meetings) were not individually verified, so no 29-row table is published. No World Championship meeting was found in the sources consulted, but that is not positively verified.
+        </p>
+      </section>
+
+      <!-- TV Meetings Table -->
+      <section class="content-card table-section">
+        <h2>Televised Meetings</h2>
+        <p>
+          Every verified televised meeting between Littler and Price, most recent first — 22 meetings listed (18 televised majors plus 4 additional televised meetings). Scores and averages are shown Price first.
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Round</th>
+                <th>Winner</th>
+                <th>Score</th>
+                <th>Averages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>26 Jul 2026</td><td>World Matchplay</td><td>Final</td><td>Littler</td><td>9–18</td><td>105.0 / 111.5</td></tr>
+              <tr><td>28 May 2026</td><td>Premier League</td><td>Play-off semi-final</td><td>Littler</td><td>9–10</td><td>100.42 / 98.47</td></tr>
+              <tr><td>30 Apr 2026</td><td>Premier League</td><td>Night 13, semi-final</td><td>Littler</td><td>1–6</td><td>94.18 / 98.34</td></tr>
+              <tr><td>16 Apr 2026</td><td>Premier League</td><td>Night 11, quarter-final</td><td>Littler</td><td>3–6</td><td>91.44 / 97.30</td></tr>
+              <tr><td>26 Mar 2026</td><td>Premier League</td><td>Night 8, semi-final</td><td>Littler</td><td>4–6</td><td>98.17 / 108.58</td></tr>
+              <tr><td>2026</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>5–6</td><td>93.2 / 95.5</td></tr>
+              <tr><td>2026</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>5–6</td><td>101.3 / 108.7</td></tr>
+              <tr><td>2026</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>3–6</td><td>97.3 / 111.0</td></tr>
+              <tr><td>2026</td><td>PDC World Masters</td><td>—</td><td>Littler</td><td>4–5</td><td>99.7 / 101.6</td></tr>
+              <tr><td>20 Jan 2026</td><td>Saudi Arabia Darts Masters</td><td>Semi-final</td><td>Littler</td><td>5–7</td><td>101.43 / 99.22</td></tr>
+              <tr><td>16 Jan 2026</td><td>Bahrain Darts Masters</td><td>Quarter-final</td><td>Price</td><td>6–2</td><td>97.43 / 94.04</td></tr>
+              <tr><td>2025</td><td>Players Championship Finals</td><td>—</td><td>Littler</td><td>8–11</td><td>102.0 / 108.5</td></tr>
+              <tr><td>2025</td><td>World Grand Prix</td><td>—</td><td>Littler</td><td>2–3</td><td>83.4 / 84.7</td></tr>
+              <tr><td>2025</td><td>World Series of Darts Finals</td><td>—</td><td>Littler</td><td>10–11</td><td>99.5 / 100.1</td></tr>
+              <tr><td>2025</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>3–6</td><td>97.8 / 104.3</td></tr>
+              <tr><td>2025</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>3–6</td><td>103.5 / 103.9</td></tr>
+              <tr><td>2025</td><td>Premier League</td><td>Weekly night</td><td>Price</td><td>6–3</td><td>94.1 / 103.4</td></tr>
+              <tr><td>2025</td><td>Premier League</td><td>Weekly night</td><td>Price</td><td>6–4</td><td>102.6 / 99.8</td></tr>
+              <tr><td>2024</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>3–6</td><td>95.8 / 100.7</td></tr>
+              <tr><td>2024</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>3–6</td><td>93.1 / 100.5</td></tr>
+              <tr><td>10 Aug 2024</td><td>Australian Darts Masters</td><td>Final</td><td>Price</td><td>8–1</td><td>—</td></tr>
+              <tr><td>2024</td><td>Premier League</td><td>Weekly night</td><td>Price</td><td>6–5</td><td>96.5 / 97.0</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Rounds and dates for most rows are not stated in the sources consulted, so they are shown as “—” or year-only where unverified. The remaining meetings making up the 29-meeting total (other World Series events and any floor meetings) were not individually verified, so no 29-row table is published. Whether the pair have ever met at the World Championship was not positively verified.</p>
+      </section>
+
+      <!-- Major Finals -->
+      <section class="content-card table-section">
+        <h2>Major Finals Contested</h2>
+        <p>Littler and Price have met in 2 finals — 1 win each. Scores below are shown winner first.</p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Final</th>
+                <th>Winner</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Australian Darts Masters 2024 (10 Aug 2024)</td><td>Price</td><td>8–1</td></tr>
+              <tr><td>World Matchplay 2026 (26 Jul 2026)</td><td>Littler</td><td>18–9</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Last 5 Meetings -->
+      <section class="content-card table-section">
+        <h2>Last 5 Meetings</h2>
+        <p>Most recent first. Scores are shown winner first; averages are Littler / Price.</p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Round</th>
+                <th>Result</th>
+                <th>Averages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>26 Jul 2026</td><td>World Matchplay</td><td>Final</td><td>Littler 18–9</td><td>111.53 / 104.97</td></tr>
+              <tr><td>28 May 2026</td><td>Premier League</td><td>Play-off semi-final</td><td>Littler 10–9</td><td>98.47 / 100.42</td></tr>
+              <tr><td>30 Apr 2026</td><td>Premier League Night 13</td><td>Semi-final</td><td>Littler 6–1</td><td>98.34 / 94.18</td></tr>
+              <tr><td>16 Apr 2026</td><td>Premier League Night 11</td><td>Quarter-final</td><td>Littler 6–3</td><td>97.30 / 91.44</td></tr>
+              <tr><td>26 Mar 2026</td><td>Premier League Night 8</td><td>Semi-final</td><td>Littler 6–4</td><td>108.58 / 98.17</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Littler has won the last 10 meetings in 2026 (9–1 in 2026 before the Matchplay final; 10–1 after it). No meeting at the 2026 Grand Slam (different groups; Littler out in the Last 16).</p>
+      </section>
+
+      <!-- Rivalry Narrative -->
+      <section class="content-card">
+        <h2>The Rivalry</h2>
+        <p>
+          The rivalry flipped completely: Price won six meetings in a row from June 2024 to March 2025, including the 8–1 Australian Masters final thrashing; since then Littler has won 16 of their last 17.
+        </p>
+        <p>
+          The 2026 World Matchplay final set records: Littler’s 111.53 was the highest average in a World Matchplay final and the highest winning tournament average in the event’s history (previously held by Taylor); Price still averaged 104.97 in defeat.
+        </p>
+        <p>
+          Their first meeting was in the 2024 Premier League, and the Premier League accounts for 13 of the 18 televised-major meetings — the rivalry has been played mostly on Thursday nights. Price’s 2024 Australian Masters win denied Littler an eighth title in as many months and was Price’s second World Series title of 2024.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Littler vs Price FAQ</h2>
+        <div class="faq-accordion">
+          {faqItems.map((item) => (
+            <details class="faq-item">
+              <summary class="faq-question">{item.q}</summary>
+              <div class="faq-answer">
+                <p>{item.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <p class="last-updated">Last updated: 26 November 2026. Head-to-head record as of 26 July 2026. <a href="/players/player-comparisons/">← Back to Head-to-Head Comparisons</a></p>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-column">
+      <div class="sidebar-card">
+        <h3>Player Authority Hubs</h3>
+        <ul class="sidebar-links">
+          <li><a href="/players/">← Back to All Players</a></li>
+          <li><a href="/players/stats/">📈 Performance Statistics</a></li>
+          <li><a href="/players/rankings/">📊 Official Order of Merit</a></li>
+          <li><a href="/players/earnings/">💰 Player Career Earnings</a></li>
+          <li><a href="/players/darts-equipment-specs/">🎯 Darts Equipment Specs</a></li>
+          <li><a href="/players/walk-on-songs/">🎵 Walk-On Songs &amp; Anthems</a></li>
+          <li><a href="/players/records/">🏆 All-Time Records</a></li>
+          <li><a href="/players/world-championship-records/">🏛️ World Championship Records</a></li>
+          <li><a href="/players/9-darters/">🎯 Televised Nine-Darters</a></li>
+          <li><a href="/players/180-records/">⚡ 180 Maximum Records</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card highlight-sidebar">
+        <h3>Tournament Key Pages</h3>
+        <ul class="sidebar-links">
+          <li><a href="/draw/">Tournament Draw &amp; Bracket</a></li>
+          <li><a href="/schedule/">Full Schedule of Play</a></li>
+          <li><a href="/results/">Live Match Results</a></li>
+          <li><a href="/tournament/prize-money/">£5,000,000 Prize Fund</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-bottom: 1px solid #374151;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    color: #ffffff;
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .lead-text {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 900px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    color: #f8fafc;
+    margin-top: 0;
+  }
+  .h2h-score-banner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.25rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .h2h-score-banner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+  .h2h-player {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .player-one {
+    text-align: left;
+  }
+  .player-two {
+    text-align: right;
+  }
+  @media (max-width: 640px) {
+    .player-one, .player-two {
+      text-align: center;
+    }
+  }
+  .p-name a {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #38bdf8;
+    text-decoration: none;
+  }
+  .p-name a:hover {
+    text-decoration: underline;
+  }
+  .p-nick {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .p-titles {
+    font-size: 0.8rem;
+    color: #f59e0b;
+    font-weight: 600;
+  }
+  .h2h-vs-box {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .vs-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+  }
+  .vs-tally {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #10b981;
+    line-height: 1.2;
+  }
+  .vs-total {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+  .vs-meta {
+    font-size: 0.7rem;
+    color: #f59e0b;
+    margin-top: 0.15rem;
+  }
+  .scope-banner {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 1.25rem;
+  }
+  .ledger-note {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .table-note {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+  .last-updated {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .last-updated a {
+    color: #38bdf8;
+    text-decoration: none;
+  }
+  .faq-accordion details {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+  .faq-answer {
+    margin-top: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .sidebar-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sidebar-links a:hover {
+    color: #38bdf8;
+  }
+  .highlight-sidebar {
+    border-color: #f59e0b;
+  }
+</style>

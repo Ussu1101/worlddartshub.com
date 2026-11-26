@@ -1,0 +1,516 @@
+---
+// src/pages/players/littler-vs-humphries.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Luke Littler vs Luke Humphries Head to Head: Record, Meetings & Rivalry";
+const pageDescription = "Luke Littler leads Luke Humphries 24–14 in 38 PDC meetings as of 26 November 2026. Full televised meetings table, 11 major finals, last 5 meetings and the rivalry story.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/littler-vs-humphries/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Head-to-Head Comparisons', url: '/players/player-comparisons/' },
+  { name: 'Littler vs Humphries' }
+];
+
+const faqItems = [
+  {
+    q: "Who leads the head-to-head between Luke Littler and Luke Humphries?",
+    a: "Luke Littler leads 24–14 across 38 PDC meetings as of 26 November 2026. In televised majors the lead is 19–9 from 28 meetings, including the three Premier League Finals Night finals."
+  },
+  {
+    q: "When did Littler and Humphries last play each other?",
+    a: "6 September 2026, the Czech Open final in Prague, which Littler won 8–6 (averages 95.25 for Littler and 94.81 for Humphries). They did not meet at the 2026 Grand Slam of Darts."
+  },
+  {
+    q: "How many major finals have Littler and Humphries contested?",
+    a: "Eleven finals. Littler has won seven and Humphries four, including the 2024 World Championship final (Humphries 7–4 in sets) and the 2026 Premier League final (Littler 11–10)."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "name": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={pageSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">HEAD-TO-HEAD</span>
+        <span class="badge">38 PDC MEETINGS</span>
+      </div>
+      <h1>Luke Littler vs Luke Humphries Head to Head</h1>
+      <p class="lead-text">
+        The defining rivalry of the new era: Littler leads Humphries 24–14 across 38 PDC meetings, with 11 major finals between them — including the 2024 World Championship final and the 2026 Premier League final.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="26 November 2026" topic="PDC Head-to-Head Records & Stage Finals" />
+
+      <!-- Head to Head Ledger -->
+      <section class="content-card">
+        <h2>Head-to-Head Record</h2>
+        <div class="h2h-score-banner">
+          <div class="h2h-player player-one">
+            <span class="p-name">
+              <a href="/players/luke-littler/">Luke Littler</a>
+            </span>
+            <span class="p-nick">"The Nuke"</span>
+            <span class="p-titles">2 World Titles</span>
+          </div>
+
+          <div class="h2h-vs-box">
+            <div class="vs-label">HEAD-TO-HEAD</div>
+            <div class="vs-tally">24 - 14</div>
+            <div class="vs-total">38 PDC Meetings</div>
+            <div class="vs-meta">As of 26 November 2026</div>
+          </div>
+
+          <div class="h2h-player player-two">
+            <span class="p-name">
+              <a href="/players/luke-humphries/">Luke Humphries</a>
+            </span>
+            <span class="p-nick">"Cool Hand Luke"</span>
+            <span class="p-titles">1 World Title</span>
+          </div>
+        </div>
+
+        <div class="scope-banner">
+          <strong>Scope:</strong> All PDC meetings — televised majors, World Series, European Tour and Players Championship floor events. <strong>Source:</strong> CSWStats televised-majors records, dartsscores.co.uk, mastercaller.com tournament results and PDC archives.
+        </div>
+
+        <p class="ledger-note">
+          One-meeting note: dartsscores.co.uk records 38 meetings (24–14). Counting the 2026 meetings individually gives 39 (24–15) — one Humphries win remains unreconciled, so the 38 figure is published here with this flag rather than silently adjusted. Televised majors on their own: 28 meetings, Littler 19–9 (including the three Premier League Finals Night finals). All televised meetings: 32, Littler 21–11.
+        </p>
+      </section>
+
+      <!-- TV Meetings Table -->
+      <section class="content-card table-section">
+        <h2>Televised Meetings</h2>
+        <p>
+          Every televised meeting between Littler and Humphries, most recent first — 32 meetings in total. Scores are shown Littler first; averages are Littler / Humphries.
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Round</th>
+                <th>Winner</th>
+                <th>Score</th>
+                <th>Averages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>6 Sep 2026</td><td>Czech Open</td><td>Final</td><td>Littler</td><td>8–6</td><td>95.25 / 94.81</td></tr>
+              <tr><td>27 Jun 2026</td><td>US Darts Masters</td><td>Final</td><td>Humphries</td><td>7–8</td><td>99.50 / 104.05</td></tr>
+              <tr><td>6 Jun 2026</td><td>Nordic Darts Masters</td><td>Semi-final</td><td>Humphries</td><td>5–7</td><td>100.85 / 105.42</td></tr>
+              <tr><td>28 May 2026</td><td>Premier League</td><td>Final</td><td>Littler</td><td>11–10</td><td>111.67 / 105.60</td></tr>
+              <tr><td>21 May 2026</td><td>Premier League</td><td>Night 16, semi-final</td><td>Humphries</td><td>1–6</td><td>95.97 / 100.82</td></tr>
+              <tr><td>14 May 2026</td><td>Premier League</td><td>Night 15, semi-final</td><td>Humphries</td><td>3–6</td><td>99.86 / 110.98</td></tr>
+              <tr><td>7 May 2026</td><td>Premier League</td><td>Night 14, final</td><td>Littler</td><td>6–5</td><td>100.67 / 100.90</td></tr>
+              <tr><td>30 Apr 2026</td><td>Premier League</td><td>Night 13, final</td><td>Littler</td><td>6–5</td><td>104.11 / 103.10</td></tr>
+              <tr><td>23 Apr 2026</td><td>Premier League</td><td>Night 12, quarter-final</td><td>Littler</td><td>6–2</td><td>97.22 / 99.39</td></tr>
+              <tr><td>16 Apr 2026</td><td>Premier League</td><td>Night 11, semi-final</td><td>Littler</td><td>6–5</td><td>100.85 / 103.00</td></tr>
+              <tr><td>12 Mar 2026</td><td>Premier League</td><td>Night 6, semi-final</td><td>Humphries</td><td>5–6</td><td>101.31 / 105.71</td></tr>
+              <tr><td>12 Feb 2026</td><td>Premier League</td><td>Night 2, quarter-final</td><td>Littler</td><td>6–5</td><td>105.16 / 102.37</td></tr>
+              <tr><td>1 Feb 2026</td><td>World Masters</td><td>Final</td><td>Littler</td><td>6–5 (sets)</td><td>104.72 / 105.51</td></tr>
+              <tr><td>Nov 2025</td><td>Grand Slam of Darts</td><td>Final</td><td>Littler</td><td>16–11</td><td>100.6 / 99.6</td></tr>
+              <tr><td>Oct 2025</td><td>World Grand Prix</td><td>Final</td><td>Littler</td><td>6–1 (sets)</td><td>92.2 / 93.6</td></tr>
+              <tr><td>Aug 2025</td><td>New Zealand Darts Masters</td><td>Final</td><td>Littler</td><td>8–4</td><td>115.02 / —</td></tr>
+              <tr><td>29 May 2025</td><td>Premier League</td><td>Final</td><td>Humphries</td><td>8–11</td><td>—</td></tr>
+              <tr><td>15 May 2025</td><td>Premier League</td><td>Night 15, quarter-final</td><td>Littler</td><td>6–5</td><td>101.0 / 93.7</td></tr>
+              <tr><td>8 May 2025</td><td>Premier League</td><td>Night 14, final</td><td>Humphries</td><td>5–6</td><td>99.9 / 101.0</td></tr>
+              <tr><td>2025</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>6–3</td><td>97.0 / 92.9</td></tr>
+              <tr><td>2025</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>6–3</td><td>116.0 / 110.0</td></tr>
+              <tr><td>2025</td><td>Premier League</td><td>Weekly night</td><td>Humphries</td><td>4–6</td><td>96.6 / 93.8</td></tr>
+              <tr><td>2025</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>6–1</td><td>93.6 / 93.3</td></tr>
+              <tr><td>2025</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>6–4</td><td>100.2 / 99.5</td></tr>
+              <tr><td>2025</td><td>Premier League</td><td>Weekly night</td><td>Humphries</td><td>4–6</td><td>96.8 / 101.2</td></tr>
+              <tr><td>Nov 2024</td><td>Players Championship Finals</td><td>Final</td><td>Humphries</td><td>7–11</td><td>100.1 / 103.7</td></tr>
+              <tr><td>2024</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>6–5</td><td>107.2 / 94.3</td></tr>
+              <tr><td>2024</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>6–5</td><td>102.0 / 99.8</td></tr>
+              <tr><td>2024</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>6–5</td><td>98.8 / 103.9</td></tr>
+              <tr><td>2024</td><td>Premier League</td><td>Weekly night</td><td>Littler</td><td>6–2</td><td>100.3 / 93.3</td></tr>
+              <tr><td>23 May 2024</td><td>Premier League</td><td>Final</td><td>Littler</td><td>11–7</td><td>—</td></tr>
+              <tr><td>3 Jan 2024</td><td>World Championship</td><td>Final</td><td>Humphries</td><td>4–7 (sets)</td><td>101.1 / 103.7</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Rounds for the 2024 and most 2025 weekly Premier League meetings are not stated in the sources consulted, so they are listed as weekly-night meetings. Averages are not published for the 2024 and 2025 Premier League finals.</p>
+      </section>
+
+      <!-- Major Finals -->
+      <section class="content-card table-section">
+        <h2>Major Finals Contested</h2>
+        <p>Littler and Humphries have met in 11 finals — Littler has won 7, Humphries 4. Scores below are shown winner first.</p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Final</th>
+                <th>Winner</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>2024 World Championship (3 Jan 2024)</td><td>Humphries</td><td>7–4 (sets)</td></tr>
+              <tr><td>2024 Premier League (23 May 2024)</td><td>Littler</td><td>11–7</td></tr>
+              <tr><td>2024 Players Championship Finals (Nov 2024)</td><td>Humphries</td><td>11–7</td></tr>
+              <tr><td>2025 Premier League (29 May 2025)</td><td>Humphries</td><td>11–8</td></tr>
+              <tr><td>2025 New Zealand Darts Masters (Aug 2025)</td><td>Littler</td><td>8–4</td></tr>
+              <tr><td>2025 World Grand Prix (Oct 2025)</td><td>Littler</td><td>6–1 (sets)</td></tr>
+              <tr><td>2025 Grand Slam of Darts (Nov 2025)</td><td>Littler</td><td>16–11</td></tr>
+              <tr><td>2026 World Masters (1 Feb 2026)</td><td>Littler</td><td>6–5 (sets)</td></tr>
+              <tr><td>2026 Premier League (28 May 2026)</td><td>Littler</td><td>11–10</td></tr>
+              <tr><td>2026 US Darts Masters (27 Jun 2026)</td><td>Humphries</td><td>8–7</td></tr>
+              <tr><td>2026 Czech Open (6 Sep 2026)</td><td>Littler</td><td>8–6</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Last 5 Meetings -->
+      <section class="content-card table-section">
+        <h2>Last 5 Meetings</h2>
+        <p>Most recent first. Scores are shown winner first; averages are Littler / Humphries.</p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Round</th>
+                <th>Result</th>
+                <th>Averages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>6 Sep 2026</td><td>Czech Open</td><td>Final</td><td>Littler 8–6</td><td>95.25 / 94.81</td></tr>
+              <tr><td>27 Jun 2026</td><td>US Darts Masters</td><td>Final</td><td>Humphries 8–7</td><td>99.50 / 104.05</td></tr>
+              <tr><td>6 Jun 2026</td><td>Nordic Darts Masters</td><td>Semi-final</td><td>Humphries 7–5</td><td>100.85 / 105.42</td></tr>
+              <tr><td>28 May 2026</td><td>Premier League</td><td>Final</td><td>Littler 11–10</td><td>111.67 / 105.60</td></tr>
+              <tr><td>21 May 2026</td><td>Premier League</td><td>Night 16, semi-final</td><td>Humphries 6–1</td><td>95.97 / 100.82</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">No meeting at the World Matchplay, World Grand Prix, European Championship or Grand Slam in 2026.</p>
+      </section>
+
+      <!-- Rivalry Narrative -->
+      <section class="content-card">
+        <h2>The Rivalry</h2>
+        <p>
+          They first met in the 2024 World Championship final, when 16-year-old Littler led 4–2 in sets before Humphries won 7–4 to take his first world title. It set the tone for everything since: every meeting between them has carried the weight of that final.
+        </p>
+        <p>
+          The numbers are almost identical — career averages against each other of 100.5 for Littler and 100.4 for Humphries, with bests of 116.0 and 111.0, and 11 of their 25 televised-major meetings going to a deciding leg or set. The peak so far was the 2026 Premier League final: Littler won 11–10 in a final leg, averaging 111.67 — his highest average in any final against Humphries.
+        </p>
+        <p>
+          Humphries won the last two weekly Premier League meetings, on 14 and 21 May 2026, but Littler answered by winning the Premier League final a week later, then took the most recent meeting — the Czech Open final on 6 September 2026, 8–6.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>Littler vs Humphries FAQ</h2>
+        <div class="faq-accordion">
+          {faqItems.map((item) => (
+            <details class="faq-item">
+              <summary class="faq-question">{item.q}</summary>
+              <div class="faq-answer">
+                <p>{item.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <p class="last-updated">Last updated: 26 November 2026. Head-to-head record as of 26 November 2026. <a href="/players/player-comparisons/">← Back to Head-to-Head Comparisons</a></p>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-column">
+      <div class="sidebar-card">
+        <h3>Player Authority Hubs</h3>
+        <ul class="sidebar-links">
+          <li><a href="/players/">← Back to All Players</a></li>
+          <li><a href="/players/stats/">📈 Performance Statistics</a></li>
+          <li><a href="/players/rankings/">📊 Official Order of Merit</a></li>
+          <li><a href="/players/earnings/">💰 Player Career Earnings</a></li>
+          <li><a href="/players/darts-equipment-specs/">🎯 Darts Equipment Specs</a></li>
+          <li><a href="/players/walk-on-songs/">🎵 Walk-On Songs &amp; Anthems</a></li>
+          <li><a href="/players/records/">🏆 All-Time Records</a></li>
+          <li><a href="/players/world-championship-records/">🏛️ World Championship Records</a></li>
+          <li><a href="/players/9-darters/">🎯 Televised Nine-Darters</a></li>
+          <li><a href="/players/180-records/">⚡ 180 Maximum Records</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card highlight-sidebar">
+        <h3>Tournament Key Pages</h3>
+        <ul class="sidebar-links">
+          <li><a href="/draw/">Tournament Draw &amp; Bracket</a></li>
+          <li><a href="/schedule/">Full Schedule of Play</a></li>
+          <li><a href="/results/">Live Match Results</a></li>
+          <li><a href="/tournament/prize-money/">£5,000,000 Prize Fund</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-bottom: 1px solid #374151;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    color: #ffffff;
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .lead-text {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 900px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    color: #f8fafc;
+    margin-top: 0;
+  }
+  .h2h-score-banner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.25rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .h2h-score-banner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+  .h2h-player {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .player-one {
+    text-align: left;
+  }
+  .player-two {
+    text-align: right;
+  }
+  @media (max-width: 640px) {
+    .player-one, .player-two {
+      text-align: center;
+    }
+  }
+  .p-name a {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #38bdf8;
+    text-decoration: none;
+  }
+  .p-name a:hover {
+    text-decoration: underline;
+  }
+  .p-nick {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .p-titles {
+    font-size: 0.8rem;
+    color: #f59e0b;
+    font-weight: 600;
+  }
+  .h2h-vs-box {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .vs-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+  }
+  .vs-tally {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #10b981;
+    line-height: 1.2;
+  }
+  .vs-total {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+  .vs-meta {
+    font-size: 0.7rem;
+    color: #f59e0b;
+    margin-top: 0.15rem;
+  }
+  .scope-banner {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 1.25rem;
+  }
+  .ledger-note {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .table-note {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+  .last-updated {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .last-updated a {
+    color: #38bdf8;
+    text-decoration: none;
+  }
+  .faq-accordion details {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+  .faq-answer {
+    margin-top: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .sidebar-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sidebar-links a:hover {
+    color: #38bdf8;
+  }
+  .highlight-sidebar {
+    border-color: #f59e0b;
+  }
+</style>

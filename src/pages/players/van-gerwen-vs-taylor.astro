@@ -1,0 +1,499 @@
+---
+// src/pages/players/van-gerwen-vs-taylor.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import VerificationBadge from '../../components/VerificationBadge.astro';
+
+const pageTitle = "Michael van Gerwen vs Phil Taylor Head to Head: Record, Meetings & Rivalry";
+const pageDescription = "Phil Taylor leads Michael van Gerwen 34–26 (2 draws) in 62 meetings as of 26 November 2026. Full televised meetings table, 13 major finals, last 5 meetings and the rivalry story.";
+const siteUrl = "https://worlddartshub.com";
+const canonicalUrl = `${siteUrl}/players/van-gerwen-vs-taylor/`;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Players', url: '/players/' },
+  { name: 'Head-to-Head Comparisons', url: '/players/player-comparisons/' },
+  { name: 'van Gerwen vs Taylor' }
+];
+
+const faqItems = [
+  {
+    q: "Who leads the head-to-head between Michael van Gerwen and Phil Taylor?",
+    a: "Phil Taylor leads 34–26, with 2 draws, across 62 meetings. Taylor is the only player with a winning career record over van Gerwen. Note: sources differ by one van Gerwen win (26 vs 27), so the total carries a ±1 caveat."
+  },
+    {
+    q: "When did van Gerwen and Taylor last play each other?",
+    a: "19 November 2017, the Grand Slam of Darts semi-final, which van Gerwen won 16–8. Taylor retired after the 2018 World Championship final, so the rivalry is closed."
+  },
+    {
+    q: "How many major finals did van Gerwen and Taylor contest?",
+    a: "Thirteen finals. Taylor won seven and van Gerwen six, including the 2013 World Championship final (Taylor 7–4, his 16th world title) and the 2016 World Matchplay final (van Gerwen 18–10)."
+  }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "name": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": item.url ? `${siteUrl}${item.url}` : canonicalUrl
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={pageSchema}
+  canonicalUrl={canonicalUrl}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <header class="page-header">
+    <div class="container">
+      <div class="badge-row">
+        <span class="badge badge-accent">HEAD-TO-HEAD</span>
+        <span class="badge">62 MEETINGS</span>
+      </div>
+      <h1>Michael van Gerwen vs Phil Taylor Head to Head</h1>
+      <p class="lead-text">
+        The only player with a winning career record over Michael van Gerwen: Taylor leads 34–26 (2 draws) in 62 meetings, with 13 finals between them — including the 2013 World Championship final.
+      </p>
+    </div>
+  </header>
+
+  <div class="container content-layout">
+    <main class="main-column">
+      <VerificationBadge verifiedDate="26 November 2026" topic="PDC Head-to-Head Records & Stage Finals" />
+
+      <!-- Head to Head Ledger -->
+      <section class="content-card">
+        <h2>Head-to-Head Record</h2>
+        <div class="h2h-score-banner">
+          <div class="h2h-player player-one">
+            <span class="p-name">
+              <a href="/players/michael-van-gerwen/">Michael van Gerwen</a>
+            </span>
+            <span class="p-nick">"Mighty Mike"</span>
+            <span class="p-titles">3 World Titles</span>
+          </div>
+
+          <div class="h2h-vs-box">
+            <div class="vs-label">HEAD-TO-HEAD</div>
+            <div class="vs-tally">26 - 34</div>
+            <div class="vs-total">62 Meetings</div>
+            <div class="vs-meta">As of 26 November 2026 · 2 draws · Rivalry closed</div>
+          </div>
+
+          <div class="h2h-player player-two">
+            <span class="p-name">
+              <a href="/players/player-comparisons/">Phil Taylor</a>
+            </span>
+            <span class="p-nick">"The Power"</span>
+            <span class="p-titles">16 World Titles</span>
+          </div>
+        </div>
+
+        <div class="scope-banner">
+          <strong>Scope:</strong> All meetings — televised majors, Premier League league nights, World Series, Champions League and Players Championship floor events. <strong>Source:</strong> GiveMeSport and Sporting Life previews, CSWStats televised-majors records, DartsRec match lists and PDC archives.
+        </div>
+
+        <p class="ledger-note">
+          62 meetings: Taylor 34, van Gerwen 26, 2 draws. Caveat: sources differ by one van Gerwen win — Sky Sports (July 2017) gave Taylor 32, van Gerwen 25, 2 draws before the Matchplay quarter-final, which implies 27 van Gerwen wins after the four post-July meetings, not 26. The 34–26–2 figure (GiveMeSport, December 2017, after the last meeting) is published here with this ±1 flag. Televised majors on their own: 13 meetings, van Gerwen 7–6 — CSW’s “7–7 in 14” double-counts the 2013 World Championship final. World Championship head-to-head: Taylor 3–0. Taylor is the only player with a winning career record over van Gerwen.
+        </p>
+      </section>
+
+      <!-- TV Meetings Table -->
+      <section class="content-card table-section">
+        <h2>Televised Meetings</h2>
+        <p>
+          Every televised-major meeting between van Gerwen and Taylor, most recent first — 13 unique meetings in total (CSW’s 14 corrected for a duplicated 2013 World Championship final). Scores are shown van Gerwen first; averages are van Gerwen / Taylor.
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Round</th>
+                <th>Winner</th>
+                <th>Score</th>
+                <th>Averages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>2017</td><td>Grand Slam of Darts</td><td>Semi-final</td><td>van Gerwen</td><td>16–8</td><td>106.9 / 98.1</td></tr>
+              <tr><td>2017</td><td>World Matchplay</td><td>Quarter-final</td><td>Taylor</td><td>6–16</td><td>101.1 / 101.8</td></tr>
+              <tr><td>2016</td><td>World Matchplay</td><td>Final</td><td>van Gerwen</td><td>18–10</td><td>103.9 / 101.1</td></tr>
+              <tr><td>2016</td><td>UK Open</td><td>Semi-final</td><td>van Gerwen</td><td>10–6</td><td>107.6 / 104.6</td></tr>
+              <tr><td>2016</td><td>Masters</td><td>Semi-final</td><td>van Gerwen</td><td>11–10</td><td>103.3 / 103.5</td></tr>
+              <tr><td>2015</td><td>Grand Slam of Darts</td><td>Final</td><td>van Gerwen</td><td>16–13</td><td>100.9 / 102.5</td></tr>
+              <tr><td>2014</td><td>World Matchplay</td><td>Final</td><td>Taylor</td><td>9–18</td><td>101.5 / 107.2</td></tr>
+              <tr><td>2013</td><td>Players Championship Finals</td><td>Final</td><td>van Gerwen</td><td>11–7</td><td>102.5 / 102.6</td></tr>
+              <tr><td>2013</td><td>World Championship</td><td>Final</td><td>Taylor</td><td>4–7</td><td>100.7 / 103.0</td></tr>
+              <tr><td>2012</td><td>Grand Slam of Darts</td><td>Last 16 (group)</td><td>van Gerwen</td><td>10–5</td><td>108.4 / 104.9</td></tr>
+              <tr><td>2009</td><td>Players Championship Finals</td><td>—</td><td>Taylor</td><td>3–6</td><td>92.1 / 108.5</td></tr>
+              <tr><td>2009</td><td>World Championship</td><td>Round 2</td><td>Taylor</td><td>0–4</td><td>99.0 / 102.6</td></tr>
+              <tr><td>2008</td><td>World Championship</td><td>Round 1</td><td>Taylor</td><td>2–3</td><td>86.0 / 91.1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">CSW also wrongly says they “met most often at the World Championship: 4 times” — it was 3 times, all won by Taylor. The round of the 2009 Players Championship Finals meeting is not stated in the sources consulted. Additional televised meetings beyond this majors table — Premier League league nights (2013–2017), Champions League (2016–2017) and World Series finals — are listed in the sources, but a full round-by-round list with dates and averages was not fully verified, so they are not itemised here.</p>
+      </section>
+
+      <!-- Major Finals -->
+      <section class="content-card table-section">
+        <h2>Major Finals Contested</h2>
+        <p>Van Gerwen and Taylor met in 13 finals — Taylor won 7, van Gerwen 6. Scores below are shown winner first.</p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Final</th>
+                <th>Winner</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>World Championship 2013</td><td>Taylor</td><td>7–4</td></tr>
+              <tr><td>Premier League 2013</td><td>van Gerwen</td><td>10–8</td></tr>
+              <tr><td>Players Championship Finals 2013</td><td>van Gerwen</td><td>11–7</td></tr>
+              <tr><td>Sydney Darts Masters 2013</td><td>Taylor</td><td>10–3</td></tr>
+              <tr><td>Championship League 2013</td><td>Taylor</td><td>6–3</td></tr>
+              <tr><td>World Matchplay 2014</td><td>Taylor</td><td>18–9</td></tr>
+              <tr><td>Perth Darts Masters 2014</td><td>Taylor</td><td>11–9</td></tr>
+              <tr><td>Dubai Darts Masters 2015</td><td>van Gerwen</td><td>11–8</td></tr>
+              <tr><td>Grand Slam of Darts 2015</td><td>van Gerwen</td><td>16–13</td></tr>
+              <tr><td>Premier League 2016</td><td>van Gerwen</td><td>11–3</td></tr>
+              <tr><td>World Matchplay 2016</td><td>van Gerwen</td><td>18–10</td></tr>
+              <tr><td>Champions League 2016</td><td>Taylor</td><td>11–5</td></tr>
+              <tr><td>Sydney Darts Masters 2016</td><td>Taylor</td><td>11–9</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Last 5 Meetings -->
+      <section class="content-card table-section">
+        <h2>Last 5 Meetings</h2>
+        <p>Most recent first. Scores are shown winner first; averages are van Gerwen / Taylor.</p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Round</th>
+                <th>Result</th>
+                <th>Averages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>19 Nov 2017</td><td>Grand Slam of Darts</td><td>Semi-final</td><td>van Gerwen 16–8</td><td>106.9 / 98.1</td></tr>
+              <tr><td>Sep 2017</td><td>Champions League</td><td>Group stage</td><td>Taylor 10–9</td><td>—</td></tr>
+              <tr><td>Jul 2017</td><td>Shanghai Masters</td><td>Quarter-final</td><td>van Gerwen 8–7</td><td>—</td></tr>
+              <tr><td>Jul 2017</td><td>World Matchplay</td><td>Quarter-final</td><td>Taylor 16–6</td><td>101.1 / 101.8</td></tr>
+              <tr><td>May 2017</td><td>Premier League</td><td>Week 14, Sheffield</td><td>Taylor 7–3</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Exact days for the September, July and May 2017 meetings are not verified — they are shown as month and year only. No meetings after 19 November 2017; Taylor retired after the 2018 World Championship final (lost to Rob Cross).</p>
+      </section>
+
+      <!-- Rivalry Narrative -->
+      <section class="content-card">
+        <h2>The Rivalry</h2>
+        <p>
+          Taylor is the only player with a winning career record over van Gerwen (34–26–2) — and he won all three of their World Championship meetings, including the 2013 final 7–4 for his 16th world title.
+        </p>
+        <p>
+          The 2014 World Matchplay final (Taylor 18–9, Taylor averaging 107.19) was described by Taylor himself as his “best ever” performance. Van Gerwen’s breakthrough win in the rivalry was the 2013 Premier League final, 10–8, in his debut Premier League season.
+        </p>
+        <p>
+          The last meeting was the 2017 Grand Slam semi-final on 19 November 2017, which van Gerwen won 16–8. Taylor retired after the 2018 World Championship final, so the rivalry is closed, with Taylor the only player to finish with a winning record against van Gerwen.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-card faq-section">
+        <h2>van Gerwen vs Taylor FAQ</h2>
+        <div class="faq-accordion">
+          {faqItems.map((item) => (
+            <details class="faq-item">
+              <summary class="faq-question">{item.q}</summary>
+              <div class="faq-answer">
+                <p>{item.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <p class="last-updated">Last updated: 26 November 2026. Head-to-head record as of 26 November 2026. <a href="/players/player-comparisons/">← Back to Head-to-Head Comparisons</a></p>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-column">
+      <div class="sidebar-card">
+        <h3>Player Authority Hubs</h3>
+        <ul class="sidebar-links">
+          <li><a href="/players/">← Back to All Players</a></li>
+          <li><a href="/players/stats/">📈 Performance Statistics</a></li>
+          <li><a href="/players/rankings/">📊 Official Order of Merit</a></li>
+          <li><a href="/players/earnings/">💰 Player Career Earnings</a></li>
+          <li><a href="/players/darts-equipment-specs/">🎯 Darts Equipment Specs</a></li>
+          <li><a href="/players/walk-on-songs/">🎵 Walk-On Songs &amp; Anthems</a></li>
+          <li><a href="/players/records/">🏆 All-Time Records</a></li>
+          <li><a href="/players/world-championship-records/">🏛️ World Championship Records</a></li>
+          <li><a href="/players/9-darters/">🎯 Televised Nine-Darters</a></li>
+          <li><a href="/players/180-records/">⚡ 180 Maximum Records</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card highlight-sidebar">
+        <h3>Tournament Key Pages</h3>
+        <ul class="sidebar-links">
+          <li><a href="/draw/">Tournament Draw &amp; Bracket</a></li>
+          <li><a href="/schedule/">Full Schedule of Play</a></li>
+          <li><a href="/results/">Live Match Results</a></li>
+          <li><a href="/tournament/prize-money/">£5,000,000 Prize Fund</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-bottom: 1px solid #374151;
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .page-header h1 {
+    color: #ffffff;
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+  }
+  .badge-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .lead-text {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 900px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  .content-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-card h2 {
+    color: #f8fafc;
+    margin-top: 0;
+  }
+  .h2h-score-banner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.25rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .h2h-score-banner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+  .h2h-player {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .player-one {
+    text-align: left;
+  }
+  .player-two {
+    text-align: right;
+  }
+  @media (max-width: 640px) {
+    .player-one, .player-two {
+      text-align: center;
+    }
+  }
+  .p-name a {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #38bdf8;
+    text-decoration: none;
+  }
+  .p-name a:hover {
+    text-decoration: underline;
+  }
+  .p-nick {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .p-titles {
+    font-size: 0.8rem;
+    color: #f59e0b;
+    font-weight: 600;
+  }
+  .h2h-vs-box {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .vs-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+  }
+  .vs-tally {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #10b981;
+    line-height: 1.2;
+  }
+  .vs-total {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+  .vs-meta {
+    font-size: 0.7rem;
+    color: #f59e0b;
+    margin-top: 0.15rem;
+  }
+  .scope-banner {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 1.25rem;
+  }
+  .ledger-note {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .table-note {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+  .last-updated {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .last-updated a {
+    color: #38bdf8;
+    text-decoration: none;
+  }
+  .faq-accordion details {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+  .faq-answer {
+    margin-top: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .sidebar-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-links li {
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .sidebar-links a:hover {
+    color: #38bdf8;
+  }
+  .highlight-sidebar {
+    border-color: #f59e0b;
+  }
+</style>
